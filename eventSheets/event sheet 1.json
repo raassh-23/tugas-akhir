@@ -1,5 +1,198 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"functionName": "moveUp",
+			"functionDescription": "",
+			"functionCategory": "Movement",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 964954737692852,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 749620488398257
+		},
+		{
+			"functionName": "moveDown",
+			"functionDescription": "",
+			"functionCategory": "Movement",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 703330356251489,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 401950688983271
+		},
+		{
+			"functionName": "moveLeft",
+			"functionDescription": "",
+			"functionCategory": "Movement",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 315432115238979,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 846023363393239
+		},
+		{
+			"functionName": "moveRight",
+			"functionDescription": "",
+			"functionCategory": "Movement",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 903151136846138,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 406748530296291
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player",
+					"sid": 360709728568372,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "up"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Player",
+					"sid": 421209366879939,
+					"parameters": {
+						"angle": "270"
+					}
+				}
+			],
+			"sid": 964369408524486
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player",
+					"sid": 287301019456291,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "down"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Player",
+					"sid": 452928104478032,
+					"parameters": {
+						"angle": "90"
+					}
+				}
+			],
+			"sid": 615137197063681
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player",
+					"sid": 361561203512135,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "right"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Player",
+					"sid": 959553584033453,
+					"parameters": {
+						"angle": "0"
+					}
+				}
+			],
+			"sid": 112334176886653
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player",
+					"sid": 481797433208154,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Player",
+					"sid": 425990238996945,
+					"parameters": {
+						"angle": "180"
+					}
+				}
+			],
+			"sid": 263685975994806
+		}
+	],
 	"sid": 219985874213153
 }

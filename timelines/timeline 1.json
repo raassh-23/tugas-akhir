@@ -17,6 +17,8 @@
 	"loop": false,
 	"pingPong": false,
 	"repeatCount": 1,
+	"startOnLayout": "",
+	"transformWithSceneGraph": false,
 	"tracks": [],
 	"tracksRoot": {
 		"enabled": true,
@@ -24,6 +26,7 @@
 		"resultMode": "default",
 		"ease": "default",
 		"pathMode": "default",
+		"expanded": true,
 		"name": "Track Folder",
 		"items": [],
 		"subfolders": []
@@ -34,9 +37,11 @@
 		"resultMode": "default",
 		"ease": "default",
 		"pathMode": "default",
+		"expanded": true,
 		"name": "Timelines",
 		"items": [],
 		"subfolders": []
 	},
-	"nestedData": {}
+	"nestedData": {},
+	"transitionsData": []
 }
