@@ -31,9 +31,33 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "EdwardBonnett_VsCodePlugin",
+			"name": "VS Code Plugin",
+			"author": "Edward Bonnett",
+			"version": "1.0.0.1",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "TileMovement",
 			"name": "Tile movement",
+			"author": "Scirra",
+			"version": "r308.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"version": "r308.2",
 			"bundled": false
@@ -44,14 +68,20 @@
 		"items": [
 			"Player",
 			"TiledBackground",
-			"Touch"
+			"Touch",
+			"VSCodePlugin",
+			"UIPanel",
+			"MoveLeftCommand",
+			"Button"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Command"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -68,8 +98,56 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
-			"subfolders": []
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 100315158205555,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "forEvents.js",
+					"type": "application/javascript",
+					"sid": 248341373309640,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 193968145217230,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "BaseCommand.js",
+							"type": "text/javascript",
+							"sid": 290801512657129,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "MoveLeftCommand.js",
+							"type": "text/javascript",
+							"sid": 370282492513907,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Command"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
@@ -212,7 +290,7 @@
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false
+		"autoReloadScriptsOnPreview": true
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,

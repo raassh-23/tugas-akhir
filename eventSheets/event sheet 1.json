@@ -192,6 +192,92 @@
 				}
 			],
 			"sid": 263685975994806
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 972512016779190
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "MoveLeftCommand",
+					"sid": 690911318351402,
+					"parameters": {
+						"instance-variable": "originX",
+						"value": "Self.X"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "MoveLeftCommand",
+					"sid": 833519220452977,
+					"parameters": {
+						"instance-variable": "originY",
+						"value": "Self.Y"
+					}
+				}
+			],
+			"sid": 595694393471710
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drop",
+					"objectClass": "MoveLeftCommand",
+					"sid": 125585481375925,
+					"behaviorType": "DragDrop"
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Command",
+					"sid": 406963641250088,
+					"parameters": {
+						"object": "UIPanel"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "addToCommands(new MoveLeftCommand());\nconsole.log(commands);"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "MoveLeftCommand",
+					"sid": 907213599608075,
+					"parameters": {
+						"x": "Self.originX",
+						"y": "Self.originY"
+					}
+				}
+			],
+			"sid": 499405210992889
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 733524019293134,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(\"running commands\")\nrunCommands(runtime.objects.Player.getFirstInstance());"
+				}
+			],
+			"sid": 115641461196852
 		}
 	],
 	"sid": 219985874213153

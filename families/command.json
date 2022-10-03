@@ -1,0 +1,30 @@
+{
+	"name": "Command",
+	"plugin-id": "Sprite",
+	"sid": 229964220079121,
+	"instanceVariables": [
+		{
+			"name": "originX",
+			"type": "number",
+			"desc": "",
+			"sid": 386673048586840
+		},
+		{
+			"name": "originY",
+			"type": "number",
+			"desc": "",
+			"sid": 405445515911212
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 330480239980731
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"MoveLeftCommand"
+	]
+}
