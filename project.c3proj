@@ -71,7 +71,7 @@
 			"Touch",
 			"VSCodePlugin",
 			"UIPanel",
-			"MoveLeftCommand",
+			"MoveCommand",
 			"Button"
 		],
 		"subfolders": []
@@ -122,32 +122,17 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Commands.js",
+					"type": "text/javascript",
+					"sid": 290801512657129,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
-			"subfolders": [
-				{
-					"items": [
-						{
-							"name": "BaseCommand.js",
-							"type": "text/javascript",
-							"sid": 290801512657129,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "MoveLeftCommand.js",
-							"type": "text/javascript",
-							"sid": 370282492513907,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
-					"subfolders": [],
-					"name": "Command"
-				}
-			]
+			"subfolders": []
 		},
 		"sound": {
 			"items": [],

@@ -1,16 +1,24 @@
-// Construct 3 quirk
-// All subfolders for scripts are flattened
-import BaseCommand from "./BaseCommand.js";
-import MoveLeftCommand from "./MoveLeftCommand.js";
+import {BaseCommand, MoveCommand} from "./Commands.js";
 
+/**
+ *
+ * @type {Array.<BaseCommand>}
+ */
 const commands = []
+
+/**
+ * @type {boolean}
+ */
+let isRunning = false
 
 /**
  * 
  * @param {BaseCommand} command 
  */
 function addToCommands(command) {
-	commands.push(command);
+	if (command instanceof BaseCommand) {
+		commands.push(command)
+	}
 }
 
 /**
@@ -25,7 +33,13 @@ function emptyCommands() {
  * @param {IPlayer} player 
  */
 async function runCommands(player) {
-	for (const command of commands) {
-		await command.run(player);
+	if (!isRunning) {
+		isRunning = true
+
+		for (const command of commands) {
+			await command.run(player);
+		}
+
+		isRunning = false
 	}
 }

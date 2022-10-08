@@ -25,6 +25,6 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"MoveLeftCommand"
+		"MoveCommand"
 	]
 }
