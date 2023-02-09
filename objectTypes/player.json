@@ -1,14 +1,14 @@
 {
 	"name": "Player",
 	"plugin-id": "Sprite",
-	"sid": 883714678588767,
+	"sid": 286186782506091,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "TileMovement",
 			"name": "TileMovement",
-			"sid": 618868449392294
+			"sid": 859172348917213
 		}
 	],
 	"effectTypes": [],
@@ -24,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5947424,
+						"imageSpriteId": 9880322,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 308171329488840,
+				"sid": 790537396639476,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
 	"name": "UIPanel",
 	"plugin-id": "NinePatch",
-	"sid": 980295983362326,
+	"sid": 964467181793578,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3038467,
+		"imageSpriteId": 8800068,
 		"useCollisionPoly": true
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"name": "Button",
 	"plugin-id": "Sprite",
-	"sid": 606113567553973,
+	"sid": 232926526578138,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 249916,
+						"imageSpriteId": 6577214,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 314510416162583,
+				"sid": 590859666987203,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

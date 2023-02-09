@@ -15,14 +15,14 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "Player",
-					"sid": 964954737692852,
+					"sid": 128842228314954,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"control": "up"
 					}
 				}
 			],
-			"sid": 749620488398257
+			"sid": 850883863991094
 		},
 		{
 			"functionName": "moveDown",
@@ -38,14 +38,14 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "Player",
-					"sid": 703330356251489,
+					"sid": 355315543310329,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"control": "down"
 					}
 				}
 			],
-			"sid": 401950688983271
+			"sid": 859947944575473
 		},
 		{
 			"functionName": "moveLeft",
@@ -61,14 +61,14 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "Player",
-					"sid": 315432115238979,
+					"sid": 494445518427877,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"control": "left"
 					}
 				}
 			],
-			"sid": 846023363393239
+			"sid": 763234002756624
 		},
 		{
 			"functionName": "moveRight",
@@ -84,14 +84,14 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "Player",
-					"sid": 903151136846138,
+					"sid": 600549770587757,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"control": "right"
 					}
 				}
 			],
-			"sid": 406748530296291
+			"sid": 943941915025808
 		},
 		{
 			"eventType": "block",
@@ -99,7 +99,7 @@
 				{
 					"id": "is-moving-direction",
 					"objectClass": "Player",
-					"sid": 360709728568372,
+					"sid": 483849859601033,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"direction": "up"
@@ -110,13 +110,13 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Player",
-					"sid": 421209366879939,
+					"sid": 785357891954774,
 					"parameters": {
 						"angle": "270"
 					}
 				}
 			],
-			"sid": 964369408524486
+			"sid": 775366117957879
 		},
 		{
 			"eventType": "block",
@@ -124,7 +124,7 @@
 				{
 					"id": "is-moving-direction",
 					"objectClass": "Player",
-					"sid": 287301019456291,
+					"sid": 805189855583067,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"direction": "down"
@@ -135,13 +135,13 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Player",
-					"sid": 452928104478032,
+					"sid": 732440032617726,
 					"parameters": {
 						"angle": "90"
 					}
 				}
 			],
-			"sid": 615137197063681
+			"sid": 305885243481875
 		},
 		{
 			"eventType": "block",
@@ -149,7 +149,7 @@
 				{
 					"id": "is-moving-direction",
 					"objectClass": "Player",
-					"sid": 361561203512135,
+					"sid": 728985671897859,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"direction": "right"
@@ -160,13 +160,13 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Player",
-					"sid": 959553584033453,
+					"sid": 267781567875838,
 					"parameters": {
 						"angle": "0"
 					}
 				}
 			],
-			"sid": 112334176886653
+			"sid": 879797119583756
 		},
 		{
 			"eventType": "block",
@@ -174,7 +174,7 @@
 				{
 					"id": "is-moving-direction",
 					"objectClass": "Player",
-					"sid": 481797433208154,
+					"sid": 434526477555396,
 					"behaviorType": "TileMovement",
 					"parameters": {
 						"direction": "left"
@@ -185,13 +185,13 @@
 				{
 					"id": "set-angle",
 					"objectClass": "Player",
-					"sid": 425990238996945,
+					"sid": 716575877126457,
 					"parameters": {
 						"angle": "180"
 					}
 				}
 			],
-			"sid": 263685975994806
+			"sid": 508388867323278
 		},
 		{
 			"eventType": "block",
@@ -199,14 +199,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 972512016779190
+					"sid": 263447849416560
 				}
 			],
 			"actions": [
 				{
 					"id": "set-instvar-value",
 					"objectClass": "MoveCommand",
-					"sid": 690911318351402,
+					"sid": 202537416280348,
 					"parameters": {
 						"instance-variable": "originX",
 						"value": "Self.X"
@@ -215,14 +215,14 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "MoveCommand",
-					"sid": 833519220452977,
+					"sid": 843345215432376,
 					"parameters": {
 						"instance-variable": "originY",
 						"value": "Self.Y"
 					}
 				}
 			],
-			"sid": 595694393471710
+			"sid": 696910602680215
 		},
 		{
 			"eventType": "block",
@@ -230,12 +230,12 @@
 				{
 					"id": "on-drop",
 					"objectClass": "MoveCommand",
-					"sid": 125585481375925,
+					"sid": 666898379610035,
 					"behaviorType": "DragDrop"
 				}
 			],
 			"actions": [],
-			"sid": 499405210992889,
+			"sid": 796003700647405,
 			"children": [
 				{
 					"eventType": "block",
@@ -243,14 +243,14 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Command",
-							"sid": 488013089558355,
+							"sid": 105179929870936,
 							"parameters": {
 								"object": "UIPanel"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 531607908363880,
+					"sid": 678994180359844,
 					"children": [
 						{
 							"eventType": "block",
@@ -258,7 +258,7 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "MoveCommand",
-									"sid": 563445940005046,
+									"sid": 974515072750979,
 									"parameters": {
 										"comparison": 0,
 										"number": "0"
@@ -271,7 +271,7 @@
 									"script": "addToCommands(new MoveCommand(\"left\"));"
 								}
 							],
-							"sid": 548744617418457
+							"sid": 725400070238276
 						},
 						{
 							"eventType": "block",
@@ -279,7 +279,7 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "MoveCommand",
-									"sid": 787037803194206,
+									"sid": 909528943589016,
 									"parameters": {
 										"comparison": 0,
 										"number": "1"
@@ -292,7 +292,7 @@
 									"script": "addToCommands(new MoveCommand(\"up\"));"
 								}
 							],
-							"sid": 237307168503235
+							"sid": 482945033411175
 						},
 						{
 							"eventType": "block",
@@ -300,7 +300,7 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "MoveCommand",
-									"sid": 238007825331181,
+									"sid": 494935435715340,
 									"parameters": {
 										"comparison": 0,
 										"number": "2"
@@ -313,7 +313,7 @@
 									"script": "addToCommands(new MoveCommand(\"right\"));"
 								}
 							],
-							"sid": 898493531973246
+							"sid": 777777196964929
 						},
 						{
 							"eventType": "block",
@@ -321,7 +321,7 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "MoveCommand",
-									"sid": 241239392035885,
+									"sid": 373196819765697,
 									"parameters": {
 										"comparison": 0,
 										"number": "3"
@@ -334,7 +334,7 @@
 									"script": "addToCommands(new MoveCommand(\"down\"));"
 								}
 							],
-							"sid": 446645859790869
+							"sid": 762193026210717
 						}
 					]
 				},
@@ -349,14 +349,14 @@
 						{
 							"id": "set-position",
 							"objectClass": "MoveCommand",
-							"sid": 633827710542624,
+							"sid": 592338202922571,
 							"parameters": {
 								"x": "Self.originX",
 								"y": "Self.originY"
 							}
 						}
 					],
-					"sid": 323246977189930
+					"sid": 327440917415036
 				}
 			]
 		},
@@ -366,7 +366,7 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 733524019293134,
+					"sid": 504143885750951,
 					"parameters": {
 						"object": "Button"
 					}
@@ -378,8 +378,8 @@
 					"script": "console.log(\"running commands\")\nrunCommands(runtime.objects.Player.getFirstInstance());"
 				}
 			],
-			"sid": 115641461196852
+			"sid": 537210512704320
 		}
 	],
-	"sid": 219985874213153
+	"sid": 808040494368574
 }

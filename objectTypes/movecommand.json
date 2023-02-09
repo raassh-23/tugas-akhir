@@ -1,7 +1,7 @@
 {
 	"name": "MoveCommand",
 	"plugin-id": "Sprite",
-	"sid": 423272037212683,
+	"sid": 831330651026240,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4928645,
+						"imageSpriteId": 1828398,
 						"collisionPoly": {
 							"points": [
 								0.02040816326530612,
@@ -50,7 +50,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3442220,
+						"imageSpriteId": 9422797,
 						"collisionPoly": {
 							"points": [
 								0.9795918367346939,
@@ -82,7 +82,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4700850,
+						"imageSpriteId": 56783,
 						"collisionPoly": {
 							"points": [
 								0.9795918367346939,
@@ -114,7 +114,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6057963,
+						"imageSpriteId": 5383045,
 						"collisionPoly": {
 							"points": [
 								0.020408163265306145,
@@ -139,7 +139,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 479184145271485,
+				"sid": 261095955889416,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
