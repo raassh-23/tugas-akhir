@@ -1,31 +1,14 @@
-import {waitForMillisecond} from "./utils.js";
+import BaseCommand from "./base-command.js";
+import {waitForMillisecond} from "../utils.js";
 
-export class BaseCommand {
-    /**
-     * 
-     * @param {string} name 
-     */
-    constructor(name) {
-        this.name = name
-    }
-
-    /**
-     * 
-     * @param {IPlayer} player 
-     */
-    async run(player) {
-        throw new Error("Not implemented")
-    }
-}
-
-export class MoveCommand extends BaseCommand {
+export default class MoveCommand extends BaseCommand {
     /**
      * 
      * @param {"left" | "right" | "up" | "down"} direction 
      */
     constructor(direction) {
         super("Move")
-		this.direction = direction
+		this.direction = direction;
     }
 
     /**
