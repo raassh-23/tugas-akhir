@@ -4233,7 +4233,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.Browser.Acts.CancelFullScreen,
-		C3.Plugins.Browser.Acts.RequestFullScreen
+		C3.Plugins.Browser.Acts.RequestFullScreen,
+		C3.Plugins.Browser.Cnds.OnUpdateFound,
+		C3.Plugins.Browser.Cnds.OnUpdateReady
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4383,7 +4385,15 @@ self.C3_ExpressionFuncs = [
 			return () => ("Version " + f0());
 		},
 		() => "play",
-		() => "fullscreen"
+		() => "fullscreen",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (("Version " + f0()) + " (new version found, downloading...)");
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => (("Version " + f0()) + " (new version downloaded, refresh to update)");
+		}
 ];
 
 

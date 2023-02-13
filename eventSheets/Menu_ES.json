@@ -142,6 +142,48 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-update-found-sw",
+					"objectClass": "Browser",
+					"sid": 974614323339559
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 498574082786513,
+					"parameters": {
+						"text": "\"Version \" & projectversion & \" (new version found, downloading...)\""
+					}
+				}
+			],
+			"sid": 996447243694099
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-update-ready-sw",
+					"objectClass": "Browser",
+					"sid": 645186538898867
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 985462183177400,
+					"parameters": {
+						"text": "\"Version \" & projectversion & \" (new version downloaded, refresh to update)\""
+					}
+				}
+			],
+			"sid": 280770723004987
 		}
 	],
 	"sid": 170200532006030
