@@ -72,6 +72,11 @@ const scriptsInEvents = {
 
 	async Game_es_Event17_Act1(runtime, localVars)
 	{
+		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
+	},
+
+	async Game_es_Event18_Act1(runtime, localVars)
+	{
 		console.log("running commands")
 		runCommands(runtime.objects.Player.getFirstInstance());
 	}

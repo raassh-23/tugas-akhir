@@ -62,10 +62,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 208,
-						"y": 668,
-						"width": 864,
-						"height": 30,
+						"x": 69,
+						"y": 614,
+						"width": 1142,
+						"height": 84,
 						"originX": 0,
 						"originY": 0,
 						"color": [

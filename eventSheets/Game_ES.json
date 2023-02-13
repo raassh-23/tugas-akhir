@@ -475,7 +475,31 @@
 							}
 						}
 					],
-					"sid": 187288705764473
+					"sid": 187288705764473,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 154332011258744,
+									"parameters": {
+										"first-value": "Command.ObjectTypeName",
+										"comparison": 0,
+										"second-value": "MoveCommand.ObjectTypeName"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();"
+								}
+							],
+							"sid": 475504434710208
+						}
+					]
 				}
 			]
 		},
