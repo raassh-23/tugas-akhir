@@ -21,6 +21,19 @@ function addToCommands(command) {
 	}
 }
 
+/**
+ * 
+ * @param {BaseCommand} command
+ * 
+ */
+function removeFromCommands(command) {
+	const index = commands.indexOf(command);
+
+	if (index > -1) {
+		commands.splice(index, 1);
+	}
+}
+
 function emptyCommands() {
 	commands.length = 0;
 }

@@ -205,8 +205,8 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "MoveCommand",
-					"sid": 202537416280348,
+					"objectClass": "Command",
+					"sid": 304938203241594,
 					"parameters": {
 						"instance-variable": "originX",
 						"value": "Self.X"
@@ -214,8 +214,8 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "MoveCommand",
-					"sid": 843345215432376,
+					"objectClass": "Command",
+					"sid": 846168386654143,
 					"parameters": {
 						"instance-variable": "originY",
 						"value": "Self.Y"
@@ -234,22 +234,250 @@
 					"behaviorType": "DragDrop"
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 796003700647405,
+			"children": [
 				{
-					"type": "script",
-					"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Command",
+							"sid": 421630085349097,
+							"parameters": {
+								"object": "UIPanel"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIPanel",
+							"sid": 608367655887586,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"commandsPanel\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Command",
+							"sid": 313977350627843,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Command",
+							"sid": 854805055100574,
+							"parameters": {
+								"layer": "\"CommandList\""
+							}
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Command",
+							"sid": 884123742516898,
+							"parameters": {
+								"blend-mode": "source-atop"
+							}
+						}
+					],
+					"sid": 455242856959221
 				},
 				{
-					"id": "set-position",
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 945894043664434
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Command",
+							"sid": 858869098186667
+						}
+					],
+					"sid": 895959632758028
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drag-start",
 					"objectClass": "Command",
-					"sid": 785242239841400,
+					"sid": 855505847359505,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "createNewCommandObject",
+					"sid": 566963029783584,
+					"parameters": [
+						"Command.ObjectTypeName",
+						"Command.originX",
+						"Command.originY",
+						"Command.AnimationFrame"
+					]
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "Command",
+					"sid": 197591843971432
+				}
+			],
+			"sid": 113611364535717,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Command",
+							"sid": 955153898084926,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "Command",
+							"sid": 233136363271591,
+							"parameters": {
+								"layer": "\"UI\""
+							}
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Command",
+							"sid": 115784038497202,
+							"parameters": {
+								"blend-mode": "normal"
+							}
+						},
+						{
+							"type": "script",
+							"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+						}
+					],
+					"sid": 998704585696578
+				}
+			]
+		},
+		{
+			"functionName": "createNewCommandObject",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "objectTypeName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 279397482552838
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 423610438519916
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 946925253570329
+				},
+				{
+					"name": "frame",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 693891882739728
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object-by-name",
+					"objectClass": "System",
+					"sid": 864949875719338,
 					"parameters": {
-						"x": "Self.originX",
-						"y": "Self.originY"
+						"object-name": "objectTypeName",
+						"layer": "\"UI\"",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
 					}
 				}
 			],
-			"sid": 796003700647405
+			"sid": 881980023110168,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 550522857660002,
+							"parameters": {
+								"object": "Command"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Command",
+							"sid": 925273520850015,
+							"parameters": {
+								"frame-number": "frame"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 420375771419731,
+							"parameters": {
+								"instance-variable": "originX",
+								"value": "Self.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 142004539102978,
+							"parameters": {
+								"instance-variable": "originY",
+								"value": "Self.Y"
+							}
+						}
+					],
+					"sid": 187288705764473
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -270,6 +498,15 @@
 				}
 			],
 			"sid": 537210512704320
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "UI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 519897372182808
 		}
 	],
 	"sid": 808040494368574
