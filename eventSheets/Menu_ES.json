@@ -1,0 +1,148 @@
+{
+	"name": "Menu_ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 169874173999834
+				}
+			],
+			"actions": [],
+			"sid": 514121468304681,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 761341025484329,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 201322949142300,
+							"parameters": {
+								"text": "\"Version \" & projectversion"
+							}
+						}
+					],
+					"sid": 372872872820150
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 439656907040346,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 840069895576427,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 336936763768688,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 787328196129845,
+							"parameters": {
+								"layout": "TestGane"
+							}
+						}
+					],
+					"sid": 111966015810948
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 394584524015384,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"fullscreen\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 857681267950778,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 724488189148789
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 214007161232669
+								}
+							],
+							"sid": 210420907542187
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 261891741650464
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 691772179176159,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "hide"
+									}
+								}
+							],
+							"sid": 525998299005168
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 170200532006030
+}

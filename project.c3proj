@@ -37,6 +37,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -74,7 +81,8 @@
 			"Button",
 			"Touch",
 			"VSCodePlugin",
-			"Browser"
+			"Browser",
+			"SpriteFont"
 		],
 		"subfolders": []
 	},
@@ -88,13 +96,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"TestGane",
+			"Menu"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Game_ES",
+			"Menu_ES"
 		],
 		"subfolders": []
 	},
@@ -254,7 +264,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "1.0.0.0",
+		"version": "0.0.1",
 		"author": "RushHourDream",
 		"authorEmail": "",
 		"authorWebsite": "",
@@ -307,5 +317,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": null
+	"firstLayout": "Menu"
 }

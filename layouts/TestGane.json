@@ -1,5 +1,5 @@
 {
-	"name": "Layout 1",
+	"name": "TestGane",
 	"layers": [
 		{
 			"name": "BG",
@@ -276,7 +276,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1024,
@@ -454,5 +456,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Event sheet 1"
+	"eventSheet": "Game_ES"
 }

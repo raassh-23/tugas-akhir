@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 1",
+	"name": "Game_ES",
 	"events": [
 		{
 			"functionName": "moveUp",
@@ -498,15 +498,6 @@
 				}
 			],
 			"sid": 537210512704320
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "UI",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [],
-			"sid": 519897372182808
 		}
 	],
 	"sid": 808040494368574
