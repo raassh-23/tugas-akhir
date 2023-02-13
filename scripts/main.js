@@ -1,11 +1,11 @@
-
-// Import any other script files here, e.g.:
-// import * as myModule from "./mymodule.js";
+import {MoveCommand} from "./Commands/index.js";
 
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
+	
+	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 });

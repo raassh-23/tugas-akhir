@@ -8,6 +8,14 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "EdwardBonnett_VsCodePlugin",
+			"name": "VS Code Plugin",
+			"author": "Edward Bonnett",
+			"bundled": false,
+			"version": "1.0.0.1"
+		},
+		{
+			"type": "plugin",
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
@@ -57,7 +65,8 @@
 			"UIPanel",
 			"MoveCommand",
 			"Button",
-			"Touch"
+			"Touch",
+			"VSCodePlugin"
 		],
 		"subfolders": []
 	},

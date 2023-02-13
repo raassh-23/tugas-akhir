@@ -229,136 +229,27 @@
 			"conditions": [
 				{
 					"id": "on-drop",
-					"objectClass": "MoveCommand",
+					"objectClass": "Command",
 					"sid": 666898379610035,
 					"behaviorType": "DragDrop"
 				}
 			],
-			"actions": [],
-			"sid": 796003700647405,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Command",
-							"sid": 105179929870936,
-							"parameters": {
-								"object": "UIPanel"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 678994180359844,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "MoveCommand",
-									"sid": 974515072750979,
-									"parameters": {
-										"comparison": 0,
-										"number": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "addToCommands(new MoveCommand(\"left\"));"
-								}
-							],
-							"sid": 725400070238276
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "MoveCommand",
-									"sid": 909528943589016,
-									"parameters": {
-										"comparison": 0,
-										"number": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "addToCommands(new MoveCommand(\"up\"));"
-								}
-							],
-							"sid": 482945033411175
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "MoveCommand",
-									"sid": 494935435715340,
-									"parameters": {
-										"comparison": 0,
-										"number": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "addToCommands(new MoveCommand(\"right\"));"
-								}
-							],
-							"sid": 777777196964929
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "MoveCommand",
-									"sid": 373196819765697,
-									"parameters": {
-										"comparison": 0,
-										"number": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "addToCommands(new MoveCommand(\"down\"));"
-								}
-							],
-							"sid": 762193026210717
-						}
-					]
+					"type": "script",
+					"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
 				},
 				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"type": "script",
-							"script": "console.log(commands);"
-						},
-						{
-							"id": "set-position",
-							"objectClass": "MoveCommand",
-							"sid": 592338202922571,
-							"parameters": {
-								"x": "Self.originX",
-								"y": "Self.originY"
-							}
-						}
-					],
-					"sid": 327440917415036
+					"id": "set-position",
+					"objectClass": "Command",
+					"sid": 785242239841400,
+					"parameters": {
+						"x": "Self.originX",
+						"y": "Self.originY"
+					}
 				}
-			]
+			],
+			"sid": 796003700647405
 		},
 		{
 			"eventType": "block",

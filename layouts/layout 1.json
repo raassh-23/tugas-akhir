@@ -201,7 +201,8 @@
 					"uid": 5,
 					"instanceVariables": {
 						"originX": 0,
-						"originY": 0
+						"originY": 0,
+						"isActive": false
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -269,7 +270,8 @@
 					"uid": 7,
 					"instanceVariables": {
 						"originX": 0,
-						"originY": 0
+						"originY": 0,
+						"isActive": false
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -308,7 +310,8 @@
 					"uid": 8,
 					"instanceVariables": {
 						"originX": 0,
-						"originY": 0
+						"originY": 0,
+						"isActive": false
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -347,7 +350,8 @@
 					"uid": 9,
 					"instanceVariables": {
 						"originX": 0,
-						"originY": 0
+						"originY": 0,
+						"isActive": false
 					},
 					"behaviors": {
 						"DragDrop": {

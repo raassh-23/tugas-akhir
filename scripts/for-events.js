@@ -21,9 +21,6 @@ function addToCommands(command) {
 	}
 }
 
-/**
- * 
- */
 function emptyCommands() {
 	commands.length = 0;
 }

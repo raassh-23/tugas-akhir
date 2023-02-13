@@ -1,9 +1,10 @@
-export default class BaseCommand {
+export default class BaseCommand extends ISpriteInstance {
     /**
      * 
      * @param {string} name 
      */
     constructor(name) {
+		super();
         this.name = name;
     }
 
