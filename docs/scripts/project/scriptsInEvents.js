@@ -1,4 +1,5 @@
 import {BaseCommand, MoveCommand} from "./Commands/index.js";
+import {insertToSortedArray} from "./utils.js";
 
 /**
  *
@@ -16,9 +17,19 @@ let isRunning = false;
  * @param {BaseCommand} command 
  */
 function addToCommands(command) {
-	if (command instanceof BaseCommand) {
-		commands.push(command);
+	if (!(command instanceof BaseCommand)) {
+		throw new Error("command must be an instance of BaseCommand");
 	}
+
+	insertToSortedArray(command, commands, (a, b) => {
+		if (a.x < b.x) {
+			return -1;
+		} else if (a.x > b.x) {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
 }
 
 /**
@@ -57,25 +68,25 @@ async function runCommands(player) {
 
 const scriptsInEvents = {
 
-	async Game_es_Event11_Act1(runtime, localVars)
+	async Game_es_Event12_Act1(runtime, localVars)
 	{
 		addToCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 		
 	},
 
-	async Game_es_Event14_Act3(runtime, localVars)
+	async Game_es_Event16_Act4(runtime, localVars)
 	{
 		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 	},
 
-	async Game_es_Event17_Act1(runtime, localVars)
+	async Game_es_Event19_Act1(runtime, localVars)
 	{
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event18_Act1(runtime, localVars)
+	async Game_es_Event20_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		runCommands(runtime.objects.Player.getFirstInstance());
