@@ -1,3 +1,6 @@
+/**
+ * @extends ISpriteInstance
+ */
 export default class BaseCommand extends ISpriteInstance {
     /**
      * 

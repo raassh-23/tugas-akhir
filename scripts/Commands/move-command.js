@@ -1,6 +1,9 @@
 import BaseCommand from "./base-command.js";
 import {waitForMillisecond} from "../utils.js";
 
+/**
+ * @extends BaseCommand
+ */
 export default class MoveCommand extends BaseCommand {
     constructor() {
         super("Move");
