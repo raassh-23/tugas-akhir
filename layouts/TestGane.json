@@ -194,6 +194,46 @@
 								"angle": 0,
 								"zElevation": 0
 							}
+						},
+						{
+							"type": "ScrollablePanel",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 16,
+							"instanceVariables": {
+								"min": 0,
+								"max": 0,
+								"initialWidth": 0
+							},
+							"behaviors": {
+								"DragDrop": {
+									"properties": {
+										"axes": "horizontal-only",
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 359.8386743362155,
+								"y": 480.1679492391079,
+								"width": 560.0758402825941,
+								"height": 149.3663337529823,
+								"originX": 0,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
 						}
 					],
 					"sid": 289318118739304,
@@ -237,8 +277,8 @@
 					},
 					"uid": 5,
 					"instanceVariables": {
-						"originX": 0,
-						"originY": 0,
+						"initialX": 0,
+						"initialY": 0,
 						"isActive": false
 					},
 					"behaviors": {
@@ -250,11 +290,11 @@
 						}
 					},
 					"world": {
-						"x": 1203,
+						"x": 1148,
 						"y": 100,
 						"width": 96,
 						"height": 96,
-						"originX": 0.5,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -308,8 +348,8 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"originX": 0,
-						"originY": 0,
+						"initialX": 0,
+						"initialY": 0,
 						"isActive": false
 					},
 					"behaviors": {
@@ -321,11 +361,11 @@
 						}
 					},
 					"world": {
-						"x": 1203,
+						"x": 1148,
 						"y": 207,
 						"width": 96,
 						"height": 96,
-						"originX": 0.5,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -348,8 +388,8 @@
 					},
 					"uid": 8,
 					"instanceVariables": {
-						"originX": 0,
-						"originY": 0,
+						"initialX": 0,
+						"initialY": 0,
 						"isActive": false
 					},
 					"behaviors": {
@@ -361,11 +401,11 @@
 						}
 					},
 					"world": {
-						"x": 1203,
+						"x": 1148,
 						"y": 317,
 						"width": 96,
 						"height": 96,
-						"originX": 0.5,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -388,8 +428,8 @@
 					},
 					"uid": 9,
 					"instanceVariables": {
-						"originX": 0,
-						"originY": 0,
+						"initialX": 0,
+						"initialY": 0,
 						"isActive": false
 					},
 					"behaviors": {
@@ -401,11 +441,11 @@
 						}
 					},
 					"world": {
-						"x": 1203,
+						"x": 1148,
 						"y": 435,
 						"width": 96,
 						"height": 96,
-						"originX": 0.5,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,

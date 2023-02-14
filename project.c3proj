@@ -82,7 +82,8 @@
 			"Touch",
 			"VSCodePlugin",
 			"Browser",
-			"SpriteFont"
+			"SpriteFont",
+			"ScrollablePanel"
 		],
 		"subfolders": []
 	},

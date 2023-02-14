@@ -1,0 +1,65 @@
+{
+	"name": "ScrollablePanel",
+	"plugin-id": "Sprite",
+	"sid": 390367710834803,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "min",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 261314447678814
+		},
+		{
+			"name": "max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 666949730761749
+		},
+		{
+			"name": "initialWidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 118999544947594
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 575969657046423
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4966515,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 750340825339831,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
