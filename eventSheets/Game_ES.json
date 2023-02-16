@@ -250,10 +250,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "ScrollablePanel",
-							"sid": 424452364556606,
+							"sid": 324087897978643,
 							"parameters": {
 								"instance-variable": "min",
-								"value": "Self.min"
+								"value": "Self.max"
 							}
 						},
 						{
@@ -392,25 +392,36 @@
 							"behaviorType": "DragDrop"
 						}
 					],
-					"actions": [
-						{
-							"callFunction": "createNewCommandObject",
-							"sid": 673383028957196,
-							"parameters": [
-								"Command.ObjectTypeName",
-								"Command.initialX",
-								"Command.initialY",
-								"Command.AnimationFrame"
-							]
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "Command",
-							"sid": 376942251006387
-						}
-					],
+					"actions": [],
 					"sid": 641087374043138,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Command",
+									"sid": 712275670171106,
+									"parameters": {
+										"instance-variable": "isActive"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createNewCommandObject",
+									"sid": 996254565049445,
+									"parameters": [
+										"Command.ObjectTypeName",
+										"Command.initialX",
+										"Command.initialY",
+										"Command.AnimationFrame"
+									]
+								}
+							],
+							"sid": 289469511839907
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -423,34 +434,98 @@
 									}
 								}
 							],
+							"actions": [],
+							"sid": 372696594635123,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 300179525254491,
+											"parameters": {
+												"object": "UIPanel"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "remove-from-parent",
+											"objectClass": "Command",
+											"sid": 707855036007148
+										},
+										{
+											"id": "move-to-layer",
+											"objectClass": "Command",
+											"sid": 749269800697162,
+											"parameters": {
+												"layer": "\"UI\""
+											}
+										},
+										{
+											"id": "set-blend-mode",
+											"objectClass": "Command",
+											"sid": 571256640302859,
+											"parameters": {
+												"blend-mode": "normal"
+											}
+										},
+										{
+											"type": "script",
+											"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+										}
+									],
+									"sid": 591649435486032
+								},
+								{
+									"eventType": "comment",
+									"text": "workaround for drop, since it will trigger on drop otherwise"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 940267284248343
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Command",
+											"sid": 609490492999860,
+											"behaviorType": "DragDrop",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Command",
+											"sid": 970682283920821,
+											"behaviorType": "DragDrop",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 374792689799459
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
 							"actions": [
 								{
-									"id": "remove-from-parent",
+									"id": "move-to-top",
 									"objectClass": "Command",
-									"sid": 899094208026945
-								},
-								{
-									"id": "move-to-layer",
-									"objectClass": "Command",
-									"sid": 883358682279804,
-									"parameters": {
-										"layer": "\"UI\""
-									}
-								},
-								{
-									"id": "set-blend-mode",
-									"objectClass": "Command",
-									"sid": 553021473088336,
-									"parameters": {
-										"blend-mode": "normal"
-									}
-								},
-								{
-									"type": "script",
-									"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+									"sid": 389499011675880
 								}
 							],
-							"sid": 372696594635123
+							"sid": 117043007869998
 						}
 					]
 				},
@@ -620,6 +695,35 @@
 						}
 					],
 					"sid": 323569093164634
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drag-start",
+							"objectClass": "ScrollablePanel",
+							"sid": 613890128071889,
+							"behaviorType": "DragDrop"
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 433370040783556,
+							"parameters": {
+								"object": "UIPanel"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "drop",
+							"objectClass": "ScrollablePanel",
+							"sid": 789836690437909,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"sid": 246482732956990
 				},
 				{
 					"functionName": "SetCommandScrollablePanelWitdh",

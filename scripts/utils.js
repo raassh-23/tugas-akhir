@@ -21,16 +21,16 @@ export function waitForMillisecond(ms) {
  * 
  * @param {*} item 
  * @param {Array} array 
- * @param {CompareFunction} compareFunction 
- * @returns 
+ * @param {CompareFunction} comparer 
+ * @returns index of the first element in array that is greater than or equal to item
  */
-function findLocationToInsert(item, array, compareFunction) {
+function findLocationToInsert(item, array, comparer) {
 	let low = 0;
 	let high = array.length;
 
 	while(low < high) {
 		const mid = (low + high) >>> 1;
-		if(compareFunction(array[mid], item) < 0) {
+		if(comparer(array[mid], item) < 0) {
 			low = mid + 1;
 		} else {
 			high = mid;
@@ -44,8 +44,8 @@ function findLocationToInsert(item, array, compareFunction) {
  * 
  * @param {*} item 
  * @param {Array} array 
- * @param {CompareFunction} compareFunction 
+ * @param {CompareFunction} comparer 
  */
-export function insertToSortedArray(item, array, compareFunction) {
-	array.splice(findLocationToInsert(item, array, compareFunction), 0, item);
+export function insertToSortedArray(item, array, comparer) {
+	array.splice(findLocationToInsert(item, array, comparer), 0, item);
 }
