@@ -40,6 +40,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "ShadowSpawnPoint",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					},
 					{
@@ -72,6 +79,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "ShadowSpawnPoint",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					},
 					{
@@ -104,6 +118,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "ShadowSpawnPoint",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					},
 					{
@@ -136,6 +157,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "ShadowSpawnPoint",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					}
 				],

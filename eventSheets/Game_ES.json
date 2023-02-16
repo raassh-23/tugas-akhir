@@ -264,270 +264,17 @@
 								"instance-variable": "initialWidth",
 								"value": "Self.Width"
 							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "CommandShadow",
+							"sid": 111586836730734,
+							"parameters": {
+								"opacity": "0"
+							}
 						}
 					],
 					"sid": 612593316670721
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-drop",
-							"objectClass": "Command",
-							"sid": 383493508569320,
-							"behaviorType": "DragDrop"
-						}
-					],
-					"actions": [],
-					"sid": 700328896884350,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Command",
-									"sid": 698934258384565,
-									"parameters": {
-										"object": "UIPanel"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 918761015102374,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"commandsPanel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Command",
-									"sid": 206355603819325,
-									"parameters": {
-										"instance-variable": "isActive",
-										"value": "true"
-									}
-								},
-								{
-									"id": "move-to-layer",
-									"objectClass": "Command",
-									"sid": 562886024540143,
-									"parameters": {
-										"layer": "\"CommandList\""
-									}
-								},
-								{
-									"id": "set-blend-mode",
-									"objectClass": "Command",
-									"sid": 765772568712912,
-									"parameters": {
-										"blend-mode": "source-atop"
-									}
-								},
-								{
-									"id": "add-child",
-									"objectClass": "ScrollablePanel",
-									"sid": 360137187847112,
-									"parameters": {
-										"child": "Command",
-										"transform-x": true,
-										"transform-y": false,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-z-elevation": false,
-										"destroy-with-parent": false
-									}
-								}
-							],
-							"sid": 467262502036328
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 918843759382303
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Command",
-									"sid": 530019295501329
-								}
-							],
-							"sid": 839084713117325
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"callFunction": "SetCommandScrollablePanelWitdh",
-									"sid": 901467777076094
-								}
-							],
-							"sid": 564390162512832
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-drag-start",
-							"objectClass": "Command",
-							"sid": 618246936001794,
-							"behaviorType": "DragDrop"
-						}
-					],
-					"actions": [],
-					"sid": 641087374043138,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Command",
-									"sid": 712275670171106,
-									"parameters": {
-										"instance-variable": "isActive"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "createNewCommandObject",
-									"sid": 996254565049445,
-									"parameters": [
-										"Command.ObjectTypeName",
-										"Command.initialX",
-										"Command.initialY",
-										"Command.AnimationFrame"
-									]
-								}
-							],
-							"sid": 289469511839907
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Command",
-									"sid": 276283995403005,
-									"parameters": {
-										"instance-variable": "isActive"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 372696594635123,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-touching-object",
-											"objectClass": "Touch",
-											"sid": 300179525254491,
-											"parameters": {
-												"object": "UIPanel"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "remove-from-parent",
-											"objectClass": "Command",
-											"sid": 707855036007148
-										},
-										{
-											"id": "move-to-layer",
-											"objectClass": "Command",
-											"sid": 749269800697162,
-											"parameters": {
-												"layer": "\"UI\""
-											}
-										},
-										{
-											"id": "set-blend-mode",
-											"objectClass": "Command",
-											"sid": 571256640302859,
-											"parameters": {
-												"blend-mode": "normal"
-											}
-										},
-										{
-											"type": "script",
-											"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
-										}
-									],
-									"sid": 591649435486032
-								},
-								{
-									"eventType": "comment",
-									"text": "workaround for drop, since it will trigger on drop otherwise"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 940267284248343
-										}
-									],
-									"actions": [
-										{
-											"id": "set-enabled",
-											"objectClass": "Command",
-											"sid": 609490492999860,
-											"behaviorType": "DragDrop",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Command",
-											"sid": 970682283920821,
-											"behaviorType": "DragDrop",
-											"parameters": {
-												"state": "enabled"
-											}
-										}
-									],
-									"sid": 374792689799459
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "move-to-top",
-									"objectClass": "Command",
-									"sid": 389499011675880
-								}
-							],
-							"sid": 117043007869998
-						}
-					]
 				},
 				{
 					"functionName": "createNewCommandObject",
@@ -572,7 +319,7 @@
 						{
 							"id": "create-object-by-name",
 							"objectClass": "System",
-							"sid": 993146551935895,
+							"sid": 658227038193732,
 							"parameters": {
 								"object-name": "objectTypeName",
 								"layer": "\"UI\"",
@@ -583,7 +330,7 @@
 							}
 						}
 					],
-					"sid": 889496918531205,
+					"sid": 775124699191080,
 					"children": [
 						{
 							"eventType": "block",
@@ -591,7 +338,7 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 822256375258890,
+									"sid": 976808798867642,
 									"parameters": {
 										"object": "Command"
 									}
@@ -601,7 +348,7 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Command",
-									"sid": 504538873791277,
+									"sid": 879192154314816,
 									"parameters": {
 										"frame-number": "frame"
 									}
@@ -609,7 +356,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Command",
-									"sid": 953381067133801,
+									"sid": 180112256291289,
 									"parameters": {
 										"instance-variable": "initialX",
 										"value": "Self.X"
@@ -618,14 +365,14 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Command",
-									"sid": 900108918664183,
+									"sid": 225001440206615,
 									"parameters": {
 										"instance-variable": "initialY",
 										"value": "Self.Y"
 									}
 								}
 							],
-							"sid": 112623224569489,
+							"sid": 130608887142157,
 							"children": [
 								{
 									"eventType": "block",
@@ -633,7 +380,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 908165031211802,
+											"sid": 587496417225185,
 											"parameters": {
 												"first-value": "Command.ObjectTypeName",
 												"comparison": 0,
@@ -647,9 +394,654 @@
 											"script": "runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();"
 										}
 									],
-									"sid": 593438532772530
+									"sid": 789382506262238
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "TODO: fix command not properly shifting, stuttering command"
+				},
+				{
+					"functionName": "showCommandShadow",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 327133150412776
+						},
+						{
+							"name": "draggedCommandWidth",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 482805332625321
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 298632454467557,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "CommandShadow",
+									"sid": 813244115363577,
+									"parameters": {
+										"unique-id": "uid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "CommandShadow",
+									"sid": 314141211125131,
+									"parameters": {
+										"opacity": "75"
+									}
+								}
+							],
+							"sid": 998421297469759,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-dragging",
+											"objectClass": "Command",
+											"sid": 330863673430192,
+											"behaviorType": "DragDrop",
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Command",
+											"sid": 239354596858316,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										},
+										{
+											"id": "compare-x",
+											"objectClass": "Command",
+											"sid": 238083495748871,
+											"parameters": {
+												"comparison": 5,
+												"x-co-ordinate": "CommandShadow.X"
+											}
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "Command",
+											"sid": 132804532749467,
+											"parameters": {
+												"which": "nearest",
+												"x": "CommandShadow.X",
+												"y": "CommandShadow.Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Command",
+											"sid": 930293458918411,
+											"parameters": {
+												"x": "CommandShadow.X + draggedCommandWidth"
+											}
+										}
+									],
+									"sid": 569952546058085
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "CommandShadow",
+									"sid": 938456325680248,
+									"parameters": {
+										"unique-id": "uid"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 875661339885014,
+									"parameters": {
+										"object": "CommandShadow",
+										"expression": "CommandShadow.X",
+										"order": "descending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "CommandShadow",
+									"sid": 964220239214469,
+									"parameters": {
+										"opacity": "0"
+									}
+								}
+							],
+							"sid": 203613507481979,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-dragging",
+											"objectClass": "Command",
+											"sid": 845869898302274,
+											"behaviorType": "DragDrop",
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Command",
+											"sid": 877552878192309,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										},
+										{
+											"id": "compare-x",
+											"objectClass": "Command",
+											"sid": 576511519214665,
+											"parameters": {
+												"comparison": 5,
+												"x-co-ordinate": "CommandShadow.X"
+											}
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "Command",
+											"sid": 900893311126179,
+											"parameters": {
+												"which": "nearest",
+												"x": "CommandShadow.X",
+												"y": "CommandShadow.Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Command",
+											"sid": 693050733401849,
+											"parameters": {
+												"x": "CommandShadow.X"
+											}
+										}
+									],
+									"sid": 328738449476509
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drag-start",
+							"objectClass": "Command",
+							"sid": 249464404143076,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [],
+					"sid": 811373202969291,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Command",
+									"sid": 347680113814877,
+									"parameters": {
+										"instance-variable": "isActive"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createNewCommandObject",
+									"sid": 204569934009478,
+									"parameters": [
+										"Command.ObjectTypeName",
+										"Command.initialX",
+										"Command.initialY",
+										"Command.AnimationFrame"
+									]
+								}
+							],
+							"sid": 533340994905365
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Command",
+									"sid": 555457736080578,
+									"parameters": {
+										"instance-variable": "isActive"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 934737425477635,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 934297530120936,
+											"parameters": {
+												"object": "UIPanel"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 254500749333773,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"commandsPanel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "remove-from-parent",
+											"objectClass": "Command",
+											"sid": 730830104050229
+										},
+										{
+											"id": "move-to-layer",
+											"objectClass": "Command",
+											"sid": 273633062603445,
+											"parameters": {
+												"layer": "\"UI\""
+											}
+										},
+										{
+											"id": "set-blend-mode",
+											"objectClass": "Command",
+											"sid": 764546903453038,
+											"parameters": {
+												"blend-mode": "normal"
+											}
+										},
+										{
+											"type": "script",
+											"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+										}
+									],
+									"sid": 692637836538978,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Command",
+													"sid": 653077581238891,
+													"parameters": {
+														"child": "CommandShadow",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "CommandShadow",
+													"sid": 306957793277917
+												}
+											],
+											"sid": 770886430502195
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "workaround for drop, since it will trigger on drop otherwise"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 365572465466213
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Command",
+											"sid": 605607121996002,
+											"behaviorType": "DragDrop",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Command",
+											"sid": 282564673819015,
+											"behaviorType": "DragDrop",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 937875627465710
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "Command",
+									"sid": 991904620892738
+								}
+							],
+							"sid": 926201958781590
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "Command",
+							"sid": 105475288078458,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [],
+					"sid": 601895820222359,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Command",
+									"sid": 449688868599534,
+									"parameters": {
+										"object": "UIPanel"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 977129523212725,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"commandsPanel\""
+									}
+								},
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "CommandShadow",
+									"sid": 538123399290867,
+									"parameters": {
+										"which": "nearest",
+										"x": "Command.X",
+										"y": "Command.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "showCommandShadow",
+									"sid": 995549491188410,
+									"parameters": [
+										"CommandShadow.UID",
+										"Command.Width"
+									]
+								}
+							],
+							"sid": 519996175298180
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 334739427962197
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "since there's no 0 uid, this will reset all"
+								},
+								{
+									"callFunction": "showCommandShadow",
+									"sid": 618320763081758,
+									"parameters": [
+										"0",
+										"0"
+									]
+								}
+							],
+							"sid": 441139817013168
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drop",
+							"objectClass": "Command",
+							"sid": 383493508569320,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [],
+					"sid": 700328896884350,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Command",
+									"sid": 698934258384565,
+									"parameters": {
+										"object": "UIPanel"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 918761015102374,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"commandsPanel\""
+									}
+								},
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "CommandShadow",
+									"sid": 899176136579953,
+									"parameters": {
+										"which": "nearest",
+										"x": "Command.X",
+										"y": "Command.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "Command",
+									"sid": 755032257453219,
+									"parameters": {
+										"object": "CommandShadow",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Command",
+									"sid": 206355603819325,
+									"parameters": {
+										"instance-variable": "isActive",
+										"value": "true"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "Command",
+									"sid": 562886024540143,
+									"parameters": {
+										"layer": "\"CommandList\""
+									}
+								},
+								{
+									"id": "set-blend-mode",
+									"objectClass": "Command",
+									"sid": 765772568712912,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "ScrollablePanel",
+									"sid": 360137187847112,
+									"parameters": {
+										"child": "Command",
+										"transform-x": true,
+										"transform-y": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-z-elevation": false,
+										"destroy-with-parent": false
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Command",
+									"sid": 695789427003901,
+									"parameters": {
+										"object": "CommandShadow",
+										"layer": "\"CommandList\"",
+										"image-point": "\"ShadowSpawnPoint\"",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Command",
+									"sid": 793695583138709,
+									"parameters": {
+										"child": "CommandShadow",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-z-elevation": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-blend-mode",
+									"objectClass": "CommandShadow",
+									"sid": 682884179397511,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "CommandShadow",
+									"sid": 171480589463892,
+									"parameters": {
+										"opacity": "0"
+									}
+								}
+							],
+							"sid": 467262502036328
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 918843759382303
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Command",
+									"sid": 530019295501329
+								}
+							],
+							"sid": 839084713117325
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "showCommandShadow",
+									"sid": 526795356845879,
+									"parameters": [
+										"0",
+										"0"
+									]
+								},
+								{
+									"callFunction": "SetCommandScrollablePanelWitdh",
+									"sid": 901467777076094
+								}
+							],
+							"sid": 564390162512832
 						}
 					]
 				},
@@ -677,6 +1069,35 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-drag-start",
+							"objectClass": "ScrollablePanel",
+							"sid": 831990673460892,
+							"behaviorType": "DragDrop"
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 109613518947363,
+							"parameters": {
+								"object": "UIPanel"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "drop",
+							"objectClass": "ScrollablePanel",
+							"sid": 967522210840741,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"sid": 278854673642972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "is-dragging",
 							"objectClass": "ScrollablePanel",
 							"sid": 411143449150556,
@@ -695,35 +1116,6 @@
 						}
 					],
 					"sid": 323569093164634
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-drag-start",
-							"objectClass": "ScrollablePanel",
-							"sid": 613890128071889,
-							"behaviorType": "DragDrop"
-						},
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 433370040783556,
-							"parameters": {
-								"object": "UIPanel"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "drop",
-							"objectClass": "ScrollablePanel",
-							"sid": 789836690437909,
-							"behaviorType": "DragDrop"
-						}
-					],
-					"sid": 246482732956990
 				},
 				{
 					"functionName": "SetCommandScrollablePanelWitdh",

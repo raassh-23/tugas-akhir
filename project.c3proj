@@ -83,7 +83,9 @@
 			"VSCodePlugin",
 			"Browser",
 			"SpriteFont",
-			"ScrollablePanel"
+			"ScrollablePanel",
+			"StartCommand",
+			"CommandShadow"
 		],
 		"subfolders": []
 	},
