@@ -68,25 +68,25 @@ async function runCommands(player) {
 
 const scriptsInEvents = {
 
-	async Game_es_Event12_Act1(runtime, localVars)
+	async Game_es_Event13_Act1(runtime, localVars)
+	{
+		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
+	},
+
+	async Game_es_Event22_Act4(runtime, localVars)
+	{
+		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
+		console.log(commands);
+	},
+
+	async Game_es_Event30_Act1(runtime, localVars)
 	{
 		addToCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 		
 	},
 
-	async Game_es_Event16_Act4(runtime, localVars)
-	{
-		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
-		console.log(commands);
-	},
-
-	async Game_es_Event19_Act1(runtime, localVars)
-	{
-		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
-	},
-
-	async Game_es_Event20_Act1(runtime, localVars)
+	async Game_es_Event33_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		runCommands(runtime.objects.Player.getFirstInstance());

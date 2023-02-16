@@ -4208,34 +4208,45 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Exps.Width,
-		C3.Behaviors.DragnDrop.Cnds.OnDrop,
-		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event12_Act1,
-		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
-		C3.Plugins.Sprite.Acts.MoveToLayer,
-		C3.Plugins.Sprite.Acts.SetEffect,
-		C3.Plugins.Sprite.Acts.AddChild,
-		C3.Plugins.System.Cnds.Else,
-		C3.Plugins.Sprite.Acts.Destroy,
-		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
-		C3.Plugins.Sprite.Exps.ObjectTypeName,
-		C3.Plugins.Sprite.Exps.AnimationFrame,
-		C3.Plugins.Sprite.Acts.MoveToTop,
-		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
-		C3.Plugins.Sprite.Acts.RemoveFromParent,
-		C3.ScriptsInEvents.Game_es_Event16_Act4,
+		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
 		C3.Plugins.System.Cnds.Compare,
-		C3.ScriptsInEvents.Game_es_Event19_Act1,
-		C3.Plugins.Touch.Cnds.OnTouchObject,
-		C3.ScriptsInEvents.Game_es_Event20_Act1,
+		C3.Plugins.Sprite.Exps.ObjectTypeName,
+		C3.ScriptsInEvents.Game_es_Event13_Act1,
+		C3.Plugins.Sprite.Cnds.PickByUID,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
+		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
+		C3.Plugins.Sprite.Cnds.CompareX,
+		C3.Plugins.Sprite.Cnds.PickDistance,
 		C3.Plugins.Sprite.Acts.SetX,
-		C3.Plugins.System.Exps.dt,
+		C3.Plugins.System.Cnds.ForEachOrdered,
+		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
+		C3.Plugins.Sprite.Exps.AnimationFrame,
+		C3.Plugins.Touch.Cnds.IsTouchingObject,
+		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
+		C3.Plugins.Sprite.Acts.RemoveFromParent,
+		C3.Plugins.Sprite.Acts.MoveToLayer,
+		C3.Plugins.Sprite.Acts.SetEffect,
+		C3.ScriptsInEvents.Game_es_Event22_Act4,
 		C3.Plugins.Sprite.Cnds.PickChildren,
+		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.System.Cnds.Else,
+		C3.Behaviors.DragnDrop.Acts.SetEnabled,
+		C3.Plugins.Sprite.Acts.MoveToTop,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.Sprite.Exps.UID,
+		C3.Behaviors.DragnDrop.Cnds.OnDrop,
+		C3.ScriptsInEvents.Game_es_Event30_Act1,
+		C3.Plugins.Sprite.Acts.SetPosToObject,
+		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
+		C3.Plugins.Sprite.Acts.AddChild,
+		C3.Plugins.Sprite.Acts.Spawn,
+		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.ScriptsInEvents.Game_es_Event33_Act1,
+		C3.Behaviors.DragnDrop.Acts.Drop,
+		C3.Plugins.System.Exps.dt,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Sprite.Acts.SetWidth,
@@ -4271,12 +4282,16 @@ self.C3_JsPropNameTable = [
 	{initialWidth: 0},
 	{DragDrop: 0},
 	{ScrollablePanel: 0},
+	{StartCommand: 0},
+	{CommandShadow: 0},
 	{Command: 0},
 	{COMMAND_WIDTH_MARGIN: 0},
 	{objectTypeName: 0},
 	{x: 0},
 	{y: 0},
 	{frame: 0},
+	{uid: 0},
+	{draggedCommandWidth: 0},
 	{deltaWidth: 0}
 ];
 }
@@ -4391,17 +4406,24 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
-		() => "commandsPanel",
-		() => "CommandList",
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpInstVar_Family();
-		},
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
 		() => "",
+		() => 75,
+		p => {
+			const n0 = p._GetNode(0);
+			const v1 = p._GetNode(1).GetVar();
+			return () => (n0.ExpObject() + v1.GetValue());
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpInstVar_Family();
+		},
+		() => "commandsPanel",
+		() => "CommandList",
+		() => "ShadowSpawnPoint",
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
