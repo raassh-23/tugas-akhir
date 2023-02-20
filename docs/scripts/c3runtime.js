@@ -4207,6 +4207,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Width,
+		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
@@ -4218,7 +4219,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.PickChildren,
 		C3.ScriptsInEvents.Game_es_Event14_Act1,
 		C3.Plugins.Sprite.Cnds.PickByUID,
-		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Acts.SetPos,
@@ -4230,9 +4230,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Acts.RemoveFromParent,
 		C3.Plugins.Sprite.Acts.MoveToLayer,
-		C3.Plugins.Sprite.Acts.SetEffect,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event27_Act5,
+		C3.Plugins.Sprite.Acts.SetEffect,
+		C3.ScriptsInEvents.Game_es_Event27_Act7,
 		C3.Plugins.System.Cnds.Else,
 		C3.Behaviors.DragnDrop.Acts.SetEnabled,
 		C3.Plugins.Sprite.Acts.MoveToTop,
@@ -4411,7 +4411,6 @@ self.C3_ExpressionFuncs = [
 		() => "",
 		() => "active-commands",
 		() => 75,
-		() => 25,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar_Family();

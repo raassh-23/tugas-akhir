@@ -119,7 +119,7 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event27_Act5(runtime, localVars)
+	async Game_es_Event27_Act7(runtime, localVars)
 	{
 		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);

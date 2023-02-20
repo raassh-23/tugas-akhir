@@ -255,7 +255,6 @@
 							"id": "set-opacity",
 							"objectClass": "CommandShadow",
 							"sid": 111586836730734,
-							"disabled": true,
 							"parameters": {
 								"opacity": "0"
 							}
@@ -491,9 +490,9 @@
 								{
 									"id": "set-opacity",
 									"objectClass": "CommandShadow",
-									"sid": 510869992138844,
+									"sid": 485126092042210,
 									"parameters": {
-										"opacity": "25"
+										"opacity": "0"
 									}
 								}
 							],
@@ -555,9 +554,9 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "CommandShadow",
-							"sid": 859502363069146,
+							"sid": 568496645560215,
 							"parameters": {
-								"opacity": "25"
+								"opacity": "0"
 							}
 						}
 					],
@@ -758,6 +757,14 @@
 									],
 									"actions": [
 										{
+											"type": "comment",
+											"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
+										},
+										{
+											"callFunction": "saveCommandPosition",
+											"sid": 382656864412789
+										},
+										{
 											"id": "remove-from-parent",
 											"objectClass": "Command",
 											"sid": 730830104050229
@@ -771,20 +778,20 @@
 											}
 										},
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Command",
+											"sid": 821091203653935,
+											"parameters": {
+												"instance-variable": "isActive",
+												"value": "false"
+											}
+										},
+										{
 											"id": "set-blend-mode",
 											"objectClass": "Command",
 											"sid": 764546903453038,
 											"parameters": {
 												"blend-mode": "normal"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Command",
-											"sid": 801629733701203,
-											"parameters": {
-												"instance-variable": "isActive",
-												"value": "false"
 											}
 										},
 										{
@@ -800,8 +807,12 @@
 											]
 										},
 										{
+											"type": "comment",
+											"text": "call saveCommandPosition again, after shifting active position without the dragged command"
+										},
+										{
 											"callFunction": "saveCommandPosition",
-											"sid": 325052878382938
+											"sid": 159995061629718
 										}
 									],
 									"sid": 692637836538978
@@ -1105,26 +1116,44 @@
 							"objectClass": "ScrollablePanel",
 							"sid": 831990673460892,
 							"behaviorType": "DragDrop"
-						},
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 109613518947363,
-							"parameters": {
-								"object": "UIPanel"
-							},
-							"isInverted": true
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 278854673642972,
+					"children": [
 						{
-							"id": "drop",
-							"objectClass": "ScrollablePanel",
-							"sid": 967522210840741,
-							"behaviorType": "DragDrop"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 154660383205802,
+									"parameters": {
+										"object": "UIPanel"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 504163108751699,
+									"parameters": {
+										"object": "Command"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "drop",
+									"objectClass": "ScrollablePanel",
+									"sid": 940023178984544,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"sid": 825342567594060,
+							"isOrBlock": true
 						}
-					],
-					"sid": 278854673642972
+					]
 				},
 				{
 					"eventType": "block",
