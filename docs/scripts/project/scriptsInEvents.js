@@ -1,5 +1,5 @@
-import {BaseCommand, MoveCommand} from "./Commands/index.js";
-import {insertToSortedArray} from "./utils.js";
+import { BaseCommand, MoveCommand } from "./Commands/index.js";
+import { insertToSortedArray, getSquaredDistance } from "./utils.js";
 
 /**
  *
@@ -65,6 +65,42 @@ async function runCommands(player) {
 	}
 }
 
+/**
+ * 
+ * @param {BaseCommand} command 
+ * @param {Array.<ICommandShadow>} commandShadows 
+ * @returns {number} uid of command shadow to show, 0 if no command shadow to show
+ */
+function pickCommandShadowToShow(command, commandShadows) {
+	const excludedShadows = []
+
+	for (const shadowChild of command.children()) {
+		excludedShadows.push(shadowChild.uid);
+	}
+
+	commandShadows.sort((a, b) => {
+		const squaredDistanceA = getSquaredDistance(command, a);
+		const squaredDistanceB = getSquaredDistance(command, b);
+
+		if (squaredDistanceA < squaredDistanceB) {
+			return -1;
+		} else if (squaredDistanceA > squaredDistanceB) {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
+
+	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
+
+	if (pickedShadow) {
+		return pickedShadow.uid;
+	} else {
+		return 0;
+	}
+}
+
+
 
 const scriptsInEvents = {
 
@@ -73,20 +109,30 @@ const scriptsInEvents = {
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event22_Act4(runtime, localVars)
+	async Game_es_Event14_Act1(runtime, localVars)
+	{
+		const pickedUid = pickCommandShadowToShow(
+			runtime.objects.Command.getFirstPickedInstance(), 
+			runtime.objects.CommandShadow.getPickedInstances()
+		);
+		
+		runtime.setReturnValue(pickedUid);
+	},
+
+	async Game_es_Event27_Act5(runtime, localVars)
 	{
 		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 	},
 
-	async Game_es_Event30_Act1(runtime, localVars)
+	async Game_es_Event34_Act1(runtime, localVars)
 	{
 		addToCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 		
 	},
 
-	async Game_es_Event33_Act1(runtime, localVars)
+	async Game_es_Event37_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		runCommands(runtime.objects.Player.getFirstInstance());

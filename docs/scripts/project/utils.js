@@ -49,3 +49,13 @@ function findLocationToInsert(item, array, comparer) {
 export function insertToSortedArray(item, array, comparer) {
 	array.splice(findLocationToInsert(item, array, comparer), 0, item);
 }
+
+/**
+ * 
+ * @param {IWorldInstance} a 
+ * @param {IWorldInstance} b 
+ * @returns {number} squared distance between a and b
+ */
+export function getSquaredDistance(a, b) {
+	return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
+}
