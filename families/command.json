@@ -4,14 +4,14 @@
 	"sid": 178475515280175,
 	"instanceVariables": [
 		{
-			"name": "initialX",
+			"name": "savedX",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 536652662132761
 		},
 		{
-			"name": "initialY",
+			"name": "savedY",
 			"type": "number",
 			"desc": "",
 			"show": true,

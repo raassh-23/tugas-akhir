@@ -221,22 +221,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Command",
-							"sid": 940931659215626,
-							"parameters": {
-								"instance-variable": "initialX",
-								"value": "Self.X"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Command",
-							"sid": 576311911575980,
-							"parameters": {
-								"instance-variable": "initialY",
-								"value": "Self.Y"
-							}
+							"callFunction": "saveCommandPosition",
+							"sid": 774172830073117
 						},
 						{
 							"id": "set-instvar-value",
@@ -269,6 +255,7 @@
 							"id": "set-opacity",
 							"objectClass": "CommandShadow",
 							"sid": 111586836730734,
+							"disabled": true,
 							"parameters": {
 								"opacity": "0"
 							}
@@ -319,13 +306,13 @@
 						{
 							"id": "create-object-by-name",
 							"objectClass": "System",
-							"sid": 658227038193732,
+							"sid": 243817164343360,
 							"parameters": {
 								"object-name": "objectTypeName",
 								"layer": "\"UI\"",
 								"x": "x",
 								"y": "y",
-								"create-hierarchy": false,
+								"create-hierarchy": true,
 								"template-name": "\"\""
 							}
 						}
@@ -358,7 +345,7 @@
 									"objectClass": "Command",
 									"sid": 180112256291289,
 									"parameters": {
-										"instance-variable": "initialX",
+										"instance-variable": "savedX",
 										"value": "Self.X"
 									}
 								},
@@ -367,7 +354,7 @@
 									"objectClass": "Command",
 									"sid": 225001440206615,
 									"parameters": {
-										"instance-variable": "initialY",
+										"instance-variable": "savedY",
 										"value": "Self.Y"
 									}
 								}
@@ -405,6 +392,44 @@
 					"text": "TODO: fix command not properly shifting, stuttering command"
 				},
 				{
+					"functionName": "PickCommandShadowToShow",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "ScrollablePanel",
+							"sid": 954684676304424,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"active-commands\""
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "ScrollablePanel",
+							"sid": 263812098766436,
+							"parameters": {
+								"child": "CommandShadow",
+								"which": "all"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const pickedUid = pickCommandShadowToShow(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
+						}
+					],
+					"sid": 789707658009354
+				},
+				{
 					"functionName": "showCommandShadow",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -418,13 +443,6 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 327133150412776
-						},
-						{
-							"name": "draggedCommandWidth",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 482805332625321
 						}
 					],
 					"eventType": "function-block",
@@ -454,59 +472,7 @@
 									}
 								}
 							],
-							"sid": 998421297469759,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-dragging",
-											"objectClass": "Command",
-											"sid": 330863673430192,
-											"behaviorType": "DragDrop",
-											"isInverted": true
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Command",
-											"sid": 239354596858316,
-											"parameters": {
-												"instance-variable": "isActive"
-											}
-										},
-										{
-											"id": "compare-x",
-											"objectClass": "Command",
-											"sid": 238083495748871,
-											"parameters": {
-												"comparison": 5,
-												"x-co-ordinate": "CommandShadow.X"
-											}
-										},
-										{
-											"id": "pick-nearestfurthest",
-											"objectClass": "Command",
-											"sid": 132804532749467,
-											"parameters": {
-												"which": "nearest",
-												"x": "CommandShadow.X",
-												"y": "CommandShadow.Y"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-x",
-											"objectClass": "Command",
-											"sid": 930293458918411,
-											"parameters": {
-												"x": "CommandShadow.X + draggedCommandWidth"
-											}
-										}
-									],
-									"sid": 569952546058085
-								}
-							]
+							"sid": 998421297469759
 						},
 						{
 							"eventType": "block",
@@ -519,81 +485,197 @@
 										"unique-id": "uid"
 									},
 									"isInverted": true
-								},
-								{
-									"id": "for-each-ordered",
-									"objectClass": "System",
-									"sid": 875661339885014,
-									"parameters": {
-										"object": "CommandShadow",
-										"expression": "CommandShadow.X",
-										"order": "descending"
-									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-opacity",
 									"objectClass": "CommandShadow",
-									"sid": 964220239214469,
+									"sid": 510869992138844,
 									"parameters": {
-										"opacity": "0"
+										"opacity": "25"
 									}
 								}
 							],
-							"sid": 203613507481979,
-							"children": [
+							"sid": 203613507481979
+						}
+					]
+				},
+				{
+					"functionName": "saveCommandPosition",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "Command",
+							"sid": 696041845229573,
+							"behaviorType": "DragDrop",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 800911138054229,
+							"parameters": {
+								"instance-variable": "savedX",
+								"value": "Self.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 114148214107483,
+							"parameters": {
+								"instance-variable": "savedY",
+								"value": "Self.Y"
+							}
+						}
+					],
+					"sid": 383783733648612
+				},
+				{
+					"functionName": "resetActiveCommands",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "CommandShadow",
+							"sid": 859502363069146,
+							"parameters": {
+								"opacity": "25"
+							}
+						}
+					],
+					"sid": 330238338554199,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-dragging",
-											"objectClass": "Command",
-											"sid": 845869898302274,
-											"behaviorType": "DragDrop",
-											"isInverted": true
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Command",
-											"sid": 877552878192309,
-											"parameters": {
-												"instance-variable": "isActive"
-											}
-										},
-										{
-											"id": "compare-x",
-											"objectClass": "Command",
-											"sid": 576511519214665,
-											"parameters": {
-												"comparison": 5,
-												"x-co-ordinate": "CommandShadow.X"
-											}
-										},
-										{
-											"id": "pick-nearestfurthest",
-											"objectClass": "Command",
-											"sid": 900893311126179,
-											"parameters": {
-												"which": "nearest",
-												"x": "CommandShadow.X",
-												"y": "CommandShadow.Y"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-x",
-											"objectClass": "Command",
-											"sid": 693050733401849,
-											"parameters": {
-												"x": "CommandShadow.X"
-											}
-										}
-									],
-									"sid": 328738449476509
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Command",
+									"sid": 611127249045276,
+									"parameters": {
+										"instance-variable": "isActive"
+									}
 								}
-							]
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Command",
+									"sid": 836608065403587,
+									"parameters": {
+										"x": "Self.savedX",
+										"y": "Self.savedY"
+									}
+								}
+							],
+							"sid": 345125437250631
+						}
+					]
+				},
+				{
+					"functionName": "shiftActiveCommands",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 332633950558545
+						},
+						{
+							"name": "deltaWidth",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 918415430987728
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Command",
+							"sid": 133769633535903,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 124494746489402,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Command",
+									"sid": 376196354453658,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Command",
+									"sid": 546309123449295,
+									"parameters": {
+										"x": "Self.savedX + deltaWidth"
+									}
+								}
+							],
+							"sid": 571510037337450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Command",
+									"sid": 692935598000045,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Command",
+									"sid": 668518646486197,
+									"parameters": {
+										"x": "Self.savedX"
+									}
+								}
+							],
+							"sid": 176663665618891
 						}
 					]
 				},
@@ -629,8 +711,8 @@
 									"sid": 204569934009478,
 									"parameters": [
 										"Command.ObjectTypeName",
-										"Command.initialX",
-										"Command.initialY",
+										"Command.savedX",
+										"Command.savedY",
 										"Command.AnimationFrame"
 									]
 								}
@@ -697,35 +779,32 @@
 											}
 										},
 										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Command",
+											"sid": 801629733701203,
+											"parameters": {
+												"instance-variable": "isActive",
+												"value": "false"
+											}
+										},
+										{
 											"type": "script",
 											"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+										},
+										{
+											"callFunction": "shiftActiveCommands",
+											"sid": 520299423340473,
+											"parameters": [
+												"Command.X",
+												"-Command.Width"
+											]
+										},
+										{
+											"callFunction": "saveCommandPosition",
+											"sid": 325052878382938
 										}
 									],
-									"sid": 692637836538978,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "Command",
-													"sid": 653077581238891,
-													"parameters": {
-														"child": "CommandShadow",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "CommandShadow",
-													"sid": 306957793277917
-												}
-											],
-											"sid": 770886430502195
-										}
-									]
+									"sid": 692637836538978
 								},
 								{
 									"eventType": "comment",
@@ -813,13 +892,11 @@
 									}
 								},
 								{
-									"id": "pick-nearestfurthest",
+									"id": "pick-by-unique-id",
 									"objectClass": "CommandShadow",
-									"sid": 538123399290867,
+									"sid": 416585136568669,
 									"parameters": {
-										"which": "nearest",
-										"x": "Command.X",
-										"y": "Command.Y"
+										"unique-id": "Functions.PickCommandShadowToShow"
 									}
 								}
 							],
@@ -828,8 +905,15 @@
 									"callFunction": "showCommandShadow",
 									"sid": 995549491188410,
 									"parameters": [
-										"CommandShadow.UID",
-										"Command.Width"
+										"CommandShadow.UID"
+									]
+								},
+								{
+									"callFunction": "shiftActiveCommands",
+									"sid": 252669111632587,
+									"parameters": [
+										"CommandShadow.X",
+										"CommandShadow.Width"
 									]
 								}
 							],
@@ -846,16 +930,8 @@
 							],
 							"actions": [
 								{
-									"type": "comment",
-									"text": "since there's no 0 uid, this will reset all"
-								},
-								{
-									"callFunction": "showCommandShadow",
-									"sid": 618320763081758,
-									"parameters": [
-										"0",
-										"0"
-									]
+									"callFunction": "resetActiveCommands",
+									"sid": 733125477755939
 								}
 							],
 							"sid": 441139817013168
@@ -897,13 +973,11 @@
 									}
 								},
 								{
-									"id": "pick-nearestfurthest",
+									"id": "pick-by-unique-id",
 									"objectClass": "CommandShadow",
-									"sid": 899176136579953,
+									"sid": 955845818909923,
 									"parameters": {
-										"which": "nearest",
-										"x": "Command.X",
-										"y": "Command.Y"
+										"unique-id": "Functions.PickCommandShadowToShow"
 									}
 								}
 							],
@@ -947,6 +1021,10 @@
 									}
 								},
 								{
+									"callFunction": "saveCommandPosition",
+									"sid": 786191275505392
+								},
+								{
 									"id": "add-child",
 									"objectClass": "ScrollablePanel",
 									"sid": 360137187847112,
@@ -959,48 +1037,6 @@
 										"transform-a": false,
 										"transform-z-elevation": false,
 										"destroy-with-parent": false
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Command",
-									"sid": 695789427003901,
-									"parameters": {
-										"object": "CommandShadow",
-										"layer": "\"CommandList\"",
-										"image-point": "\"ShadowSpawnPoint\"",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "add-child",
-									"objectClass": "Command",
-									"sid": 793695583138709,
-									"parameters": {
-										"child": "CommandShadow",
-										"transform-x": true,
-										"transform-y": true,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-z-elevation": false,
-										"destroy-with-parent": true
-									}
-								},
-								{
-									"id": "set-blend-mode",
-									"objectClass": "CommandShadow",
-									"sid": 682884179397511,
-									"parameters": {
-										"blend-mode": "source-atop"
-									}
-								},
-								{
-									"id": "set-opacity",
-									"objectClass": "CommandShadow",
-									"sid": 171480589463892,
-									"parameters": {
-										"opacity": "0"
 									}
 								}
 							],
@@ -1029,12 +1065,8 @@
 							"conditions": [],
 							"actions": [
 								{
-									"callFunction": "showCommandShadow",
-									"sid": 526795356845879,
-									"parameters": [
-										"0",
-										"0"
-									]
+									"callFunction": "resetActiveCommands",
+									"sid": 916117884772811
 								},
 								{
 									"callFunction": "SetCommandScrollablePanelWitdh",

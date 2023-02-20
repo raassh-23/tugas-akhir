@@ -1,5 +1,5 @@
-import {BaseCommand, MoveCommand} from "./Commands/index.js";
-import {insertToSortedArray} from "./utils.js";
+import { BaseCommand, MoveCommand } from "./Commands/index.js";
+import { insertToSortedArray, getSquaredDistance } from "./utils.js";
 
 /**
  *
@@ -62,5 +62,40 @@ async function runCommands(player) {
 		}
 
 		isRunning = false;
+	}
+}
+
+/**
+ * 
+ * @param {BaseCommand} command 
+ * @param {Array.<ICommandShadow>} commandShadows 
+ * @returns {number} uid of command shadow to show, 0 if no command shadow to show
+ */
+function pickCommandShadowToShow(command, commandShadows) {
+	const excludedShadows = []
+
+	for (const shadowChild of command.children()) {
+		excludedShadows.push(shadowChild.uid);
+	}
+
+	commandShadows.sort((a, b) => {
+		const squaredDistanceA = getSquaredDistance(command, a);
+		const squaredDistanceB = getSquaredDistance(command, b);
+
+		if (squaredDistanceA < squaredDistanceB) {
+			return -1;
+		} else if (squaredDistanceA > squaredDistanceB) {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
+
+	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
+
+	if (pickedShadow) {
+		return pickedShadow.uid;
+	} else {
+		return 0;
 	}
 }
