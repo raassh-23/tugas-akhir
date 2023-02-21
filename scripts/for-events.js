@@ -1,5 +1,6 @@
 import { BaseCommand, MoveCommand } from "./Commands/index.js";
-import { insertToSortedArray, getSquaredDistance } from "./utils.js";
+import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
+import { getSquaredDistance } from "./utils/misc.js";
 
 /**
  *
@@ -38,15 +39,11 @@ function addToCommands(command) {
  * 
  */
 function removeFromCommands(command) {
-	const index = commands.indexOf(command);
-
-	if (index > -1) {
-		commands.splice(index, 1);
-	}
+	removeFromArray(command, commands);
 }
 
 function emptyCommands() {
-	commands.length = 0;
+	emptyArray(commands);
 }
 
 /**

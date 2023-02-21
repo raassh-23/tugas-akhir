@@ -115,14 +115,6 @@
 		"script": {
 			"items": [
 				{
-					"name": "utils.js",
-					"type": "application/javascript",
-					"sid": 643506991742681,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "main.js",
 					"type": "application/javascript",
 					"sid": 929006351772999,
@@ -165,10 +157,40 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "repeat-command.js",
+							"type": "application/javascript",
+							"sid": 288352540292147,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
 					"name": "Commands"
+				},
+				{
+					"items": [
+						{
+							"name": "array.js",
+							"type": "application/javascript",
+							"sid": 643506991742681,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "misc.js",
+							"type": "application/javascript",
+							"sid": 877413081297959,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "utils"
 				}
 			]
 		},
