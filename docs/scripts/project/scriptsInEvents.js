@@ -1,5 +1,6 @@
 import { BaseCommand, MoveCommand } from "./Commands/index.js";
-import { insertToSortedArray, getSquaredDistance } from "./utils.js";
+import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
+import { getSquaredDistance } from "./utils/misc.js";
 
 /**
  *
@@ -38,15 +39,11 @@ function addToCommands(command) {
  * 
  */
 function removeFromCommands(command) {
-	const index = commands.indexOf(command);
-
-	if (index > -1) {
-		commands.splice(index, 1);
-	}
+	removeFromArray(command, commands);
 }
 
 function emptyCommands() {
-	commands.length = 0;
+	emptyArray(commands);
 }
 
 /**
@@ -104,12 +101,12 @@ function pickCommandShadowToShow(command, commandShadows) {
 
 const scriptsInEvents = {
 
-	async Game_es_Event13_Act1(runtime, localVars)
+	async Game_es_Event14_Act1(runtime, localVars)
 	{
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event14_Act1(runtime, localVars)
+	async Game_es_Event15_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCommandShadowToShow(
 			runtime.objects.Command.getFirstPickedInstance(), 
@@ -119,20 +116,20 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event27_Act7(runtime, localVars)
+	async Game_es_Event28_Act5(runtime, localVars)
 	{
 		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 	},
 
-	async Game_es_Event34_Act1(runtime, localVars)
+	async Game_es_Event35_Act1(runtime, localVars)
 	{
 		addToCommands(runtime.objects.Command.getFirstPickedInstance());
 		console.log(commands);
 		
 	},
 
-	async Game_es_Event37_Act1(runtime, localVars)
+	async Game_es_Event38_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		runCommands(runtime.objects.Player.getFirstInstance());
