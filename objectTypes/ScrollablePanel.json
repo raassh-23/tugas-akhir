@@ -19,7 +19,7 @@
 			"sid": 666949730761749
 		},
 		{
-			"name": "initialWidth",
+			"name": "initialLength",
 			"type": "number",
 			"desc": "",
 			"show": true,
@@ -31,6 +31,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 588894348316573
+		},
+		{
+			"name": "direction",
+			"type": "string",
+			"desc": "vertical or horizontal",
+			"show": true,
+			"sid": 145641107066961
 		}
 	],
 	"behaviorTypes": [
@@ -38,6 +45,11 @@
 			"behaviorId": "DragnDrop",
 			"name": "DragDrop",
 			"sid": 575969657046423
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 859496360841879
 		}
 	],
 	"effectTypes": [],

@@ -225,42 +225,62 @@
 							"sid": 774172830073117
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "ScrollablePanel",
-							"sid": 663052668880416,
-							"parameters": {
-								"instance-variable": "max",
-								"value": "Self.x"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "ScrollablePanel",
-							"sid": 324087897978643,
-							"parameters": {
-								"instance-variable": "min",
-								"value": "Self.max"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "ScrollablePanel",
-							"sid": 817448103013395,
-							"parameters": {
-								"instance-variable": "initialWidth",
-								"value": "Self.Width"
-							}
-						},
-						{
-							"id": "set-opacity",
+							"id": "set-visible",
 							"objectClass": "CommandShadow",
-							"sid": 111586836730734,
+							"sid": 496298897722159,
 							"parameters": {
-								"opacity": "0"
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 612593316670721
+					"sid": 612593316670721,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 965759609377746,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"active-commands\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 617065922248116,
+									"parameters": {
+										"instance-variable": "max",
+										"value": "Self.x"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 804882305179046,
+									"parameters": {
+										"instance-variable": "min",
+										"value": "Self.max"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 201163678848107,
+									"parameters": {
+										"instance-variable": "initialLength",
+										"value": "Self.Width"
+									}
+								}
+							],
+							"sid": 422784353346267
+						}
+					]
 				},
 				{
 					"functionName": "createNewCommandObject",
@@ -418,6 +438,14 @@
 								"child": "CommandShadow",
 								"which": "all"
 							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "CommandShadow",
+							"sid": 802694531877950,
+							"parameters": {
+								"object": "UIPanel"
+							}
 						}
 					],
 					"actions": [
@@ -463,11 +491,11 @@
 							],
 							"actions": [
 								{
-									"id": "set-opacity",
+									"id": "set-visible",
 									"objectClass": "CommandShadow",
-									"sid": 314141211125131,
+									"sid": 300510244433802,
 									"parameters": {
-										"opacity": "75"
+										"visibility": "visible"
 									}
 								}
 							],
@@ -488,11 +516,11 @@
 							],
 							"actions": [
 								{
-									"id": "set-opacity",
+									"id": "set-visible",
 									"objectClass": "CommandShadow",
-									"sid": 485126092042210,
+									"sid": 754088806768020,
 									"parameters": {
-										"opacity": "0"
+										"visibility": "invisible"
 									}
 								}
 							],
@@ -552,11 +580,11 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-opacity",
+							"id": "set-visible",
 							"objectClass": "CommandShadow",
-							"sid": 568496645560215,
+							"sid": 146230782878140,
 							"parameters": {
-								"opacity": "0"
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -688,7 +716,20 @@
 							"behaviorType": "DragDrop"
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"callFunction": "clampScrollable",
+							"sid": 974917888500989
+						},
+						{
+							"type": "comment",
+							"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
+						},
+						{
+							"callFunction": "saveCommandPosition",
+							"sid": 382656864412789
+						}
+					],
 					"sid": 811373202969291,
 					"children": [
 						{
@@ -757,14 +798,6 @@
 									],
 									"actions": [
 										{
-											"type": "comment",
-											"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
-										},
-										{
-											"callFunction": "saveCommandPosition",
-											"sid": 382656864412789
-										},
-										{
 											"id": "remove-from-parent",
 											"objectClass": "Command",
 											"sid": 730830104050229
@@ -808,11 +841,11 @@
 										},
 										{
 											"type": "comment",
-											"text": "call saveCommandPosition again, after shifting active position without the dragged command"
+											"text": "second call saveCommandPosition, after shifting active position without the dragged command"
 										},
 										{
 											"callFunction": "saveCommandPosition",
-											"sid": 159995061629718
+											"sid": 329248746850919
 										}
 									],
 									"sid": 692637836538978
@@ -1166,17 +1199,129 @@
 							"isInverted": true
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 323569093164634,
+					"children": [
 						{
-							"id": "set-x",
-							"objectClass": "ScrollablePanel",
-							"sid": 522174620137272,
-							"parameters": {
-								"x": "lerp(Self.X, clamp(Self.X, Self.min, Self.max), 10*dt)"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 448728586511051,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"horizontal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "ScrollablePanel",
+									"sid": 533401774505005,
+									"parameters": {
+										"x": "lerp(Self.X, clamp(Self.X, Self.min, Self.max), 20*dt)"
+									}
+								}
+							],
+							"sid": 416380544808945
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 904659995624017,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"vertical\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "ScrollablePanel",
+									"sid": 756513142130324,
+									"parameters": {
+										"y": "lerp(Self.Y, clamp(Self.Y, Self.min, Self.max), 20*dt)"
+									}
+								}
+							],
+							"sid": 285715582718201
 						}
-					],
-					"sid": 323569093164634
+					]
+				},
+				{
+					"functionName": "clampScrollable",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 430872484629674,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 102885375027353,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"horizontal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "ScrollablePanel",
+									"sid": 277846679617622,
+									"parameters": {
+										"x": "clamp(Self.X, Self.min, Self.max)"
+									}
+								}
+							],
+							"sid": 174513055426347
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 980809455317536,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"vertical\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "ScrollablePanel",
+									"sid": 995204921480886,
+									"parameters": {
+										"y": "clamp(Self.Y, Self.min, Self.max)"
+									}
+								}
+							],
+							"sid": 987253887400587
+						}
+					]
 				},
 				{
 					"functionName": "SetCommandScrollablePanelWitdh",
@@ -1187,7 +1332,18 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "ScrollablePanel",
+							"sid": 891216298306810,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"active-commands\""
+							}
+						}
+					],
 					"actions": [],
 					"sid": 223349364598474,
 					"children": [
@@ -1244,7 +1400,7 @@
 									"objectClass": "ScrollablePanel",
 									"sid": 256547275724412,
 									"parameters": {
-										"width": "Self.initialWidth + deltaWidth"
+										"width": "Self.initialLength + deltaWidth"
 									}
 								},
 								{
