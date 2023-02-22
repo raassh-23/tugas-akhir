@@ -156,7 +156,7 @@
 			"overriden": 0,
 			"subLayers": [
 				{
-					"name": "CommandList",
+					"name": "ActiveCommandList",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [

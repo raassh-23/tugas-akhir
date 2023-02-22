@@ -798,34 +798,8 @@
 									],
 									"actions": [
 										{
-											"id": "remove-from-parent",
-											"objectClass": "Command",
-											"sid": 730830104050229
-										},
-										{
-											"id": "move-to-layer",
-											"objectClass": "Command",
-											"sid": 273633062603445,
-											"parameters": {
-												"layer": "\"UI\""
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Command",
-											"sid": 821091203653935,
-											"parameters": {
-												"instance-variable": "isActive",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-blend-mode",
-											"objectClass": "Command",
-											"sid": 764546903453038,
-											"parameters": {
-												"blend-mode": "normal"
-											}
+											"callFunction": "setCommandInactive",
+											"sid": 251169796983005
 										},
 										{
 											"type": "script",
@@ -1031,57 +1005,12 @@
 									"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
 								},
 								{
-									"id": "set-position-to-another-object",
-									"objectClass": "Command",
-									"sid": 755032257453219,
-									"parameters": {
-										"object": "CommandShadow",
-										"image-point-optional": "0"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Command",
-									"sid": 206355603819325,
-									"parameters": {
-										"instance-variable": "isActive",
-										"value": "true"
-									}
-								},
-								{
-									"id": "move-to-layer",
-									"objectClass": "Command",
-									"sid": 562886024540143,
-									"parameters": {
-										"layer": "\"CommandList\""
-									}
-								},
-								{
-									"id": "set-blend-mode",
-									"objectClass": "Command",
-									"sid": 765772568712912,
-									"parameters": {
-										"blend-mode": "source-atop"
-									}
+									"callFunction": "setCommandActive",
+									"sid": 666196429181350
 								},
 								{
 									"callFunction": "saveCommandPosition",
 									"sid": 786191275505392
-								},
-								{
-									"id": "add-child",
-									"objectClass": "ScrollablePanel",
-									"sid": 360137187847112,
-									"parameters": {
-										"child": "Command",
-										"transform-x": true,
-										"transform-y": false,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-z-elevation": false,
-										"destroy-with-parent": false
-									}
 								}
 							],
 							"sid": 467262502036328
@@ -1118,6 +1047,202 @@
 								}
 							],
 							"sid": 564390162512832
+						}
+					]
+				},
+				{
+					"functionName": "setCommandActive",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Command",
+							"sid": 983112811873984,
+							"parameters": {
+								"object": "CommandShadow",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Command",
+							"sid": 869654979916495,
+							"parameters": {
+								"layer": "\"ActiveCommandList\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Command",
+							"sid": 852351281782725,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Command",
+							"sid": 667519586457665,
+							"parameters": {
+								"blend-mode": "source-atop"
+							}
+						}
+					],
+					"sid": 855481297025925,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 839756771182107,
+									"parameters": {
+										"object": "CommandShadow"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 343970497921345,
+									"parameters": {
+										"child": "CommandShadow",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CommandShadow",
+									"sid": 558835708012979,
+									"parameters": {
+										"layer": "\"ActiveCommandList\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 545935480742065,
+									"parameters": {
+										"type": "log",
+										"message": "\"setting anak dipanggil \"&CommandShadow.UID"
+									}
+								}
+							],
+							"sid": 681990816199693
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 665004472647071,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"active-commands\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-child",
+									"objectClass": "ScrollablePanel",
+									"sid": 101520508834055,
+									"parameters": {
+										"child": "Command",
+										"transform-x": true,
+										"transform-y": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-z-elevation": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 448285937937622
+						}
+					]
+				},
+				{
+					"functionName": "setCommandInactive",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "remove-from-parent",
+							"objectClass": "Command",
+							"sid": 730830104050229
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Command",
+							"sid": 273633062603445,
+							"parameters": {
+								"layer": "\"UI\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Command",
+							"sid": 821091203653935,
+							"parameters": {
+								"instance-variable": "isActive",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-blend-mode",
+							"objectClass": "Command",
+							"sid": 764546903453038,
+							"parameters": {
+								"blend-mode": "normal"
+							}
+						}
+					],
+					"sid": 418910372317299,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 194070684666035,
+									"parameters": {
+										"child": "CommandShadow",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CommandShadow",
+									"sid": 706055112323974,
+									"parameters": {
+										"layer": "\"UI\""
+									}
+								}
+							],
+							"sid": 622645531673706
 						}
 					]
 				},
