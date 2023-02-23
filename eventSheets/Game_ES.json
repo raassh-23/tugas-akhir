@@ -710,10 +710,44 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 372248058485151,
+							"parameters": {
+								"object": "CommandButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createNewCommandObject",
+							"sid": 690629398340701,
+							"parameters": [
+								"CommandButton.commandName",
+								"CommandButton.X",
+								"CommandButton.Y",
+								"CommandButton.commandFrame"
+							]
+						}
+					],
+					"sid": 779430353187203
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-drag-start",
 							"objectClass": "Command",
 							"sid": 249464404143076,
 							"behaviorType": "DragDrop"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Command",
+							"sid": 103290052274988,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
 						}
 					],
 					"actions": [
@@ -736,142 +770,91 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Command",
-									"sid": 347680113814877,
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 578465209939647,
 									"parameters": {
-										"instance-variable": "isActive"
-									},
-									"isInverted": true
+										"object": "UIPanel"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 563553241389001,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"commandsPanel\""
+									}
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "createNewCommandObject",
-									"sid": 204569934009478,
+									"callFunction": "setCommandInactive",
+									"sid": 634616470597004
+								},
+								{
+									"type": "script",
+									"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+								},
+								{
+									"callFunction": "shiftActiveCommands",
+									"sid": 147708113228947,
 									"parameters": [
-										"Command.ObjectTypeName",
-										"Command.savedX",
-										"Command.savedY",
-										"Command.AnimationFrame"
+										"Command.X",
+										"-Command.Width"
 									]
+								},
+								{
+									"type": "comment",
+									"text": "second call saveCommandPosition, after shifting active position without the dragged command"
+								},
+								{
+									"callFunction": "saveCommandPosition",
+									"sid": 642577656206250
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Command",
+									"sid": 629661911850332
 								}
 							],
-							"sid": 533340994905365
+							"sid": 400150052276532
+						},
+						{
+							"eventType": "comment",
+							"text": "workaround for drop, since it will trigger on drop otherwise"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-boolean-instance-variable-set",
+									"id": "else",
+									"objectClass": "System",
+									"sid": 708666369605799
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
 									"objectClass": "Command",
-									"sid": 555457736080578,
+									"sid": 888419651117790,
+									"behaviorType": "DragDrop",
 									"parameters": {
-										"instance-variable": "isActive"
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Command",
+									"sid": 199585166168886,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"state": "enabled"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 934737425477635,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-touching-object",
-											"objectClass": "Touch",
-											"sid": 934297530120936,
-											"parameters": {
-												"object": "UIPanel"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "UIPanel",
-											"sid": 254500749333773,
-											"parameters": {
-												"instance-variable": "id",
-												"comparison": 0,
-												"value": "\"commandsPanel\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "setCommandInactive",
-											"sid": 251169796983005
-										},
-										{
-											"type": "script",
-											"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
-										},
-										{
-											"callFunction": "shiftActiveCommands",
-											"sid": 520299423340473,
-											"parameters": [
-												"Command.X",
-												"-Command.Width"
-											]
-										},
-										{
-											"type": "comment",
-											"text": "second call saveCommandPosition, after shifting active position without the dragged command"
-										},
-										{
-											"callFunction": "saveCommandPosition",
-											"sid": 329248746850919
-										}
-									],
-									"sid": 692637836538978
-								},
-								{
-									"eventType": "comment",
-									"text": "workaround for drop, since it will trigger on drop otherwise"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 365572465466213
-										}
-									],
-									"actions": [
-										{
-											"id": "set-enabled",
-											"objectClass": "Command",
-											"sid": 605607121996002,
-											"behaviorType": "DragDrop",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Command",
-											"sid": 282564673819015,
-											"behaviorType": "DragDrop",
-											"parameters": {
-												"state": "enabled"
-											}
-										}
-									],
-									"sid": 937875627465710
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "move-to-top",
-									"objectClass": "Command",
-									"sid": 991904620892738
-								}
-							],
-							"sid": 926201958781590
+							"sid": 826777046259069
 						}
 					]
 				},

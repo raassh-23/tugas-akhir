@@ -92,7 +92,8 @@
 			"SpriteFont",
 			"ScrollablePanel",
 			"StartCommand",
-			"CommandShadow"
+			"CommandShadow",
+			"CommandButton"
 		],
 		"subfolders": []
 	},
@@ -107,7 +108,8 @@
 	"layouts": {
 		"items": [
 			"TestGane",
-			"Menu"
+			"Menu",
+			"ObjectRepository"
 		],
 		"subfolders": []
 	},
