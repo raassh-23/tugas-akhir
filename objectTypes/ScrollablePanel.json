@@ -38,6 +38,20 @@
 			"desc": "vertical or horizontal",
 			"show": true,
 			"sid": 145641107066961
+		},
+		{
+			"name": "initialMin",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 775247591772009
+		},
+		{
+			"name": "initialMax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 424408172689480
 		}
 	],
 	"behaviorTypes": [

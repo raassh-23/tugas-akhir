@@ -202,13 +202,23 @@
 			"children": [
 				{
 					"eventType": "variable",
-					"name": "COMMAND_WIDTH_MARGIN",
+					"name": "ACTIVE_COMMAND_MARGIN",
 					"type": "number",
-					"initialValue": "10",
+					"initialValue": "30",
 					"comment": "",
 					"isStatic": true,
 					"isConstant": true,
 					"sid": 510190610606722
+				},
+				{
+					"eventType": "variable",
+					"name": "isDragging",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 477515768600303
 				},
 				{
 					"eventType": "block",
@@ -221,66 +231,23 @@
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "CommandShadow",
+							"sid": 520005156630820,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
 							"callFunction": "saveCommandPosition",
 							"sid": 774172830073117
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "CommandShadow",
-							"sid": 496298897722159,
-							"parameters": {
-								"visibility": "invisible"
-							}
+							"callFunction": "setupScrollable",
+							"sid": 936613407183803
 						}
 					],
-					"sid": 612593316670721,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "ScrollablePanel",
-									"sid": 965759609377746,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"active-commands\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "ScrollablePanel",
-									"sid": 617065922248116,
-									"parameters": {
-										"instance-variable": "max",
-										"value": "Self.x"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "ScrollablePanel",
-									"sid": 804882305179046,
-									"parameters": {
-										"instance-variable": "min",
-										"value": "Self.max"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "ScrollablePanel",
-									"sid": 201163678848107,
-									"parameters": {
-										"instance-variable": "initialLength",
-										"value": "Self.Width"
-									}
-								}
-							],
-							"sid": 422784353346267
-						}
-					]
+					"sid": 612593316670721
 				},
 				{
 					"functionName": "createNewCommandObject",
@@ -716,6 +683,15 @@
 							"parameters": {
 								"object": "CommandButton"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 805787981559465,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -733,6 +709,42 @@
 					"sid": 779430353187203
 				},
 				{
+					"functionName": "pseudoDropCommand",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "workaround for drop, since it will trigger on drop otherwise"
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Command",
+							"sid": 326194676335327,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Command",
+							"sid": 134370549205837,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 379561458314519
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -740,121 +752,159 @@
 							"objectClass": "Command",
 							"sid": 249464404143076,
 							"behaviorType": "DragDrop"
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Command",
-							"sid": 103290052274988,
-							"parameters": {
-								"instance-variable": "isActive"
-							}
 						}
 					],
-					"actions": [
-						{
-							"callFunction": "clampScrollable",
-							"sid": 974917888500989
-						},
-						{
-							"type": "comment",
-							"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
-						},
-						{
-							"callFunction": "saveCommandPosition",
-							"sid": 382656864412789
-						}
-					],
+					"actions": [],
 					"sid": 811373202969291,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-touching-object",
-									"objectClass": "Touch",
-									"sid": 578465209939647,
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 632175319931117,
 									"parameters": {
-										"object": "UIPanel"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 563553241389001,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"commandsPanel\""
+										"variable": "isDragging"
 									}
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "setCommandInactive",
-									"sid": 634616470597004
-								},
-								{
-									"type": "script",
-									"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
-								},
-								{
-									"callFunction": "shiftActiveCommands",
-									"sid": 147708113228947,
-									"parameters": [
-										"Command.X",
-										"-Command.Width"
-									]
-								},
-								{
-									"type": "comment",
-									"text": "second call saveCommandPosition, after shifting active position without the dragged command"
-								},
-								{
-									"callFunction": "saveCommandPosition",
-									"sid": 642577656206250
-								},
-								{
-									"id": "move-to-top",
-									"objectClass": "Command",
-									"sid": 629661911850332
+									"callFunction": "pseudoDropCommand",
+									"sid": 162695499001214
 								}
 							],
-							"sid": 400150052276532
-						},
-						{
-							"eventType": "comment",
-							"text": "workaround for drop, since it will trigger on drop otherwise"
+							"sid": 190273193972901
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 708666369605799
+									"sid": 941327846399168,
+									"parameters": {
+										"variable": "isDragging"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "set-enabled",
-									"objectClass": "Command",
-									"sid": 888419651117790,
-									"behaviorType": "DragDrop",
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 726159588161578,
 									"parameters": {
-										"state": "disabled"
+										"variable": "isDragging",
+										"value": "true"
 									}
 								},
 								{
-									"id": "set-enabled",
-									"objectClass": "Command",
-									"sid": 199585166168886,
-									"behaviorType": "DragDrop",
-									"parameters": {
-										"state": "enabled"
-									}
+									"callFunction": "clampScrollable",
+									"sid": 175402015779733
+								},
+								{
+									"type": "comment",
+									"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
+								},
+								{
+									"callFunction": "saveCommandPosition",
+									"sid": 527987029291519
 								}
 							],
-							"sid": 826777046259069
+							"sid": 490257851542919,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Command",
+											"sid": 755668526747739,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 617538421159356,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-touching-object",
+													"objectClass": "Touch",
+													"sid": 794384102401289,
+													"parameters": {
+														"object": "UIPanel"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UIPanel",
+													"sid": 418521957460006,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "\"active-commands-panel\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "setCommandInactive",
+													"sid": 140504643095793
+												},
+												{
+													"type": "script",
+													"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+												},
+												{
+													"callFunction": "shiftActiveCommands",
+													"sid": 129785811802223,
+													"parameters": [
+														"Command.X",
+														"-Command.Width"
+													]
+												},
+												{
+													"type": "comment",
+													"text": "second call saveCommandPosition, after shifting active position without the dragged command"
+												},
+												{
+													"callFunction": "saveCommandPosition",
+													"sid": 195177666138114
+												},
+												{
+													"id": "move-to-top",
+													"objectClass": "Command",
+													"sid": 558808719136396
+												}
+											],
+											"sid": 610675001549488
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 374909451534768
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "pseudoDropCommand",
+													"sid": 303771269756543
+												}
+											],
+											"sid": 407659452199183
+										}
+									]
+								}
+							]
 						}
 					]
 				},
@@ -885,11 +935,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIPanel",
-									"sid": 977129523212725,
+									"sid": 884605734210130,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"commandsPanel\""
+										"value": "\"active-commands-panel\""
 									}
 								},
 								{
@@ -949,7 +999,17 @@
 							"behaviorType": "DragDrop"
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 383263006390166,
+							"parameters": {
+								"variable": "isDragging",
+								"value": "false"
+							}
+						}
+					],
 					"sid": 700328896884350,
 					"children": [
 						{
@@ -966,11 +1026,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIPanel",
-									"sid": 918761015102374,
+									"sid": 390649295732055,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"commandsPanel\""
+										"value": "\"active-commands-panel\""
 									}
 								},
 								{
@@ -1109,15 +1169,6 @@
 									"sid": 558835708012979,
 									"parameters": {
 										"layer": "\"ActiveCommandList\""
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 545935480742065,
-									"parameters": {
-										"type": "log",
-										"message": "\"setting anak dipanggil \"&CommandShadow.UID"
 									}
 								}
 							],
@@ -1365,6 +1416,121 @@
 					]
 				},
 				{
+					"functionName": "setupScrollable",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 192193394687227,
+							"parameters": {
+								"object": "ScrollablePanel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ScrollablePanel",
+							"sid": 837410266069730,
+							"parameters": {
+								"instance-variable": "initialMin",
+								"value": "Self.min"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "ScrollablePanel",
+							"sid": 488124192468767,
+							"parameters": {
+								"instance-variable": "initialMax",
+								"value": "Self.max"
+							}
+						}
+					],
+					"sid": 661793962266581,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 673658489902921,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"horizontal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-axes",
+									"objectClass": "ScrollablePanel",
+									"sid": 304117967884799,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"axes": "horizontal-only"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 859939072064072,
+									"parameters": {
+										"instance-variable": "initialLength",
+										"value": "Self.Width"
+									}
+								}
+							],
+							"sid": 454226828604848
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 476241920323360,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"vertical\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-axes",
+									"objectClass": "ScrollablePanel",
+									"sid": 598095100359908,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"axes": "vertical-only"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 604674705108357,
+									"parameters": {
+										"instance-variable": "initialLength",
+										"value": "Self.Height"
+									}
+								}
+							],
+							"sid": 972864115360000
+						}
+					]
+				},
+				{
 					"functionName": "clampScrollable",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -1457,13 +1623,47 @@
 					"children": [
 						{
 							"eventType": "variable",
-							"name": "deltaWidth",
+							"name": "newWidth",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
 							"sid": 434768708202482
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 182857445068974,
+									"parameters": {
+										"variable": "newWidth",
+										"value": "2 * ACTIVE_COMMAND_MARGIN"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 154323449626080,
+									"parameters": {
+										"variable": "newWidth",
+										"value": "StartCommand.Width"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 271204009018737,
+									"parameters": {
+										"variable": "newWidth",
+										"value": "ScrollablePanel.initialLength/2"
+									}
+								}
+							],
+							"sid": 944018353174405
 						},
 						{
 							"eventType": "block",
@@ -1490,10 +1690,10 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 917794999432832,
+									"sid": 777854599433029,
 									"parameters": {
-										"variable": "deltaWidth",
-										"value": "Command.Width + COMMAND_WIDTH_MARGIN"
+										"variable": "newWidth",
+										"value": "Command.Width"
 									}
 								}
 							],
@@ -1501,27 +1701,68 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 500305444029287,
+									"parameters": {
+										"variable": "newWidth",
+										"comparison": 3,
+										"value": "ScrollablePanel.initialLength"
+									}
+								}
+							],
 							"actions": [
 								{
 									"id": "set-width",
 									"objectClass": "ScrollablePanel",
-									"sid": 256547275724412,
+									"sid": 292124940268087,
 									"parameters": {
-										"width": "Self.initialLength + deltaWidth"
+										"width": "Self.initialLength"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "ScrollablePanel",
-									"sid": 605487977572793,
+									"sid": 615612616703215,
 									"parameters": {
 										"instance-variable": "min",
-										"value": "Self.max - deltaWidth"
+										"value": "Self.initialMin"
 									}
 								}
 							],
 							"sid": 390979813416437
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 297792865298163
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "ScrollablePanel",
+									"sid": 496722758850909,
+									"parameters": {
+										"width": "newWidth"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 353066002745878,
+									"parameters": {
+										"instance-variable": "min",
+										"value": "(Self.initialMin + Self.initialLength) - newWidth"
+									}
+								}
+							],
+							"sid": 504955287596018
 						}
 					]
 				}
