@@ -23,6 +23,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 342586845860527
+		},
+		{
+			"name": "savedWidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 740224302816267
+		},
+		{
+			"name": "savedHeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 334796761510281
 		}
 	],
 	"behaviorTypes": [
@@ -34,6 +48,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"MoveCommand"
+		"MoveCommand",
+		"RepeatCommand"
 	]
 }

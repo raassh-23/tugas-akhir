@@ -1,0 +1,12 @@
+{
+	"name": "OtherCommand",
+	"plugin-id": "Sprite",
+	"sid": 289267201222883,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"MoveCommand",
+		"RepeatCommand"
+	]
+}

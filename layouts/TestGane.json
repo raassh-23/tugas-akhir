@@ -364,7 +364,9 @@
 								"live-preview": false
 							},
 							"uid": 18,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"level": 0
+							},
 							"behaviors": {},
 							"sceneGraphData": {
 								"parent-uid": 17,
@@ -555,6 +557,19 @@
 									},
 									{
 										"uid": 23,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 43,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -823,6 +838,64 @@
 							"world": {
 								"x": 1126,
 								"y": 461,
+								"width": 96,
+								"height": 96,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CommandButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 4,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 43,
+							"instanceVariables": {
+								"commandName": "RepeatCommand",
+								"commandFrame": 0
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 27,
+								"uid": 43,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 1126,
+								"y": 583,
 								"width": 96,
 								"height": 96,
 								"originX": 0,

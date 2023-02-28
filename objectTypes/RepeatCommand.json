@@ -1,17 +1,9 @@
 {
-	"name": "CommandShadow",
+	"name": "RepeatCommand",
 	"plugin-id": "Sprite",
-	"sid": 573889704443256,
+	"sid": 989981170372620,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "level",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 321003338543154
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -26,12 +18,19 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9597244,
+						"imageSpriteId": 9952548,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "ShadowSpawnPoint",
+								"x": 1,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					}
 				],
-				"sid": 186451990702964,
+				"sid": 236971000407103,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

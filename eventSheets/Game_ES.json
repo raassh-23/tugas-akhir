@@ -245,6 +245,24 @@
 						{
 							"callFunction": "setupScrollable",
 							"sid": 936613407183803
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 209734349647792,
+							"parameters": {
+								"instance-variable": "savedWidth",
+								"value": "Self.Width"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Command",
+							"sid": 982562096148211,
+							"parameters": {
+								"instance-variable": "savedHeight",
+								"value": "Self.Height"
+							}
 						}
 					],
 					"sid": 612593316670721
@@ -329,19 +347,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Command",
-									"sid": 180112256291289,
+									"sid": 556222448193516,
 									"parameters": {
-										"instance-variable": "savedX",
-										"value": "Self.X"
+										"instance-variable": "savedWidth",
+										"value": "Self.Width"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Command",
-									"sid": 225001440206615,
+									"sid": 208615882794399,
 									"parameters": {
-										"instance-variable": "savedY",
-										"value": "Self.Y"
+										"instance-variable": "savedHeight",
+										"value": "Self.Height"
 									}
 								}
 							],
@@ -437,6 +455,27 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 327133150412776
+						},
+						{
+							"name": "width",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 564530522168212
+						},
+						{
+							"name": "height",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 254360325122347
+						},
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 562076130796446
 						}
 					],
 					"eventType": "function-block",
@@ -463,6 +502,15 @@
 									"sid": 300510244433802,
 									"parameters": {
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "CommandShadow",
+									"sid": 499428307315630,
+									"parameters": {
+										"width": "width",
+										"height": "height"
 									}
 								}
 							],
@@ -605,6 +653,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 918415430987728
+						},
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 575973142895119
 						}
 					],
 					"eventType": "function-block",
@@ -866,7 +921,8 @@
 													"sid": 129785811802223,
 													"parameters": [
 														"Command.X",
-														"-Command.Width"
+														"-Command.Width",
+														"0"
 													]
 												},
 												{
@@ -953,18 +1009,31 @@
 							],
 							"actions": [
 								{
+									"id": "set-size",
+									"objectClass": "Command",
+									"sid": 315570035117941,
+									"parameters": {
+										"width": "Self.savedWidth- (Self.savedWidth * CommandShadow.level/6) ",
+										"height": "Self.savedHeight- (Self.savedHeight* CommandShadow.level/6) "
+									}
+								},
+								{
 									"callFunction": "showCommandShadow",
-									"sid": 995549491188410,
+									"sid": 857372395026833,
 									"parameters": [
-										"CommandShadow.UID"
+										"CommandShadow.UID",
+										"Command.Width",
+										"Command.Height",
+										"CommandShadow.level"
 									]
 								},
 								{
 									"callFunction": "shiftActiveCommands",
-									"sid": 252669111632587,
+									"sid": 271884108430994,
 									"parameters": [
 										"CommandShadow.X",
-										"CommandShadow.Width"
+										"Command.Width",
+										"CommandShadow.level"
 									]
 								}
 							],
@@ -1145,20 +1214,87 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-all",
-									"objectClass": "System",
-									"sid": 839756771182107,
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 190246839952824,
 									"parameters": {
-										"object": "CommandShadow"
+										"child": "NestedCommandBackground",
+										"which": "all"
 									}
-								},
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "NestedCommandBackground",
+									"sid": 424059256410211,
+									"parameters": {
+										"layer": "\"ActiveCommandList\""
+									}
+								}
+							],
+							"sid": 824878077309445
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
 									"id": "pick-children",
 									"objectClass": "Command",
-									"sid": 343970497921345,
+									"sid": 159657565034760,
+									"parameters": {
+										"child": "CommandDecoration",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CommandDecoration",
+									"sid": 141915818171180,
+									"parameters": {
+										"layer": "\"ActiveCommandList\""
+									}
+								}
+							],
+							"sid": 272521692216284
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 360582196996704,
+									"parameters": {
+										"child": "OtherCommand",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "OtherCommand",
+									"sid": 361081911995759,
+									"parameters": {
+										"layer": "\"ActiveCommandList\""
+									}
+								}
+							],
+							"sid": 666226111949077
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 265520851166098,
 									"parameters": {
 										"child": "CommandShadow",
-										"which": "own"
+										"which": "all"
 									}
 								}
 							],
@@ -1166,13 +1302,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "CommandShadow",
-									"sid": 558835708012979,
+									"sid": 789701894959968,
 									"parameters": {
 										"layer": "\"ActiveCommandList\""
 									}
 								}
 							],
-							"sid": 681990816199693
+							"sid": 476129655476726
 						},
 						{
 							"eventType": "block",
@@ -1259,10 +1395,85 @@
 								{
 									"id": "pick-children",
 									"objectClass": "Command",
-									"sid": 194070684666035,
+									"sid": 383076458175674,
+									"parameters": {
+										"child": "NestedCommandBackground",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "NestedCommandBackground",
+									"sid": 252422453578673,
+									"parameters": {
+										"layer": "\"UI\""
+									}
+								}
+							],
+							"sid": 544482078567132
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 901288450467620,
+									"parameters": {
+										"child": "CommandDecoration",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CommandDecoration",
+									"sid": 869535506855184,
+									"parameters": {
+										"layer": "\"UI\""
+									}
+								}
+							],
+							"sid": 851567355846918
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 893889787008268,
+									"parameters": {
+										"child": "OtherCommand",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "OtherCommand",
+									"sid": 866407797921095,
+									"parameters": {
+										"layer": "\"UI\""
+									}
+								}
+							],
+							"sid": 804170345320698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Command",
+									"sid": 473427654327935,
 									"parameters": {
 										"child": "CommandShadow",
-										"which": "own"
+										"which": "all"
 									}
 								}
 							],
@@ -1270,13 +1481,13 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "CommandShadow",
-									"sid": 706055112323974,
+									"sid": 190568564015580,
 									"parameters": {
 										"layer": "\"UI\""
 									}
 								}
 							],
-							"sid": 622645531673706
+							"sid": 285695744043998
 						}
 					]
 				},

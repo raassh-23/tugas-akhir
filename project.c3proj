@@ -93,7 +93,10 @@
 			"ScrollablePanel",
 			"StartCommand",
 			"CommandShadow",
-			"CommandButton"
+			"CommandButton",
+			"RepeatCommand",
+			"CommandDecoration",
+			"NestedCommandBackground"
 		],
 		"subfolders": []
 	},
@@ -101,7 +104,8 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"Command"
+			"Command",
+			"OtherCommand"
 		],
 		"subfolders": []
 	},

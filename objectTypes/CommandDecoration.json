@@ -1,17 +1,9 @@
 {
-	"name": "CommandShadow",
+	"name": "CommandDecoration",
 	"plugin-id": "Sprite",
-	"sid": 573889704443256,
+	"sid": 262447609229806,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "level",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 321003338543154
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -26,12 +18,24 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9597244,
+						"imageSpriteId": 23885,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1581060,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 186451990702964,
+				"sid": 226583477968391,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
