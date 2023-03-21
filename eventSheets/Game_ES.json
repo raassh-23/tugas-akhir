@@ -913,12 +913,12 @@
 											],
 											"actions": [
 												{
-													"callFunction": "setCommandInactive",
-													"sid": 140504643095793
+													"type": "script",
+													"script": "// removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\n// runner.removeCommand(runtime.objects.Command.getFirstPickedInstance());\nremoveCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
 												},
 												{
-													"type": "script",
-													"script": "// removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\nrunner.removeCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
+													"callFunction": "setCommandInactive",
+													"sid": 140504643095793
 												},
 												{
 													"callFunction": "shiftActiveCommands",
@@ -1118,7 +1118,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "// addToCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\nrunner.addCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
+									"script": "// addToCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\naddCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);\nrunner.logCommands();"
 								},
 								{
 									"callFunction": "setCommandActive",
@@ -1353,7 +1353,8 @@
 									}
 								}
 							],
-							"sid": 448285937937622
+							"sid": 448285937937622,
+							"disabled": true
 						}
 					]
 				},
@@ -1368,11 +1369,6 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
-						{
-							"id": "remove-from-parent",
-							"objectClass": "Command",
-							"sid": 730830104050229
-						},
 						{
 							"id": "move-to-layer",
 							"objectClass": "Command",

@@ -1,9 +1,13 @@
-import { BaseCommand, MoveCommand, RunnerCommand } from "./Commands/index.js";
+import { BaseCommand, ContainerCommand } from "./Commands/index.js";
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance } from "./utils/misc.js";
 
 let runner = null;
 
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
 function setRunner(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
 
@@ -13,63 +17,36 @@ function setRunner(runtime) {
 }
 
 /**
- *
- * @type {Array.<BaseCommand>}
- */
-const commands = [];
-
-/**
- * @type {boolean}
- */
-let isRunning = false;
-
-/**
  * 
  * @param {BaseCommand} command 
+ * @param {ICommandShadow} commandShadow
  */
-function addToCommands(command) {
-	if (!(command instanceof BaseCommand)) {
-		throw new Error("command must be an instance of BaseCommand");
+function addCommand(command, commandShadow) {
+	let parent = commandShadow.getParent();
+	
+	while (!(parent instanceof ContainerCommand)) {
+		parent = parent.getParent();
 	}
 
-	insertToSortedArray(command, commands, (a, b) => {
-		if (a.x < b.x) {
-			return -1;
-		} else if (a.x > b.x) {
-			return 1;
-		} else {
-			return 0;
-		}
+	parent.addCommand(command);
+	parent.addChild(command, {
+		transformX: true,
 	});
 }
 
 /**
  * 
- * @param {BaseCommand} command
- * 
+ * @param {BaseCommand} command 
  */
-function removeFromCommands(command) {
-	removeFromArray(command, commands);
-}
+function removeCommand(command) {
+	let parent = command.getParent();
 
-function emptyCommands() {
-	emptyArray(commands);
-}
-
-/**
- * 
- * @param {IPlayer} player 
- */
-async function runCommands(player) {
-	if (!isRunning) {
-		isRunning = true;
-
-		for (const command of commands) {
-			await command.run(player);
-		}
-
-		isRunning = false;
+	while (!(parent instanceof ContainerCommand)) {
+		parent = parent.getParent();
 	}
+
+	parent.removeCommand(command);
+	command.removeFromParent();
 }
 
 /**

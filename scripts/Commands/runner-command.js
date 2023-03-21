@@ -18,7 +18,7 @@ export default class RunnerCommand extends ContainerCommand {
         if (!this.#isRunning) {
             this.#isRunning = true;
 
-            super.run(player);
+            await super.run(player);
 
             this.#isRunning = false;
         }
