@@ -1,6 +1,16 @@
-import { BaseCommand, MoveCommand } from "./Commands/index.js";
+import { BaseCommand, MoveCommand, RunnerCommand } from "./Commands/index.js";
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance } from "./utils/misc.js";
+
+let runner = null;
+
+function setRunner(runtime) {
+	runner = runtime.objects.StartCommand.getFirstInstance();
+
+	if (runner === null) {
+		throw new Error("cannot find runner");
+	}
+}
 
 /**
  *

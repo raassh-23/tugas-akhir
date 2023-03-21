@@ -231,6 +231,10 @@
 					],
 					"actions": [
 						{
+							"type": "script",
+							"script": "setRunner(runtime);"
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "CommandShadow",
 							"sid": 520005156630820,
@@ -914,7 +918,7 @@
 												},
 												{
 													"type": "script",
-													"script": "removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);"
+													"script": "// removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\nrunner.removeCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
 												},
 												{
 													"callFunction": "shiftActiveCommands",
@@ -1114,7 +1118,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "addToCommands(runtime.objects.Command.getFirstPickedInstance());\nconsole.log(commands);\n"
+									"script": "// addToCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\nrunner.addCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
 								},
 								{
 									"callFunction": "setCommandActive",
@@ -1314,9 +1318,17 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Command",
+									"sid": 446577756908851,
+									"parameters": {
+										"object": "ScrollablePanel"
+									}
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "ScrollablePanel",
-									"sid": 665004472647071,
+									"sid": 781228909842257,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -1327,8 +1339,8 @@
 							"actions": [
 								{
 									"id": "add-child",
-									"objectClass": "ScrollablePanel",
-									"sid": 101520508834055,
+									"objectClass": "StartCommand",
+									"sid": 736493370769632,
 									"parameters": {
 										"child": "Command",
 										"transform-x": true,
@@ -1506,7 +1518,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "console.log(\"running commands\")\nrunCommands(runtime.objects.Player.getFirstInstance());"
+							"script": "console.log(\"running commands\")\n// runCommands(runtime.objects.Player.getFirstInstance());\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
 						}
 					],
 					"sid": 678822265513400
