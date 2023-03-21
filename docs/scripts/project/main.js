@@ -1,4 +1,4 @@
-import {MoveCommand} from "./Commands/index.js";
+import {MoveCommand, RepeatCommand, RunnerCommand } from "./Commands/index.js";
 
 runOnStartup(async runtime =>
 {
@@ -7,7 +7,10 @@ runOnStartup(async runtime =>
 	
 // 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	
+
+	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
+	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

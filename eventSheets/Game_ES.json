@@ -914,7 +914,7 @@
 											"actions": [
 												{
 													"type": "script",
-													"script": "// removeFromCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\n// runner.removeCommand(runtime.objects.Command.getFirstPickedInstance());\nremoveCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
+													"script": "removeCommand(runtime.objects.Command.getFirstPickedInstance());\nrunner.logCommands();"
 												},
 												{
 													"callFunction": "setCommandInactive",
@@ -1118,7 +1118,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "// addToCommands(runtime.objects.Command.getFirstPickedInstance());\n// console.log(commands);\n\naddCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);\nrunner.logCommands();"
+									"script": "addCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);\nrunner.logCommands();"
 								},
 								{
 									"callFunction": "setCommandActive",
@@ -1229,6 +1229,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-blend-mode",
+									"objectClass": "NestedCommandBackground",
+									"sid": 462553286101639,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
+								{
 									"id": "move-to-layer",
 									"objectClass": "NestedCommandBackground",
 									"sid": 424059256410211,
@@ -1253,6 +1261,14 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-blend-mode",
+									"objectClass": "CommandDecoration",
+									"sid": 300192058473990,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
 								{
 									"id": "move-to-layer",
 									"objectClass": "CommandDecoration",
@@ -1279,6 +1295,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-blend-mode",
+									"objectClass": "OtherCommand",
+									"sid": 421361490247416,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
+								{
 									"id": "move-to-layer",
 									"objectClass": "OtherCommand",
 									"sid": 361081911995759,
@@ -1304,6 +1328,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-blend-mode",
+									"objectClass": "CommandShadow",
+									"sid": 968813385477817,
+									"parameters": {
+										"blend-mode": "source-atop"
+									}
+								},
+								{
 									"id": "move-to-layer",
 									"objectClass": "CommandShadow",
 									"sid": 789701894959968,
@@ -1313,48 +1345,6 @@
 								}
 							],
 							"sid": 476129655476726
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Command",
-									"sid": 446577756908851,
-									"parameters": {
-										"object": "ScrollablePanel"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "ScrollablePanel",
-									"sid": 781228909842257,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"active-commands\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-child",
-									"objectClass": "StartCommand",
-									"sid": 736493370769632,
-									"parameters": {
-										"child": "Command",
-										"transform-x": true,
-										"transform-y": false,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-z-elevation": false,
-										"destroy-with-parent": false
-									}
-								}
-							],
-							"sid": 448285937937622,
-							"disabled": true
 						}
 					]
 				},
@@ -1412,6 +1402,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-blend-mode",
+									"objectClass": "NestedCommandBackground",
+									"sid": 800099375338101,
+									"parameters": {
+										"blend-mode": "normal"
+									}
+								},
+								{
 									"id": "move-to-layer",
 									"objectClass": "NestedCommandBackground",
 									"sid": 252422453578673,
@@ -1436,6 +1434,14 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-blend-mode",
+									"objectClass": "CommandDecoration",
+									"sid": 443823620360717,
+									"parameters": {
+										"blend-mode": "normal"
+									}
+								},
 								{
 									"id": "move-to-layer",
 									"objectClass": "CommandDecoration",
@@ -1462,6 +1468,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-blend-mode",
+									"objectClass": "OtherCommand",
+									"sid": 987994144058038,
+									"parameters": {
+										"blend-mode": "normal"
+									}
+								},
+								{
 									"id": "move-to-layer",
 									"objectClass": "OtherCommand",
 									"sid": 866407797921095,
@@ -1486,6 +1500,14 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-blend-mode",
+									"objectClass": "CommandShadow",
+									"sid": 533976026375623,
+									"parameters": {
+										"blend-mode": "normal"
+									}
+								},
 								{
 									"id": "move-to-layer",
 									"objectClass": "CommandShadow",
@@ -1514,7 +1536,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "console.log(\"running commands\")\n// runCommands(runtime.objects.Player.getFirstInstance());\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
+							"script": "console.log(\"running commands\")\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
 						}
 					],
 					"sid": 678822265513400

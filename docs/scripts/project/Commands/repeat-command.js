@@ -1,15 +1,10 @@
-import BaseCommand from "./base-command.js";
-import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array.js";
+import ContainerCommand from "./container-command.js";
 
 /**
- * @extends BaseCommand
+ * @extends ContainerCommand
  */
-export default class RepeatCommand extends BaseCommand {
-    /**
-     * @type {Array.<BaseCommand>}
-     */
-    commands = [];
-    repeatCount = 0;
+export default class RepeatCommand extends ContainerCommand {
+    repeatCount = 1;
 
     constructor() {
         super("Repeat");
@@ -21,9 +16,7 @@ export default class RepeatCommand extends BaseCommand {
      */
     async run(player) {
         for (let i = 0; i < this.repeatCount; i++) {
-            for (const command of this.commands) {
-                await command.run(player);
-            }
+            await super.run(player);
         }
     }
 
@@ -37,37 +30,5 @@ export default class RepeatCommand extends BaseCommand {
         }
 
         this.repeatCount = Math.floor(count);
-    }
-
-    /**
-     * 
-     * @param {BaseCommand} command 
-     */
-    addCommand(command) {
-        if (!(command instanceof BaseCommand)) {
-            throw new Error("command must be an instance of BaseCommand");
-        }
-
-        insertToSortedArray(command, this.commands, (a, b) => {
-            if (a.x < b.x) {
-                return -1;
-            } else if (a.x > b.x) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
-    }
-
-    /**
-     * 
-     * @param {BaseCommand} command
-     */
-    removeCommand(command) {
-        removeFromArray(command, this.commands);
-    }
-
-    emptyCommands() {
-        emptyArray(this.commands);
     }
 }

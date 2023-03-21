@@ -1,65 +1,52 @@
-import { BaseCommand, MoveCommand } from "./Commands/index.js";
+import { BaseCommand, ContainerCommand } from "./Commands/index.js";
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance } from "./utils/misc.js";
 
-/**
- *
- * @type {Array.<BaseCommand>}
- */
-const commands = [];
+let runner = null;
 
 /**
- * @type {boolean}
+ * 
+ * @param {IRuntime} runtime 
  */
-let isRunning = false;
+function setRunner(runtime) {
+	runner = runtime.objects.StartCommand.getFirstInstance();
+
+	if (runner === null) {
+		throw new Error("cannot find runner");
+	}
+}
 
 /**
  * 
  * @param {BaseCommand} command 
+ * @param {ICommandShadow} commandShadow
  */
-function addToCommands(command) {
-	if (!(command instanceof BaseCommand)) {
-		throw new Error("command must be an instance of BaseCommand");
+function addCommand(command, commandShadow) {
+	let parent = commandShadow.getParent();
+	
+	while (!(parent instanceof ContainerCommand)) {
+		parent = parent.getParent();
 	}
 
-	insertToSortedArray(command, commands, (a, b) => {
-		if (a.x < b.x) {
-			return -1;
-		} else if (a.x > b.x) {
-			return 1;
-		} else {
-			return 0;
-		}
+	parent.addCommand(command);
+	parent.addChild(command, {
+		transformX: true,
 	});
 }
 
 /**
  * 
- * @param {BaseCommand} command
- * 
+ * @param {BaseCommand} command 
  */
-function removeFromCommands(command) {
-	removeFromArray(command, commands);
-}
+function removeCommand(command) {
+	let parent = command.getParent();
 
-function emptyCommands() {
-	emptyArray(commands);
-}
-
-/**
- * 
- * @param {IPlayer} player 
- */
-async function runCommands(player) {
-	if (!isRunning) {
-		isRunning = true;
-
-		for (const command of commands) {
-			await command.run(player);
-		}
-
-		isRunning = false;
+	while (!(parent instanceof ContainerCommand)) {
+		parent = parent.getParent();
 	}
+
+	parent.removeCommand(command);
+	command.removeFromParent();
 }
 
 /**
@@ -101,12 +88,17 @@ function pickCommandShadowToShow(command, commandShadows) {
 
 const scriptsInEvents = {
 
-	async Game_es_Event14_Act1(runtime, localVars)
+	async Game_es_Event10_Act1(runtime, localVars)
+	{
+		setRunner(runtime);
+	},
+
+	async Game_es_Event13_Act1(runtime, localVars)
 	{
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event15_Act1(runtime, localVars)
+	async Game_es_Event14_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCommandShadowToShow(
 			runtime.objects.Command.getFirstPickedInstance(), 
@@ -116,23 +108,26 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event28_Act5(runtime, localVars)
+	async Game_es_Event30_Act1(runtime, localVars)
 	{
-		removeFromCommands(runtime.objects.Command.getFirstPickedInstance());
-		console.log(commands);
+		removeCommand(runtime.objects.Command.getFirstPickedInstance());
+		runner.logCommands();
 	},
 
-	async Game_es_Event35_Act1(runtime, localVars)
+	async Game_es_Event36_Act1(runtime, localVars)
 	{
-		addToCommands(runtime.objects.Command.getFirstPickedInstance());
-		console.log(commands);
-		
+		addCommand(
+			runtime.objects.Command.getFirstPickedInstance(), 
+			runtime.objects.CommandShadow.getFirstPickedInstance()
+		);
+		runner.logCommands();
 	},
 
-	async Game_es_Event38_Act1(runtime, localVars)
+	async Game_es_Event49_Act1(runtime, localVars)
 	{
 		console.log("running commands")
-		runCommands(runtime.objects.Player.getFirstInstance());
+		
+		runner.run(runtime.objects.Player.getFirstInstance())
 	}
 
 };
