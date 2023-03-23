@@ -5,7 +5,7 @@ import ContainerCommand from "./container-command.js";
  */
 export default class RepeatCommand extends ContainerCommand {
 	// TODO: temporaru value, should be set to 0 later
-    repeatCount = 2; 
+    repeatCount = 2;
 
     constructor() {
         super("Repeat");
@@ -19,6 +19,10 @@ export default class RepeatCommand extends ContainerCommand {
         for (let i = 0; i < this.repeatCount; i++) {
             await super.run(player);
         }
+    }
+
+    expand(width) {
+        this.width = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN + 96 + width;
     }
 
     /**

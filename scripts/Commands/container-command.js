@@ -55,4 +55,8 @@ export default class ContainerCommand extends BaseCommand {
     emptyCommands() {
         emptyArray(this.commands);
     }
+
+    expand(width) {
+        throw new Error("Abstract Method");
+    }
 }

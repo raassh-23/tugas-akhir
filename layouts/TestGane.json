@@ -206,6 +206,7 @@
 							},
 							"uid": 16,
 							"instanceVariables": {
+								"expandableSavedWidth": 0,
 								"min": 205,
 								"max": 205,
 								"initialLength": 0,
@@ -492,6 +493,7 @@
 							},
 							"uid": 27,
 							"instanceVariables": {
+								"expandableSavedWidth": 0,
 								"min": 47.263837,
 								"max": 47.263837,
 								"initialLength": 0,

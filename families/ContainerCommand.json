@@ -1,0 +1,12 @@
+{
+	"name": "ContainerCommand",
+	"plugin-id": "Sprite",
+	"sid": 676262035542400,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"RepeatCommand",
+		"StartCommand"
+	]
+}

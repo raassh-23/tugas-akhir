@@ -21,7 +21,8 @@
 						"savedY": 0,
 						"isActive": false,
 						"savedWidth": 0,
-						"savedHeight": 0
+						"savedHeight": 0,
+						"expandableSavedWidth": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -41,9 +42,9 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
+									"w": false,
+									"h": false,
+									"a": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -54,8 +55,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"d": true,
 									"sm": "normal"
@@ -67,9 +68,9 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
+									"w": false,
+									"h": false,
+									"a": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -226,8 +227,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"d": true,
 									"sm": "normal"
@@ -308,8 +309,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"d": true,
 									"sm": "normal"
@@ -390,8 +391,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"d": true,
 									"sm": "normal"
@@ -472,8 +473,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"d": true,
 									"sm": "normal"
@@ -541,8 +542,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"d": true,
 							"sm": "normal"
@@ -599,8 +600,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"d": true,
 							"sm": "normal"
@@ -657,8 +658,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"d": true,
 							"sm": "normal"
@@ -715,8 +716,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"d": true,
 							"sm": "normal"
@@ -797,6 +798,7 @@
 					},
 					"uid": 30,
 					"instanceVariables": {
+						"expandableSavedWidth": 0,
 						"min": 495,
 						"max": 495,
 						"initialLength": 0,
@@ -1389,9 +1391,9 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
+							"w": false,
+							"h": false,
+							"a": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1446,8 +1448,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"d": true,
 							"sm": "normal"
@@ -1504,9 +1506,9 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
+							"w": false,
+							"h": false,
+							"a": false,
 							"d": true,
 							"sm": "normal"
 						},

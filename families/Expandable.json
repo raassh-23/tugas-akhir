@@ -2,7 +2,15 @@
 	"name": "Expandable",
 	"plugin-id": "Sprite",
 	"sid": 360450519072879,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "expandableSavedWidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 830215979098777
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

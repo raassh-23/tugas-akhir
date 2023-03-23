@@ -267,6 +267,15 @@
 								"instance-variable": "savedHeight",
 								"value": "Self.Height"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Expandable",
+							"sid": 644358820640882,
+							"parameters": {
+								"instance-variable": "expandableSavedWidth",
+								"value": "Self.Width"
+							}
 						}
 					],
 					"sid": 612593316670721
@@ -466,13 +475,6 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 562076130796446
-						},
-						{
-							"name": "width",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 555453357703967
 						}
 					],
 					"eventType": "function-block",
@@ -493,14 +495,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-width",
-									"objectClass": "CommandShadow",
-									"sid": 463020985544222,
-									"parameters": {
-										"width": "width"
-									}
-								},
 								{
 									"id": "set-visible",
 									"objectClass": "CommandShadow",
@@ -1053,8 +1047,7 @@
 									"sid": 122374751883688,
 									"parameters": [
 										"CommandShadow.UID",
-										"CommandShadow.level",
-										"Command.Width"
+										"CommandShadow.level"
 									]
 								},
 								{
@@ -1314,15 +1307,24 @@
 									"objectClass": "Command",
 									"sid": 360582196996704,
 									"parameters": {
-										"child": "OtherCommand",
+										"child": "Command",
 										"which": "all"
 									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Command",
+									"sid": 870470443056211,
+									"parameters": {
+										"instance-variable": "isActive",
+										"value": "true"
+									}
+								},
+								{
 									"id": "set-blend-mode",
-									"objectClass": "OtherCommand",
+									"objectClass": "Command",
 									"sid": 421361490247416,
 									"parameters": {
 										"blend-mode": "source-atop"
@@ -1330,7 +1332,7 @@
 								},
 								{
 									"id": "move-to-layer",
-									"objectClass": "OtherCommand",
+									"objectClass": "Command",
 									"sid": 361081911995759,
 									"parameters": {
 										"layer": "\"ActiveCommandList\""
@@ -1487,15 +1489,24 @@
 									"objectClass": "Command",
 									"sid": 893889787008268,
 									"parameters": {
-										"child": "OtherCommand",
+										"child": "Command",
 										"which": "all"
 									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Command",
+									"sid": 545406295582060,
+									"parameters": {
+										"instance-variable": "isActive",
+										"value": "false"
+									}
+								},
+								{
 									"id": "set-blend-mode",
-									"objectClass": "OtherCommand",
+									"objectClass": "Command",
 									"sid": 987994144058038,
 									"parameters": {
 										"blend-mode": "normal"
@@ -1503,7 +1514,7 @@
 								},
 								{
 									"id": "move-to-layer",
-									"objectClass": "OtherCommand",
+									"objectClass": "Command",
 									"sid": 866407797921095,
 									"parameters": {
 										"layer": "\"UI\""
@@ -2072,6 +2083,23 @@
 							"sid": 356856762327314
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ContainerCommand",
+							"sid": 637175633751883
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.objects.ContainerCommand.getFirstPickedInstance().setExpandable();"
+						}
+					],
+					"sid": 241555208405639
 				}
 			],
 			"sid": 446028862137096

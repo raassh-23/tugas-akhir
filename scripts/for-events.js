@@ -86,6 +86,20 @@ function pickCommandShadowToShow(command, commandShadows) {
 	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
 
 	if (pickedShadow) {
+		pickedShadow.width = command.width;
+
+		console.log("test");
+
+		for (const parent of pickedShadow.parents()) {
+			if (!(parent instanceof ContainerCommand)) {
+				continue;
+			}
+
+			parent.expand(pickedShadow.width);
+
+			console.log(parent);
+		}
+
 		return pickedShadow.uid;
 	} else {
 		return 0;
