@@ -4,7 +4,8 @@ import ContainerCommand from "./container-command.js";
  * @extends ContainerCommand
  */
 export default class RepeatCommand extends ContainerCommand {
-    repeatCount = 1;
+	// TODO: temporaru value, should be set to 0 later
+    repeatCount = 2; 
 
     constructor() {
         super("Repeat");

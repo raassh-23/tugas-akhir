@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 321003338543154
+		},
+		{
+			"name": "isChild",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 429778392019835
 		}
 	],
 	"behaviorTypes": [],

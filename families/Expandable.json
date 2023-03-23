@@ -1,0 +1,12 @@
+{
+	"name": "Expandable",
+	"plugin-id": "Sprite",
+	"sid": 360450519072879,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"RepeatCommand",
+		"ScrollablePanel"
+	]
+}

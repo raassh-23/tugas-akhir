@@ -105,7 +105,8 @@
 	"families": {
 		"items": [
 			"Command",
-			"OtherCommand"
+			"OtherCommand",
+			"Expandable"
 		],
 		"subfolders": []
 	},

@@ -461,25 +461,18 @@
 							"sid": 327133150412776
 						},
 						{
-							"name": "width",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 564530522168212
-						},
-						{
-							"name": "height",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 254360325122347
-						},
-						{
 							"name": "level",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
 							"sid": 562076130796446
+						},
+						{
+							"name": "width",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 555453357703967
 						}
 					],
 					"eventType": "function-block",
@@ -501,6 +494,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-width",
+									"objectClass": "CommandShadow",
+									"sid": 463020985544222,
+									"parameters": {
+										"width": "width"
+									}
+								},
+								{
 									"id": "set-visible",
 									"objectClass": "CommandShadow",
 									"sid": 300510244433802,
@@ -509,12 +510,11 @@
 									}
 								},
 								{
-									"id": "set-size",
+									"id": "set-opacity",
 									"objectClass": "CommandShadow",
-									"sid": 499428307315630,
+									"sid": 515412218798254,
 									"parameters": {
-										"width": "width",
-										"height": "height"
+										"opacity": "100"
 									}
 								}
 							],
@@ -538,8 +538,25 @@
 									"id": "set-visible",
 									"objectClass": "CommandShadow",
 									"sid": 754088806768020,
+									"disabled": true,
 									"parameters": {
 										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "CommandShadow",
+									"sid": 611339583975501,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "CommandShadow",
+									"sid": 489068863762404,
+									"parameters": {
+										"opacity": "50"
 									}
 								}
 							],
@@ -602,8 +619,27 @@
 							"id": "set-visible",
 							"objectClass": "CommandShadow",
 							"sid": 146230782878140,
+							"disabled": true,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CommandShadow",
+							"sid": 284912797141218,
+							"disabled": true,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "CommandShadow",
+							"sid": 649428924624172,
+							"disabled": true,
+							"parameters": {
+								"opacity": "50"
 							}
 						}
 					],
@@ -1013,22 +1049,12 @@
 							],
 							"actions": [
 								{
-									"id": "set-size",
-									"objectClass": "Command",
-									"sid": 315570035117941,
-									"parameters": {
-										"width": "Self.savedWidth- (Self.savedWidth * CommandShadow.level/6) ",
-										"height": "Self.savedHeight- (Self.savedHeight* CommandShadow.level/6) "
-									}
-								},
-								{
 									"callFunction": "showCommandShadow",
-									"sid": 857372395026833,
+									"sid": 122374751883688,
 									"parameters": [
 										"CommandShadow.UID",
-										"Command.Width",
-										"Command.Height",
-										"CommandShadow.level"
+										"CommandShadow.level",
+										"Command.Width"
 									]
 								},
 								{
@@ -2004,6 +2030,46 @@
 								}
 							],
 							"sid": 504955287596018
+						}
+					]
+				},
+				{
+					"functionName": "SetExpandableWidth",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 506000351227682
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 985278444041509,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 119696106976448,
+									"parameters": {
+										"variable": "level",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 356856762327314
 						}
 					]
 				}

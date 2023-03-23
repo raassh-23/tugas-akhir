@@ -1,4 +1,4 @@
-import { BaseCommand, ContainerCommand } from "./Commands/index.js";
+import { BaseCommand, ContainerCommand, RunnerCommand } from "./Commands/index.js";
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance } from "./utils/misc.js";
 
@@ -23,14 +23,22 @@ function setRunner(runtime) {
  */
 function addCommand(command, commandShadow) {
 	let parent = commandShadow.getParent();
+	const isChild = commandShadow.instVars.isChild;
 	
 	while (!(parent instanceof ContainerCommand)) {
 		parent = parent.getParent();
 	}
 
+	if (!isChild && !(parent instanceof RunnerCommand)) {
+		do {
+			parent = parent.getParent();
+		} while (!(parent instanceof ContainerCommand));
+	}
+
 	parent.addCommand(command);
 	parent.addChild(command, {
 		transformX: true,
+		transformY: true,
 	});
 }
 

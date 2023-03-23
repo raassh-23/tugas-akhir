@@ -113,7 +113,7 @@
 					"world": {
 						"x": 177,
 						"y": 574,
-						"width": 230,
+						"width": 256,
 						"height": 96,
 						"originX": 0,
 						"originY": 0.5,
@@ -177,7 +177,7 @@
 					"world": {
 						"x": 177,
 						"y": 574,
-						"width": 230,
+						"width": 256,
 						"height": 96,
 						"originX": 0,
 						"originY": 0.5,
@@ -530,7 +530,8 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
-						"level": 0
+						"level": 0,
+						"isChild": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -587,7 +588,8 @@
 					},
 					"uid": 20,
 					"instanceVariables": {
-						"level": 0
+						"level": 0,
+						"isChild": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -644,7 +646,8 @@
 					},
 					"uid": 21,
 					"instanceVariables": {
-						"level": 0
+						"level": 0,
+						"isChild": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -701,7 +704,8 @@
 					},
 					"uid": 22,
 					"instanceVariables": {
-						"level": 0
+						"level": 0,
+						"isChild": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1431,7 +1435,8 @@
 					},
 					"uid": 42,
 					"instanceVariables": {
-						"level": 1
+						"level": 1,
+						"isChild": true
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1460,10 +1465,10 @@
 						}
 					},
 					"world": {
-						"x": 300,
-						"y": 574,
-						"width": 64,
-						"height": 64,
+						"x": 301.192474377646,
+						"y": 571.5773923278101,
+						"width": 96,
+						"height": 96,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -1488,7 +1493,8 @@
 					},
 					"uid": 44,
 					"instanceVariables": {
-						"level": 0
+						"level": 0,
+						"isChild": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1517,7 +1523,7 @@
 						}
 					},
 					"world": {
-						"x": 407,
+						"x": 433,
 						"y": 574,
 						"width": 96,
 						"height": 96,

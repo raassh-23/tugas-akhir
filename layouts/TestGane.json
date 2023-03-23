@@ -198,7 +198,7 @@
 						{
 							"type": "ScrollablePanel",
 							"properties": {
-								"initially-visible": false,
+								"initially-visible": true,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -365,7 +365,8 @@
 							},
 							"uid": 18,
 							"instanceVariables": {
-								"level": 0
+								"level": 0,
+								"isChild": false
 							},
 							"behaviors": {},
 							"sceneGraphData": {
