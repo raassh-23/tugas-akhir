@@ -112,7 +112,7 @@
 	},
 	"layouts": {
 		"items": [
-			"TestGane",
+			"TestGame",
 			"Menu",
 			"ObjectRepository"
 		],

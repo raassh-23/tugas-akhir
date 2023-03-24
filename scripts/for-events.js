@@ -39,6 +39,7 @@ function addCommand(command, commandShadow) {
 	parent.addChild(command, {
 		transformX: true,
 		transformY: true,
+		destroyWithParent: true,
 	});
 }
 
@@ -98,7 +99,6 @@ function pickCommandShadowToShow(command, commandShadows) {
  */
 function resetContainerLength(containers) {
 	containers.forEach(container => {
-		console.log(container);
 		container.expand(0);
 	});
 }
