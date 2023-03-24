@@ -21,8 +21,7 @@
 						"savedY": 0,
 						"isActive": false,
 						"savedWidth": 0,
-						"savedHeight": 0,
-						"expandableSavedWidth": 0
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -532,7 +531,8 @@
 					"uid": 19,
 					"instanceVariables": {
 						"level": 0,
-						"isChild": false
+						"addToGrandParent": false,
+						"shouldShift": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -590,7 +590,8 @@
 					"uid": 20,
 					"instanceVariables": {
 						"level": 0,
-						"isChild": false
+						"addToGrandParent": false,
+						"shouldShift": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -648,7 +649,8 @@
 					"uid": 21,
 					"instanceVariables": {
 						"level": 0,
-						"isChild": false
+						"addToGrandParent": false,
+						"shouldShift": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -706,7 +708,8 @@
 					"uid": 22,
 					"instanceVariables": {
 						"level": 0,
-						"isChild": false
+						"addToGrandParent": false,
+						"shouldShift": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -798,7 +801,6 @@
 					},
 					"uid": 30,
 					"instanceVariables": {
-						"expandableSavedWidth": 0,
 						"min": 495,
 						"max": 495,
 						"initialLength": 0,
@@ -1438,7 +1440,8 @@
 					"uid": 42,
 					"instanceVariables": {
 						"level": 1,
-						"isChild": true
+						"addToGrandParent": false,
+						"shouldShift": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1467,8 +1470,8 @@
 						}
 					},
 					"world": {
-						"x": 301.192474377646,
-						"y": 571.5773923278101,
+						"x": 305,
+						"y": 584.6252938568933,
 						"width": 96,
 						"height": 96,
 						"originX": 0,
@@ -1496,7 +1499,8 @@
 					"uid": 44,
 					"instanceVariables": {
 						"level": 0,
-						"isChild": false
+						"addToGrandParent": true,
+						"shouldShift": true
 					},
 					"behaviors": {},
 					"sceneGraphData": {

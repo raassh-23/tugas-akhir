@@ -194,22 +194,22 @@
 			"sid": 508388867323278
 		},
 		{
+			"eventType": "variable",
+			"name": "ACTIVE_COMMAND_MARGIN",
+			"type": "number",
+			"initialValue": "32",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 524668110372333
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "UI",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "ACTIVE_COMMAND_MARGIN",
-					"type": "number",
-					"initialValue": "30",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 510190610606722
-				},
 				{
 					"eventType": "variable",
 					"name": "isDragging",
@@ -266,15 +266,6 @@
 							"parameters": {
 								"instance-variable": "savedHeight",
 								"value": "Self.Height"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Expandable",
-							"sid": 644358820640882,
-							"parameters": {
-								"instance-variable": "expandableSavedWidth",
-								"value": "Self.Width"
 							}
 						}
 					],
@@ -475,6 +466,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 562076130796446
+						},
+						{
+							"name": "width",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 139360883236464
 						}
 					],
 					"eventType": "function-block",
@@ -496,6 +494,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-width",
+									"objectClass": "CommandShadow",
+									"sid": 519638866394859,
+									"parameters": {
+										"width": "width"
+									}
+								},
+								{
 									"id": "set-visible",
 									"objectClass": "CommandShadow",
 									"sid": 300510244433802,
@@ -510,6 +516,10 @@
 									"parameters": {
 										"opacity": "100"
 									}
+								},
+								{
+									"type": "script",
+									"script": "expandCommandShadow(runtime.objects.CommandShadow.getFirstPickedInstance())"
 								}
 							],
 							"sid": 998421297469759
@@ -535,6 +545,14 @@
 									"disabled": true,
 									"parameters": {
 										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "CommandShadow",
+									"sid": 921378493332948,
+									"parameters": {
+										"width": "20"
 									}
 								},
 								{
@@ -622,7 +640,6 @@
 							"id": "set-visible",
 							"objectClass": "CommandShadow",
 							"sid": 284912797141218,
-							"disabled": true,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -631,7 +648,6 @@
 							"id": "set-opacity",
 							"objectClass": "CommandShadow",
 							"sid": 649428924624172,
-							"disabled": true,
 							"parameters": {
 								"opacity": "50"
 							}
@@ -1008,7 +1024,12 @@
 							"behaviorType": "DragDrop"
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "resetContainerLength(\n\truntime.objects.ContainerCommand.getAllInstances()\n);"
+						}
+					],
 					"sid": 601895820222359,
 					"children": [
 						{
@@ -1044,10 +1065,11 @@
 							"actions": [
 								{
 									"callFunction": "showCommandShadow",
-									"sid": 122374751883688,
+									"sid": 801357224380368,
 									"parameters": [
 										"CommandShadow.UID",
-										"CommandShadow.level"
+										"CommandShadow.level",
+										"Command.Width"
 									]
 								},
 								{
@@ -1898,6 +1920,7 @@
 					],
 					"actions": [],
 					"sid": 223349364598474,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "variable",
@@ -1941,7 +1964,8 @@
 									}
 								}
 							],
-							"sid": 944018353174405
+							"sid": 944018353174405,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1975,7 +1999,8 @@
 									}
 								}
 							],
-							"sid": 436609355986975
+							"sid": 436609355986975,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2010,7 +2035,8 @@
 									}
 								}
 							],
-							"sid": 390979813416437
+							"sid": 390979813416437,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2040,7 +2066,8 @@
 									}
 								}
 							],
-							"sid": 504955287596018
+							"sid": 504955287596018,
+							"disabled": true
 						}
 					]
 				},
@@ -2083,26 +2110,30 @@
 							"sid": 356856762327314
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "ContainerCommand",
-							"sid": 637175633751883
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.objects.ContainerCommand.getFirstPickedInstance().setExpandable();"
-						}
-					],
-					"sid": 241555208405639
 				}
 			],
 			"sid": 446028862137096
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 106505743930658,
+					"parameters": {
+						"object": "CommandShadow"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "logParent(runtime.objects.CommandShadow.getFirstPickedInstance())"
+				}
+			],
+			"sid": 375577219921480,
+			"disabled": true
 		}
 	],
 	"sid": 808040494368574

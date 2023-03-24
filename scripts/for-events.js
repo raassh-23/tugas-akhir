@@ -23,13 +23,13 @@ function setRunner(runtime) {
  */
 function addCommand(command, commandShadow) {
 	let parent = commandShadow.getParent();
-	const isChild = commandShadow.instVars.isChild;
+	const addToGrandParent = commandShadow.instVars.addToGrandParent;
 	
 	while (!(parent instanceof ContainerCommand)) {
 		parent = parent.getParent();
 	}
 
-	if (!isChild && !(parent instanceof RunnerCommand)) {
+	if (addToGrandParent) {
 		do {
 			parent = parent.getParent();
 		} while (!(parent instanceof ContainerCommand));
@@ -86,22 +86,51 @@ function pickCommandShadowToShow(command, commandShadows) {
 	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
 
 	if (pickedShadow) {
-		pickedShadow.width = command.width;
-
-		console.log("test");
-
-		for (const parent of pickedShadow.parents()) {
-			if (!(parent instanceof ContainerCommand)) {
-				continue;
-			}
-
-			parent.expand(pickedShadow.width);
-
-			console.log(parent);
-		}
-
 		return pickedShadow.uid;
 	} else {
 		return 0;
+	}
+}
+
+/**
+ * 
+ * @param {ContainerCommand} containers 
+ */
+function resetContainerLength(containers) {
+	containers.forEach(container => {
+		console.log(container);
+		container.expand(0);
+	});
+}
+
+/**
+ * 
+ * @param {ICommandShadow} commandShadow 
+ */
+function expandCommandShadow(commandShadow) {
+	let parent = commandShadow.getParent();
+	const addToGrandParent = commandShadow.instVars.addToGrandParent;
+	
+	while (!(parent instanceof ContainerCommand)) {
+		parent = parent.getParent();
+	}
+
+	if (addToGrandParent) {
+		do {
+			parent = parent.getParent();
+		} while (!(parent instanceof ContainerCommand));
+	}
+
+	parent.expand(commandShadow.width);
+}
+
+function logParent(sprite) {
+	let level = 1;
+	console.log("logParent");
+	console.log("child");
+	console.log(sprite);
+	for (const parent of sprite.parents()) {
+		console.log("parent level " + level++);
+		console.log(parent);
 	}
 }

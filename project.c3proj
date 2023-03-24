@@ -106,7 +106,6 @@
 		"items": [
 			"Command",
 			"OtherCommand",
-			"Expandable",
 			"ContainerCommand"
 		],
 		"subfolders": []

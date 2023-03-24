@@ -12,11 +12,18 @@
 			"sid": 321003338543154
 		},
 		{
-			"name": "isChild",
+			"name": "addToGrandParent",
 			"type": "boolean",
 			"desc": "",
 			"show": true,
 			"sid": 429778392019835
+		},
+		{
+			"name": "shouldShift",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 479781280474391
 		}
 	],
 	"behaviorTypes": [],
