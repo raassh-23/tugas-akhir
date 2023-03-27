@@ -4307,12 +4307,14 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.ObjectTypeName,
 		C3.ScriptsInEvents.Game_es_Event13_Act1,
+		C3.ScriptsInEvents.Game_es_Event14_Act1,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Cnds.PickChildren,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.ScriptsInEvents.Game_es_Event14_Act1,
+		C3.ScriptsInEvents.Game_es_Event15_Act1,
 		C3.Plugins.Sprite.Cnds.PickByUID,
-		C3.Plugins.Sprite.Acts.SetSize,
+		C3.Plugins.Sprite.Acts.SetWidth,
+		C3.ScriptsInEvents.Game_es_Event17_Act4,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
@@ -4323,32 +4325,30 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Behaviors.DragnDrop.Acts.SetEnabled,
-		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.System.Acts.SetBoolVar,
+		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event30_Act1,
-		C3.Plugins.Sprite.Acts.MoveToTop,
+		C3.ScriptsInEvents.Game_es_Event31_Act2,
 		C3.Plugins.System.Cnds.Else,
+		C3.ScriptsInEvents.Game_es_Event33_Act1,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
-		C3.ScriptsInEvents.Game_es_Event36_Act1,
+		C3.ScriptsInEvents.Game_es_Event37_Act1,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
 		C3.Plugins.Sprite.Acts.MoveToLayer,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Sprite.Acts.SetEffect,
-		C3.Plugins.TiledBg.Acts.SetEffect,
-		C3.Plugins.TiledBg.Acts.MoveToLayer,
-		C3.ScriptsInEvents.Game_es_Event49_Act1,
+		C3.ScriptsInEvents.Game_es_Event40_Act5,
+		C3.ScriptsInEvents.Game_es_Event41_Act4,
+		C3.ScriptsInEvents.Game_es_Event42_Act1,
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.System.Exps.dt,
 		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Behaviors.DragnDrop.Acts.SetAxes,
-		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Cnds.CompareVar,
-		C3.Plugins.Sprite.Acts.SetWidth,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Plugins.System.Exps.projectversion,
@@ -4388,6 +4388,8 @@ self.C3_JsPropNameTable = [
 	{ScrollablePanel: 0},
 	{StartCommand: 0},
 	{level: 0},
+	{addToGrandParent: 0},
+	{shouldShift: 0},
 	{CommandShadow: 0},
 	{commandName: 0},
 	{commandFrame: 0},
@@ -4397,7 +4399,9 @@ self.C3_JsPropNameTable = [
 	{NestedCommandBackground: 0},
 	{Command: 0},
 	{OtherCommand: 0},
+	{ContainerCommand: 0},
 	{ACTIVE_COMMAND_MARGIN: 0},
+	{isRunning: 0},
 	{isDragging: 0},
 	{objectTypeName: 0},
 	{x: 0},
@@ -4405,9 +4409,7 @@ self.C3_JsPropNameTable = [
 	{frame: 0},
 	{uid: 0},
 	{width: 0},
-	{height: 0},
-	{deltaWidth: 0},
-	{newWidth: 0}
+	{deltaWidth: 0}
 ];
 }
 
@@ -4545,12 +4547,6 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			const n2 = p._GetNode(2);
-			return () => (n0.ExpInstVar_Family() - (n1.ExpInstVar_Family() * (n2.ExpInstVar() / 6)));
-		},
 		() => "ActiveCommandList",
 		() => "horizontal",
 		p => {
@@ -4567,17 +4563,6 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			const n2 = p._GetNode(2);
 			return () => C3.clamp(n0.ExpObject(), n1.ExpInstVar(), n2.ExpInstVar());
-		},
-		() => 60,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpInstVar() / 2);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			const n1 = p._GetNode(1);
-			const v2 = p._GetNode(2).GetVar();
-			return () => ((n0.ExpInstVar() + n1.ExpInstVar()) - v2.GetValue());
 		},
 		() => "version",
 		p => {

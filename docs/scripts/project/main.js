@@ -1,4 +1,4 @@
-import {MoveCommand, RepeatCommand, RunnerCommand } from "./Commands/index.js";
+import {MoveCommand, RepeatCommand, RunnerCommand, ContainerCommand } from "./Commands/index.js";
 
 runOnStartup(async runtime =>
 {

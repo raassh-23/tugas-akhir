@@ -16,6 +16,6 @@ export default class BaseCommand extends ISpriteInstance {
      * @param {IPlayer} player 
      */
     async run(player) {
-        throw new Error("Not implemented");
+        throw new Error("Abstract Method");
     }
 }

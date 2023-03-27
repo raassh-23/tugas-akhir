@@ -9,6 +9,7 @@ export default class ContainerCommand extends BaseCommand {
      * @type {BaseCommand[]}
      */
     commands = [];
+    #color = [0, 0, 0];
 
     constructor(name) {
         super(name);
@@ -54,5 +55,17 @@ export default class ContainerCommand extends BaseCommand {
 
     emptyCommands() {
         emptyArray(this.commands);
+    }
+
+    expand(width) {
+        throw new Error("Abstract Method");
+    }
+
+    setColor(color) {
+        this.#color = color;
+    }
+
+    getColor() {
+        return [...this.#color];
     }
 }
