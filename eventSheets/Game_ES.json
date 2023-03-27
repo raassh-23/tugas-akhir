@@ -1264,33 +1264,8 @@
 							}
 						},
 						{
-							"id": "move-to-layer",
-							"objectClass": "Command",
-							"sid": 869654979916495,
-							"parameters": {
-								"layer": "\"ActiveCommandList\""
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Command",
-							"sid": 852351281782725,
-							"parameters": {
-								"instance-variable": "isActive",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-blend-mode",
-							"objectClass": "Command",
-							"sid": 667519586457665,
-							"parameters": {
-								"blend-mode": "source-atop"
-							}
-						},
-						{
 							"type": "script",
-							"script": "const command = runtime.objects.Command.getFirstPickedInstance();\nconst children = [];\nfor (const child of command.allChildren()) {\n\tchildren.push(child);\n}\n\nchildren.sort((a, b) => {\n\tif (a.zIndex < b.zIndex) {\n\t\treturn -1;\n\t} else if (a.zIndex > b.zIndex) {\n\t\treturn 1;\n\t} else {\n\t\treturn 0;\n\t}\n});\n\nchildren.forEach((child) => {\n\tchild.blendMode = \"source-atop\";\n\tchild.moveToLayer(\n\t\truntime.layout.getLayer(\"ActiveCommandList\")\n\t);\n\t\n\tif (child instanceof BaseCommand) {\n\t\tchild.instVars.isActive = true;\n\t}\n});"
+							"script": "runtime.objects.Command.getFirstPickedInstance().setActive(true);"
 						}
 					],
 					"sid": 855481297025925
@@ -1307,33 +1282,8 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "move-to-layer",
-							"objectClass": "Command",
-							"sid": 273633062603445,
-							"parameters": {
-								"layer": "\"UI\""
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Command",
-							"sid": 821091203653935,
-							"parameters": {
-								"instance-variable": "isActive",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-blend-mode",
-							"objectClass": "Command",
-							"sid": 764546903453038,
-							"parameters": {
-								"blend-mode": "normal"
-							}
-						},
-						{
 							"type": "script",
-							"script": "const command = runtime.objects.Command.getFirstPickedInstance();\nconst children = [];\nfor (const child of command.allChildren()) {\n\tchildren.push(child);\n}\n\nchildren.sort((a, b) => {\n\tif (a.zIndex < b.zIndex) {\n\t\treturn -1;\n\t} else if (a.zIndex > b.zIndex) {\n\t\treturn 1;\n\t} else {\n\t\treturn 0;\n\t}\n});\n\nchildren.forEach((child) => {\n\tchild.blendMode = \"normal\";\n\tchild.moveToLayer(runtime.layout.getLayer(\"UI\"));\n\t\n\tif (child instanceof BaseCommand) {\n\t\tchild.instVars.isActive = false;\n\t}\n});"
+							"script": "runtime.objects.Command.getFirstPickedInstance().setActive(false);"
 						}
 					],
 					"sid": 418910372317299

@@ -1,6 +1,6 @@
 import { BaseCommand, ContainerCommand, RunnerCommand } from "./Commands/index.js";
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
-import { getSquaredDistance } from "./utils/misc.js";
+import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
 let runner = null;
 const colors = [
@@ -38,17 +38,11 @@ function setRunner(runtime) {
  * @param {ICommandShadow} commandShadow
  */
 function addCommand(command, commandShadow) {
-	let parent = commandShadow.getParent();
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
-	
-	while (!(parent instanceof ContainerCommand)) {
-		parent = parent.getParent();
-	}
+	let parent = getContainerParent(commandShadow);
 
 	if (addToGrandParent) {
-		do {
-			parent = parent.getParent();
-		} while (!(parent instanceof ContainerCommand));
+		parent = getContainerParent(parent);
 	}
 
 	parent.addCommand(command);
@@ -64,11 +58,7 @@ function addCommand(command, commandShadow) {
  * @param {BaseCommand} command 
  */
 function removeCommand(command) {
-	let parent = command.getParent();
-
-	while (!(parent instanceof ContainerCommand)) {
-		parent = parent.getParent();
-	}
+	const parent = getContainerParent(command);
 
 	parent.removeCommand(command);
 	command.removeFromParent();
@@ -124,17 +114,12 @@ function resetContainerLength(containers) {
  * @param {ICommandShadow} commandShadow 
  */
 function expandCommandShadow(commandShadow) {
-	let parent = commandShadow.getParent();
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
 	
-	while (!(parent instanceof ContainerCommand)) {
-		parent = parent.getParent();
-	}
+	let parent = getContainerParent(commandShadow);
 
 	if (addToGrandParent) {
-		do {
-			parent = parent.getParent();
-		} while (!(parent instanceof ContainerCommand));
+		parent = getContainerParent(parent);
 	}
 
 	parent.expand(commandShadow.width);
