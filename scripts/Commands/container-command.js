@@ -6,9 +6,10 @@ import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array
  */
 export default class ContainerCommand extends BaseCommand {
     /**
-     * @type {Array.<BaseCommand>}
+     * @type {BaseCommand[]}
      */
     commands = [];
+    #color = [0, 0, 0];
 
     constructor(name) {
         super(name);
@@ -58,5 +59,13 @@ export default class ContainerCommand extends BaseCommand {
 
     expand(width) {
         throw new Error("Abstract Method");
+    }
+
+    setColor(color) {
+        this.#color = color;
+    }
+
+    getColor() {
+        return [...this.#color];
     }
 }

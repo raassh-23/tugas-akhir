@@ -59,7 +59,7 @@ export function removeFromArray(item, arr) {
 
 /**
  * 
- * @param {Array.<*>} arr 
+ * @param {*[]} arr 
  */
 export function emptyArray(arr) {
 	arr.length = 0;

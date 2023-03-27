@@ -6,7 +6,7 @@ import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array
  */
 export default class ContainerCommand extends BaseCommand {
     /**
-     * @type {Array.<BaseCommand>}
+     * @type {BaseCommand[]}
      */
     commands = [];
 

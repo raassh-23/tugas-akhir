@@ -11,6 +11,7 @@ export default class RepeatCommand extends ContainerCommand {
     minLength = 0;
 
     childToBeShift = null;
+    background = null;
 
     constructor() {
         super("Repeat");
@@ -18,9 +19,13 @@ export default class RepeatCommand extends ContainerCommand {
         this.minLength = this.width;
 
         for (const child of this.children()) {
-            if (child?.instVars?.shouldShift) {
+            if (child.instVars?.shouldShift) {
                 this.childToBeShift = child;
-                break;
+                continue;
+            }
+
+            if (child.objectType.name === "NestedCommandBackground") {
+                this.background = child;
             }
         }
     }
@@ -54,9 +59,14 @@ export default class RepeatCommand extends ContainerCommand {
      */
     setRepeatCount(count) {
         if (count < 0) {
-            throw new Error("count must be greater or equal than 0");
+                throw new Error("count must be greater or equal than 0");
         }
 
         this.repeatCount = Math.floor(count);
+    }
+
+    setColor(color) {
+        super.setColor(color);
+        this.background.colorRgb = color;
     }
 }

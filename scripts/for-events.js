@@ -3,6 +3,22 @@ import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.
 import { getSquaredDistance } from "./utils/misc.js";
 
 let runner = null;
+const colors = [
+    [1, 1, 1],
+    [1, 1, 0],
+    [1, 0, 1],
+    [1, 0, 0],
+    [0, 1, 1],
+    [0, 1, 0],
+    [0, 0, 1],
+];
+let currentColorIndex = 0;
+
+function getColor() {
+	const color = colors[currentColorIndex];
+	currentColorIndex = (currentColorIndex + 1) % colors.length;
+	return color;
+}
 
 /**
  * 
@@ -11,7 +27,7 @@ let runner = null;
 function setRunner(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
 
-	if (runner === null) {
+	if (runner == null) {
 		throw new Error("cannot find runner");
 	}
 }
@@ -61,7 +77,7 @@ function removeCommand(command) {
 /**
  * 
  * @param {BaseCommand} command 
- * @param {Array.<ICommandShadow>} commandShadows 
+ * @param {ICommandShadow[]} commandShadows 
  * @returns {number} uid of command shadow to show, 0 if no command shadow to show
  */
 function pickCommandShadowToShow(command, commandShadows) {
@@ -124,6 +140,10 @@ function expandCommandShadow(commandShadow) {
 	parent.expand(commandShadow.width);
 }
 
+/**
+ * 
+ * @param {ISpriteInstance} sprite 
+ */
 function logParent(sprite) {
 	let level = 1;
 	console.log("logParent");

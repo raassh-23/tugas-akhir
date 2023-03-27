@@ -43,7 +43,7 @@ export function insertToSortedArray(item, arr, comparer) {
 /**
  * 
  * @param {*} item 
- * @param {Array} arr
+ * @param {*[]} arr
  * @returns {boolean} true if item was found and removed, false otherwise
  */
 export function removeFromArray(item, arr) {
@@ -59,7 +59,7 @@ export function removeFromArray(item, arr) {
 
 /**
  * 
- * @param {Array.<*>} arr 
+ * @param {*[]} arr 
  */
 export function emptyArray(arr) {
 	arr.length = 0;
