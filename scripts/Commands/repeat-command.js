@@ -41,6 +41,8 @@ export default class RepeatCommand extends ContainerCommand {
     }
 
     expand(width) {
+        const oldWidth = this.width;
+
         const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN + offsetLength + width
             + this.commands.reduce((acc, command) => acc + command.width, 0);
 
@@ -51,6 +53,14 @@ export default class RepeatCommand extends ContainerCommand {
         }
 
         this.childToBeShift.x = this.x + this.width;
+        
+        if (this.width < oldWidth) {
+            const lastCommand = this.commands[this.commands.length - 1];
+            if (lastCommand != null) {
+                lastCommand.x = this.x + this.width - lastCommand.width - this.runtime.globalVars.ACTIVE_COMMAND_MARGIN;
+                lastCommand.instVars.savedX = lastCommand.x;
+            }
+        }
     }
 
     /**
