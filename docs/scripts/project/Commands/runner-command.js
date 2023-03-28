@@ -15,15 +15,12 @@ export default class RunnerCommand extends ContainerCommand {
      * @param {IPlayer} player 
      */
     async run(player) {
-        console.log("before ", this.runtime.globalVars.isRunning);
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
-            console.log("after ", this.runtime.globalVars.isRunning);
 
             await super.run(player);
 
             this.runtime.globalVars.isRunning = false;
-            console.log("after 2 ",this.runtime.globalVars.isRunning);
         }
     }
 
