@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 262447609229806,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "clickable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 719189006642958
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -31,6 +39,18 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 1581060,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4833531,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

@@ -98,7 +98,8 @@
 			"CommandDecoration",
 			"NestedCommandBackground",
 			"Blank",
-			"NumberButton"
+			"NumberButton",
+			"CommandText"
 		],
 		"subfolders": []
 	},

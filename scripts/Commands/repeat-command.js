@@ -11,6 +11,7 @@ export default class RepeatCommand extends ContainerCommand {
 
     childToBeShift = null;
     background = null;
+	text = null;
 
     constructor() {
         super("Repeat");
@@ -25,6 +26,12 @@ export default class RepeatCommand extends ContainerCommand {
 
             if (child.objectType.name === "NestedCommandBackground") {
                 this.background = child;
+				continue;
+            }
+
+            if (child.objectType.name === "CommandText") {
+                this.text = child;
+                this.text.text = this.#repeatCount.toString();
             }
         }
     }
@@ -68,7 +75,7 @@ export default class RepeatCommand extends ContainerCommand {
      */
     setRepeatCount(count) {
 		if (isNaN(count)) {
-        	throw new Error("count must be number");
+            throw new Error("count must be number");
 		}
 		
         if (count < 0) {
@@ -76,6 +83,7 @@ export default class RepeatCommand extends ContainerCommand {
         }
 
         this.#repeatCount = Math.floor(count);
+        this.text.text = this.#repeatCount.toString();
     }
 	
 	getRepeatCount() {
