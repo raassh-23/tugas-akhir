@@ -6,8 +6,7 @@ const offsetLength = 96;
  * @extends ContainerCommand
  */
 export default class RepeatCommand extends ContainerCommand {
-    // TODO: temporary value, should be set to 0 later
-    repeatCount = 2;
+    #repeatCount = 0;
     minLength = 0;
 
     childToBeShift = null;
@@ -35,7 +34,7 @@ export default class RepeatCommand extends ContainerCommand {
      * @param {IPlayer} player 
      */
     async run(player) {
-        for (let i = 0; i < this.repeatCount; i++) {
+        for (let i = 0; i < this.#repeatCount; i++) {
             await super.run(player);
         }
     }
@@ -68,12 +67,20 @@ export default class RepeatCommand extends ContainerCommand {
      * @param {number} count must be greater or equal than 0, float will be rounded down
      */
     setRepeatCount(count) {
+		if (isNaN(count)) {
+        	throw new Error("count must be number");
+		}
+		
         if (count < 0) {
-                throw new Error("count must be greater or equal than 0");
+            throw new Error("count must be greater or equal than 0");
         }
 
-        this.repeatCount = Math.floor(count);
+        this.#repeatCount = Math.floor(count);
     }
+	
+	getRepeatCount() {
+		return this.#repeatCount;
+	}
 
     setColor(color) {
         super.setColor(color);

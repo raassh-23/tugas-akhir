@@ -277,6 +277,42 @@
 								"instance-variable": "savedHeight",
 								"value": "Self.Height"
 							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 129943425259161,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 280855192074578,
+							"parameters": {
+								"layer": "\"UI\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 780955087097625,
+							"parameters": {
+								"layer": "\"RepeatPopUp\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 739571697606556,
+							"parameters": {
+								"layer": "\"RepeatPopUp\"",
+								"interactive": false
+							}
 						}
 					],
 					"sid": 612593316670721
@@ -1292,26 +1328,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 588976810553569,
-							"parameters": {
-								"object": "Button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "console.log(\"running commands\")\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
-						}
-					],
-					"sid": 678822265513400
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-drag-start",
 							"objectClass": "ScrollablePanel",
 							"sid": 831990673460892,
@@ -1704,6 +1720,350 @@
 						}
 					],
 					"sid": 980071856682603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 869221494398815,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 636861811058508,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 607763085229581,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "console.log(\"running commands\")\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
+								}
+							],
+							"sid": 617062141404167
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 768927338990605,
+							"parameters": {
+								"object": "CommandDecoration"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 837960848733366,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-parent",
+									"objectClass": "CommandDecoration",
+									"sid": 307606403108103,
+									"parameters": {
+										"parent": "Command",
+										"which": "own"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Command",
+									"sid": 822717299060328,
+									"parameters": {
+										"instance-variable": "isActive"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();"
+								}
+							],
+							"sid": 170814303741394,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 991000669165990,
+											"parameters": {
+												"first-value": "Command.ObjectTypeName",
+												"comparison": 0,
+												"second-value": "RepeatCommand.ObjectTypeName"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "localVars.numberInput = pickedCommand.getRepeatCount();"
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 630213577083207,
+											"parameters": {
+												"seconds": "0.01"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 837376320177934,
+											"parameters": {
+												"layer": "\"RepeatPopUp\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 888174956569896,
+											"parameters": {
+												"layer": "\"RepeatPopUp\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 700044825191491,
+											"parameters": {
+												"layer": "\"UI\"",
+												"interactive": false
+											}
+										}
+									],
+									"sid": 806487385920183
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "numberInput",
+					"type": "string",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 384020632955310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 870117131579341,
+							"parameters": {
+								"object": "NumberButton"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 112507977082900,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "NumberButton",
+									"sid": 146697070390620,
+									"parameters": {
+										"comparison": 5,
+										"number": "0"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "NumberButton",
+									"sid": 170909432361900,
+									"parameters": {
+										"comparison": 3,
+										"number": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 446812155109080,
+									"parameters": {
+										"variable": "numberInput",
+										"value": "numberInput <> \"0\" ? numberInput & str(NumberButton.AnimationFrame) : str(NumberButton.AnimationFrame)"
+									}
+								}
+							],
+							"sid": 745093876382876
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "NumberButton",
+									"sid": 212199641449107,
+									"parameters": {
+										"comparison": 0,
+										"number": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 963988511439282,
+									"parameters": {
+										"variable": "numberInput",
+										"value": "len(numberInput) > 1 ? left(numberInput, len(numberInput) - 1) : \"0\""
+									}
+								}
+							],
+							"sid": 987064110650150
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "NumberButton",
+									"sid": 232244325830356,
+									"parameters": {
+										"comparison": 0,
+										"number": "11"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 277030562486084,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "NumberButton",
+											"sid": 373208361230676,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"repeat-pop-up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand.setRepeatCount(localVars.numberInput);"
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 588672380550060,
+											"parameters": {
+												"layer": "\"RepeatPopUp\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 126691810051378,
+											"parameters": {
+												"layer": "\"RepeatPopUp\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 461329283606848,
+											"parameters": {
+												"layer": "\"UI\"",
+												"interactive": true
+											}
+										}
+									],
+									"sid": 196580329446032
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand = null;"
+										}
+									],
+									"sid": 124159783578658
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 761094976383202,
+							"parameters": {
+								"layer": "\"RepeatPopUp\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "SpriteFont",
+							"sid": 489274071823713,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"repeat-input-text\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 744829345399353,
+							"parameters": {
+								"text": "numberInput"
+							}
+						}
+					],
+					"sid": 525634137474943
 				}
 			],
 			"sid": 446028862137096

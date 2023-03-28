@@ -3,6 +3,8 @@ import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.
 import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
 let runner = null;
+let pickedCommand = null;
+
 const colors = [
     [1, 1, 1],
     [1, 1, 0],

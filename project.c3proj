@@ -96,7 +96,9 @@
 			"CommandButton",
 			"RepeatCommand",
 			"CommandDecoration",
-			"NestedCommandBackground"
+			"NestedCommandBackground",
+			"Blank",
+			"NumberButton"
 		],
 		"subfolders": []
 	},
