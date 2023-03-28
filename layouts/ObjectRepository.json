@@ -92,10 +92,10 @@
 								"flags": {
 									"x": true,
 									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -105,10 +105,10 @@
 								"flags": {
 									"x": true,
 									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1594,10 +1594,10 @@
 						"flags": {
 							"x": true,
 							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1658,10 +1658,10 @@
 						"flags": {
 							"x": true,
 							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
 							"d": true,
 							"sm": "normal"
 						},

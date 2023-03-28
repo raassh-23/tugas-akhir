@@ -1015,20 +1015,35 @@
 												{
 													"id": "is-touching-object",
 													"objectClass": "Touch",
-													"sid": 794384102401289,
+													"sid": 842826187155457,
 													"parameters": {
-														"object": "UIPanel"
+														"object": "CommandDecoration"
 													}
 												},
 												{
-													"id": "compare-instance-variable",
-													"objectClass": "UIPanel",
-													"sid": 418521957460006,
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "CommandDecoration",
+													"sid": 193934222847242,
 													"parameters": {
-														"instance-variable": "id",
-														"comparison": 0,
-														"value": "\"active-commands-panel\""
+														"instance-variable": "clickable"
 													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "pseudoDropCommand",
+													"sid": 957700593258325
+												}
+											],
+											"sid": 498218052688895
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 208283986643748
 												}
 											],
 											"actions": [
@@ -1067,23 +1082,6 @@
 												}
 											],
 											"sid": 610675001549488
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 374909451534768
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "pseudoDropCommand",
-													"sid": 303771269756543
-												}
-											],
-											"sid": 407659452199183
 										}
 									]
 								}
@@ -1198,6 +1196,15 @@
 								"variable": "isDragging",
 								"value": "false"
 							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 670270566192748,
+							"parameters": {
+								"type": "log",
+								"message": "\"dropped\""
+							}
 						}
 					],
 					"sid": 700328896884350,
@@ -1246,7 +1253,86 @@
 									"sid": 786191275505392
 								}
 							],
-							"sid": 467262502036328
+							"sid": 467262502036328,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 101291866065228,
+											"parameters": {
+												"first-value": "Command.ObjectTypeName",
+												"comparison": 0,
+												"second-value": "RepeatCommand.ObjectTypeName"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();\nlocalVars.numberInput = pickedCommand.getRepeatCount();"
+										}
+									],
+									"sid": 454089006255226,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 873890412299515,
+													"parameters": {
+														"variable": "numberInput",
+														"comparison": 0,
+														"value": "\"0\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 805611510310873,
+													"parameters": {
+														"seconds": "0.01"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 973032526434165,
+													"parameters": {
+														"layer": "\"RepeatPopUp\"",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 319017621938131,
+													"parameters": {
+														"layer": "\"RepeatPopUp\"",
+														"interactive": true
+													}
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 841502909810485,
+													"parameters": {
+														"layer": "\"UI\"",
+														"interactive": false
+													}
+												}
+											],
+											"sid": 500879687585747
+										}
+									]
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1769,6 +1855,14 @@
 							"sid": 768927338990605,
 							"parameters": {
 								"object": "CommandDecoration"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "CommandDecoration",
+							"sid": 718450816205202,
+							"parameters": {
+								"instance-variable": "clickable"
 							}
 						}
 					],
