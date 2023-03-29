@@ -23,6 +23,20 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
@@ -99,7 +113,9 @@
 			"NestedCommandBackground",
 			"Blank",
 			"NumberButton",
-			"CommandText"
+			"CommandText",
+			"Keyboard",
+			"Mouse"
 		],
 		"subfolders": []
 	},

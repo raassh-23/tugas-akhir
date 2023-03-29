@@ -306,6 +306,10 @@
 							}
 						},
 						{
+							"callFunction": "resetPanAndZoomVariable",
+							"sid": 446920431491151
+						},
+						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
 							"sid": 739571697606556,
@@ -2158,6 +2162,1072 @@
 						}
 					],
 					"sid": 525634137474943
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchPanID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "ID of the touch using to pan",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 965456016969666
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchZoomID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "ID of second touch using to zoom",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 370507836449533
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchLastX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial X position of touch (for pan)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 161619084726531
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchLastY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial Y position of touch (for pan)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 272669878966802
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchStartDistance",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial distance apart of touches (for zoom)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 217519526686236
+				},
+				{
+					"eventType": "variable",
+					"name": "InitialScale",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial scale of layout (for zoom)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 783777819279937
+				},
+				{
+					"eventType": "variable",
+					"name": "minScale",
+					"type": "number",
+					"initialValue": "0.5",
+					"comment": "Minimal scale of layout (for zoom)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 113699384408801
+				},
+				{
+					"eventType": "variable",
+					"name": "MaxScale",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "Max scale of layout (for zoom)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 769889784357592
+				},
+				{
+					"functionName": "resetPanAndZoomVariable",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 164037026727067,
+							"parameters": {
+								"variable": "TouchPanID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 388534253382827,
+							"parameters": {
+								"variable": "TouchZoomID",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 772207759426862,
+							"parameters": {
+								"variable": "TouchLastX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 768910511684358,
+							"parameters": {
+								"variable": "TouchLastY",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 797389373866428,
+							"parameters": {
+								"variable": "TouchStartDistance",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 845625306665461,
+							"parameters": {
+								"variable": "InitialScale",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 264745554979847,
+							"parameters": {
+								"variable": "minScale",
+								"value": "max(0.5, ViewportWidth(\"UI\")/LayoutWidth, ViewportHeight(\"UI\")/LayoutHeight)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 356848777767262,
+							"parameters": {
+								"variable": "MaxScale",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 890444293981634,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "1"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 685640587592318,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "1"
+							}
+						}
+					],
+					"sid": 865146277442835
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 719739050878473
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 157173365275758,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 285840029815274,
+							"parameters": {
+								"object": "ScrollablePanel"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 676551042919513,
+							"parameters": {
+								"object": "Button"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 913898929515166,
+							"parameters": {
+								"object": "NumberButton"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 779732637204089,
+							"parameters": {
+								"object": "Command"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 502535028186070,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"start\""
+							}
+						}
+					],
+					"sid": 363774344942645,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the user touches, and we're not already panning with a different touch, store the touch ID and the position of the touch. Note we get the position of the touch from a separate layer which has a parallax of 0, otherwise panning the view would alter the reported touch position, resulting in confusing feedback loops."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 371918133905066,
+									"parameters": {
+										"variable": "TouchPanID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 246459803486054,
+									"parameters": {
+										"variable": "TouchLastX",
+										"value": "Touch.X(\"UI\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 683583315606960,
+									"parameters": {
+										"variable": "TouchLastY",
+										"value": "Touch.Y(\"UI\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 347391236251878,
+									"parameters": {
+										"variable": "TouchPanID",
+										"value": "Touch.TouchID"
+									}
+								}
+							],
+							"sid": 268422496480449
+						},
+						{
+							"eventType": "comment",
+							"text": "Otherwise if we're already panning with a touch, this must be a second touch. Use this second touch to zoom the display. We need to remember the starting distance apart of the touches, as well as the starting layout scale, in order to calculate the zoom. Also store the mid-point of the touches, so we can still pan while zooming."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 809260405936298
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 933491948376990,
+									"parameters": {
+										"variable": "TouchZoomID",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 226412768391178,
+									"parameters": {
+										"variable": "TouchZoomID",
+										"value": "Touch.TouchID"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 114449452757567,
+									"parameters": {
+										"variable": "TouchStartDistance",
+										"value": "distance(Touch.XForID(TouchPanID, \"UI\"), Touch.YForID(TouchPanID, \"UI\"), Touch.XForID(TouchZoomID, \"UI\"), Touch.YForID(TouchZoomID, \"UI\"))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 281129264533314,
+									"parameters": {
+										"variable": "InitialScale",
+										"value": "LayerScale(\"Game\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 476961826770224,
+									"parameters": {
+										"variable": "TouchLastX",
+										"value": "(Touch.XForID(TouchPanID, \"UI\") + Touch.XForID(TouchZoomID, \"UI\")) / 2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 408708684405314,
+									"parameters": {
+										"variable": "TouchLastY",
+										"value": "(Touch.YForID(TouchPanID, \"UI\") + Touch.YForID(TouchZoomID, \"UI\")) / 2"
+									}
+								}
+							],
+							"sid": 890801777628587
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "While we have a touch to pan with, and we're not zooming, offset the scroll position by the change in position of the touch. This makes the view scroll with the touch. Note we also need to take in to account the layout scale to pan correctly at different zoom levels."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 343714229670783,
+							"parameters": {
+								"variable": "TouchPanID",
+								"comparison": 1,
+								"value": "-1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 202779123113621,
+							"parameters": {
+								"variable": "TouchZoomID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 809950872665853,
+							"parameters": {
+								"layer": "\"paused\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 900158941598845,
+							"parameters": {
+								"layer": "\"levelFailed\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 525045323541204,
+							"parameters": {
+								"layer": "\"levelFinished\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 106144683692972,
+							"parameters": {
+								"layer": "\"storyEnd\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 107615080212143,
+							"parameters": {
+								"x": "scrollx - (Touch.X(\"UI\") - TouchLastX) / LayerScale(\"Game\")",
+								"y": "scrolly - (Touch.Y(\"UI\") - TouchLastY) / LayerScale(\"Game\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 153955969587663,
+							"parameters": {
+								"variable": "TouchLastX",
+								"value": "Touch.X(\"UI\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 667485193018828,
+							"parameters": {
+								"variable": "TouchLastY",
+								"value": "Touch.Y(\"UI\")"
+							}
+						}
+					],
+					"sid": 774258509279430
+				},
+				{
+					"eventType": "comment",
+					"text": "If there is a second touch we're zooming with, adjust the layout scale based on the distance between the touches. Also calculate the new mid-point of the two touches and keep panning based on that."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 399452343851308,
+							"parameters": {
+								"variable": "TouchZoomID",
+								"comparison": 1,
+								"value": "-1"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 227070896015193,
+							"parameters": {
+								"layer": "\"paused\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 550237796665656,
+							"parameters": {
+								"layer": "\"levelFailed\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 233779568405290,
+							"parameters": {
+								"layer": "\"levelFinished\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 753357871721057,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "TouchCurrentDistance",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "The current distance apart of the touches (for zoom)",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 525949742390991
+						},
+						{
+							"eventType": "variable",
+							"name": "TouchCurrentMidX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "The current average position of the touches for panning while zooming",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 812901324901864
+						},
+						{
+							"eventType": "variable",
+							"name": "TouchCurrentMidY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "The current average position of the touches for panning while zooming",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 924884356804261
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 248679945442792,
+									"parameters": {
+										"variable": "TouchCurrentMidX",
+										"value": "(Touch.XForID(TouchPanID, \"UI\") + Touch.XForID(TouchZoomID, \"UI\")) / 2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 689707038094290,
+									"parameters": {
+										"variable": "TouchCurrentMidY",
+										"value": "(Touch.YForID(TouchPanID, \"UI\") + Touch.YForID(TouchZoomID, \"UI\")) / 2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 532375452605227,
+									"parameters": {
+										"variable": "TouchCurrentDistance",
+										"value": "distance(Touch.XForID(TouchPanID, \"UI\"), Touch.YForID(TouchPanID, \"UI\"), Touch.XForID(TouchZoomID, \"UI\"), Touch.YForID(TouchZoomID, \"UI\"))"
+									}
+								},
+								{
+									"id": "set-layer-scale",
+									"objectClass": "System",
+									"sid": 806807036117788,
+									"parameters": {
+										"layer": "\"Game\"",
+										"scale": "clamp(InitialScale * (TouchCurrentDistance / TouchStartDistance), minScale, MaxScale)"
+									}
+								},
+								{
+									"id": "set-layer-scale",
+									"objectClass": "System",
+									"sid": 825438811203486,
+									"parameters": {
+										"layer": "\"BG\"",
+										"scale": "LayerScale(\"game\")"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 555925832991641,
+									"parameters": {
+										"x": "scrollx - (TouchCurrentMidX - TouchLastX) / LayerScale(\"Game\")",
+										"y": "scrolly - (TouchCurrentMidY - TouchLastY) / LayerScale(\"Game\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 744054942415940,
+									"parameters": {
+										"variable": "TouchLastX",
+										"value": "TouchCurrentMidX"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 170125640907806,
+									"parameters": {
+										"variable": "TouchLastY",
+										"value": "TouchCurrentMidY"
+									}
+								}
+							],
+							"sid": 708864522629743
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "When the touch we are panning or zooming with ends, reset the stored touch ID so we stop the action."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 480642961355807
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 574490436366569,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"end\""
+							}
+						}
+					],
+					"sid": 380288101230477,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If we stop the first (panning) touch while zooming, make the second (zooming) touch become the new panning touch."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 830901364105935,
+									"parameters": {
+										"variable": "TouchPanID",
+										"comparison": 0,
+										"value": "Touch.TouchID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 433536520378709,
+									"parameters": {
+										"variable": "TouchPanID",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 402790067865910,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 214534755965295,
+											"parameters": {
+												"variable": "TouchZoomID",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 574480133991176,
+											"parameters": {
+												"variable": "TouchPanID",
+												"value": "TouchZoomID"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 365226717179246,
+											"parameters": {
+												"variable": "TouchZoomID",
+												"value": "-1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 431041999468668,
+											"parameters": {
+												"variable": "TouchLastX",
+												"value": "Touch.XForID(TouchPanID, \"UI\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 796841269446899,
+											"parameters": {
+												"variable": "TouchLastY",
+												"value": "Touch.YForID(TouchPanID, \"UI\")"
+											}
+										}
+									],
+									"sid": 742296857419001
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 912306020996158,
+									"parameters": {
+										"variable": "TouchZoomID",
+										"comparison": 0,
+										"value": "Touch.TouchID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 619286562257936,
+									"parameters": {
+										"variable": "TouchZoomID",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 537543488879846,
+									"parameters": {
+										"variable": "TouchLastX",
+										"value": "Touch.XForID(TouchPanID, \"UI\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 755441154450003,
+									"parameters": {
+										"variable": "TouchLastY",
+										"value": "Touch.YForID(TouchPanID, \"UI\")"
+									}
+								}
+							],
+							"sid": 334588596055541
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 566472438527276,
+							"parameters": {
+								"key": 187
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 703837571110539,
+							"parameters": {
+								"variable": "InitialScale",
+								"value": "LayerScale(\"Game\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 930368081113736,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "clamp(InitialScale + 1 * dt, minScale, MaxScale)"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 340069876610186,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 999794871216476,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 635783646476580,
+							"parameters": {
+								"direction": "up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 932370558124745,
+							"parameters": {
+								"variable": "InitialScale",
+								"value": "LayerScale(\"Game\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 169875217230226,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "clamp(InitialScale + 5 * dt, minScale, MaxScale)"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 161658930068051,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 664796335094695,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 970731130663986,
+							"parameters": {
+								"key": 189
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 677596457555231,
+							"parameters": {
+								"variable": "InitialScale",
+								"value": "LayerScale(\"Game\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 818777525400777,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "clamp(InitialScale - 1 * dt, minScale, MaxScale)"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 521998142556002,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 488873530293295,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 253961829587883,
+							"parameters": {
+								"direction": "down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 162082643165088,
+							"parameters": {
+								"variable": "InitialScale",
+								"value": "LayerScale(\"Game\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 561227259094827,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "clamp(InitialScale - 5 * dt, minScale, MaxScale)"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 879832371974435,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 807315320384015,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 401889241576026,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 665053666770446,
+							"parameters": {
+								"x": "scrollx",
+								"y": "scrolly - 400 * dt"
+							}
+						}
+					],
+					"sid": 761145724714894
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 714884451417175,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 439033116984513,
+							"parameters": {
+								"x": "scrollx",
+								"y": "scrolly + 400 * dt"
+							}
+						}
+					],
+					"sid": 415609995257386
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 508386454735085,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 853443547625478,
+							"parameters": {
+								"x": "scrollx  - 400 * dt",
+								"y": "scrolly"
+							}
+						}
+					],
+					"sid": 802171038255468
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 202119874477320,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 161541833323571,
+							"parameters": {
+								"x": "scrollx  + 400 * dt",
+								"y": "scrolly"
+							}
+						}
+					],
+					"sid": 752398250956960
 				}
 			],
 			"sid": 446028862137096
