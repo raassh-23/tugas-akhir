@@ -53,6 +53,8 @@ function addCommand(command, commandShadow) {
 		transformY: true,
 		destroyWithParent: true,
 	});
+
+	runner.updateLevel(0);
 }
 
 /**
@@ -64,6 +66,8 @@ function removeCommand(command) {
 
 	parent.removeCommand(command);
 	command.removeFromParent();
+
+	runner.updateLevel(0);
 }
 
 /**

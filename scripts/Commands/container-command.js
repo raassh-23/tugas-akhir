@@ -1,5 +1,6 @@
 import BaseCommand from "./base-command.js";
 import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array.js";
+import { clamp } from "../utils/misc.js";
 
 /**
  * @extends BaseCommand
@@ -10,6 +11,7 @@ export default class ContainerCommand extends BaseCommand {
      */
     commands = [];
     #color = [0, 0, 0];
+    level = 0;
 
     constructor(name) {
         super(name);
@@ -67,5 +69,20 @@ export default class ContainerCommand extends BaseCommand {
 
     getColor() {
         return [...this.#color];
+    }
+
+    updateLevel(level) {
+        this.level = level;
+
+        this.commands.filter(command => command instanceof ContainerCommand)
+            .forEach(command => command.updateLevel(level + 1));
+
+        // linear growth
+        // const colorValue = clamp(1 - (level - 1) * 0.1, 0.2, 1);
+
+        // logarithmic growth
+        const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
+
+        this.setColor([colorValue, colorValue, colorValue]);
     }
 }
