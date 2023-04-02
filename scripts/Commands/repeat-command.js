@@ -6,11 +6,29 @@ const offsetLength = 96;
  * @extends ContainerCommand
  */
 export default class RepeatCommand extends ContainerCommand {
+    /**
+     * @type {number}
+     */
     #repeatCount = 0;
+
+    /**
+     * @type {number}
+     */
     minLength = 0;
 
+    /**
+     * @type {?ISpriteInstance}
+     */
     childToBeShift = null;
+
+    /**
+     * @type {?IWorldInstance}
+     */
     background = null;
+
+    /**
+     * @type {?ITextInstance}
+     */
 	text = null;
 
     constructor() {
@@ -46,6 +64,10 @@ export default class RepeatCommand extends ContainerCommand {
         }
     }
 
+    /**
+     * 
+     * @param {number} width 
+     */
     expand(width) {
         const oldWidth = this.width;
 
@@ -90,6 +112,10 @@ export default class RepeatCommand extends ContainerCommand {
 		return this.#repeatCount;
 	}
 
+    /**
+     * 
+     * @param {[number, number, number]} color 
+     */
     setColor(color) {
         super.setColor(color);
         this.background.colorRgb = color;

@@ -10,9 +10,21 @@ export default class ContainerCommand extends BaseCommand {
      * @type {BaseCommand[]}
      */
     commands = [];
+
+    /**
+     * @type {[number, number, number]}
+     */
     #color = [0, 0, 0];
+
+    /**
+     * @type {number}
+     */
     level = 0;
 
+    /**
+     * 
+     * @param {string} name 
+     */
     constructor(name) {
         super(name);
     }
@@ -59,10 +71,18 @@ export default class ContainerCommand extends BaseCommand {
         emptyArray(this.commands);
     }
 
+    /**
+     * 
+     * @param {number} width 
+     */
     expand(width) {
         throw new Error("Abstract Method");
     }
 
+    /**
+     * 
+     * @param {[number, number, number]} color 
+     */
     setColor(color) {
         this.#color = color;
     }
@@ -71,6 +91,10 @@ export default class ContainerCommand extends BaseCommand {
         return [...this.#color];
     }
 
+    /**
+     * 
+     * @param {number} level 
+     */
     updateLevel(level) {
         this.level = level;
 

@@ -23,7 +23,7 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {ContainerCommand}
+ * @returns {?ContainerCommand}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();

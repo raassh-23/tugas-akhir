@@ -4,6 +4,9 @@ import ContainerCommand from "./container-command.js";
  * @extends ContainerCommand
  */
 export default class RunnerCommand extends ContainerCommand {
+    /**
+     * @type {?ISpriteInstance}
+     */
     parent = null;
 
     constructor() {
@@ -24,6 +27,10 @@ export default class RunnerCommand extends ContainerCommand {
         }
     }
 
+    /**
+     * 
+     * @param {number} width 
+     */
     expand(width) {
         if (this.parent == null) {
             this.parent = this.getParent();

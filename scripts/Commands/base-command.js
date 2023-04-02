@@ -19,6 +19,10 @@ export default class BaseCommand extends ISpriteInstance {
         throw new Error("Abstract Method");
     }
 
+    /**
+     * 
+     * @param {boolean} isActive 
+     */
     setActive(isActive) {
         const layer = this.runtime.layout.getLayer(isActive ? "ActiveCommandList" : "UI");
         const blendMode = isActive ? "source-atop" : "normal";

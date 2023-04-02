@@ -440,28 +440,6 @@
 										}
 									],
 									"sid": 789382506262238
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 308324555428420,
-											"parameters": {
-												"first-value": "Command.ObjectTypeName",
-												"comparison": 0,
-												"second-value": "RepeatCommand.ObjectTypeName"
-											}
-										}
-									],
-									"actions": [
-										{
-											"type": "script",
-											"script": "runtime.objects.RepeatCommand.getFirstPickedInstance().setColor(getColor());"
-										}
-									],
-									"sid": 276213447563074
 								}
 							]
 						}

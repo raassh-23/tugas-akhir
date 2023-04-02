@@ -2,25 +2,15 @@ import { BaseCommand, ContainerCommand, RunnerCommand } from "./Commands/index.j
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
+/**
+ * @type {?RunnerCommand}
+ */
 let runner = null;
+
+/**
+ * @type {?BaseCommand}
+ */
 let pickedCommand = null;
-
-const colors = [
-    [1, 1, 1],
-    [1, 1, 0],
-    [1, 0, 1],
-    [1, 0, 0],
-    [0, 1, 1],
-    [0, 1, 0],
-    [0, 0, 1],
-];
-let currentColorIndex = 0;
-
-function getColor() {
-	const color = colors[currentColorIndex];
-	currentColorIndex = (currentColorIndex + 1) % colors.length;
-	return color;
-}
 
 /**
  * 
