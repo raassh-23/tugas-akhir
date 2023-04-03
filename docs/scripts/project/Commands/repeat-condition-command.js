@@ -3,28 +3,24 @@ import ContainerCommand from "./container-command.js";
 /**
  * @extends ContainerCommand
  */
-export default class RunnerCommand extends ContainerCommand {
+export default class RepeatConditionCommand extends ContainerCommand {
     /**
      * @type {?ISpriteInstance}
      */
     parent = null;
 
     constructor() {
-        super("Runner");
+        super("RepeatConditionCommand");
     }
 
-    /**
-     * 
-     * @param {IPlayer} player 
-     */
-    async run(player) {
-        if (!this.runtime.globalVars.isRunning) {
-            this.runtime.globalVars.isRunning = true;
+    evaluate() {
+        let result = '';
 
-            await super.run(player);
+        this.commands.forEach((c) => {
+            result += c.evaluate();
+        });
 
-            this.runtime.globalVars.isRunning = false;
-        }
+        return result;
     }
 
     /**
@@ -48,5 +44,9 @@ export default class RunnerCommand extends ContainerCommand {
             this.parent.instVars.min =
                 (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
         }
+    }
+
+    logCommands() {
+        console.log(this.commands);
     }
 }

@@ -4346,25 +4346,27 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.Height,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetLayerInteractive,
+		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
+		C3.Plugins.Sprite.Exps.LayerName,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.ObjectTypeName,
-		C3.ScriptsInEvents.Game_es_Event13_Act1,
 		C3.ScriptsInEvents.Game_es_Event14_Act1,
-		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Sprite.Cnds.PickChildren,
-		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.ScriptsInEvents.Game_es_Event15_Act1,
+		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
+		C3.Plugins.NinePatch.Exps.LayerName,
+		C3.Plugins.NinePatch.Cnds.PickChildren,
+		C3.ScriptsInEvents.Game_es_Event16_Act1,
 		C3.Plugins.Sprite.Cnds.PickByUID,
 		C3.Plugins.Sprite.Acts.SetWidth,
-		C3.ScriptsInEvents.Game_es_Event17_Act4,
+		C3.ScriptsInEvents.Game_es_Event18_Act4,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Acts.SetPos,
+		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetX,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
@@ -4374,39 +4376,34 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.Else,
-		C3.ScriptsInEvents.Game_es_Event32_Act2,
-		C3.ScriptsInEvents.Game_es_Event33_Act1,
-		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
+		C3.ScriptsInEvents.Game_es_Event33_Act2,
+		C3.ScriptsInEvents.Game_es_Event34_Act1,
+		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
-		C3.Plugins.Browser.Acts.ConsoleLog,
-		C3.ScriptsInEvents.Game_es_Event37_Act1,
 		C3.ScriptsInEvents.Game_es_Event38_Act1,
-		C3.Plugins.System.Cnds.CompareVar,
+		C3.ScriptsInEvents.Game_es_Event39_Act1,
 		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.Sprite.Cnds.IsOnLayer,
+		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
-		C3.ScriptsInEvents.Game_es_Event42_Act2,
-		C3.ScriptsInEvents.Game_es_Event43_Act1,
+		C3.ScriptsInEvents.Game_es_Event45_Act2,
+		C3.ScriptsInEvents.Game_es_Event46_Act1,
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.System.Exps.dt,
 		C3.Plugins.Sprite.Acts.SetY,
-		C3.Plugins.System.Cnds.ForEach,
 		C3.Behaviors.DragnDrop.Acts.SetAxes,
-		C3.ScriptsInEvents.Game_es_Event60_Act1,
-		C3.Plugins.Sprite.Cnds.PickParent,
-		C3.ScriptsInEvents.Game_es_Event62_Act1,
+		C3.Plugins.System.Cnds.CompareVar,
 		C3.ScriptsInEvents.Game_es_Event63_Act1,
-		C3.Plugins.Sprite.Cnds.CompareFrame,
-		C3.Plugins.System.Acts.SetVar,
-		C3.Plugins.Sprite.Exps.AnimationFrame,
-		C3.Plugins.System.Exps.len,
-		C3.Plugins.System.Exps.left,
+		C3.ScriptsInEvents.Game_es_Event64_Act1,
+		C3.Plugins.NinePatch.Acts.SetY,
+		C3.ScriptsInEvents.Game_es_Event65_Act2,
+		C3.ScriptsInEvents.Game_es_Event66_Act1,
+		C3.Plugins.Sprite.Cnds.PickParent,
 		C3.ScriptsInEvents.Game_es_Event68_Act1,
 		C3.ScriptsInEvents.Game_es_Event69_Act1,
-		C3.Plugins.System.Cnds.LayerVisible,
-		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
-		C3.Plugins.Spritefont2.Acts.SetText,
+		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.System.Exps.viewportwidth,
 		C3.Plugins.System.Exps.layoutwidth,
@@ -4420,12 +4417,17 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Exps.XForID,
 		C3.Plugins.Touch.Exps.YForID,
 		C3.Plugins.System.Exps.layerscale,
+		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.System.Acts.Scroll,
 		C3.Plugins.System.Exps.scrollx,
 		C3.Plugins.System.Exps.scrolly,
 		C3.Plugins.Touch.Cnds.OnTouchEnd,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Plugins.Mouse.Cnds.OnWheel,
+		C3.Plugins.System.Acts.CreateObject,
+		C3.Plugins.NinePatch.Acts.SetInstanceVar,
+		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
+		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Plugins.System.Exps.projectversion,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
@@ -4446,6 +4448,10 @@ self.C3_JsPropNameTable = [
 	{isActive: 0},
 	{savedWidth: 0},
 	{savedHeight: 0},
+	{isNew: 0},
+	{panelId: 0},
+	{activeLayer: 0},
+	{inactiveLayer: 0},
 	{MoveCommand: 0},
 	{Button: 0},
 	{Touch: 0},
@@ -4474,10 +4480,11 @@ self.C3_JsPropNameTable = [
 	{CommandDecoration: 0},
 	{NestedCommandBackground: 0},
 	{Blank: 0},
-	{NumberButton: 0},
 	{CommandText: 0},
 	{Keyboard: 0},
 	{Mouse: 0},
+	{RepeatConditionCommand: 0},
+	{NumberCommand: 0},
 	{Command: 0},
 	{OtherCommand: 0},
 	{ContainerCommand: 0},
@@ -4485,13 +4492,14 @@ self.C3_JsPropNameTable = [
 	{isRunning: 0},
 	{isDragging: 0},
 	{objectTypeName: 0},
+	{layer: 0},
 	{x: 0},
 	{y: 0},
 	{frame: 0},
 	{uid: 0},
 	{width: 0},
 	{deltaWidth: 0},
-	{numberInput: 0},
+	{commandUID: 0},
 	{TouchPanID: 0},
 	{TouchZoomID: 0},
 	{TouchLastX: 0},
@@ -4502,7 +4510,8 @@ self.C3_JsPropNameTable = [
 	{MaxScale: 0},
 	{TouchCurrentDistance: 0},
 	{TouchCurrentMidX: 0},
-	{TouchCurrentMidY: 0}
+	{TouchCurrentMidY: 0},
+	{CommandUID: 0}
 ];
 }
 
@@ -4612,13 +4621,14 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
+		() => "Game",
 		() => "RepeatPopUp",
+		() => "PopUpBG",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
 		() => "",
-		() => "active-commands",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar_Family();
@@ -4636,14 +4646,15 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => (-n0.ExpObject());
 		},
-		() => "active-commands-panel",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
-		() => "dropped",
-		() => "0",
 		() => 0.01,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => and("repeat-panel-", n0.ExpObject());
+		},
 		() => "horizontal",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4661,27 +4672,13 @@ self.C3_ExpressionFuncs = [
 			return () => C3.clamp(n0.ExpObject(), n1.ExpInstVar(), n2.ExpInstVar());
 		},
 		() => "play",
-		() => 9,
+		() => "close-repeat-panel",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
-			const v1 = p._GetNode(1).GetVar();
-			const n2 = p._GetNode(2);
-			const n3 = p._GetNode(3);
-			return () => ((((v0.GetValue()) !== ("0") ? 1 : 0)) ? ((v1.GetValue() + (n2.ExpObject()).toString())) : ((n3.ExpObject()).toString()));
+			return () => and("repeat-panel-", v0.GetValue());
 		},
-		() => 10,
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const v1 = p._GetNode(1).GetVar();
-			const f2 = p._GetNode(2).GetBoundMethod();
-			const v3 = p._GetNode(3).GetVar();
-			const f4 = p._GetNode(4).GetBoundMethod();
-			const v5 = p._GetNode(5).GetVar();
-			return () => ((((f0(v1.GetValue())) > (1) ? 1 : 0)) ? (f2(v3.GetValue(), (f4(v5.GetValue()) - 1))) : ("0"));
-		},
-		() => 11,
-		() => "repeat-pop-up",
-		() => "repeat-input-text",
+		() => -1000,
+		() => 195,
 		() => -1,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4692,7 +4689,6 @@ self.C3_ExpressionFuncs = [
 			return () => f0(0.5, (f1("UI") / f2()), (f3("UI") / f4()));
 		},
 		() => 2,
-		() => "Game",
 		() => 1,
 		() => "BG",
 		p => {
@@ -4721,10 +4717,6 @@ self.C3_ExpressionFuncs = [
 			const v3 = p._GetNode(3).GetVar();
 			return () => ((f0(v1.GetValue(), "UI") + f2(v3.GetValue(), "UI")) / 2);
 		},
-		() => "paused",
-		() => "levelFailed",
-		() => "levelFinished",
-		() => "storyEnd",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -4794,6 +4786,13 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => (f0() + (400 * f1()));
 		},
+		() => 360,
+		() => "repeat-panel",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("repeat-condition-container-", v0.GetValue());
+		},
+		() => "Debugging Tools",
 		() => "version",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();

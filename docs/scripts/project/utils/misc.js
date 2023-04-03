@@ -23,14 +23,25 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {ContainerCommand}
+ * @returns {?ContainerCommand}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
 
-	while (!(parent instanceof ContainerCommand)) {
+	while (parent != null && !(parent instanceof ContainerCommand)) {
 		parent = parent.getParent();
 	}
 
 	return parent;
+}
+
+/**
+ * 
+ * @param {number} value 
+ * @param {number} min 
+ * @param {number} max 
+ * @returns {number}
+ */
+export function clamp(value, min, max) {
+	return Math.min(Math.max(value, min), max);
 }

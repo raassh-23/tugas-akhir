@@ -2,25 +2,15 @@ import { BaseCommand, ContainerCommand, RunnerCommand } from "./Commands/index.j
 import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
 import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
+/**
+ * @type {?RunnerCommand}
+ */
 let runner = null;
+
+/**
+ * @type {?BaseCommand}
+ */
 let pickedCommand = null;
-
-const colors = [
-    [1, 1, 1],
-    [1, 1, 0],
-    [1, 0, 1],
-    [1, 0, 0],
-    [0, 1, 1],
-    [0, 1, 0],
-    [0, 0, 1],
-];
-let currentColorIndex = 0;
-
-function getColor() {
-	const color = colors[currentColorIndex];
-	currentColorIndex = (currentColorIndex + 1) % colors.length;
-	return color;
-}
 
 /**
  * 
@@ -36,10 +26,27 @@ function setRunner(runtime) {
 
 /**
  * 
+ * @param {ICommandShadow} commandShadow 
+ */
+function getTopCommandContainer(commandShadow) {
+	let parent = getContainerParent(commandShadow);
+	let grandParent = getContainerParent(parent);
+
+	while (grandParent != null) {
+		parent = grandParent;
+		grandParent = getContainerParent(parent);
+	}
+
+	return parent;
+}
+
+/**
+ * 
  * @param {BaseCommand} command 
  * @param {ICommandShadow} commandShadow
  */
 function addCommand(command, commandShadow) {
+	const top = getTopCommandContainer(commandShadow);
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
 	let parent = getContainerParent(commandShadow);
 
@@ -53,6 +60,9 @@ function addCommand(command, commandShadow) {
 		transformY: true,
 		destroyWithParent: true,
 	});
+
+	top.updateLevel(0);
+	top.logCommands();
 }
 
 /**
@@ -64,6 +74,8 @@ function removeCommand(command) {
 
 	parent.removeCommand(command);
 	command.removeFromParent();
+
+	runner.updateLevel(0);
 }
 
 /**
@@ -76,23 +88,25 @@ function pickCommandShadowToShow(command, commandShadows) {
 	const excludedShadows = []
 
 	for (const shadowChild of command.children()) {
-		excludedShadows.push(shadowChild.uid);
+		if (shadowChild.objectType.name === "CommandShadow") {
+			excludedShadows.push(shadowChild.uid);
+		}
 	}
 
-	commandShadows.sort((a, b) => {
-		const squaredDistanceA = getSquaredDistance(command, a);
-		const squaredDistanceB = getSquaredDistance(command, b);
+	const pickedShadow = commandShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
+		.sort((a, b) => {
+			const squaredDistanceA = getSquaredDistance(command, a);
+			const squaredDistanceB = getSquaredDistance(command, b);
 
-		if (squaredDistanceA < squaredDistanceB) {
-			return -1;
-		} else if (squaredDistanceA > squaredDistanceB) {
-			return 1;
-		} else {
-			return 0;
-		}
-	});
-
-	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
+			if (squaredDistanceA < squaredDistanceB) {
+				return -1;
+			} else if (squaredDistanceA > squaredDistanceB) {
+				return 1;
+			} else {
+				return 0;
+			}
+		})
+		.find((s) => !excludedShadows.includes(s.uid));
 
 	if (pickedShadow) {
 		return pickedShadow.uid;
@@ -106,18 +120,19 @@ function pickCommandShadowToShow(command, commandShadows) {
  * @param {ContainerCommand} containers 
  */
 function resetContainerLength(containers) {
-	containers.forEach(container => {
-		container.expand(0);
-	});
+	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
+		.forEach((c) => {
+			c.expand(0);
+		});
 }
 
 /**
  * 
  * @param {ICommandShadow} commandShadow 
  */
-function expandCommandShadow(commandShadow) {
+function expandCommandShadowContainer(commandShadow) {
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
-	
+
 	let parent = getContainerParent(commandShadow);
 
 	if (addToGrandParent) {
@@ -151,17 +166,12 @@ const scriptsInEvents = {
 		setRunner(runtime);
 	},
 
-	async Game_es_Event13_Act1(runtime, localVars)
+	async Game_es_Event14_Act1(runtime, localVars)
 	{
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event14_Act1(runtime, localVars)
-	{
-		runtime.objects.RepeatCommand.getFirstPickedInstance().setColor(getColor());
-	},
-
-	async Game_es_Event15_Act1(runtime, localVars)
+	async Game_es_Event16_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCommandShadowToShow(
 			runtime.objects.Command.getFirstPickedInstance(), 
@@ -171,14 +181,14 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event17_Act4(runtime, localVars)
+	async Game_es_Event18_Act4(runtime, localVars)
 	{
-		expandCommandShadow(
+		expandCommandShadowContainer(
 			runtime.objects.CommandShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event32_Act2(runtime, localVars)
+	async Game_es_Event33_Act2(runtime, localVars)
 	{
 		removeCommand(
 			runtime.objects.Command.getFirstPickedInstance()
@@ -186,63 +196,67 @@ const scriptsInEvents = {
 		runner.logCommands();
 	},
 
-	async Game_es_Event33_Act1(runtime, localVars)
+	async Game_es_Event34_Act1(runtime, localVars)
 	{
 		resetContainerLength(
 			runtime.objects.ContainerCommand.getAllInstances()
 		);
 	},
 
-	async Game_es_Event37_Act1(runtime, localVars)
+	async Game_es_Event38_Act1(runtime, localVars)
 	{
 		addCommand(
 			runtime.objects.Command.getFirstPickedInstance(), 
 			runtime.objects.CommandShadow.getFirstPickedInstance()
 		);
-		runner.logCommands();
 	},
 
-	async Game_es_Event38_Act1(runtime, localVars)
+	async Game_es_Event39_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.Command.getFirstPickedInstance();
-		localVars.numberInput = pickedCommand.getRepeatCount();
 	},
 
-	async Game_es_Event42_Act2(runtime, localVars)
+	async Game_es_Event45_Act2(runtime, localVars)
 	{
 		runtime.objects.Command.getFirstPickedInstance().setActive(true);
 	},
 
-	async Game_es_Event43_Act1(runtime, localVars)
+	async Game_es_Event46_Act1(runtime, localVars)
 	{
 		runtime.objects.Command.getFirstPickedInstance().setActive(false);
 	},
 
-	async Game_es_Event60_Act1(runtime, localVars)
+	async Game_es_Event63_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		
 		runner.run(runtime.objects.Player.getFirstInstance())
 	},
 
-	async Game_es_Event62_Act1(runtime, localVars)
+	async Game_es_Event64_Act1(runtime, localVars)
 	{
-		pickedCommand = runtime.objects.Command.getFirstPickedInstance();
+		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event63_Act1(runtime, localVars)
+	async Game_es_Event65_Act2(runtime, localVars)
 	{
-		localVars.numberInput = pickedCommand.getRepeatCount();
+		const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();
+		pickedCommand.setRepeatCount(count);
+	},
+
+	async Game_es_Event66_Act1(runtime, localVars)
+	{
+		pickedCommand = null;
 	},
 
 	async Game_es_Event68_Act1(runtime, localVars)
 	{
-		pickedCommand.setRepeatCount(localVars.numberInput);
+		pickedCommand = runtime.objects.Command.getFirstPickedInstance();
 	},
 
 	async Game_es_Event69_Act1(runtime, localVars)
 	{
-		pickedCommand = null;
+		localVars.commandUID = pickedCommand.uid;
 	}
 
 };
