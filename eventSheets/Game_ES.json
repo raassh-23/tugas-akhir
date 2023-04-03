@@ -1205,15 +1205,6 @@
 								"variable": "isDragging",
 								"value": "false"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 670270566192748,
-							"parameters": {
-								"type": "log",
-								"message": "\"dropped\""
-							}
 						}
 					],
 					"sid": 700328896884350,
@@ -2521,18 +2512,7 @@
 							"isInverted": true
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 502535028186070,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"start\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 363774344942645,
 					"children": [
 						{
@@ -2925,18 +2905,7 @@
 							"sid": 480642961355807
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 574490436366569,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"end\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 380288101230477,
 					"children": [
 						{

@@ -100,9 +100,10 @@ function pickCommandShadowToShow(command, commandShadows) {
  * @param {ContainerCommand} containers 
  */
 function resetContainerLength(containers) {
-	containers.forEach(container => {
-		container.expand(0);
-	});
+	containers.filter((c) => c.layer.isInteractive)
+		.forEach((c) => {
+			c.expand(0);
+		});
 }
 
 /**
@@ -111,7 +112,7 @@ function resetContainerLength(containers) {
  */
 function expandCommandShadow(commandShadow) {
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
-	
+
 	let parent = getContainerParent(commandShadow);
 
 	if (addToGrandParent) {

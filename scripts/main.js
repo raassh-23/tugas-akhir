@@ -1,4 +1,9 @@
-import {MoveCommand, RepeatCommand, RunnerCommand, ContainerCommand } from "./Commands/index.js";
+import {
+	MoveCommand,
+	RepeatCommand,
+	RunnerCommand,
+	RepeatConditionCommand,
+} from "./Commands/index.js";
 
 runOnStartup(async runtime =>
 {
@@ -11,6 +16,7 @@ runOnStartup(async runtime =>
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
 	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
+	runtime.objects.RepeatConditionCommand.setInstanceClass(RepeatConditionCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

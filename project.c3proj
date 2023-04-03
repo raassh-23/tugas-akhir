@@ -217,7 +217,7 @@
 							}
 						},
 						{
-							"name": "repeat-condition-command.js.js",
+							"name": "repeat-condition-command.js",
 							"type": "application/javascript",
 							"sid": 397401262361225,
 							"script-info": {
