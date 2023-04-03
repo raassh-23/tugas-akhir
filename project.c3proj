@@ -115,7 +115,8 @@
 			"NumberButton",
 			"CommandText",
 			"Keyboard",
-			"Mouse"
+			"Mouse",
+			"RepeatConditionCommand"
 		],
 		"subfolders": []
 	},
@@ -211,6 +212,14 @@
 							"name": "runner-command.js",
 							"type": "application/javascript",
 							"sid": 322311837758489,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "repeat-condition-command.js.js",
+							"type": "application/javascript",
+							"sid": 397401262361225,
 							"script-info": {
 								"purpose": "none"
 							}

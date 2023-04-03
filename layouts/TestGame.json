@@ -1005,456 +1005,83 @@
 			"global": false
 		},
 		{
-			"name": "RepeatPopUp",
+			"name": "PopUpBG",
 			"overriden": 0,
-			"subLayers": [
-				{
-					"name": "RepeatPopUpBG",
-					"overriden": 0,
-					"subLayers": [],
-					"instances": [
-						{
-							"type": "Blank",
-							"properties": {
-								"initially-visible": true,
-								"origin": "top-left",
-								"wrap-horizontal": "repeat",
-								"wrap-vertical": "repeat",
-								"image-offset-x": 0,
-								"image-offset-y": 0,
-								"image-scale-x": 1,
-								"image-scale-y": 1,
-								"image-angle": 0,
-								"enable-tile-randomization": false,
-								"x-random": 1,
-								"y-random": 1,
-								"angle-random": 1,
-								"blend-margin-x": 0.1,
-								"blend-margin-y": 0.1
-							},
-							"uid": 47,
-							"instanceVariables": {},
-							"behaviors": {},
-							"world": {
-								"x": -105,
-								"y": -109,
-								"width": 1417,
-								"height": 887,
-								"originX": 0,
-								"originY": 0,
-								"color": [
-									1,
-									1,
-									1,
-									0.75
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						}
-					],
-					"sid": 207714653503841,
-					"effectTypes": [],
-					"isInitiallyVisible": true,
-					"isInitiallyInteractive": true,
-					"color": [
-						1,
-						1,
-						1,
-						1
-					],
-					"backgroundColor": [
-						0.3686274509803922,
-						0.3686274509803922,
-						0.3686274509803922,
-						1
-					],
-					"isTransparent": true,
-					"parallaxX": 0,
-					"parallaxY": 0,
-					"scaleRate": 1,
-					"forceOwnTexture": false,
-					"renderingMode": "3d",
-					"drawOrder": "z-order",
-					"useRenderCells": false,
-					"blendMode": "normal",
-					"zElevation": 0,
-					"global": false
-				}
-			],
+			"subLayers": [],
 			"instances": [
 				{
-					"type": "UIPanel",
+					"type": "Blank",
 					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "stretch",
-						"fill": "stretch",
 						"initially-visible": true,
 						"origin": "top-left",
-						"seams": "overlap"
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
-					"uid": 48,
-					"instanceVariables": {
-						"id": "repeat-panel"
-					},
+					"uid": 47,
+					"instanceVariables": {},
 					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": null,
-						"uid": 48,
-						"children": [
-							{
-								"uid": 50,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 52,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 53,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 51,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
 					"world": {
-						"x": 360,
-						"y": 34,
-						"width": 559.8431207097119,
-						"height": 288.12494995995996,
+						"x": -105,
+						"y": -109,
+						"width": 1417,
+						"height": 887,
 						"originX": 0,
 						"originY": 0,
 						"color": [
 							1,
 							1,
 							1,
-							1
+							0.75
 						],
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "UIPanel",
-					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "stretch",
-						"fill": "stretch",
-						"initially-visible": true,
-						"origin": "top-left",
-						"seams": "overlap"
-					},
-					"uid": 50,
-					"instanceVariables": {
-						"id": "repeat-input"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 48,
-						"uid": 50,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 474,
-						"y": 154,
-						"width": 330.98684365153963,
-						"height": 71.84665195798956,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0.6313725490196078,
-							0.6313725490196078,
-							0.6313725490196078,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "Ulangi ",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 2,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 51,
-					"instanceVariables": {
-						"id": "repeat-text"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 48,
-						"uid": 51,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 495,
-						"y": 67,
-						"width": 328,
-						"height": 84,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "kali",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 2,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 52,
-					"instanceVariables": {
-						"id": "repeat-text"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 48,
-						"uid": 52,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 397,
-						"y": 231,
-						"width": 486,
-						"height": 84,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SpriteFont",
-					"properties": {
-						"text": "0",
-						"enable-bbcode": true,
-						"character-width": 16,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
-						"spacing-data": "",
-						"scale": 2,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 53,
-					"instanceVariables": {
-						"id": "repeat-input-text"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 48,
-						"uid": 53,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 474,
-						"y": 147,
-						"width": 330,
-						"height": 84,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
+				}
+			],
+			"sid": 207714653503841,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": true
+		},
+		{
+			"name": "RepeatPopUp",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
 				{
 					"type": "NumberButton",
 					"properties": {
@@ -1848,7 +1475,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
