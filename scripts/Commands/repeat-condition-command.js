@@ -14,7 +14,13 @@ export default class RepeatConditionCommand extends ContainerCommand {
     }
 
     evaluate() {
-        return 0;
+        let result = '';
+
+        this.commands.forEach((c) => {
+            result += c.evaluate();
+        });
+
+        return result;
     }
 
     /**

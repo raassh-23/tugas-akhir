@@ -844,6 +844,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 918415430987728
+						},
+						{
+							"name": "panelId",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 564771456022084
 						}
 					],
 					"eventType": "function-block",
@@ -854,6 +861,26 @@
 							"sid": 133769633535903,
 							"parameters": {
 								"instance-variable": "isActive"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Command",
+							"sid": 377491021264299,
+							"parameters": {
+								"instance-variable": "panelId",
+								"comparison": 0,
+								"value": "panelId"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Command",
+							"sid": 239883647887688,
+							"parameters": {
+								"instance-variable": "panelId",
+								"comparison": 0,
+								"value": "panelId"
 							}
 						}
 					],
@@ -1137,10 +1164,11 @@
 												},
 												{
 													"callFunction": "shiftActiveCommands",
-													"sid": 129785811802223,
+													"sid": 460664071702417,
 													"parameters": [
 														"Command.X",
-														"-Command.Width"
+														"-Command.Width",
+														"Command.panelId"
 													]
 												},
 												{
@@ -1210,10 +1238,11 @@
 								},
 								{
 									"callFunction": "shiftActiveCommands",
-									"sid": 271884108430994,
+									"sid": 229035459114190,
 									"parameters": [
 										"CommandShadow.X",
-										"Command.Width"
+										"Command.Width",
+										"Command.panelId"
 									]
 								}
 							],
@@ -1314,7 +1343,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();\nlocalVars.numberInput = pickedCommand.getRepeatCount();"
+											"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();"
 										}
 									],
 									"sid": 454089006255226,
@@ -1942,6 +1971,135 @@
 								}
 							],
 							"sid": 617062141404167
+						},
+						{
+							"eventType": "variable",
+							"name": "commandUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 833050754780968
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 732428580329747,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"close-repeat-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "localVars.commandUID = pickedCommand.uid;"
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 205924971260972,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 324232375410920,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 671934655610863,
+									"parameters": {
+										"layer": "\"PopUpBG\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 387616620643094,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 270514334357066,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 279507632404491,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 891439143627406,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"repeat-panel-\"&commandUID"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "UIPanel",
+											"sid": 726186103143182,
+											"parameters": {
+												"child": "RepeatConditionCommand",
+												"which": "all"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "UIPanel",
+											"sid": 448942377657484,
+											"parameters": {
+												"y": "-1000"
+											}
+										},
+										{
+											"type": "script",
+											"script": "const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(count);"
+										}
+									],
+									"sid": 909722445575051
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand = null;"
+										}
+									],
+									"sid": 719556496856872
+								}
+							]
 						}
 					]
 				},
@@ -2024,7 +2182,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "localVars.numberInput = pickedCommand.getRepeatCount();\nlocalVars.commandUID = pickedCommand.uid;"
+											"script": "localVars.commandUID = pickedCommand.uid;"
 										},
 										{
 											"id": "wait",
@@ -2100,9 +2258,9 @@
 												{
 													"id": "set-y",
 													"objectClass": "UIPanel",
-													"sid": 258375604113119,
+													"sid": 543070936955678,
 													"parameters": {
-														"y": "10"
+														"y": "195"
 													}
 												}
 											],
@@ -2138,269 +2296,6 @@
 							]
 						}
 					]
-				},
-				{
-					"eventType": "variable",
-					"name": "numberInput",
-					"type": "string",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 384020632955310
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 870117131579341,
-							"parameters": {
-								"object": "NumberButton"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 112507977082900,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "NumberButton",
-									"sid": 146697070390620,
-									"parameters": {
-										"comparison": 5,
-										"number": "0"
-									}
-								},
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "NumberButton",
-									"sid": 170909432361900,
-									"parameters": {
-										"comparison": 3,
-										"number": "9"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 446812155109080,
-									"parameters": {
-										"variable": "numberInput",
-										"value": "numberInput <> \"0\" ? numberInput & str(NumberButton.AnimationFrame) : str(NumberButton.AnimationFrame)"
-									}
-								}
-							],
-							"sid": 745093876382876,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "NumberButton",
-									"sid": 212199641449107,
-									"parameters": {
-										"comparison": 0,
-										"number": "10"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 963988511439282,
-									"parameters": {
-										"variable": "numberInput",
-										"value": "len(numberInput) > 1 ? left(numberInput, len(numberInput) - 1) : \"0\""
-									}
-								}
-							],
-							"sid": 987064110650150,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "NumberButton",
-									"sid": 232244325830356,
-									"parameters": {
-										"comparison": 0,
-										"number": "11"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 277030562486084,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "commandUID",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 653595542571135
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "NumberButton",
-											"sid": 373208361230676,
-											"parameters": {
-												"instance-variable": "id",
-												"comparison": 0,
-												"value": "\"repeat-pop-up\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"type": "script",
-											"script": "pickedCommand.setRepeatCount(localVars.numberInput);\nlocalVars.commandUID = pickedCommand.uid;"
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 588672380550060,
-											"parameters": {
-												"layer": "\"RepeatPopUp\"",
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 126691810051378,
-											"parameters": {
-												"layer": "\"RepeatPopUp\"",
-												"interactive": false
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 548235289062900,
-											"parameters": {
-												"layer": "\"PopUpBG\"",
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 461329283606848,
-											"parameters": {
-												"layer": "\"UI\"",
-												"interactive": true
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 573921454985348,
-											"parameters": {
-												"layer": "\"Game\"",
-												"interactive": true
-											}
-										}
-									],
-									"sid": 196580329446032,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "UIPanel",
-													"sid": 125369230470941,
-													"parameters": {
-														"instance-variable": "id",
-														"comparison": 0,
-														"value": "\"repeat-panel-\"&commandUID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-y",
-													"objectClass": "UIPanel",
-													"sid": 118751353201373,
-													"parameters": {
-														"y": "-1000"
-													}
-												}
-											],
-											"sid": 230413097758699,
-											"disabled": true
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"type": "script",
-											"script": "pickedCommand = null;"
-										}
-									],
-									"sid": 124159783578658,
-									"disabled": true
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 761094976383202,
-							"parameters": {
-								"layer": "\"RepeatPopUp\""
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
-							"sid": 489274071823713,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"repeat-input-text\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "SpriteFont",
-							"sid": 744829345399353,
-							"parameters": {
-								"text": "numberInput"
-							}
-						}
-					],
-					"sid": 525634137474943
 				},
 				{
 					"eventType": "variable",
@@ -2618,15 +2513,6 @@
 							"sid": 676551042919513,
 							"parameters": {
 								"object": "Button"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 913898929515166,
-							"parameters": {
-								"object": "NumberButton"
 							},
 							"isInverted": true
 						},
@@ -3423,12 +3309,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 418841430641597,
+							"sid": 568375567010527,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"RepeatPopUp\"",
 								"x": "360",
-								"y": "10",
+								"y": "195",
 								"create-hierarchy": true,
 								"template-name": "\"repeat-panel\""
 							}
