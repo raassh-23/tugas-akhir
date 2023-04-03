@@ -109,4 +109,8 @@ export default class ContainerCommand extends BaseCommand {
 
         this.setColor([colorValue, colorValue, colorValue]);
     }
+
+    logCommands() {
+        console.log(this.commands);
+    }
 }

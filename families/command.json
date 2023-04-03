@@ -44,6 +44,27 @@
 			"desc": "",
 			"show": true,
 			"sid": 273149000749489
+		},
+		{
+			"name": "panelId",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 145597469396943
+		},
+		{
+			"name": "activeLayer",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 167668955831260
+		},
+		{
+			"name": "inactiveLayer",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 218756287615760
 		}
 	],
 	"behaviorTypes": [
@@ -56,6 +77,7 @@
 	"effectTypes": [],
 	"members": [
 		"MoveCommand",
-		"RepeatCommand"
+		"RepeatCommand",
+		"NumberCommand"
 	]
 }

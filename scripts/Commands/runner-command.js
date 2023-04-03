@@ -49,8 +49,4 @@ export default class RunnerCommand extends ContainerCommand {
                 (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
         }
     }
-
-    logCommands() {
-        console.log(this.commands);
-    }
 }

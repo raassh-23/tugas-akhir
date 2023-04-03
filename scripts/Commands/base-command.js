@@ -24,11 +24,12 @@ export default class BaseCommand extends ISpriteInstance {
      * @param {boolean} isActive 
      */
     setActive(isActive) {
-        const layer = this.runtime.layout.getLayer(isActive ? "ActiveCommandList" : "UI");
+        const layer = this.runtime.layout.getLayer(isActive ? this.instVars.activeLayer : this.instVars.inactiveLayer);
         const blendMode = isActive ? "source-atop" : "normal";
 
         this.instVars.isActive = isActive;
         this.moveToLayer(layer);
+        this.moveToTop();
         this.blendMode = blendMode;
 
         const children = [];
@@ -49,6 +50,7 @@ export default class BaseCommand extends ISpriteInstance {
         children.forEach((child) => {
             child.blendMode = blendMode;
             child.moveToLayer(layer);
+            child.moveToTop();
 
             if (child instanceof BaseCommand) {
                 child.instVars.isActive = isActive;

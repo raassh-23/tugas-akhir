@@ -116,7 +116,8 @@
 			"CommandText",
 			"Keyboard",
 			"Mouse",
-			"RepeatConditionCommand"
+			"RepeatConditionCommand",
+			"NumberCommand"
 		],
 		"subfolders": []
 	},
@@ -220,6 +221,14 @@
 							"name": "repeat-condition-command.js",
 							"type": "application/javascript",
 							"sid": 397401262361225,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "number-command.js",
+							"type": "application/javascript",
+							"sid": 875032843354489,
 							"script-info": {
 								"purpose": "none"
 							}

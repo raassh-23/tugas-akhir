@@ -532,9 +532,9 @@
 					},
 					"world": {
 						"x": 1413,
-						"y": 226,
+						"y": 113.48309266558249,
 						"width": 558.2759657686943,
-						"height": 120,
+						"height": 334.93611898214505,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -563,7 +563,10 @@
 						"isActive": false,
 						"savedWidth": 0,
 						"savedHeight": 0,
-						"isNew": true
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -775,7 +778,10 @@
 						"isActive": false,
 						"savedWidth": 0,
 						"savedHeight": 0,
-						"isNew": true
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -858,7 +864,10 @@
 						"isActive": false,
 						"savedWidth": 0,
 						"savedHeight": 0,
-						"isNew": true
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -941,7 +950,10 @@
 						"isActive": false,
 						"savedWidth": 0,
 						"savedHeight": 0,
-						"isNew": true
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1024,7 +1036,10 @@
 						"isActive": false,
 						"savedWidth": 0,
 						"savedHeight": 0,
-						"isNew": true
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -2375,7 +2390,7 @@
 				{
 					"type": "CommandShadow",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -2486,6 +2501,151 @@
 					"world": {
 						"x": 1437,
 						"y": 286,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "source-atop"
+					}
+				},
+				{
+					"type": "NumberCommand",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"savedX": 0,
+						"savedY": 0,
+						"isActive": false,
+						"savedWidth": 0,
+						"savedHeight": 0,
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 79,
+						"children": [
+							{
+								"uid": 80,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 600,
+						"y": 258,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandShadow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 80,
+					"instanceVariables": {
+						"level": 0,
+						"addToGrandParent": false,
+						"shouldShift": false
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 79,
+						"uid": 80,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 672,
+						"y": 258,
 						"width": 72,
 						"height": 72,
 						"originX": 0,

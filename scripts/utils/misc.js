@@ -28,7 +28,7 @@ export function getSquaredDistance(a, b) {
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
 
-	while (!(parent instanceof ContainerCommand)) {
+	while (parent != null && !(parent instanceof ContainerCommand)) {
 		parent = parent.getParent();
 	}
 

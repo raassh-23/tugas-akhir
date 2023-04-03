@@ -26,10 +26,27 @@ function setRunner(runtime) {
 
 /**
  * 
+ * @param {ICommandShadow} commandShadow 
+ */
+function getTopCommandContainer(commandShadow) {
+	let parent = getContainerParent(commandShadow);
+	let grandParent = getContainerParent(parent);
+
+	while (grandParent != null) {
+		parent = grandParent;
+		grandParent = getContainerParent(parent);
+	}
+
+	return parent;
+}
+
+/**
+ * 
  * @param {BaseCommand} command 
  * @param {ICommandShadow} commandShadow
  */
 function addCommand(command, commandShadow) {
+	const top = getTopCommandContainer(commandShadow);
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
 	let parent = getContainerParent(commandShadow);
 
@@ -44,7 +61,8 @@ function addCommand(command, commandShadow) {
 		destroyWithParent: true,
 	});
 
-	runner.updateLevel(0);
+	top.updateLevel(0);
+	top.logCommands();
 }
 
 /**
@@ -70,23 +88,25 @@ function pickCommandShadowToShow(command, commandShadows) {
 	const excludedShadows = []
 
 	for (const shadowChild of command.children()) {
-		excludedShadows.push(shadowChild.uid);
+		if (shadowChild.objectType.name === "CommandShadow") {
+			excludedShadows.push(shadowChild.uid);
+		}
 	}
 
-	commandShadows.sort((a, b) => {
-		const squaredDistanceA = getSquaredDistance(command, a);
-		const squaredDistanceB = getSquaredDistance(command, b);
+	const pickedShadow = commandShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
+		.sort((a, b) => {
+			const squaredDistanceA = getSquaredDistance(command, a);
+			const squaredDistanceB = getSquaredDistance(command, b);
 
-		if (squaredDistanceA < squaredDistanceB) {
-			return -1;
-		} else if (squaredDistanceA > squaredDistanceB) {
-			return 1;
-		} else {
-			return 0;
-		}
-	});
-
-	const pickedShadow = commandShadows.find(shadow => !excludedShadows.includes(shadow.uid));
+			if (squaredDistanceA < squaredDistanceB) {
+				return -1;
+			} else if (squaredDistanceA > squaredDistanceB) {
+				return 1;
+			} else {
+				return 0;
+			}
+		})
+		.find((s) => !excludedShadows.includes(s.uid));
 
 	if (pickedShadow) {
 		return pickedShadow.uid;
@@ -100,7 +120,7 @@ function pickCommandShadowToShow(command, commandShadows) {
  * @param {ContainerCommand} containers 
  */
 function resetContainerLength(containers) {
-	containers.filter((c) => c.layer.isInteractive)
+	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
 		.forEach((c) => {
 			c.expand(0);
 		});
@@ -110,7 +130,7 @@ function resetContainerLength(containers) {
  * 
  * @param {ICommandShadow} commandShadow 
  */
-function expandCommandShadow(commandShadow) {
+function expandCommandShadowContainer(commandShadow) {
 	const addToGrandParent = commandShadow.instVars.addToGrandParent;
 
 	let parent = getContainerParent(commandShadow);

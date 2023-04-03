@@ -178,6 +178,46 @@
 								"id": "active-commands-panel"
 							},
 							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 4,
+								"children": [
+									{
+										"uid": 16,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"previewSceneGraph": false
+								}
+							},
 							"world": {
 								"x": 203,
 								"y": 492,
@@ -228,7 +268,7 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": null,
+								"parent-uid": 4,
 								"uid": 16,
 								"children": [
 									{
@@ -627,7 +667,7 @@
 							"type": "CommandButton",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "Default",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -635,7 +675,8 @@
 							"uid": 23,
 							"instanceVariables": {
 								"commandName": "MoveCommand",
-								"commandFrame": 0
+								"commandFrame": 0,
+								"panelId": "active-commands-panel"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -685,7 +726,7 @@
 							"type": "CommandButton",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "Default",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -693,7 +734,8 @@
 							"uid": 24,
 							"instanceVariables": {
 								"commandName": "MoveCommand",
-								"commandFrame": 1
+								"commandFrame": 1,
+								"panelId": "active-commands-panel"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -743,7 +785,7 @@
 							"type": "CommandButton",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "Default",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -751,7 +793,8 @@
 							"uid": 25,
 							"instanceVariables": {
 								"commandName": "MoveCommand",
-								"commandFrame": 2
+								"commandFrame": 2,
+								"panelId": "active-commands-panel"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -801,7 +844,7 @@
 							"type": "CommandButton",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "Default",
 								"initial-frame": 3,
 								"enable-collisions": true,
 								"live-preview": false
@@ -809,7 +852,8 @@
 							"uid": 26,
 							"instanceVariables": {
 								"commandName": "MoveCommand",
-								"commandFrame": 3
+								"commandFrame": 3,
+								"panelId": "active-commands-panel"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -859,7 +903,7 @@
 							"type": "CommandButton",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "Default",
 								"initial-frame": 4,
 								"enable-collisions": true,
 								"live-preview": false
@@ -867,7 +911,8 @@
 							"uid": 43,
 							"instanceVariables": {
 								"commandName": "RepeatCommand",
-								"commandFrame": 0
+								"commandFrame": 0,
+								"panelId": "active-commands-panel"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1097,8 +1142,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 382.5,
-						"y": 443,
+						"x": 383,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1128,8 +1173,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 211.5,
-						"y": 443,
+						"x": 212,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1159,8 +1204,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 554.5,
-						"y": 443,
+						"x": 555,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1190,8 +1235,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 725.5,
-						"y": 443,
+						"x": 726,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1221,8 +1266,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 896.5,
-						"y": 443,
+						"x": 897,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1252,8 +1297,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1068.5,
-						"y": 443,
+						"x": 1069,
+						"y": 903,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1283,8 +1328,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 382.5,
-						"y": 622,
+						"x": 383,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1314,8 +1359,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 211.5,
-						"y": 622,
+						"x": 212,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1345,8 +1390,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 554.5,
-						"y": 622,
+						"x": 555,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1376,8 +1421,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 725.5,
-						"y": 622,
+						"x": 726,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1407,8 +1452,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 896.5,
-						"y": 622,
+						"x": 897,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -1438,11 +1483,591 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1068.5,
-						"y": 622,
+						"x": 1069,
+						"y": 1082,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 48,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 0,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 48,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 383.5,
+						"y": 506,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 50,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 1,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 50,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 491.5,
+						"y": 506,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 2,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 51,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 601.5,
+						"y": 506,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 3,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 52,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 711.5,
+						"y": 506,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 4,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 4,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 53,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 824.5,
+						"y": 506,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 5,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 72,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 5,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 72,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 383.5,
+						"y": 618,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 6,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 75,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 6,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 75,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 491.5,
+						"y": 618,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 7,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 76,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 7,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 76,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 601.5,
+						"y": 618,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 8,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 77,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 8,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 77,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 711.5,
+						"y": 618,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CommandButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Number",
+						"initial-frame": 9,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 78,
+					"instanceVariables": {
+						"commandName": "NumberCommand",
+						"commandFrame": 9,
+						"panelId": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 78,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 824.5,
+						"y": 618,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,

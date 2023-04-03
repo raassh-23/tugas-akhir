@@ -293,6 +293,15 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 613241368539942,
+							"parameters": {
+								"layer": "\"Game\"",
+								"interactive": true
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 780955087097625,
@@ -364,6 +373,20 @@
 							"sid": 279397482552838
 						},
 						{
+							"name": "layer",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 555107669347700
+						},
+						{
+							"name": "panelId",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 296933171270584
+						},
+						{
 							"name": "x",
 							"type": "number",
 							"initialValue": "0",
@@ -391,10 +414,10 @@
 						{
 							"id": "create-object-by-name",
 							"objectClass": "System",
-							"sid": 243817164343360,
+							"sid": 488386436491465,
 							"parameters": {
 								"object-name": "objectTypeName",
-								"layer": "\"UI\"",
+								"layer": "layer",
 								"x": "x",
 								"y": "y",
 								"create-hierarchy": true,
@@ -417,6 +440,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Command",
+									"sid": 176998985395159,
+									"parameters": {
+										"instance-variable": "panelId",
+										"value": "panelId"
+									}
+								},
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Command",
@@ -441,6 +473,15 @@
 									"parameters": {
 										"instance-variable": "savedHeight",
 										"value": "Self.Height"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Command",
+									"sid": 536006624235284,
+									"parameters": {
+										"instance-variable": "inactiveLayer",
+										"value": "Command.LayerName"
 									}
 								}
 							],
@@ -467,6 +508,33 @@
 										}
 									],
 									"sid": 789382506262238
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 681893799139828,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "panelId"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Command",
+											"sid": 472969246289101,
+											"parameters": {
+												"instance-variable": "activeLayer",
+												"value": "UIPanel.LayerName"
+											}
+										}
+									],
+									"sid": 555725508695163
 								}
 							]
 						}
@@ -488,29 +556,21 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "ScrollablePanel",
-							"sid": 954684676304424,
+							"objectClass": "UIPanel",
+							"sid": 182008578859610,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
-								"value": "\"active-commands\""
+								"value": "Command.panelId"
 							}
 						},
 						{
 							"id": "pick-children",
-							"objectClass": "ScrollablePanel",
-							"sid": 263812098766436,
+							"objectClass": "UIPanel",
+							"sid": 385673349466052,
 							"parameters": {
 								"child": "CommandShadow",
 								"which": "all"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "CommandShadow",
-							"sid": 802694531877950,
-							"parameters": {
-								"object": "UIPanel"
 							}
 						}
 					],
@@ -597,7 +657,7 @@
 								},
 								{
 									"type": "script",
-									"script": "expandCommandShadow(\n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);"
+									"script": "expandCommandShadowContainer(\n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);"
 								}
 							],
 							"sid": 998421297469759
@@ -885,9 +945,11 @@
 					"actions": [
 						{
 							"callFunction": "createNewCommandObject",
-							"sid": 690629398340701,
+							"sid": 877951979428640,
 							"parameters": [
 								"CommandButton.commandName",
+								"CommandButton.LayerName",
+								"CommandButton.panelId",
 								"CommandButton.X",
 								"CommandButton.Y",
 								"CommandButton.commandFrame"
@@ -1128,16 +1190,6 @@
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 884605734210130,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"active-commands-panel\""
-									}
-								},
-								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CommandShadow",
 									"sid": 416585136568669,
@@ -1221,16 +1273,6 @@
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 390649295732055,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"active-commands-panel\""
-									}
-								},
-								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CommandShadow",
 									"sid": 955845818909923,
@@ -1242,7 +1284,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "addCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);\nrunner.logCommands();"
+									"script": "addCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);"
 								},
 								{
 									"callFunction": "setCommandActive",
@@ -1340,9 +1382,45 @@
 														"layer": "\"UI\"",
 														"interactive": false
 													}
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 768259183922415,
+													"parameters": {
+														"layer": "\"Game\"",
+														"interactive": false
+													}
 												}
 											],
-											"sid": 500879687585747
+											"sid": 500879687585747,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-on-layer",
+															"objectClass": "CommandButton",
+															"sid": 220259173967610,
+															"parameters": {
+																"layer": "\"RepeatPopUp\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "CommandButton",
+															"sid": 374734279253125,
+															"parameters": {
+																"instance-variable": "panelId",
+																"value": "\"repeat-panel-\"&Command.UID"
+															}
+														}
+													],
+													"sid": 815852627279109
+												}
+											]
 										}
 									]
 								},
@@ -1991,6 +2069,15 @@
 												"layer": "\"UI\"",
 												"interactive": false
 											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 713815885189302,
+											"parameters": {
+												"layer": "\"Game\"",
+												"interactive": false
+											}
 										}
 									],
 									"sid": 806487385920183,
@@ -2020,6 +2107,31 @@
 												}
 											],
 											"sid": 369923297446808
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-layer",
+													"objectClass": "CommandButton",
+													"sid": 483752064071948,
+													"parameters": {
+														"layer": "\"RepeatPopUp\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "CommandButton",
+													"sid": 405400076122387,
+													"parameters": {
+														"instance-variable": "panelId",
+														"value": "\"repeat-panel-\"&commandUID"
+													}
+												}
+											],
+											"sid": 869587830993212
 										}
 									]
 								}
@@ -2051,6 +2163,7 @@
 					],
 					"actions": [],
 					"sid": 112507977082900,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2085,7 +2198,8 @@
 									}
 								}
 							],
-							"sid": 745093876382876
+							"sid": 745093876382876,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2111,7 +2225,8 @@
 									}
 								}
 							],
-							"sid": 987064110650150
+							"sid": 987064110650150,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2128,6 +2243,7 @@
 							],
 							"actions": [],
 							"sid": 277030562486084,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "variable",
@@ -2193,9 +2309,19 @@
 												"layer": "\"UI\"",
 												"interactive": true
 											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 573921454985348,
+											"parameters": {
+												"layer": "\"Game\"",
+												"interactive": true
+											}
 										}
 									],
 									"sid": 196580329446032,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -2221,7 +2347,8 @@
 													}
 												}
 											],
-											"sid": 230413097758699
+											"sid": 230413097758699,
+											"disabled": true
 										}
 									]
 								},
@@ -2234,7 +2361,8 @@
 											"script": "pickedCommand = null;"
 										}
 									],
-									"sid": 124159783578658
+									"sid": 124159783578658,
+									"disabled": true
 								}
 							]
 						}
@@ -2668,36 +2796,9 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 809950872665853,
+							"sid": 706712339509868,
 							"parameters": {
-								"layer": "\"paused\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 900158941598845,
-							"parameters": {
-								"layer": "\"levelFailed\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 525045323541204,
-							"parameters": {
-								"layer": "\"levelFinished\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 106144683692972,
-							"parameters": {
-								"layer": "\"storyEnd\""
+								"layer": "\"PopUpBG\""
 							},
 							"isInverted": true
 						}
@@ -2753,27 +2854,9 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 227070896015193,
+							"sid": 570688650386329,
 							"parameters": {
-								"layer": "\"paused\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 550237796665656,
-							"parameters": {
-								"layer": "\"levelFailed\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 233779568405290,
-							"parameters": {
-								"layer": "\"levelFinished\""
+								"layer": "\"PopUpBG\""
 							},
 							"isInverted": true
 						}
