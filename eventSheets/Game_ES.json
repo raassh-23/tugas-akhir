@@ -433,10 +433,6 @@
 					]
 				},
 				{
-					"eventType": "comment",
-					"text": "TODO: fix command not properly shifting, stuttering command"
-				},
-				{
 					"functionName": "PickCommandShadowToShow",
 					"functionCopyPicked": true,
 					"functionDescription": "",
@@ -764,16 +760,6 @@
 								"comparison": 0,
 								"value": "panelId"
 							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Command",
-							"sid": 239883647887688,
-							"parameters": {
-								"instance-variable": "panelId",
-								"comparison": 0,
-								"value": "panelId"
-							}
 						}
 					],
 					"actions": [],
@@ -1051,8 +1037,11 @@
 													"script": "removeCommand(\n\truntime.objects.Command.getFirstPickedInstance()\n);\nrunner.logCommands();"
 												},
 												{
-													"callFunction": "setCommandInactive",
-													"sid": 140504643095793
+													"callFunction": "setCommandActive",
+													"sid": 149720674450295,
+													"parameters": [
+														false
+													]
 												},
 												{
 													"callFunction": "shiftActiveCommands",
@@ -1209,7 +1198,10 @@
 								},
 								{
 									"callFunction": "setCommandActive",
-									"sid": 666196429181350
+									"sid": 786197012970962,
+									"parameters": [
+										true
+									]
 								},
 								{
 									"callFunction": "saveCommandPosition",
@@ -1221,6 +1213,14 @@
 								{
 									"eventType": "block",
 									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Command",
+											"sid": 143959790758397,
+											"parameters": {
+												"instance-variable": "isNew"
+											}
+										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
@@ -1234,116 +1234,21 @@
 									],
 									"actions": [
 										{
-											"type": "script",
-											"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();"
-										}
-									],
-									"sid": 454089006255226,
-									"children": [
+											"callFunction": "CreateRepeatPanel",
+											"sid": 902347418959187,
+											"parameters": [
+												"Command.UID"
+											]
+										},
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Command",
-													"sid": 969819575669900,
-													"parameters": {
-														"instance-variable": "isNew"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "CreateRepeatPanel",
-													"sid": 155003449167760,
-													"parameters": [
-														"Command.UID"
-													]
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 805611510310873,
-													"parameters": {
-														"seconds": "0.01"
-													}
-												},
-												{
-													"id": "set-layer-visible",
-													"objectClass": "System",
-													"sid": 973032526434165,
-													"parameters": {
-														"layer": "\"RepeatPopUp\"",
-														"visibility": "visible"
-													}
-												},
-												{
-													"id": "set-layer-interactive",
-													"objectClass": "System",
-													"sid": 319017621938131,
-													"parameters": {
-														"layer": "\"RepeatPopUp\"",
-														"interactive": true
-													}
-												},
-												{
-													"id": "set-layer-visible",
-													"objectClass": "System",
-													"sid": 644972650177235,
-													"parameters": {
-														"layer": "\"PopUpBG\"",
-														"visibility": "visible"
-													}
-												},
-												{
-													"id": "set-layer-interactive",
-													"objectClass": "System",
-													"sid": 841502909810485,
-													"parameters": {
-														"layer": "\"UI\"",
-														"interactive": false
-													}
-												},
-												{
-													"id": "set-layer-interactive",
-													"objectClass": "System",
-													"sid": 768259183922415,
-													"parameters": {
-														"layer": "\"Game\"",
-														"interactive": false
-													}
-												}
-											],
-											"sid": 500879687585747,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-on-layer",
-															"objectClass": "CommandButton",
-															"sid": 220259173967610,
-															"parameters": {
-																"layer": "\"RepeatPopUp\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-instvar-value",
-															"objectClass": "CommandButton",
-															"sid": 374734279253125,
-															"parameters": {
-																"instance-variable": "panelId",
-																"value": "\"repeat-panel-\"&Command.UID"
-															}
-														}
-													],
-													"sid": 815852627279109
-												}
+											"callFunction": "SetRepeatCommandPopUp",
+											"sid": 913863607617931,
+											"parameters": [
+												true
 											]
 										}
-									]
+									],
+									"sid": 454089006255226
 								},
 								{
 									"eventType": "block",
@@ -1401,43 +1306,57 @@
 					"functionCategory": "",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "active",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 844070350336243
+						}
+					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 928213654289055,
+					"children": [
 						{
-							"id": "set-position-to-another-object",
-							"objectClass": "Command",
-							"sid": 983112811873984,
-							"parameters": {
-								"object": "CommandShadow",
-								"image-point-optional": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 458125453216460,
+									"parameters": {
+										"variable": "active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "Command",
+									"sid": 438027845764392,
+									"parameters": {
+										"object": "CommandShadow",
+										"image-point-optional": "0"
+									}
+								}
+							],
+							"sid": 476069760529455
 						},
 						{
-							"type": "script",
-							"script": "runtime.objects.Command.getFirstPickedInstance().setActive(true);"
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "script",
+									"script": "runtime.objects.Command.getFirstPickedInstance().setActive(localVars.active);"
+								}
+							],
+							"sid": 737177258074930
 						}
-					],
-					"sid": 855481297025925
-				},
-				{
-					"functionName": "setCommandInactive",
-					"functionCopyPicked": true,
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.objects.Command.getFirstPickedInstance().setActive(false);"
-						}
-					],
-					"sid": 418910372317299
+					]
 				},
 				{
 					"eventType": "block",
@@ -1528,16 +1447,6 @@
 							"sid": 617062141404167
 						},
 						{
-							"eventType": "variable",
-							"name": "commandUID",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 833050754780968
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1553,108 +1462,14 @@
 							],
 							"actions": [
 								{
-									"type": "script",
-									"script": "localVars.commandUID = pickedCommand.uid;"
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 205924971260972,
-									"parameters": {
-										"layer": "\"RepeatPopUp\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 324232375410920,
-									"parameters": {
-										"layer": "\"RepeatPopUp\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 671934655610863,
-									"parameters": {
-										"layer": "\"PopUpBG\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 387616620643094,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 270514334357066,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": true
-									}
+									"callFunction": "SetRepeatCommandPopUp",
+									"sid": 757129285265886,
+									"parameters": [
+										false
+									]
 								}
 							],
-							"sid": 279507632404491,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "UIPanel",
-											"sid": 891439143627406,
-											"parameters": {
-												"instance-variable": "id",
-												"comparison": 0,
-												"value": "\"repeat-panel-\"&commandUID"
-											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "UIPanel",
-											"sid": 726186103143182,
-											"parameters": {
-												"child": "RepeatConditionCommand",
-												"which": "all"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-y",
-											"objectClass": "UIPanel",
-											"sid": 448942377657484,
-											"parameters": {
-												"y": "-1000"
-											}
-										},
-										{
-											"type": "script",
-											"script": "const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(count);"
-										}
-									],
-									"sid": 909722445575051
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"type": "script",
-											"script": "pickedCommand = null;"
-										}
-									],
-									"sid": 719556496856872
-								}
-							]
+							"sid": 279507632404491
 						}
 					]
 				},
@@ -1670,11 +1485,37 @@
 							}
 						},
 						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 704770514676817,
+							"parameters": {
+								"variable": "isRunning"
+							},
+							"isInverted": true
+						},
+						{
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "CommandDecoration",
 							"sid": 718450816205202,
 							"parameters": {
 								"instance-variable": "clickable"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "CommandDecoration",
+							"sid": 644496866020076,
+							"parameters": {
+								"parent": "Command",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Command",
+							"sid": 852886327909860,
+							"parameters": {
+								"instance-variable": "isActive"
 							}
 						}
 					],
@@ -1685,170 +1526,26 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-parent",
+									"id": "compare-instance-variable",
 									"objectClass": "CommandDecoration",
-									"sid": 307606403108103,
+									"sid": 729968225198742,
 									"parameters": {
-										"parent": "Command",
-										"which": "own"
-									}
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Command",
-									"sid": 822717299060328,
-									"parameters": {
-										"instance-variable": "isActive"
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"repeat-pop-up\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"type": "script",
-									"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();"
-								}
-							],
-							"sid": 170814303741394,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "commandUID",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 741984752214248
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 991000669165990,
-											"parameters": {
-												"first-value": "Command.ObjectTypeName",
-												"comparison": 0,
-												"second-value": "RepeatCommand.ObjectTypeName"
-											}
-										}
-									],
-									"actions": [
-										{
-											"type": "script",
-											"script": "localVars.commandUID = pickedCommand.uid;"
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 630213577083207,
-											"parameters": {
-												"seconds": "0.01"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 837376320177934,
-											"parameters": {
-												"layer": "\"RepeatPopUp\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 888174956569896,
-											"parameters": {
-												"layer": "\"RepeatPopUp\"",
-												"interactive": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 390931467053106,
-											"parameters": {
-												"layer": "\"PopUpBG\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 700044825191491,
-											"parameters": {
-												"layer": "\"UI\"",
-												"interactive": false
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 713815885189302,
-											"parameters": {
-												"layer": "\"Game\"",
-												"interactive": false
-											}
-										}
-									],
-									"sid": 806487385920183,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "UIPanel",
-													"sid": 713633230459994,
-													"parameters": {
-														"instance-variable": "id",
-														"comparison": 0,
-														"value": "\"repeat-panel-\"&commandUID"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-y",
-													"objectClass": "UIPanel",
-													"sid": 543070936955678,
-													"parameters": {
-														"y": "195"
-													}
-												}
-											],
-											"sid": 369923297446808
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-on-layer",
-													"objectClass": "CommandButton",
-													"sid": 483752064071948,
-													"parameters": {
-														"layer": "\"RepeatPopUp\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-instvar-value",
-													"objectClass": "CommandButton",
-													"sid": 405400076122387,
-													"parameters": {
-														"instance-variable": "panelId",
-														"value": "\"repeat-panel-\"&commandUID"
-													}
-												}
-											],
-											"sid": 869587830993212
-										}
+									"callFunction": "SetRepeatCommandPopUp",
+									"sid": 204782987644485,
+									"parameters": [
+										true
 									]
 								}
-							]
+							],
+							"sid": 170814303741394
 						}
 					]
 				},
@@ -1943,6 +1640,297 @@
 								}
 							],
 							"sid": 235133904057371
+						}
+					]
+				},
+				{
+					"functionName": "SetRepeatCommandPopUp",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 173775435609845
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 160238235502287,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "commandUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 696567053510880
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 655700556800280,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();\nlocalVars.commandUID = pickedCommand.uid;"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 912839437537525,
+									"parameters": {
+										"seconds": "0.01"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 522706185001612,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 997163383053882,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 529640410297878,
+									"parameters": {
+										"layer": "\"PopUpBG\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 847011408991639,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 270833738647944,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 732126660412832,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 169798839097104,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"repeat-panel-\"&commandUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "UIPanel",
+											"sid": 977843449994301,
+											"parameters": {
+												"y": "195"
+											}
+										}
+									],
+									"sid": 539258048409977
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "CommandButton",
+											"sid": 317715571403065,
+											"parameters": {
+												"layer": "\"RepeatPopUp\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "CommandButton",
+											"sid": 991028388431046,
+											"parameters": {
+												"instance-variable": "panelId",
+												"value": "\"repeat-panel-\"&commandUID"
+											}
+										}
+									],
+									"sid": 597884381165409
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 244168721918488
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "localVars.commandUID = pickedCommand.uid;"
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 428170449038282,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 129973143653514,
+									"parameters": {
+										"layer": "\"RepeatPopUp\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 502094075560556,
+									"parameters": {
+										"layer": "\"PopUpBG\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 959378504253386,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 706136747177540,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 919741396589432,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 221769976074678,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"repeat-panel-\"&commandUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "UIPanel",
+											"sid": 906545985746101,
+											"parameters": {
+												"y": "-1000"
+											}
+										}
+									],
+									"sid": 399489039364866,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 611474979515393,
+													"parameters": {
+														"object": "RepeatConditionCommand"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "UIPanel",
+													"sid": 620888842605977,
+													"parameters": {
+														"child": "RepeatConditionCommand",
+														"which": "all"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "script",
+													"script": "const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(count);"
+												}
+											],
+											"sid": 388284699747584
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand = null;"
+										}
+									],
+									"sid": 415079790443509
+								}
+							]
 						}
 					]
 				}
