@@ -399,7 +399,7 @@
 												},
 												{
 													"type": "script",
-													"script": "removeCommand(\n\truntime.objects.CodeBlock.getFirstPickedInstance()\n);\nrunner.logCommands();"
+													"script": "removeCodeBlock(\n\truntime.objects.CodeBlock.getFirstPickedInstance()\n);"
 												},
 												{
 													"callFunction": "SetCommandActive",
@@ -559,7 +559,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "addCommand(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
+									"script": "addCodeBlock(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
 								},
 								{
 									"callFunction": "SetCommandActive",

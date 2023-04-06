@@ -28,7 +28,7 @@ function setRunner(runtime) {
  * 
  * @param {ICodeBlockShadow} codeBlockShadow 
  */
-function getTopCommandContainer(codeBlockShadow) {
+function getTopCodeBlockContainer(codeBlockShadow) {
 	let parent = getContainerParent(codeBlockShadow);
 	let grandParent = getContainerParent(parent);
 
@@ -45,8 +45,8 @@ function getTopCommandContainer(codeBlockShadow) {
  * @param {BaseCommand} codeBlock 
  * @param {ICodeBlockShadow} codeBlockShadow
  */
-function addCommand(codeBlock, codeBlockShadow) {
-	const top = getTopCommandContainer(codeBlockShadow);
+function addCodeBlock(codeBlock, codeBlockShadow) {
+	const top = getTopCodeBlockContainer(codeBlockShadow);
 	const addToGrandParent = codeBlockShadow.instVars.addToGrandParent;
 	let parent = getContainerParent(codeBlockShadow);
 
@@ -69,7 +69,7 @@ function addCommand(codeBlock, codeBlockShadow) {
  * 
  * @param {BaseCommand} command 
  */
-function removeCommand(command) {
+function removeCodeBlock(command) {
 	const parent = getContainerParent(command);
 
 	parent.removeCommand(command);

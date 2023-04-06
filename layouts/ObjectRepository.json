@@ -196,11 +196,11 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": true,
+									"v": true,
 									"d": true,
 									"sm": "normal"
 								}
@@ -211,11 +211,11 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": true,
+									"v": true,
 									"d": true,
 									"sm": "normal"
 								}
@@ -226,9 +226,9 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
+									"w": false,
+									"h": false,
+									"a": false,
 									"o": false,
 									"v": false,
 									"d": true,
@@ -241,11 +241,11 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": true,
+									"v": true,
 									"d": true,
 									"sm": "normal"
 								}
@@ -522,14 +522,14 @@
 								"uid": 70,
 								"flags": {
 									"x": true,
-									"y": false,
-									"z": false,
+									"y": true,
+									"z": true,
 									"w": false,
 									"h": false,
 									"a": false,
 									"o": false,
 									"v": false,
-									"d": false,
+									"d": true,
 									"sm": "normal"
 								}
 							}
@@ -538,9 +538,9 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
+							"w": false,
+							"h": false,
+							"a": false,
 							"o": false,
 							"v": false,
 							"d": true,
@@ -2474,11 +2474,11 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": true,
+							"v": true,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2543,11 +2543,11 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": true,
+							"v": true,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2604,8 +2604,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
+							"w": false,
+							"h": false,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2665,8 +2665,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -2677,14 +2677,14 @@
 						],
 						"flags": {
 							"x": true,
-							"y": false,
-							"z": false,
+							"y": true,
+							"z": true,
 							"w": false,
 							"h": false,
 							"a": false,
 							"o": false,
 							"v": false,
-							"d": false,
+							"d": true,
 							"sm": "normal"
 						},
 						"preview": {
@@ -2900,11 +2900,11 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": true,
+							"v": true,
 							"d": true,
 							"sm": "normal"
 						},
@@ -2936,6 +2936,167 @@
 						],
 						"angle": 0,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "NumberBlock",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 54,
+					"instanceVariables": {
+						"savedX": 0,
+						"savedY": 0,
+						"isActive": false,
+						"isNew": true,
+						"panelId": "",
+						"activeLayer": "",
+						"inactiveLayer": ""
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 54,
+						"children": [
+							{
+								"uid": 55,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1296,
+						"y": 524,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CodeBlockShadow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 55,
+					"instanceVariables": {
+						"level": 0,
+						"addToGrandParent": false,
+						"shouldShift": false
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 54,
+						"uid": 55,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1368,
+						"y": 524,
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "source-atop"
 					}
 				}
 			],
