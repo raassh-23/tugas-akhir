@@ -121,7 +121,7 @@
 					"MoveCommand",
 					"NumberBlock",
 					"RepeatCommand",
-					"RepeatConditionCommand",
+					"RepeatCommandCondition",
 					"StartCommand"
 				],
 				"subfolders": [],
@@ -198,15 +198,7 @@
 							}
 						},
 						{
-							"name": "move-command.js",
-							"type": "application/javascript",
-							"sid": 679073807776910,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "base-command.js",
+							"name": "code-block.js",
 							"type": "application/javascript",
 							"sid": 404094599508734,
 							"script-info": {
@@ -214,48 +206,93 @@
 							}
 						},
 						{
-							"name": "repeat-command.js",
+							"name": "code-blocks-container.js",
 							"type": "application/javascript",
-							"sid": 288352540292147,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "container-command.js",
-							"type": "application/javascript",
-							"sid": 157890591926489,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "runner-command.js",
-							"type": "application/javascript",
-							"sid": 322311837758489,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "repeat-condition-command.js",
-							"type": "application/javascript",
-							"sid": 397401262361225,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "number-command.js",
-							"type": "application/javascript",
-							"sid": 875032843354489,
+							"sid": 637529998682922,
 							"script-info": {
 								"purpose": "none"
 							}
 						}
 					],
-					"subfolders": [],
-					"name": "Commands"
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "container-command.js",
+									"type": "application/javascript",
+									"sid": 157890591926489,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "move-command.js",
+									"type": "application/javascript",
+									"sid": 679073807776910,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "repeat-command.js",
+									"type": "application/javascript",
+									"sid": 288352540292147,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "runner-command.js",
+									"type": "application/javascript",
+									"sid": 322311837758489,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "base-command.js",
+									"type": "text/javascript",
+									"sid": 370010418344345,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "commands"
+						},
+						{
+							"items": [
+								{
+									"name": "number-command.js",
+									"type": "application/javascript",
+									"sid": 875032843354489,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "base-expression.js",
+									"type": "text/javascript",
+									"sid": 801308029598343,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "repeat-command-condition.js",
+									"type": "text/javascript",
+									"sid": 749394367896171,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "expressions"
+						}
+					],
+					"name": "code-blocks"
 				},
 				{
 					"items": [

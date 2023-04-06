@@ -1,4 +1,4 @@
-import { ContainerCommand } from '../Commands/index.js';
+import { ContainerCommand } from '../code-blocks/index.js';
 
 /**
  * 

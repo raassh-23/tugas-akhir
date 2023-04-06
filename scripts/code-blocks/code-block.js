@@ -1,7 +1,7 @@
 /**
  * @extends ISpriteInstance
  */
-export default class BaseCommand extends ISpriteInstance {
+export default class CodeBlock extends ISpriteInstance {
     /**
      * @type {ISpriteInstance[]}
      */
@@ -14,14 +14,6 @@ export default class BaseCommand extends ISpriteInstance {
     constructor(name) {
         super();
         this.name = name;
-    }
-
-    /**
-     * 
-     * @param {IPlayer} player 
-     */
-    async run(player) {
-        throw new Error("Abstract Method");
     }
 
     /**
@@ -61,7 +53,7 @@ export default class BaseCommand extends ISpriteInstance {
             child.moveToLayer(layer);
             child.moveToTop();
 
-            if (child instanceof BaseCommand) {
+            if (child instanceof CodeBlock) {
                 child.instVars.isActive = isActive;
             }
         });

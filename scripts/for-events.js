@@ -1,5 +1,4 @@
-import { BaseCommand, ContainerCommand, RunnerCommand } from "./Commands/index.js";
-import { insertToSortedArray, emptyArray, removeFromArray } from "./utils/array.js";
+import { CodeBlock, ContainerCommand, RunnerCommand } from "./code-blocks/index.js";
 import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
 /**
@@ -8,7 +7,7 @@ import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 let runner = null;
 
 /**
- * @type {?BaseCommand}
+ * @type {?CodeBlock}
  */
 let pickedCommand = null;
 
@@ -42,7 +41,7 @@ function getTopCodeBlockContainer(codeBlockShadow) {
 
 /**
  * 
- * @param {BaseCommand} codeBlock 
+ * @param {CodeBlock} codeBlock 
  * @param {ICodeBlockShadow} codeBlockShadow
  */
 function addCodeBlock(codeBlock, codeBlockShadow) {
@@ -67,7 +66,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 
 /**
  * 
- * @param {BaseCommand} command 
+ * @param {CodeBlock} command 
  */
 function removeCodeBlock(command) {
 	const parent = getContainerParent(command);
@@ -80,7 +79,7 @@ function removeCodeBlock(command) {
 
 /**
  * 
- * @param {BaseCommand} codeBlock 
+ * @param {CodeBlock} codeBlock 
  * @param {ICodeBlockShadow[]} codeBlockShadows 
  * @returns {number} uid of code block shadow to show, 0 if no code block shadow to show
  */

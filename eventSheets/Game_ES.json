@@ -1856,7 +1856,7 @@
 													"objectClass": "System",
 													"sid": 611474979515393,
 													"parameters": {
-														"object": "RepeatConditionCommand"
+														"object": "RepeatCommandCondition"
 													}
 												},
 												{
@@ -1864,7 +1864,7 @@
 													"objectClass": "UIPanel",
 													"sid": 620888842605977,
 													"parameters": {
-														"child": "RepeatConditionCommand",
+														"child": "RepeatCommandCondition",
 														"which": "all"
 													}
 												}
@@ -1872,7 +1872,7 @@
 											"actions": [
 												{
 													"type": "script",
-													"script": "const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(count);"
+													"script": "const count = runtime.objects.RepeatCommandCondition\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(count);"
 												}
 											],
 											"sid": 388284699747584
@@ -3271,7 +3271,8 @@
 							"script": "logParent(runtime.objects.CodeBlock.getFirstPickedInstance())"
 						}
 					],
-					"sid": 345871497530323
+					"sid": 345871497530323,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -3296,7 +3297,8 @@
 							}
 						}
 					],
-					"sid": 603891997175912
+					"sid": 603891997175912,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -3321,7 +3323,8 @@
 							}
 						}
 					],
-					"sid": 103616995341753
+					"sid": 103616995341753,
+					"disabled": true
 				}
 			],
 			"sid": 371561682910378

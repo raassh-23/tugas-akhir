@@ -2,9 +2,9 @@ import {
 	MoveCommand,
 	RepeatCommand,
 	RunnerCommand,
-	RepeatConditionCommand,
-	NumberCommand,
-} from "./Commands/index.js";
+	RepeatCommandCondition,
+	NumberBlock,
+} from "./code-blocks/index.js";
 
 runOnStartup(async runtime =>
 {
@@ -17,8 +17,8 @@ runOnStartup(async runtime =>
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
 	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
-	runtime.objects.RepeatConditionCommand.setInstanceClass(RepeatConditionCommand);
-	runtime.objects.NumberBlock.setInstanceClass(NumberCommand);
+	runtime.objects.RepeatCommandCondition.setInstanceClass(RepeatCommandCondition);
+	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
 });
 
 // async function OnBeforeProjectStart(runtime)

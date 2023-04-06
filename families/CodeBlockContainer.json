@@ -8,6 +8,6 @@
 	"members": [
 		"StartCommand",
 		"RepeatCommand",
-		"RepeatConditionCommand"
+		"RepeatCommandCondition"
 	]
 }

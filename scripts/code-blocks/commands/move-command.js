@@ -1,8 +1,8 @@
+import {waitForMillisecond} from "../../utils/misc.js";
 import BaseCommand from "./base-command.js";
-import {waitForMillisecond} from "../utils/misc.js";
 
 /**
- * @extends BaseCommand
+ * @extends CodeBlock
  */
 export default class MoveCommand extends BaseCommand {
     constructor() {

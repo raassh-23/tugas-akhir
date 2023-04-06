@@ -65,8 +65,12 @@ export default class RepeatCommand extends ContainerCommand {
      */
     async run(player) {
         for (let i = 0; i < this.#repeatCount; i++) {
+            this.text.text = (this.#repeatCount - i - 1).toString();
+
             await super.run(player);
         }
+
+        this.text.text = this.#repeatCount.toString();
     }
 
     /**

@@ -1,13 +1,14 @@
 import BaseCommand from "./base-command.js";
-import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array.js";
-import { clamp } from "../utils/misc.js";
+import CodeBlock from "../code-block.js";
+import { insertToSortedArray, removeFromArray, emptyArray } from "../../utils/array.js";
+import { clamp } from "../../utils/misc.js";
 
 /**
  * @extends BaseCommand
  */
 export default class ContainerCommand extends BaseCommand {
     /**
-     * @type {BaseCommand[]}
+     * @type {CodeBlock[]}
      */
     commands = [];
 
@@ -43,10 +44,10 @@ export default class ContainerCommand extends BaseCommand {
 
     /**
      * 
-     * @param {BaseCommand} command 
+     * @param {CodeBlock} command 
      */
     addCommand(command) {
-        if (!(command instanceof BaseCommand)) {
+        if (!(command instanceof CodeBlock)) {
             throw new Error("command must be an instance of BaseCommand");
         }
 
@@ -55,7 +56,7 @@ export default class ContainerCommand extends BaseCommand {
 
     /**
      * 
-     * @param {BaseCommand} command
+     * @param {CodeBlock} command
      */
     removeCommand(command) {
         removeFromArray(command, this.commands);

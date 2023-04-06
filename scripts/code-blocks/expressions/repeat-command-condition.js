@@ -1,9 +1,9 @@
-import ContainerCommand from "./container-command.js";
+import ContainerCommand from "../commands/container-command.js";
 
 /**
  * @extends ContainerCommand
  */
-export default class RepeatConditionCommand extends ContainerCommand {
+export default class RepeatCommandCondition extends ContainerCommand {
     /**
      * @type {?ISpriteInstance}
      */
