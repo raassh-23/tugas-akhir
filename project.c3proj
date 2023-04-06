@@ -105,35 +105,48 @@
 			"TiledBackground",
 			"Player",
 			"UIPanel",
-			"MoveCommand",
 			"Button",
-			"Touch",
-			"VSCodePlugin",
-			"Browser",
 			"SpriteFont",
 			"ScrollablePanel",
-			"StartCommand",
-			"CommandShadow",
-			"CommandButton",
-			"RepeatCommand",
-			"CommandDecoration",
-			"NestedCommandBackground",
+			"CodeBlockShadow",
+			"CodeBlockButton",
+			"CodeBlockDecoration",
+			"NestedCodeBlockBackground",
 			"Blank",
-			"CommandText",
-			"Keyboard",
-			"Mouse",
-			"RepeatConditionCommand",
-			"NumberCommand"
+			"CodeBlockText"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"MoveCommand",
+					"NumberBlock",
+					"RepeatCommand",
+					"RepeatConditionCommand",
+					"StartCommand"
+				],
+				"subfolders": [],
+				"name": "CodeBlock"
+			},
+			{
+				"items": [
+					"Browser",
+					"Keyboard",
+					"Mouse",
+					"Touch",
+					"VSCodePlugin"
+				],
+				"subfolders": [],
+				"name": "Other"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
 		"items": [
-			"Command",
-			"OtherCommand",
-			"ContainerCommand",
+			"CodeBlock",
+			"OtherCodeBlock",
+			"CodeBlockContainer",
 			"HSLEffects"
 		],
 		"subfolders": []

@@ -1,5 +1,5 @@
 {
-	"name": "Command",
+	"name": "CodeBlock",
 	"plugin-id": "Sprite",
 	"sid": 178475515280175,
 	"instanceVariables": [
@@ -64,6 +64,6 @@
 	"members": [
 		"MoveCommand",
 		"RepeatCommand",
-		"NumberCommand"
+		"NumberBlock"
 	]
 }

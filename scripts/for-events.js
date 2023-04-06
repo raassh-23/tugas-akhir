@@ -26,10 +26,10 @@ function setRunner(runtime) {
 
 /**
  * 
- * @param {ICommandShadow} commandShadow 
+ * @param {ICodeBlockShadow} codeBlockShadow 
  */
-function getTopCommandContainer(commandShadow) {
-	let parent = getContainerParent(commandShadow);
+function getTopCommandContainer(codeBlockShadow) {
+	let parent = getContainerParent(codeBlockShadow);
 	let grandParent = getContainerParent(parent);
 
 	while (grandParent != null) {
@@ -42,20 +42,20 @@ function getTopCommandContainer(commandShadow) {
 
 /**
  * 
- * @param {BaseCommand} command 
- * @param {ICommandShadow} commandShadow
+ * @param {BaseCommand} codeBlock 
+ * @param {ICodeBlockShadow} codeBlockShadow
  */
-function addCommand(command, commandShadow) {
-	const top = getTopCommandContainer(commandShadow);
-	const addToGrandParent = commandShadow.instVars.addToGrandParent;
-	let parent = getContainerParent(commandShadow);
+function addCommand(codeBlock, codeBlockShadow) {
+	const top = getTopCommandContainer(codeBlockShadow);
+	const addToGrandParent = codeBlockShadow.instVars.addToGrandParent;
+	let parent = getContainerParent(codeBlockShadow);
 
 	if (addToGrandParent) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.addCommand(command);
-	parent.addChild(command, {
+	parent.addCommand(codeBlock);
+	parent.addChild(codeBlock, {
 		transformX: true,
 		transformY: true,
 		destroyWithParent: true,
@@ -80,31 +80,25 @@ function removeCommand(command) {
 
 /**
  * 
- * @param {BaseCommand} command 
- * @param {ICommandShadow[]} commandShadows 
- * @returns {number} uid of command shadow to show, 0 if no command shadow to show
+ * @param {BaseCommand} codeBlock 
+ * @param {ICodeBlockShadow[]} codeBlockShadows 
+ * @returns {number} uid of code block shadow to show, 0 if no code block shadow to show
  */
-function pickCommandShadowToShow(command, commandShadows) {
+function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 	const excludedShadows = []
 
-	for (const shadowChild of command.children()) {
-		if (shadowChild.objectType.name === "CommandShadow") {
+	for (const shadowChild of codeBlock.children()) {
+		if (shadowChild.objectType.name === "CodeBlockShadow") {
 			excludedShadows.push(shadowChild.uid);
 		}
 	}
 
-	const pickedShadow = commandShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
+	const pickedShadow = codeBlockShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
 		.sort((a, b) => {
-			const squaredDistanceA = getSquaredDistance(command, a);
-			const squaredDistanceB = getSquaredDistance(command, b);
+			const squaredDistanceA = getSquaredDistance(codeBlock, a);
+			const squaredDistanceB = getSquaredDistance(codeBlock, b);
 
-			if (squaredDistanceA < squaredDistanceB) {
-				return -1;
-			} else if (squaredDistanceA > squaredDistanceB) {
-				return 1;
-			} else {
-				return 0;
-			}
+			return squaredDistanceA - squaredDistanceB;
 		})
 		.find((s) => !excludedShadows.includes(s.uid));
 
@@ -128,18 +122,18 @@ function resetContainerLength(containers) {
 
 /**
  * 
- * @param {ICommandShadow} commandShadow 
+ * @param {ICodeBlockShadow} codeBlockShadow 
  */
-function expandCommandShadowContainer(commandShadow) {
-	const addToGrandParent = commandShadow.instVars.addToGrandParent;
+function expandCodeBlockShadowContainer(codeBlockShadow) {
+	const addToGrandParent = codeBlockShadow.instVars.addToGrandParent;
 
-	let parent = getContainerParent(commandShadow);
+	let parent = getContainerParent(codeBlockShadow);
 
 	if (addToGrandParent) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.expand(commandShadow.width);
+	parent.expand(codeBlockShadow.width);
 }
 
 /**

@@ -11,9 +11,9 @@
 		}
 	],
 	"members": [
-		"CommandDecoration",
+		"CodeBlockDecoration",
 		"MoveCommand",
-		"NumberCommand",
+		"NumberBlock",
 		"RepeatCommand"
 	]
 }

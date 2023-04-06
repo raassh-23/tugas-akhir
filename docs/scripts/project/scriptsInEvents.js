@@ -98,13 +98,7 @@ function pickCommandShadowToShow(command, commandShadows) {
 			const squaredDistanceA = getSquaredDistance(command, a);
 			const squaredDistanceB = getSquaredDistance(command, b);
 
-			if (squaredDistanceA < squaredDistanceB) {
-				return -1;
-			} else if (squaredDistanceA > squaredDistanceB) {
-				return 1;
-			} else {
-				return 0;
-			}
+			return squaredDistanceA - squaredDistanceB;
 		})
 		.find((s) => !excludedShadows.includes(s.uid));
 

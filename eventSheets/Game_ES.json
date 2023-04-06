@@ -164,7 +164,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "CommandShadow",
+							"objectClass": "CodeBlockShadow",
 							"sid": 520005156630820,
 							"parameters": {
 								"visibility": "invisible"
@@ -235,7 +235,7 @@
 							"objectClass": "Touch",
 							"sid": 372248058485151,
 							"parameters": {
-								"object": "CommandButton"
+								"object": "CodeBlockButton"
 							}
 						},
 						{
@@ -262,12 +262,12 @@
 							"callFunction": "CreateNewCommandObject",
 							"sid": 877951979428640,
 							"parameters": [
-								"CommandButton.commandName",
-								"CommandButton.LayerName",
-								"CommandButton.panelId",
-								"CommandButton.X",
-								"CommandButton.Y",
-								"CommandButton.commandFrame"
+								"CodeBlockButton.commandName",
+								"CodeBlockButton.LayerName",
+								"CodeBlockButton.panelId",
+								"CodeBlockButton.X",
+								"CodeBlockButton.Y",
+								"CodeBlockButton.commandFrame"
 							]
 						}
 					],
@@ -278,7 +278,7 @@
 					"conditions": [
 						{
 							"id": "on-drag-start",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 249464404143076,
 							"behaviorType": "DragDrop"
 						}
@@ -340,7 +340,7 @@
 									"conditions": [
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Command",
+											"objectClass": "CodeBlock",
 											"sid": 755668526747739,
 											"parameters": {
 												"instance-variable": "isActive"
@@ -358,12 +358,12 @@
 													"objectClass": "Touch",
 													"sid": 842826187155457,
 													"parameters": {
-														"object": "CommandDecoration"
+														"object": "CodeBlockDecoration"
 													}
 												},
 												{
 													"id": "is-boolean-instance-variable-set",
-													"objectClass": "CommandDecoration",
+													"objectClass": "CodeBlockDecoration",
 													"sid": 193934222847242,
 													"parameters": {
 														"instance-variable": "clickable"
@@ -399,7 +399,7 @@
 												},
 												{
 													"type": "script",
-													"script": "removeCommand(\n\truntime.objects.Command.getFirstPickedInstance()\n);\nrunner.logCommands();"
+													"script": "removeCommand(\n\truntime.objects.CodeBlock.getFirstPickedInstance()\n);\nrunner.logCommands();"
 												},
 												{
 													"callFunction": "SetCommandActive",
@@ -412,9 +412,9 @@
 													"callFunction": "ShiftActiveCommands",
 													"sid": 460664071702417,
 													"parameters": [
-														"Command.X",
-														"-Command.Width",
-														"Command.panelId"
+														"CodeBlock.X",
+														"-CodeBlock.Width",
+														"CodeBlock.panelId"
 													]
 												},
 												{
@@ -439,7 +439,7 @@
 					"conditions": [
 						{
 							"id": "is-dragging",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 105475288078458,
 							"behaviorType": "DragDrop"
 						}
@@ -447,7 +447,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "resetContainerLength(\n\truntime.objects.ContainerCommand.getAllInstances()\n);"
+							"script": "resetContainerLength(\n\truntime.objects.CodeBlockContainer.getAllInstances()\n);"
 						}
 					],
 					"sid": 601895820222359,
@@ -457,7 +457,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 449688868599534,
 									"parameters": {
 										"object": "UIPanel"
@@ -465,10 +465,10 @@
 								},
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 416585136568669,
 									"parameters": {
-										"unique-id": "Functions.PickCommandShadowToShow"
+										"unique-id": "Functions.PickCodeBlockShadowToShow"
 									}
 								}
 							],
@@ -477,18 +477,18 @@
 									"callFunction": "ShowCommandShadow",
 									"sid": 801357224380368,
 									"parameters": [
-										"CommandShadow.UID",
-										"CommandShadow.level",
-										"Command.Width"
+										"CodeBlockShadow.UID",
+										"CodeBlockShadow.level",
+										"CodeBlock.Width"
 									]
 								},
 								{
 									"callFunction": "ShiftActiveCommands",
 									"sid": 229035459114190,
 									"parameters": [
-										"CommandShadow.X",
-										"Command.Width",
-										"Command.panelId"
+										"CodeBlockShadow.X",
+										"CodeBlock.Width",
+										"CodeBlock.panelId"
 									]
 								}
 							],
@@ -518,7 +518,7 @@
 					"conditions": [
 						{
 							"id": "on-drop",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 383493508569320,
 							"behaviorType": "DragDrop"
 						}
@@ -541,7 +541,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 698934258384565,
 									"parameters": {
 										"object": "UIPanel"
@@ -549,17 +549,17 @@
 								},
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 955845818909923,
 									"parameters": {
-										"unique-id": "Functions.PickCommandShadowToShow"
+										"unique-id": "Functions.PickCodeBlockShadowToShow"
 									}
 								}
 							],
 							"actions": [
 								{
 									"type": "script",
-									"script": "addCommand(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);"
+									"script": "addCommand(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
 								},
 								{
 									"callFunction": "SetCommandActive",
@@ -580,7 +580,7 @@
 									"conditions": [
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Command",
+											"objectClass": "CodeBlock",
 											"sid": 143959790758397,
 											"parameters": {
 												"instance-variable": "isNew"
@@ -591,7 +591,7 @@
 											"objectClass": "System",
 											"sid": 101291866065228,
 											"parameters": {
-												"first-value": "Command.ObjectTypeName",
+												"first-value": "CodeBlock.ObjectTypeName",
 												"comparison": 0,
 												"second-value": "RepeatCommand.ObjectTypeName"
 											}
@@ -602,7 +602,7 @@
 											"callFunction": "CreateRepeatPanel",
 											"sid": 902347418959187,
 											"parameters": [
-												"Command.UID"
+												"CodeBlock.UID"
 											]
 										},
 										{
@@ -621,7 +621,7 @@
 									"actions": [
 										{
 											"id": "set-boolean-instvar",
-											"objectClass": "Command",
+											"objectClass": "CodeBlock",
 											"sid": 995441758031844,
 											"parameters": {
 												"instance-variable": "isNew",
@@ -645,7 +645,7 @@
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 530019295501329
 								}
 							],
@@ -679,7 +679,7 @@
 					"actions": [
 						{
 							"id": "set-enabled",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 140642294707258,
 							"behaviorType": "DragDrop",
 							"parameters": {
@@ -705,7 +705,7 @@
 					"actions": [
 						{
 							"id": "set-enabled",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 357654306297957,
 							"behaviorType": "DragDrop",
 							"parameters": {
@@ -787,7 +787,7 @@
 							"objectClass": "Touch",
 							"sid": 768927338990605,
 							"parameters": {
-								"object": "CommandDecoration"
+								"object": "CodeBlockDecoration"
 							}
 						},
 						{
@@ -801,7 +801,7 @@
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "CommandDecoration",
+							"objectClass": "CodeBlockDecoration",
 							"sid": 718450816205202,
 							"parameters": {
 								"instance-variable": "clickable"
@@ -809,16 +809,16 @@
 						},
 						{
 							"id": "pick-parent",
-							"objectClass": "CommandDecoration",
+							"objectClass": "CodeBlockDecoration",
 							"sid": 644496866020076,
 							"parameters": {
-								"parent": "Command",
+								"parent": "CodeBlock",
 								"which": "own"
 							}
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 852886327909860,
 							"parameters": {
 								"instance-variable": "isActive"
@@ -833,7 +833,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "CommandDecoration",
+									"objectClass": "CodeBlockDecoration",
 									"sid": 729968225198742,
 									"parameters": {
 										"instance-variable": "id",
@@ -933,14 +933,14 @@
 									"objectClass": "System",
 									"sid": 861853366766292,
 									"parameters": {
-										"object": "Command"
+										"object": "CodeBlock"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 677276863416670,
 									"parameters": {
 										"instance-variable": "panelId",
@@ -949,7 +949,7 @@
 								},
 								{
 									"id": "set-animation-frame",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 797057774665729,
 									"parameters": {
 										"frame-number": "frame"
@@ -957,11 +957,11 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 163339409386643,
 									"parameters": {
 										"instance-variable": "inactiveLayer",
-										"value": "Command.LayerName"
+										"value": "CodeBlock.LayerName"
 									}
 								}
 							],
@@ -975,7 +975,7 @@
 											"objectClass": "System",
 											"sid": 733820547203053,
 											"parameters": {
-												"first-value": "Command.ObjectTypeName",
+												"first-value": "CodeBlock.ObjectTypeName",
 												"comparison": 0,
 												"second-value": "MoveCommand.ObjectTypeName"
 											}
@@ -1006,7 +1006,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Command",
+											"objectClass": "CodeBlock",
 											"sid": 608468958125916,
 											"parameters": {
 												"instance-variable": "activeLayer",
@@ -1021,7 +1021,7 @@
 					]
 				},
 				{
-					"functionName": "PickCommandShadowToShow",
+					"functionName": "PickCodeBlockShadowToShow",
 					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "Command",
@@ -1037,7 +1037,7 @@
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
-								"value": "Command.panelId"
+								"value": "CodeBlock.panelId"
 							}
 						},
 						{
@@ -1045,7 +1045,7 @@
 							"objectClass": "UIPanel",
 							"sid": 277210527820270,
 							"parameters": {
-								"child": "CommandShadow",
+								"child": "CodeBlockShadow",
 								"which": "all"
 							}
 						}
@@ -1053,7 +1053,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const pickedUid = pickCommandShadowToShow(\n\truntime.objects.Command.getFirstPickedInstance(), \n\truntime.objects.CommandShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
+							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
 						}
 					],
 					"sid": 844392995573375
@@ -1098,7 +1098,7 @@
 							"conditions": [
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 210826752216630,
 									"parameters": {
 										"unique-id": "uid"
@@ -1108,7 +1108,7 @@
 							"actions": [
 								{
 									"id": "set-width",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 530368725327204,
 									"parameters": {
 										"width": "width"
@@ -1116,7 +1116,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 680710672509710,
 									"parameters": {
 										"visibility": "visible"
@@ -1124,7 +1124,7 @@
 								},
 								{
 									"id": "set-opacity",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 957981212230179,
 									"disabled": true,
 									"parameters": {
@@ -1133,7 +1133,7 @@
 								},
 								{
 									"type": "script",
-									"script": "expandCommandShadowContainer(\n\truntime.objects.CommandShadow.getFirstPickedInstance()\n);"
+									"script": "expandCodeBlockShadowContainer(\n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
 								}
 							],
 							"sid": 406506094909100
@@ -1143,7 +1143,7 @@
 							"conditions": [
 								{
 									"id": "pick-by-unique-id",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 902610674637343,
 									"parameters": {
 										"unique-id": "uid"
@@ -1154,7 +1154,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 866409674706101,
 									"parameters": {
 										"visibility": "invisible"
@@ -1162,7 +1162,7 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 603996913368066,
 									"disabled": true,
 									"parameters": {
@@ -1171,7 +1171,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 816863677467872,
 									"disabled": true,
 									"parameters": {
@@ -1180,7 +1180,7 @@
 								},
 								{
 									"id": "set-opacity",
-									"objectClass": "CommandShadow",
+									"objectClass": "CodeBlockShadow",
 									"sid": 820391881671397,
 									"disabled": true,
 									"parameters": {
@@ -1204,7 +1204,7 @@
 					"conditions": [
 						{
 							"id": "is-dragging",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 976829372847574,
 							"behaviorType": "DragDrop",
 							"isInverted": true
@@ -1213,7 +1213,7 @@
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 361455050993134,
 							"parameters": {
 								"instance-variable": "savedX",
@@ -1222,7 +1222,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 885893630173229,
 							"parameters": {
 								"instance-variable": "savedY",
@@ -1245,7 +1245,7 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "CommandShadow",
+							"objectClass": "CodeBlockShadow",
 							"sid": 582033822433389,
 							"parameters": {
 								"visibility": "invisible"
@@ -1253,7 +1253,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "CommandShadow",
+							"objectClass": "CodeBlockShadow",
 							"sid": 207771721956895,
 							"disabled": true,
 							"parameters": {
@@ -1262,7 +1262,7 @@
 						},
 						{
 							"id": "set-opacity",
-							"objectClass": "CommandShadow",
+							"objectClass": "CodeBlockShadow",
 							"sid": 774939580360602,
 							"disabled": true,
 							"parameters": {
@@ -1277,7 +1277,7 @@
 							"conditions": [
 								{
 									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 412846268345532,
 									"parameters": {
 										"instance-variable": "isActive"
@@ -1287,7 +1287,7 @@
 							"actions": [
 								{
 									"id": "set-position",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 609721035812358,
 									"parameters": {
 										"x": "Self.savedX",
@@ -1333,7 +1333,7 @@
 					"conditions": [
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 470122634964503,
 							"parameters": {
 								"instance-variable": "isActive"
@@ -1341,7 +1341,7 @@
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 454283230734975,
 							"parameters": {
 								"instance-variable": "panelId",
@@ -1358,7 +1358,7 @@
 							"conditions": [
 								{
 									"id": "compare-x",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 903939847691734,
 									"parameters": {
 										"comparison": 5,
@@ -1369,7 +1369,7 @@
 							"actions": [
 								{
 									"id": "set-x",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 343885558079173,
 									"parameters": {
 										"x": "Self.savedX + deltaWidth"
@@ -1383,7 +1383,7 @@
 							"conditions": [
 								{
 									"id": "compare-x",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 239901978611058,
 									"parameters": {
 										"comparison": 2,
@@ -1394,7 +1394,7 @@
 							"actions": [
 								{
 									"id": "set-x",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 319641890094181,
 									"parameters": {
 										"x": "Self.savedX"
@@ -1422,7 +1422,7 @@
 						},
 						{
 							"id": "set-enabled",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 211633811022142,
 							"behaviorType": "DragDrop",
 							"parameters": {
@@ -1431,7 +1431,7 @@
 						},
 						{
 							"id": "set-enabled",
-							"objectClass": "Command",
+							"objectClass": "CodeBlock",
 							"sid": 746069108089153,
 							"behaviorType": "DragDrop",
 							"parameters": {
@@ -1486,10 +1486,10 @@
 							"actions": [
 								{
 									"id": "set-position-to-another-object",
-									"objectClass": "Command",
+									"objectClass": "CodeBlock",
 									"sid": 480067624952608,
 									"parameters": {
-										"object": "CommandShadow",
+										"object": "CodeBlockShadow",
 										"image-point-optional": "0"
 									}
 								}
@@ -1502,7 +1502,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "runtime.objects.Command.getFirstPickedInstance().setActive(localVars.active);"
+									"script": "runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);"
 								}
 							],
 							"sid": 723685675945931
@@ -1649,7 +1649,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "pickedCommand = runtime.objects.Command.getFirstPickedInstance();\nlocalVars.commandUID = pickedCommand.uid;"
+									"script": "pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();\nlocalVars.commandUID = pickedCommand.uid;"
 								},
 								{
 									"id": "wait",
@@ -1738,7 +1738,7 @@
 									"conditions": [
 										{
 											"id": "is-on-layer",
-											"objectClass": "CommandButton",
+											"objectClass": "CodeBlockButton",
 											"sid": 317715571403065,
 											"parameters": {
 												"layer": "\"RepeatPopUp\""
@@ -1748,7 +1748,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "CommandButton",
+											"objectClass": "CodeBlockButton",
 											"sid": 991028388431046,
 											"parameters": {
 												"instance-variable": "panelId",
@@ -1959,7 +1959,7 @@
 									"objectClass": "Touch",
 									"sid": 591124741407882,
 									"parameters": {
-										"object": "Command"
+										"object": "CodeBlock"
 									}
 								}
 							],
@@ -2477,7 +2477,7 @@
 							"objectClass": "Touch",
 							"sid": 907941479481171,
 							"parameters": {
-								"object": "Command"
+								"object": "CodeBlock"
 							},
 							"isInverted": true
 						}
@@ -3259,41 +3259,19 @@
 						{
 							"id": "on-touched-object",
 							"objectClass": "Touch",
-							"sid": 654840324607216,
-							"parameters": {
-								"object": "CommandShadow"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "logParent(runtime.objects.CommandShadow.getFirstPickedInstance())"
-						}
-					],
-					"sid": 606251257921361,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
 							"sid": 422279165008496,
 							"parameters": {
-								"object": "Command"
+								"object": "CodeBlock"
 							}
 						}
 					],
 					"actions": [
 						{
 							"type": "script",
-							"script": "logParent(runtime.objects.Command.getFirstPickedInstance())"
+							"script": "logParent(runtime.objects.CodeBlock.getFirstPickedInstance())"
 						}
 					],
-					"sid": 345871497530323,
-					"disabled": true
+					"sid": 345871497530323
 				},
 				{
 					"eventType": "block",
@@ -3301,14 +3279,49 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 636351064208446,
+							"sid": 394566829683985,
 							"parameters": {
-								"key": 32
+								"key": 88
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "CodeBlock",
+							"sid": 203838345450058,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
 					"sid": 603891997175912
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 755901173792903,
+							"parameters": {
+								"key": 90
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "CodeBlock",
+							"sid": 423972542778341,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 103616995341753
 				}
 			],
 			"sid": 371561682910378

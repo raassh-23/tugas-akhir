@@ -37,15 +37,7 @@ export default class BaseCommand extends ISpriteInstance {
             children.push(child);
         }   
 
-        children.sort((a, b) => {
-            if (a.zIndex < b.zIndex) {
-                return -1;
-            } else if (a.zIndex > b.zIndex) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        children.sort((a, b) => a.zIndex - b.zIndex);
 
         children.forEach((child) => {
             child.blendMode = blendMode;

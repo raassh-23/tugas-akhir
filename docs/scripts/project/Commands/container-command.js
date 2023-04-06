@@ -48,15 +48,7 @@ export default class ContainerCommand extends BaseCommand {
             throw new Error("command must be an instance of BaseCommand");
         }
 
-        insertToSortedArray(command, this.commands, (a, b) => {
-            if (a.x < b.x) {
-                return -1;
-            } else if (a.x > b.x) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        insertToSortedArray(command, this.commands, (a, b) => a.x - b.x);
     }
 
     /**

@@ -751,7 +751,7 @@
 					}
 				},
 				{
-					"type": "NestedCommandBackground",
+					"type": "NestedCodeBlockBackground",
 					"properties": {
 						"initially-visible": true,
 						"origin": "left",
@@ -801,7 +801,7 @@
 						}
 					},
 					"world": {
-						"x": 190.70987004892868,
+						"x": 177,
 						"y": 574,
 						"width": 156,
 						"height": 96,
@@ -1214,7 +1214,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1276,7 +1276,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1338,7 +1338,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1400,7 +1400,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2113,7 +2113,7 @@
 					}
 				},
 				{
-					"type": "CommandDecoration",
+					"type": "CodeBlockDecoration",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2183,7 +2183,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2245,7 +2245,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2307,7 +2307,7 @@
 					}
 				},
 				{
-					"type": "CommandDecoration",
+					"type": "CodeBlockDecoration",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2377,7 +2377,7 @@
 					}
 				},
 				{
-					"type": "CommandText",
+					"type": "CodeBlockText",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -2582,7 +2582,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -2719,7 +2719,7 @@
 					}
 				},
 				{
-					"type": "NumberCommand",
+					"type": "NumberBlock",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2818,7 +2818,7 @@
 					}
 				},
 				{
-					"type": "CommandShadow",
+					"type": "CodeBlockShadow",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

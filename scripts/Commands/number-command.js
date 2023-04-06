@@ -6,7 +6,7 @@ import {waitForMillisecond} from "../utils/misc.js";
  */
 export default class NumberCommand extends BaseCommand {
     constructor() {
-        super("NumberCommand");
+        super("NumberBlock");
     }
 
     /**

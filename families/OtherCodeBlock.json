@@ -1,13 +1,13 @@
 {
-	"name": "ContainerCommand",
+	"name": "OtherCodeBlock",
 	"plugin-id": "Sprite",
-	"sid": 581778819478330,
+	"sid": 289267201222883,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"StartCommand",
+		"MoveCommand",
 		"RepeatCommand",
-		"RepeatConditionCommand"
+		"NumberBlock"
 	]
 }
