@@ -1,11 +1,11 @@
-import ContainerCommand from "./container-command.js";
+import CommandsContainer from "./commands-container.js";
 
 const offsetLength = 96;
 
 /**
- * @extends ContainerCommand
+ * @extends CommandsContainer
  */
-export default class RepeatCommand extends ContainerCommand {
+export default class RepeatCommand extends CommandsContainer {
     /**
      * @type {number}
      */
@@ -79,9 +79,10 @@ export default class RepeatCommand extends ContainerCommand {
      */
     expand(width) {
         const oldWidth = this.width;
+        const commands = this.container.codeBlocks;
 
         const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN + offsetLength + width
-            + this.commands.reduce((acc, command) => acc + command.width, 0);
+            + commands.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.minLength) {
             this.width = this.minLength;
@@ -92,7 +93,7 @@ export default class RepeatCommand extends ContainerCommand {
         this.childToBeShift.x = this.x + this.width;
         
         if (this.width < oldWidth) {
-            const lastCommand = this.commands[this.commands.length - 1];
+            const lastCommand = commands[commands.length - 1];
             if (lastCommand != null) {
                 lastCommand.x = this.x + this.width - lastCommand.width - this.runtime.globalVars.ACTIVE_COMMAND_MARGIN;
                 lastCommand.instVars.savedX = lastCommand.x;

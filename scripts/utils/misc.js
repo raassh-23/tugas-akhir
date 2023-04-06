@@ -1,4 +1,4 @@
-import { ContainerCommand } from '../code-blocks/index.js';
+import { CommandsContainer, RepeatCommandCondition } from '../code-blocks/index.js';
 
 /**
  * 
@@ -22,12 +22,12 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {?ContainerCommand}
+ * @returns {?(CommandsContainer | RepeatCommandCondition)}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
 
-	while (parent != null && !(parent instanceof ContainerCommand)) {
+	while (parent != null && typeof parent.container === 'undefined') {
 		parent = parent.getParent();
 	}
 

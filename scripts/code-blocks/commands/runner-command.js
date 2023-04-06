@@ -1,9 +1,9 @@
-import ContainerCommand from "./container-command.js";
+import CommandsContainer from "./commands-container.js";
 
 /**
- * @extends ContainerCommand
+ * @extends CommandsContainer
  */
-export default class RunnerCommand extends ContainerCommand {
+export default class RunnerCommand extends CommandsContainer {
     /**
      * @type {?ISpriteInstance}
      */
@@ -38,7 +38,7 @@ export default class RunnerCommand extends ContainerCommand {
 
         const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN
             + this.parent.instVars.initialLength / 2 + this.width + width
-            + this.commands.reduce((acc, command) => acc + command.width, 0);
+            + this.container.codeBlocks.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.parent.instVars.initialLength) {
             this.parent.width = this.parent.instVars.initialLength;

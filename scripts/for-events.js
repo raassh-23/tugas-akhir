@@ -1,4 +1,4 @@
-import { CodeBlock, ContainerCommand, RunnerCommand } from "./code-blocks/index.js";
+import { CodeBlock, CommandsContainer, RunnerCommand } from "./code-blocks/index.js";
 import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
 
 /**
@@ -53,26 +53,29 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.addCommand(codeBlock);
+	parent.container.addCodeBlock(codeBlock);
 	parent.addChild(codeBlock, {
 		transformX: true,
 		transformY: true,
 		destroyWithParent: true,
 	});
 
-	top.updateLevel(0);
-	top.logCommands();
+	if (top.container instanceof CommandsContainer) {
+		top.updateLevel(0);
+	}
+
+	top.container.logCodeBlocks();
 }
 
 /**
  * 
- * @param {CodeBlock} command 
+ * @param {CodeBlock} codeBlock 
  */
-function removeCodeBlock(command) {
-	const parent = getContainerParent(command);
+function removeCodeBlock(codeBlock) {
+	const parent = getContainerParent(codeBlock);
 
-	parent.removeCommand(command);
-	command.removeFromParent();
+	parent.container.removeCodeBlock(codeBlock);
+	codeBlock.removeFromParent();
 
 	runner.updateLevel(0);
 }
@@ -110,7 +113,7 @@ function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 
 /**
  * 
- * @param {ContainerCommand} containers 
+ * @param {CommandsContainer} containers 
  */
 function resetContainerLength(containers) {
 	containers.filter((c) => c.layer.isSelfAndParentsInteractive)

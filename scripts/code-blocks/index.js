@@ -1,5 +1,5 @@
 import CodeBlock from "./code-block.js";
-import ContainerCommand from "./commands/container-command.js";
+import CommandsContainer from "./commands/commands-container.js";
 import MoveCommand from "./commands/move-command.js";
 import RepeatCommand from "./commands/repeat-command.js";
 import RunnerCommand from "./commands/runner-command.js";
@@ -11,7 +11,7 @@ export {
     MoveCommand,
     RepeatCommand,
     RunnerCommand,
-    ContainerCommand,
+    CommandsContainer,
 	RepeatCommandCondition,
     NumberBlock,
 };
