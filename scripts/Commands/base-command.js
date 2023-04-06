@@ -3,6 +3,11 @@
  */
 export default class BaseCommand extends ISpriteInstance {
     /**
+     * @type {ISpriteInstance[]}
+     */
+    highlightedObjects = [];
+
+    /**
      * 
      * @param {string} name 
      */
@@ -17,6 +22,18 @@ export default class BaseCommand extends ISpriteInstance {
      */
     async run(player) {
         throw new Error("Abstract Method");
+    }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showHighlight(show) {
+        this.effects.forEach((effect) => effect.isActive = show);
+
+        this.highlightedObjects.forEach((object) => {
+            object.effects.forEach((effect) => effect.isActive = show);
+        });
     }
 
     /**

@@ -90,6 +90,13 @@
 			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lz9sfmmsjui",
@@ -126,7 +133,8 @@
 		"items": [
 			"Command",
 			"OtherCommand",
-			"ContainerCommand"
+			"ContainerCommand",
+			"HSLEffects"
 		],
 		"subfolders": []
 	},

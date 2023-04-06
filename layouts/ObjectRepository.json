@@ -603,6 +603,16 @@
 							}
 						}
 					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 40,
@@ -791,7 +801,7 @@
 						}
 					},
 					"world": {
-						"x": 177,
+						"x": 190.70987004892868,
 						"y": 574,
 						"width": 156,
 						"height": 96,
@@ -831,6 +841,16 @@
 							"properties": {
 								"axes": "both",
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
 							}
 						}
 					},
@@ -923,6 +943,16 @@
 							}
 						}
 					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 7,
@@ -1012,6 +1042,16 @@
 							}
 						}
 					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 8,
@@ -1098,6 +1138,16 @@
 							"properties": {
 								"axes": "both",
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
 							}
 						}
 					},
@@ -2077,6 +2127,16 @@
 						"id": ""
 					},
 					"behaviors": {},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 40,
 						"uid": 41,
@@ -2261,6 +2321,16 @@
 						"id": "repeat-pop-up"
 					},
 					"behaviors": {},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 40,
 						"uid": 45,
@@ -2672,6 +2742,16 @@
 							"properties": {
 								"axes": "both",
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 2,
+								"luminosity": 1
 							}
 						}
 					},

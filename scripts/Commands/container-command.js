@@ -35,7 +35,9 @@ export default class ContainerCommand extends BaseCommand {
      */
     async run(player) {
         for (const command of this.commands) {
+            command.showHighlight(true);
             await command.run(player);
+            command.showHighlight(false);
         }
     }
 
@@ -101,10 +103,6 @@ export default class ContainerCommand extends BaseCommand {
         this.commands.filter(command => command instanceof ContainerCommand)
             .forEach(command => command.updateLevel(level + 1));
 
-        // linear growth
-        // const colorValue = clamp(1 - (level - 1) * 0.1, 0.2, 1);
-
-        // logarithmic growth
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 
         this.setColor([colorValue, colorValue, colorValue]);

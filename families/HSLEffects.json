@@ -1,0 +1,19 @@
+{
+	"name": "HSLEffects",
+	"plugin-id": "Sprite",
+	"sid": 892470320202890,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "hsladjust",
+			"name": "AdjustHSL"
+		}
+	],
+	"members": [
+		"CommandDecoration",
+		"MoveCommand",
+		"NumberCommand",
+		"RepeatCommand"
+	]
+}

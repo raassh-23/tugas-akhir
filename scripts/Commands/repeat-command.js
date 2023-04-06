@@ -50,6 +50,11 @@ export default class RepeatCommand extends ContainerCommand {
             if (child.objectType.name === "CommandText") {
                 this.text = child;
                 this.text.text = this.#repeatCount.toString();
+                continue;
+            }
+
+            if (child.objectType.name === "CommandDecoration") {
+                this.highlightedObjects.push(child);
             }
         }
     }
