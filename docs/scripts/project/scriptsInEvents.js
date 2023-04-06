@@ -26,10 +26,10 @@ function setRunner(runtime) {
 
 /**
  * 
- * @param {ICommandShadow} commandShadow 
+ * @param {ICodeBlockShadow} codeBlockShadow 
  */
-function getTopCommandContainer(commandShadow) {
-	let parent = getContainerParent(commandShadow);
+function getTopCodeBlockContainer(codeBlockShadow) {
+	let parent = getContainerParent(codeBlockShadow);
 	let grandParent = getContainerParent(parent);
 
 	while (grandParent != null) {
@@ -42,20 +42,20 @@ function getTopCommandContainer(commandShadow) {
 
 /**
  * 
- * @param {BaseCommand} command 
- * @param {ICommandShadow} commandShadow
+ * @param {BaseCommand} codeBlock 
+ * @param {ICodeBlockShadow} codeBlockShadow
  */
-function addCommand(command, commandShadow) {
-	const top = getTopCommandContainer(commandShadow);
-	const addToGrandParent = commandShadow.instVars.addToGrandParent;
-	let parent = getContainerParent(commandShadow);
+function addCodeBlock(codeBlock, codeBlockShadow) {
+	const top = getTopCodeBlockContainer(codeBlockShadow);
+	const addToGrandParent = codeBlockShadow.instVars.addToGrandParent;
+	let parent = getContainerParent(codeBlockShadow);
 
 	if (addToGrandParent) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.addCommand(command);
-	parent.addChild(command, {
+	parent.addCommand(codeBlock);
+	parent.addChild(codeBlock, {
 		transformX: true,
 		transformY: true,
 		destroyWithParent: true,
@@ -69,7 +69,7 @@ function addCommand(command, commandShadow) {
  * 
  * @param {BaseCommand} command 
  */
-function removeCommand(command) {
+function removeCodeBlock(command) {
 	const parent = getContainerParent(command);
 
 	parent.removeCommand(command);
@@ -80,23 +80,23 @@ function removeCommand(command) {
 
 /**
  * 
- * @param {BaseCommand} command 
- * @param {ICommandShadow[]} commandShadows 
- * @returns {number} uid of command shadow to show, 0 if no command shadow to show
+ * @param {BaseCommand} codeBlock 
+ * @param {ICodeBlockShadow[]} codeBlockShadows 
+ * @returns {number} uid of code block shadow to show, 0 if no code block shadow to show
  */
-function pickCommandShadowToShow(command, commandShadows) {
+function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 	const excludedShadows = []
 
-	for (const shadowChild of command.children()) {
-		if (shadowChild.objectType.name === "CommandShadow") {
+	for (const shadowChild of codeBlock.children()) {
+		if (shadowChild.objectType.name === "CodeBlockShadow") {
 			excludedShadows.push(shadowChild.uid);
 		}
 	}
 
-	const pickedShadow = commandShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
+	const pickedShadow = codeBlockShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
 		.sort((a, b) => {
-			const squaredDistanceA = getSquaredDistance(command, a);
-			const squaredDistanceB = getSquaredDistance(command, b);
+			const squaredDistanceA = getSquaredDistance(codeBlock, a);
+			const squaredDistanceB = getSquaredDistance(codeBlock, b);
 
 			return squaredDistanceA - squaredDistanceB;
 		})
@@ -122,18 +122,18 @@ function resetContainerLength(containers) {
 
 /**
  * 
- * @param {ICommandShadow} commandShadow 
+ * @param {ICodeBlockShadow} codeBlockShadow 
  */
-function expandCommandShadowContainer(commandShadow) {
-	const addToGrandParent = commandShadow.instVars.addToGrandParent;
+function expandCodeBlockShadowContainer(codeBlockShadow) {
+	const addToGrandParent = codeBlockShadow.instVars.addToGrandParent;
 
-	let parent = getContainerParent(commandShadow);
+	let parent = getContainerParent(codeBlockShadow);
 
 	if (addToGrandParent) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.expand(commandShadow.width);
+	parent.expand(codeBlockShadow.width);
 }
 
 /**
@@ -155,102 +155,92 @@ function logParent(sprite) {
 
 const scriptsInEvents = {
 
-	async Game_es_Event10_Act1(runtime, localVars)
+	async Game_es_Event7_Act1(runtime, localVars)
 	{
 		setRunner(runtime);
 	},
 
-	async Game_es_Event14_Act1(runtime, localVars)
+	async Game_es_Event14_Act2(runtime, localVars)
 	{
-		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
-	},
-
-	async Game_es_Event16_Act1(runtime, localVars)
-	{
-		const pickedUid = pickCommandShadowToShow(
-			runtime.objects.Command.getFirstPickedInstance(), 
-			runtime.objects.CommandShadow.getPickedInstances()
-		);
-		
-		runtime.setReturnValue(pickedUid);
-	},
-
-	async Game_es_Event18_Act4(runtime, localVars)
-	{
-		expandCommandShadowContainer(
-			runtime.objects.CommandShadow.getFirstPickedInstance()
+		removeCodeBlock(
+			runtime.objects.CodeBlock.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event33_Act2(runtime, localVars)
-	{
-		removeCommand(
-			runtime.objects.Command.getFirstPickedInstance()
-		);
-		runner.logCommands();
-	},
-
-	async Game_es_Event34_Act1(runtime, localVars)
+	async Game_es_Event15_Act1(runtime, localVars)
 	{
 		resetContainerLength(
-			runtime.objects.ContainerCommand.getAllInstances()
+			runtime.objects.CodeBlockContainer.getAllInstances()
 		);
 	},
 
-	async Game_es_Event38_Act1(runtime, localVars)
+	async Game_es_Event19_Act1(runtime, localVars)
 	{
-		addCommand(
-			runtime.objects.Command.getFirstPickedInstance(), 
-			runtime.objects.CommandShadow.getFirstPickedInstance()
+		addCodeBlock(
+			runtime.objects.CodeBlock.getFirstPickedInstance(), 
+			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event39_Act1(runtime, localVars)
-	{
-		pickedCommand = runtime.objects.Command.getFirstPickedInstance();
-	},
-
-	async Game_es_Event45_Act2(runtime, localVars)
-	{
-		runtime.objects.Command.getFirstPickedInstance().setActive(true);
-	},
-
-	async Game_es_Event46_Act1(runtime, localVars)
-	{
-		runtime.objects.Command.getFirstPickedInstance().setActive(false);
-	},
-
-	async Game_es_Event63_Act1(runtime, localVars)
+	async Game_es_Event27_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		
 		runner.run(runtime.objects.Player.getFirstInstance())
 	},
 
-	async Game_es_Event64_Act1(runtime, localVars)
+	async Game_es_Event33_Act1(runtime, localVars)
+	{
+		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
+	},
+
+	async Game_es_Event35_Act1(runtime, localVars)
+	{
+		const pickedUid = pickCodeBlockShadowToShow(
+			runtime.objects.CodeBlock.getFirstPickedInstance(), 
+			runtime.objects.CodeBlockShadow.getPickedInstances()
+		);
+		
+		runtime.setReturnValue(pickedUid);
+	},
+
+	async Game_es_Event37_Act4(runtime, localVars)
+	{
+		expandCodeBlockShadowContainer(
+			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
+		);
+	},
+
+	async Game_es_Event48_Act1(runtime, localVars)
+	{
+		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
+	},
+
+	async Game_es_Event52_Act1(runtime, localVars)
+	{
+		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
+		localVars.commandUID = pickedCommand.uid;
+	},
+
+	async Game_es_Event55_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event65_Act2(runtime, localVars)
+	async Game_es_Event57_Act1(runtime, localVars)
 	{
 		const count = runtime.objects.RepeatConditionCommand.getFirstPickedInstance().evaluate();
 		pickedCommand.setRepeatCount(count);
 	},
 
-	async Game_es_Event66_Act1(runtime, localVars)
+	async Game_es_Event58_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event68_Act1(runtime, localVars)
+	async Game_es_Event94_Act1(runtime, localVars)
 	{
-		pickedCommand = runtime.objects.Command.getFirstPickedInstance();
-	},
-
-	async Game_es_Event69_Act1(runtime, localVars)
-	{
-		localVars.commandUID = pickedCommand.uid;
+		logParent(runtime.objects.CodeBlock.getFirstPickedInstance())
 	}
 
 };

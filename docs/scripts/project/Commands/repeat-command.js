@@ -42,14 +42,19 @@ export default class RepeatCommand extends ContainerCommand {
                 continue;
             }
 
-            if (child.objectType.name === "NestedCommandBackground") {
+            if (child.objectType.name === "NestedCodeBlockBackground") {
                 this.background = child;
 				continue;
             }
 
-            if (child.objectType.name === "CommandText") {
+            if (child.objectType.name === "CodeBlockText") {
                 this.text = child;
                 this.text.text = this.#repeatCount.toString();
+                continue;
+            }
+
+            if (child.objectType.name === "CodeBlockDecoration") {
+                this.highlightedObjects.push(child);
             }
         }
     }

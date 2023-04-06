@@ -4,7 +4,7 @@
  * @callback CompareFunction
  * @param {*} a
  * @param {*} b
- * @returns {number} -1 if a < b, 0 if a == b, 1 if a > b
+ * @returns {number} negative if a < b, 0 if a == b, positive if a > b
  */
 
 /**
