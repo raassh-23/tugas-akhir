@@ -13,7 +13,6 @@ runOnStartup(async runtime =>
 	
 // 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	
-
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
 	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);

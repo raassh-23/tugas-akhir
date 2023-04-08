@@ -1,5 +1,13 @@
-import { CodeBlock, CommandsContainer, RunnerCommand } from "./code-blocks/index.js";
-import { getSquaredDistance, getContainerParent } from "./utils/misc.js";
+import {
+	CodeBlock,
+	CommandsContainer,
+	RunnerCommand,
+} from "./code-blocks/index.js";
+import { 
+	getSquaredDistance,
+	getContainerParent,
+	getTopCodeBlockContainer,
+} from "./utils/misc.js";
 
 /**
  * @type {?RunnerCommand}
@@ -25,22 +33,6 @@ function setRunner(runtime) {
 
 /**
  * 
- * @param {ICodeBlockShadow} codeBlockShadow 
- */
-function getTopCodeBlockContainer(codeBlockShadow) {
-	let parent = getContainerParent(codeBlockShadow);
-	let grandParent = getContainerParent(parent);
-
-	while (grandParent != null) {
-		parent = grandParent;
-		grandParent = getContainerParent(parent);
-	}
-
-	return parent;
-}
-
-/**
- * 
  * @param {CodeBlock} codeBlock 
  * @param {ICodeBlockShadow} codeBlockShadow
  */
@@ -60,7 +52,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 		destroyWithParent: true,
 	});
 
-	if (top.container instanceof CommandsContainer) {
+	if (top instanceof CommandsContainer) {
 		top.updateLevel(0);
 	}
 
@@ -72,12 +64,15 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
  * @param {CodeBlock} codeBlock 
  */
 function removeCodeBlock(codeBlock) {
+	const top = getTopCodeBlockContainer(codeBlock);
 	const parent = getContainerParent(codeBlock);
 
 	parent.container.removeCodeBlock(codeBlock);
 	codeBlock.removeFromParent();
-
-	runner.updateLevel(0);
+	
+	if (top instanceof CommandsContainer) {
+		top.updateLevel(0);
+	}
 }
 
 /**

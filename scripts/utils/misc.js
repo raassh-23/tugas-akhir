@@ -36,6 +36,28 @@ export function getContainerParent(sprite) {
 
 /**
  * 
+ * @param {ISpriteInstance} sprite 
+ * @returns {?(CommandsContainer | RepeatCommandCondition)}
+ */
+export function getTopCodeBlockContainer(sprite) {
+	let parent = getContainerParent(sprite);
+
+	if (parent == null) {
+		return null;
+	}
+
+	let grandParent = getContainerParent(parent);
+
+	while (grandParent != null) {
+		parent = grandParent;
+		grandParent = getContainerParent(parent);
+	}
+
+	return parent;
+}
+
+/**
+ * 
  * @param {number} value 
  * @param {number} min 
  * @param {number} max 
