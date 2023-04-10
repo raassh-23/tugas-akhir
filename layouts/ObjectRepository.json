@@ -593,7 +593,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -834,7 +836,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -933,7 +937,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1032,7 +1038,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1131,7 +1139,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1226,7 +1236,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1288,7 +1299,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1350,7 +1362,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1412,7 +1425,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2193,9 +2207,10 @@
 					},
 					"uid": 42,
 					"instanceVariables": {
-						"level": 1,
+						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 1
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2257,7 +2272,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": true,
-						"shouldShift": true
+						"shouldShift": true,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2594,7 +2610,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2735,7 +2752,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -2830,7 +2849,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2955,7 +2975,9 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": ""
+						"inactiveLayer": "",
+						"savedWidth": 0,
+						"savedHeight": 0
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -3050,7 +3072,8 @@
 					"instanceVariables": {
 						"level": 0,
 						"addToGrandParent": false,
-						"shouldShift": false
+						"shouldShift": false,
+						"relativeLevelToParent": 0
 					},
 					"behaviors": {},
 					"sceneGraphData": {

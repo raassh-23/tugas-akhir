@@ -422,7 +422,8 @@
 							"instanceVariables": {
 								"level": 0,
 								"addToGrandParent": false,
-								"shouldShift": false
+								"shouldShift": false,
+								"relativeLevelToParent": 0
 							},
 							"behaviors": {},
 							"sceneGraphData": {

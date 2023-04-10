@@ -478,7 +478,6 @@
 									"sid": 801357224380368,
 									"parameters": [
 										"CodeBlockShadow.UID",
-										"CodeBlockShadow.level",
 										"CodeBlock.Width"
 									]
 								},
@@ -963,6 +962,24 @@
 										"instance-variable": "inactiveLayer",
 										"value": "CodeBlock.LayerName"
 									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlock",
+									"sid": 437482373039010,
+									"parameters": {
+										"instance-variable": "savedWidth",
+										"value": "Self.Width"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlock",
+									"sid": 879041716727356,
+									"parameters": {
+										"instance-variable": "savedHeight",
+										"value": "Self.Height"
+									}
 								}
 							],
 							"sid": 165605925101653,
@@ -1072,13 +1089,6 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 327133150412776
-						},
-						{
-							"name": "level",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 562076130796446
 						},
 						{
 							"name": "width",

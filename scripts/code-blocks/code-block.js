@@ -7,6 +7,8 @@ export default class CodeBlock extends ISpriteInstance {
      */
     highlightedObjects = [];
 
+    codeBlockShadows = [];
+
     /**
      * 
      * @param {string} name 
@@ -14,6 +16,13 @@ export default class CodeBlock extends ISpriteInstance {
     constructor(name) {
         super();
         this.name = name;
+        this.highlightedObjects.push(this);
+
+        for (const child of this.children()) {
+            if (child.objectType.name === "CodeBlockShadow") {
+                this.codeBlockShadows.push(child);
+            }
+        }
     }
 
     /**
@@ -21,8 +30,6 @@ export default class CodeBlock extends ISpriteInstance {
      * @param {boolean} show 
      */
     showHighlight(show) {
-        this.effects.forEach((effect) => effect.isActive = show);
-
         this.highlightedObjects.forEach((object) => {
             object.effects.forEach((effect) => effect.isActive = show);
         });
@@ -56,6 +63,16 @@ export default class CodeBlock extends ISpriteInstance {
             if (child instanceof CodeBlock) {
                 child.instVars.isActive = isActive;
             }
+        });
+    }
+
+    /**
+     * 
+     * @param {number} level 
+     */
+    setCommandShadowsLevel(level) {
+        this.codeBlockShadows.forEach((shadow) => {
+            shadow.instVars.level = level + shadow.instVars.relativeLevelToParent;
         });
     }
 }

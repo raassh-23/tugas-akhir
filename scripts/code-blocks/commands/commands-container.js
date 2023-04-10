@@ -68,8 +68,13 @@ export default class CommandsContainer extends BaseCommand {
     updateLevel(level) {
         this.level = level;
 
-        this.container.codeBlocks.filter(command => command instanceof CommandsContainer)
-            .forEach(command => command.updateLevel(level + 1));
+        this.container.codeBlocks.forEach((command) => {
+                command.setCommandShadowsLevel(level);
+
+                if (command instanceof CommandsContainer) {
+                    command.updateLevel(level + 1)
+                }
+            });
 
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 

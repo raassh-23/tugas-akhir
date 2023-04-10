@@ -51,6 +51,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 218756287615760
+		},
+		{
+			"name": "savedWidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 836559900338984
+		},
+		{
+			"name": "savedHeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 711010420903857
 		}
 	],
 	"behaviorTypes": [
