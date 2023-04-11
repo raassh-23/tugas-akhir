@@ -1,4 +1,5 @@
 import CommandsContainer from "./commands-container.js";
+import { MARGIN, MAX_LEVEL, SHRINK_FACTOR } from "../code-block-constants.js";
 
 const offsetLength = 96;
 
@@ -29,7 +30,7 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * @type {?ITextInstance}
      */
-	text = null;
+    text = null;
 
     constructor() {
         super("Repeat");
@@ -44,7 +45,7 @@ export default class RepeatCommand extends CommandsContainer {
 
             if (child.objectType.name === "NestedCodeBlockBackground") {
                 this.background = child;
-				continue;
+                continue;
             }
 
             if (child.objectType.name === "CodeBlockText") {
@@ -85,7 +86,7 @@ export default class RepeatCommand extends CommandsContainer {
         const oldWidth = this.width;
         const commands = this.container.codeBlocks;
 
-        const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN + offsetLength + width
+        const newWidth = 2 * MARGIN + offsetLength + width
             + commands.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.minLength) {
@@ -95,11 +96,11 @@ export default class RepeatCommand extends CommandsContainer {
         }
 
         this.childToBeShift.x = this.x + this.width;
-        
+
         if (this.width < oldWidth) {
             const lastCommand = commands[commands.length - 1];
             if (lastCommand != null) {
-                lastCommand.x = this.x + this.width - lastCommand.width - this.runtime.globalVars.ACTIVE_COMMAND_MARGIN;
+                lastCommand.x = this.x + this.width - lastCommand.width - MARGIN;
                 lastCommand.instVars.savedX = lastCommand.x;
             }
         }
@@ -110,10 +111,10 @@ export default class RepeatCommand extends CommandsContainer {
      * @param {number} count must be greater or equal than 0, float will be rounded down
      */
     setRepeatCount(count) {
-		if (isNaN(count)) {
+        if (isNaN(count)) {
             throw new Error("count must be number");
-		}
-		
+        }
+
         if (count < 0) {
             throw new Error("count must be greater or equal than 0");
         }
@@ -121,10 +122,10 @@ export default class RepeatCommand extends CommandsContainer {
         this.#repeatCount = Math.floor(count);
         this.text.text = this.#repeatCount.toString();
     }
-	
-	getRepeatCount() {
-		return this.#repeatCount;
-	}
+
+    getRepeatCount() {
+        return this.#repeatCount;
+    }
 
     /**
      * 
@@ -136,9 +137,11 @@ export default class RepeatCommand extends CommandsContainer {
     }
 
     setSizeBasedOnLevel() {
-        super.setSizeBasedOnLevel();
+        const multiplier = this.level < MAX_LEVEL ?
+            SHRINK_FACTOR ** (this.level - 1) :
+            SHRINK_FACTOR ** (MAX_LEVEL - 1);
 
-        const multiplier = this.level < 5 ? 0.9 ** (this.level - 1) : 0.9 ** 4;
+        this.height = this.savedHeight * multiplier;
 
         this.highlightedObjects.forEach((object) => {
             object.width = object.savedWidth * multiplier;

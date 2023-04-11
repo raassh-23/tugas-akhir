@@ -113,16 +113,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ACTIVE_COMMAND_MARGIN",
-			"type": "number",
-			"initialValue": "32",
-			"comment": "",
-			"isStatic": true,
-			"isConstant": true,
-			"sid": 524668110372333
-		},
-		{
-			"eventType": "variable",
 			"name": "isRunning",
 			"type": "boolean",
 			"initialValue": "false",
@@ -475,7 +465,7 @@
 							"actions": [
 								{
 									"callFunction": "ShowCommandShadow",
-									"sid": 801357224380368,
+									"sid": 600451405210850,
 									"parameters": [
 										"CodeBlockShadow.UID",
 										"CodeBlock.Width"
@@ -961,24 +951,6 @@
 									"parameters": {
 										"instance-variable": "inactiveLayer",
 										"value": "CodeBlock.LayerName"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "CodeBlock",
-									"sid": 437482373039010,
-									"parameters": {
-										"instance-variable": "savedWidth",
-										"value": "Self.Width"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "CodeBlock",
-									"sid": 879041716727356,
-									"parameters": {
-										"instance-variable": "savedHeight",
-										"value": "Self.Height"
 									}
 								}
 							],

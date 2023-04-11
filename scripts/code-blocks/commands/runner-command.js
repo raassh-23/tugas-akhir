@@ -1,4 +1,5 @@
 import CommandsContainer from "./commands-container.js";
+import { MARGIN } from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
@@ -36,8 +37,8 @@ export default class RunnerCommand extends CommandsContainer {
             this.parent = this.getParent();
         }
 
-        const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN
-            + this.parent.instVars.initialLength / 2 + this.width + width
+        const newWidth = 2 * MARGIN + this.parent.instVars.initialLength / 2 
+            + this.width + width
             + this.container.codeBlocks.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.parent.instVars.initialLength) {

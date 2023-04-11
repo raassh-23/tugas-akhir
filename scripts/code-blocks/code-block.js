@@ -1,3 +1,5 @@
+import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
+
 /**
  * @extends ISpriteInstance
  */
@@ -36,7 +38,6 @@ export default class CodeBlock extends ISpriteInstance {
         this.name = name;
         this.savedWidth = this.width;
         this.savedHeight = this.height;
-        this.highlightedObjects.push(this);
 
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
@@ -50,6 +51,8 @@ export default class CodeBlock extends ISpriteInstance {
      * @param {boolean} show 
      */
     showHighlight(show) {
+        this.effects.forEach((effect) => effect.isActive = show);
+
         this.highlightedObjects.forEach((object) => {
             object.effects.forEach((effect) => effect.isActive = show);
         });
@@ -100,7 +103,9 @@ export default class CodeBlock extends ISpriteInstance {
     }
 
     setSizeBasedOnLevel() {
-        const multiplier = this.level < 5 ? 0.9 ** (this.level - 1) : 0.9 ** 4;
+        const multiplier = this.level < MAX_LEVEL ?
+            SHRINK_FACTOR ** (this.level - 1) :
+            SHRINK_FACTOR ** (MAX_LEVEL - 1);
 
         this.width = this.savedWidth * multiplier;
         this.height = this.savedHeight * multiplier;

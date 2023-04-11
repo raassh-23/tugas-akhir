@@ -593,9 +593,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -641,7 +639,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -656,7 +654,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -670,8 +668,8 @@
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": false,
-									"h": false,
+									"w": true,
+									"h": true,
 									"a": true,
 									"o": false,
 									"v": false,
@@ -781,8 +779,8 @@
 							"x": true,
 							"y": true,
 							"z": true,
-							"w": false,
-							"h": false,
+							"w": true,
+							"h": true,
 							"a": true,
 							"o": false,
 							"v": false,
@@ -836,9 +834,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -869,7 +865,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -937,9 +933,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -970,7 +964,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -1038,9 +1032,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1071,7 +1063,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -1139,9 +1131,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -1172,7 +1162,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -1248,7 +1238,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -1311,7 +1301,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -1374,7 +1364,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -1437,7 +1427,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2221,7 +2211,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2284,7 +2274,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2408,7 +2398,7 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "left",
 						"read-aloud": false
 					},
 					"uid": 49,
@@ -2443,12 +2433,12 @@
 						}
 					},
 					"world": {
-						"x": 233.88670421398007,
-						"y": 588.8782181906432,
-						"width": 61.30174470342439,
-						"height": 30,
+						"x": 234.353547,
+						"y": 604.369638,
+						"width": 60.545439,
+						"height": 32.928197,
 						"originX": 0,
-						"originY": 0,
+						"originY": 0.5,
 						"color": [
 							0,
 							0,
@@ -2622,7 +2612,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2683,7 +2673,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -2752,9 +2742,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -2785,7 +2773,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -2861,7 +2849,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -2975,9 +2963,7 @@
 						"isNew": true,
 						"panelId": "",
 						"activeLayer": "",
-						"inactiveLayer": "",
-						"savedWidth": 0,
-						"savedHeight": 0
+						"inactiveLayer": ""
 					},
 					"behaviors": {
 						"DragDrop": {
@@ -3008,7 +2994,7 @@
 									"y": true,
 									"z": true,
 									"w": false,
-									"h": false,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -3084,7 +3070,7 @@
 							"y": true,
 							"z": true,
 							"w": false,
-							"h": false,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
