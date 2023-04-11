@@ -1478,46 +1478,13 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
-					"sid": 917542497394645,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 919121456433556,
-									"parameters": {
-										"variable": "active"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position-to-another-object",
-									"objectClass": "CodeBlock",
-									"sid": 480067624952608,
-									"parameters": {
-										"object": "CodeBlockShadow",
-										"image-point-optional": "0"
-									}
-								}
-							],
-							"sid": 315347475356634
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"type": "script",
-									"script": "runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);"
-								}
-							],
-							"sid": 723685675945931
+							"type": "script",
+							"script": "runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);"
 						}
-					]
+					],
+					"sid": 917542497394645
 				},
 				{
 					"functionName": "CreateRepeatPanel",

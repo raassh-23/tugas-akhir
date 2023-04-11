@@ -7,7 +7,25 @@ export default class CodeBlock extends ISpriteInstance {
      */
     highlightedObjects = [];
 
+    /**
+     * @type {ICodeBlockShadow[]}
+     */
     codeBlockShadows = [];
+
+    /**
+     * @type {number}
+     */
+    level = 0;
+
+    /**
+     * @type {number}
+     */
+    savedWidth = 0;
+
+    /**
+     * @type {number}
+     */
+    savedHeight = 0;
 
     /**
      * 
@@ -16,6 +34,8 @@ export default class CodeBlock extends ISpriteInstance {
     constructor(name) {
         super();
         this.name = name;
+        this.savedWidth = this.width;
+        this.savedHeight = this.height;
         this.highlightedObjects.push(this);
 
         for (const child of this.children()) {
@@ -51,7 +71,7 @@ export default class CodeBlock extends ISpriteInstance {
         const children = [];
         for (const child of this.allChildren()) {
             children.push(child);
-        }   
+        }
 
         children.sort((a, b) => a.zIndex - b.zIndex);
 
@@ -70,9 +90,19 @@ export default class CodeBlock extends ISpriteInstance {
      * 
      * @param {number} level 
      */
-    setCommandShadowsLevel(level) {
+    updateLevel(level) {
+        this.level = level;
         this.codeBlockShadows.forEach((shadow) => {
-            shadow.instVars.level = level + shadow.instVars.relativeLevelToParent;
+            shadow.instVars.level = level - 1 + shadow.instVars.relativeLevelToParent;
         });
+
+        this.setSizeBasedOnLevel();
+    }
+
+    setSizeBasedOnLevel() {
+        const multiplier = this.level < 5 ? 0.9 ** (this.level - 1) : 0.9 ** 4;
+
+        this.width = this.savedWidth * multiplier;
+        this.height = this.savedHeight * multiplier;
     }
 }

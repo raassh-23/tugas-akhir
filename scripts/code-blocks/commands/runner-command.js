@@ -49,4 +49,8 @@ export default class RunnerCommand extends CommandsContainer {
                 (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
         }
     }
+
+    setSizeBasedOnLevel() {
+        // Do nothing
+    }
 }

@@ -48,12 +48,16 @@ export default class RepeatCommand extends CommandsContainer {
             }
 
             if (child.objectType.name === "CodeBlockText") {
+                child.savedWidth = child.width;
+                child.savedHeight = child.height;
                 this.text = child;
                 this.text.text = this.#repeatCount.toString();
                 continue;
             }
 
             if (child.objectType.name === "CodeBlockDecoration") {
+                child.savedWidth = child.width;
+                child.savedHeight = child.height;
                 this.highlightedObjects.push(child);
             }
         }
@@ -129,5 +133,19 @@ export default class RepeatCommand extends CommandsContainer {
     setColor(color) {
         super.setColor(color);
         this.background.colorRgb = color;
+    }
+
+    setSizeBasedOnLevel() {
+        super.setSizeBasedOnLevel();
+
+        const multiplier = this.level < 5 ? 0.9 ** (this.level - 1) : 0.9 ** 4;
+
+        this.highlightedObjects.forEach((object) => {
+            object.width = object.savedWidth * multiplier;
+            object.height = object.savedHeight * multiplier;
+        });
+
+        this.text.width = this.text.savedWidth * multiplier;
+        this.text.height = this.text.savedHeight * multiplier;
     }
 }

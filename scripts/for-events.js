@@ -45,6 +45,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 		parent = getContainerParent(parent);
 	}
 
+	codeBlock.setPosition(...codeBlockShadow.getPosition());
 	parent.container.addCodeBlock(codeBlock);
 	parent.addChild(codeBlock, {
 		transformX: true,
@@ -52,10 +53,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 		destroyWithParent: true,
 	});
 
-	if (top instanceof CommandsContainer) {
-		top.updateLevel(0);
-	}
-
+	top.updateLevel(0);
 	top.container.logCodeBlocks();
 }
 
@@ -70,9 +68,7 @@ function removeCodeBlock(codeBlock) {
 	parent.container.removeCodeBlock(codeBlock);
 	codeBlock.removeFromParent();
 	
-	if (top instanceof CommandsContainer) {
-		top.updateLevel(0);
-	}
+	top.updateLevel(0);
 }
 
 /**
