@@ -103,9 +103,9 @@ export default class CodeBlock extends ISpriteInstance {
     }
 
     setSizeBasedOnLevel() {
-        const multiplier = this.level < MAX_LEVEL ?
-            SHRINK_FACTOR ** (this.level - 1) :
-            SHRINK_FACTOR ** (MAX_LEVEL - 1);
+        const multiplier = 1 - (this.level < MAX_LEVEL ?
+            SHRINK_FACTOR * (this.level - 1) :
+            SHRINK_FACTOR * (MAX_LEVEL - 1));
 
         this.width = this.savedWidth * multiplier;
         this.height = this.savedHeight * multiplier;

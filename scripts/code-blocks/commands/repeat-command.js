@@ -134,9 +134,9 @@ export default class RepeatCommand extends CommandsContainer {
     }
 
     setSizeBasedOnLevel() {
-        const multiplier = this.level < MAX_LEVEL ?
-            SHRINK_FACTOR ** (this.level - 1) :
-            SHRINK_FACTOR ** (MAX_LEVEL - 1);
+        const multiplier = 1 - (this.level < MAX_LEVEL ?
+            SHRINK_FACTOR * (this.level - 1) :
+            SHRINK_FACTOR * (MAX_LEVEL - 1));
 
         this.height = this.savedHeight * multiplier;
 
