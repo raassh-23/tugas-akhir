@@ -1341,10 +1341,10 @@
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 903939847691734,
+									"sid": 560088516486017,
 									"parameters": {
 										"comparison": 5,
-										"x-co-ordinate": "x"
+										"x-co-ordinate": "x - 0.1"
 									}
 								}
 							],
@@ -1366,10 +1366,10 @@
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 239901978611058,
+									"sid": 452053802630361,
 									"parameters": {
 										"comparison": 2,
-										"x-co-ordinate": "x"
+										"x-co-ordinate": "x - 0.1"
 									}
 								}
 							],

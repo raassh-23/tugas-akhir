@@ -55,6 +55,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 
 	top.updateLevel(0);
 	top.container.logCodeBlocks();
+	top.expand();
 }
 
 /**

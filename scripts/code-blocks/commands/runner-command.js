@@ -52,6 +52,10 @@ export default class RunnerCommand extends CommandsContainer {
     }
 
     setSizeBasedOnLevel() {
-        // Do nothing
+        let currentX = this.x + this.width;
+        this.container.codeBlocks.forEach((command) => {
+            command.x = currentX;
+            currentX += command.width;
+        });
     }
 }

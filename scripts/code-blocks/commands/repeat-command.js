@@ -92,7 +92,6 @@ export default class RepeatCommand extends CommandsContainer {
             this.width = newWidth;
         }
 
-        this.codeBlockShadows[0].x = this.x + this.offsetStart + MARGIN;
         this.codeBlockShadows[1].x = this.x + this.width;
 
         if (this.width < oldWidth) {
@@ -153,6 +152,13 @@ export default class RepeatCommand extends CommandsContainer {
         this.text.width = this.text.savedWidth * multiplier;
         this.text.height = this.text.savedHeight * multiplier;
 
-        this.expand(0);
+        let currentX = this.x + this.offsetStart + MARGIN;
+        this.container.codeBlocks.forEach((command) => {
+            command.x = currentX;
+            currentX += command.width;
+        });
+
+        this.codeBlockShadows[0].x = this.x + this.offsetStart + MARGIN;
+        this.codeBlockShadows[1].x = this.x + this.width;
     }
 }
