@@ -109,5 +109,7 @@ export default class CodeBlock extends ISpriteInstance {
 
         this.width = this.savedWidth * multiplier;
         this.height = this.savedHeight * multiplier;
+
+        this.codeBlockShadows[0].x = this.x + this.width;
     }
 }

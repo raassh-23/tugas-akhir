@@ -1,8 +1,6 @@
 import CommandsContainer from "./commands-container.js";
 import { MARGIN, MAX_LEVEL, SHRINK_FACTOR } from "../code-block-constants.js";
 
-const offsetLength = 96;
-
 /**
  * @extends CommandsContainer
  */
@@ -18,9 +16,9 @@ export default class RepeatCommand extends CommandsContainer {
     minLength = 0;
 
     /**
-     * @type {?ISpriteInstance}
+     * @type {number}
      */
-    childToBeShift = null;
+    offsetStart = 96;
 
     /**
      * @type {?IWorldInstance}
@@ -38,11 +36,6 @@ export default class RepeatCommand extends CommandsContainer {
         this.minLength = this.width;
 
         for (const child of this.children()) {
-            if (child.instVars?.shouldShift) {
-                this.childToBeShift = child;
-                continue;
-            }
-
             if (child.objectType.name === "NestedCodeBlockBackground") {
                 this.background = child;
                 continue;
@@ -57,6 +50,10 @@ export default class RepeatCommand extends CommandsContainer {
             }
 
             if (child.objectType.name === "CodeBlockDecoration") {
+                if (child.instVars.id === "repeat-icon") {
+                    this.offsetStart = child.width;
+                }
+                
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this.highlightedObjects.push(child);
@@ -86,7 +83,7 @@ export default class RepeatCommand extends CommandsContainer {
         const oldWidth = this.width;
         const commands = this.container.codeBlocks;
 
-        const newWidth = 2 * MARGIN + offsetLength + width
+        const newWidth = 2 * MARGIN + this.offsetStart + width
             + commands.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.minLength) {
@@ -95,7 +92,8 @@ export default class RepeatCommand extends CommandsContainer {
             this.width = newWidth;
         }
 
-        this.childToBeShift.x = this.x + this.width;
+        this.codeBlockShadows[0].x = this.x + this.offsetStart + MARGIN;
+        this.codeBlockShadows[1].x = this.x + this.width;
 
         if (this.width < oldWidth) {
             const lastCommand = commands[commands.length - 1];
@@ -146,9 +144,15 @@ export default class RepeatCommand extends CommandsContainer {
         this.highlightedObjects.forEach((object) => {
             object.width = object.savedWidth * multiplier;
             object.height = object.savedHeight * multiplier;
+
+            if (object.instVars.id === "repeat-icon") {
+                this.offsetStart = object.width;
+            }
         });
 
         this.text.width = this.text.savedWidth * multiplier;
         this.text.height = this.text.savedHeight * multiplier;
+
+        this.expand(0);
     }
 }

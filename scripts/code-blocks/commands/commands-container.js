@@ -61,10 +61,10 @@ export default class CommandsContainer extends BaseCommand {
      * @param {number} level 
      */
     updateLevel(level) {
-        super.updateLevel(level);
-
         this.container.codeBlocks
             .forEach((command) => command.updateLevel(level + 1));
+
+        super.updateLevel(level);
 
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 

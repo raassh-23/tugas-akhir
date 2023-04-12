@@ -736,7 +736,7 @@
 					"world": {
 						"x": 177,
 						"y": 574,
-						"width": 156,
+						"width": 160,
 						"height": 96,
 						"originX": 0,
 						"originY": 0.5,
@@ -803,7 +803,7 @@
 					"world": {
 						"x": 177,
 						"y": 574,
-						"width": 156,
+						"width": 160,
 						"height": 96,
 						"originX": 0,
 						"originY": 0.5,
@@ -2128,7 +2128,7 @@
 					"uid": 41,
 					"instanceVariables": {
 						"clickable": false,
-						"id": ""
+						"id": "repeat-icon"
 					},
 					"behaviors": {},
 					"effects": {
