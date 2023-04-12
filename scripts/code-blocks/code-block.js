@@ -96,7 +96,7 @@ export default class CodeBlock extends ISpriteInstance {
     updateLevel(level) {
         this.level = level;
         this.codeBlockShadows.forEach((shadow) => {
-            shadow.instVars.level = level - 1 + shadow.instVars.relativeLevelToParent;
+            shadow.instVars.level = level + shadow.instVars.relativeLevelToParent;
         });
 
         this.setSizeBasedOnLevel();
@@ -111,5 +111,13 @@ export default class CodeBlock extends ISpriteInstance {
         this.height = this.savedHeight * multiplier;
 
         this.codeBlockShadows[0].x = this.x + this.width;
+    }
+
+    getWidthOnLevel(level) {
+        const multiplier = 1 - (level < MAX_LEVEL ?
+            SHRINK_FACTOR * (level - 1) :
+            SHRINK_FACTOR * (MAX_LEVEL - 1));
+
+        return this.savedWidth * multiplier;
     }
 }

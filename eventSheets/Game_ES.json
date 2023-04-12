@@ -465,18 +465,18 @@
 							"actions": [
 								{
 									"callFunction": "ShowCommandShadow",
-									"sid": 600451405210850,
+									"sid": 528670771175073,
 									"parameters": [
 										"CodeBlockShadow.UID",
-										"CodeBlock.Width"
+										"Functions.getExpectedWidth(CodeBlockShadow.level + 1)"
 									]
 								},
 								{
 									"callFunction": "ShiftActiveCommands",
-									"sid": 229035459114190,
+									"sid": 914450859240776,
 									"parameters": [
 										"CodeBlockShadow.X",
-										"CodeBlock.Width",
+										"Functions.getExpectedWidth(CodeBlockShadow.level + 1)",
 										"CodeBlock.panelId"
 									]
 								}
@@ -1842,6 +1842,32 @@
 							]
 						}
 					]
+				},
+				{
+					"functionName": "getExpectedWidth",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 818859423543882
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.setReturnValue(\n\truntime.objects.CodeBlock\n\t\t.getFirstPickedInstance()\n\t\t.getWidthOnLevel(localVars.level)\n);"
+						}
+					],
+					"sid": 287229515861692
 				}
 			],
 			"sid": 446028862137096

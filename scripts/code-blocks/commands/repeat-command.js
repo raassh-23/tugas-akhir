@@ -161,4 +161,16 @@ export default class RepeatCommand extends CommandsContainer {
         this.codeBlockShadows[0].x = this.x + this.offsetStart + MARGIN;
         this.codeBlockShadows[1].x = this.x + this.width;
     }
+
+    getWidthOnLevel(level) {
+        const childWidth = this.container.codeBlocks.reduce((acc, command) => {
+            return acc + command.getWidthOnLevel(level + 1);
+        }, 0);
+
+        const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
+
+        console.log("finalWidth", finalWidth);
+
+        return finalWidth <= this.minLength ? this.minLength : finalWidth;
+    }
 }
