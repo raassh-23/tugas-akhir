@@ -92,6 +92,13 @@
 			"bundled": false
 		},
 		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "effect",
 			"id": "hsladjust",
 			"name": "Adjust HSL",
@@ -113,7 +120,8 @@
 			"CodeBlockDecoration",
 			"NestedCodeBlockBackground",
 			"Blank",
-			"CodeBlockText"
+			"CodeBlockText",
+			"SolidObstacle"
 		],
 		"subfolders": [
 			{

@@ -19,6 +19,7 @@ export default class RunnerCommand extends CommandsContainer {
      * @param {IPlayer} player 
      */
     async run(player) {
+        console.time("run");
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
@@ -26,6 +27,7 @@ export default class RunnerCommand extends CommandsContainer {
 
             this.runtime.globalVars.isRunning = false;
         }
+        console.timeEnd("run");
     }
 
     /**

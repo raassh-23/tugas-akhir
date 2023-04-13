@@ -169,8 +169,6 @@ export default class RepeatCommand extends CommandsContainer {
 
         const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
 
-        console.log("finalWidth", finalWidth);
-
         return finalWidth <= this.minLength ? this.minLength : finalWidth;
     }
 }
