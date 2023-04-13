@@ -15,8 +15,11 @@ export default class BaseCommand extends CodeBlock {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         throw new Error("Abstract Method");
     }
 }

@@ -64,15 +64,25 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         for (let i = 0; i < this.#repeatCount; i++) {
             this.text.text = (this.#repeatCount - i - 1).toString();
 
-            await super.run(player);
+            const result = await super.run(player, state);
+
+            if (state.isStopped) {
+                this.text.text = this.#repeatCount.toString();
+                return result;
+            }
         }
 
         this.text.text = this.#repeatCount.toString();
+
+        return 0;
     }
 
     /**

@@ -566,7 +566,35 @@
 							}
 						}
 					],
-					"sid": 403063728362583
+					"sid": 403063728362583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 750364708709795,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 587242011287556,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 468871080420976
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -592,7 +620,35 @@
 							}
 						}
 					],
-					"sid": 980071856682603
+					"sid": 980071856682603,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 836211772524149,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 730574757891444,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 117717418135226
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -623,13 +679,48 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 617062141404167,
+							"children": [
 								{
-									"type": "script",
-									"script": "console.log(\"running commands\")\n\nrunner.run(runtime.objects.Player.getFirstInstance())"
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 948047145836984,
+											"parameters": {
+												"variable": "isRunning"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "console.log(\"running commands\")\n\nstate.isStopped = false;\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
+										}
+									],
+									"sid": 865711605085149
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 757061752825636
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "console.log(\"stopping commands\")\n\nstate.isStopped = true;"
+										}
+									],
+									"sid": 492843819237505
 								}
-							],
-							"sid": 617062141404167
+							]
 						},
 						{
 							"eventType": "block",

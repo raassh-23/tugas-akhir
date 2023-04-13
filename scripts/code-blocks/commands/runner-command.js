@@ -17,15 +17,25 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
-            await super.run(player);
+            const result = await super.run(player, state);
+
+            if (state.isStopped) {
+                this.runtime.globalVars.isRunning = false;
+                return result;
+            }
 
             this.runtime.globalVars.isRunning = false;
         }
+
+        return 0;
     }
 
     /**

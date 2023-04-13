@@ -83,7 +83,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 1,
+						"initial-frame": 2,
 						"enable-collisions": true,
 						"live-preview": false
 					},

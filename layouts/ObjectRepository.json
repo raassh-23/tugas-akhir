@@ -2892,7 +2892,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 2,
+						"initial-frame": 3,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -2932,8 +2932,8 @@
 					"world": {
 						"x": 1961.7913951736095,
 						"y": 119.03062205661105,
-						"width": 58.68028329329056,
-						"height": 58.68028329329056,
+						"width": 64,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

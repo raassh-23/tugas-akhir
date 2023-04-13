@@ -20,6 +20,13 @@ let runner = null;
 let pickedCommand = null;
 
 /**
+ * @type {{isStopped: boolean}}
+ */
+const state = {
+	isStopped: false,
+}
+
+/**
  * 
  * @param {IRuntime} runtime 
  */
