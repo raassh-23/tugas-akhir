@@ -4398,6 +4398,16 @@ opts.tags,opts.startValue,endValue,time,easeIndex,!!opts.destroyOnComplete,!!opt
 }
 
 {
+'use strict';{const C3=self.C3;C3.Behaviors.solid=class SolidBehavior extends C3.SDKBehaviorBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Behaviors.solid.Type=class SolidType extends C3.SDKBehaviorTypeBase{constructor(behaviorType){super(behaviorType)}Release(){super.Release()}OnCreate(){}}}
+{const C3=self.C3;const C3X=self.C3X;const IBehaviorInstance=self.IBehaviorInstance;const ENABLE=0;const TAGS=1;const EMPTY_SET=new Set;C3.Behaviors.solid.Instance=class SolidInstance extends C3.SDKBehaviorInstanceBase{constructor(behInst,properties){super(behInst);this.SetEnabled(true);if(properties){this.SetEnabled(properties[ENABLE]);this.SetTags(properties[TAGS])}}Release(){super.Release()}SetEnabled(e){this._inst._SetSolidEnabled(!!e)}IsEnabled(){return this._inst._IsSolidEnabled()}SetTags(tagList){const savedDataMap=
+this._inst.GetSavedDataMap();if(!tagList.trim()){savedDataMap.delete("solidTags");return}let solidTags=savedDataMap.get("solidTags");if(!solidTags){solidTags=new Set;savedDataMap.set("solidTags",solidTags)}solidTags.clear();for(const tag of tagList.split(" "))if(tag)solidTags.add(tag.toLowerCase())}GetTags(){return this._inst.GetSavedDataMap().get("solidTags")||EMPTY_SET}_GetTagsString(){return[...this.GetTags()].join(" ")}SaveToJson(){return{"e":this.IsEnabled()}}LoadFromJson(o){this.SetEnabled(o["e"])}GetPropertyValueByIndex(index){switch(index){case ENABLE:return this.IsEnabled()}}SetPropertyValueByIndex(index,
+value){switch(index){case ENABLE:this.SetEnabled(value);break}}GetDebuggerProperties(){return[{title:"$"+this.GetBehaviorType().GetName(),properties:[{name:"behaviors.solid.properties.enabled.name",value:this.IsEnabled(),onedit:v=>this.SetEnabled(v)},{name:"behaviors.solid.properties.tags.name",value:this._GetTagsString(),onedit:v=>this.SetTags(v)}]}]}GetScriptInterfaceClass(){return self.ISolidBehaviorInstance}};const map=new WeakMap;self.ISolidBehaviorInstance=class ISolidBehaviorInstance extends IBehaviorInstance{constructor(){super();
+map.set(this,IBehaviorInstance._GetInitInst().GetSdkInstance())}set isEnabled(e){map.get(this).SetEnabled(!!e)}get isEnabled(){return map.get(this).IsEnabled()}set tags(str){C3X.RequireString(str);map.get(this).SetTags(str)}get tags(){return map.get(this)._GetTagsString()}}}{const C3=self.C3;C3.Behaviors.solid.Cnds={IsEnabled(){return this.IsEnabled()}}}{const C3=self.C3;C3.Behaviors.solid.Acts={SetEnabled(e){this.SetEnabled(e)},SetTags(tagList){this.SetTags(tagList)}}}
+{const C3=self.C3;C3.Behaviors.solid.Exps={}};
+
+}
+
+{
 const C3 = self.C3;
 self.C3_GetObjectRefTable = function () {
 	return [
@@ -4413,11 +4423,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Spritefont2,
 		C3.Behaviors.DragnDrop,
 		C3.Behaviors.Tween,
+		C3.Behaviors.solid,
 		C3.Plugins.System.Cnds.IsGroupActive,
-		C3.Behaviors.TileMovement.Cnds.IsMovingDirection,
-		C3.Plugins.Sprite.Acts.SetAngle,
 		C3.Plugins.System.Cnds.OnLayoutStart,
-		C3.ScriptsInEvents.Game_es_Event7_Act1,
+		C3.ScriptsInEvents.Game_es_Event2_Act1,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetLayerInteractive,
@@ -4431,49 +4440,49 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.SetBoolVar,
-		C3.ScriptsInEvents.Game_es_Event14_Act2,
+		C3.ScriptsInEvents.Game_es_Event9_Act2,
 		C3.Plugins.Sprite.Exps.Width,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
-		C3.ScriptsInEvents.Game_es_Event15_Act1,
+		C3.ScriptsInEvents.Game_es_Event10_Act1,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Cnds.PickByUID,
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
-		C3.ScriptsInEvents.Game_es_Event19_Act1,
+		C3.ScriptsInEvents.Game_es_Event14_Act1,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.ObjectTypeName,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Behaviors.DragnDrop.Acts.SetEnabled,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event27_Act1,
+		C3.ScriptsInEvents.Game_es_Event22_Act1,
 		C3.Plugins.Sprite.Cnds.PickParent,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
-		C3.ScriptsInEvents.Game_es_Event33_Act1,
+		C3.ScriptsInEvents.Game_es_Event28_Act1,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.NinePatch.Exps.LayerName,
 		C3.Plugins.NinePatch.Cnds.PickChildren,
-		C3.ScriptsInEvents.Game_es_Event35_Act1,
+		C3.ScriptsInEvents.Game_es_Event30_Act1,
 		C3.Plugins.Sprite.Acts.SetWidth,
-		C3.ScriptsInEvents.Game_es_Event37_Act4,
+		C3.ScriptsInEvents.Game_es_Event32_Act4,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetX,
-		C3.Plugins.Sprite.Acts.SetPosToObject,
-		C3.ScriptsInEvents.Game_es_Event48_Act1,
+		C3.ScriptsInEvents.Game_es_Event41_Act1,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.NinePatch.Acts.SetInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event52_Act1,
+		C3.ScriptsInEvents.Game_es_Event45_Act1,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.NinePatch.Acts.SetY,
 		C3.Plugins.Sprite.Cnds.IsOnLayer,
-		C3.ScriptsInEvents.Game_es_Event55_Act1,
+		C3.ScriptsInEvents.Game_es_Event48_Act1,
 		C3.Plugins.System.Cnds.PickAll,
-		C3.ScriptsInEvents.Game_es_Event57_Act1,
-		C3.ScriptsInEvents.Game_es_Event58_Act1,
+		C3.ScriptsInEvents.Game_es_Event50_Act1,
+		C3.ScriptsInEvents.Game_es_Event51_Act1,
+		C3.ScriptsInEvents.Game_es_Event52_Act1,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.System.Exps.dt,
@@ -4502,8 +4511,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTouchEnd,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Plugins.Mouse.Cnds.OnWheel,
-		C3.ScriptsInEvents.Game_es_Event94_Act1,
-		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Plugins.System.Exps.projectversion,
@@ -4526,7 +4533,7 @@ self.C3_JsPropNameTable = [
 	{MoveCommand: 0},
 	{NumberBlock: 0},
 	{RepeatCommand: 0},
-	{RepeatConditionCommand: 0},
+	{RepeatCommandCondition: 0},
 	{StartCommand: 0},
 	{Browser: 0},
 	{Keyboard: 0},
@@ -4552,6 +4559,7 @@ self.C3_JsPropNameTable = [
 	{level: 0},
 	{addToGrandParent: 0},
 	{shouldShift: 0},
+	{relativeLevelToParent: 0},
 	{CodeBlockShadow: 0},
 	{commandName: 0},
 	{commandFrame: 0},
@@ -4561,11 +4569,12 @@ self.C3_JsPropNameTable = [
 	{NestedCodeBlockBackground: 0},
 	{Blank: 0},
 	{CodeBlockText: 0},
+	{Solid: 0},
+	{SolidObstacle: 0},
 	{CodeBlock: 0},
 	{OtherCodeBlock: 0},
 	{CodeBlockContainer: 0},
 	{HSLEffects: 0},
-	{ACTIVE_COMMAND_MARGIN: 0},
 	{isRunning: 0},
 	{isDragging: 0},
 	{objectTypeName: 0},
@@ -4691,11 +4700,6 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
-		() => "Player",
-		() => 270,
-		() => 90,
-		() => 0,
-		() => 180,
 		() => "Command",
 		() => "UI",
 		() => "Game",
@@ -4721,6 +4725,11 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
 		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => f0((n1.ExpInstVar() + 1));
+		},
 		() => "play",
 		() => "close-repeat-panel",
 		() => "repeat-pop-up",
@@ -4729,6 +4738,10 @@ self.C3_ExpressionFuncs = [
 			return () => v0.GetValue();
 		},
 		() => "",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() - 0.1);
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			const v1 = p._GetNode(1).GetVar();
@@ -4766,6 +4779,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "PanAndZoom",
 		() => -1,
+		() => 0,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();

@@ -1,11 +1,12 @@
-import ContainerCommand from "./container-command.js";
+import CommandsContainer from "./commands-container.js";
+import { MARGIN } from "../code-block-constants.js";
 
 /**
- * @extends ContainerCommand
+ * @extends CommandsContainer
  */
-export default class RunnerCommand extends ContainerCommand {
+export default class RunnerCommand extends CommandsContainer {
     /**
-     * @type {?ISpriteInstance}
+     * @type {ISpriteInstance?}
      */
     parent = null;
 
@@ -31,14 +32,14 @@ export default class RunnerCommand extends ContainerCommand {
      * 
      * @param {number} width 
      */
-    expand(width) {
+    expand(width = 0) {
         if (this.parent == null) {
             this.parent = this.getParent();
         }
 
-        const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN
-            + this.parent.instVars.initialLength / 2 + this.width + width
-            + this.commands.reduce((acc, command) => acc + command.width, 0);
+        const newWidth = 2 * MARGIN + this.parent.instVars.initialLength / 2 
+            + this.width + width
+            + this.container.codeBlocks.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.parent.instVars.initialLength) {
             this.parent.width = this.parent.instVars.initialLength;
@@ -48,5 +49,13 @@ export default class RunnerCommand extends ContainerCommand {
             this.parent.instVars.min =
                 (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
         }
+    }
+
+    setSizeBasedOnLevel() {
+        let currentX = this.x + this.width;
+        this.container.codeBlocks.forEach((command) => {
+            command.x = currentX;
+            currentX += command.width;
+        });
     }
 }

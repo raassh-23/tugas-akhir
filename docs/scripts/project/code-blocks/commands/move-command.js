@@ -1,8 +1,16 @@
+import {waitForMillisecond} from "../../utils/misc.js";
 import BaseCommand from "./base-command.js";
-import {waitForMillisecond} from "../utils/misc.js";
+
+const maxDuration = 750;
+const dirToAngle = {
+    "right": 0,
+    "down": 90,
+    "left": 180,
+    "up": 270,
+};
 
 /**
- * @extends BaseCommand
+ * @extends CodeBlock
  */
 export default class MoveCommand extends BaseCommand {
     constructor() {
@@ -16,10 +24,19 @@ export default class MoveCommand extends BaseCommand {
      */
     async run(player) {
 		player.behaviors.TileMovement.simulateControl(this.direction);
+        player.angleDegrees = dirToAngle[this.direction] ?? player.angleDegrees;
+
+        let totalDuration = 0;
 
         do {
-            await waitForMillisecond(100);
+            totalDuration += 50;
+            await waitForMillisecond(50);
         } while (player.behaviors.TileMovement.isMoving());
+
+        while (totalDuration < maxDuration) {
+            totalDuration += 50;
+            await waitForMillisecond(50);
+        }
     }
 
     setDirection() {
