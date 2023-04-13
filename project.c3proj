@@ -113,7 +113,7 @@
 			"Player",
 			"UIPanel",
 			"Button",
-			"SpriteFont",
+			"UIText",
 			"ScrollablePanel",
 			"CodeBlockShadow",
 			"CodeBlockButton",
@@ -155,7 +155,9 @@
 			"CodeBlock",
 			"OtherCodeBlock",
 			"CodeBlockContainer",
-			"HSLEffects"
+			"HSLEffects",
+			"ResetObjects",
+			"Text"
 		],
 		"subfolders": []
 	},

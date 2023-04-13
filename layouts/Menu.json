@@ -38,7 +38,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "UIText",
 					"properties": {
 						"text": "version",
 						"enable-bbcode": true,
@@ -58,6 +58,9 @@
 					},
 					"uid": 14,
 					"instanceVariables": {
+						"minScale": 0,
+						"maxScale": 0,
+						"autoFit": false,
 						"id": "version"
 					},
 					"behaviors": {},

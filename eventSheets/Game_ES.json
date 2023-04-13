@@ -139,7 +139,7 @@
 					],
 					"actions": [
 						{
-							"callFunction": "CreateNewCommandObject",
+							"callFunction": "CreateNewCodeBlockObject",
 							"sid": 877951979428640,
 							"parameters": [
 								"CodeBlockButton.commandName",
@@ -180,11 +180,12 @@
 							],
 							"actions": [
 								{
-									"callFunction": "PseudoDropCommand",
+									"callFunction": "PseudoDropCodeBlock",
 									"sid": 162695499001214
 								}
 							],
-							"sid": 190273193972901
+							"sid": 190273193972901,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -209,7 +210,7 @@
 									"text": "first call to saveCommandPosition, just in case the position changed because of scroll"
 								},
 								{
-									"callFunction": "SaveAllCommandPosition",
+									"callFunction": "SaveAllCodeBlocksPosition",
 									"sid": 527987029291519
 								}
 							],
@@ -234,25 +235,19 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-touching-object",
-													"objectClass": "Touch",
-													"sid": 842826187155457,
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 875596165430695,
 													"parameters": {
-														"object": "CodeBlockDecoration"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "CodeBlockDecoration",
-													"sid": 193934222847242,
-													"parameters": {
-														"instance-variable": "clickable"
+														"first-value": "Functions.CheckCanDragCodeBlock",
+														"comparison": 1,
+														"second-value": "0"
 													}
 												}
 											],
 											"actions": [
 												{
-													"callFunction": "PseudoDropCommand",
+													"callFunction": "PseudoDropCodeBlock",
 													"sid": 957700593258325
 												}
 											],
@@ -282,14 +277,14 @@
 													"script": "removeCodeBlock(\n\truntime.objects.CodeBlock.getFirstPickedInstance()\n);"
 												},
 												{
-													"callFunction": "SetCommandActive",
+													"callFunction": "SetCodeBlockActive",
 													"sid": 149720674450295,
 													"parameters": [
 														false
 													]
 												},
 												{
-													"callFunction": "ShiftActiveCommands",
+													"callFunction": "ShiftActiveCodeBlocks",
 													"sid": 460664071702417,
 													"parameters": [
 														"CodeBlock.X",
@@ -302,7 +297,7 @@
 													"text": "second call saveCommandPosition, after shifting active position without the dragged command"
 												},
 												{
-													"callFunction": "SaveAllCommandPosition",
+													"callFunction": "SaveAllCodeBlocksPosition",
 													"sid": 195177666138114
 												}
 											],
@@ -354,7 +349,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "ShowCommandShadow",
+									"callFunction": "ShowCodeBlockShadow",
 									"sid": 528670771175073,
 									"parameters": [
 										"CodeBlockShadow.UID",
@@ -362,7 +357,7 @@
 									]
 								},
 								{
-									"callFunction": "ShiftActiveCommands",
+									"callFunction": "ShiftActiveCodeBlocks",
 									"sid": 914450859240776,
 									"parameters": [
 										"CodeBlockShadow.X",
@@ -384,13 +379,17 @@
 							],
 							"actions": [
 								{
-									"callFunction": "ResetActiveCommands",
+									"callFunction": "ResetActiveCodeBlocks",
 									"sid": 733125477755939
 								}
 							],
 							"sid": 441139817013168
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "TODO: Something's wrong with shifting when removing code block in repeat command"
 				},
 				{
 					"eventType": "block",
@@ -441,14 +440,14 @@
 									"script": "addCodeBlock(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
 								},
 								{
-									"callFunction": "SetCommandActive",
+									"callFunction": "SetCodeBlockActive",
 									"sid": 786197012970962,
 									"parameters": [
 										true
 									]
 								},
 								{
-									"callFunction": "SaveAllCommandPosition",
+									"callFunction": "SaveAllCodeBlocksPosition",
 									"sid": 786191275505392
 								}
 							],
@@ -535,7 +534,7 @@
 							"conditions": [],
 							"actions": [
 								{
-									"callFunction": "ResetActiveCommands",
+									"callFunction": "ResetActiveCodeBlocks",
 									"sid": 916117884772811
 								}
 							],
@@ -826,7 +825,7 @@
 					]
 				},
 				{
-					"functionName": "CreateNewCommandObject",
+					"functionName": "CreateNewCodeBlockObject",
 					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "Creation",
@@ -994,7 +993,7 @@
 					"functionName": "PickCodeBlockShadowToShow",
 					"functionCopyPicked": true,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "number",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -1029,10 +1028,10 @@
 					"sid": 844392995573375
 				},
 				{
-					"functionName": "ShowCommandShadow",
+					"functionName": "ShowCodeBlockShadow",
 					"functionCopyPicked": false,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1156,10 +1155,10 @@
 					]
 				},
 				{
-					"functionName": "SaveAllCommandPosition",
+					"functionName": "SaveAllCodeBlocksPosition",
 					"functionCopyPicked": false,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -1196,10 +1195,10 @@
 					"sid": 771571373680666
 				},
 				{
-					"functionName": "ResetActiveCommands",
+					"functionName": "ResetActiveCodeBlocks",
 					"functionCopyPicked": false,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -1263,10 +1262,10 @@
 					]
 				},
 				{
-					"functionName": "ShiftActiveCommands",
+					"functionName": "ShiftActiveCodeBlocks",
 					"functionCopyPicked": false,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1369,10 +1368,10 @@
 					]
 				},
 				{
-					"functionName": "PseudoDropCommand",
+					"functionName": "PseudoDropCodeBlock",
 					"functionCopyPicked": true,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -1414,10 +1413,10 @@
 					"sid": 196580022289217
 				},
 				{
-					"functionName": "SetCommandActive",
+					"functionName": "SetCodeBlockActive",
 					"functionCopyPicked": true,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1537,7 +1536,7 @@
 					"functionName": "SetRepeatCommandPopUp",
 					"functionCopyPicked": true,
 					"functionDescription": "",
-					"functionCategory": "Command",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1825,10 +1824,10 @@
 					]
 				},
 				{
-					"functionName": "getExpectedWidth",
+					"functionName": "GetExpectedWidth",
 					"functionCopyPicked": true,
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "CodeBlock",
 					"functionReturnType": "number",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1849,6 +1848,131 @@
 						}
 					],
 					"sid": 287229515861692
+				},
+				{
+					"functionName": "ResetGame",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "Game",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ResetObjects",
+							"sid": 876091028544578
+						},
+						{
+							"id": "recreate-initial-objects",
+							"objectClass": "System",
+							"sid": 701918641579434,
+							"parameters": {
+								"object": "ResetObjects",
+								"from-x": "0",
+								"from-y": "0",
+								"to-x": "LayoutWidth",
+								"to-y": "LayoutWidth",
+								"source-layout": "LayoutName",
+								"source-layer": "\"Game\"",
+								"offset-x": "0",
+								"offset-y": "0",
+								"create-hierarchy": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 136904538513475,
+							"parameters": {
+								"variable": "isRunning",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 323528186345411
+				},
+				{
+					"functionName": "CheckCanDragCodeBlock",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "CodeBlock",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 853083856086651,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 200928604152511,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 842826187155457,
+									"parameters": {
+										"object": "CodeBlockDecoration"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "CodeBlockDecoration",
+									"sid": 193934222847242,
+									"parameters": {
+										"instance-variable": "clickable"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 935831080253400,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 122201877488561
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 274632687786740,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 339600351836974,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 153290914979140
+						}
+					]
 				}
 			],
 			"sid": 446028862137096
@@ -3284,6 +3408,100 @@
 				}
 			],
 			"sid": 371561682910378
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Text",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "TODO: Search for a better way to do auto fitting"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text",
+							"sid": 930981546602926,
+							"parameters": {
+								"instance-variable": "autoFit"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Text",
+							"sid": 163766951796169
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 401509730153707,
+							"parameters": {
+								"object": "Text"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "Text",
+							"sid": 797572118907637,
+							"parameters": {
+								"scale": "Self.maxScale"
+							}
+						}
+					],
+					"sid": 761678994368946,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 464712644180739
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 561082059206252,
+									"parameters": {
+										"first-value": "Text.CharacterScale",
+										"comparison": 4,
+										"second-value": "Text.minScale"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 544542148239624,
+									"parameters": {
+										"first-value": "Text.TextWidth",
+										"comparison": 4,
+										"second-value": "Text.Width * 0.9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "Text",
+									"sid": 979252017405526,
+									"parameters": {
+										"scale": "Self.CharacterScale - 0.01"
+									}
+								}
+							],
+							"sid": 438572701055481
+						}
+					]
+				}
+			],
+			"sid": 700709951439337
 		}
 	],
 	"sid": 808040494368574

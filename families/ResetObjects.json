@@ -1,0 +1,12 @@
+{
+	"name": "ResetObjects",
+	"plugin-id": "Sprite",
+	"sid": 700012522366645,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player",
+		"SolidObstacle"
+	]
+}

@@ -18,7 +18,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "SpriteFont",
+							"objectClass": "UIText",
 							"sid": 761341025484329,
 							"parameters": {
 								"instance-variable": "id",
@@ -30,7 +30,7 @@
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "SpriteFont",
+							"objectClass": "UIText",
 							"sid": 201322949142300,
 							"parameters": {
 								"text": "\"Version \" & projectversion"
@@ -155,7 +155,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "SpriteFont",
+					"objectClass": "UIText",
 					"sid": 498574082786513,
 					"parameters": {
 						"text": "\"Version \" & projectversion & \" (new version found, downloading...)\""
@@ -176,7 +176,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "SpriteFont",
+					"objectClass": "UIText",
 					"sid": 985462183177400,
 					"parameters": {
 						"text": "\"Version \" & projectversion & \" (new version downloaded, refresh to update)\""

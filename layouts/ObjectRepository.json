@@ -2402,7 +2402,11 @@
 						"read-aloud": false
 					},
 					"uid": 49,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"minScale": 0,
+						"maxScale": 1,
+						"autoFit": true
+					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 40,
@@ -2450,7 +2454,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "UIText",
 					"properties": {
 						"text": "Ulangi ",
 						"enable-bbcode": true,
@@ -2470,6 +2474,9 @@
 					},
 					"uid": 73,
 					"instanceVariables": {
+						"minScale": 0,
+						"maxScale": 0,
+						"autoFit": false,
 						"id": "repeat-text"
 					},
 					"behaviors": {},
@@ -2519,7 +2526,7 @@
 					}
 				},
 				{
-					"type": "SpriteFont",
+					"type": "UIText",
 					"properties": {
 						"text": "kali",
 						"enable-bbcode": true,
@@ -2539,6 +2546,9 @@
 					},
 					"uid": 74,
 					"instanceVariables": {
+						"minScale": 0,
+						"maxScale": 0,
+						"autoFit": false,
 						"id": "repeat-text"
 					},
 					"behaviors": {},
@@ -2598,7 +2608,7 @@
 					},
 					"uid": 69,
 					"instanceVariables": {
-						"level": 0,
+						"level": 1,
 						"addToGrandParent": false,
 						"shouldShift": false,
 						"relativeLevelToParent": 0
