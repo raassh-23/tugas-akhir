@@ -147,6 +147,7 @@ export default class RepeatCommand extends CommandsContainer {
         const multiplier = 1 - (this.level < MAX_LEVEL ?
             SHRINK_FACTOR * (this.level - 1) :
             SHRINK_FACTOR * (MAX_LEVEL - 1));
+        let repeatPopUPX = 0;
 
         this.height = this.savedHeight * multiplier;
 
@@ -157,10 +158,16 @@ export default class RepeatCommand extends CommandsContainer {
             if (object.instVars.id === "repeat-icon") {
                 this.offsetStart = object.width;
             }
+
+            if (object.instVars.id === "repeat-pop-up") {
+                object.x = this.x + this.offsetStart - object.width / 2 - 10 * multiplier;
+                repeatPopUPX = object.x;
+            }
         });
 
         this.text.width = this.text.savedWidth * multiplier;
         this.text.height = this.text.savedHeight * multiplier;
+        this.text.x = repeatPopUPX;
 
         let currentX = this.x + this.offsetStart + MARGIN;
         this.container.codeBlocks.forEach((command) => {
