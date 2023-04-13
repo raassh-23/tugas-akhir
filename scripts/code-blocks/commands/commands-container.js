@@ -40,7 +40,7 @@ export default class CommandsContainer extends BaseCommand {
      * 
      * @param {number} width 
      */
-    expand(width) {
+    expand(width = 0) {
         throw new Error("Abstract Method");
     }
 

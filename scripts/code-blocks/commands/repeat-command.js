@@ -21,12 +21,12 @@ export default class RepeatCommand extends CommandsContainer {
     offsetStart = 96;
 
     /**
-     * @type {?IWorldInstance}
+     * @type {IWorldInstance?}
      */
     background = null;
 
     /**
-     * @type {?ITextInstance}
+     * @type {ITextInstance?}
      */
     text = null;
 
@@ -79,7 +79,7 @@ export default class RepeatCommand extends CommandsContainer {
      * 
      * @param {number} width 
      */
-    expand(width) {
+    expand(width = 0) {
         const oldWidth = this.width;
         const commands = this.container.codeBlocks;
 
@@ -162,6 +162,11 @@ export default class RepeatCommand extends CommandsContainer {
         this.codeBlockShadows[1].x = this.x + this.width;
     }
 
+    /**
+     * 
+     * @param {number} level 
+     * @returns {number}
+     */
     getWidthOnLevel(level) {
         const childWidth = this.container.codeBlocks.reduce((acc, command) => {
             return acc + command.getWidthOnLevel(level + 1);

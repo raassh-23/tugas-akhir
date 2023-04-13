@@ -33,9 +33,10 @@ export default class MoveCommand extends BaseCommand {
             await waitForMillisecond(50);
         } while (player.behaviors.TileMovement.isMoving());
 
-        console.log("Total duration: " + totalDuration);
-        
-        await waitForMillisecond(maxDuration - totalDuration);
+        while (totalDuration < maxDuration) {
+            totalDuration += 50;
+            await waitForMillisecond(50);
+        }
     }
 
     setDirection() {

@@ -6,7 +6,7 @@ import { MARGIN } from "../code-block-constants.js";
  */
 export default class RunnerCommand extends CommandsContainer {
     /**
-     * @type {?ISpriteInstance}
+     * @type {ISpriteInstance?}
      */
     parent = null;
 
@@ -19,7 +19,6 @@ export default class RunnerCommand extends CommandsContainer {
      * @param {IPlayer} player 
      */
     async run(player) {
-        console.time("run");
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
@@ -27,14 +26,13 @@ export default class RunnerCommand extends CommandsContainer {
 
             this.runtime.globalVars.isRunning = false;
         }
-        console.timeEnd("run");
     }
 
     /**
      * 
      * @param {number} width 
      */
-    expand(width) {
+    expand(width = 0) {
         if (this.parent == null) {
             this.parent = this.getParent();
         }

@@ -6,7 +6,7 @@ import BaseExpression from "./base-expression.js";
  */
 export default class RepeatCommandCondition extends BaseExpression {
     /**
-     * @type {?ISpriteInstance}
+     * @type {ISpriteInstance?}
      */
     parent = null;
 
@@ -33,7 +33,7 @@ export default class RepeatCommandCondition extends BaseExpression {
      * 
      * @param {number} width 
      */
-    expand(width) {
+    expand(width = 0) {
         if (this.parent == null) {
             this.parent = this.getParent();
         }

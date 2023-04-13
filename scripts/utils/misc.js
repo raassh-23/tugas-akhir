@@ -22,7 +22,7 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {?(CommandsContainer | RepeatCommandCondition)}
+ * @returns {(CommandsContainer | RepeatCommandCondition)?}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
@@ -37,7 +37,7 @@ export function getContainerParent(sprite) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {?(CommandsContainer | RepeatCommandCondition)}
+ * @returns {(CommandsContainer | RepeatCommandCondition)?}
  */
 export function getTopCodeBlockContainer(sprite) {
 	let parent = getContainerParent(sprite);

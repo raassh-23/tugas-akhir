@@ -113,6 +113,11 @@ export default class CodeBlock extends ISpriteInstance {
         this.codeBlockShadows[0].x = this.x + this.width;
     }
 
+    /**
+     * 
+     * @param {number} level 
+     * @returns {number}
+     */
     getWidthOnLevel(level) {
         const multiplier = 1 - (level < MAX_LEVEL ?
             SHRINK_FACTOR * (level - 1) :

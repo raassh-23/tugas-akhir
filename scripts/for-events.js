@@ -10,12 +10,12 @@ import {
 } from "./utils/misc.js";
 
 /**
- * @type {?RunnerCommand}
+ * @type {RunnerCommand?}
  */
 let runner = null;
 
 /**
- * @type {?CodeBlock}
+ * @type {CodeBlock?}
  */
 let pickedCommand = null;
 
@@ -110,7 +110,7 @@ function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 function resetContainerLength(containers) {
 	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
 		.forEach((c) => {
-			c.expand(0);
+			c.expand();
 		});
 }
 
