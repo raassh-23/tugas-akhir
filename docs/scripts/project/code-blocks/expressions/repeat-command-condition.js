@@ -1,3 +1,4 @@
+import { MARGIN } from "../code-block-constants.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
 import BaseExpression from "./base-expression.js";
 
@@ -38,8 +39,8 @@ export default class RepeatCommandCondition extends BaseExpression {
             this.parent = this.getParent();
         }
 
-        const newWidth = 2 * this.runtime.globalVars.ACTIVE_COMMAND_MARGIN
-            + this.parent.instVars.initialLength / 2 + this.width + width
+        const newWidth = 2 * MARGIN + this.width + width
+            + this.parent.instVars.initialLength / 2
             + this.container.codeBlocks.reduce((acc, expression) => acc + expression.width, 0);
 
         if (newWidth <= this.parent.instVars.initialLength) {
@@ -50,5 +51,13 @@ export default class RepeatCommandCondition extends BaseExpression {
             this.parent.instVars.min =
                 (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
         }
+    }
+
+    setSizeBasedOnLevel() {
+        // do nothing
+    }
+
+    getWidthOnLevel(level) {
+        return this.parent.width;
     }
 }

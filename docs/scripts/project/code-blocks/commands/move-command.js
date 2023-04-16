@@ -1,4 +1,5 @@
 import {waitForMillisecond} from "../../utils/misc.js";
+import { STOPPED } from "../code-block-constants.js";
 import BaseCommand from "./base-command.js";
 
 const maxDuration = 750;
@@ -21,22 +22,26 @@ export default class MoveCommand extends BaseCommand {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
 		player.behaviors.TileMovement.simulateControl(this.direction);
         player.angleDegrees = dirToAngle[this.direction] ?? player.angleDegrees;
 
         let totalDuration = 0;
 
         do {
-            totalDuration += 50;
-            await waitForMillisecond(50);
-        } while (player.behaviors.TileMovement.isMoving());
+            if (state.isStopped) {
+                return STOPPED;
+            }
 
-        while (totalDuration < maxDuration) {
             totalDuration += 50;
             await waitForMillisecond(50);
-        }
+        } while (player.behaviors.TileMovement.isMoving() || totalDuration < maxDuration);
+
+        return 0;
     }
 
     setDirection() {

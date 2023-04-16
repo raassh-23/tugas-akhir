@@ -20,6 +20,13 @@ let runner = null;
 let pickedCommand = null;
 
 /**
+ * @type {{isStopped: boolean}}
+ */
+const state = {
+	isStopped: false,
+}
+
+/**
  * 
  * @param {IRuntime} runtime 
  */
@@ -176,19 +183,28 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event22_Act1(runtime, localVars)
+	async Game_es_Event25_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		
-		runner.run(runtime.objects.Player.getFirstInstance())
+		state.isStopped = false;
+		
+		runner.run(runtime.objects.Player.getFirstInstance(), state)
 	},
 
-	async Game_es_Event28_Act1(runtime, localVars)
+	async Game_es_Event26_Act1(runtime, localVars)
+	{
+		console.log("stopping commands")
+		
+		state.isStopped = true;
+	},
+
+	async Game_es_Event32_Act1(runtime, localVars)
 	{
 		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
 	},
 
-	async Game_es_Event30_Act1(runtime, localVars)
+	async Game_es_Event34_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCodeBlockShadowToShow(
 			runtime.objects.CodeBlock.getFirstPickedInstance(), 
@@ -198,42 +214,42 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event32_Act4(runtime, localVars)
+	async Game_es_Event36_Act4(runtime, localVars)
 	{
 		expandCodeBlockShadowContainer(
 			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event41_Act1(runtime, localVars)
+	async Game_es_Event45_Act1(runtime, localVars)
 	{
 		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
 	},
 
-	async Game_es_Event45_Act1(runtime, localVars)
+	async Game_es_Event49_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event48_Act1(runtime, localVars)
+	async Game_es_Event52_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event50_Act1(runtime, localVars)
+	async Game_es_Event54_Act1(runtime, localVars)
 	{
 		const count = runtime.objects.RepeatCommandCondition
 			.getFirstPickedInstance().evaluate();
 		pickedCommand.setRepeatCount(count);
 	},
 
-	async Game_es_Event51_Act1(runtime, localVars)
+	async Game_es_Event55_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event52_Act1(runtime, localVars)
+	async Game_es_Event56_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(
 			runtime.objects.CodeBlock

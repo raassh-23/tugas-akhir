@@ -17,15 +17,27 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
-            await super.run(player);
+            const result = await super.run(player, state);
+
+            if (state.isStopped) {
+                this.runtime.callFunction("ResetGame");
+                return result;
+            }
 
             this.runtime.globalVars.isRunning = false;
+            // temp
+            this.runtime.callFunction("ResetGame");
         }
+
+        return 0;
     }
 
     /**
@@ -37,8 +49,8 @@ export default class RunnerCommand extends CommandsContainer {
             this.parent = this.getParent();
         }
 
-        const newWidth = 2 * MARGIN + this.parent.instVars.initialLength / 2 
-            + this.width + width
+        const newWidth = 2 * MARGIN + this.width + width
+            + this.parent.instVars.initialLength / 2
             + this.container.codeBlocks.reduce((acc, command) => acc + command.width, 0);
 
         if (newWidth <= this.parent.instVars.initialLength) {
@@ -57,5 +69,9 @@ export default class RunnerCommand extends CommandsContainer {
             command.x = currentX;
             currentX += command.width;
         });
+    }
+
+    getWidthOnLevel(level) {
+        return this.parent.width;
     }
 }

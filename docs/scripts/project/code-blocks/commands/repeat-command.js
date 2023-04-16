@@ -64,15 +64,25 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         for (let i = 0; i < this.#repeatCount; i++) {
             this.text.text = (this.#repeatCount - i - 1).toString();
 
-            await super.run(player);
+            const result = await super.run(player, state);
+
+            if (state.isStopped) {
+                this.text.text = this.#repeatCount.toString();
+                return result;
+            }
         }
 
         this.text.text = this.#repeatCount.toString();
+
+        return 0;
     }
 
     /**
@@ -137,6 +147,7 @@ export default class RepeatCommand extends CommandsContainer {
         const multiplier = 1 - (this.level < MAX_LEVEL ?
             SHRINK_FACTOR * (this.level - 1) :
             SHRINK_FACTOR * (MAX_LEVEL - 1));
+        let repeatPopUPX = 0;
 
         this.height = this.savedHeight * multiplier;
 
@@ -147,10 +158,16 @@ export default class RepeatCommand extends CommandsContainer {
             if (object.instVars.id === "repeat-icon") {
                 this.offsetStart = object.width;
             }
+
+            if (object.instVars.id === "repeat-pop-up") {
+                object.x = this.x + this.offsetStart - object.width / 2 - 10 * multiplier;
+                repeatPopUPX = object.x;
+            }
         });
 
         this.text.width = this.text.savedWidth * multiplier;
         this.text.height = this.text.savedHeight * multiplier;
+        this.text.x = repeatPopUPX;
 
         let currentX = this.x + this.offsetStart + MARGIN;
         this.container.codeBlocks.forEach((command) => {
@@ -173,6 +190,8 @@ export default class RepeatCommand extends CommandsContainer {
         }, 0);
 
         const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
+
+        console.log(finalWidth);
 
         return finalWidth <= this.minLength ? this.minLength : finalWidth;
     }

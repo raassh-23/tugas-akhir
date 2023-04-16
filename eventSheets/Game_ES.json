@@ -350,18 +350,18 @@
 							"actions": [
 								{
 									"callFunction": "ShowCodeBlockShadow",
-									"sid": 528670771175073,
+									"sid": 990815233060792,
 									"parameters": [
 										"CodeBlockShadow.UID",
-										"Functions.getExpectedWidth(CodeBlockShadow.level + 1)"
+										"Functions.getExpectedWidth(CodeBlockShadow.level)"
 									]
 								},
 								{
 									"callFunction": "ShiftActiveCodeBlocks",
-									"sid": 914450859240776,
+									"sid": 622650371976368,
 									"parameters": [
 										"CodeBlockShadow.X",
-										"Functions.getExpectedWidth(CodeBlockShadow.level + 1)",
+										"Functions.getExpectedWidth(CodeBlockShadow.level)",
 										"CodeBlock.panelId"
 									]
 								}
@@ -386,10 +386,6 @@
 							"sid": 441139817013168
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "TODO: Something's wrong with shifting when removing code block in repeat command"
 				},
 				{
 					"eventType": "block",

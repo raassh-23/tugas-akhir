@@ -27,13 +27,24 @@ export default class CommandsContainer extends BaseCommand {
     /**
      * 
      * @param {IPlayer} player 
+     * @param {{isStopped: boolean}} state
+     * 
+     * @returns {Promise<number>}
      */
-    async run(player) {
+    async run(player, state) {
         for (const command of this.container.codeBlocks) {
             command.showHighlight(true);
-            await command.run(player);
+
+            const result = await command.run(player, state);
+
             command.showHighlight(false);
+
+            if (state.isStopped) {
+                return result;
+            }
         }
+
+        return 0;
     }
 
     /**

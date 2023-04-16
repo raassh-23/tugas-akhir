@@ -4437,7 +4437,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
-		C3.Plugins.Touch.Cnds.IsTouchingObject,
+		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.ScriptsInEvents.Game_es_Event9_Act2,
@@ -4449,40 +4449,45 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.UID,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.ScriptsInEvents.Game_es_Event14_Act1,
-		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.ObjectTypeName,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Behaviors.DragnDrop.Acts.SetEnabled,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event22_Act1,
+		C3.Plugins.Sprite.Acts.SetAnimFrame,
+		C3.ScriptsInEvents.Game_es_Event25_Act1,
+		C3.ScriptsInEvents.Game_es_Event26_Act1,
 		C3.Plugins.Sprite.Cnds.PickParent,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
-		C3.ScriptsInEvents.Game_es_Event28_Act1,
+		C3.ScriptsInEvents.Game_es_Event32_Act1,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.NinePatch.Exps.LayerName,
 		C3.Plugins.NinePatch.Cnds.PickChildren,
-		C3.ScriptsInEvents.Game_es_Event30_Act1,
+		C3.ScriptsInEvents.Game_es_Event34_Act1,
 		C3.Plugins.Sprite.Acts.SetWidth,
-		C3.ScriptsInEvents.Game_es_Event32_Act4,
+		C3.ScriptsInEvents.Game_es_Event36_Act4,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetX,
-		C3.ScriptsInEvents.Game_es_Event41_Act1,
+		C3.ScriptsInEvents.Game_es_Event45_Act1,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.NinePatch.Acts.SetInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event45_Act1,
+		C3.ScriptsInEvents.Game_es_Event49_Act1,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.NinePatch.Acts.SetY,
 		C3.Plugins.Sprite.Cnds.IsOnLayer,
-		C3.ScriptsInEvents.Game_es_Event48_Act1,
-		C3.Plugins.System.Cnds.PickAll,
-		C3.ScriptsInEvents.Game_es_Event50_Act1,
-		C3.ScriptsInEvents.Game_es_Event51_Act1,
 		C3.ScriptsInEvents.Game_es_Event52_Act1,
+		C3.Plugins.System.Cnds.PickAll,
+		C3.ScriptsInEvents.Game_es_Event54_Act1,
+		C3.ScriptsInEvents.Game_es_Event55_Act1,
+		C3.ScriptsInEvents.Game_es_Event56_Act1,
+		C3.Plugins.System.Acts.RecreateInitialObjects,
+		C3.Plugins.System.Exps.layoutwidth,
+		C3.Plugins.System.Exps.layoutname,
+		C3.Plugins.System.Acts.SetFunctionReturnValue,
+		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Behaviors.DragnDrop.Acts.Drop,
 		C3.Plugins.System.Exps.dt,
@@ -4492,7 +4497,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.System.Exps.viewportwidth,
-		C3.Plugins.System.Exps.layoutwidth,
 		C3.Plugins.System.Exps.viewportheight,
 		C3.Plugins.System.Exps.layoutheight,
 		C3.Plugins.System.Acts.SetLayerScale,
@@ -4511,6 +4515,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTouchEnd,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
 		C3.Plugins.Mouse.Cnds.OnWheel,
+		C3.Plugins.Spritefont2.Cnds.IsBoolInstanceVarSet,
+		C3.Plugins.Spritefont2.Cnds.IsOnScreen,
+		C3.Plugins.Spritefont2.Acts.SetScale,
+		C3.Plugins.System.Cnds.While,
+		C3.Plugins.Spritefont2.Exps.CharacterScale,
+		C3.Plugins.Spritefont2.Exps.TextWidth,
+		C3.Plugins.Spritefont2.Exps.Width,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Plugins.System.Exps.projectversion,
@@ -4546,7 +4557,10 @@ self.C3_JsPropNameTable = [
 	{id: 0},
 	{UIPanel: 0},
 	{Button: 0},
-	{SpriteFont: 0},
+	{minScale: 0},
+	{maxScale: 0},
+	{autoFit: 0},
+	{UIText: 0},
 	{min: 0},
 	{max: 0},
 	{initialLength: 0},
@@ -4575,6 +4589,8 @@ self.C3_JsPropNameTable = [
 	{OtherCodeBlock: 0},
 	{CodeBlockContainer: 0},
 	{HSLEffects: 0},
+	{ResetObjects: 0},
+	{Text: 0},
 	{isRunning: 0},
 	{isDragging: 0},
 	{objectTypeName: 0},
@@ -4595,7 +4611,6 @@ self.C3_JsPropNameTable = [
 	{TouchLastY: 0},
 	{TouchStartDistance: 0},
 	{InitialScale: 0},
-	{minScale: 0},
 	{MaxScale: 0},
 	{TouchCurrentDistance: 0},
 	{TouchCurrentMidX: 0},
@@ -4714,6 +4729,11 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject();
 		},
 		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		},
+		() => 0,
+		p => {
 			const n0 = p._GetNode(0);
 			return () => (-n0.ExpObject());
 		},
@@ -4723,14 +4743,11 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
-			return () => f0((n1.ExpInstVar() + 1));
+			return () => f0(n1.ExpInstVar());
 		},
 		() => "play",
+		() => 1,
 		() => "close-repeat-panel",
 		() => "repeat-pop-up",
 		p => {
@@ -4779,7 +4796,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "PanAndZoom",
 		() => -1,
-		() => 0,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
@@ -4789,7 +4805,6 @@ self.C3_ExpressionFuncs = [
 			return () => f0(0.5, (f1("UI") / f2()), (f3("UI") / f4()));
 		},
 		() => 2,
-		() => 1,
 		() => "BG",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4887,6 +4902,15 @@ self.C3_ExpressionFuncs = [
 			return () => (f0() + (400 * f1()));
 		},
 		() => "Debugging Tools",
+		() => "Text",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() * 0.9);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 0.01);
+		},
 		() => "version",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
