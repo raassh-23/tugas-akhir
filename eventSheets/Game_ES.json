@@ -1775,7 +1775,7 @@
 											"actions": [
 												{
 													"type": "script",
-													"script": "const condition = runtime.objects.RepeatCommandCondition\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCount(condition);"
+													"script": "const condition = runtime.objects.RepeatCommandCondition\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCondition(condition);"
 												}
 											],
 											"sid": 388284699747584
@@ -3308,10 +3308,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "TODO: Search for a better way to do auto fitting"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -3369,11 +3365,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 902611582574147,
+									"sid": 502919094419020,
 									"parameters": {
-										"first-value": "Text.TextWidth",
+										"first-value": "Functions.ShouldShrink",
 										"comparison": 4,
-										"second-value": "Text.Width * 0.9"
+										"second-value": "0"
 									}
 								}
 							],
@@ -3388,6 +3384,79 @@
 								}
 							],
 							"sid": 958500142888681
+						}
+					]
+				},
+				{
+					"functionName": "ShouldShrink",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 423693351159561,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 902611582574147,
+									"parameters": {
+										"first-value": "Text.TextWidth",
+										"comparison": 4,
+										"second-value": "Text.Width * 0.9"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 833623512391617,
+									"parameters": {
+										"first-value": "Text.TextHeight",
+										"comparison": 4,
+										"second-value": "Text.CharacterHeight * Text.CharacterScale"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 596053632027465,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 883460163713896,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 328804596357381
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 149172777667805,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 375527864987637
 						}
 					]
 				}

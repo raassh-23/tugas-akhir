@@ -1,5 +1,11 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, MAX_LEVEL, SHRINK_FACTOR } from "../code-block-constants.js";
+import {
+    MARGIN,
+    MAX_LEVEL,
+    SHRINK_FACTOR,
+    FINISHED,
+    ERROR
+} from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
@@ -70,23 +76,31 @@ export default class RepeatCommand extends CommandsContainer {
      */
     async run(player, state) {
         // todo: check if repeat condition is valid
-        const repeatCount = math.evaluate(this.#repeatCondition);
-        this.text.text = repeatCount.toString();
+        try {
+            const repeatCount = math.evaluate(this.#repeatCondition);
+            this.text.text = repeatCount.toString();
 
-        for (let i = 0; i < repeatCount; i++) {
-            this.text.text = (repeatCount - i - 1).toString();
+            for (let i = 0; i < repeatCount; i++) {
+                this.text.text = (repeatCount - i).toString();
 
-            const result = await super.run(player, state);
+                const result = await super.run(player, state);
 
-            if (state.isStopped) {
-                this.text.text = this.#repeatCondition;
-                return result;
+                if (state.isStopped) {
+                    this.text.text = this.#repeatCondition;
+                    return result;
+                }
             }
+
+            this.text.text = this.#repeatCondition;
+        } catch (error) {
+            super.showError(true);
+
+            this.text.text = this.#repeatCondition;
+
+            return ERROR
         }
 
-        this.text.text = this.#repeatCondition;
-
-        return 0;
+        return FINISHED;
     }
 
     /**
@@ -122,12 +136,15 @@ export default class RepeatCommand extends CommandsContainer {
      * @param {string} condition
      */
     setRepeatCondition(condition) {
-        if (condition.length === 0) {
+        if (condition === this.#repeatCondition) {
+            return;
+        } else if (condition.length === 0) {
             this.#repeatCondition = "0";
         } else {
             this.#repeatCondition = condition;
         }
 
+        super.showError(false);
         this.text.text = this.#repeatCondition;
     }
 

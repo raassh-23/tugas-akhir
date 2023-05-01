@@ -11,6 +11,6 @@ export default class OperatorBlock extends BaseExpression {
     }
 
     evaluate() {
-        return ` ${operators[this.animationFrame]} `;
+        return operators[this.animationFrame];
     }
 }

@@ -125,4 +125,22 @@ export default class CodeBlock extends ISpriteInstance {
 
         return this.savedWidth * multiplier;
     }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showError(show) {
+        const newColor = show ? [1, 0.5, 0.5] : [1, 1, 1];
+
+        this.colorRgb = newColor;
+        this.highlightedObjects.forEach((object) => {
+            object.colorRgb = newColor;
+        });
+    }
+
+    reset() {
+        this.showHighlight(false);
+        this.showError(false);
+    }
 }

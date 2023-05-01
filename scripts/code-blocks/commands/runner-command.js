@@ -1,5 +1,5 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN } from "../code-block-constants.js";
+import { MARGIN, FINISHED } from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
@@ -25,6 +25,8 @@ export default class RunnerCommand extends CommandsContainer {
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
+            this.reset();
+
             const result = await super.run(player, state);
 
             if (state.isStopped) {
@@ -37,7 +39,7 @@ export default class RunnerCommand extends CommandsContainer {
             this.runtime.callFunction("ResetGame");
         }
 
-        return 0;
+        return FINISHED;
     }
 
     /**
