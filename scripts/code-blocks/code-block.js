@@ -1,3 +1,4 @@
+import { waitForMillisecond } from "../utils/misc.js";
 import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
 
 /**
@@ -39,6 +40,7 @@ export default class CodeBlock extends ISpriteInstance {
         this.savedWidth = this.width;
         this.savedHeight = this.height;
 
+        // TODO: children is empty, seems like C3 bug
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
                 this.codeBlockShadows.push(child);
