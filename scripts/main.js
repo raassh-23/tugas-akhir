@@ -4,7 +4,12 @@ import {
 	RunnerCommand,
 	RepeatCommandCondition,
 	NumberBlock,
+	OperatorBlock,
 } from "./code-blocks/index.js";
+
+const script = document.createElement("script");
+script.src = "./lib/math.min.js";
+document.head.appendChild(script);
 
 runOnStartup(async runtime =>
 {
@@ -18,6 +23,7 @@ runOnStartup(async runtime =>
 	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
 	runtime.objects.RepeatCommandCondition.setInstanceClass(RepeatCommandCondition);
 	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
+	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
 });
 
 // async function OnBeforeProjectStart(runtime)

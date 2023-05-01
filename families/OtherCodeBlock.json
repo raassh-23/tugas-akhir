@@ -8,6 +8,7 @@
 	"members": [
 		"MoveCommand",
 		"RepeatCommand",
-		"NumberBlock"
+		"NumberBlock",
+		"OperatorBlock"
 	]
 }

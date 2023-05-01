@@ -267,6 +267,101 @@
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7049549,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4578086,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4086276,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7477415,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7004785,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2242601,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 72,
+						"height": 72,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7039657,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 891328143423172,
+				"name": "Operator",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
 			}
 		],
 		"subfolders": []

@@ -4,7 +4,8 @@ import MoveCommand from "./commands/move-command.js";
 import RepeatCommand from "./commands/repeat-command.js";
 import RunnerCommand from "./commands/runner-command.js";
 import RepeatCommandCondition from "./expressions/repeat-command-condition.js";
-import NumberBlock from "./expressions/number-command.js";
+import NumberBlock from "./expressions/number-block.js";
+import OperatorBlock from "./expressions/operator-block.js";
 
 export {
     CodeBlock,
@@ -14,4 +15,5 @@ export {
     CommandsContainer,
 	RepeatCommandCondition,
     NumberBlock,
+    OperatorBlock,
 };

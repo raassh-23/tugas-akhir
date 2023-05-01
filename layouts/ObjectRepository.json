@@ -2957,7 +2957,7 @@
 					}
 				},
 				{
-					"type": "NumberBlock",
+					"type": "OperatorBlock",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -3039,8 +3039,8 @@
 						}
 					},
 					"world": {
-						"x": 1296,
-						"y": 524,
+						"x": 600,
+						"y": 417,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -3101,8 +3101,8 @@
 						}
 					},
 					"world": {
-						"x": 1368,
-						"y": 524,
+						"x": 672,
+						"y": 417,
 						"width": 72,
 						"height": 72,
 						"originX": 0,

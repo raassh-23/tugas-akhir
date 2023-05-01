@@ -130,7 +130,8 @@
 					"NumberBlock",
 					"RepeatCommand",
 					"RepeatCommandCondition",
-					"StartCommand"
+					"StartCommand",
+					"OperatorBlock"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -282,7 +283,7 @@
 						{
 							"items": [
 								{
-									"name": "number-command.js",
+									"name": "number-block.js",
 									"type": "application/javascript",
 									"sid": 875032843354489,
 									"script-info": {
@@ -301,6 +302,14 @@
 									"name": "repeat-command-condition.js",
 									"type": "text/javascript",
 									"sid": 749394367896171,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "operator-block.js",
+									"type": "application/javascript",
+									"sid": 886280947314270,
 									"script-info": {
 										"purpose": "none"
 									}
@@ -415,7 +424,22 @@
 		},
 		"general": {
 			"items": [],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "math.min.js",
+							"type": "application/javascript",
+							"sid": 823562490379026,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "lib"
+				}
+			]
 		}
 	},
 	"timelines": {
