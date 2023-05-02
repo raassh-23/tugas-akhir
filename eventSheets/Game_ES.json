@@ -22,6 +22,16 @@
 			"sid": 907360693346189
 		},
 		{
+			"eventType": "variable",
+			"name": "level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 442340568067062
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -40,7 +50,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "setRunner(runtime);"
+							"script": "setupLevel(runtime);"
 						},
 						{
 							"id": "set-visible",
@@ -1806,7 +1816,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "level",
+							"name": "blockLevel",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
@@ -1818,7 +1828,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.setReturnValue(\n\truntime.objects.CodeBlock\n\t\t.getFirstPickedInstance()\n\t\t.getWidthOnLevel(localVars.level)\n);"
+							"script": "runtime.setReturnValue(\n\truntime.objects.CodeBlock\n\t\t.getFirstPickedInstance()\n\t\t.getWidthOnLevel(localVars.blockLevel)\n);"
 						}
 					],
 					"sid": 287229515861692
@@ -3459,6 +3469,55 @@
 							"sid": 375527864987637
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 744343809278634
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 391265822416662,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"variables\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 275857252910940,
+							"parameters": {
+								"text": "Functions.GetVariables"
+							}
+						}
+					],
+					"sid": 620594553154912
+				},
+				{
+					"functionName": "GetVariables",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.setReturnValue(getVariables());"
+						}
+					],
+					"sid": 959573130061458
 				}
 			],
 			"sid": 361619522203103

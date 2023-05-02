@@ -3,6 +3,7 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
+import levelVariables from "./level-variables.js";
 import { 
 	getSquaredDistance,
 	getContainerParent,
@@ -20,18 +21,23 @@ let runner = null;
 let pickedCommand = null;
 
 /**
- * @type {{isStopped: boolean}}
+ * @type {{isStopped: boolean, variables: {[variable: string]: number}}}
  */
 const state = {
 	isStopped: false,
+	variables: {},
 }
 
 /**
  * 
  * @param {IRuntime} runtime 
  */
-function setRunner(runtime) {
+function setupLevel(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
+	state.variables = levelVariables[runtime.globalVars.level] ?? {};
+
+	console.log(state);
+
 
 	if (runner == null) {
 		throw new Error("cannot find runner");
@@ -150,4 +156,10 @@ function logParent(sprite) {
 		console.log("parent level " + level++);
 		console.log(parent);
 	}
+}
+
+function getVariables() {
+	return Object.entries(state.variables)
+			.map(([key, value]) => `${key}: ${value}`)
+			.join("\n");
 }

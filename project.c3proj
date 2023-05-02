@@ -131,7 +131,8 @@
 					"RepeatCommand",
 					"RepeatCommandCondition",
 					"StartCommand",
-					"OperatorBlock"
+					"OperatorBlock",
+					"VariableBlock"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -194,6 +195,14 @@
 					"sid": 224138668282413,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "level-variables.js",
+					"type": "application/javascript",
+					"sid": 443565266676114,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],
@@ -310,6 +319,14 @@
 									"name": "operator-block.js",
 									"type": "application/javascript",
 									"sid": 886280947314270,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "variable-block.js",
+									"type": "application/javascript",
+									"sid": 575962800501217,
 									"script-info": {
 										"purpose": "none"
 									}

@@ -70,14 +70,13 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean}} state
+     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
      * 
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        // todo: check if repeat condition is valid
         try {
-            const repeatCount = math.evaluate(this.#repeatCondition);
+            const repeatCount = math.evaluate(this.#repeatCondition, state.variables);
             this.text.text = repeatCount.toString();
 
             for (let i = 0; i < repeatCount; i++) {
@@ -93,6 +92,7 @@ export default class RepeatCommand extends CommandsContainer {
 
             this.text.text = this.#repeatCondition;
         } catch (error) {
+            console.log(error);
             super.showError(true);
 
             this.text.text = this.#repeatCondition;

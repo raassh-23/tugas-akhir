@@ -65,6 +65,7 @@
 		"MoveCommand",
 		"RepeatCommand",
 		"NumberBlock",
-		"OperatorBlock"
+		"OperatorBlock",
+		"VariableBlock"
 	]
 }

@@ -5,6 +5,7 @@ import {
 	RepeatCommandCondition,
 	NumberBlock,
 	OperatorBlock,
+	VariableBlock
 } from "./code-blocks/index.js";
 
 const script = document.createElement("script");
@@ -24,6 +25,7 @@ runOnStartup(async runtime =>
 	runtime.objects.RepeatCommandCondition.setInstanceClass(RepeatCommandCondition);
 	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
 	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
+	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);
 });
 
 // async function OnBeforeProjectStart(runtime)

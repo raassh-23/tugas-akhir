@@ -17,7 +17,7 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean}} state
+     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
      * 
      * @returns {Promise<number>}
      */

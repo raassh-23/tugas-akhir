@@ -6,6 +6,7 @@ import RunnerCommand from "./commands/runner-command.js";
 import RepeatCommandCondition from "./expressions/repeat-command-condition.js";
 import NumberBlock from "./expressions/number-block.js";
 import OperatorBlock from "./expressions/operator-block.js";
+import VariableBlock from "./expressions/variable-block.js";
 
 export {
     CodeBlock,
@@ -16,4 +17,5 @@ export {
 	RepeatCommandCondition,
     NumberBlock,
     OperatorBlock,
+    VariableBlock,
 };
