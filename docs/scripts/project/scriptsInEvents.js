@@ -233,30 +233,30 @@ const scriptsInEvents = {
 		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
 	},
 
-	async Game_es_Event48_Act1(runtime, localVars)
+	async Game_es_Event52_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event51_Act1(runtime, localVars)
+	async Game_es_Event55_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event53_Act1(runtime, localVars)
+	async Game_es_Event57_Act1(runtime, localVars)
 	{
 		const condition = runtime.objects.RepeatCommandCondition
 			.getFirstPickedInstance().evaluate();
 		pickedCommand.setRepeatCondition(condition);
 	},
 
-	async Game_es_Event54_Act1(runtime, localVars)
+	async Game_es_Event58_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event55_Act1(runtime, localVars)
+	async Game_es_Event59_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(
 			runtime.objects.CodeBlock
@@ -265,7 +265,7 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event101_Act1(runtime, localVars)
+	async Game_es_Event106_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(getVariables());
 	}
