@@ -221,7 +221,7 @@
 								}
 							},
 							{
-								"uid": 68,
+								"uid": 81,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -229,14 +229,14 @@
 									"w": false,
 									"h": false,
 									"a": false,
-									"o": false,
-									"v": false,
+									"o": true,
+									"v": true,
 									"d": true,
 									"sm": "normal"
 								}
 							},
 							{
-								"uid": 81,
+								"uid": 93,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -277,7 +277,7 @@
 						}
 					},
 					"world": {
-						"x": 1411,
+						"x": 639,
 						"y": 114,
 						"width": 559.8431207097119,
 						"height": 333.97658126800667,
@@ -287,6 +287,86 @@
 							1,
 							1,
 							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIPanel",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 93,
+					"instanceVariables": {
+						"id": "repeat-panel-input-background"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 71,
+						"uid": 93,
+						"children": [
+							{
+								"uid": 68,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 639,
+						"y": 233.6362248757445,
+						"width": 559.8431207097119,
+						"height": 105.97658126800667,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.8784313725490196,
+							0.8784313725490196,
+							0.8784313725490196,
 							1
 						],
 						"angle": 0,
@@ -515,7 +595,7 @@
 						"replicasUIDs": null
 					},
 					"sceneGraphData": {
-						"parent-uid": 71,
+						"parent-uid": 93,
 						"uid": 68,
 						"children": [
 							{
@@ -560,10 +640,10 @@
 						}
 					},
 					"world": {
-						"x": 1413,
-						"y": 111.31931154177988,
-						"width": 558.2759657686943,
-						"height": 337.09990010594765,
+						"x": 639,
+						"y": 233.636225,
+						"width": 559.843121,
+						"height": 105.976581,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -2509,7 +2589,7 @@
 						}
 					},
 					"world": {
-						"x": 1546,
+						"x": 774,
 						"y": 138,
 						"width": 328,
 						"height": 84,
@@ -2581,7 +2661,7 @@
 						}
 					},
 					"world": {
-						"x": 1448,
+						"x": 676,
 						"y": 350,
 						"width": 486,
 						"height": 84,
@@ -2643,7 +2723,7 @@
 						}
 					},
 					"world": {
-						"x": 1509,
+						"x": 737,
 						"y": 286,
 						"width": 72,
 						"height": 72,
@@ -2718,7 +2798,7 @@
 						}
 					},
 					"world": {
-						"x": 1437,
+						"x": 665,
 						"y": 286,
 						"width": 72,
 						"height": 72,
@@ -2818,8 +2898,8 @@
 						}
 					},
 					"world": {
-						"x": 600,
-						"y": 258,
+						"x": 1008,
+						"y": 690,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -2880,8 +2960,8 @@
 						}
 					},
 					"world": {
-						"x": 672,
-						"y": 258,
+						"x": 1080,
+						"y": 690,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -2940,8 +3020,8 @@
 						}
 					},
 					"world": {
-						"x": 1961.7913951736095,
-						"y": 119.03062205661105,
+						"x": 1190,
+						"y": 119,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -3039,8 +3119,8 @@
 						}
 					},
 					"world": {
-						"x": 600,
-						"y": 417,
+						"x": 1008,
+						"y": 849,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -3101,8 +3181,8 @@
 						}
 					},
 					"world": {
-						"x": 672,
-						"y": 417,
+						"x": 1080,
+						"y": 849,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -3201,8 +3281,8 @@
 						}
 					},
 					"world": {
-						"x": 600,
-						"y": 559,
+						"x": 1008,
+						"y": 991,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -3263,8 +3343,8 @@
 						}
 					},
 					"world": {
-						"x": 672,
-						"y": 559,
+						"x": 1080,
+						"y": 991,
 						"width": 72,
 						"height": 72,
 						"originX": 0,

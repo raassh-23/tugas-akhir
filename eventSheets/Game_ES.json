@@ -99,9 +99,9 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 706161774889017,
+							"sid": 748712717131252,
 							"parameters": {
-								"layer": "\"PopUpBG\"",
+								"layer": "\"PopUp\"",
 								"visibility": "invisible"
 							}
 						},
@@ -111,6 +111,15 @@
 							"sid": 739571697606556,
 							"parameters": {
 								"layer": "\"RepeatPopUp\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 770781312757075,
+							"parameters": {
+								"layer": "\"PopUp\"",
 								"interactive": false
 							}
 						}
@@ -1444,23 +1453,14 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 568375567010527,
+							"sid": 900433102754409,
 							"parameters": {
 								"object-to-create": "UIPanel",
-								"layer": "\"RepeatPopUp\"",
+								"layer": "\"PopUpBack\"",
 								"x": "360",
 								"y": "195",
 								"create-hierarchy": true,
 								"template-name": "\"repeat-panel\""
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "UIPanel",
-							"sid": 221559447631925,
-							"parameters": {
-								"instance-variable": "id",
-								"value": "\"repeat-panel-\" & CommandUID"
 							}
 						}
 					],
@@ -1470,16 +1470,86 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-children",
+									"id": "compare-instance-variable",
 									"objectClass": "UIPanel",
-									"sid": 785699762334511,
+									"sid": 481065218872076,
 									"parameters": {
-										"child": "ScrollablePanel",
-										"which": "own"
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"repeat-panel\""
 									}
 								}
 							],
 							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UIPanel",
+									"sid": 828112386627803,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"repeat-panel-\" & CommandUID"
+									}
+								}
+							],
+							"sid": 587083826492572
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 763532585434661,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"repeat-panel-input-background\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UIPanel",
+									"sid": 629129955692020,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"repeat-panel-input-background-\" & CommandUID"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "UIPanel",
+									"sid": 365417035763527,
+									"parameters": {
+										"layer": "\"PopUpFront\""
+									}
+								}
+							],
+							"sid": 402514067970354
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 701979777768466,
+									"parameters": {
+										"child": "ScrollablePanel",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "ScrollablePanel",
+									"sid": 321655473390778,
+									"parameters": {
+										"layer": "\"PopUpFront\""
+									}
+								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "ScrollablePanel",
@@ -1513,6 +1583,56 @@
 								}
 							],
 							"sid": 235133904057371
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 805148229156278,
+									"parameters": {
+										"child": "RepeatCommandCondition",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "RepeatCommandCondition",
+									"sid": 833948317793055,
+									"parameters": {
+										"layer": "\"PopUpFront\""
+									}
+								}
+							],
+							"sid": 622281951596386
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 605051599777330,
+									"parameters": {
+										"child": "CodeBlockShadow",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockShadow",
+									"sid": 489912784564372,
+									"parameters": {
+										"layer": "\"PopUpFront\""
+									}
+								}
+							],
+							"sid": 272836532629090
 						}
 					]
 				},
@@ -1593,10 +1713,19 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 529640410297878,
+									"sid": 993252887637729,
 									"parameters": {
-										"layer": "\"PopUpBG\"",
+										"layer": "\"PopUp\"",
 										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 679124143340918,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"interactive": true
 									}
 								},
 								{
@@ -1662,10 +1791,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "CodeBlockButton",
-											"sid": 991028388431046,
+											"sid": 434683214534961,
 											"parameters": {
 												"instance-variable": "panelId",
-												"value": "\"repeat-panel-\"&commandUID"
+												"value": "\"repeat-panel-input-background-\"&commandUID"
 											}
 										}
 									],
@@ -1708,10 +1837,19 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 502094075560556,
+									"sid": 644879715064200,
 									"parameters": {
-										"layer": "\"PopUpBG\"",
+										"layer": "\"PopUp\"",
 										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 569786519084724,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"interactive": false
 									}
 								},
 								{
