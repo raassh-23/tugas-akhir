@@ -2481,22 +2481,11 @@
 							}
 						},
 						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 220827454472132,
-							"parameters": {
-								"layer": "\"Game\"",
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 463342184230325,
-							"parameters": {
-								"layer": "\"BG\"",
-								"scale": "1"
-							}
+							"callFunction": "SetZoom",
+							"sid": 768994948872423,
+							"parameters": [
+								"1"
+							]
 						}
 					],
 					"sid": 461768963606270
@@ -2832,22 +2821,11 @@
 									}
 								},
 								{
-									"id": "set-layer-scale",
-									"objectClass": "System",
-									"sid": 319146931744190,
-									"parameters": {
-										"layer": "\"Game\"",
-										"scale": "clamp(InitialScale * (TouchCurrentDistance / TouchStartDistance), minScale, MaxScale)"
-									}
-								},
-								{
-									"id": "set-layer-scale",
-									"objectClass": "System",
-									"sid": 358446847239992,
-									"parameters": {
-										"layer": "\"BG\"",
-										"scale": "LayerScale(\"game\")"
-									}
+									"callFunction": "SetZoom",
+									"sid": 929048554442628,
+									"parameters": [
+										"clamp(InitialScale * (TouchCurrentDistance / TouchStartDistance), minScale, MaxScale)"
+									]
 								},
 								{
 									"id": "scroll-to-position",
@@ -3054,22 +3032,11 @@
 							}
 						},
 						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 488012871793117,
-							"parameters": {
-								"layer": "\"Game\"",
-								"scale": "clamp(InitialScale + 1 * dt, minScale, MaxScale)"
-							}
-						},
-						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 988410795044054,
-							"parameters": {
-								"layer": "\"BG\"",
-								"scale": "LayerScale(\"Game\")"
-							}
+							"callFunction": "SetZoom",
+							"sid": 407148366444918,
+							"parameters": [
+								"clamp(InitialScale + 1 * dt, minScale, MaxScale)"
+							]
 						}
 					],
 					"sid": 380050891548844,
@@ -3098,22 +3065,11 @@
 							}
 						},
 						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 184218748620154,
-							"parameters": {
-								"layer": "\"Game\"",
-								"scale": "clamp(InitialScale + 5 * dt, minScale, MaxScale)"
-							}
-						},
-						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 610097288927735,
-							"parameters": {
-								"layer": "\"BG\"",
-								"scale": "LayerScale(\"Game\")"
-							}
+							"callFunction": "SetZoom",
+							"sid": 547108321925462,
+							"parameters": [
+								"clamp(InitialScale + 5 * dt, minScale, MaxScale)"
+							]
 						}
 					],
 					"sid": 863151459271077,
@@ -3142,22 +3098,11 @@
 							}
 						},
 						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 615760210146109,
-							"parameters": {
-								"layer": "\"Game\"",
-								"scale": "clamp(InitialScale - 1 * dt, minScale, MaxScale)"
-							}
-						},
-						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 735651536008051,
-							"parameters": {
-								"layer": "\"BG\"",
-								"scale": "LayerScale(\"Game\")"
-							}
+							"callFunction": "SetZoom",
+							"sid": 257499592252607,
+							"parameters": [
+								"clamp(InitialScale - 1 * dt, minScale, MaxScale)"
+							]
 						}
 					],
 					"sid": 868630627755720,
@@ -3186,22 +3131,11 @@
 							}
 						},
 						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 318211431100372,
-							"parameters": {
-								"layer": "\"Game\"",
-								"scale": "clamp(InitialScale - 5 * dt, minScale, MaxScale)"
-							}
-						},
-						{
-							"id": "set-layer-scale",
-							"objectClass": "System",
-							"sid": 599748940193598,
-							"parameters": {
-								"layer": "\"BG\"",
-								"scale": "LayerScale(\"Game\")"
-							}
+							"callFunction": "SetZoom",
+							"sid": 638454115762409,
+							"parameters": [
+								"clamp(InitialScale - 5 * dt, minScale, MaxScale)"
+							]
 						}
 					],
 					"sid": 374904246632052,
@@ -3306,6 +3240,64 @@
 						}
 					],
 					"sid": 565750069680589
+				},
+				{
+					"functionName": "SetZoom",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "zoom",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 844923028024973
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 158822021097416,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 370253580988173,
+							"parameters": {
+								"layer": "\"BG\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 736884512400554,
+							"parameters": {
+								"layer": "\"Grid\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 412512560759578,
+							"parameters": {
+								"layer": "\"Tilemap\"",
+								"scale": "zoom"
+							}
+						}
+					],
+					"sid": 914421911441929
 				}
 			],
 			"sid": 292331183861215
