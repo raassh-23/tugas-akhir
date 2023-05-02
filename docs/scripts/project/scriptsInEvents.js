@@ -3,6 +3,7 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
+import levelVariables from "./level-variables.js";
 import { 
 	getSquaredDistance,
 	getContainerParent,
@@ -20,18 +21,23 @@ let runner = null;
 let pickedCommand = null;
 
 /**
- * @type {{isStopped: boolean}}
+ * @type {{isStopped: boolean, variables: {[variable: string]: number}}}
  */
 const state = {
 	isStopped: false,
+	variables: {},
 }
 
 /**
  * 
  * @param {IRuntime} runtime 
  */
-function setRunner(runtime) {
+function setupLevel(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
+	state.variables = levelVariables[runtime.globalVars.level] ?? {};
+
+	console.log(state);
+
 
 	if (runner == null) {
 		throw new Error("cannot find runner");
@@ -152,13 +158,19 @@ function logParent(sprite) {
 	}
 }
 
+function getVariables() {
+	return Object.entries(state.variables)
+			.map(([key, value]) => `${key}: ${value}`)
+			.join("\n");
+}
+
 
 
 const scriptsInEvents = {
 
 	async Game_es_Event2_Act1(runtime, localVars)
 	{
-		setRunner(runtime);
+		setupLevel(runtime);
 	},
 
 	async Game_es_Event9_Act2(runtime, localVars)
@@ -199,12 +211,7 @@ const scriptsInEvents = {
 		state.isStopped = true;
 	},
 
-	async Game_es_Event32_Act1(runtime, localVars)
-	{
-		runtime.objects.MoveCommand.getFirstPickedInstance().setDirection();
-	},
-
-	async Game_es_Event34_Act1(runtime, localVars)
+	async Game_es_Event33_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCodeBlockShadowToShow(
 			runtime.objects.CodeBlock.getFirstPickedInstance(), 
@@ -214,48 +221,53 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event36_Act4(runtime, localVars)
+	async Game_es_Event35_Act4(runtime, localVars)
 	{
 		expandCodeBlockShadowContainer(
 			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event45_Act1(runtime, localVars)
+	async Game_es_Event44_Act1(runtime, localVars)
 	{
 		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
 	},
 
-	async Game_es_Event49_Act1(runtime, localVars)
+	async Game_es_Event48_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event52_Act1(runtime, localVars)
+	async Game_es_Event51_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event54_Act1(runtime, localVars)
+	async Game_es_Event53_Act1(runtime, localVars)
 	{
-		const count = runtime.objects.RepeatCommandCondition
+		const condition = runtime.objects.RepeatCommandCondition
 			.getFirstPickedInstance().evaluate();
-		pickedCommand.setRepeatCount(count);
+		pickedCommand.setRepeatCondition(condition);
 	},
 
-	async Game_es_Event55_Act1(runtime, localVars)
+	async Game_es_Event54_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event56_Act1(runtime, localVars)
+	async Game_es_Event55_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(
 			runtime.objects.CodeBlock
 				.getFirstPickedInstance()
-				.getWidthOnLevel(localVars.level)
+				.getWidthOnLevel(localVars.blockLevel)
 		);
+	},
+
+	async Game_es_Event101_Act1(runtime, localVars)
+	{
+		runtime.setReturnValue(getVariables());
 	}
 
 };

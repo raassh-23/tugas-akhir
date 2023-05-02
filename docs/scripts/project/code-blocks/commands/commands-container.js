@@ -1,6 +1,7 @@
 import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
 import { clamp } from "../../utils/misc.js";
+import { FINISHED } from "../code-block-constants.js";
 
 /**
  * @extends BaseCommand
@@ -27,7 +28,7 @@ export default class CommandsContainer extends BaseCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean}} state
+     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
      * 
      * @returns {Promise<number>}
      */
@@ -44,7 +45,7 @@ export default class CommandsContainer extends BaseCommand {
             }
         }
 
-        return 0;
+        return FINISHED;
     }
 
     /**
@@ -80,5 +81,13 @@ export default class CommandsContainer extends BaseCommand {
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 
         this.setColor([colorValue, colorValue, colorValue]);
+
+        console.log(this.name, level, colorValue, this.codeBlockShadows);
+    }
+
+    reset() {
+        super.reset();
+
+        this.container.codeBlocks.forEach((command) => command.reset());
     }
 }

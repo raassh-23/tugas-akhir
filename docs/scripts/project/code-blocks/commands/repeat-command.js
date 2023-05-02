@@ -1,14 +1,20 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, MAX_LEVEL, SHRINK_FACTOR } from "../code-block-constants.js";
+import {
+    MARGIN,
+    MAX_LEVEL,
+    SHRINK_FACTOR,
+    FINISHED,
+    ERROR
+} from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
  */
 export default class RepeatCommand extends CommandsContainer {
     /**
-     * @type {number}
+     * @type {string}
      */
-    #repeatCount = 0;
+    #repeatCondition = "0";
 
     /**
      * @type {number}
@@ -45,7 +51,7 @@ export default class RepeatCommand extends CommandsContainer {
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this.text = child;
-                this.text.text = this.#repeatCount.toString();
+                this.text.text = this.#repeatCondition;
                 continue;
             }
 
@@ -64,25 +70,37 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean}} state
+     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
      * 
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        for (let i = 0; i < this.#repeatCount; i++) {
-            this.text.text = (this.#repeatCount - i - 1).toString();
+        try {
+            const repeatCount = math.evaluate(this.#repeatCondition, state.variables);
+            this.text.text = repeatCount.toString();
 
-            const result = await super.run(player, state);
+            for (let i = 0; i < repeatCount; i++) {
+                this.text.text = (repeatCount - i).toString();
 
-            if (state.isStopped) {
-                this.text.text = this.#repeatCount.toString();
-                return result;
+                const result = await super.run(player, state);
+
+                if (state.isStopped) {
+                    this.text.text = this.#repeatCondition;
+                    return result;
+                }
             }
+
+            this.text.text = this.#repeatCondition;
+        } catch (error) {
+            console.log(error);
+            super.showError(true);
+
+            this.text.text = this.#repeatCondition;
+
+            return ERROR
         }
 
-        this.text.text = this.#repeatCount.toString();
-
-        return 0;
+        return FINISHED;
     }
 
     /**
@@ -115,23 +133,19 @@ export default class RepeatCommand extends CommandsContainer {
 
     /**
      * 
-     * @param {number} count must be greater or equal than 0, float will be rounded down
+     * @param {string} condition
      */
-    setRepeatCount(count) {
-        if (isNaN(count)) {
-            throw new Error("count must be number");
+    setRepeatCondition(condition) {
+        if (condition === this.#repeatCondition) {
+            return;
+        } else if (condition.length === 0) {
+            this.#repeatCondition = "0";
+        } else {
+            this.#repeatCondition = condition;
         }
 
-        if (count < 0) {
-            throw new Error("count must be greater or equal than 0");
-        }
-
-        this.#repeatCount = Math.floor(count);
-        this.text.text = this.#repeatCount.toString();
-    }
-
-    getRepeatCount() {
-        return this.#repeatCount;
+        super.showError(false);
+        this.text.text = this.#repeatCondition;
     }
 
     /**

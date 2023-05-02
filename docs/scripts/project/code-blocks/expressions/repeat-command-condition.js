@@ -60,4 +60,13 @@ export default class RepeatCommandCondition extends BaseExpression {
     getWidthOnLevel(level) {
         return this.parent.width;
     }
+
+    /**
+     * 
+     * @param {number} level 
+     */
+    updateLevel(level) {
+        this.container.codeBlocks
+            .forEach((expression) => expression.updateLevel(level + 1));
+    }
 }

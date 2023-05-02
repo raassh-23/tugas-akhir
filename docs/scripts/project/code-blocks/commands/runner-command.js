@@ -1,5 +1,5 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN } from "../code-block-constants.js";
+import { MARGIN, FINISHED } from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
@@ -17,13 +17,15 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean}} state
+     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
      * 
      * @returns {Promise<number>}
      */
     async run(player, state) {
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
+
+            this.reset();
 
             const result = await super.run(player, state);
 
@@ -37,7 +39,7 @@ export default class RunnerCommand extends CommandsContainer {
             this.runtime.callFunction("ResetGame");
         }
 
-        return 0;
+        return FINISHED;
     }
 
     /**
@@ -73,5 +75,14 @@ export default class RunnerCommand extends CommandsContainer {
 
     getWidthOnLevel(level) {
         return this.parent.width;
+    }
+
+    /**
+     * 
+     * @param {number} level 
+     */
+    updateLevel(level) {
+        this.container.codeBlocks
+            .forEach((expression) => expression.updateLevel(level + 1));
     }
 }

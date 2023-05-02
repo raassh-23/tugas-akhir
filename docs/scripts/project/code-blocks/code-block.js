@@ -1,3 +1,4 @@
+import { waitForMillisecond } from "../utils/misc.js";
 import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
 
 /**
@@ -39,6 +40,7 @@ export default class CodeBlock extends ISpriteInstance {
         this.savedWidth = this.width;
         this.savedHeight = this.height;
 
+        // TODO: children is empty, seems like C3 bug
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
                 this.codeBlockShadows.push(child);
@@ -124,5 +126,23 @@ export default class CodeBlock extends ISpriteInstance {
             SHRINK_FACTOR * (MAX_LEVEL - 1));
 
         return this.savedWidth * multiplier;
+    }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showError(show) {
+        const newColor = show ? [1, 0.5, 0.5] : [1, 1, 1];
+
+        this.colorRgb = newColor;
+        this.highlightedObjects.forEach((object) => {
+            object.colorRgb = newColor;
+        });
+    }
+
+    reset() {
+        this.showHighlight(false);
+        this.showError(false);
     }
 }

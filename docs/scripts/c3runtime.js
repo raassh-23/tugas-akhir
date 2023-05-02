@@ -4461,28 +4461,27 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event32_Act1,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Plugins.NinePatch.Exps.LayerName,
 		C3.Plugins.NinePatch.Cnds.PickChildren,
-		C3.ScriptsInEvents.Game_es_Event34_Act1,
+		C3.ScriptsInEvents.Game_es_Event33_Act1,
 		C3.Plugins.Sprite.Acts.SetWidth,
-		C3.ScriptsInEvents.Game_es_Event36_Act4,
+		C3.ScriptsInEvents.Game_es_Event35_Act4,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetX,
-		C3.ScriptsInEvents.Game_es_Event45_Act1,
+		C3.ScriptsInEvents.Game_es_Event44_Act1,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.NinePatch.Acts.SetInstanceVar,
-		C3.ScriptsInEvents.Game_es_Event49_Act1,
+		C3.ScriptsInEvents.Game_es_Event48_Act1,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.NinePatch.Acts.SetY,
 		C3.Plugins.Sprite.Cnds.IsOnLayer,
-		C3.ScriptsInEvents.Game_es_Event52_Act1,
+		C3.ScriptsInEvents.Game_es_Event51_Act1,
 		C3.Plugins.System.Cnds.PickAll,
+		C3.ScriptsInEvents.Game_es_Event53_Act1,
 		C3.ScriptsInEvents.Game_es_Event54_Act1,
 		C3.ScriptsInEvents.Game_es_Event55_Act1,
-		C3.ScriptsInEvents.Game_es_Event56_Act1,
 		C3.Plugins.System.Acts.RecreateInitialObjects,
 		C3.Plugins.System.Exps.layoutwidth,
 		C3.Plugins.System.Exps.layoutname,
@@ -4522,8 +4521,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Spritefont2.Exps.CharacterScale,
 		C3.Plugins.Spritefont2.Exps.TextWidth,
 		C3.Plugins.Spritefont2.Exps.Width,
+		C3.Plugins.Spritefont2.Exps.TextHeight,
+		C3.Plugins.Spritefont2.Exps.CharacterHeight,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
+		C3.ScriptsInEvents.Game_es_Event101_Act1,
 		C3.Plugins.System.Exps.projectversion,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
@@ -4546,6 +4548,8 @@ self.C3_JsPropNameTable = [
 	{RepeatCommand: 0},
 	{RepeatCommandCondition: 0},
 	{StartCommand: 0},
+	{OperatorBlock: 0},
+	{VariableBlock: 0},
 	{Browser: 0},
 	{Keyboard: 0},
 	{Mouse: 0},
@@ -4605,6 +4609,7 @@ self.C3_JsPropNameTable = [
 	{CommandUID: 0},
 	{commandUID: 0},
 	{show: 0},
+	{blockLevel: 0},
 	{TouchPanID: 0},
 	{TouchZoomID: 0},
 	{TouchLastX: 0},
@@ -4901,16 +4906,22 @@ self.C3_ExpressionFuncs = [
 			const f1 = p._GetNode(1).GetBoundMethod();
 			return () => (f0() + (400 * f1()));
 		},
-		() => "Debugging Tools",
 		() => "Text",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 0.01);
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() * 0.9);
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() - 0.01);
+			const n1 = p._GetNode(1);
+			return () => (n0.ExpObject() * n1.ExpObject());
 		},
+		() => "variables",
+		() => "Debugging Tools",
 		() => "version",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
