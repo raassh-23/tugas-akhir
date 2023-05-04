@@ -20,11 +20,21 @@ let runner = null;
  */
 let pickedCommand = null;
 
+
 /**
- * @type {{isStopped: boolean, variables: {[variable: string]: number}}}
+ * @typedef {{
+ * isStopped: boolean,
+ * isGameOver: boolean,
+ * variables: {[variable: string]: number}
+ * }} GameState
+ */
+
+/**
+ * @type {GameState}
  */
 const state = {
 	isStopped: false,
+	isGameOver: false,
 	variables: {},
 }
 
@@ -34,10 +44,9 @@ const state = {
  */
 function setupLevel(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
+	state.isStopped = false;
+	state.isGameOver = false;
 	state.variables = levelVariables[runtime.globalVars.level] ?? {};
-
-	console.log(state);
-
 
 	if (runner == null) {
 		throw new Error("cannot find runner");

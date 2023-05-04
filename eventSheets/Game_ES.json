@@ -1453,11 +1453,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 900433102754409,
+							"sid": 838117101935184,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"PopUpBack\"",
-								"x": "360",
+								"x": "215",
 								"y": "195",
 								"create-hierarchy": true,
 								"template-name": "\"repeat-panel\""
@@ -1970,51 +1970,6 @@
 						}
 					],
 					"sid": 287229515861692
-				},
-				{
-					"functionName": "ResetGame",
-					"functionCopyPicked": false,
-					"functionDescription": "",
-					"functionCategory": "Game",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "ResetObjects",
-							"sid": 876091028544578
-						},
-						{
-							"id": "recreate-initial-objects",
-							"objectClass": "System",
-							"sid": 701918641579434,
-							"parameters": {
-								"object": "ResetObjects",
-								"from-x": "0",
-								"from-y": "0",
-								"to-x": "LayoutWidth",
-								"to-y": "LayoutWidth",
-								"source-layout": "LayoutName",
-								"source-layer": "\"Game\"",
-								"offset-x": "0",
-								"offset-y": "0",
-								"create-hierarchy": true
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 136904538513475,
-							"parameters": {
-								"variable": "isRunning",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 323528186345411
 				},
 				{
 					"functionName": "CheckCanDragCodeBlock",
@@ -3651,6 +3606,150 @@
 				}
 			],
 			"sid": 361619522203103
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "GRID_SIZE",
+					"type": "number",
+					"initialValue": "64",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 403828507208253
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 950887717804199
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "Player",
+							"sid": 195950738083213
+						},
+						{
+							"id": "set-grid-dimensions",
+							"objectClass": "Player",
+							"sid": 345622271370274,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"width": "GRID_SIZE",
+								"height": "GRID_SIZE",
+								"x-offset": "GRID_SIZE/2",
+								"y-offset": "GRID_SIZE/2"
+							}
+						}
+					],
+					"sid": 821739008563039
+				},
+				{
+					"functionName": "ResetGame",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "Game",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ResetObjects",
+							"sid": 270705358816653
+						},
+						{
+							"id": "recreate-initial-objects",
+							"objectClass": "System",
+							"sid": 478867782860744,
+							"parameters": {
+								"object": "ResetObjects",
+								"from-x": "0",
+								"from-y": "0",
+								"to-x": "LayoutWidth",
+								"to-y": "LayoutWidth",
+								"source-layout": "LayoutName",
+								"source-layer": "\"Game\"",
+								"offset-x": "0",
+								"offset-y": "0",
+								"create-hierarchy": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 926897094449397,
+							"parameters": {
+								"variable": "isRunning",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 650488692869568
+				},
+				{
+					"functionName": "GameOver",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 469548895555186,
+							"parameters": {
+								"type": "log",
+								"message": "\"win\""
+							}
+						}
+					],
+					"sid": 967244321279655
+				},
+				{
+					"eventType": "comment",
+					"text": "Check if player and portal are in the same grid"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 936663677959977,
+							"parameters": {
+								"first-value": "distance(Player.X, Player.Y, Portal.X, Portal.Y)",
+								"comparison": 2,
+								"second-value": "GRID_SIZE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "state.isGameOver = true;"
+						}
+					],
+					"sid": 107424056995809
+				}
+			],
+			"sid": 991077192111983
 		},
 		{
 			"eventType": "group",

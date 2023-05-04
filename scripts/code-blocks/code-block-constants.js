@@ -9,3 +9,5 @@ export const FINISHED = 0;
 export const STOPPED = 1;
 
 export const ERROR = 2;
+
+export const GAME_OVER = 3;

@@ -129,7 +129,9 @@
 			"Blank",
 			"CodeBlockText",
 			"SolidObstacle",
-			"Background"
+			"Background",
+			"Portal",
+			"ZZZZ_Unused"
 		],
 		"subfolders": [
 			{

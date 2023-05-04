@@ -40,7 +40,8 @@ export default class CodeBlock extends ISpriteInstance {
         this.savedWidth = this.width;
         this.savedHeight = this.height;
 
-        // TODO: children is empty, seems like C3 bug
+        // TODO: bug https://github.com/Scirra/Construct-bugs/issues/6997
+        // wait for the next stable release
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
                 this.codeBlockShadows.push(child);

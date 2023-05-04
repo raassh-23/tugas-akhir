@@ -15,7 +15,7 @@ export default class BaseCommand extends CodeBlock {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
+     * @param {import("../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
