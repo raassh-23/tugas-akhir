@@ -146,4 +146,12 @@ export default class CodeBlock extends ISpriteInstance {
         this.showHighlight(false);
         this.showError(false);
     }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return 1;
+    }
 }

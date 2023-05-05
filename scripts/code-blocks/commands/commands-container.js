@@ -94,4 +94,13 @@ export default class CommandsContainer extends BaseCommand {
 
         this.container.codeBlocks.forEach((command) => command.reset());
     }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return 1 + this.container.codeBlocks
+                .reduce((acc, command) => acc + command.getCount(), 0);
+    }
 }

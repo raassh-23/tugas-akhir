@@ -88,4 +88,13 @@ export default class RunnerCommand extends CommandsContainer {
         this.container.codeBlocks
             .forEach((expression) => expression.updateLevel(level + 1));
     }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return this.container.codeBlocks
+                .reduce((acc, command) => acc + command.getCount(), 0);
+    }
 }

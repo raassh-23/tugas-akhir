@@ -46,6 +46,8 @@ export default class MoveCommand extends BaseCommand {
 
         player.animationSpeed = 0;
 
+        state.actionCount++;
+
         return FINISHED;
     }
 }

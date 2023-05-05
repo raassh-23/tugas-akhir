@@ -25,6 +25,7 @@ let pickedCommand = null;
  * @typedef {{
  * isStopped: boolean,
  * isGameOver: boolean,
+ * actionCount: number,
  * variables: {[variable: string]: number}
  * }} GameState
  */
@@ -35,6 +36,7 @@ let pickedCommand = null;
 const state = {
 	isStopped: false,
 	isGameOver: false,
+	actionCount: 0,
 	variables: {},
 }
 
@@ -44,13 +46,23 @@ const state = {
  */
 function setupLevel(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
-	state.isStopped = false;
-	state.isGameOver = false;
-	state.variables = levelVariables[runtime.globalVars.level] ?? {};
 
 	if (runner == null) {
 		throw new Error("cannot find runner");
 	}
+
+	resetState(runtime.globalVars.level);
+}
+
+/**
+ * 
+ * @param {number} level 
+ */
+function resetState(level) {
+	state.isStopped = false;
+	state.isGameOver = false;
+	state.actionCount = 0;
+	state.variables = levelVariables[level] ?? {};
 }
 
 /**
@@ -171,4 +183,18 @@ function getVariables() {
 	return Object.entries(state.variables)
 			.map(([key, value]) => `${key}: ${value}`)
 			.join("\n");
+}
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ * @returns {number}
+ */
+function getCodeBlockCount(runtime) {
+	let count = runner.getCount();
+
+	count += runtime.objects.RepeatCommandCondition.getAllInstances()
+		.reduce((acc, curr) => acc + curr.getCount(), 0);
+
+	return count;
 }

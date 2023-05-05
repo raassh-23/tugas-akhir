@@ -9,6 +9,11 @@
 			"behaviorId": "TileMovement",
 			"name": "TileMovement",
 			"sid": 859172348917213
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 499028777253308
 		}
 	],
 	"effectTypes": [],

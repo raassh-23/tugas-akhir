@@ -26,10 +26,20 @@
 			"name": "level",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "0 is test level",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 442340568067062
+		},
+		{
+			"eventType": "variable",
+			"name": "levelTimer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "in seconds",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 932229550987927
 		},
 		{
 			"eventType": "group",
@@ -712,7 +722,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nstate.isStopped = false;\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
+											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
 										}
 									],
 									"sid": 865711605085149
@@ -3559,11 +3569,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 744343809278634
-						},
-						{
 							"id": "compare-instance-variable",
 							"objectClass": "UIText",
 							"sid": 391265822416662,
@@ -3587,6 +3592,32 @@
 					"sid": 620594553154912
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 949341296327912,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 299129257745057,
+							"parameters": {
+								"text": "\"Time: \" & Functions.FormatTime(levelTimer)"
+							}
+						}
+					],
+					"sid": 490625007754107
+				},
+				{
 					"functionName": "GetVariables",
 					"functionCopyPicked": false,
 					"functionDescription": "",
@@ -3603,6 +3634,82 @@
 						}
 					],
 					"sid": 959573130061458
+				},
+				{
+					"functionName": "FormatTime",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "seconds",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 671368891836364
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 141949919590841,
+							"parameters": {
+								"variable": "seconds",
+								"value": "round(seconds)"
+							}
+						}
+					],
+					"sid": 151971636392912,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "minutes",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 621872479560231
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 946521102960889,
+									"parameters": {
+										"variable": "minutes",
+										"value": "floor(seconds/60)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 631358842003319,
+									"parameters": {
+										"variable": "seconds",
+										"value": "seconds%60"
+									}
+								},
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 313645759363002,
+									"parameters": {
+										"value": "(minutes < 10 ? \"0\" & minutes : minutes) & \":\" & (seconds< 10 ? \"0\" & seconds : seconds)"
+									}
+								}
+							],
+							"sid": 116353686508916
+						}
+					]
 				}
 			],
 			"sid": 361619522203103
@@ -3711,13 +3818,14 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 469548895555186,
-							"parameters": {
-								"type": "log",
-								"message": "\"win\""
-							}
+							"id": "start-fade",
+							"objectClass": "Player",
+							"sid": 739694419030219,
+							"behaviorType": "Fade"
+						},
+						{
+							"type": "script",
+							"script": "console.log(\"win\")\nconsole.log(state);\nconsole.log(getCodeBlockCount(runtime));"
 						}
 					],
 					"sid": 967244321279655
@@ -3747,6 +3855,28 @@
 						}
 					],
 					"sid": 107424056995809
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 370550940318292
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 587521942256509,
+							"parameters": {
+								"variable": "levelTimer",
+								"value": "dt"
+							}
+						}
+					],
+					"sid": 843493528744408
 				}
 			],
 			"sid": 991077192111983
