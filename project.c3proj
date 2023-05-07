@@ -107,6 +107,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "TileMovement",
 			"name": "Tile movement",
 			"author": "Scirra",
@@ -393,6 +400,20 @@
 					],
 					"subfolders": [],
 					"name": "utils"
+				},
+				{
+					"items": [
+						{
+							"name": "leaderboard-api.js",
+							"type": "application/javascript",
+							"sid": 186867696341201,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "leaderboard"
 				}
 			]
 		},

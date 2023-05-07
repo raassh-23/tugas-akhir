@@ -88,6 +88,28 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
+							"sid": 944203175888634,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"leaderboard\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "console.log(await leaderboard.getLeaderboard(0, 1, 5, \"asc\", \"timeMs\"))"
+						}
+					],
+					"sid": 585669401267937
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
 							"sid": 394584524015384,
 							"parameters": {
 								"instance-variable": "id",

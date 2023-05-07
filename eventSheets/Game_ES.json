@@ -27,6 +27,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "isPlaying",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 251108471733478
+		},
+		{
+			"eventType": "variable",
 			"name": "level",
 			"type": "number",
 			"initialValue": "0",
@@ -44,6 +54,36 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 932229550987927
+		},
+		{
+			"eventType": "variable",
+			"name": "codeBlockCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 201966265709213
+		},
+		{
+			"eventType": "variable",
+			"name": "actionCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 308036544770473
+		},
+		{
+			"eventType": "variable",
+			"name": "username",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907515181854290
 		},
 		{
 			"eventType": "group",
@@ -3757,7 +3797,16 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 118943082183055,
+							"sid": 191477428210498,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 676670384007936,
 							"parameters": {
 								"variable": "isRunning",
 								"value": "false"
@@ -3946,6 +3995,14 @@
 							"behaviorType": "Fade"
 						},
 						{
+							"id": "set-text",
+							"objectClass": "TextInputName",
+							"sid": 439856039595636,
+							"parameters": {
+								"text": "username"
+							}
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 370606030058077,
@@ -4101,6 +4158,15 @@
 						{
 							"type": "script",
 							"script": "state.isGameOver = true;"
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 622458699497123,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 107424056995809
@@ -4109,9 +4175,12 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-tick",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 370550940318292
+							"sid": 501337803140091,
+							"parameters": {
+								"variable": "isPlaying"
+							}
 						}
 					],
 					"actions": [
@@ -4223,7 +4292,79 @@
 								}
 							],
 							"actions": [],
-							"sid": 554077504684564
+							"sid": 554077504684564,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 936660406026150,
+											"parameters": {
+												"variable": "username",
+												"comparison": 0,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-active",
+											"objectClass": "TextInputName",
+											"sid": 499777999045299,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "active"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 690480632989473,
+											"parameters": {
+												"seconds": "0.25"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "TextInputName",
+											"sid": 827598280193094,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "inactive"
+											}
+										},
+										{
+											"id": "set-cycle-position",
+											"objectClass": "TextInputName",
+											"sid": 458316485480402,
+											"behaviorType": "Sine",
+											"parameters": {
+												"cycle-position": "0"
+											}
+										}
+									],
+									"sid": 643789937931812
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 830202969130797
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\nconsole.log(await leaderboard.addToLeaderboard(\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tMath.round(levelTimer * 1000, 3),\n))"
+										}
+									],
+									"sid": 617339742470544
+								}
+							]
 						}
 					]
 				},
@@ -4240,7 +4381,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.setReturnValue(getCodeBlockCount(runtime));"
+							"script": "runtime.globalVars.codeBlockCount = \n\tgetCodeBlockCount(runtime);\nruntime.setReturnValue(runtime.globalVars.codeBlockCount);"
 						}
 					],
 					"sid": 526036823975888
@@ -4258,10 +4399,32 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.setReturnValue(state.actionCount);"
+							"script": "runtime.globalVars.actionCount = state.actionCount;\nruntime.setReturnValue(runtime.globalVars.actionCount);"
 						}
 					],
 					"sid": 900680725918566
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "TextInputName",
+							"sid": 413454620129746
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 914188421270284,
+							"parameters": {
+								"variable": "username",
+								"value": "TextInputName.Text"
+							}
+						}
+					],
+					"sid": 781591767916452
 				}
 			],
 			"sid": 991077192111983

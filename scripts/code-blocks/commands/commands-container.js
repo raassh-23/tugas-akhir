@@ -85,8 +85,6 @@ export default class CommandsContainer extends BaseCommand {
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 
         this.setColor([colorValue, colorValue, colorValue]);
-
-        console.log(this.name, level, colorValue, this.codeBlockShadows);
     }
 
     reset() {

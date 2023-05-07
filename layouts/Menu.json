@@ -21,7 +21,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 640,
+						"x": 557.5,
 						"y": 360,
 						"width": 128,
 						"height": 128,
@@ -100,6 +100,37 @@
 						"y": 53,
 						"width": 64,
 						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 7,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 108,
+					"instanceVariables": {
+						"id": "leaderboard"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 722.5,
+						"y": 360,
+						"width": 128,
+						"height": 128,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

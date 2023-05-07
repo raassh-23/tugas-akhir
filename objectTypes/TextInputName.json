@@ -9,6 +9,11 @@
 			"behaviorId": "Pin",
 			"name": "Pin",
 			"sid": 336646348696800
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 175176105763758
 		}
 	]
 }

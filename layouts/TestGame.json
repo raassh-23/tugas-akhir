@@ -232,7 +232,7 @@
 						}
 					},
 					"world": {
-						"x": 480,
+						"x": 669.1095314636698,
 						"y": 352,
 						"width": 64,
 						"height": 64,
@@ -2243,10 +2243,24 @@
 							"properties": {
 								"destroy": true
 							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 0.125,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
 						}
 					},
 					"world": {
-						"x": 477.5,
+						"x": 475.72480356211554,
 						"y": -311,
 						"width": 267,
 						"height": 48,
@@ -2263,7 +2277,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "Tambahkan ke leaderboard?",
+						"text": "Tambah ke leaderboard?",
 						"enable-bbcode": true,
 						"character-width": 16,
 						"character-height": 16,
@@ -2375,7 +2389,7 @@
 						}
 					},
 					"world": {
-						"x": 777.5,
+						"x": 780.2751685934813,
 						"y": -286,
 						"width": 48,
 						"height": 42.93928887980246,

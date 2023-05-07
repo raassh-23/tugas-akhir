@@ -9,6 +9,7 @@ import {
 	getContainerParent,
 	getTopCodeBlockContainer,
 } from "./utils/misc.js";
+import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
 /**
  * @type {RunnerCommand?}
@@ -19,7 +20,6 @@ let runner = null;
  * @type {CodeBlock?}
  */
 let pickedCommand = null;
-
 
 /**
  * @typedef {{
@@ -39,6 +39,8 @@ const state = {
 	actionCount: 0,
 	variables: {},
 }
+
+const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
 
 /**
  * 
