@@ -21,9 +21,20 @@
 					},
 					"uid": 71,
 					"instanceVariables": {
+						"originX": 0,
+						"originY": 0,
+						"targetX": 0,
+						"targetY": 0,
+						"duration": 0,
 						"id": "repeat-panel"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"template": {
 						"mode": "template",
 						"templateName": "repeat-panel",
@@ -84,6 +95,26 @@
 											{
 												"iv": "id",
 												"state": true
+											},
+											{
+												"iv": "originX",
+												"state": true
+											},
+											{
+												"iv": "originY",
+												"state": true
+											},
+											{
+												"iv": "targetX",
+												"state": true
+											},
+											{
+												"iv": "targetY",
+												"state": true
+											},
+											{
+												"iv": "duration",
+												"state": true
 											}
 										]
 									}
@@ -91,7 +122,17 @@
 							},
 							{
 								"id": "behavior",
-								"component": []
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
 							},
 							{
 								"id": "effect",
@@ -308,9 +349,20 @@
 					},
 					"uid": 93,
 					"instanceVariables": {
+						"originX": 0,
+						"originY": 0,
+						"targetX": 0,
+						"targetY": 0,
+						"duration": 0,
 						"id": "repeat-panel-input-background"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 71,
 						"uid": 93,
@@ -1560,9 +1612,20 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
+						"originX": 0,
+						"originY": 0,
+						"targetX": 0,
+						"targetY": 0,
+						"duration": 0,
 						"id": "commandsPanel"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 41,
 						"y": 761,

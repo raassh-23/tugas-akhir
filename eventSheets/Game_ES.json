@@ -2,6 +2,10 @@
 	"name": "Game_ES",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
 			"eventType": "variable",
 			"name": "isRunning",
 			"type": "boolean",
@@ -59,78 +63,11 @@
 					],
 					"actions": [
 						{
-							"type": "script",
-							"script": "setupLevel(runtime);"
-						},
-						{
 							"id": "set-visible",
 							"objectClass": "CodeBlockShadow",
 							"sid": 520005156630820,
 							"parameters": {
 								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 129943425259161,
-							"parameters": {
-								"layer": "\"UI\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 280855192074578,
-							"parameters": {
-								"layer": "\"UI\"",
-								"interactive": true
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 613241368539942,
-							"parameters": {
-								"layer": "\"Game\"",
-								"interactive": true
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 780955087097625,
-							"parameters": {
-								"layer": "\"RepeatPopUp\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 748712717131252,
-							"parameters": {
-								"layer": "\"PopUp\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 739571697606556,
-							"parameters": {
-								"layer": "\"RepeatPopUp\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 770781312757075,
-							"parameters": {
-								"layer": "\"PopUp\"",
-								"interactive": false
 							}
 						}
 					],
@@ -1721,40 +1658,11 @@
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 993252887637729,
-									"parameters": {
-										"layer": "\"PopUp\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 679124143340918,
-									"parameters": {
-										"layer": "\"PopUp\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 847011408991639,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 270833738647944,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": false
-									}
+									"callFunction": "showPopUp",
+									"sid": 147802744209697,
+									"parameters": [
+										true
+									]
 								}
 							],
 							"sid": 732126660412832,
@@ -1845,40 +1753,11 @@
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 644879715064200,
-									"parameters": {
-										"layer": "\"PopUp\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 569786519084724,
-									"parameters": {
-										"layer": "\"PopUp\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 959378504253386,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 706136747177540,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": true
-									}
+									"callFunction": "showPopUp",
+									"sid": 968916098391910,
+									"parameters": [
+										false
+									]
 								}
 							],
 							"sid": 919741396589432,
@@ -2058,6 +1937,130 @@
 								}
 							],
 							"sid": 153290914979140
+						}
+					]
+				},
+				{
+					"functionName": "showPopUp",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 226195300177141
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 673736646726318,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 927866559747060,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 594910409913791,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 887206509838487,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 910125017172146,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 934663872332394,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 901625312363298
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 476066603390763
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 868620474166912,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 930872514188875,
+									"parameters": {
+										"layer": "\"PopUp\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 638838213693120,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 526127119263903,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 881116491643937
 						}
 					]
 				}
@@ -3732,6 +3735,16 @@
 					"sid": 403828507208253
 				},
 				{
+					"eventType": "variable",
+					"name": "GAME_OVER_TWEEN_TAG",
+					"type": "string",
+					"initialValue": "game_over_tween",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 357281100725744
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -3741,6 +3754,71 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 118943082183055,
+							"parameters": {
+								"variable": "isRunning",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 795220707769500,
+							"parameters": {
+								"variable": "isDragging",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 831624232126734,
+							"parameters": {
+								"variable": "levelTimer",
+								"value": "0"
+							}
+						},
+						{
+							"type": "script",
+							"script": "setupLevel(runtime);"
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 129943425259161,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 780955087097625,
+							"parameters": {
+								"layer": "\"RepeatPopUp\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 739571697606556,
+							"parameters": {
+								"layer": "\"RepeatPopUp\"",
+								"interactive": false
+							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 549906104014383,
+							"parameters": [
+								false
+							]
+						},
 						{
 							"id": "move-to-top",
 							"objectClass": "Player",
@@ -3759,7 +3837,51 @@
 							}
 						}
 					],
-					"sid": 821739008563039
+					"sid": 821739008563039,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 640231245237336,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "TextInputName",
+									"sid": 230956525997632,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "UIPanel",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "set-css-style",
+									"objectClass": "TextInputName",
+									"sid": 822223940290412,
+									"parameters": {
+										"property-name": "\"font-size\"",
+										"value": "\"2em\""
+									}
+								}
+							],
+							"sid": 671137814517311
+						}
+					]
 				},
 				{
 					"functionName": "ResetGame",
@@ -3824,11 +3946,138 @@
 							"behaviorType": "Fade"
 						},
 						{
-							"type": "script",
-							"script": "console.log(\"win\")\nconsole.log(state);\nconsole.log(getCodeBlockCount(runtime));"
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 370606030058077,
+							"parameters": {
+								"seconds": "Player.Fade.FadeOutTime"
+							}
+						},
+						{
+							"callFunction": "showPopUp",
+							"sid": 972775298150073,
+							"parameters": [
+								true
+							]
 						}
 					],
-					"sid": 967244321279655
+					"sid": 967244321279655,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 257131551103677,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel",
+									"sid": 591399102962713,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "GAME_OVER_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.duration",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 951763680943495
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 602174117436567,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-time\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 729918489029653,
+									"parameters": {
+										"text": "\"Time: \" & Functions.FormatTime(levelTimer)"
+									}
+								}
+							],
+							"sid": 619131238150019
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 579821175011625,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-code-count\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 189439508382313,
+									"parameters": {
+										"text": "\"Code Blocks: \" & Functions.GetBlockCount"
+									}
+								}
+							],
+							"sid": 757168391319465
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 469640092718196,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-actions\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 776839444961678,
+									"parameters": {
+										"text": "\"Actions: \" & Functions.GetActionCount"
+									}
+								}
+							],
+							"sid": 785463805172623
+						}
+					]
 				},
 				{
 					"eventType": "comment",
@@ -3877,6 +4126,142 @@
 						}
 					],
 					"sid": 843493528744408
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 126228473309865,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 209738568799761,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 693012158227798,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-home\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 977373070074876,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 898805136872208
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 232203282264300,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-next\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 258605957485199
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 193521780979629,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-restart\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 198179371559751
+								}
+							],
+							"sid": 831666814216673
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 872679316886778,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-ok\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 554077504684564
+						}
+					]
+				},
+				{
+					"functionName": "GetBlockCount",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.setReturnValue(getCodeBlockCount(runtime));"
+						}
+					],
+					"sid": 526036823975888
+				},
+				{
+					"functionName": "GetActionCount",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.setReturnValue(state.actionCount);"
+						}
+					],
+					"sid": 900680725918566
 				}
 			],
 			"sid": 991077192111983

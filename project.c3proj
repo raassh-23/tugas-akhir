@@ -58,6 +58,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -88,6 +95,13 @@
 			"type": "behavior",
 			"id": "Fade",
 			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -138,7 +152,8 @@
 			"SolidObstacle",
 			"Background",
 			"Portal",
-			"ZZZZ_Unused"
+			"ZZZZ_Unused",
+			"TextInputName"
 		],
 		"subfolders": [
 			{
@@ -176,7 +191,8 @@
 			"CodeBlockContainer",
 			"HSLEffects",
 			"ResetObjects",
-			"Text"
+			"Text",
+			"TweenPanel"
 		],
 		"subfolders": []
 	},
@@ -191,7 +207,8 @@
 	"eventSheets": {
 		"items": [
 			"Game_ES",
-			"Menu_ES"
+			"Menu_ES",
+			"Common_ES"
 		],
 		"subfolders": []
 	},
