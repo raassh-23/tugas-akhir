@@ -1,5 +1,5 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, FINISHED } from "../code-block-constants.js";
+import { MARGIN, FINISHED, STOPPED, ERROR, GAME_OVER } from "../code-block-constants.js";
 
 /**
  * @extends CommandsContainer
@@ -17,7 +17,7 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
+     * @param {import("../../for-events.js").GameState}} state
      * 
      * @returns {Promise<number>}
      */
@@ -29,8 +29,11 @@ export default class RunnerCommand extends CommandsContainer {
 
             const result = await super.run(player, state);
 
-            if (state.isStopped) {
+            if (result === STOPPED || result === ERROR) {
                 this.runtime.callFunction("ResetGame");
+                return result;
+            } else if (result === GAME_OVER) {
+                this.runtime.callFunction("GameOver");
                 return result;
             }
 
@@ -84,5 +87,14 @@ export default class RunnerCommand extends CommandsContainer {
     updateLevel(level) {
         this.container.codeBlocks
             .forEach((expression) => expression.updateLevel(level + 1));
+    }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return this.container.codeBlocks
+                .reduce((acc, command) => acc + command.getCount(), 0);
     }
 }

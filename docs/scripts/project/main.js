@@ -8,16 +8,22 @@ import {
 	VariableBlock
 } from "./code-blocks/index.js";
 
-const script = document.createElement("script");
-script.src = "./lib/math.min.js";
-document.head.appendChild(script);
+[
+	"./lib/js/math.min.js",
+	"./lib/js/bootstrap.bundle.min.js",
+	"./lib/js/leaderboard.js"
+].forEach(src => {
+	const script = document.createElement("script");
+	script.src = src;
+	document.head.appendChild(script);
+})
 
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
 	
-// 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	// runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);

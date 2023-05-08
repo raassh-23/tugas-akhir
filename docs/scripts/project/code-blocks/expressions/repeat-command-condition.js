@@ -69,4 +69,13 @@ export default class RepeatCommandCondition extends BaseExpression {
         this.container.codeBlocks
             .forEach((expression) => expression.updateLevel(level + 1));
     }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return this.container.codeBlocks
+                .reduce((acc, expression) => acc + expression.getCount(), 0);
+    }
 }

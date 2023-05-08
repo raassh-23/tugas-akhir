@@ -1,7 +1,7 @@
 import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
 import { clamp } from "../../utils/misc.js";
-import { FINISHED } from "../code-block-constants.js";
+import { FINISHED, GAME_OVER } from "../code-block-constants.js";
 
 /**
  * @extends BaseCommand
@@ -28,7 +28,7 @@ export default class CommandsContainer extends BaseCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
+     * @param {import("../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
@@ -40,8 +40,12 @@ export default class CommandsContainer extends BaseCommand {
 
             command.showHighlight(false);
 
-            if (state.isStopped) {
+            if (result !== FINISHED) {
                 return result;
+            }
+
+            if (state.isGameOver) {
+                return GAME_OVER;
             }
         }
 
@@ -81,13 +85,20 @@ export default class CommandsContainer extends BaseCommand {
         const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
 
         this.setColor([colorValue, colorValue, colorValue]);
-
-        console.log(this.name, level, colorValue, this.codeBlockShadows);
     }
 
     reset() {
         super.reset();
 
         this.container.codeBlocks.forEach((command) => command.reset());
+    }
+
+    /**
+     * 
+     * @returns {number}
+     */
+    getCount() {
+        return 1 + this.container.codeBlocks
+                .reduce((acc, command) => acc + command.getCount(), 0);
     }
 }

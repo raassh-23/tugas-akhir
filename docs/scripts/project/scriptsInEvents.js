@@ -9,6 +9,7 @@ import {
 	getContainerParent,
 	getTopCodeBlockContainer,
 } from "./utils/misc.js";
+import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
 /**
  * @type {RunnerCommand?}
@@ -21,12 +22,25 @@ let runner = null;
 let pickedCommand = null;
 
 /**
- * @type {{isStopped: boolean, variables: {[variable: string]: number}}}
+ * @typedef {{
+ * isStopped: boolean,
+ * isGameOver: boolean,
+ * actionCount: number,
+ * variables: {[variable: string]: number}
+ * }} GameState
+ */
+
+/**
+ * @type {GameState}
  */
 const state = {
 	isStopped: false,
+	isGameOver: false,
+	actionCount: 0,
 	variables: {},
 }
+
+const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
 
 /**
  * 
@@ -34,14 +48,23 @@ const state = {
  */
 function setupLevel(runtime) {
 	runner = runtime.objects.StartCommand.getFirstInstance();
-	state.variables = levelVariables[runtime.globalVars.level] ?? {};
-
-	console.log(state);
-
 
 	if (runner == null) {
 		throw new Error("cannot find runner");
 	}
+
+	resetState(runtime.globalVars.level);
+}
+
+/**
+ * 
+ * @param {number} level 
+ */
+function resetState(level) {
+	state.isStopped = false;
+	state.isGameOver = false;
+	state.actionCount = 0;
+	state.variables = levelVariables[level] ?? {};
 }
 
 /**
@@ -164,14 +187,23 @@ function getVariables() {
 			.join("\n");
 }
 
+/**
+ * 
+ * @param {IRuntime} runtime 
+ * @returns {number}
+ */
+function getCodeBlockCount(runtime) {
+	let count = runner.getCount();
+
+	count += runtime.objects.RepeatCommandCondition.getAllInstances()
+		.reduce((acc, curr) => acc + curr.getCount(), 0);
+
+	return count;
+}
+
 
 
 const scriptsInEvents = {
-
-	async Game_es_Event2_Act1(runtime, localVars)
-	{
-		setupLevel(runtime);
-	},
 
 	async Game_es_Event9_Act2(runtime, localVars)
 	{
@@ -199,7 +231,7 @@ const scriptsInEvents = {
 	{
 		console.log("running commands")
 		
-		state.isStopped = false;
+		resetState(runtime.globalVars.level);
 		
 		runner.run(runtime.objects.Player.getFirstInstance(), state)
 	},
@@ -265,9 +297,85 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event106_Act1(runtime, localVars)
+	async Game_es_Event109_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(getVariables());
+	},
+
+	async Game_es_Event113_Act5(runtime, localVars)
+	{
+		setupLevel(runtime);
+	},
+
+	async Game_es_Event121_Act1(runtime, localVars)
+	{
+		state.isGameOver = true;
+	},
+
+	async Game_es_Event129_Act5(runtime, localVars)
+	{
+		const {
+			level,
+			username,
+			actionCount,
+			codeBlockCount,
+			levelTimer,
+		} = runtime.globalVars;
+		
+		try {
+			console.log(await leaderboard.addToLeaderboard(
+				level,
+				username,
+				actionCount,
+				codeBlockCount,
+				Math.round(levelTimer * 1000, 3),
+			))
+		} catch(error) {
+			runtime.callFunction("AddToLeaderboardError")
+		}
+	},
+
+	async Game_es_Event130_Act1(runtime, localVars)
+	{
+		runtime.globalVars.codeBlockCount = 
+			getCodeBlockCount(runtime);
+		runtime.setReturnValue(runtime.globalVars.codeBlockCount);
+	},
+
+	async Game_es_Event131_Act1(runtime, localVars)
+	{
+		runtime.globalVars.actionCount = state.actionCount;
+		runtime.setReturnValue(runtime.globalVars.actionCount);
+	},
+
+	async Menu_es_Event15_Act3(runtime, localVars)
+	{
+		parent.postMessage({
+			name: "leaderboard-created",
+		});
+	},
+
+	async Menu_es_Event16_Act1(runtime, localVars)
+	{
+		const {
+			leaderboardLevel,
+			page,
+			sortBy,
+			ascending,
+		} = localVars;
+		
+		const data = await leaderboard.getLeaderboard(
+			leaderboardLevel,
+			page,
+			5,
+			sortBy,
+			ascending ? "asc" : "desc",
+		);
+		
+		parent.postMessage({
+			name: "leaderboard-data",
+			value: data,
+		});
 	}
 
 };

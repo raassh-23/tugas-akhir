@@ -70,7 +70,7 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
+     * @param {import("../../for-events.js").GameState}} state
      * 
      * @returns {Promise<number>}
      */
@@ -84,7 +84,7 @@ export default class RepeatCommand extends CommandsContainer {
 
                 const result = await super.run(player, state);
 
-                if (state.isStopped) {
+                if (result !== FINISHED) {
                     this.text.text = this.#repeatCondition;
                     return result;
                 }
@@ -204,8 +204,6 @@ export default class RepeatCommand extends CommandsContainer {
         }, 0);
 
         const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
-
-        console.log(finalWidth);
 
         return finalWidth <= this.minLength ? this.minLength : finalWidth;
     }

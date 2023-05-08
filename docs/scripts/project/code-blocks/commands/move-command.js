@@ -22,7 +22,7 @@ export default class MoveCommand extends BaseCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {{isStopped: boolean, variables: {[variable: string]: number}}} state
+     * @param {import("../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
@@ -45,6 +45,8 @@ export default class MoveCommand extends BaseCommand {
         } while (player.behaviors.TileMovement.isMoving() || totalDuration < maxDuration);
 
         player.animationSpeed = 0;
+
+        state.actionCount++;
 
         return FINISHED;
     }
