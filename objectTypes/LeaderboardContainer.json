@@ -4,5 +4,11 @@
 	"sid": 913487053338722,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": []
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 761514884240460
+		}
+	]
 }

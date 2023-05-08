@@ -261,8 +261,8 @@
 					"instanceVariables": {
 						"originX": 0,
 						"originY": -564,
-						"targetX": 306.5,
-						"targetY": 151,
+						"targetX": 180.5,
+						"targetY": 114.5,
 						"duration": 0.5,
 						"id": "leaderboard"
 					},
@@ -276,6 +276,38 @@
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 112,
+						"children": [
+							{
+								"uid": 111,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 113,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -303,7 +335,7 @@
 					},
 					"world": {
 						"x": 181,
-						"y": 141,
+						"y": -626,
 						"width": 918.8431207097119,
 						"height": 490.97658126800667,
 						"originX": 0,
@@ -350,10 +382,16 @@
 					},
 					"uid": 109,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
 					"world": {
-						"x": 254.5,
-						"y": 281,
+						"x": 255,
+						"y": -486,
 						"width": 771,
 						"height": 306,
 						"originX": 0,
@@ -393,9 +431,37 @@
 						"id": "leaderboard"
 					},
 					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 112,
+						"uid": 111,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"world": {
 						"x": 432,
-						"y": 198,
+						"y": -569,
 						"width": 417,
 						"height": 32,
 						"originX": 0,
@@ -404,6 +470,65 @@
 							0,
 							0,
 							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 113,
+					"instanceVariables": {
+						"id": "close-leaderboard"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 112,
+						"uid": 113,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1097,
+						"y": -622,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
 							1
 						],
 						"angle": 0,

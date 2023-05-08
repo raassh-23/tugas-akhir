@@ -2,6 +2,10 @@
 	"name": "Menu_ES",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
 			"eventType": "variable",
 			"name": "LEADERBOARD_FILE_TAG",
 			"type": "string",
@@ -10,6 +14,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 259937624818626
+		},
+		{
+			"eventType": "variable",
+			"name": "LEADERBOARD_TWEEN_TAG",
+			"type": "string",
+			"initialValue": "leaderboard",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 961199557566402
 		},
 		{
 			"eventType": "block",
@@ -29,6 +43,13 @@
 						"tag": "LEADERBOARD_FILE_TAG",
 						"file": "leaderboard.html"
 					}
+				},
+				{
+					"callFunction": "showMenuPopUp",
+					"sid": 631772526945743,
+					"parameters": [
+						false
+					]
 				}
 			],
 			"sid": 514121468304681,
@@ -58,6 +79,39 @@
 						}
 					],
 					"sid": 372872872820150
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIPanel2",
+							"sid": 943394536933240,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"leaderboard\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "LeaderboardContainer",
+							"sid": 625954136692870,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "UIPanel2",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 151638449849747
 				}
 			]
 		},
@@ -118,11 +172,129 @@
 					],
 					"actions": [
 						{
-							"type": "script",
-							"script": "console.log(await leaderboard.getLeaderboard(0, 1, 5, \"asc\", \"timeMs\"))"
+							"callFunction": "GetLeaderboard",
+							"sid": 582686329992100,
+							"parameters": [
+								"0",
+								"1",
+								"\"timeMs\"",
+								true
+							]
 						}
 					],
-					"sid": 585669401267937
+					"sid": 585669401267937,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel2",
+									"sid": 200444852282770,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"leaderboard\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 381769285082692,
+									"parameters": [
+										true
+									]
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel2",
+									"sid": 208951864863581,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "LEADERBOARD_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.duration",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 945338581628654
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 167283934997525,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"close-leaderboard\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 528979599780920,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel2",
+									"sid": 397342835674210,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"leaderboard\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel2",
+									"sid": 362052861155603,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "LEADERBOARD_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.originX",
+										"end-y": "Self.originY",
+										"time": "Self.duration",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 549795342164910
+								},
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 612973527272135,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 262407985159857
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -250,27 +422,171 @@
 						"selector": "\"\"",
 						"type": "one"
 					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 585919491545236
+				},
+				{
+					"type": "script",
+					"script": "parent.postMessage({\n\tname: \"leaderboard-created\",\n});"
 				}
 			],
 			"sid": 284694020062305
 		},
 		{
-			"functionName": "test",
+			"functionName": "GetLeaderboard",
 			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionIsAsync": false,
-			"functionParameters": [],
+			"functionParameters": [
+				{
+					"name": "leaderboardLevel",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 391729239163127
+				},
+				{
+					"name": "page",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 543199046618738
+				},
+				{
+					"name": "sortBy",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 862276478172325
+				},
+				{
+					"name": "ascending",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 217061602902734
+				}
+			],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
 				{
 					"type": "script",
-					"script": "window.postMessage({\n\ttarget: \"leaderboard\",\n\tvalue: {\n\t\t\"test\": \"test\"\n\t},\n});"
+					"script": "const {\n\tleaderboardLevel,\n\tpage,\n\tsortBy,\n\tascending,\n} = localVars;\n\nconst data = await leaderboard.getLeaderboard(\n\tleaderboardLevel,\n\tpage,\n\t5,\n\tsortBy,\n\tascending ? \"asc\" : \"desc\",\n);\n\nparent.postMessage({\n\tname: \"leaderboard-data\",\n\tvalue: data,\n});"
 				}
 			],
 			"sid": 837762995904189
+		},
+		{
+			"functionName": "showMenuPopUp",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "show",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 420280774309136
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 569086186466447,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 689995376590314,
+							"parameters": {
+								"variable": "show"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 613316935948076,
+							"parameters": {
+								"layer": "\"MenuPopUp\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 738990425540929,
+							"parameters": {
+								"layer": "\"MenuPopUp\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 175701204130954,
+							"parameters": {
+								"layer": "\"UI\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 994863947509993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 634834209361200
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 127238906296846,
+							"parameters": {
+								"layer": "\"MenuPopUp\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 448294159655380,
+							"parameters": {
+								"layer": "\"MenuPopUp\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 187950487123149,
+							"parameters": {
+								"layer": "\"UI\"",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 353318414787076
+				}
+			]
 		}
 	],
 	"sid": 170200532006030

@@ -96,11 +96,11 @@ export default class LeaderboardAPI {
      * @param {number} level 
      * @param {number} page 
      * @param {number} pageSize 
-     * @param {"asc" | "desc"} order 
      * @param {"actions" | "codeBlocks" | "timeMs"} sortBy 
+     * @param {"asc" | "desc"} order 
      * @returns {Promise<GetLeaderboardData>}
      */
-    async getLeaderboard(level, page, pageSize, order, sortBy) {
+    async getLeaderboard(level, page, pageSize, sortBy, order) {
         const response = await fetch(
             `${this.#url}/leaderboard?level=${level}&page=${page}\
             &pageSize=${pageSize}&order=${order}&sortBy=${sortBy}`
