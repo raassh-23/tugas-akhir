@@ -222,7 +222,7 @@
 	},
 	"layouts": {
 		"items": [
-			"TestGame",
+			"TestLevel",
 			"Menu",
 			"ObjectRepository"
 		],

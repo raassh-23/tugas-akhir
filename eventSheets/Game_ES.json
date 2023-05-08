@@ -4074,9 +4074,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 729918489029653,
+									"sid": 417377374124261,
 									"parameters": {
-										"text": "\"Time: \" & Functions.FormatTime(levelTimer)"
+										"text": "\"Waktu: \" & Functions.FormatTime(levelTimer)"
 									}
 								}
 							],
@@ -4100,9 +4100,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 189439508382313,
+									"sid": 193215939188327,
 									"parameters": {
-										"text": "\"Code Blocks: \" & Functions.GetBlockCount"
+										"text": "\"Blok Kode: \" & Functions.GetBlockCount"
 									}
 								}
 							],
@@ -4126,9 +4126,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 776839444961678,
+									"sid": 172348805358043,
 									"parameters": {
-										"text": "\"Actions: \" & Functions.GetActionCount"
+										"text": "\"Aksi: \" & Functions.GetActionCount"
 									}
 								}
 							],
@@ -4289,6 +4289,11 @@
 										"comparison": 0,
 										"value": "\"game-over-ok\""
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Button",
+									"sid": 241626197767929
 								}
 							],
 							"actions": [],
@@ -4354,12 +4359,67 @@
 											"id": "else",
 											"objectClass": "System",
 											"sid": 830202969130797
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIText",
+											"sid": 760243430486299,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"game-over-leaderboard-status\""
+											}
 										}
 									],
 									"actions": [
 										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 696819429900522,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "TextInputName",
+											"sid": 252103039942010,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "UIText",
+											"sid": 277675635219678,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "UIText",
+											"sid": 405513423358489,
+											"parameters": {
+												"text": "\"menambahkan...\""
+											}
+										},
+										{
 											"type": "script",
-											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\nconsole.log(await leaderboard.addToLeaderboard(\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tMath.round(levelTimer * 1000, 3),\n))"
+											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tconsole.log(await leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t))\n} catch(error) {\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 845445275656187
+										},
+										{
+											"id": "set-text",
+											"objectClass": "UIText",
+											"sid": 840405252296584,
+											"parameters": {
+												"text": "\"Berhasil ditambahkan\""
+											}
 										}
 									],
 									"sid": 617339742470544
@@ -4425,6 +4485,117 @@
 						}
 					],
 					"sid": 781591767916452
+				},
+				{
+					"functionName": "AddToLeaderboardError",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TextInputName",
+							"sid": 688061032974825,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "TextInputName",
+							"sid": 135536650348492,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 949387563176670,
+							"parameters": {
+								"seconds": "0.25"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "TextInputName",
+							"sid": 554558033128301,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-cycle-position",
+							"objectClass": "TextInputName",
+							"sid": 659278388427169,
+							"behaviorType": "Sine",
+							"parameters": {
+								"cycle-position": "0"
+							}
+						}
+					],
+					"sid": 901093444505180,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 685997052453206,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-leaderboard-status\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "UIText",
+									"sid": 330126792286263,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 934440643126036
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 238658217860542,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-ok\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 207344693689276,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 964854083124326
+						}
+					]
 				}
 			],
 			"sid": 991077192111983
