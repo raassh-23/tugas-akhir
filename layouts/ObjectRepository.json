@@ -93,10 +93,6 @@
 										"key": "instance-variable",
 										"state": [
 											{
-												"iv": "id",
-												"state": true
-											},
-											{
 												"iv": "originX",
 												"state": true
 											},
@@ -114,6 +110,10 @@
 											},
 											{
 												"iv": "duration",
+												"state": true
+											},
+											{
+												"iv": "id",
 												"state": true
 											}
 										]

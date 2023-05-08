@@ -2,6 +2,16 @@
 	"name": "Menu_ES",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "LEADERBOARD_FILE_TAG",
+			"type": "string",
+			"initialValue": "leaderboard",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 259937624818626
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -10,7 +20,17 @@
 					"sid": 169874173999834
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 473803889344871,
+					"parameters": {
+						"tag": "LEADERBOARD_FILE_TAG",
+						"file": "leaderboard.html"
+					}
+				}
+			],
 			"sid": 514121468304681,
 			"children": [
 				{
@@ -206,6 +226,51 @@
 				}
 			],
 			"sid": 280770723004987
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 817813528523328,
+					"parameters": {
+						"tag": "LEADERBOARD_FILE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "LeaderboardContainer",
+					"sid": 112182310388380,
+					"parameters": {
+						"content-type": "html",
+						"string": "AJAX.LastData",
+						"selector": "\"\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 284694020062305
+		},
+		{
+			"functionName": "test",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "window.postMessage({\n\ttarget: \"leaderboard\",\n\tvalue: {\n\t\t\"test\": \"test\"\n\t},\n});"
+				}
+			],
+			"sid": 837762995904189
 		}
 	],
 	"sid": 170200532006030

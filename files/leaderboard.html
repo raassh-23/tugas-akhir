@@ -1,0 +1,80 @@
+<!-- this file is using bootstrap -->
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Time</th>
+            <th scope="col">Action Count</th>
+            <th scope="col">Code Block Count</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody class="table-light">
+        <tr>
+            <th scope="row">0</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th scope="row">0</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th scope="row">0</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th scope="row">0</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th scope="row">0</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+<nav>
+    <ul class="pagination"  style="--bs-pagination-font-size: 1vw;">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+
+<script>
+    parent.addEventListener("message", ({ data }) => {
+        if (data.target != "leaderboard") {
+            return;
+        }
+
+        console.log("inside leaderboard");
+        console.log(data.value);
+    });
+
+    function test() {
+        parent.c3_callFunction("test");
+    }
+</script>

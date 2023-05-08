@@ -48,6 +48,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"UIPanel"
+		"UIPanel",
+		"UIPanel2"
 	]
 }

@@ -1578,7 +1578,7 @@
 			"global": false
 		},
 		{
-			"name": "PopUp",
+			"name": "LevelPopUp",
 			"overriden": 0,
 			"subLayers": [
 				{
@@ -1685,7 +1685,7 @@
 					"useRenderCells": false,
 					"blendMode": "normal",
 					"zElevation": 0,
-					"global": true
+					"global": false
 				},
 				{
 					"name": "PopUpFront",
@@ -1718,7 +1718,7 @@
 					"useRenderCells": false,
 					"blendMode": "normal",
 					"zElevation": 0,
-					"global": true
+					"global": false
 				}
 			],
 			"instances": [
