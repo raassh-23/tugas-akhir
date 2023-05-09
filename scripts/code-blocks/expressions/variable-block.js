@@ -11,6 +11,6 @@ export default class VariableBlock extends BaseExpression {
     }
 
     evaluate() {
-        return variableName[this.animationFrame];
+        return ` ${variableName[this.animationFrame]} `;
     }
 }

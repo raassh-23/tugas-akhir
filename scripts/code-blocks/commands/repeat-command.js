@@ -76,7 +76,10 @@ export default class RepeatCommand extends CommandsContainer {
      */
     async run(player, state) {
         try {
-            const repeatCount = math.evaluate(this.#repeatCondition, state.variables);
+            const cleanedRepeatCondition = this.#repeatCondition
+                .replace(/%/g, 'mod')
+                .replace(/x/g, '*');
+            const repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
             this.text.text = repeatCount.toString();
 
             for (let i = 0; i < repeatCount; i++) {
@@ -85,17 +88,17 @@ export default class RepeatCommand extends CommandsContainer {
                 const result = await super.run(player, state);
 
                 if (result !== FINISHED) {
-                    this.text.text = this.#repeatCondition;
+                    this.text.text = this.#repeatCondition.replace(/ /g, '');
                     return result;
                 }
             }
 
-            this.text.text = this.#repeatCondition;
+            this.text.text = this.#repeatCondition.replace(/ /g, '');
         } catch (error) {
             console.log(error);
             super.showError(true);
 
-            this.text.text = this.#repeatCondition;
+            this.text.text = this.#repeatCondition.replace(/ /g, '');
 
             return ERROR
         }
@@ -145,7 +148,7 @@ export default class RepeatCommand extends CommandsContainer {
         }
 
         super.showError(false);
-        this.text.text = this.#repeatCondition;
+        this.text.text = this.#repeatCondition.replace(/ /g, '');
     }
 
     /**
