@@ -36,6 +36,16 @@
 			],
 			"actions": [
 				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 261691035456120,
+					"parameters": {
+						"name": "BUTTON_CLICKED",
+						"string": "LayoutName",
+						"function": "MenuButtonClicked"
+					}
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 473803889344871,
@@ -116,19 +126,34 @@
 			]
 		},
 		{
-			"eventType": "block",
+			"functionName": "MenuButtonClicked",
+			"functionCopyPicked": true,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 292628880734679
+				}
+			],
+			"eventType": "function-block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 439656907040346,
+					"id": "pick-by-unique-id",
+					"objectClass": "Button",
+					"sid": 297181430576640,
 					"parameters": {
-						"object": "Button"
+						"unique-id": "uid"
 					}
 				}
 			],
 			"actions": [],
-			"sid": 840069895576427,
+			"sid": 837331697825729,
 			"children": [
 				{
 					"eventType": "block",
@@ -136,7 +161,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
-							"sid": 336936763768688,
+							"sid": 794806346222569,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -148,13 +173,13 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 787328196129845,
+							"sid": 768825461490793,
 							"parameters": {
 								"layout": "TestLevel"
 							}
 						}
 					],
-					"sid": 111966015810948
+					"sid": 642159795335066
 				},
 				{
 					"eventType": "block",
@@ -162,7 +187,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
-							"sid": 944203175888634,
+							"sid": 838228805905871,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -173,7 +198,7 @@
 					"actions": [
 						{
 							"callFunction": "GetLeaderboard",
-							"sid": 582686329992100,
+							"sid": 192332795482254,
 							"parameters": [
 								"0",
 								"1",
@@ -182,7 +207,7 @@
 							]
 						}
 					],
-					"sid": 585669401267937,
+					"sid": 887354956605955,
 					"children": [
 						{
 							"eventType": "block",
@@ -190,7 +215,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIPanel2",
-									"sid": 200444852282770,
+									"sid": 620127108805552,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -201,7 +226,7 @@
 							"actions": [
 								{
 									"callFunction": "showMenuPopUp",
-									"sid": 381769285082692,
+									"sid": 660840291778966,
 									"parameters": [
 										true
 									]
@@ -209,7 +234,7 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "UIPanel2",
-									"sid": 208951864863581,
+									"sid": 215887952403206,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "LEADERBOARD_TWEEN_TAG",
@@ -225,7 +250,7 @@
 									}
 								}
 							],
-							"sid": 945338581628654
+							"sid": 477280879212814
 						}
 					]
 				},
@@ -235,7 +260,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
-							"sid": 167283934997525,
+							"sid": 790388444942623,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -244,7 +269,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 528979599780920,
+					"sid": 161128858015456,
 					"children": [
 						{
 							"eventType": "block",
@@ -252,7 +277,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIPanel2",
-									"sid": 397342835674210,
+									"sid": 869106940472748,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -264,7 +289,7 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "UIPanel2",
-									"sid": 362052861155603,
+									"sid": 949354502966525,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "LEADERBOARD_TWEEN_TAG",
@@ -282,17 +307,17 @@
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
-									"sid": 549795342164910
+									"sid": 951522858073301
 								},
 								{
 									"callFunction": "showMenuPopUp",
-									"sid": 612973527272135,
+									"sid": 127244468538244,
 									"parameters": [
 										false
 									]
 								}
 							],
-							"sid": 262407985159857
+							"sid": 872709766484865
 						}
 					]
 				},
@@ -302,7 +327,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
-							"sid": 394584524015384,
+							"sid": 563134652099588,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -311,7 +336,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 857681267950778,
+					"sid": 355627615425926,
 					"children": [
 						{
 							"eventType": "block",
@@ -319,17 +344,17 @@
 								{
 									"id": "is-fullscreen",
 									"objectClass": "Browser",
-									"sid": 724488189148789
+									"sid": 747956081297196
 								}
 							],
 							"actions": [
 								{
 									"id": "cancel-fullscreen",
 									"objectClass": "Browser",
-									"sid": 214007161232669
+									"sid": 981627936571852
 								}
 							],
-							"sid": 210420907542187
+							"sid": 198934454034576
 						},
 						{
 							"eventType": "block",
@@ -337,21 +362,21 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 261891741650464
+									"sid": 846326731926956
 								}
 							],
 							"actions": [
 								{
 									"id": "request-fullscreen",
 									"objectClass": "Browser",
-									"sid": 691772179176159,
+									"sid": 685101916719796,
 									"parameters": {
 										"mode": "stretch-letterbox-scale",
 										"navigation-ui": "hide"
 									}
 								}
 							],
-							"sid": 525998299005168
+							"sid": 638615781475662
 						}
 					]
 				}

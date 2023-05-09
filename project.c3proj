@@ -217,7 +217,7 @@
 			"ResetObjects",
 			"Text",
 			"TweenPanel",
-			"Buttons"
+			"Clickable"
 		],
 		"subfolders": []
 	},

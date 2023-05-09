@@ -657,105 +657,6 @@
 						{
 							"id": "on-touched-object",
 							"objectClass": "Touch",
-							"sid": 869221494398815,
-							"parameters": {
-								"object": "Button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 636861811058508,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Button",
-									"sid": 607763085229581,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"play\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 617062141404167,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 948047145836984,
-											"parameters": {
-												"variable": "isRunning"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
-										}
-									],
-									"sid": 865711605085149
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 757061752825636
-										}
-									],
-									"actions": [
-										{
-											"type": "script",
-											"script": "console.log(\"stopping commands\")\n\nstate.isStopped = true;"
-										}
-									],
-									"sid": 492843819237505
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Button",
-									"sid": 732428580329747,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"close-repeat-panel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "SetRepeatCommandPopUp",
-									"sid": 757129285265886,
-									"parameters": [
-										false
-									]
-								}
-							],
-							"sid": 279507632404491
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
 							"sid": 768927338990605,
 							"parameters": {
 								"object": "CodeBlockDecoration"
@@ -3795,6 +3696,16 @@
 					],
 					"actions": [
 						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 149596359493225,
+							"parameters": {
+								"name": "BUTTON_CLICKED",
+								"string": "LayoutName",
+								"function": "GameButtonClicked"
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 191477428210498,
@@ -4197,20 +4108,127 @@
 					"sid": 843493528744408
 				},
 				{
-					"eventType": "block",
+					"functionName": "GameButtonClicked",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 239423856406936
+						}
+					],
+					"eventType": "function-block",
 					"conditions": [
 						{
-							"id": "on-touched-object",
-							"objectClass": "Touch",
-							"sid": 126228473309865,
+							"id": "pick-by-unique-id",
+							"objectClass": "Button",
+							"sid": 341669851507259,
 							"parameters": {
-								"object": "Button"
+								"unique-id": "uid"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 209738568799761,
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 172363086272753,
+							"parameters": {
+								"type": "log",
+								"message": "Button.id"
+							}
+						}
+					],
+					"sid": 917418169826131,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 935242426499978,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 829767052210114,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 842674453746203,
+											"parameters": {
+												"variable": "isRunning"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
+										}
+									],
+									"sid": 239940556527685
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 821052953002071
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"script": "console.log(\"stopping commands\")\n\nstate.isStopped = true;"
+										}
+									],
+									"sid": 126068633089528
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 352004579785677,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"close-repeat-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetRepeatCommandPopUp",
+									"sid": 881660709255432,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 740414602099381
+						},
 						{
 							"eventType": "block",
 							"conditions": [
