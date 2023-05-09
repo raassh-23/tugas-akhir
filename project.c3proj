@@ -216,7 +216,8 @@
 			"HSLEffects",
 			"ResetObjects",
 			"Text",
-			"TweenPanel"
+			"TweenPanel",
+			"Buttons"
 		],
 		"subfolders": []
 	},

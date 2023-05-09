@@ -44,20 +44,25 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 0,
+						"initial-frame": 8,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 13,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "play"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 557.5,
-						"y": 360,
-						"width": 128,
-						"height": 128,
+						"x": 640,
+						"y": 344.5,
+						"width": 156.25,
+						"height": 162.5,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -125,6 +130,11 @@
 					},
 					"uid": 15,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "fullscreen"
 					},
 					"behaviors": {},
@@ -150,20 +160,141 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 7,
+						"initial-frame": 10,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 108,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
+						"id": "setting"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 779,
+						"y": 507.5,
+						"width": 125,
+						"height": 130,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText",
+					"properties": {
+						"text": "Judul Game",
+						"enable-bbcode": true,
+						"character-width": 16,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>",
+						"spacing-data": "",
+						"scale": 3,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 115,
+					"instanceVariables": {
+						"minScale": 0,
+						"maxScale": 0,
+						"autoFit": false,
+						"id": "title"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 281.5,
+						"y": 147.5,
+						"width": 717,
+						"height": 84,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 9,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 116,
+					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
+						"id": "credits"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 641,
+						"y": 507.5,
+						"width": 125,
+						"height": 130,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 7,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 118,
+					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "leaderboard"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 722.5,
-						"y": 360,
-						"width": 128,
-						"height": 128,
+						"x": 502,
+						"y": 507.5,
+						"width": 125,
+						"height": 130,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -481,12 +612,17 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 3,
+						"initial-frame": 2,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 113,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "close-leaderboard"
 					},
 					"behaviors": {},

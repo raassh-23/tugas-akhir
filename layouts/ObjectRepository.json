@@ -3045,12 +3045,17 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 3,
+						"initial-frame": 2,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 81,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "close-repeat-panel"
 					},
 					"behaviors": {},

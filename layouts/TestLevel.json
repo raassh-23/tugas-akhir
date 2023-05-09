@@ -232,7 +232,7 @@
 						}
 					},
 					"world": {
-						"x": 669.1095314636698,
+						"x": 479.9381046097179,
 						"y": 352,
 						"width": 64,
 						"height": 64,
@@ -377,7 +377,7 @@
 					},
 					"world": {
 						"x": 608,
-						"y": 416,
+						"y": 352,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -919,9 +919,9 @@
 							},
 							"world": {
 								"x": 1094,
-								"y": 45,
+								"y": 130.49642699975377,
 								"width": 158,
-								"height": 631.2693171832474,
+								"height": 545.7728901834936,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -945,8 +945,8 @@
 							},
 							"uid": 27,
 							"instanceVariables": {
-								"min": 47.263837,
-								"max": 47.263837,
+								"min": 65.300983,
+								"max": 132.760264,
 								"initialLength": 0,
 								"id": "available-commands",
 								"direction": "vertical",
@@ -1073,9 +1073,9 @@
 							},
 							"world": {
 								"x": 1095.364807442933,
-								"y": 47.263836757402686,
+								"y": 132.76026375715645,
 								"width": 155.07584028259407,
-								"height": 626.5708753568846,
+								"height": 611.9656349262704,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -1134,7 +1134,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 126,
+								"y": 211.89818041733207,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1196,7 +1196,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 233,
+								"y": 318.89818041733207,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1258,7 +1258,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 343,
+								"y": 428.89818041733207,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1320,7 +1320,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 461,
+								"y": 546.898180417332,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1382,7 +1382,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 583,
+								"y": 668.898180417332,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1440,14 +1440,19 @@
 					},
 					"uid": 6,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "play"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 100,
 						"y": 583,
-						"width": 128,
-						"height": 128,
+						"width": 145,
+						"height": 153,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1538,6 +1543,78 @@
 						"height": 214,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 13,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 117,
+					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
+						"id": "help"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1128.3298237933195,
+						"y": 64,
+						"width": 68.85,
+						"height": 71.39999999999999,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 14,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 119,
+					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
+						"id": "pause"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1217.0208885620996,
+						"y": 64,
+						"width": 68.85,
+						"height": 71.39999999999999,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -2372,6 +2449,11 @@
 					},
 					"uid": 104,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "game-over-ok"
 					},
 					"behaviors": {},
@@ -2406,8 +2488,8 @@
 					"world": {
 						"x": 780.2751685934813,
 						"y": -286,
-						"width": 48,
-						"height": 42.93928887980246,
+						"width": 50,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2431,6 +2513,11 @@
 					},
 					"uid": 105,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "game-over-home"
 					},
 					"behaviors": {},
@@ -2465,8 +2552,8 @@
 					"world": {
 						"x": 556.5,
 						"y": -202,
-						"width": 64,
-						"height": 64,
+						"width": 62.5,
+						"height": 65,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2490,6 +2577,11 @@
 					},
 					"uid": 106,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "game-over-restart"
 					},
 					"behaviors": {},
@@ -2524,8 +2616,8 @@
 					"world": {
 						"x": 639.5,
 						"y": -203,
-						"width": 64,
-						"height": 64,
+						"width": 62.5,
+						"height": 65,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2543,12 +2635,17 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 0,
+						"initial-frame": 8,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 107,
 					"instanceVariables": {
+						"initialWidth": 0,
+						"initialHeight": 0,
+						"isPressed": false,
+						"clickable": false,
+						"isDisabled": false,
 						"id": "game-over-next"
 					},
 					"behaviors": {},
@@ -2583,8 +2680,8 @@
 					"world": {
 						"x": 722.5,
 						"y": -202,
-						"width": 64,
-						"height": 64,
+						"width": 62.5,
+						"height": 65,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
