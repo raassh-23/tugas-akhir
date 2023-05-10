@@ -1,9 +1,38 @@
 {
-	"name": "RepeatCommand",
+	"name": "CodeBlockShadowOld",
 	"plugin-id": "Sprite",
-	"sid": 989981170372620,
+	"sid": 573889704443256,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 321003338543154
+		},
+		{
+			"name": "addToGrandParent",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 429778392019835
+		},
+		{
+			"name": "shouldShift",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 479781280474391
+		},
+		{
+			"name": "relativeLevelToParent",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 489916996616545
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -18,37 +47,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8516910,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "ShadowSpawnPoint",
-								"x": 1,
-								"y": 0.5
-							}
-						],
-						"duration": 1
-					}
-				],
-				"sid": 236971000407103,
-				"name": "Default",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 0
-			},
-			{
-				"frames": [
-					{
-						"width": 96,
-						"height": 96,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 1607330,
+						"imageSpriteId": 2315478,
 						"collisionPoly": {
 							"points": [
 								0.041666666666666664,
@@ -70,18 +69,11 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "ShadowSpawnPoint",
-								"x": 1,
-								"y": 0.5
-							}
-						],
 						"duration": 1
 					}
 				],
-				"sid": 591897393317640,
-				"name": "DefaultError",
+				"sid": 186451990702964,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

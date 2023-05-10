@@ -59,7 +59,7 @@ export default class RepeatCommand extends CommandsContainer {
                 if (child.instVars.id === "repeat-icon") {
                     this.offsetStart = child.width;
                 }
-                
+
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this.highlightedObjects.push(child);
@@ -96,7 +96,7 @@ export default class RepeatCommand extends CommandsContainer {
             this.text.text = this.#repeatCondition.replace(/ /g, '');
         } catch (error) {
             console.log(error);
-            super.showError(true);
+            this.showError(true);
 
             this.text.text = this.#repeatCondition.replace(/ /g, '');
 
@@ -147,7 +147,7 @@ export default class RepeatCommand extends CommandsContainer {
             this.#repeatCondition = condition;
         }
 
-        super.showError(false);
+        this.showError(false);
         this.text.text = this.#repeatCondition.replace(/ /g, '');
     }
 
@@ -209,5 +209,30 @@ export default class RepeatCommand extends CommandsContainer {
         const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
 
         return finalWidth <= this.minLength ? this.minLength : finalWidth;
+    }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showError(show) {
+        console.log("show error", show);
+
+        for (const child of this.highlightedObjects) {
+            if (child.instVars.id === "repeat-icon") {
+                child.animationFrame = show ? 1 : 0;
+                console.log(child);
+                console.log(`animationFrame should be ${show ? 1 : 0}`);
+                continue;
+            }
+
+            if (child.instVars.id === "repeat-pop-up") {
+                child.animationFrame = show ? 3 : 2;
+                console.log(child);
+                console.log(`animationFrame should be ${show ? 3 : 2}`);
+
+            }
+        }
+
     }
 }

@@ -105,7 +105,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "CodeBlockShadow",
-							"sid": 520005156630820,
+							"sid": 290982034569437,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -357,7 +357,7 @@
 								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CodeBlockShadow",
-									"sid": 416585136568669,
+									"sid": 927885151075302,
 									"parameters": {
 										"unique-id": "Functions.PickCodeBlockShadowToShow"
 									}
@@ -367,7 +367,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 401950930302414,
+									"sid": 194005860103454,
 									"parameters": {
 										"variable": "newWidth",
 										"value": "Functions.getExpectedWidth(CodeBlockShadow.level)"
@@ -375,7 +375,7 @@
 								},
 								{
 									"callFunction": "ShowCodeBlockShadow",
-									"sid": 792023197890375,
+									"sid": 104760486705674,
 									"parameters": [
 										"CodeBlockShadow.UID",
 										"newWidth"
@@ -383,7 +383,7 @@
 								},
 								{
 									"callFunction": "ShiftActiveCodeBlocks",
-									"sid": 935440256702335,
+									"sid": 129366506871012,
 									"parameters": [
 										"CodeBlockShadow.X",
 										"newWidth",
@@ -449,7 +449,7 @@
 								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CodeBlockShadow",
-									"sid": 955845818909923,
+									"sid": 662099567116718,
 									"parameters": {
 										"unique-id": "Functions.PickCodeBlockShadowToShow"
 									}
@@ -912,7 +912,7 @@
 						{
 							"id": "pick-children",
 							"objectClass": "CodeBlockPanel",
-							"sid": 277210527820270,
+							"sid": 357133778573749,
 							"parameters": {
 								"child": "CodeBlockShadow",
 								"which": "all"
@@ -961,7 +961,7 @@
 								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CodeBlockShadow",
-									"sid": 210826752216630,
+									"sid": 625261651581949,
 									"parameters": {
 										"unique-id": "uid"
 									}
@@ -971,7 +971,7 @@
 								{
 									"id": "set-width",
 									"objectClass": "CodeBlockShadow",
-									"sid": 530368725327204,
+									"sid": 102421657716945,
 									"parameters": {
 										"width": "width"
 									}
@@ -979,7 +979,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "CodeBlockShadow",
-									"sid": 680710672509710,
+									"sid": 784112188789199,
 									"parameters": {
 										"visibility": "visible"
 									}
@@ -987,7 +987,7 @@
 								{
 									"id": "set-opacity",
 									"objectClass": "CodeBlockShadow",
-									"sid": 957981212230179,
+									"sid": 419587203824586,
 									"disabled": true,
 									"parameters": {
 										"opacity": "100"
@@ -1006,7 +1006,7 @@
 								{
 									"id": "pick-by-unique-id",
 									"objectClass": "CodeBlockShadow",
-									"sid": 902610674637343,
+									"sid": 636912308587094,
 									"parameters": {
 										"unique-id": "uid"
 									},
@@ -1017,7 +1017,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "CodeBlockShadow",
-									"sid": 866409674706101,
+									"sid": 771815665671022,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -1025,7 +1025,7 @@
 								{
 									"id": "set-width",
 									"objectClass": "CodeBlockShadow",
-									"sid": 603996913368066,
+									"sid": 374910056872910,
 									"disabled": true,
 									"parameters": {
 										"width": "20"
@@ -1034,7 +1034,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "CodeBlockShadow",
-									"sid": 816863677467872,
+									"sid": 664503636869744,
 									"disabled": true,
 									"parameters": {
 										"visibility": "visible"
@@ -1043,7 +1043,7 @@
 								{
 									"id": "set-opacity",
 									"objectClass": "CodeBlockShadow",
-									"sid": 820391881671397,
+									"sid": 884440039971283,
 									"disabled": true,
 									"parameters": {
 										"opacity": "50"
@@ -1108,7 +1108,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "CodeBlockShadow",
-							"sid": 582033822433389,
+							"sid": 669880104509517,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -1116,7 +1116,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "CodeBlockShadow",
-							"sid": 207771721956895,
+							"sid": 867785991994109,
 							"disabled": true,
 							"parameters": {
 								"visibility": "visible"
@@ -1125,7 +1125,7 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "CodeBlockShadow",
-							"sid": 774939580360602,
+							"sid": 555389098149938,
 							"disabled": true,
 							"parameters": {
 								"opacity": "50"
@@ -1557,7 +1557,7 @@
 								{
 									"id": "pick-children",
 									"objectClass": "UIPanel",
-									"sid": 605051599777330,
+									"sid": 441934958150068,
 									"parameters": {
 										"child": "CodeBlockShadow",
 										"which": "all"
@@ -1568,7 +1568,7 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "CodeBlockShadow",
-									"sid": 142585286047242,
+									"sid": 323903858167729,
 									"parameters": {
 										"layer": "\"PopUpMiddle\""
 									}

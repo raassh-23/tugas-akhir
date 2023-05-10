@@ -164,7 +164,7 @@
 			"Button",
 			"UIText",
 			"ScrollablePanel",
-			"CodeBlockShadow",
+			"CodeBlockShadowOld",
 			"CodeBlockButton",
 			"CodeBlockDecoration",
 			"NestedCodeBlockBackgroundOld",
@@ -179,7 +179,8 @@
 			"AJAX",
 			"UIPanel",
 			"CodeBlockPanelBorder",
-			"NestedCodeBlockBackground"
+			"NestedCodeBlockBackground",
+			"CodeBlockShadow"
 		],
 		"subfolders": [
 			{

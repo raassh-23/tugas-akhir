@@ -781,13 +781,13 @@
 								"uid": 17,
 								"children": [
 									{
-										"uid": 18,
+										"uid": 36,
 										"flags": {
 											"x": true,
 											"y": true,
 											"z": true,
-											"w": true,
-											"h": true,
+											"w": false,
+											"h": false,
 											"a": false,
 											"o": false,
 											"v": false,
@@ -842,13 +842,17 @@
 						{
 							"type": "CodeBlockShadow",
 							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": false,
+								"origin": "left",
+								"seams": "overlap"
 							},
-							"uid": 18,
+							"uid": 36,
 							"instanceVariables": {
 								"level": 1,
 								"addToGrandParent": false,
@@ -858,13 +862,13 @@
 							"behaviors": {},
 							"sceneGraphData": {
 								"parent-uid": 17,
-								"uid": 18,
+								"uid": 36,
 								"flags": {
 									"x": true,
 									"y": true,
 									"z": true,
-									"w": true,
-									"h": true,
+									"w": false,
+									"h": false,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -898,8 +902,7 @@
 									1
 								],
 								"angle": 0,
-								"zElevation": 0,
-								"blendMode": "source-atop"
+								"zElevation": 0
 							}
 						}
 					],
