@@ -2060,24 +2060,24 @@
 			],
 			"instances": [
 				{
-					"type": "CodeBlockPanel",
+					"type": "UIPanel",
 					"properties": {
-						"left-margin": 45,
-						"right-margin": 45,
-						"top-margin": 45,
-						"bottom-margin": 45,
+						"left-margin": 65,
+						"right-margin": 65,
+						"top-margin": 65,
+						"bottom-margin": 65,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 97,
+					"uid": 42,
 					"instanceVariables": {
 						"originX": 0,
 						"originY": -564,
 						"targetX": 306.5,
-						"targetY": 151,
+						"targetY": 138,
 						"duration": 0.5,
 						"id": "game-over"
 					},
@@ -2090,8 +2090,23 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 97,
+						"uid": 42,
 						"children": [
+							{
+								"uid": 98,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
 							{
 								"uid": 99,
 								"flags": {
@@ -2213,21 +2228,6 @@
 								}
 							},
 							{
-								"uid": 98,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
 								"uid": 114,
 								"flags": {
 									"x": true,
@@ -2270,9 +2270,9 @@
 					},
 					"world": {
 						"x": 306.5,
-						"y": -564,
-						"width": 666.8431207097119,
-						"height": 417.97658126800667,
+						"y": -571,
+						"width": 663.8427458178643,
+						"height": 444.34954686681544,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -2313,7 +2313,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 98,
 						"flags": {
 							"x": true,
@@ -2385,7 +2385,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 99,
 						"flags": {
 							"x": true,
@@ -2457,7 +2457,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 100,
 						"flags": {
 							"x": true,
@@ -2529,7 +2529,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 101,
 						"flags": {
 							"x": true,
@@ -2654,7 +2654,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 103,
 						"flags": {
 							"x": true,
@@ -2718,7 +2718,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 104,
 						"flags": {
 							"x": true,
@@ -2782,7 +2782,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 105,
 						"flags": {
 							"x": true,
@@ -2846,7 +2846,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 106,
 						"flags": {
 							"x": true,
@@ -2910,7 +2910,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 107,
 						"flags": {
 							"x": true,
@@ -2982,7 +2982,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 97,
+						"parent-uid": 42,
 						"uid": 114,
 						"flags": {
 							"x": true,

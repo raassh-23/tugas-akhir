@@ -3858,7 +3858,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "CodeBlockPanel",
+									"objectClass": "UIPanel",
 									"sid": 990968276634318,
 									"parameters": {
 										"instance-variable": "id",
@@ -3874,7 +3874,7 @@
 									"sid": 230956525997632,
 									"behaviorType": "Pin",
 									"parameters": {
-										"pin-to": "CodeBlockPanel",
+										"pin-to": "UIPanel",
 										"x": true,
 										"y": true,
 										"angle": true,
@@ -3990,7 +3990,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "CodeBlockPanel",
+									"objectClass": "UIPanel",
 									"sid": 245718366881647,
 									"parameters": {
 										"instance-variable": "id",
@@ -4002,7 +4002,7 @@
 							"actions": [
 								{
 									"id": "tween-two-properties",
-									"objectClass": "CodeBlockPanel",
+									"objectClass": "UIPanel",
 									"sid": 591399102962713,
 									"behaviorType": "Tween",
 									"parameters": {
