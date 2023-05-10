@@ -227,23 +227,7 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event25_Act1(runtime, localVars)
-	{
-		console.log("running commands")
-		
-		resetState(runtime.globalVars.level);
-		
-		runner.run(runtime.objects.Player.getFirstInstance(), state)
-	},
-
-	async Game_es_Event26_Act1(runtime, localVars)
-	{
-		console.log("stopping commands")
-		
-		state.isStopped = true;
-	},
-
-	async Game_es_Event33_Act1(runtime, localVars)
+	async Game_es_Event28_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCodeBlockShadowToShow(
 			runtime.objects.CodeBlock.getFirstPickedInstance(), 
@@ -253,42 +237,42 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event35_Act4(runtime, localVars)
+	async Game_es_Event30_Act4(runtime, localVars)
 	{
 		expandCodeBlockShadowContainer(
 			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event44_Act1(runtime, localVars)
+	async Game_es_Event39_Act1(runtime, localVars)
 	{
 		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
 	},
 
-	async Game_es_Event52_Act1(runtime, localVars)
+	async Game_es_Event48_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event55_Act1(runtime, localVars)
+	async Game_es_Event51_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event57_Act1(runtime, localVars)
+	async Game_es_Event53_Act1(runtime, localVars)
 	{
 		const condition = runtime.objects.RepeatCommandCondition
 			.getFirstPickedInstance().evaluate();
 		pickedCommand.setRepeatCondition(condition);
 	},
 
-	async Game_es_Event58_Act1(runtime, localVars)
+	async Game_es_Event54_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event59_Act1(runtime, localVars)
+	async Game_es_Event55_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(
 			runtime.objects.CodeBlock
@@ -297,19 +281,35 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event109_Act1(runtime, localVars)
+	async Game_es_Event105_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(getVariables());
 	},
 
-	async Game_es_Event113_Act5(runtime, localVars)
+	async Game_es_Event109_Act6(runtime, localVars)
 	{
 		setupLevel(runtime);
 	},
 
-	async Game_es_Event121_Act1(runtime, localVars)
+	async Game_es_Event117_Act1(runtime, localVars)
 	{
 		state.isGameOver = true;
+	},
+
+	async Game_es_Event121_Act1(runtime, localVars)
+	{
+		console.log("running commands")
+		
+		resetState(runtime.globalVars.level);
+		
+		runner.run(runtime.objects.Player.getFirstInstance(), state)
+	},
+
+	async Game_es_Event122_Act1(runtime, localVars)
+	{
+		console.log("stopping commands")
+		
+		state.isStopped = true;
 	},
 
 	async Game_es_Event129_Act5(runtime, localVars)

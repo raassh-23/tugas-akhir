@@ -59,7 +59,7 @@ export default class RepeatCommand extends CommandsContainer {
                 if (child.instVars.id === "repeat-icon") {
                     this.offsetStart = child.width;
                 }
-                
+
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this.highlightedObjects.push(child);
@@ -76,7 +76,10 @@ export default class RepeatCommand extends CommandsContainer {
      */
     async run(player, state) {
         try {
-            const repeatCount = math.evaluate(this.#repeatCondition, state.variables);
+            const cleanedRepeatCondition = this.#repeatCondition
+                .replace(/%/g, 'mod')
+                .replace(/x/g, '*');
+            const repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
             this.text.text = repeatCount.toString();
 
             for (let i = 0; i < repeatCount; i++) {
@@ -85,17 +88,17 @@ export default class RepeatCommand extends CommandsContainer {
                 const result = await super.run(player, state);
 
                 if (result !== FINISHED) {
-                    this.text.text = this.#repeatCondition;
+                    this.text.text = this.#repeatCondition.replace(/ /g, '');
                     return result;
                 }
             }
 
-            this.text.text = this.#repeatCondition;
+            this.text.text = this.#repeatCondition.replace(/ /g, '');
         } catch (error) {
             console.log(error);
-            super.showError(true);
+            this.showError(true);
 
-            this.text.text = this.#repeatCondition;
+            this.text.text = this.#repeatCondition.replace(/ /g, '');
 
             return ERROR
         }
@@ -144,8 +147,8 @@ export default class RepeatCommand extends CommandsContainer {
             this.#repeatCondition = condition;
         }
 
-        super.showError(false);
-        this.text.text = this.#repeatCondition;
+        this.showError(false);
+        this.text.text = this.#repeatCondition.replace(/ /g, '');
     }
 
     /**
@@ -206,5 +209,30 @@ export default class RepeatCommand extends CommandsContainer {
         const finalWidth = 2 * MARGIN + this.offsetStart + childWidth;
 
         return finalWidth <= this.minLength ? this.minLength : finalWidth;
+    }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showError(show) {
+        console.log("show error", show);
+
+        for (const child of this.highlightedObjects) {
+            if (child.instVars.id === "repeat-icon") {
+                child.animationFrame = show ? 1 : 0;
+                console.log(child);
+                console.log(`animationFrame should be ${show ? 1 : 0}`);
+                continue;
+            }
+
+            if (child.instVars.id === "repeat-pop-up") {
+                child.animationFrame = show ? 3 : 2;
+                console.log(child);
+                console.log(`animationFrame should be ${show ? 3 : 2}`);
+
+            }
+        }
+
     }
 }

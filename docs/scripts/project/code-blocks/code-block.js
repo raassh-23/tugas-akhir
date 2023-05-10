@@ -31,6 +31,11 @@ export default class CodeBlock extends ISpriteInstance {
     savedHeight = 0;
 
     /**
+     * @type {string}
+     */
+    originalAnimationName = "";
+
+    /**
      * 
      * @param {string} name 
      */
@@ -47,6 +52,8 @@ export default class CodeBlock extends ISpriteInstance {
                 this.codeBlockShadows.push(child);
             }
         }
+
+        this.originalAnimation = this.animationName;
     }
 
     /**
@@ -134,12 +141,26 @@ export default class CodeBlock extends ISpriteInstance {
      * @param {boolean} show 
      */
     showError(show) {
-        const newColor = show ? [1, 0.5, 0.5] : [1, 1, 1];
+        // const newColor = show ? [1, 0.5, 0.5] : [1, 1, 1];
 
-        this.colorRgb = newColor;
-        this.highlightedObjects.forEach((object) => {
-            object.colorRgb = newColor;
-        });
+        // this.colorRgb = newColor;
+        // this.highlightedObjects.forEach((object) => {
+        //     object.colorRgb = newColor;
+        // });
+        
+        const newAnimationName = show ? 
+            `${this.originalAnimation}Error` :
+            this.originalAnimation;
+
+        if (this.animation.name === newAnimationName) {
+            return
+        }
+
+        if (this.getAnimation(newAnimationName) === null) {
+            return;
+        }
+
+        this.setAnimation(newAnimationName, "current-frame");
     }
 
     reset() {

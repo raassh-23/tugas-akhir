@@ -1,6 +1,6 @@
 import BaseExpression from "./base-expression.js";
 
-const operators = ["+", "-", "*", "/", "%", "(", ")"];
+const operators = ["+", "-", "x", "/", "%", "(", ")"];
 
 /**
  * @extends CodeBlock
@@ -11,6 +11,6 @@ export default class OperatorBlock extends BaseExpression {
     }
 
     evaluate() {
-        return operators[this.animationFrame];
+        return ` ${operators[this.animationFrame]} `;
     }
 }
