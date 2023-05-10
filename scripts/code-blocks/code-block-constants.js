@@ -1,4 +1,4 @@
-export const MARGIN = 16;
+export const MARGIN = 32;
 
 export const MAX_LEVEL = 5;
 

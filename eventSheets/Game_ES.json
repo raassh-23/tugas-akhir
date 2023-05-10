@@ -334,6 +334,16 @@
 					"sid": 601895820222359,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "newWidth",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 637802356768460
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -355,19 +365,28 @@
 							],
 							"actions": [
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 401950930302414,
+									"parameters": {
+										"variable": "newWidth",
+										"value": "Functions.getExpectedWidth(CodeBlockShadow.level)"
+									}
+								},
+								{
 									"callFunction": "ShowCodeBlockShadow",
-									"sid": 990815233060792,
+									"sid": 792023197890375,
 									"parameters": [
 										"CodeBlockShadow.UID",
-										"Functions.getExpectedWidth(CodeBlockShadow.level)"
+										"newWidth"
 									]
 								},
 								{
 									"callFunction": "ShiftActiveCodeBlocks",
-									"sid": 622650371976368,
+									"sid": 935440256702335,
 									"parameters": [
 										"CodeBlockShadow.X",
-										"Functions.getExpectedWidth(CodeBlockShadow.level)",
+										"newWidth",
 										"CodeBlock.panelId"
 									]
 								}

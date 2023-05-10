@@ -167,7 +167,7 @@
 			"CodeBlockShadow",
 			"CodeBlockButton",
 			"CodeBlockDecoration",
-			"NestedCodeBlockBackground",
+			"NestedCodeBlockBackgroundOld",
 			"Blank",
 			"CodeBlockText",
 			"SolidObstacle",
@@ -178,7 +178,8 @@
 			"LeaderboardContainer",
 			"AJAX",
 			"UIPanel",
-			"CodeBlockPanelBorder"
+			"CodeBlockPanelBorder",
+			"NestedCodeBlockBackground"
 		],
 		"subfolders": [
 			{
@@ -227,7 +228,7 @@
 		"items": [
 			"TestLevel",
 			"Menu",
-			"ObjectRepository"
+			"NestedCodeBlockBackgroundNew"
 		],
 		"subfolders": []
 	},
