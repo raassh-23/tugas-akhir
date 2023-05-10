@@ -95,8 +95,8 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 943394536933240,
+							"objectClass": "UIPanel",
+							"sid": 604812891074261,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -111,7 +111,7 @@
 							"sid": 625954136692870,
 							"behaviorType": "Pin",
 							"parameters": {
-								"pin-to": "UIPanel2",
+								"pin-to": "UIPanel",
 								"x": true,
 								"y": true,
 								"angle": true,
@@ -214,8 +214,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "UIPanel2",
-									"sid": 620127108805552,
+									"objectClass": "UIPanel",
+									"sid": 433377385777213,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -233,7 +233,7 @@
 								},
 								{
 									"id": "tween-two-properties",
-									"objectClass": "UIPanel2",
+									"objectClass": "UIPanel",
 									"sid": 215887952403206,
 									"behaviorType": "Tween",
 									"parameters": {
@@ -276,8 +276,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "UIPanel2",
-									"sid": 869106940472748,
+									"objectClass": "UIPanel",
+									"sid": 626612913249267,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -288,7 +288,7 @@
 							"actions": [
 								{
 									"id": "tween-two-properties",
-									"objectClass": "UIPanel2",
+									"objectClass": "UIPanel",
 									"sid": 949354502966525,
 									"behaviorType": "Tween",
 									"parameters": {

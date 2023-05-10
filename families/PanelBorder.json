@@ -1,0 +1,19 @@
+{
+	"name": "PanelBorder",
+	"plugin-id": "NinePatch",
+	"sid": 341354373227003,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 733789153346255
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"CodeBlockPanelBorder"
+	]
+}

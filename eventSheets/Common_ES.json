@@ -33,7 +33,7 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "TweenPanel",
+					"objectClass": "Panel",
 					"sid": 149961488212962,
 					"parameters": {
 						"instance-variable": "originX",
@@ -42,7 +42,7 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "TweenPanel",
+					"objectClass": "Panel",
 					"sid": 579506427017753,
 					"parameters": {
 						"instance-variable": "originY",

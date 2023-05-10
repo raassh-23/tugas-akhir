@@ -523,6 +523,39 @@
 			"global": false
 		},
 		{
+			"name": "PanelBorder",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 777428125281436,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "UI",
 			"overriden": 0,
 			"subLayers": [
@@ -532,12 +565,12 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "UIPanel",
+							"type": "CodeBlockPanel",
 							"properties": {
-								"left-margin": 16,
-								"right-margin": 16,
-								"top-margin": 16,
-								"bottom-margin": 16,
+								"left-margin": 45,
+								"right-margin": 45,
+								"top-margin": 45,
+								"bottom-margin": 45,
 								"edges": "stretch",
 								"fill": "stretch",
 								"initially-visible": true,
@@ -578,6 +611,21 @@
 											"d": true,
 											"sm": "normal"
 										}
+									},
+									{
+										"uid": 120,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
 									}
 								],
 								"flags": {
@@ -606,7 +654,7 @@
 								}
 							},
 							"world": {
-								"x": 203,
+								"x": 206,
 								"y": 492,
 								"width": 852.8431207097119,
 								"height": 185.12494995995996,
@@ -633,8 +681,8 @@
 							},
 							"uid": 16,
 							"instanceVariables": {
-								"min": 205,
-								"max": 205,
+								"min": 226,
+								"max": 226,
 								"initialLength": 0,
 								"id": "active-commands",
 								"direction": "horizontal",
@@ -700,10 +748,10 @@
 								}
 							},
 							"world": {
-								"x": 205,
-								"y": 495,
-								"width": 847.918960992306,
-								"height": 178.3663337529823,
+								"x": 226,
+								"y": 497.5771059841607,
+								"width": 812.6411136822529,
+								"height": 174.7231260462924,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -774,8 +822,8 @@
 								}
 							},
 							"world": {
-								"x": 237,
-								"y": 586,
+								"x": 242,
+								"y": 585,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -837,8 +885,8 @@
 								}
 							},
 							"world": {
-								"x": 333,
-								"y": 586,
+								"x": 338,
+								"y": 585,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -889,12 +937,12 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "UIPanel",
+							"type": "CodeBlockPanel",
 							"properties": {
-								"left-margin": 16,
-								"right-margin": 16,
-								"top-margin": 16,
-								"bottom-margin": 16,
+								"left-margin": 45,
+								"right-margin": 45,
+								"top-margin": 45,
+								"bottom-margin": 45,
 								"edges": "stretch",
 								"fill": "stretch",
 								"initially-visible": true,
@@ -917,11 +965,56 @@
 									}
 								}
 							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 28,
+								"children": [
+									{
+										"uid": 121,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
 							"world": {
 								"x": 1094,
 								"y": 130.49642699975377,
 								"width": 158,
-								"height": 545.7728901834936,
+								"height": 547.2433293409347,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -945,8 +1038,8 @@
 							},
 							"uid": 27,
 							"instanceVariables": {
-								"min": 65.300983,
-								"max": 132.760264,
+								"min": 85.665868,
+								"max": 160.117078,
 								"initialLength": 0,
 								"id": "available-commands",
 								"direction": "vertical",
@@ -1072,10 +1165,10 @@
 								}
 							},
 							"world": {
-								"x": 1095.364807442933,
-								"y": 132.76026375715645,
-								"width": 155.07584028259407,
-								"height": 611.9656349262704,
+								"x": 1096.5753531437883,
+								"y": 160.11707771279612,
+								"width": 151.11063700037744,
+								"height": 562.4106661781983,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -1101,7 +1194,8 @@
 							"instanceVariables": {
 								"commandName": "MoveCommand",
 								"commandFrame": 0,
-								"panelId": "active-commands-panel"
+								"panelId": "active-commands-panel",
+								"inactiveLayer": "UI"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1134,7 +1228,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 211.89818041733207,
+								"y": 222.67963370878994,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1163,7 +1257,8 @@
 							"instanceVariables": {
 								"commandName": "MoveCommand",
 								"commandFrame": 1,
-								"panelId": "active-commands-panel"
+								"panelId": "active-commands-panel",
+								"inactiveLayer": "UI"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1196,7 +1291,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 318.89818041733207,
+								"y": 329.67963370878994,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1225,7 +1320,8 @@
 							"instanceVariables": {
 								"commandName": "MoveCommand",
 								"commandFrame": 2,
-								"panelId": "active-commands-panel"
+								"panelId": "active-commands-panel",
+								"inactiveLayer": "UI"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1258,7 +1354,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 428.89818041733207,
+								"y": 439.67963370878994,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1287,7 +1383,8 @@
 							"instanceVariables": {
 								"commandName": "MoveCommand",
 								"commandFrame": 3,
-								"panelId": "active-commands-panel"
+								"panelId": "active-commands-panel",
+								"inactiveLayer": "UI"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1320,7 +1417,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 546.898180417332,
+								"y": 549.8725973309932,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1349,7 +1446,8 @@
 							"instanceVariables": {
 								"commandName": "RepeatCommand",
 								"commandFrame": 0,
-								"panelId": "active-commands-panel"
+								"panelId": "active-commands-panel",
+								"inactiveLayer": "UI"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1382,7 +1480,7 @@
 							},
 							"world": {
 								"x": 1126,
-								"y": 668.898180417332,
+								"y": 658.0906123147922,
 								"width": 96,
 								"height": 96,
 								"originX": 0,
@@ -1624,6 +1722,132 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "CodeBlockPanelBorder",
+					"properties": {
+						"left-margin": 45,
+						"right-margin": 45,
+						"top-margin": 45,
+						"bottom-margin": 45,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 120,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 4,
+						"uid": 120,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 206,
+						"y": 492,
+						"width": 852.843121,
+						"height": 185.12495,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CodeBlockPanelBorder",
+					"properties": {
+						"left-margin": 45,
+						"right-margin": 45,
+						"top-margin": 45,
+						"bottom-margin": 45,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 121,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 28,
+						"uid": 121,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1094,
+						"y": 130.496427,
+						"width": 158,
+						"height": 547.243329,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 570417671441109,
@@ -1765,7 +1989,7 @@
 					"global": false
 				},
 				{
-					"name": "PopUpFront",
+					"name": "PopUpMiddle",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
@@ -1796,16 +2020,49 @@
 					"blendMode": "normal",
 					"zElevation": 0,
 					"global": false
+				},
+				{
+					"name": "PopUpFront",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [],
+					"sid": 639057892408843,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
 				}
 			],
 			"instances": [
 				{
-					"type": "UIPanel",
+					"type": "CodeBlockPanel",
 					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
+						"left-margin": 45,
+						"right-margin": 45,
+						"top-margin": 45,
+						"bottom-margin": 45,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,
@@ -2798,91 +3055,441 @@
 		{
 			"name": "RepeatPopUp",
 			"overriden": 0,
-			"subLayers": [],
-			"instances": [
+			"subLayers": [
 				{
-					"type": "UIPanel",
-					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "stretch",
-						"fill": "stretch",
-						"initially-visible": true,
-						"origin": "top-left",
-						"seams": "overlap"
-					},
-					"uid": 72,
-					"instanceVariables": {
-						"originX": 0,
-						"originY": 0,
-						"targetX": 0,
-						"targetY": 0,
-						"duration": 0.5,
-						"id": "available-commands-panel"
-					},
-					"behaviors": {
-						"Tween": {
+					"name": "RepeatPopUpCodeBlocks",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "CodeBlockPanel",
 							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 996,
-						"y": 45,
-						"width": 256,
-						"height": 631.2693171832474,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ScrollablePanel",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 75,
-					"instanceVariables": {
-						"min": -315,
-						"max": 47,
-						"initialLength": 0,
-						"id": "available-numbers",
-						"direction": "vertical",
-						"initialMin": 0,
-						"initialMax": 0
-					},
-					"behaviors": {
-						"DragDrop": {
-							"properties": {
-								"axes": "both",
-								"enabled": true
+								"left-margin": 45,
+								"right-margin": 45,
+								"top-margin": 45,
+								"bottom-margin": 45,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top-left",
+								"seams": "overlap"
+							},
+							"uid": 72,
+							"instanceVariables": {
+								"originX": 0,
+								"originY": 0,
+								"targetX": 0,
+								"targetY": 0,
+								"duration": 0.5,
+								"id": "repeat-available-code-blocks--panel"
+							},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
+							"world": {
+								"x": 996,
+								"y": 45,
+								"width": 256,
+								"height": 631.2693171832474,
+								"originX": 0,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
 							}
 						},
-						"Tween": {
+						{
+							"type": "ScrollablePanel",
 							"properties": {
-								"enabled": true
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 75,
+							"instanceVariables": {
+								"min": -326.525251,
+								"max": 74.648972,
+								"initialLength": 0,
+								"id": "available-numbers",
+								"direction": "vertical",
+								"initialMin": 0,
+								"initialMax": 0
+							},
+							"behaviors": {
+								"DragDrop": {
+									"properties": {
+										"axes": "both",
+										"enabled": true
+									}
+								},
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 75,
+								"children": [
+									{
+										"uid": 48,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 50,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 51,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 52,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 53,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 62,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 63,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 64,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 65,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 66,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 77,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 78,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 82,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 83,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 84,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 85,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 86,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 89,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									},
+									{
+										"uid": 91,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": false,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 995.1173439932611,
+								"y": 74.64897249283274,
+								"width": 256.41323204993387,
+								"height": 973.3701948639113,
+								"originX": 0,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
 							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": null,
-						"uid": 75,
-						"children": [
-							{
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 48,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 0,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 48,
 								"flags": {
 									"x": true,
@@ -2895,9 +3502,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 131.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 50,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 2,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 50,
 								"flags": {
 									"x": true,
@@ -2910,9 +3565,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 226.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 4,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 51,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 4,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 51,
 								"flags": {
 									"x": true,
@@ -2925,9 +3628,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 321.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 6,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 52,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 6,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 52,
 								"flags": {
 									"x": true,
@@ -2940,9 +3691,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 415.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 8,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 53,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 8,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 53,
 								"flags": {
 									"x": true,
@@ -2955,9 +3754,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 510.835130474079,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 62,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 1,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 62,
 								"flags": {
 									"x": true,
@@ -2970,9 +3817,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 131.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 3,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 63,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 3,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 63,
 								"flags": {
 									"x": true,
@@ -2985,9 +3880,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 226.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 5,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 64,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 5,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 64,
 								"flags": {
 									"x": true,
@@ -3000,9 +3943,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 321.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 7,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 65,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 7,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 65,
 								"flags": {
 									"x": true,
@@ -3015,9 +4006,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 415.83513047407905,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Number",
+								"initial-frame": 9,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 66,
+							"instanceVariables": {
+								"commandName": "NumberBlock",
+								"commandFrame": 9,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 66,
 								"flags": {
 									"x": true,
@@ -3030,9 +4069,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 510.835130474079,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 77,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 0,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 77,
 								"flags": {
 									"x": true,
@@ -3045,9 +4132,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 605.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 2,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 78,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 2,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 78,
 								"flags": {
 									"x": true,
@@ -3060,9 +4195,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 700.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 4,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 82,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 4,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 82,
 								"flags": {
 									"x": true,
@@ -3075,9 +4258,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 794.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 6,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 83,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 6,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 83,
 								"flags": {
 									"x": true,
@@ -3090,9 +4321,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 889.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 84,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 1,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 84,
 								"flags": {
 									"x": true,
@@ -3105,9 +4384,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 605.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 3,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 85,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 3,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 85,
 								"flags": {
 									"x": true,
@@ -3120,9 +4447,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 700.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Operator",
+								"initial-frame": 5,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 86,
+							"instanceVariables": {
+								"commandName": "OperatorBlock",
+								"commandFrame": 5,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 86,
 								"flags": {
 									"x": true,
@@ -3135,9 +4510,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 794.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Variable",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 89,
+							"instanceVariables": {
+								"commandName": "VariableBlock",
+								"commandFrame": 0,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 89,
 								"flags": {
 									"x": true,
@@ -3150,9 +4573,57 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
-							{
+							"world": {
+								"x": 1135.750698115673,
+								"y": 889.8351304740789,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
+							}
+						},
+						{
+							"type": "CodeBlockButton",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Variable",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 91,
+							"instanceVariables": {
+								"commandName": "VariableBlock",
+								"commandFrame": 1,
+								"panelId": "",
+								"inactiveLayer": "RepeatPopUp"
+							},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 75,
 								"uid": 91,
 								"flags": {
 									"x": true,
@@ -3165,9 +4636,90 @@
 									"v": false,
 									"d": true,
 									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
+							},
+							"world": {
+								"x": 1036.6131451142041,
+								"y": 987.4559713801312,
+								"width": 72,
+								"height": 72,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0,
+								"blendMode": "source-atop"
 							}
-						],
+						}
+					],
+					"sid": 890687001839345,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 0,
+					"parallaxY": 0,
+					"scaleRate": 1,
+					"forceOwnTexture": true,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				}
+			],
+			"instances": [
+				{
+					"type": "CodeBlockPanelBorder",
+					"properties": {
+						"left-margin": 45,
+						"right-margin": 45,
+						"top-margin": 45,
+						"bottom-margin": 45,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 29,
+					"instanceVariables": {
+						"id": "repeat-available-code-blocks--panel"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 29,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3194,10 +4746,10 @@
 						}
 					},
 					"world": {
-						"x": 994.0758402825941,
-						"y": 47,
+						"x": 996,
+						"y": 45,
 						"width": 256,
-						"height": 989.8972072215068,
+						"height": 631.269317,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -3208,1184 +4760,6 @@
 						],
 						"angle": 0,
 						"zElevation": 0
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 48,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 0,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 48,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 113,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 2,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 50,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 2,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 50,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 208,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 4,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 51,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 4,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 51,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 303,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 6,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 52,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 6,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 52,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 397,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 8,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 53,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 8,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 53,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 492,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 62,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 1,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 62,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 113,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 3,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 63,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 3,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 63,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 208,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 5,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 64,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 5,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 64,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 303,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 7,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 65,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 7,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 65,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 397,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Number",
-						"initial-frame": 9,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 66,
-					"instanceVariables": {
-						"commandName": "NumberBlock",
-						"commandFrame": 9,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 66,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 492,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 77,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 0,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 77,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 587,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 2,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 78,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 2,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 78,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 682,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 4,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 82,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 4,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 82,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 776,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 6,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 83,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 6,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 83,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 871,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 84,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 1,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 84,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 587,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 3,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 85,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 3,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 85,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 682,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Operator",
-						"initial-frame": 5,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 86,
-					"instanceVariables": {
-						"commandName": "OperatorBlock",
-						"commandFrame": 5,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 86,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 776,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Variable",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 89,
-					"instanceVariables": {
-						"commandName": "VariableBlock",
-						"commandFrame": 0,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 89,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1137,
-						"y": 871,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
-					}
-				},
-				{
-					"type": "CodeBlockButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Variable",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 91,
-					"instanceVariables": {
-						"commandName": "VariableBlock",
-						"commandFrame": 1,
-						"panelId": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 75,
-						"uid": 91,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1034,
-						"y": 968.6208409060523,
-						"width": 72,
-						"height": 72,
-						"originX": 0,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0,
-						"blendMode": "source-atop"
 					}
 				}
 			],
@@ -4409,7 +4783,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 1,
-			"forceOwnTexture": true,
+			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

@@ -1,5 +1,5 @@
 {
-	"name": "TweenPanel",
+	"name": "Panel",
 	"plugin-id": "NinePatch",
 	"sid": 100897926733590,
 	"instanceVariables": [
@@ -37,6 +37,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 828264818619297
+		},
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 704494297956516
 		}
 	],
 	"behaviorTypes": [
@@ -48,7 +55,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"UIPanel",
-		"UIPanel2"
+		"CodeBlockPanel",
+		"UIPanel"
 	]
 }

@@ -376,12 +376,12 @@
 			],
 			"instances": [
 				{
-					"type": "UIPanel2",
+					"type": "UIPanel",
 					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
+						"left-margin": 65,
+						"right-margin": 65,
+						"top-margin": 65,
+						"bottom-margin": 65,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,

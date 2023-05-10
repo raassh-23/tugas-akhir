@@ -160,7 +160,7 @@
 		"items": [
 			"GridBackground",
 			"Player",
-			"UIPanel",
+			"CodeBlockPanel",
 			"Button",
 			"UIText",
 			"ScrollablePanel",
@@ -177,7 +177,8 @@
 			"TextInputName",
 			"LeaderboardContainer",
 			"AJAX",
-			"UIPanel2"
+			"UIPanel",
+			"CodeBlockPanelBorder"
 		],
 		"subfolders": [
 			{
@@ -216,8 +217,9 @@
 			"HSLEffects",
 			"ResetObjects",
 			"Text",
-			"TweenPanel",
-			"Clickable"
+			"Panel",
+			"Clickable",
+			"PanelBorder"
 		],
 		"subfolders": []
 	},

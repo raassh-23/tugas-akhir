@@ -24,6 +24,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 116050780323132
+		},
+		{
+			"name": "inactiveLayer",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 566506984533156
 		}
 	],
 	"behaviorTypes": [],

@@ -1,7 +1,7 @@
 {
-	"name": "UIPanel",
+	"name": "CodeBlockPanel",
 	"plugin-id": "NinePatch",
-	"sid": 861730632761298,
+	"sid": 964467181793578,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7724651,
+		"imageSpriteId": 1937754,
 		"useCollisionPoly": true
 	}
 }

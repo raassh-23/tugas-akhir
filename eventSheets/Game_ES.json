@@ -146,10 +146,10 @@
 					"actions": [
 						{
 							"callFunction": "CreateNewCodeBlockObject",
-							"sid": 877951979428640,
+							"sid": 899446160182921,
 							"parameters": [
 								"CodeBlockButton.commandName",
-								"CodeBlockButton.LayerName",
+								"CodeBlockButton.inactiveLayer",
 								"CodeBlockButton.panelId",
 								"CodeBlockButton.X",
 								"CodeBlockButton.Y",
@@ -341,7 +341,7 @@
 									"objectClass": "CodeBlock",
 									"sid": 449688868599534,
 									"parameters": {
-										"object": "UIPanel"
+										"object": "CodeBlockPanel"
 									}
 								},
 								{
@@ -424,7 +424,7 @@
 									"objectClass": "CodeBlock",
 									"sid": 698934258384565,
 									"parameters": {
-										"object": "UIPanel"
+										"object": "CodeBlockPanel"
 									}
 								},
 								{
@@ -844,8 +844,8 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "UIPanel",
-											"sid": 950349078233028,
+											"objectClass": "CodeBlockPanel",
+											"sid": 507126350410062,
 											"parameters": {
 												"instance-variable": "id",
 												"comparison": 0,
@@ -860,7 +860,7 @@
 											"sid": 608468958125916,
 											"parameters": {
 												"instance-variable": "activeLayer",
-												"value": "UIPanel.LayerName"
+												"value": "CodeBlockPanel.LayerName"
 											}
 										}
 									],
@@ -882,8 +882,8 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "UIPanel",
-							"sid": 571618387399834,
+							"objectClass": "CodeBlockPanel",
+							"sid": 509196334035074,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -892,7 +892,7 @@
 						},
 						{
 							"id": "pick-children",
-							"objectClass": "UIPanel",
+							"objectClass": "CodeBlockPanel",
 							"sid": 277210527820270,
 							"parameters": {
 								"child": "CodeBlockShadow",
@@ -1341,12 +1341,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 838117101935184,
+							"sid": 283864604088749,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"PopUpBack\"",
-								"x": "215",
-								"y": "195",
+								"x": "171",
+								"y": "147.5",
 								"create-hierarchy": true,
 								"template-name": "\"repeat-panel\""
 							}
@@ -1360,7 +1360,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIPanel",
-									"sid": 481065218872076,
+									"sid": 168615446165532,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -1372,7 +1372,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "UIPanel",
-									"sid": 828112386627803,
+									"sid": 470359354072858,
 									"parameters": {
 										"instance-variable": "id",
 										"value": "\"repeat-panel-\" & CommandUID"
@@ -1386,8 +1386,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 763532585434661,
+									"objectClass": "CodeBlockPanel",
+									"sid": 685642087681864,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -1398,8 +1398,8 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "UIPanel",
-									"sid": 629129955692020,
+									"objectClass": "CodeBlockPanel",
+									"sid": 111975298158085,
 									"parameters": {
 										"instance-variable": "id",
 										"value": "\"repeat-panel-input-background-\" & CommandUID"
@@ -1407,14 +1407,49 @@
 								},
 								{
 									"id": "move-to-layer",
-									"objectClass": "UIPanel",
-									"sid": 365417035763527,
+									"objectClass": "CodeBlockPanel",
+									"sid": 554643274554755,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								}
+							],
+							"sid": 402514067970354
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 531174063072217,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"repeat-panel-input-background\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 669078501703119,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"repeat-panel-input-background-\" & CommandUID"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 447806536455560,
 									"parameters": {
 										"layer": "\"PopUpFront\""
 									}
 								}
 							],
-							"sid": 402514067970354
+							"sid": 882971274949095
 						},
 						{
 							"eventType": "block",
@@ -1433,9 +1468,9 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "ScrollablePanel",
-									"sid": 321655473390778,
+									"sid": 740259063005074,
 									"parameters": {
-										"layer": "\"PopUpFront\""
+										"layer": "\"PopUpMiddle\""
 									}
 								},
 								{
@@ -1489,9 +1524,9 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "RepeatCommandCondition",
-									"sid": 833948317793055,
+									"sid": 471350750791722,
 									"parameters": {
-										"layer": "\"PopUpFront\""
+										"layer": "\"PopUpMiddle\""
 									}
 								}
 							],
@@ -1514,9 +1549,9 @@
 								{
 									"id": "move-to-layer",
 									"objectClass": "CodeBlockShadow",
-									"sid": 489912784564372,
+									"sid": 142585286047242,
 									"parameters": {
-										"layer": "\"PopUpFront\""
+										"layer": "\"PopUpMiddle\""
 									}
 								}
 							],
@@ -1614,7 +1649,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "UIPanel",
-											"sid": 169798839097104,
+											"sid": 445946976752879,
 											"parameters": {
 												"instance-variable": "id",
 												"comparison": 0,
@@ -1626,9 +1661,9 @@
 										{
 											"id": "set-y",
 											"objectClass": "UIPanel",
-											"sid": 977843449994301,
+											"sid": 167252576436999,
 											"parameters": {
-												"y": "195"
+												"y": "147.5"
 											}
 										}
 									],
@@ -1640,9 +1675,9 @@
 										{
 											"id": "is-on-layer",
 											"objectClass": "CodeBlockButton",
-											"sid": 317715571403065,
+											"sid": 420052228517981,
 											"parameters": {
-												"layer": "\"RepeatPopUp\""
+												"layer": "\"RepeatPopUpCodeBlocks\""
 											}
 										}
 									],
@@ -1709,7 +1744,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "UIPanel",
-											"sid": 221769976074678,
+											"sid": 204438038717917,
 											"parameters": {
 												"instance-variable": "id",
 												"comparison": 0,
@@ -2061,7 +2096,7 @@
 									"objectClass": "Touch",
 									"sid": 517000797714432,
 									"parameters": {
-										"object": "UIPanel"
+										"object": "CodeBlockPanel"
 									},
 									"isInverted": true
 								},
@@ -3804,8 +3839,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 640231245237336,
+									"objectClass": "CodeBlockPanel",
+									"sid": 990968276634318,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -3820,7 +3855,7 @@
 									"sid": 230956525997632,
 									"behaviorType": "Pin",
 									"parameters": {
-										"pin-to": "UIPanel",
+										"pin-to": "CodeBlockPanel",
 										"x": true,
 										"y": true,
 										"angle": true,
@@ -3936,8 +3971,8 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "UIPanel",
-									"sid": 257131551103677,
+									"objectClass": "CodeBlockPanel",
+									"sid": 245718366881647,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -3948,7 +3983,7 @@
 							"actions": [
 								{
 									"id": "tween-two-properties",
-									"objectClass": "UIPanel",
+									"objectClass": "CodeBlockPanel",
 									"sid": 591399102962713,
 									"behaviorType": "Tween",
 									"parameters": {

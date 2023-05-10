@@ -52,6 +52,7 @@ export default class RunnerCommand extends CommandsContainer {
     expand(width = 0) {
         if (this.parent == null) {
             this.parent = this.getParent();
+            console.log(this.parent);
         }
 
         const newWidth = 2 * MARGIN + this.width + width
