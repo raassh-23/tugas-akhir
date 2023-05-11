@@ -17,6 +17,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "USERNAME_TAG",
+			"type": "string",
+			"initialValue": "username",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 510098358535263
+		},
+		{
+			"eventType": "variable",
 			"name": "LEADERBOARD_TWEEN_TAG",
 			"type": "string",
 			"initialValue": "leaderboard",
@@ -24,6 +34,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 961199557566402
+		},
+		{
+			"eventType": "variable",
+			"name": "versionText",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 337356531335739
 		},
 		{
 			"eventType": "block",
@@ -55,6 +75,14 @@
 					}
 				},
 				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 900754253314743,
+					"parameters": {
+						"key": "USERNAME_TAG"
+					}
+				},
+				{
 					"callFunction": "showMenuPopUp",
 					"sid": 631772526945743,
 					"parameters": [
@@ -80,11 +108,20 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 939712208134061,
+							"parameters": {
+								"variable": "versionText",
+								"value": "\"Versi \" & projectversion"
+							}
+						},
+						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 201322949142300,
+							"sid": 297329887240854,
 							"parameters": {
-								"text": "\"Version \" & projectversion"
+								"text": "versionText"
 							}
 						}
 					],
@@ -393,11 +430,20 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 176154772533270,
+					"parameters": {
+						"variable": "versionText",
+						"value": "\"Versi \" & projectversion & \" (versi baru ditemukan, mendownload versi terbaru...)\""
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "UIText",
-					"sid": 498574082786513,
+					"sid": 615286623036491,
 					"parameters": {
-						"text": "\"Version \" & projectversion & \" (new version found, downloading...)\""
+						"text": "versionText"
 					}
 				}
 			],
@@ -414,11 +460,20 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 163549626460296,
+					"parameters": {
+						"variable": "versionText",
+						"value": "\"Versi \" & projectversion & \" (versi terbaru telah didownload, silahkan refresh untuk mengupdate!)\""
+					}
+				},
+				{
 					"id": "set-text",
 					"objectClass": "UIText",
-					"sid": 985462183177400,
+					"sid": 633329428689366,
 					"parameters": {
-						"text": "\"Version \" & projectversion & \" (new version downloaded, refresh to update)\""
+						"text": "versionText"
 					}
 				}
 			],
@@ -459,6 +514,53 @@
 				}
 			],
 			"sid": 284694020062305
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 333435874359539,
+					"parameters": {
+						"key": "USERNAME_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 243731826817877,
+					"parameters": {
+						"variable": "username",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 230300506924117
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "LocalStorage",
+					"sid": 515462121456269
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 331006245834303,
+					"parameters": {
+						"variable": "username",
+						"value": "\"\""
+					}
+				}
+			],
+			"sid": 939785179824294
 		},
 		{
 			"functionName": "GetLeaderboard",

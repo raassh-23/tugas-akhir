@@ -4477,6 +4477,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 247726835065553,
+											"parameters": {
+												"key": "USERNAME_TAG",
+												"value": "username"
+											}
+										},
+										{
 											"type": "script",
 											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tconsole.log(await leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t))\n} catch(error) {\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
 										},
