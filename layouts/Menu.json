@@ -378,10 +378,10 @@
 				{
 					"type": "UIPanel",
 					"properties": {
-						"left-margin": 65,
-						"right-margin": 65,
-						"top-margin": 65,
-						"bottom-margin": 65,
+						"left-margin": 64,
+						"right-margin": 64,
+						"top-margin": 64,
+						"bottom-margin": 64,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,

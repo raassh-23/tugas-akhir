@@ -8,13 +8,13 @@
 	"effectTypes": [],
 	"image": {
 		"width": 210,
-		"height": 210,
+		"height": 209,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7724651,
+		"imageSpriteId": 9715607,
 		"useCollisionPoly": true
 	}
 }

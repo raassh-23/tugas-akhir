@@ -9,10 +9,10 @@
 				{
 					"type": "UIPanel",
 					"properties": {
-						"left-margin": 65,
-						"right-margin": 65,
-						"top-margin": 65,
-						"bottom-margin": 65,
+						"left-margin": 64,
+						"right-margin": 64,
+						"top-margin": 64,
+						"bottom-margin": 64,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,
@@ -333,8 +333,8 @@
 						}
 					},
 					"world": {
-						"x": 319.5,
-						"y": 974,
+						"x": 522,
+						"y": 98,
 						"width": 640.843121,
 						"height": 424.976581,
 						"originX": 0,
@@ -1451,8 +1451,8 @@
 						}
 					},
 					"world": {
-						"x": 384,
-						"y": 1105,
+						"x": 586,
+						"y": 229,
 						"width": 512.8431207097119,
 						"height": 161.86428528807124,
 						"originX": 0,
@@ -1734,8 +1734,8 @@
 						}
 					},
 					"world": {
-						"x": 404,
-						"y": 1130,
+						"x": 606,
+						"y": 254,
 						"width": 473.28080165712834,
 						"height": 105.976581,
 						"originX": 0,
@@ -1806,8 +1806,8 @@
 						}
 					},
 					"world": {
-						"x": 543,
-						"y": 1015,
+						"x": 745,
+						"y": 139,
 						"width": 194,
 						"height": 84,
 						"originX": 0,
@@ -1878,8 +1878,8 @@
 						}
 					},
 					"world": {
-						"x": 397,
-						"y": 1273,
+						"x": 599,
+						"y": 397,
 						"width": 486,
 						"height": 84,
 						"originX": 0,
@@ -1952,8 +1952,8 @@
 						}
 					},
 					"world": {
-						"x": 420,
-						"y": 1187,
+						"x": 622,
+						"y": 311,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
@@ -2017,8 +2017,8 @@
 						}
 					},
 					"world": {
-						"x": 942,
-						"y": 994,
+						"x": 1144,
+						"y": 118,
 						"width": 62.5,
 						"height": 65,
 						"originX": 0.5,
@@ -2080,8 +2080,8 @@
 						}
 					},
 					"world": {
-						"x": 384,
-						"y": 1105,
+						"x": 586,
+						"y": 229,
 						"width": 512.843121,
 						"height": 161.864285,
 						"originX": 0,
@@ -2410,8 +2410,8 @@
 						}
 					},
 					"world": {
-						"x": 492,
-						"y": 1187,
+						"x": 694,
+						"y": 311,
 						"width": 72,
 						"height": 72,
 						"originX": 0,
