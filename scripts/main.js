@@ -11,12 +11,23 @@ import {
 [
 	"./lib/js/math.min.js",
 	"./lib/js/bootstrap.bundle.min.js",
-	"./lib/js/leaderboard.js"
-].forEach(src => {
+	"./lib/js/leaderboard.js",
+].forEach((src) => {
 	const script = document.createElement("script");
 	script.src = src;
 	document.head.appendChild(script);
-})
+});
+
+// temporary workaround for 
+// https://github.com/Scirra/Construct-bugs/issues/7022
+[
+	"./lib/css/bootstrap.min.css",
+].forEach((href) => {
+	const link = document.createElement("link");
+	link.href = href;
+	link.rel = "stylesheet";
+	document.head.appendChild(link);
+});
 
 runOnStartup(async runtime =>
 {
