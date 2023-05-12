@@ -4106,6 +4106,41 @@ lastTapTime=-1E4;return"double-tap"}else{lastTapX=this._x;lastTapY=this._y;lastT
 }
 
 {
+'use strict';{const C3=self.C3;C3.Plugins.LocalStorage=class LocalStoragePlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.LocalStorage.Type=class LocalStorageType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
+{const C3=self.C3;C3.Plugins.LocalStorage.Instance=class LocalStorageInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst);this._currentKey="";this._lastValue="";this._keyNamesList=[];this._errorMessage="";this._pendingGets=0;this._pendingSets=0;this._storage=this._runtime._GetProjectStorage();this._debugCache=new Map;this._isLoadingDebugCache=false}Release(){super.Release()}async _TriggerStorageError(err){this._errorMessage=this._GetErrorString(err);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnError)}_GetErrorString(err){if(!err)return"unknown error";
+else if(typeof err==="string")return err;else if(typeof err.message==="string")return err.message;else if(typeof err.name==="string")return err.name;else if(typeof err.data==="string")return err.data;else return"unknown error"}GetDebuggerProperties(){if(!this._isLoadingDebugCache)this._DebugCacheStorage();return[{title:"plugins.localstorage.name",properties:[...this._debugCache.entries()].map(entry=>({name:"$"+entry[0],value:entry[1],onedit:v=>this._storage.setItem(entry[0],v)}))}]}async _DebugCacheStorage(){this._isLoadingDebugCache=
+true;try{const keyList=await this._storage.keys();keyList.sort((a,b)=>{const la=a.toLowerCase();const lb=b.toLowerCase();if(la<lb)return-1;else if(lb<la)return 1;else return 0});const values=await Promise.all(keyList.map(key=>this._storage.getItem(key)));this._debugCache.clear();for(let i=0,len=keyList.length;i<len;++i)this._debugCache.set(keyList[i],values[i])}catch(err){console.warn("[C3 debugger] Error displaying local storage: ",err)}finally{this._isLoadingDebugCache=false}}}}
+{const C3=self.C3;C3.Plugins.LocalStorage.Cnds={OnItemSet(key){return this._currentKey===key},OnAnyItemSet(){return true},OnItemGet(key){return this._currentKey===key},OnAnyItemGet(){return true},OnItemRemoved(key){return this._currentKey===key},OnAnyItemRemoved(){return true},OnCleared(){return true},OnAllKeyNamesLoaded(){return true},OnError(){return true},OnItemExists(key){return this._currentKey===key},OnItemMissing(key){return this._currentKey===key},CompareKey(cmp,key){return C3.compare(this._currentKey,
+cmp,key)},CompareValue(cmp,v){return C3.compare(this._lastValue,cmp,v)},IsProcessingSets(){return this._pendingSets>0},IsProcessingGets(){return this._pendingGets>0},OnAllSetsComplete(){return true},OnAllGetsComplete(){return true}}}
+{const C3=self.C3;function IsExpressionType(x){return typeof x==="string"||typeof x==="number"}C3.Plugins.LocalStorage.Acts={async SetItem(key,value){this._pendingSets++;try{const valueSet=await this._storage.setItem(key,value);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=valueSet;await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemSet);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemSet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingSets--;
+if(this._pendingSets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllSetsComplete)}},async SetBinaryItem(key,objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const sdkInst=inst.GetSdkInstance();if(!sdkInst)return;const buffer=sdkInst.GetArrayBufferReadOnly();this._pendingSets++;try{await this._storage.setItem(key,buffer);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue="";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemSet);
+await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemSet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingSets--;if(this._pendingSets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllSetsComplete)}},async GetItem(key){this._pendingGets++;try{const value=await this._storage.getItem(key);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=IsExpressionType(value)?value:"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemGet);
+await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemGet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingGets--;if(this._pendingGets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllGetsComplete)}},async GetBinaryItem(key,objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const sdkInst=inst.GetSdkInstance();this._pendingGets++;try{let value=await this._storage.getItem(key);value=value instanceof ArrayBuffer?
+value:new ArrayBuffer(0);await this.ScheduleTriggers(async()=>{this._lastValue="";this._currentKey=key;sdkInst.SetArrayBufferTransfer(value);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemGet);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemGet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingGets--;if(this._pendingGets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllGetsComplete)}},async CheckItemExists(key){try{const value=await this._storage.getItem(key);
+await this.ScheduleTriggers(async()=>{this._currentKey=key;if(typeof value==="undefined"||value===null){this._lastValue="";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemMissing)}else{this._lastValue=IsExpressionType(value)?value:"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemExists)}})}catch(err){await this._TriggerStorageError(err)}},async RemoveItem(key){try{await this._storage.removeItem(key);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=
+"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemRemoved);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemRemoved)})}catch(err){await this._TriggerStorageError(err)}},async ClearStorage(){try{await this._storage.clear();await this.ScheduleTriggers(async()=>{this._currentKey="";this._lastValue="";C3.clearArray(this._keyNamesList);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnCleared)})}catch(err){await this._TriggerStorageError(err)}},async GetAllKeyNames(){try{const keyList=
+await this._storage.keys();await this.ScheduleTriggers(async()=>{this._keyNamesList=keyList;await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllKeyNamesLoaded)})}catch(err){await this._TriggerStorageError(err)}}}}{const C3=self.C3;C3.Plugins.LocalStorage.Exps={ItemValue(){return this._lastValue},Key(){return this._currentKey},KeyCount(){return this._keyNamesList.length},KeyAt(i){i=Math.floor(i);if(i<0||i>=this._keyNamesList.length)return"";return this._keyNamesList[i]},ErrorMessage(){return this._errorMessage}}};
+
+}
+
+{
+'use strict';{const C3=self.C3;C3.Plugins.AJAX=class AJAXPlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.AJAX.Type=class AJAXType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
+{const C3=self.C3;C3.Plugins.AJAX.Instance=class AJAXInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst);this._lastData="";this._curTag="";this._progress=0;this._timeout=-1;this._nextRequestHeaders=new Map;this._nextReponseBinaryData=null;this._nextRequestOverrideMimeType="";this._nwjsFs=null;this._nwjsPath=null;this._nwjsAppFolder=null;this._isNWjs=this._runtime.GetExportType()==="nwjs";if(this._isNWjs){this._nwjsFs=require("fs");this._nwjsPath=require("path");const process=
+self["process"]||nw["process"];this._nwjsAppFolder=this._nwjsPath["dirname"](process["execPath"])+"\\"}}Release(){super.Release()}async _TriggerError(tag,url,err){console.error(`[Construct] AJAX request to '${url}' (tag '${tag}') failed: `,err);this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnAnyError);this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnError)}async _TriggerComplete(tag){this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnAnyComplete);this._curTag=
+tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnComplete)}async _OnProgress(tag,e){if(!e["lengthComputable"])return;this._progress=e["loaded"]/e["total"];this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnProgress)}_OnError(tag,url,err){if(!this._isNWjs){this._TriggerError(tag,url,err);return}const fs=this._nwjsFs;const filePath=this._nwjsAppFolder+url;if(fs["existsSync"](filePath))fs["readFile"](filePath,{"encoding":"utf8"},(err2,data)=>{if(err2)this._TriggerError(tag,url,err2);else{this._lastData=
+data.replace(/\r\n/g,"\n");this._TriggerComplete(tag)}});else this._TriggerError(tag,url,err)}async _DoCordovaRequest(tag,file){const assetManager=this._runtime.GetAssetManager();const binaryData=this._nextReponseBinaryData;this._nextReponseBinaryData=null;try{if(binaryData){const buffer=await assetManager.CordovaFetchLocalFileAsArrayBuffer(file);binaryData.SetArrayBufferTransfer(buffer);this._lastData="";this._TriggerComplete(tag)}else{const data=await assetManager.CordovaFetchLocalFileAsText(file);
+this._lastData=data.replace(/\r\n/g,"\n");this._TriggerComplete(tag)}}catch(err){this._TriggerError(tag,file,err)}}_DoRequest(tag,url,method,data){return new Promise(resolve=>{const errorFunc=err=>{this._OnError(tag,url,err);resolve()};const binaryData=this._nextReponseBinaryData;this._nextReponseBinaryData=null;try{const request=new XMLHttpRequest;request.onreadystatechange=()=>{if(request.readyState===4){if(binaryData)this._lastData="";else this._lastData=(request.responseText||"").replace(/\r\n/g,
+"\n");if(request.status>=400)this._TriggerError(tag,url,request.status+request.statusText);else{const hasData=this._lastData.length||binaryData&&request.response instanceof ArrayBuffer;if((!this._isNWjs||hasData)&&!(!this._isNWjs&&request.status===0&&!hasData)){if(binaryData)binaryData.SetArrayBufferTransfer(request.response);this._TriggerComplete(tag)}}resolve()}};request.onerror=errorFunc;request.ontimeout=errorFunc;request.onabort=errorFunc;request["onprogress"]=e=>this._OnProgress(tag,e);request.open(method,
+url);if(this._timeout>=0&&typeof request["timeout"]!=="undefined")request["timeout"]=this._timeout;request.responseType=binaryData?"arraybuffer":"text";if(data&&!this._nextRequestHeaders.has("Content-Type"))if(typeof data!=="string")request["setRequestHeader"]("Content-Type","application/octet-stream");else request["setRequestHeader"]("Content-Type","application/x-www-form-urlencoded");for(const [header,value]of this._nextRequestHeaders)try{request["setRequestHeader"](header,value)}catch(err){console.error(`[Construct] AJAX: Failed to set header '${header}: ${value}': `,
+err)}this._nextRequestHeaders.clear();if(this._nextRequestOverrideMimeType){try{request["overrideMimeType"](this._nextRequestOverrideMimeType)}catch(err){console.error(`[Construct] AJAX: failed to override MIME type: `,err)}this._nextRequestOverrideMimeType=""}if(data)request.send(data);else request.send()}catch(err){errorFunc(err)}})}GetDebuggerProperties(){const prefix="plugins.ajax.debugger";return[{title:prefix+".title",properties:[{name:prefix+".last-data",value:this._lastData}]}]}SaveToJson(){return{"lastData":this._lastData}}LoadFromJson(o){this._lastData=
+o["lastData"];this._curTag="";this._progress=0}}}{const C3=self.C3;C3.Plugins.AJAX.Cnds={OnComplete(tag){return C3.equalsNoCase(this._curTag,tag)},OnAnyComplete(){return true},OnError(tag){return C3.equalsNoCase(this._curTag,tag)},OnAnyError(){return true},OnProgress(tag){return C3.equalsNoCase(this._curTag,tag)}}}
+{const C3=self.C3;C3.Plugins.AJAX.Acts={async Request(tag,url){if(this._runtime.IsCordova()&&C3.IsRelativeURL(url)&&this._runtime.GetAssetManager().IsFileProtocol())await this._DoCordovaRequest(tag,url);else if(this._runtime.IsPreview()&&C3.IsRelativeURL(url)){const localurl=this._runtime.GetAssetManager().GetLocalUrlAsBlobUrl(url);await this._DoRequest(tag,localurl,"GET",null)}else await this._DoRequest(tag,url,"GET",null)},async RequestFile(tag,file){if(this._runtime.IsCordova()&&this._runtime.GetAssetManager().IsFileProtocol())await this._DoCordovaRequest(tag,
+file);else await this._DoRequest(tag,this._runtime.GetAssetManager().GetLocalUrlAsBlobUrl(file),"GET",null)},async Post(tag,url,data,method){await this._DoRequest(tag,url,method,data)},async PostBinary(tag,url,objectClass,method){if(!objectClass)return;const target=objectClass.GetFirstPicked(this._inst);if(!target)return;const sdkInst=target.GetSdkInstance();const buffer=sdkInst.GetArrayBufferReadOnly();await this._DoRequest(tag,url,method,buffer)},SetTimeout(t){this._timeout=t*1E3},SetHeader(n,v){this._nextRequestHeaders.set(n,
+v)},SetResponseBinary(objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;this._nextReponseBinaryData=inst.GetSdkInstance()},OverrideMIMEType(m){this._nextRequestOverrideMimeType=m}}}{const C3=self.C3;C3.Plugins.AJAX.Exps={LastData(){return this._lastData},Progress(){return this._progress},Tag(){return this._curTag}}};
+
+}
+
+{
 'use strict';{const C3=self.C3;C3.Plugins.TiledBg=class TiledBgPlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}
 {const C3=self.C3;function WrapModeToStr(wrapMode){switch(wrapMode){case 0:return"clamp-to-edge";case 1:return"repeat";case 2:return"mirror-repeat"}return"repeat"}C3.Plugins.TiledBg.Type=class TiledBgType extends C3.SDKTypeBase{constructor(objectClass,exportData){super(objectClass);this._wrapX="repeat";this._wrapY="repeat";if(exportData){this._wrapX=WrapModeToStr(exportData[0]);this._wrapY=WrapModeToStr(exportData[1])}}Release(){super.Release()}OnCreate(){this.GetImageInfo().LoadAsset(this._runtime)}LoadTextures(renderer){return this.GetImageInfo().LoadStaticTexture(renderer,
 {sampling:this._runtime.GetSampling(),wrapX:this._wrapX,wrapY:this._wrapY})}ReleaseTextures(){this.GetImageInfo().ReleaseTexture()}}}
@@ -4414,23 +4449,6 @@ selector)},CreateSpriteImgElement(objectClass,selector,insertAt,id,clazz){if(!ob
 }
 
 {
-'use strict';{const C3=self.C3;C3.Plugins.AJAX=class AJAXPlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.AJAX.Type=class AJAXType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
-{const C3=self.C3;C3.Plugins.AJAX.Instance=class AJAXInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst);this._lastData="";this._curTag="";this._progress=0;this._timeout=-1;this._nextRequestHeaders=new Map;this._nextReponseBinaryData=null;this._nextRequestOverrideMimeType="";this._nwjsFs=null;this._nwjsPath=null;this._nwjsAppFolder=null;this._isNWjs=this._runtime.GetExportType()==="nwjs";if(this._isNWjs){this._nwjsFs=require("fs");this._nwjsPath=require("path");const process=
-self["process"]||nw["process"];this._nwjsAppFolder=this._nwjsPath["dirname"](process["execPath"])+"\\"}}Release(){super.Release()}async _TriggerError(tag,url,err){console.error(`[Construct] AJAX request to '${url}' (tag '${tag}') failed: `,err);this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnAnyError);this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnError)}async _TriggerComplete(tag){this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnAnyComplete);this._curTag=
-tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnComplete)}async _OnProgress(tag,e){if(!e["lengthComputable"])return;this._progress=e["loaded"]/e["total"];this._curTag=tag;await this.TriggerAsync(C3.Plugins.AJAX.Cnds.OnProgress)}_OnError(tag,url,err){if(!this._isNWjs){this._TriggerError(tag,url,err);return}const fs=this._nwjsFs;const filePath=this._nwjsAppFolder+url;if(fs["existsSync"](filePath))fs["readFile"](filePath,{"encoding":"utf8"},(err2,data)=>{if(err2)this._TriggerError(tag,url,err2);else{this._lastData=
-data.replace(/\r\n/g,"\n");this._TriggerComplete(tag)}});else this._TriggerError(tag,url,err)}async _DoCordovaRequest(tag,file){const assetManager=this._runtime.GetAssetManager();const binaryData=this._nextReponseBinaryData;this._nextReponseBinaryData=null;try{if(binaryData){const buffer=await assetManager.CordovaFetchLocalFileAsArrayBuffer(file);binaryData.SetArrayBufferTransfer(buffer);this._lastData="";this._TriggerComplete(tag)}else{const data=await assetManager.CordovaFetchLocalFileAsText(file);
-this._lastData=data.replace(/\r\n/g,"\n");this._TriggerComplete(tag)}}catch(err){this._TriggerError(tag,file,err)}}_DoRequest(tag,url,method,data){return new Promise(resolve=>{const errorFunc=err=>{this._OnError(tag,url,err);resolve()};const binaryData=this._nextReponseBinaryData;this._nextReponseBinaryData=null;try{const request=new XMLHttpRequest;request.onreadystatechange=()=>{if(request.readyState===4){if(binaryData)this._lastData="";else this._lastData=(request.responseText||"").replace(/\r\n/g,
-"\n");if(request.status>=400)this._TriggerError(tag,url,request.status+request.statusText);else{const hasData=this._lastData.length||binaryData&&request.response instanceof ArrayBuffer;if((!this._isNWjs||hasData)&&!(!this._isNWjs&&request.status===0&&!hasData)){if(binaryData)binaryData.SetArrayBufferTransfer(request.response);this._TriggerComplete(tag)}}resolve()}};request.onerror=errorFunc;request.ontimeout=errorFunc;request.onabort=errorFunc;request["onprogress"]=e=>this._OnProgress(tag,e);request.open(method,
-url);if(this._timeout>=0&&typeof request["timeout"]!=="undefined")request["timeout"]=this._timeout;request.responseType=binaryData?"arraybuffer":"text";if(data&&!this._nextRequestHeaders.has("Content-Type"))if(typeof data!=="string")request["setRequestHeader"]("Content-Type","application/octet-stream");else request["setRequestHeader"]("Content-Type","application/x-www-form-urlencoded");for(const [header,value]of this._nextRequestHeaders)try{request["setRequestHeader"](header,value)}catch(err){console.error(`[Construct] AJAX: Failed to set header '${header}: ${value}': `,
-err)}this._nextRequestHeaders.clear();if(this._nextRequestOverrideMimeType){try{request["overrideMimeType"](this._nextRequestOverrideMimeType)}catch(err){console.error(`[Construct] AJAX: failed to override MIME type: `,err)}this._nextRequestOverrideMimeType=""}if(data)request.send(data);else request.send()}catch(err){errorFunc(err)}})}GetDebuggerProperties(){const prefix="plugins.ajax.debugger";return[{title:prefix+".title",properties:[{name:prefix+".last-data",value:this._lastData}]}]}SaveToJson(){return{"lastData":this._lastData}}LoadFromJson(o){this._lastData=
-o["lastData"];this._curTag="";this._progress=0}}}{const C3=self.C3;C3.Plugins.AJAX.Cnds={OnComplete(tag){return C3.equalsNoCase(this._curTag,tag)},OnAnyComplete(){return true},OnError(tag){return C3.equalsNoCase(this._curTag,tag)},OnAnyError(){return true},OnProgress(tag){return C3.equalsNoCase(this._curTag,tag)}}}
-{const C3=self.C3;C3.Plugins.AJAX.Acts={async Request(tag,url){if(this._runtime.IsCordova()&&C3.IsRelativeURL(url)&&this._runtime.GetAssetManager().IsFileProtocol())await this._DoCordovaRequest(tag,url);else if(this._runtime.IsPreview()&&C3.IsRelativeURL(url)){const localurl=this._runtime.GetAssetManager().GetLocalUrlAsBlobUrl(url);await this._DoRequest(tag,localurl,"GET",null)}else await this._DoRequest(tag,url,"GET",null)},async RequestFile(tag,file){if(this._runtime.IsCordova()&&this._runtime.GetAssetManager().IsFileProtocol())await this._DoCordovaRequest(tag,
-file);else await this._DoRequest(tag,this._runtime.GetAssetManager().GetLocalUrlAsBlobUrl(file),"GET",null)},async Post(tag,url,data,method){await this._DoRequest(tag,url,method,data)},async PostBinary(tag,url,objectClass,method){if(!objectClass)return;const target=objectClass.GetFirstPicked(this._inst);if(!target)return;const sdkInst=target.GetSdkInstance();const buffer=sdkInst.GetArrayBufferReadOnly();await this._DoRequest(tag,url,method,buffer)},SetTimeout(t){this._timeout=t*1E3},SetHeader(n,v){this._nextRequestHeaders.set(n,
-v)},SetResponseBinary(objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;this._nextReponseBinaryData=inst.GetSdkInstance()},OverrideMIMEType(m){this._nextRequestOverrideMimeType=m}}}{const C3=self.C3;C3.Plugins.AJAX.Exps={LastData(){return this._lastData},Progress(){return this._progress},Tag(){return this._curTag}}};
-
-}
-
-{
 'use strict';{const C3=self.C3;C3.Behaviors.TileMovement=class TileMovementBehavior extends C3.SDKBehaviorBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Behaviors.TileMovement.Type=class TileMovementType extends C3.SDKBehaviorTypeBase{constructor(behaviorType){super(behaviorType)}Release(){super.Release()}OnCreate(){}}}
 {const C3=self.C3;const C3X=self.C3X;const IBehaviorInstance=self.IBehaviorInstance;const GRID_WIDTH=0;const GRID_HEIGHT=1;const GRID_OFFSET_X=2;const GRID_OFFSET_Y=3;const SPEED_X=4;const SPEED_Y=5;const ENABLED=6;const DEFAULT_CONTROLS=7;const MIN_OFFSET=.01;const PUSH_BACK_SPEED=10;const tempCandidates=[];C3.Behaviors.TileMovement.Instance=class TileMovementInstance extends C3.SDKBehaviorInstanceBase{constructor(behInst,properties){super(behInst);this._upKey=false;this._downKey=false;this._leftKey=
 false;this._rightKey=false;this._ignoreInput=false;this._simUp=false;this._simDown=false;this._simLeft=false;this._simRight=false;this._gridWidth=32;this._gridHeight=32;this._gridOffsetX=0;this._gridOffsetY=0;this._speedX=100;this._speedY=100;if(properties){this._gridWidth=properties[0];this._gridHeight=properties[1];this._gridOffsetX=properties[2];this._gridOffsetY=properties[3];this._speedX=properties[4];this._speedY=properties[5]}this._targetX=0;this._targetY=0;this._targetGridX=0;this._targetGridY=
@@ -4665,6 +4683,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Mouse,
 		C3.Plugins.Touch,
 		C3.Plugins.EdwardBonnett_VsCodePlugin,
+		C3.Plugins.LocalStorage,
+		C3.Plugins.AJAX,
 		C3.Plugins.TiledBg,
 		C3.Behaviors.TileMovement,
 		C3.Behaviors.Fade,
@@ -4678,7 +4698,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Pin,
 		C3.Behaviors.Sin,
 		C3.Plugins.HTMLElement,
-		C3.Plugins.AJAX,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.NinePatch.Acts.SetVisible,
@@ -4806,13 +4825,15 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.TextBox.Acts.SetVisible,
 		C3.Plugins.Spritefont2.Acts.SetVisible,
-		C3.ScriptsInEvents.Game_es_Event129_Act5,
+		C3.Plugins.LocalStorage.Acts.SetItem,
+		C3.ScriptsInEvents.Game_es_Event129_Act6,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
 		C3.ScriptsInEvents.Game_es_Event130_Act1,
 		C3.ScriptsInEvents.Game_es_Event131_Act1,
 		C3.Plugins.TextBox.Cnds.OnTextChanged,
 		C3.Plugins.TextBox.Exps.Text,
 		C3.Plugins.AJAX.Acts.RequestFile,
+		C3.Plugins.LocalStorage.Acts.GetItem,
 		C3.Plugins.System.Exps.projectversion,
 		C3.Plugins.Browser.Cnds.IsFullscreen,
 		C3.Plugins.Browser.Acts.CancelFullScreen,
@@ -4823,7 +4844,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.HTMLElement.Acts.SetContent,
 		C3.Plugins.AJAX.Exps.LastData,
 		C3.ScriptsInEvents.Menu_es_Event15_Act3,
-		C3.ScriptsInEvents.Menu_es_Event16_Act1,
+		C3.Plugins.LocalStorage.Cnds.OnItemGet,
+		C3.Plugins.LocalStorage.Exps.ItemValue,
+		C3.Plugins.LocalStorage.Cnds.OnError,
+		C3.ScriptsInEvents.Menu_es_Event18_Act1,
 		C3.Plugins.NinePatch.Exps.Y,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.System.Cnds.LayerInteractive,
@@ -4853,6 +4877,8 @@ self.C3_JsPropNameTable = [
 	{Mouse: 0},
 	{Touch: 0},
 	{VSCodePlugin: 0},
+	{LocalStorage: 0},
+	{AJAX: 0},
 	{GridBackground: 0},
 	{TileMovement: 0},
 	{Fade: 0},
@@ -4904,7 +4930,6 @@ self.C3_JsPropNameTable = [
 	{Sine: 0},
 	{TextInputName: 0},
 	{LeaderboardContainer: 0},
-	{AJAX: 0},
 	{UIPanel: 0},
 	{CodeBlockPanelBorder: 0},
 	{NestedCodeBlockBackground: 0},
@@ -4955,7 +4980,9 @@ self.C3_JsPropNameTable = [
 	{GRID_SIZE: 0},
 	{GAME_OVER_TWEEN_TAG: 0},
 	{LEADERBOARD_FILE_TAG: 0},
+	{USERNAME_TAG: 0},
 	{LEADERBOARD_TWEEN_TAG: 0},
+	{versionText: 0},
 	{leaderboardLevel: 0},
 	{page: 0},
 	{sortBy: 0},
@@ -5344,7 +5371,7 @@ self.C3_ExpressionFuncs = [
 		() => "version",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => ("Version " + f0());
+			return () => ("Versi " + f0());
 		},
 		() => "leaderboard",
 		() => "timeMs",
@@ -5352,11 +5379,11 @@ self.C3_ExpressionFuncs = [
 		() => "fullscreen",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => (("Version " + f0()) + " (new version found, downloading...)");
+			return () => (("Versi " + f0()) + " (versi baru ditemukan, mendownload versi terbaru...)");
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => (("Version " + f0()) + " (new version downloaded, refresh to update)");
+			return () => (("Versi " + f0()) + " (versi terbaru telah didownload, silahkan refresh untuk mengupdate!)");
 		},
 		() => "MenuPopUp",
 		() => 50,

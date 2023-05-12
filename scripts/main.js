@@ -29,6 +29,12 @@ import {
 	document.head.appendChild(link);
 });
 
+(() => {
+	const root = document.documentElement;
+	root.style.setProperty("--bs-body-bg", "#000000");
+	root.style.setProperty("--bs-body-rgb", "0, 0, 0");
+})();
+
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.

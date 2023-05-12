@@ -312,7 +312,7 @@ const scriptsInEvents = {
 		state.isStopped = true;
 	},
 
-	async Game_es_Event129_Act5(runtime, localVars)
+	async Game_es_Event129_Act6(runtime, localVars)
 	{
 		const {
 			level,
@@ -355,7 +355,7 @@ const scriptsInEvents = {
 		});
 	},
 
-	async Menu_es_Event16_Act1(runtime, localVars)
+	async Menu_es_Event18_Act1(runtime, localVars)
 	{
 		const {
 			leaderboardLevel,
