@@ -4739,6 +4739,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.ScriptsInEvents.Game_es_Event28_Act1,
 		C3.Plugins.NinePatch.Acts.SetWidth,
 		C3.ScriptsInEvents.Game_es_Event30_Act4,
+		C3.ScriptsInEvents.Game_es_Event33_Act2,
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.SetX,

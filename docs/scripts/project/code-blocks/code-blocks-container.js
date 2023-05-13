@@ -1,7 +1,10 @@
-import CodeBlock from "./code-block.js";
 import { insertToSortedArray, removeFromArray, emptyArray } from "../utils/array.js";
 import BaseCommand from "./commands/base-command.js";
 import BaseExpression from "./expressions/base-expression.js";
+
+/**
+ * @typedef {import("./code-block.js").default} CodeBlock
+ */
 
 export default class CodeBlocksContainer {
     /**

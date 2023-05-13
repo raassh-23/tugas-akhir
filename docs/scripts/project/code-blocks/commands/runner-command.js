@@ -25,9 +25,11 @@ export default class RunnerCommand extends CommandsContainer {
         if (!this.runtime.globalVars.isRunning) {
             this.runtime.globalVars.isRunning = true;
 
-            this.reset();
+            this.reset(true); // reset commands, including errors
 
+            console.time("run");
             const result = await super.run(player, state);
+            console.timeEnd("run");
 
             if (result === STOPPED || result === ERROR) {
                 this.runtime.callFunction("ResetGame");
@@ -38,6 +40,7 @@ export default class RunnerCommand extends CommandsContainer {
             }
 
             this.runtime.globalVars.isRunning = false;
+            this.reset(false); // reset commands, except errors
             // temp
             this.runtime.callFunction("ResetGame");
         }

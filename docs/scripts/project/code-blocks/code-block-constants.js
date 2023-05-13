@@ -11,3 +11,5 @@ export const STOPPED = 1;
 export const ERROR = 2;
 
 export const GAME_OVER = 3;
+
+export const DURATION = 500;

@@ -1,4 +1,4 @@
-import { waitForMillisecond } from "../utils/misc.js";
+import { clamp } from "../utils/misc.js";
 import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
 
 /**
@@ -49,6 +49,8 @@ export default class CodeBlock extends ISpriteInstance {
         // wait for the next stable release
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
+                child.savedWidth = child.width;
+                child.savedHeight = child.height;
                 this.codeBlockShadows.push(child);
             }
         }
@@ -113,9 +115,7 @@ export default class CodeBlock extends ISpriteInstance {
     }
 
     setSizeBasedOnLevel() {
-        const multiplier = 1 - (this.level < MAX_LEVEL ?
-            SHRINK_FACTOR * (this.level - 1) :
-            SHRINK_FACTOR * (MAX_LEVEL - 1));
+        const multiplier = this.getMultiplier(this.level);
 
         this.width = this.savedWidth * multiplier;
         this.height = this.savedHeight * multiplier;
@@ -129,9 +129,7 @@ export default class CodeBlock extends ISpriteInstance {
      * @returns {number}
      */
     getWidthOnLevel(level) {
-        const multiplier = 1 - (level < MAX_LEVEL ?
-            SHRINK_FACTOR * (level - 1) :
-            SHRINK_FACTOR * (MAX_LEVEL - 1));
+        const multiplier = this.getMultiplier(level);
 
         return this.savedWidth * multiplier;
     }
@@ -141,14 +139,7 @@ export default class CodeBlock extends ISpriteInstance {
      * @param {boolean} show 
      */
     showError(show) {
-        // const newColor = show ? [1, 0.5, 0.5] : [1, 1, 1];
-
-        // this.colorRgb = newColor;
-        // this.highlightedObjects.forEach((object) => {
-        //     object.colorRgb = newColor;
-        // });
-        
-        const newAnimationName = show ? 
+        const newAnimationName = show ?
             `${this.originalAnimation}Error` :
             this.originalAnimation;
 
@@ -163,9 +154,16 @@ export default class CodeBlock extends ISpriteInstance {
         this.setAnimation(newAnimationName, "current-frame");
     }
 
-    reset() {
+    /**
+     * 
+     * @param {boolean} withError 
+     */
+    reset(withError) {
         this.showHighlight(false);
-        this.showError(false);
+
+        if (withError) {
+            this.showError(false);
+        }
     }
 
     /**
@@ -174,5 +172,20 @@ export default class CodeBlock extends ISpriteInstance {
      */
     getCount() {
         return 1;
+    }
+
+    /**
+     * 
+     * @param {number} level 
+     * @returns {number}
+     */
+    getMultiplier(level) {
+        return clamp(
+            1 - (level < MAX_LEVEL ?
+                SHRINK_FACTOR * (level - 1) :
+                SHRINK_FACTOR * (MAX_LEVEL - 1)),
+            0,
+            1,
+        );
     }
 }

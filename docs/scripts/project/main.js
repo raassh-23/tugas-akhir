@@ -22,18 +22,13 @@ import {
 // https://github.com/Scirra/Construct-bugs/issues/7022
 [
 	"./lib/css/bootstrap.min.css",
+	"./lib/css/leaderboard.css",
 ].forEach((href) => {
 	const link = document.createElement("link");
 	link.href = href;
 	link.rel = "stylesheet";
 	document.head.appendChild(link);
 });
-
-(() => {
-	const root = document.documentElement;
-	root.style.setProperty("--bs-body-bg", "#000000");
-	root.style.setProperty("--bs-body-rgb", "0, 0, 0");
-})();
 
 runOnStartup(async runtime =>
 {
