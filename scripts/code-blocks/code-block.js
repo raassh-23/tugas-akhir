@@ -1,4 +1,4 @@
-import { waitForMillisecond } from "../utils/misc.js";
+import { waitForMilisecond } from "../utils/misc.js";
 import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
 
 /**
@@ -163,9 +163,16 @@ export default class CodeBlock extends ISpriteInstance {
         this.setAnimation(newAnimationName, "current-frame");
     }
 
-    reset() {
+    /**
+     * 
+     * @param {boolean} withError 
+     */
+    reset(withError) {
         this.showHighlight(false);
-        this.showError(false);
+        
+        if (withError) {
+            this.showError(false);
+        }
     }
 
     /**

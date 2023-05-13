@@ -1,4 +1,4 @@
-import {waitForMillisecond} from "../../utils/misc.js";
+import {waitForMilisecond} from "../../utils/misc.js";
 import { STOPPED, FINISHED } from "../code-block-constants.js";
 import BaseCommand from "./base-command.js";
 
@@ -40,8 +40,8 @@ export default class MoveCommand extends BaseCommand {
                 return STOPPED;
             }
 
-            totalDuration += 50;
-            await waitForMillisecond(50);
+            totalDuration += 10;
+            await waitForMilisecond(10);
         } while (player.behaviors.TileMovement.isMoving() || totalDuration < maxDuration);
 
         player.animationSpeed = 0;

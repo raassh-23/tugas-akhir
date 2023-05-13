@@ -4,8 +4,10 @@ import {
     MAX_LEVEL,
     SHRINK_FACTOR,
     FINISHED,
-    ERROR
+    ERROR,
+    DURATION,
 } from "../code-block-constants.js";
+import { waitForMilisecond } from "../../utils/misc.js";
 
 /**
  * @extends CommandsContainer
@@ -82,23 +84,28 @@ export default class RepeatCommand extends CommandsContainer {
             const repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
             this.text.text = repeatCount.toString();
 
-            for (let i = 0; i < repeatCount; i++) {
+            let i = 0;
+            while (true) {
+                this.showHighlight(true);
                 this.text.text = (repeatCount - i).toString();
+                
+                await waitForMilisecond(DURATION);
+
+                this.showHighlight(false);
+
+                if (repeatCount <= i++) {
+                    break;
+                }
 
                 const result = await super.run(player, state);
 
                 if (result !== FINISHED) {
-                    this.text.text = this.#repeatCondition.replace(/ /g, '');
                     return result;
                 }
             }
-
-            this.text.text = this.#repeatCondition.replace(/ /g, '');
         } catch (error) {
             console.log(error);
             this.showError(true);
-
-            this.text.text = this.#repeatCondition.replace(/ /g, '');
 
             return ERROR
         }
@@ -221,18 +228,18 @@ export default class RepeatCommand extends CommandsContainer {
         for (const child of this.highlightedObjects) {
             if (child.instVars.id === "repeat-icon") {
                 child.animationFrame = show ? 1 : 0;
-                console.log(child);
-                console.log(`animationFrame should be ${show ? 1 : 0}`);
                 continue;
             }
 
             if (child.instVars.id === "repeat-pop-up") {
                 child.animationFrame = show ? 3 : 2;
-                console.log(child);
-                console.log(`animationFrame should be ${show ? 3 : 2}`);
-
             }
         }
+    }
 
+    reset(withError) {
+        this.text.text = this.#repeatCondition.replace(/ /g, '');
+
+        super.reset(withError);
     }
 }

@@ -87,10 +87,14 @@ export default class CommandsContainer extends BaseCommand {
         // this.setColor([colorValue, colorValue, colorValue]);
     }
 
-    reset() {
-        super.reset();
+    /**
+     * 
+     * @param {boolean} withError 
+     */
+    reset(withError) {
+        super.reset(withError);
 
-        this.container.codeBlocks.forEach((command) => command.reset());
+        this.container.codeBlocks.forEach((command) => command.reset(withError));
     }
 
     /**
