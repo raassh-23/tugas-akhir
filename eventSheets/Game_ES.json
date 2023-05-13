@@ -1114,6 +1114,10 @@
 							}
 						},
 						{
+							"type": "script",
+							"script": "resetContainerLength(\n\truntime.objects.CodeBlockContainer.getAllInstances()\n);"
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "CodeBlockShadow",
 							"sid": 867785991994109,

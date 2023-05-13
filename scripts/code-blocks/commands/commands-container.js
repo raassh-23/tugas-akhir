@@ -1,6 +1,5 @@
 import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
-import { clamp } from "../../utils/misc.js";
 import { FINISHED, GAME_OVER } from "../code-block-constants.js";
 
 /**
@@ -11,11 +10,6 @@ export default class CommandsContainer extends BaseCommand {
      * @type {CodeBlocksContainer}
      */
     container = new CodeBlocksContainer("command");
-
-    /**
-     * @type {[number, number, number]}
-     */
-    #color = [0, 0, 0];
 
     /**
      * 
@@ -62,18 +56,6 @@ export default class CommandsContainer extends BaseCommand {
 
     /**
      * 
-     * @param {[number, number, number]} color 
-     */
-    setColor(color) {
-        this.#color = color;
-    }
-
-    getColor() {
-        return [...this.#color];
-    }
-
-    /**
-     * 
      * @param {number} level 
      */
     updateLevel(level) {
@@ -81,10 +63,6 @@ export default class CommandsContainer extends BaseCommand {
             .forEach((command) => command.updateLevel(level + 1));
 
         super.updateLevel(level);
-
-        // const colorValue = clamp(1 - Math.log10(level) + 0.15, 0.2, 1);
-
-        // this.setColor([colorValue, colorValue, colorValue]);
     }
 
     /**

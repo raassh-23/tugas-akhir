@@ -28,9 +28,7 @@ export default class RunnerCommand extends CommandsContainer {
             this.reset(true); // reset commands, including errors
 
             console.time("run");
-
             const result = await super.run(player, state);
-
             console.timeEnd("run");
 
             if (result === STOPPED || result === ERROR) {

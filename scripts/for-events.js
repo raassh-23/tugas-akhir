@@ -40,6 +40,9 @@ const state = {
 	variables: {},
 }
 
+/**
+ * @type {LeaderboardAPI}
+ */
 const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
 
 /**
@@ -163,7 +166,7 @@ function expandCodeBlockShadowContainer(codeBlockShadow) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.expand(codeBlockShadow.width);
+	parent.expand(codeBlockShadow.width, true);
 }
 
 /**
