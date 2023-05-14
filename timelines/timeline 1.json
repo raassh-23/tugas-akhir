@@ -6,7 +6,7 @@
 	"ease": "noease",
 	"pathMode": "line",
 	"resizeMode": "size",
-	"playheadTime": 1,
+	"playheadTime": 2,
 	"totalTime": 5,
 	"stepTime": 0.1,
 	"useStepTime": true,

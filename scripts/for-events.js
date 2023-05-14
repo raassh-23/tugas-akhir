@@ -58,19 +58,22 @@ function setupLevel(runtime) {
 		throw new Error("cannot find runner");
 	}
 
-	resetState(runtime.globalVars.level);
+	resetState(runtime.globalVars.level, true);
 }
 
 /**
  * 
  * @param {number} level 
  */
-function resetState(level) {
+function resetState(level, resetVariables = true) {
 	state.isStopped = false;
 	state.isGameOver = false;
 	state.isError = false;
 	state.actionCount = 0;
-	state.variables = {...levelVariables[level]};
+	
+	if (resetVariables) {
+		state.variables = {...levelVariables[level]};
+	}
 }
 
 /**

@@ -86,7 +86,18 @@
 						"imageSpriteId": 175291,
 						"useCollisionPoly": true,
 						"duration": 1
-					},
+					}
+				],
+				"sid": 498767644815847,
+				"name": "MoveCommand",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
 					{
 						"width": 96,
 						"height": 96,
@@ -95,13 +106,36 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4424652,
+						"imageSpriteId": 5885202,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 498767644815847,
-				"name": "Default",
+				"sid": 133240616114834,
+				"name": "RepeatCommand",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5719173,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 359947790955961,
+				"name": "ShootCommand",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -232,7 +266,7 @@
 					}
 				],
 				"sid": 935030831324288,
-				"name": "Number",
+				"name": "NumberBlock",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -327,7 +361,7 @@
 					}
 				],
 				"sid": 891328143423172,
-				"name": "Operator",
+				"name": "OperatorBlock",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -362,7 +396,7 @@
 					}
 				],
 				"sid": 193950738063153,
-				"name": "Variable",
+				"name": "VariableBlock",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

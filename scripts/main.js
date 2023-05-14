@@ -5,7 +5,8 @@ import {
 	RepeatCommandCondition,
 	NumberBlock,
 	OperatorBlock,
-	VariableBlock
+	VariableBlock,
+	ShootCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -44,6 +45,7 @@ runOnStartup(async runtime =>
 	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
 	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
 	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);
+	runtime.objects.ShootCommand.setInstanceClass(ShootCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

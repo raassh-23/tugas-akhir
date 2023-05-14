@@ -7,6 +7,7 @@ import RepeatCommandCondition from "./expressions/repeat-command-condition.js";
 import NumberBlock from "./expressions/number-block.js";
 import OperatorBlock from "./expressions/operator-block.js";
 import VariableBlock from "./expressions/variable-block.js";
+import ShootCommand from "./commands/shoot-command.js";
 
 export {
     CodeBlock,
@@ -18,4 +19,5 @@ export {
     NumberBlock,
     OperatorBlock,
     VariableBlock,
+    ShootCommand,
 };

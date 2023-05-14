@@ -1,8 +1,8 @@
 import {waitForMilisecond} from "../../utils/misc.js";
-import { STOPPED, DURATION } from "../code-block-constants.js";
+import { STOPPED, DURATION, CHECK_INTERVAL } from "../code-block-constants.js";
 import BaseCommand from "./base-command.js";
 
-const directions = ["left", "up", "right", "down"];
+const frameToDirections = ["left", "up", "right", "down"];
 const dirAnimationSpeed = {
     "right": 6,
     "down": 0,
@@ -26,7 +26,7 @@ export default class MoveCommand extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        const direction = directions[this.animationFrame];
+        const direction = frameToDirections[this.animationFrame];
 
 		player.behaviors.TileMovement.simulateControl(direction);
         player.setAnimation(direction);
@@ -39,17 +39,13 @@ export default class MoveCommand extends BaseCommand {
                 return STOPPED;
             }
 
-            totalDuration += 10;
-            await waitForMilisecond(10);
-        } while (player.behaviors.TileMovement.isMoving());
+            totalDuration += CHECK_INTERVAL;
+            await waitForMilisecond(CHECK_INTERVAL);
+        } while (player.behaviors.TileMovement.isMoving() || totalDuration < DURATION);
 
         player.animationSpeed = 0;
 
         state.actionCount++;
-
-        if (totalDuration < DURATION) {
-            await waitForMilisecond(DURATION - totalDuration);
-        }
 
         return this.checkCollisions(state);
     }

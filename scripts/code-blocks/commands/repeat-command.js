@@ -73,7 +73,7 @@ export default class RepeatCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {import("../../for-events.js").GameState}} state
+     * @param {import("../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
@@ -86,6 +86,7 @@ export default class RepeatCommand extends CommandsContainer {
         try {
             repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
         } catch (error) {
+            state.isError = true;
             this.showError(true);
 
             return ERROR

@@ -3942,6 +3942,10 @@
 								"variable": "isRunning",
 								"value": "false"
 							}
+						},
+						{
+							"type": "script",
+							"script": "resetState(runtime.globalVars.level, !state.isError);"
 						}
 					],
 					"sid": 650488692869568
@@ -4203,7 +4207,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
+											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level, true);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
 										}
 									],
 									"sid": 239940556527685
@@ -4771,6 +4775,89 @@
 							"sid": 188760965931083
 						}
 					]
+				},
+				{
+					"functionName": "PlayerShoot",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "shootAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 174155479367402
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 977180601643449,
+							"parameters": {
+								"object": "Bullet",
+								"layer": "\"Game\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Bullet",
+							"sid": 910489931083206,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "shootAngle"
+							}
+						}
+					],
+					"sid": 541108730608813
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 587957771994864,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.callFunction(\"PlayerShoot\", 0);\nruntime.callFunction(\"PlayerShoot\", 90);\nruntime.callFunction(\"PlayerShoot\", 180);\nruntime.callFunction(\"PlayerShoot\", 270);"
+						}
+					],
+					"sid": 710987137471118
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet",
+							"sid": 174763091646381,
+							"parameters": {
+								"object": "SolidObstacle"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet",
+							"sid": 673916000024933
+						}
+					],
+					"sid": 405829888051021
 				}
 			],
 			"sid": 991077192111983

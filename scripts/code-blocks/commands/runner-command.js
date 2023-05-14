@@ -1,5 +1,6 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, FINISHED, STOPPED, ERROR, GAME_OVER } from "../code-block-constants.js";
+import { MARGIN, FINISHED, STOPPED, ERROR, GAME_OVER, DURATION } from "../code-block-constants.js";
+import { waitForMilisecond } from "../../utils/misc.js";
 
 /**
  * @extends CommandsContainer
@@ -27,9 +28,7 @@ export default class RunnerCommand extends CommandsContainer {
 
             this.reset(true); // reset commands, including errors
 
-            console.time("run");
             const result = await super.run(player, state);
-            console.timeEnd("run");
 
             if (result === STOPPED || result === ERROR) {
                 this.runtime.callFunction("ResetGame");
@@ -38,6 +37,8 @@ export default class RunnerCommand extends CommandsContainer {
                 this.runtime.callFunction("GameOver");
                 return result;
             }
+
+            await waitForMilisecond(DURATION);
 
             this.runtime.globalVars.isRunning = false;
             this.reset(false); // reset commands, except errors

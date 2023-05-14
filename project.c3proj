@@ -107,6 +107,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
 			"author": "Scirra",
@@ -156,6 +163,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -196,7 +210,8 @@
 			"CodeBlockShadow",
 			"SpikeCollision",
 			"Spike",
-			"TimerManager"
+			"TimerManager",
+			"Bullet"
 		],
 		"subfolders": [
 			{
@@ -207,7 +222,8 @@
 					"RepeatCommandCondition",
 					"StartCommand",
 					"OperatorBlock",
-					"VariableBlock"
+					"VariableBlock",
+					"ShootCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -362,6 +378,14 @@
 									"name": "base-command.js",
 									"type": "text/javascript",
 									"sid": 370010418344345,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "shoot-command.js",
+									"type": "application/javascript",
+									"sid": 686546884391812,
 									"script-info": {
 										"purpose": "none"
 									}
