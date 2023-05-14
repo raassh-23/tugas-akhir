@@ -25,6 +25,7 @@ let pickedCommand = null;
  * @typedef {{
  * isStopped: boolean,
  * isGameOver: boolean,
+ * isError: boolean,
  * actionCount: number,
  * variables: {[variable: string]: number}
  * }} GameState
@@ -36,6 +37,7 @@ let pickedCommand = null;
 const state = {
 	isStopped: false,
 	isGameOver: false,
+	isError: false,
 	actionCount: 0,
 	variables: {},
 }
@@ -66,8 +68,9 @@ function setupLevel(runtime) {
 function resetState(level) {
 	state.isStopped = false;
 	state.isGameOver = false;
+	state.isError = false;
 	state.actionCount = 0;
-	state.variables = levelVariables[level] ?? {};
+	state.variables = {...levelVariables[level]};
 }
 
 /**

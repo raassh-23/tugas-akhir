@@ -92,7 +92,13 @@ export default class RepeatCommand extends CommandsContainer {
                 
                 await waitForMilisecond(DURATION);
 
+                this.runtime.callFunction("CheckCollisions");
+
                 this.showHighlight(false);
+
+                if (state.isError) {
+                    throw new Error("Collision Error");
+                }
 
                 if (repeatCount <= i++) {
                     break;
@@ -105,7 +111,6 @@ export default class RepeatCommand extends CommandsContainer {
                 }
             }
         } catch (error) {
-            console.log(error);
             this.showError(true);
 
             return ERROR

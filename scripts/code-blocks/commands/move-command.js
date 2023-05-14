@@ -1,5 +1,5 @@
 import {waitForMilisecond} from "../../utils/misc.js";
-import { STOPPED, FINISHED, DURATION } from "../code-block-constants.js";
+import { STOPPED, FINISHED, DURATION, ERROR } from "../code-block-constants.js";
 import BaseCommand from "./base-command.js";
 
 const directions = ["left", "up", "right", "down"];
@@ -41,11 +41,22 @@ export default class MoveCommand extends BaseCommand {
 
             totalDuration += 10;
             await waitForMilisecond(10);
-        } while (player.behaviors.TileMovement.isMoving() || totalDuration < DURATION);
+        } while (player.behaviors.TileMovement.isMoving());
 
         player.animationSpeed = 0;
 
         state.actionCount++;
+
+        if (totalDuration < DURATION) {
+            await waitForMilisecond(DURATION - totalDuration);
+        }
+
+        this.runtime.callFunction("CheckCollisions");
+
+        if (state.isError) {
+            super.showError(true)
+            return ERROR;
+        }
 
         return FINISHED;
     }

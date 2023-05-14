@@ -4106,41 +4106,6 @@
 					]
 				},
 				{
-					"eventType": "comment",
-					"text": "Check if player and portal are in the same grid"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 936663677959977,
-							"parameters": {
-								"first-value": "distance(Player.X, Player.Y, Portal.X, Portal.Y)",
-								"comparison": 2,
-								"second-value": "GRID_SIZE"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "state.isGameOver = true;"
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 622458699497123,
-							"parameters": {
-								"variable": "isPlaying",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 107424056995809
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -4679,6 +4644,131 @@
 								}
 							],
 							"sid": 964854083124326
+						}
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "FINISHED",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "check code-block-constants.js",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 937819680652057
+				},
+				{
+					"eventType": "variable",
+					"name": "ERROR",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "check code-block-constants.js",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 168315360186451
+				},
+				{
+					"functionName": "CheckCollisions",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 964088649790328,
+							"parameters": {
+								"value": "FINISHED"
+							}
+						}
+					],
+					"sid": 691736778397864,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Check if player and portal are in the same grid"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 915457990106730,
+									"parameters": {
+										"object": "Portal"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 936663677959977,
+									"parameters": {
+										"first-value": "distance(Player.X, Player.Y, Portal.X, Portal.Y)",
+										"comparison": 2,
+										"second-value": "GRID_SIZE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "state.isGameOver = true;"
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 622458699497123,
+									"parameters": {
+										"variable": "isPlaying",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 107424056995809
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 427727280951224,
+									"parameters": {
+										"object": "SpikeCollision"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "SpikeCollision",
+									"sid": 797423493497226,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 403603740908100,
+									"parameters": {
+										"first-value": "distance(Player.X, Player.Y, SpikeCollision.X, SpikeCollision.Y)",
+										"comparison": 2,
+										"second-value": "GRID_SIZE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= 1;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
+								}
+							],
+							"sid": 188760965931083
 						}
 					]
 				}
