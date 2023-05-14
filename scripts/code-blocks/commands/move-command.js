@@ -1,5 +1,5 @@
 import {waitForMilisecond} from "../../utils/misc.js";
-import { STOPPED, FINISHED, DURATION, ERROR } from "../code-block-constants.js";
+import { STOPPED, DURATION } from "../code-block-constants.js";
 import BaseCommand from "./base-command.js";
 
 const directions = ["left", "up", "right", "down"];
@@ -51,13 +51,6 @@ export default class MoveCommand extends BaseCommand {
             await waitForMilisecond(DURATION - totalDuration);
         }
 
-        this.runtime.callFunction("CheckCollisions");
-
-        if (state.isError) {
-            super.showError(true)
-            return ERROR;
-        }
-
-        return FINISHED;
+        return this.checkCollisions(state);
     }
 }

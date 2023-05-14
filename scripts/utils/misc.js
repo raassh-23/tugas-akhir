@@ -1,4 +1,7 @@
-import { CommandsContainer, RepeatCommandCondition } from '../code-blocks/index.js';
+/**
+ * @typedef {import('../code-blocks/index.js').CommandsContainer} CommandsContainer
+ * @typedef {import('../code-blocks/index.js').RepeatCommandCondition} RepeatCommandCondition
+ */
 
 /**
  * 

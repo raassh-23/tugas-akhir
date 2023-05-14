@@ -78,42 +78,43 @@ export default class RepeatCommand extends CommandsContainer {
      * @returns {Promise<number>}
      */
     async run(player, state) {
+        let repeatCount = 0;
+        const cleanedRepeatCondition = this.#repeatCondition
+            .replace(/%/g, 'mod')
+            .replace(/x/g, '*');
+
         try {
-            const cleanedRepeatCondition = this.#repeatCondition
-                .replace(/%/g, 'mod')
-                .replace(/x/g, '*');
-            const repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
-            this.text.text = repeatCount.toString();
-
-            let i = 0;
-            while (true) {
-                this.showHighlight(true);
-                this.text.text = (repeatCount - i).toString();
-                
-                await waitForMilisecond(DURATION);
-
-                this.runtime.callFunction("CheckCollisions");
-
-                this.showHighlight(false);
-
-                if (state.isError) {
-                    throw new Error("Collision Error");
-                }
-
-                if (repeatCount <= i++) {
-                    break;
-                }
-
-                const result = await super.run(player, state);
-
-                if (result !== FINISHED) {
-                    return result;
-                }
-            }
+            repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
         } catch (error) {
             this.showError(true);
 
             return ERROR
+        }
+
+        this.text.text = repeatCount.toString();
+
+        let i = 0;
+        while (true) {
+            this.showHighlight(true);
+            this.text.text = (repeatCount - i).toString();
+
+            await waitForMilisecond(DURATION);
+
+            this.showHighlight(false);
+
+            if (this.checkCollisions(state) === ERROR) {
+                return ERROR;
+            }
+
+            if (repeatCount <= i++) {
+                break;
+            }
+
+            const result = await super.run(player, state);
+
+            if (result !== FINISHED) {
+                return result;
+            }
         }
 
         return FINISHED;
