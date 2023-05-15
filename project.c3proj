@@ -295,7 +295,7 @@
 					}
 				},
 				{
-					"name": "level-variables.js",
+					"name": "level-data.js",
 					"type": "application/javascript",
 					"sid": 443565266676114,
 					"script-info": {

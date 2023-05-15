@@ -1490,8 +1490,6 @@
 							},
 							"uid": 23,
 							"instanceVariables": {
-								"commandName": "MoveCommand",
-								"commandFrame": 0,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -1553,8 +1551,6 @@
 							},
 							"uid": 24,
 							"instanceVariables": {
-								"commandName": "MoveCommand",
-								"commandFrame": 1,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -1616,8 +1612,6 @@
 							},
 							"uid": 25,
 							"instanceVariables": {
-								"commandName": "MoveCommand",
-								"commandFrame": 2,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -1679,8 +1673,6 @@
 							},
 							"uid": 26,
 							"instanceVariables": {
-								"commandName": "MoveCommand",
-								"commandFrame": 3,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -1742,8 +1734,6 @@
 							},
 							"uid": 43,
 							"instanceVariables": {
-								"commandName": "RepeatCommand",
-								"commandFrame": 0,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -1805,8 +1795,6 @@
 							},
 							"uid": 74,
 							"instanceVariables": {
-								"commandName": "ShootCommand",
-								"commandFrame": 0,
 								"panelId": "active-commands-panel",
 								"inactiveLayer": "UI"
 							},
@@ -3876,8 +3864,6 @@
 							},
 							"uid": 48,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 0,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -3939,8 +3925,6 @@
 							},
 							"uid": 50,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 2,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4002,8 +3986,6 @@
 							},
 							"uid": 51,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 4,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4065,8 +4047,6 @@
 							},
 							"uid": 52,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 6,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4128,8 +4108,6 @@
 							},
 							"uid": 53,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 8,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4191,8 +4169,6 @@
 							},
 							"uid": 62,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 1,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4254,8 +4230,6 @@
 							},
 							"uid": 63,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 3,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4317,8 +4291,6 @@
 							},
 							"uid": 64,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 5,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4380,8 +4352,6 @@
 							},
 							"uid": 65,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 7,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4443,8 +4413,6 @@
 							},
 							"uid": 66,
 							"instanceVariables": {
-								"commandName": "NumberBlock",
-								"commandFrame": 9,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4506,8 +4474,6 @@
 							},
 							"uid": 77,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 0,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4569,8 +4535,6 @@
 							},
 							"uid": 78,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 2,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4632,8 +4596,6 @@
 							},
 							"uid": 82,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 4,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4695,8 +4657,6 @@
 							},
 							"uid": 83,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 6,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4758,8 +4718,6 @@
 							},
 							"uid": 84,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 1,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4821,8 +4779,6 @@
 							},
 							"uid": 85,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 3,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4884,8 +4840,6 @@
 							},
 							"uid": 86,
 							"instanceVariables": {
-								"commandName": "OperatorBlock",
-								"commandFrame": 5,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -4947,8 +4901,6 @@
 							},
 							"uid": 89,
 							"instanceVariables": {
-								"commandName": "VariableBlock",
-								"commandFrame": 0,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},
@@ -5010,8 +4962,6 @@
 							},
 							"uid": 91,
 							"instanceVariables": {
-								"commandName": "VariableBlock",
-								"commandFrame": 1,
 								"panelId": "",
 								"inactiveLayer": "RepeatPopUp"
 							},

@@ -69,3 +69,13 @@ export function getTopCodeBlockContainer(sprite) {
 export function clamp(value, min, max) {
 	return Math.min(Math.max(value, min), max);
 }
+
+/**
+ * 
+ * @param {IObjectClass} object 
+ * @param {string} id 
+ */
+export function getInstanceById(object, id) {
+	return object.getAllInstances()
+		.find(instance => instance.instVars.id === id);
+}

@@ -146,14 +146,14 @@
 					"actions": [
 						{
 							"callFunction": "CreateNewCodeBlockObject",
-							"sid": 899446160182921,
+							"sid": 735656916286516,
 							"parameters": [
-								"CodeBlockButton.commandName",
+								"CodeBlockButton.AnimationName",
 								"CodeBlockButton.inactiveLayer",
 								"CodeBlockButton.panelId",
 								"CodeBlockButton.X",
 								"CodeBlockButton.Y",
-								"CodeBlockButton.commandFrame"
+								"CodeBlockButton.AnimationFrame"
 							]
 						}
 					],

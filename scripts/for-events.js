@@ -3,11 +3,12 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
-import levelVariables from "./level-variables.js";
+import {levelVariables, levelAvailableCodeBlocks} from "./level-data.js";
 import { 
 	getSquaredDistance,
 	getContainerParent,
 	getTopCodeBlockContainer,
+	getInstanceById,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -59,6 +60,8 @@ function setupLevel(runtime) {
 	}
 
 	resetState(runtime.globalVars.level, true);
+
+	setupAvailableCommands(runtime);
 }
 
 /**
@@ -208,4 +211,45 @@ function getCodeBlockCount(runtime) {
 		.reduce((acc, curr) => acc + curr.getCount(), 0);
 
 	return count;
+}
+
+const AVAILABLE_COMMANDS_MARGIN = 16;
+const COMMAND_WIDTH = 96;
+const COMMAND_HEIGHT = 96;
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupAvailableCommands(runtime) {
+	const level = runtime.globalVars.level;
+	
+	const availableCommands = levelAvailableCodeBlocks[level].commands;
+
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-commands")
+
+	const minLength = scrollable.instVars.initialLength;
+	const x = scrollable.x + (scrollable.width - COMMAND_WIDTH)/2;
+	let y = scrollable.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
+
+	for (const command of availableCommands) {
+		const newCommand = runtime.objects.CodeBlockButton.createInstance("AvailableCommandList", x, y);
+
+		newCommand.setAnimation(command.name);
+		newCommand.animationFrame = command.frame;
+
+		newCommand.instVars.panelId = command.panelId;
+		newCommand.instVars.inactiveLayer = command.inactiveLayer;
+
+		scrollable.addChild(newCommand, {
+			transformX: true,
+			transformY: true,
+			destroyWithParent: true,
+		})
+
+		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
+	}
+
+	scrollable.height = Math.max(minLength, y - scrollable.y - AVAILABLE_COMMANDS_MARGIN);
+	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
 }
