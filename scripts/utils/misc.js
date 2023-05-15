@@ -74,8 +74,34 @@ export function clamp(value, min, max) {
  * 
  * @param {IObjectClass} object 
  * @param {string} id 
+ * 
+ * @returns {IWorldInstance?}
  */
 export function getInstanceById(object, id) {
 	return object.getAllInstances()
 		.find(instance => instance.instVars.id === id);
+}
+
+/**
+ * 
+ * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject 
+ * @param {string} layer 
+ * @param {number} x 
+ * @param {number} y 
+ * @param {import('../level-data.js').CodeBlockDefinition} definition 
+ * @param {IWorldInstance} parent 
+ */
+export function createCodeBlockButton(codeBlockButtonObject, layer, x, y, definition, parent) {
+	const button = codeBlockButtonObject.createInstance(layer, x, y);
+
+	button.setAnimation(definition.name);
+	button.animationFrame = definition.frame;
+
+	button.instVars.panelId = definition.panelId;
+	button.instVars.inactiveLayer = definition.inactiveLayer;
+
+	parent.addChild(button, {
+		transformX: true,
+		transformY: true,
+	})
 }

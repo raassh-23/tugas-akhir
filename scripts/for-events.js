@@ -9,6 +9,7 @@ import {
 	getContainerParent,
 	getTopCodeBlockContainer,
 	getInstanceById,
+	createCodeBlockButton,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -62,6 +63,7 @@ function setupLevel(runtime) {
 	resetState(runtime.globalVars.level, true);
 
 	setupAvailableCommands(runtime);
+	setupAvailableRepeatExpressions(runtime);
 }
 
 /**
@@ -233,23 +235,68 @@ function setupAvailableCommands(runtime) {
 	let y = scrollable.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
 
 	for (const command of availableCommands) {
-		const newCommand = runtime.objects.CodeBlockButton.createInstance("AvailableCommandList", x, y);
-
-		newCommand.setAnimation(command.name);
-		newCommand.animationFrame = command.frame;
-
-		newCommand.instVars.panelId = command.panelId;
-		newCommand.instVars.inactiveLayer = command.inactiveLayer;
-
-		scrollable.addChild(newCommand, {
-			transformX: true,
-			transformY: true,
-			destroyWithParent: true,
-		})
+		createCodeBlockButton(
+			runtime.objects.CodeBlockButton,
+			"AvailableCommandList",
+			x,
+			y,
+			command,
+			scrollable,
+		);
 
 		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
 	}
 
 	scrollable.height = Math.max(minLength, y - scrollable.y - AVAILABLE_COMMANDS_MARGIN);
+	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
+}
+
+const AVAILABLE_REPEAT_EXPRESSION_MARGIN = 16;
+const REPEAT_EXPRESSION_WIDTH = 72;
+const REPEAT_EXPRESSION_HEIGHT = 72;
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupAvailableRepeatExpressions(runtime) {
+	const level = runtime.globalVars.level;
+
+	const availableRepeatExpressions = levelAvailableCodeBlocks[level].repeatExpressions;
+
+	if (availableRepeatExpressions.length === 0) {
+		return;
+	}
+
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-repeat-expressions");
+
+	const minLength = scrollable.instVars.initialLength;
+	const x1 = scrollable.x + (scrollable.width - 2 * REPEAT_EXPRESSION_WIDTH - AVAILABLE_REPEAT_EXPRESSION_MARGIN)/2;
+	const x2 = x1 + REPEAT_EXPRESSION_WIDTH + AVAILABLE_REPEAT_EXPRESSION_MARGIN;
+
+	let x = x1;
+	let y = scrollable.y + 3 * AVAILABLE_REPEAT_EXPRESSION_MARGIN + REPEAT_EXPRESSION_HEIGHT/2;
+
+	for (const repeatExpression of availableRepeatExpressions) {
+		createCodeBlockButton(
+			runtime.objects.CodeBlockButton,
+			"RepeatPopUpCodeBlocks",
+			x,
+			y,
+			repeatExpression,
+			scrollable,
+		);
+
+		if (x === x1) {
+			x = x2;
+		} else {
+			x = x1;
+			y += REPEAT_EXPRESSION_HEIGHT + AVAILABLE_REPEAT_EXPRESSION_MARGIN;
+		}
+	}
+
+	console.log(`y ${y} scrollable.y ${scrollable.y}`);
+
+	scrollable.height = Math.max(minLength, y - scrollable.y + 5 * AVAILABLE_REPEAT_EXPRESSION_MARGIN);
 	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
 }

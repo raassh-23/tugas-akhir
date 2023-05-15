@@ -1364,11 +1364,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 283864604088749,
+							"sid": 630845545635399,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"PopUpBack\"",
-								"x": "171",
+								"x": "192",
 								"y": "147.5",
 								"create-hierarchy": true,
 								"template-name": "\"repeat-panel\""
