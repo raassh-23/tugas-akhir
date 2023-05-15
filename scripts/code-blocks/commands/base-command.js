@@ -27,7 +27,7 @@ export default class BaseCommand extends CodeBlock {
     /**
      * 
      * @param {import("../../for-events.js").GameState} state 
-     * @returns 
+     * @returns {number}
      */
     checkCollisions(state) {
         this.runtime.callFunction("CheckCollisions");

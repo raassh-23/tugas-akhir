@@ -1,6 +1,7 @@
 import CommandsContainer from "./commands-container.js";
 import { MARGIN, FINISHED, STOPPED, ERROR, GAME_OVER, DURATION } from "../code-block-constants.js";
 import { waitForMilisecond } from "../../utils/misc.js";
+import { waitUnlessStopped } from "../code-block-utils.js";
 
 /**
  * @extends CommandsContainer
@@ -38,7 +39,7 @@ export default class RunnerCommand extends CommandsContainer {
                 return result;
             }
 
-            await waitForMilisecond(DURATION);
+            await waitUnlessStopped(state);
 
             this.runtime.globalVars.isRunning = false;
             this.reset(false); // reset commands, except errors

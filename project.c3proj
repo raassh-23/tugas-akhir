@@ -337,6 +337,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "code-block-utils.js",
+							"type": "application/javascript",
+							"sid": 712964470177363,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [

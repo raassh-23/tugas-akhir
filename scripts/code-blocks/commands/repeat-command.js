@@ -7,6 +7,7 @@ import {
 } from "../code-block-constants.js";
 import { getContainerParent, waitForMilisecond } from "../../utils/misc.js";
 import RunnerCommand from "./runner-command.js";
+import { waitUnlessStopped } from "../code-block-utils.js";
 
 /**
  * @extends CommandsContainer
@@ -99,12 +100,18 @@ export default class RepeatCommand extends CommandsContainer {
             this.showHighlight(true);
             this.text.text = (repeatCount - i).toString();
 
-            await waitForMilisecond(DURATION);
+            const waitResult = await waitUnlessStopped(state, {
+                afterWait: () => {
+                    this.showHighlight(false);
 
-            this.showHighlight(false);
+                    return this.checkCollisions(state);
+                },
+            });
 
-            if (this.checkCollisions(state) === ERROR) {
-                return ERROR;
+            console.log("waitResult", waitResult);
+
+            if (waitResult !== FINISHED) {
+                return waitResult;
             }
 
             if (repeatCount <= i++) {

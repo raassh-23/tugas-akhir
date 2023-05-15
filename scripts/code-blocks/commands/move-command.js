@@ -1,5 +1,6 @@
 import {waitForMilisecond} from "../../utils/misc.js";
 import { STOPPED, DURATION, CHECK_INTERVAL } from "../code-block-constants.js";
+import { waitUnlessStopped } from "../code-block-utils.js";
 import BaseCommand from "./base-command.js";
 
 const frameToDirections = ["left", "up", "right", "down"];
@@ -32,21 +33,14 @@ export default class MoveCommand extends BaseCommand {
         player.setAnimation(direction);
         player.animationSpeed = dirAnimationSpeed[direction];
 
-        let totalDuration = 0;
+        return waitUnlessStopped(state, {
+            extraCondition: () => player.behaviors.TileMovement.isMoving(),
+            afterWait: () => {
+                player.animationSpeed = 0;
+                state.actionCount++;
 
-        do {
-            if (state.isStopped) {
-                return STOPPED;
+                return this.checkCollisions(state);
             }
-
-            totalDuration += CHECK_INTERVAL;
-            await waitForMilisecond(CHECK_INTERVAL);
-        } while (player.behaviors.TileMovement.isMoving() || totalDuration < DURATION);
-
-        player.animationSpeed = 0;
-
-        state.actionCount++;
-
-        return this.checkCollisions(state);
+        });
     }
 }

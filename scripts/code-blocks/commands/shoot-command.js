@@ -1,5 +1,6 @@
 import { waitForMilisecond } from "../../utils/misc.js";
 import { CHECK_INTERVAL, DURATION, ERROR, FINISHED, STOPPED } from "../code-block-constants.js";
+import { waitUnlessStopped } from "../code-block-utils.js";
 import BaseCommand from "./base-command.js";
 
 const directionToAngle = {
@@ -40,16 +41,6 @@ export default class ShootCommand extends BaseCommand {
         
         this.runtime.callFunction("PlayerShoot", angle);
 
-        let totalDuration = 0;
-        do {
-            if (state.isStopped) {
-                return STOPPED;
-            }
-
-            totalDuration += CHECK_INTERVAL;
-            await waitForMilisecond(CHECK_INTERVAL);
-        } while (totalDuration < DURATION);
-
-        return FINISHED;
+        return waitUnlessStopped(state);
     }
 }
