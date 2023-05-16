@@ -7,6 +7,7 @@ import {
 	OperatorBlock,
 	VariableBlock,
 	ShootCommand,
+	WhileCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -46,6 +47,7 @@ runOnStartup(async runtime =>
 	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
 	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);
 	runtime.objects.ShootCommand.setInstanceClass(ShootCommand);
+	runtime.objects.WhileCommand.setInstanceClass(WhileCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

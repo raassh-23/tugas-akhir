@@ -295,8 +295,6 @@ function setupAvailableRepeatExpressions(runtime) {
 		}
 	}
 
-	console.log(`y ${y} scrollable.y ${scrollable.y}`);
-
 	scrollable.height = Math.max(minLength, y - scrollable.y + 5 * AVAILABLE_REPEAT_EXPRESSION_MARGIN);
 	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
 }

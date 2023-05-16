@@ -17,6 +17,7 @@
 		"RepeatCommand",
 		"OperatorBlock",
 		"VariableBlock",
-		"ShootCommand"
+		"ShootCommand",
+		"WhileCommand"
 	]
 }

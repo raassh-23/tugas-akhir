@@ -51,13 +51,19 @@ export const levelAvailableCodeBlocks = {
                 panelId: "active-commands-panel",
             },
             {
+                name: "ShootCommand",
+                frame: 0,
+                inactiveLayer: "UI",
+                panelId: "active-commands-panel",
+            },
+            {
                 name: "RepeatCommand",
                 frame: 0,
                 inactiveLayer: "UI",
                 panelId: "active-commands-panel",
             },
             {
-                name: "ShootCommand",
+                name: "WhileCommand",
                 frame: 0,
                 inactiveLayer: "UI",
                 panelId: "active-commands-panel",

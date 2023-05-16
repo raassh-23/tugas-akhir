@@ -12,11 +12,11 @@ import { waitUnlessStopped } from "../code-block-utils.js";
 /**
  * @extends CommandsContainer
  */
-export default class RepeatCommand extends CommandsContainer {
+export default class WhileCommand extends CommandsContainer {
     /**
      * @type {string}
      */
-    #repeatCondition = "0";
+    #repeatCondition = "false";
 
     /**
      * @type {IWorldInstance?}
@@ -39,7 +39,7 @@ export default class RepeatCommand extends CommandsContainer {
     popUpButton = null;
 
     constructor() {
-        super("Repeat");
+        super("While");
 
         for (const child of this.children()) {
             if (child.objectType.name === "NestedCodeBlockBackground") {
@@ -56,11 +56,11 @@ export default class RepeatCommand extends CommandsContainer {
             }
 
             if (child.objectType.name === "CodeBlockDecoration") {
-                if (child.instVars.id === "repeat-icon") {
+                if (child.instVars.id === "while-icon") {
                     this.icon = child;
                 }
 
-                if (child.instVars.id === "repeat-pop-up") {
+                if (child.instVars.id === "while-pop-up") {
                     this.popUpButton = child;
                 }
 
@@ -79,26 +79,25 @@ export default class RepeatCommand extends CommandsContainer {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        let repeatCount = 0;
-        const cleanedRepeatCondition = this.#repeatCondition
+        const cleanedCondition = this.#repeatCondition
             .replace(/%/g, 'mod')
             .replace(/x/g, '*');
 
-        try {
-            repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
-        } catch (error) {
-            state.isError = true;
-            this.showError(true);
-
-            return ERROR
-        }
-
-        this.text.text = repeatCount.toString();
-
-        let i = 0;
         while (true) {
+            let evaluatedCondition = false;
+
+            try {
+                evaluatedCondition = math.evaluate(cleanedCondition, state.variables);
+                evaluatedCondition = !!evaluatedCondition; // convert to boolean
+            } catch (error) {
+                state.isError = true;
+                this.showError(true);
+    
+                return ERROR
+            }
+            
             this.showHighlight(true);
-            this.text.text = (repeatCount - i).toString();
+            this.text.text = evaluatedCondition.toString();
 
             const waitResult = await waitUnlessStopped(state, {
                 afterWait: () => {
@@ -112,7 +111,7 @@ export default class RepeatCommand extends CommandsContainer {
                 return waitResult;
             }
 
-            if (repeatCount <= i++) {
+            if (!evaluatedCondition) {
                 break;
             }
 

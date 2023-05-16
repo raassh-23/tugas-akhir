@@ -8,6 +8,7 @@ import NumberBlock from "./expressions/number-block.js";
 import OperatorBlock from "./expressions/operator-block.js";
 import VariableBlock from "./expressions/variable-block.js";
 import ShootCommand from "./commands/shoot-command.js";
+import WhileCommand from "./commands/while-command.js";
 
 export {
     CodeBlock,
@@ -20,4 +21,5 @@ export {
     OperatorBlock,
     VariableBlock,
     ShootCommand,
+    WhileCommand,
 };

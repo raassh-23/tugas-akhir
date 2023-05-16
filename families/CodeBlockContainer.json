@@ -8,6 +8,7 @@
 	"members": [
 		"StartCommand",
 		"RepeatCommand",
-		"RepeatCommandCondition"
+		"RepeatCommandCondition",
+		"WhileCommand"
 	]
 }

@@ -223,7 +223,8 @@
 					"StartCommand",
 					"OperatorBlock",
 					"VariableBlock",
-					"ShootCommand"
+					"ShootCommand",
+					"WhileCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -394,6 +395,14 @@
 									"name": "shoot-command.js",
 									"type": "application/javascript",
 									"sid": 686546884391812,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "while-command.js",
+									"type": "application/javascript",
+									"sid": 953206079232703,
 									"script-info": {
 										"purpose": "none"
 									}
