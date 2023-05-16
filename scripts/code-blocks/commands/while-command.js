@@ -80,6 +80,9 @@ export default class WhileCommand extends CommandsContainer {
      */
     async run(player, state) {
         const cleanedCondition = this.#repeatCondition
+            .replace(/&/g, 'and')
+            .replace(/\|/g, 'or')
+            .replace(/!/g, 'not')
             .replace(/%/g, 'mod')
             .replace(/x/g, '*');
 
@@ -160,7 +163,7 @@ export default class WhileCommand extends CommandsContainer {
         if (condition === this.#repeatCondition) {
             return;
         } else if (condition.length === 0) {
-            this.#repeatCondition = "0";
+            this.#repeatCondition = "false";
         } else {
             this.#repeatCondition = condition;
         }
@@ -222,12 +225,12 @@ export default class WhileCommand extends CommandsContainer {
      */
     showError(show) {
         for (const child of this.highlightedObjects) {
-            if (child.instVars.id === "repeat-icon") {
+            if (child.instVars.id === "while-icon") {
                 child.animationFrame = show ? 1 : 0;
                 continue;
             }
 
-            if (child.instVars.id === "repeat-pop-up") {
+            if (child.instVars.id === "while-pop-up") {
                 child.animationFrame = show ? 3 : 2;
             }
         }

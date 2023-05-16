@@ -219,7 +219,7 @@
 					"MoveCommand",
 					"NumberBlock",
 					"RepeatCommand",
-					"RepeatCommandCondition",
+					"ExpressionsContainer",
 					"StartCommand",
 					"OperatorBlock",
 					"VariableBlock",
@@ -430,7 +430,7 @@
 									}
 								},
 								{
-									"name": "repeat-command-condition.js",
+									"name": "expressions-container.js",
 									"type": "text/javascript",
 									"sid": 749394367896171,
 									"script-info": {

@@ -2,7 +2,7 @@ import {
 	MoveCommand,
 	RepeatCommand,
 	RunnerCommand,
-	RepeatCommandCondition,
+	ExpressionsContainer,
 	NumberBlock,
 	OperatorBlock,
 	VariableBlock,
@@ -42,7 +42,7 @@ runOnStartup(async runtime =>
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
 	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
-	runtime.objects.RepeatCommandCondition.setInstanceClass(RepeatCommandCondition);
+	runtime.objects.ExpressionsContainer.setInstanceClass(ExpressionsContainer);
 	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
 	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
 	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);

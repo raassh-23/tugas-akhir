@@ -1,6 +1,11 @@
 import BaseExpression from "./base-expression.js";
 
-const operators = ["+", "-", "x", "/", "%", "(", ")"];
+const operators = [
+    "+", "-", "x", "/", 
+    "%", "(", ")", "==", 
+    "!=", ">", ">=", "<", 
+    "<=", "&", "|", "!",
+];
 
 /**
  * @extends CodeBlock

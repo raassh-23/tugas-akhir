@@ -1,6 +1,6 @@
 /**
  * @typedef {import('../code-blocks/index.js').CommandsContainer} CommandsContainer
- * @typedef {import('../code-blocks/index.js').RepeatCommandCondition} RepeatCommandCondition
+ * @typedef {import('../code-blocks/index.js').ExpressionsContainer} ExpressionsContainer
  */
 
 /**
@@ -25,7 +25,7 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {(CommandsContainer | RepeatCommandCondition)?}
+ * @returns {(CommandsContainer | ExpressionsContainer)?}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
@@ -40,7 +40,7 @@ export function getContainerParent(sprite) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {(CommandsContainer | RepeatCommandCondition)?}
+ * @returns {(CommandsContainer | ExpressionsContainer)?}
  */
 export function getTopCodeBlockContainer(sprite) {
 	let parent = getContainerParent(sprite);

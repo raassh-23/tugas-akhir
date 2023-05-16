@@ -5,7 +5,7 @@ import BaseExpression from "./base-expression.js";
 /**
  * @extends BaseExpression
  */
-export default class RepeatCommandCondition extends BaseExpression {
+export default class ExpressionsContainer extends BaseExpression {
     /**
      * @type {ISpriteInstance?}
      */
@@ -20,6 +20,10 @@ export default class RepeatCommandCondition extends BaseExpression {
         super("RepeatConditionCommand");
     }
 
+    /**
+     * 
+     * @returns {string}
+     */
     evaluate() {
         let result = '';
 
