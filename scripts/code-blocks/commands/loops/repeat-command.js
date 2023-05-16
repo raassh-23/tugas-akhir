@@ -44,6 +44,7 @@ export default class RepeatCommand extends LoopCommand {
         let i = 0;
         while (true) {
             this.showHighlight(true);
+            this.runtime.callFunction("OnCommandStart")
             this.text.text = (repeatCount - i).toString();
 
             const waitResult = await waitUnlessStopped(state, {

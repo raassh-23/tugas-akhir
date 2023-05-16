@@ -211,7 +211,10 @@
 			"SpikeCollision",
 			"Spike",
 			"TimerManager",
-			"Bullet"
+			"Bullet",
+			"MovingEnemyCollision",
+			"MovingEnemy",
+			"MovingEnemyCheckpoint"
 		],
 		"subfolders": [
 			{

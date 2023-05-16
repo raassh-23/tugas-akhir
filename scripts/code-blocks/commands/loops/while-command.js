@@ -32,6 +32,9 @@ export default class WhileCommand extends LoopCommand {
             .replace(/x/g, '*');
 
         while (true) {
+            this.showHighlight(true);
+            this.runtime.callFunction("OnCommandStart")
+
             let evaluatedCondition = false;
 
             try {
@@ -45,7 +48,6 @@ export default class WhileCommand extends LoopCommand {
                 return ERROR
             }
             
-            this.showHighlight(true);
             this.text.text = evaluatedCondition.toString();
 
             const waitResult = await waitUnlessStopped(state, {

@@ -25,6 +25,8 @@ export default class MoveCommand extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
+        this.runtime.callFunction("OnCommandStart")
+
         const direction = frameToDirections[this.animationFrame];
 
 		player.behaviors.TileMovement.simulateControl(direction);
@@ -38,7 +40,7 @@ export default class MoveCommand extends BaseCommand {
                 state.actionCount++;
 
                 return this.checkCollisions(state);
-            }
+            },
         });
     }
 }

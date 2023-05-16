@@ -25,6 +25,8 @@ export default class ShootCommand extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
+        this.runtime.callFunction("OnCommandStart")
+
         if (state.variables.ammo != undefined) {
             if (state.variables.ammo <= 0) {
                 state.isError = true;
@@ -40,6 +42,12 @@ export default class ShootCommand extends BaseCommand {
         
         this.runtime.callFunction("PlayerShoot", angle);
 
-        return waitUnlessStopped(state);
+        return waitUnlessStopped(state, {
+            afterWait: () => {
+                state.actionCount++;
+
+                return this.checkCollisions(state);
+            },
+        });
     }
 }

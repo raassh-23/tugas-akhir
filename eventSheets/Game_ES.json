@@ -4276,6 +4276,183 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Enemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"aceType": "action",
+					"aceName": "StartMove",
+					"objectClass": "MovingEnemyCollision",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 107898621933291,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 948377667143171,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 102345696463671,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 999464140544399
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 105214144141955,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 323226756805496,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 760318853120797
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 623292092112198,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 626131604216703,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 124820385991839
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 897917288230408,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 582098646192683,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 741555965459021
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 845873090057922,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 399094979538874
+						}
+					],
+					"sid": 793604773058100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 255645246603298,
+							"parameters": {
+								"object": "MovingEnemyCheckpoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const collision = runtime.objects.MovingEnemyCollision\n\t.getFirstPickedInstance();\nconst checkpoint = runtime.objects.MovingEnemyCheckpoint\n\t.getFirstPickedInstance();\n\nconst id = checkpoint.instVars.id;\nconst valid = collision.instVars.validIds\n\t.split(\"|\").indexOf(id.toString());\n\nif (valid > -1) {\n\tcollision.instVars.direction = \n\t\tcheckpoint.instVars.direction;\n}"
+						}
+					],
+					"sid": 207838625717516
+				}
+			],
+			"sid": 589913040622524
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Game",
 			"description": "",
 			"isActiveOnStart": true,
@@ -5377,6 +5554,42 @@
 					]
 				},
 				{
+					"functionName": "OnCommandStart",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 817809198269426,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 492311375565906,
+									"parameters": {
+										"object": "MovingEnemyCollision"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "StartMove",
+									"objectClass": "MovingEnemyCollision",
+									"sid": 655064777094550
+								}
+							],
+							"sid": 437128921014101
+						}
+					]
+				},
+				{
 					"functionName": "PlayerShoot",
 					"functionCopyPicked": false,
 					"functionDescription": "",
@@ -5458,6 +5671,36 @@
 						}
 					],
 					"sid": 405829888051021
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet",
+							"sid": 312128472379076,
+							"parameters": {
+								"object": "MovingEnemyCollision"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet",
+							"sid": 191597466323272
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 101541030060547,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 888252047509256
 				}
 			],
 			"sid": 991077192111983
