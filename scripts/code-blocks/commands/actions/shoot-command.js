@@ -1,7 +1,6 @@
-import { waitForMilisecond } from "../../utils/misc.js";
-import { CHECK_INTERVAL, DURATION, ERROR, FINISHED, STOPPED } from "../code-block-constants.js";
-import { waitUnlessStopped } from "../code-block-utils.js";
-import BaseCommand from "./base-command.js";
+import { ERROR } from "../../code-block-constants.js";
+import { waitUnlessStopped } from "../../code-block-utils.js";
+import BaseCommand from "../base-command.js";
 
 const directionToAngle = {
     "right": 0,

@@ -1,7 +1,5 @@
-import {waitForMilisecond} from "../../utils/misc.js";
-import { STOPPED, DURATION, CHECK_INTERVAL } from "../code-block-constants.js";
-import { waitUnlessStopped } from "../code-block-utils.js";
-import BaseCommand from "./base-command.js";
+import { waitUnlessStopped } from "../../code-block-utils.js";
+import BaseCommand from "../base-command.js";
 
 const frameToDirections = ["left", "up", "right", "down"];
 const dirAnimationSpeed = {

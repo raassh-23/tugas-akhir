@@ -1,22 +1,21 @@
-import CommandsContainer from "./commands-container.js";
-import {
-    MARGIN,
-    FINISHED,
-    ERROR,
-    DURATION,
-} from "../code-block-constants.js";
-import { getContainerParent, waitForMilisecond } from "../../utils/misc.js";
-import RunnerCommand from "./runner-command.js";
-import { waitUnlessStopped } from "../code-block-utils.js";
+import CommandsContainer from "../commands-container.js";
+import { MARGIN } from "../../code-block-constants.js";
+import { getContainerParent } from "../../../utils/misc.js";
+import RunnerCommand from "../runner-command.js";
 
 /**
  * @extends CommandsContainer
  */
-export default class WhileCommand extends CommandsContainer {
+export default class LoopCommand extends CommandsContainer {
     /**
      * @type {string}
      */
-    #repeatCondition = "false";
+    condition = "0";
+
+    /**
+     * @type {string}
+     */
+    #defaultCondition = "0";
 
     /**
      * @type {IWorldInstance?}
@@ -38,8 +37,18 @@ export default class WhileCommand extends CommandsContainer {
      */
     popUpButton = null;
 
-    constructor() {
-        super("While");
+    /**
+     * 
+     * @param {string} name 
+     * @param {string} defaultCondition 
+     */
+    constructor(name, defaultCondition) {
+        super(name);
+
+        this.#defaultCondition = defaultCondition;
+        this.condition = defaultCondition;
+
+        const lowercaseName = name.toLowerCase();
 
         for (const child of this.children()) {
             if (child.objectType.name === "NestedCodeBlockBackground") {
@@ -51,16 +60,16 @@ export default class WhileCommand extends CommandsContainer {
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this.text = child;
-                this.text.text = this.#repeatCondition;
+                this.text.text = this.condition;
                 continue;
             }
 
             if (child.objectType.name === "CodeBlockDecoration") {
-                if (child.instVars.id === "while-icon") {
+                if (child.instVars.id === `${lowercaseName}-icon`) {
                     this.icon = child;
                 }
 
-                if (child.instVars.id === "while-pop-up") {
+                if (child.instVars.id === `${lowercaseName}-pop-up`) {
                     this.popUpButton = child;
                 }
 
@@ -69,63 +78,6 @@ export default class WhileCommand extends CommandsContainer {
                 this.highlightedObjects.push(child);
             }
         }
-    }
-
-    /**
-     * 
-     * @param {IPlayer} player 
-     * @param {import("../../for-events.js").GameState} state
-     * 
-     * @returns {Promise<number>}
-     */
-    async run(player, state) {
-        const cleanedCondition = this.#repeatCondition
-            .replace(/&/g, 'and')
-            .replace(/\|/g, 'or')
-            .replace(/!/g, 'not')
-            .replace(/%/g, 'mod')
-            .replace(/x/g, '*');
-
-        while (true) {
-            let evaluatedCondition = false;
-
-            try {
-                evaluatedCondition = math.evaluate(cleanedCondition, state.variables);
-                evaluatedCondition = !!evaluatedCondition; // convert to boolean
-            } catch (error) {
-                state.isError = true;
-                this.showError(true);
-    
-                return ERROR
-            }
-            
-            this.showHighlight(true);
-            this.text.text = evaluatedCondition.toString();
-
-            const waitResult = await waitUnlessStopped(state, {
-                afterWait: () => {
-                    this.showHighlight(false);
-
-                    return this.checkCollisions(state);
-                },
-            });
-
-            if (waitResult !== FINISHED) {
-                return waitResult;
-            }
-
-            if (!evaluatedCondition) {
-                break;
-            }
-
-            const result = await super.run(player, state);
-
-            if (result !== FINISHED) {
-                return result;
-            }
-        }
-
-        return FINISHED;
     }
 
     /**
@@ -159,17 +111,17 @@ export default class WhileCommand extends CommandsContainer {
      * 
      * @param {string} condition
      */
-    setRepeatCondition(condition) {
-        if (condition === this.#repeatCondition) {
+    setCondition(condition) {
+        if (condition === this.condition) {
             return;
         } else if (condition.length === 0) {
-            this.#repeatCondition = "false";
+            this.condition = this.#defaultCondition;
         } else {
-            this.#repeatCondition = condition;
+            this.condition = condition;
         }
 
         this.showError(false);
-        this.text.text = this.#repeatCondition.replace(/ /g, '');
+        this.text.text = this.condition.replace(/ /g, '');
     }
 
     setSizeBasedOnLevel() {
@@ -224,20 +176,13 @@ export default class WhileCommand extends CommandsContainer {
      * @param {boolean} show 
      */
     showError(show) {
-        for (const child of this.highlightedObjects) {
-            if (child.instVars.id === "while-icon") {
-                child.animationFrame = show ? 1 : 0;
-                continue;
-            }
+        this.icon.animationFrame = show ? 1 : 0;
 
-            if (child.instVars.id === "while-pop-up") {
-                child.animationFrame = show ? 3 : 2;
-            }
-        }
+        this.popUpButton.animationFrame = show ? 3 : 2;
     }
 
     reset(withError) {
-        this.text.text = this.#repeatCondition.replace(/ /g, '');
+        this.text.text = this.condition.replace(/ /g, '');
 
         super.reset(withError);
     }

@@ -360,22 +360,6 @@
 									}
 								},
 								{
-									"name": "move-command.js",
-									"type": "application/javascript",
-									"sid": 679073807776910,
-									"script-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "repeat-command.js",
-									"type": "application/javascript",
-									"sid": 288352540292147,
-									"script-info": {
-										"purpose": "none"
-									}
-								},
-								{
 									"name": "runner-command.js",
 									"type": "application/javascript",
 									"sid": 322311837758489,
@@ -390,25 +374,62 @@
 									"script-info": {
 										"purpose": "none"
 									}
-								},
-								{
-									"name": "shoot-command.js",
-									"type": "application/javascript",
-									"sid": 686546884391812,
-									"script-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "while-command.js",
-									"type": "application/javascript",
-									"sid": 953206079232703,
-									"script-info": {
-										"purpose": "none"
-									}
 								}
 							],
-							"subfolders": [],
+							"subfolders": [
+								{
+									"items": [
+										{
+											"name": "repeat-command.js",
+											"type": "application/javascript",
+											"sid": 288352540292147,
+											"script-info": {
+												"purpose": "none"
+											}
+										},
+										{
+											"name": "while-command.js",
+											"type": "application/javascript",
+											"sid": 953206079232703,
+											"script-info": {
+												"purpose": "none"
+											}
+										},
+										{
+											"name": "loop-command.js",
+											"type": "application/javascript",
+											"sid": 721483488721220,
+											"script-info": {
+												"purpose": "none"
+											}
+										}
+									],
+									"subfolders": [],
+									"name": "loops"
+								},
+								{
+									"items": [
+										{
+											"name": "move-command.js",
+											"type": "application/javascript",
+											"sid": 679073807776910,
+											"script-info": {
+												"purpose": "none"
+											}
+										},
+										{
+											"name": "shoot-command.js",
+											"type": "application/javascript",
+											"sid": 686546884391812,
+											"script-info": {
+												"purpose": "none"
+											}
+										}
+									],
+									"subfolders": [],
+									"name": "actions"
+								}
+							],
 							"name": "commands"
 						},
 						{

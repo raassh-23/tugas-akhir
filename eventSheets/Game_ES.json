@@ -1877,7 +1877,7 @@
 											"actions": [
 												{
 													"type": "script",
-													"script": "const condition = runtime.objects.ExpressionsContainer\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCondition(condition);"
+													"script": "const condition = runtime.objects.ExpressionsContainer\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setCondition(condition);"
 												}
 											],
 											"sid": 388284699747584
@@ -2368,7 +2368,7 @@
 											"actions": [
 												{
 													"type": "script",
-													"script": "const condition = runtime.objects.ExpressionsContainer\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setRepeatCondition(condition);"
+													"script": "const condition = runtime.objects.ExpressionsContainer\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setCondition(condition);"
 												}
 											],
 											"sid": 445646356413808
