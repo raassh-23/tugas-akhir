@@ -141,6 +141,23 @@
 								"variable": "isRunning"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "CodeBlockButton",
+							"sid": 897397573386582,
+							"parameters": {
+								"parent": "CodeBlockPanel",
+								"which": "top"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 723473884153220,
+							"parameters": {
+								"object": "CodeBlockPanel"
+							}
 						}
 					],
 					"actions": [

@@ -1696,6 +1696,21 @@
 											"d": true,
 											"sm": "normal"
 										}
+									},
+									{
+										"uid": 27,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
 									}
 								],
 								"flags": {
@@ -1770,6 +1785,34 @@
 									"properties": {
 										"enabled": true
 									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": 28,
+								"uid": 27,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
 								}
 							},
 							"world": {
@@ -3416,6 +3459,51 @@
 									}
 								}
 							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 72,
+								"children": [
+									{
+										"uid": 75,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
 							"world": {
 								"x": 1020,
 								"y": 27,
@@ -3466,7 +3554,7 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": null,
+								"parent-uid": 72,
 								"uid": 75,
 								"flags": {
 									"x": true,
@@ -3671,6 +3759,51 @@
 									}
 								}
 							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 131,
+								"children": [
+									{
+										"uid": 132,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": true,
+											"h": true,
+											"a": true,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
 							"world": {
 								"x": 1020,
 								"y": 27,
@@ -3721,7 +3854,7 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": null,
+								"parent-uid": 131,
 								"uid": 132,
 								"flags": {
 									"x": true,
