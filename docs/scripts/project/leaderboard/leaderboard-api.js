@@ -43,14 +43,14 @@
  */
 
 export default class LeaderboardAPI {
-    #url = "";
+    _url = "";
 
     /**
      * 
      * @param {string} url 
      */
     constructor(url) {
-        this.#url = url;
+        this._url = url;
     }
 
     /**
@@ -63,7 +63,7 @@ export default class LeaderboardAPI {
      * @returns {Promise<AddToLeaderboardData>}
      */
     async addToLeaderboard(level, username, actions, codeBlocks, timeMs) {
-        const response = await fetch(`${this.#url}/leaderboard`, {
+        const response = await fetch(`${this._url}/leaderboard`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -102,7 +102,7 @@ export default class LeaderboardAPI {
      */
     async getLeaderboard(level, page, pageSize, sortBy, order) {
         const response = await fetch(
-            `${this.#url}/leaderboard?level=${level}&page=${page}\
+            `${this._url}/leaderboard?level=${level}&page=${page}\
             &pageSize=${pageSize}&order=${order}&sortBy=${sortBy}`
         );
 

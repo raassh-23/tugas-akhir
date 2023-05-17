@@ -1,4 +1,7 @@
-import { CommandsContainer, RepeatCommandCondition } from '../code-blocks/index.js';
+/**
+ * @typedef {import('../code-blocks/index.js').CommandsContainer} CommandsContainer
+ * @typedef {import('../code-blocks/index.js').ExpressionsContainer} ExpressionsContainer
+ */
 
 /**
  * 
@@ -22,7 +25,7 @@ export function getSquaredDistance(a, b) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {(CommandsContainer | RepeatCommandCondition)?}
+ * @returns {(CommandsContainer | ExpressionsContainer)?}
  */
 export function getContainerParent(sprite) {
 	let parent = sprite.getParent();
@@ -37,7 +40,7 @@ export function getContainerParent(sprite) {
 /**
  * 
  * @param {ISpriteInstance} sprite 
- * @returns {(CommandsContainer | RepeatCommandCondition)?}
+ * @returns {(CommandsContainer | ExpressionsContainer)?}
  */
 export function getTopCodeBlockContainer(sprite) {
 	let parent = getContainerParent(sprite);
@@ -65,4 +68,40 @@ export function getTopCodeBlockContainer(sprite) {
  */
 export function clamp(value, min, max) {
 	return Math.min(Math.max(value, min), max);
+}
+
+/**
+ * 
+ * @param {IObjectClass} object 
+ * @param {string} id 
+ * 
+ * @returns {IWorldInstance?}
+ */
+export function getInstanceById(object, id) {
+	return object.getAllInstances()
+		.find(instance => instance.instVars.id === id);
+}
+
+/**
+ * 
+ * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject 
+ * @param {string} layer 
+ * @param {number} x 
+ * @param {number} y 
+ * @param {import('../level-data.js').CodeBlockDefinition} definition 
+ * @param {IWorldInstance} parent 
+ */
+export function createCodeBlockButton(codeBlockButtonObject, layer, x, y, definition, parent) {
+	const button = codeBlockButtonObject.createInstance(layer, x, y);
+
+	button.setAnimation(definition.name);
+	button.animationFrame = definition.frame;
+
+	button.instVars.panelId = definition.panelId;
+	button.instVars.inactiveLayer = definition.inactiveLayer;
+
+	parent.addChild(button, {
+		transformX: true,
+		transformY: true,
+	})
 }

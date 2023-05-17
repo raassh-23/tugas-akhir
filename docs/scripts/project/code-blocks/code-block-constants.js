@@ -13,3 +13,5 @@ export const ERROR = 2;
 export const GAME_OVER = 3;
 
 export const DURATION = 500;
+
+export const CHECK_INTERVAL = 100;

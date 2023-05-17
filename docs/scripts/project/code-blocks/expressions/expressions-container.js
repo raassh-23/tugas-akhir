@@ -5,11 +5,11 @@ import BaseExpression from "./base-expression.js";
 /**
  * @extends BaseExpression
  */
-export default class RepeatCommandCondition extends BaseExpression {
+export default class ExpressionsContainer extends BaseExpression {
     /**
      * @type {ISpriteInstance?}
      */
-    parent = null;
+    _parent = null;
 
     /**
      * @type {CodeBlocksContainer}
@@ -20,6 +20,10 @@ export default class RepeatCommandCondition extends BaseExpression {
         super("RepeatConditionCommand");
     }
 
+    /**
+     * 
+     * @returns {string}
+     */
     evaluate() {
         let result = '';
 
@@ -35,21 +39,21 @@ export default class RepeatCommandCondition extends BaseExpression {
      * @param {number} width 
      */
     expand(width = 0) {
-        if (this.parent == null) {
-            this.parent = this.getParent();
+        if (this._parent == null) {
+            this._parent = this.getParent();
         }
 
         const newWidth = 2 * MARGIN + this.width + width
-            + this.parent.instVars.initialLength / 2
+            + this._parent.instVars.initialLength / 2
             + this.container.codeBlocks.reduce((acc, expression) => acc + expression.width, 0);
 
-        if (newWidth <= this.parent.instVars.initialLength) {
-            this.parent.width = this.parent.instVars.initialLength;
-            this.parent.instVars.min = this.parent.instVars.initialMin;
+        if (newWidth <= this._parent.instVars.initialLength) {
+            this._parent.width = this._parent.instVars.initialLength;
+            this._parent.instVars.min = this._parent.instVars.initialMin;
         } else {
-            this.parent.width = newWidth;
-            this.parent.instVars.min =
-                (this.parent.instVars.initialMin + this.parent.instVars.initialLength) - newWidth;
+            this._parent.width = newWidth;
+            this._parent.instVars.min =
+                (this._parent.instVars.initialMin + this._parent.instVars.initialLength) - newWidth;
         }
     }
 
@@ -58,7 +62,7 @@ export default class RepeatCommandCondition extends BaseExpression {
     }
 
     getWidthOnLevel(level) {
-        return this.parent.width;
+        return this._parent.width;
     }
 
     /**

@@ -3,11 +3,13 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
-import levelVariables from "./level-variables.js";
+import {levelVariables, levelAvailableCodeBlocks} from "./level-data.js";
 import { 
 	getSquaredDistance,
 	getContainerParent,
 	getTopCodeBlockContainer,
+	getInstanceById,
+	createCodeBlockButton,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -25,6 +27,7 @@ let pickedCommand = null;
  * @typedef {{
  * isStopped: boolean,
  * isGameOver: boolean,
+ * isError: boolean,
  * actionCount: number,
  * variables: {[variable: string]: number}
  * }} GameState
@@ -36,6 +39,7 @@ let pickedCommand = null;
 const state = {
 	isStopped: false,
 	isGameOver: false,
+	isError: false,
 	actionCount: 0,
 	variables: {},
 }
@@ -56,18 +60,26 @@ function setupLevel(runtime) {
 		throw new Error("cannot find runner");
 	}
 
-	resetState(runtime.globalVars.level);
+	resetState(runtime.globalVars.level, true);
+
+	setupAvailableCommands(runtime);
+	setupAvailableRepeatExpressions(runtime);
+	setupAvailableWhileExpressions(runtime);
 }
 
 /**
  * 
  * @param {number} level 
  */
-function resetState(level) {
+function resetState(level, resetVariables = true) {
 	state.isStopped = false;
 	state.isGameOver = false;
+	state.isError = false;
 	state.actionCount = 0;
-	state.variables = levelVariables[level] ?? {};
+	
+	if (resetVariables) {
+		state.variables = {...levelVariables[level]};
+	}
 }
 
 /**
@@ -198,10 +210,137 @@ function getVariables() {
 function getCodeBlockCount(runtime) {
 	let count = runner.getCount();
 
-	count += runtime.objects.RepeatCommandCondition.getAllInstances()
+	count += runtime.objects.ExpressionsContainer.getAllInstances()
 		.reduce((acc, curr) => acc + curr.getCount(), 0);
 
 	return count;
+}
+
+const AVAILABLE_COMMANDS_MARGIN = 16;
+const COMMAND_WIDTH = 96;
+const COMMAND_HEIGHT = 96;
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupAvailableCommands(runtime) {
+	const level = runtime.globalVars.level;
+	
+	const availableCommands = levelAvailableCodeBlocks[level].commands;
+
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-commands")
+
+	const minLength = scrollable.instVars.initialLength;
+	const x = scrollable.x + (scrollable.width - COMMAND_WIDTH)/2;
+	let y = scrollable.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
+
+	for (const command of availableCommands) {
+		createCodeBlockButton(
+			runtime.objects.CodeBlockButton,
+			"AvailableCommandList",
+			x,
+			y,
+			command,
+			scrollable,
+		);
+
+		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
+	}
+
+	scrollable.height = Math.max(minLength, y - scrollable.y - AVAILABLE_COMMANDS_MARGIN);
+	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
+}
+
+const AVAILABLE_EXPRESSION_MARGIN = 16;
+const EXPRESSION_WIDTH = 72;
+const EXPRESSION_HEIGHT = 72;
+
+/**
+ * 
+ * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject
+ * @param {IWorldInstance} parent 
+ * @param {string} layer 
+ * @param {import("./level-data.js").CodeBlockDefinition[]} definitions 
+ */
+function setupExpressions(codeBlockButtonObject, parent, layer, definitions) {
+	const minLength = parent.instVars.initialLength;
+	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN)/2;
+	const x2 = x1 + EXPRESSION_WIDTH + AVAILABLE_EXPRESSION_MARGIN;
+
+	let x = x1;
+	let y = parent.y + 3 * AVAILABLE_EXPRESSION_MARGIN + EXPRESSION_HEIGHT/2;
+
+	for (const expression of definitions) {
+		createCodeBlockButton(
+			codeBlockButtonObject,
+			layer,
+			x,
+			y,
+			expression,
+			parent,
+		);
+
+		if (x === x1) {
+			x = x2;
+		} else {
+			x = x1;
+			y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
+		}
+	}
+
+	if (x === x2) {
+		y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
+	}
+
+	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_EXPRESSION_MARGIN/2);
+	parent.instVars.min = parent.y - (parent.height - minLength);
+}
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupAvailableRepeatExpressions(runtime) {
+	const level = runtime.globalVars.level;
+
+	const availableRepeatExpressions = levelAvailableCodeBlocks[level].repeatExpressions;
+
+	if (availableRepeatExpressions.length === 0) {
+		return;
+	}
+
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-repeat-expressions");
+
+	setupExpressions(
+		runtime.objects.CodeBlockButton,
+		scrollable,
+		"RepeatPopUpCodeBlocks",
+		availableRepeatExpressions,
+	);
+}
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupAvailableWhileExpressions(runtime) {
+	const level = runtime.globalVars.level;
+
+	const availableWhileExpressions = levelAvailableCodeBlocks[level].whileExpressions;
+
+	if (availableWhileExpressions.length === 0) {
+		return;
+	}
+
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-while-expressions");
+
+	setupExpressions(
+		runtime.objects.CodeBlockButton,
+		scrollable,
+		"WhilePopUpCodeBlocks",
+		availableWhileExpressions,
+	);
 }
 
 
@@ -230,7 +369,7 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event28_Act1(runtime, localVars)
+	async Game_es_Event31_Act1(runtime, localVars)
 	{
 		const pickedUid = pickCodeBlockShadowToShow(
 			runtime.objects.CodeBlock.getFirstPickedInstance(), 
@@ -240,49 +379,72 @@ const scriptsInEvents = {
 		runtime.setReturnValue(pickedUid);
 	},
 
-	async Game_es_Event30_Act4(runtime, localVars)
+	async Game_es_Event33_Act4(runtime, localVars)
 	{
 		expandCodeBlockShadowContainer(
 			runtime.objects.CodeBlockShadow.getFirstPickedInstance()
 		);
 	},
 
-	async Game_es_Event33_Act2(runtime, localVars)
+	async Game_es_Event36_Act2(runtime, localVars)
 	{
 		resetContainerLength(
 			runtime.objects.CodeBlockContainer.getAllInstances()
 		);
 	},
 
-	async Game_es_Event39_Act1(runtime, localVars)
+	async Game_es_Event42_Act1(runtime, localVars)
 	{
 		runtime.objects.CodeBlock.getFirstPickedInstance().setActive(localVars.active);
 	},
 
-	async Game_es_Event48_Act1(runtime, localVars)
+	async Game_es_Event51_Act1(runtime, localVars)
 	{
 		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event51_Act1(runtime, localVars)
+	async Game_es_Event54_Act1(runtime, localVars)
 	{
 		localVars.commandUID = pickedCommand.uid;
 	},
 
-	async Game_es_Event53_Act1(runtime, localVars)
+	async Game_es_Event56_Act1(runtime, localVars)
 	{
-		const condition = runtime.objects.RepeatCommandCondition
+		const condition = runtime.objects.ExpressionsContainer
 			.getFirstPickedInstance().evaluate();
-		pickedCommand.setRepeatCondition(condition);
+		pickedCommand.setCondition(condition);
 	},
 
-	async Game_es_Event54_Act1(runtime, localVars)
+	async Game_es_Event57_Act1(runtime, localVars)
 	{
 		pickedCommand = null;
 	},
 
-	async Game_es_Event55_Act1(runtime, localVars)
+	async Game_es_Event66_Act1(runtime, localVars)
+	{
+		pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();
+		localVars.commandUID = pickedCommand.uid;
+	},
+
+	async Game_es_Event69_Act1(runtime, localVars)
+	{
+		localVars.commandUID = pickedCommand.uid;
+	},
+
+	async Game_es_Event71_Act1(runtime, localVars)
+	{
+		const condition = runtime.objects.ExpressionsContainer
+			.getFirstPickedInstance().evaluate();
+		pickedCommand.setCondition(condition);
+	},
+
+	async Game_es_Event72_Act1(runtime, localVars)
+	{
+		pickedCommand = null;
+	},
+
+	async Game_es_Event73_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(
 			runtime.objects.CodeBlock
@@ -291,38 +453,55 @@ const scriptsInEvents = {
 		);
 	},
 
-	async Game_es_Event105_Act1(runtime, localVars)
+	async Game_es_Event123_Act1(runtime, localVars)
 	{
 		runtime.setReturnValue(getVariables());
 	},
 
-	async Game_es_Event109_Act6(runtime, localVars)
+	async Game_es_Event133_Act1(runtime, localVars)
+	{
+		const collision = runtime.objects.MovingEnemyCollision
+			.getFirstPickedInstance();
+		const checkpoint = runtime.objects.MovingEnemyCheckpoint
+			.getFirstPickedInstance();
+		
+		const id = checkpoint.instVars.id;
+		const valid = collision.instVars.validIds
+			.split("|").indexOf(id.toString());
+		
+		if (valid > -1) {
+			collision.instVars.direction = 
+				checkpoint.instVars.direction;
+		}
+	},
+
+	async Game_es_Event137_Act6(runtime, localVars)
 	{
 		setupLevel(runtime);
 	},
 
-	async Game_es_Event117_Act1(runtime, localVars)
+	async Game_es_Event139_Act4(runtime, localVars)
 	{
-		state.isGameOver = true;
+		resetState(runtime.globalVars.level, !state.isError);
 	},
 
-	async Game_es_Event121_Act1(runtime, localVars)
+	async Game_es_Event148_Act1(runtime, localVars)
 	{
 		console.log("running commands")
 		
-		resetState(runtime.globalVars.level);
+		resetState(runtime.globalVars.level, true);
 		
 		runner.run(runtime.objects.Player.getFirstInstance(), state)
 	},
 
-	async Game_es_Event122_Act1(runtime, localVars)
+	async Game_es_Event149_Act1(runtime, localVars)
 	{
 		console.log("stopping commands")
 		
 		state.isStopped = true;
 	},
 
-	async Game_es_Event129_Act6(runtime, localVars)
+	async Game_es_Event157_Act6(runtime, localVars)
 	{
 		const {
 			level,
@@ -345,17 +524,45 @@ const scriptsInEvents = {
 		}
 	},
 
-	async Game_es_Event130_Act1(runtime, localVars)
+	async Game_es_Event158_Act1(runtime, localVars)
 	{
 		runtime.globalVars.codeBlockCount = 
 			getCodeBlockCount(runtime);
 		runtime.setReturnValue(runtime.globalVars.codeBlockCount);
 	},
 
-	async Game_es_Event131_Act1(runtime, localVars)
+	async Game_es_Event159_Act1(runtime, localVars)
 	{
 		runtime.globalVars.actionCount = state.actionCount;
 		runtime.setReturnValue(runtime.globalVars.actionCount);
+	},
+
+	async Game_es_Event165_Act1(runtime, localVars)
+	{
+		state.isGameOver = true;
+	},
+
+	async Game_es_Event166_Act1(runtime, localVars)
+	{
+		if (state.variables.health === undefined) {
+			return;
+		}
+		
+		state.variables.health -= runtime.objects.Damaging
+			.getFirstPickedInstance().instVars.damage;
+			
+		if (state.variables.health <= 0) {
+			state.isError = true;
+		}
+		
+	},
+
+	async Game_es_Event170_Act1(runtime, localVars)
+	{
+		runtime.callFunction("PlayerShoot", 0);
+		runtime.callFunction("PlayerShoot", 90);
+		runtime.callFunction("PlayerShoot", 180);
+		runtime.callFunction("PlayerShoot", 270);
 	},
 
 	async Menu_es_Event15_Act3(runtime, localVars)
