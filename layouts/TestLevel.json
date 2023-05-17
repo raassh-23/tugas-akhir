@@ -196,6 +196,63 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "Spike",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 68,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 21,
+						"uid": 68,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 608,
+						"y": 416,
+						"width": 49.677156437328165,
+						"height": 25.591262407108445,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "MovingEnemy",
 					"properties": {
 						"initially-visible": true,
@@ -618,8 +675,8 @@
 					},
 					"uid": 21,
 					"instanceVariables": {
-						"active": true,
-						"damage": 1
+						"damage": 1,
+						"active": true
 					},
 					"behaviors": {},
 					"template": {
@@ -660,11 +717,11 @@
 										"key": "instance-variable",
 										"state": [
 											{
-												"iv": "active",
+												"iv": "damage",
 												"state": true
 											},
 											{
-												"iv": "damage",
+												"iv": "active",
 												"state": true
 											}
 										]
@@ -831,63 +888,6 @@
 					}
 				},
 				{
-					"type": "Spike",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 68,
-					"instanceVariables": {},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 21,
-						"uid": 68,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 608,
-						"y": 416,
-						"width": 49.677156437328165,
-						"height": 25.591262407108445,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "MovingEnemyCollision",
 					"properties": {
 						"initially-visible": false,
@@ -898,8 +898,8 @@
 					},
 					"uid": 143,
 					"instanceVariables": {
-						"active": true,
 						"damage": 1,
+						"active": true,
 						"health": 2,
 						"direction": "right",
 						"validIds": "2|3"
@@ -1056,8 +1056,8 @@
 					},
 					"uid": 146,
 					"instanceVariables": {
+						"damage": 2,
 						"active": true,
-						"damage": 1,
 						"health": 2,
 						"direction": "up",
 						"validIds": "0|1"

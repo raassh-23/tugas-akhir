@@ -4446,6 +4446,84 @@
 						}
 					],
 					"sid": 207838625717516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving-direction",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 140637180012045,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"direction": "right"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 288584060374083,
+							"parameters": {
+								"child": "MovingEnemy",
+								"which": "own"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 624439314085540
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MovingEnemy",
+							"sid": 516741021559167,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 821808069985217
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving-direction",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 661276422860436,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"direction": "left"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 125730647298403,
+							"parameters": {
+								"child": "MovingEnemy",
+								"which": "own"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 245880082589312
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MovingEnemy",
+							"sid": 541460624502847,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 473196078612887
 				}
 			],
 			"sid": 589913040622524
@@ -5519,15 +5597,15 @@
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Player",
-									"sid": 427727280951224,
+									"sid": 888075233183047,
 									"parameters": {
-										"object": "SpikeCollision"
+										"object": "Damaging"
 									}
 								},
 								{
 									"id": "is-boolean-instance-variable-set",
-									"objectClass": "SpikeCollision",
-									"sid": 797423493497226,
+									"objectClass": "Damaging",
+									"sid": 680474816655955,
 									"parameters": {
 										"instance-variable": "active"
 									}
@@ -5535,9 +5613,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 403603740908100,
+									"sid": 492129971631727,
 									"parameters": {
-										"first-value": "distance(Player.X, Player.Y, SpikeCollision.X, SpikeCollision.Y)",
+										"first-value": "distance(Player.X, Player.Y, Damaging.X, Damaging.Y)",
 										"comparison": 2,
 										"second-value": "GRID_SIZE"
 									}
@@ -5546,7 +5624,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= 1;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
+									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nconsole.log(\"before \" + state.variables.health);\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\nconsole.log(\"after \" + state.variables.health);\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
 								}
 							],
 							"sid": 188760965931083

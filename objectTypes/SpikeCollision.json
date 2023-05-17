@@ -3,22 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 989400373014062,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "active",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 136233155587303
-		},
-		{
-			"name": "damage",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 135405388019428
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

@@ -259,7 +259,8 @@
 			"Text",
 			"Panel",
 			"Clickable",
-			"PanelBorder"
+			"PanelBorder",
+			"Damaging"
 		],
 		"subfolders": []
 	},
