@@ -8,12 +8,12 @@ export default class CodeBlock extends ISpriteInstance {
     /**
      * @type {ISpriteInstance[]}
      */
-    highlightedObjects = [];
+    _highlightedObjects = [];
 
     /**
      * @type {ICodeBlockShadow[]}
      */
-    codeBlockShadows = [];
+    _codeBlockShadows = [];
 
     /**
      * @type {number}
@@ -33,7 +33,7 @@ export default class CodeBlock extends ISpriteInstance {
     /**
      * @type {string}
      */
-    originalAnimationName = "";
+    _originalAnimationName = "";
 
     /**
      * 
@@ -51,7 +51,7 @@ export default class CodeBlock extends ISpriteInstance {
             if (child.objectType.name === "CodeBlockShadow") {
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
-                this.codeBlockShadows.push(child);
+                this._codeBlockShadows.push(child);
             }
         }
 
@@ -65,7 +65,7 @@ export default class CodeBlock extends ISpriteInstance {
     showHighlight(show) {
         this.effects.forEach((effect) => effect.isActive = show);
 
-        this.highlightedObjects.forEach((object) => {
+        this._highlightedObjects.forEach((object) => {
             object.effects.forEach((effect) => effect.isActive = show);
         });
     }
@@ -107,7 +107,7 @@ export default class CodeBlock extends ISpriteInstance {
      */
     updateLevel(level) {
         this.level = level;
-        this.codeBlockShadows.forEach((shadow) => {
+        this._codeBlockShadows.forEach((shadow) => {
             shadow.instVars.level = level + shadow.instVars.relativeLevelToParent;
         });
 
@@ -120,7 +120,7 @@ export default class CodeBlock extends ISpriteInstance {
         this.width = this.savedWidth * multiplier;
         this.height = this.savedHeight * multiplier;
 
-        this.codeBlockShadows[0].x = this.x + this.width;
+        this._codeBlockShadows[0].x = this.x + this.width;
     }
 
     /**

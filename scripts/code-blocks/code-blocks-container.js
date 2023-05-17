@@ -17,7 +17,7 @@ export default class CodeBlocksContainer {
      * @param {"command" | "expression"} type 
      */
     constructor(type) {
-        this.type = type;
+        this._type = type;
     }
 
     /**
@@ -25,9 +25,9 @@ export default class CodeBlocksContainer {
      * @param {CodeBlock} codeBlock 
      */
     addCodeBlock(codeBlock) {
-        if (this.type === "command" && !(codeBlock instanceof BaseCommand)) {
+        if (this._type === "command" && !(codeBlock instanceof BaseCommand)) {
             throw new Error("codeBlock must be instance of BaseCommand");
-        } else if (this.type === "expression" && !(codeBlock instanceof BaseExpression)) {
+        } else if (this._type === "expression" && !(codeBlock instanceof BaseExpression)) {
             throw new Error("codeBlock must be instance of BaseExpression");
         }
 

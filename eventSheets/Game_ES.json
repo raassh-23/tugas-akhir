@@ -5624,7 +5624,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nconsole.log(\"before \" + state.variables.health);\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\nconsole.log(\"after \" + state.variables.health);\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
+									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
 								}
 							],
 							"sid": 188760965931083

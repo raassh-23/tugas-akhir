@@ -24,7 +24,7 @@ export default class WhileCommand extends LoopCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        const cleanedCondition = this.condition
+        const cleanedCondition = this._condition
             .replace(/&/g, 'and')
             .replace(/\|/g, 'or')
             .replace(/ ! /g, ' not ')
@@ -48,7 +48,7 @@ export default class WhileCommand extends LoopCommand {
                 return ERROR
             }
             
-            this.text.text = evaluatedCondition.toString();
+            this._text.text = evaluatedCondition.toString();
 
             const waitResult = await waitUnlessStopped(state, {
                 afterWait: () => {

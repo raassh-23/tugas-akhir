@@ -22,7 +22,7 @@ export default class RepeatCommand extends LoopCommand {
      */
     async run(player, state) {
         let repeatCount = 0;
-        const cleanedRepeatCondition = this.condition
+        const cleanedRepeatCondition = this._condition
             .replace(/%/g, 'mod')
             .replace(/x/g, '*');
 
@@ -39,13 +39,13 @@ export default class RepeatCommand extends LoopCommand {
             return ERROR
         }
 
-        this.text.text = repeatCount.toString();
+        this._text.text = repeatCount.toString();
 
         let i = 0;
         while (true) {
             this.showHighlight(true);
             this.runtime.callFunction("OnCommandStart")
-            this.text.text = (repeatCount - i).toString();
+            this._text.text = (repeatCount - i).toString();
 
             const waitResult = await waitUnlessStopped(state, {
                 afterWait: () => {
