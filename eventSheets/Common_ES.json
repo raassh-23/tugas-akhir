@@ -321,9 +321,18 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-size",
+					"objectClass": "Clickable",
+					"sid": 875502242011133,
+					"parameters": {
+						"width": "Self.InitialWidth",
+						"height": "Self.initialHeight"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 833292668949066,
+					"sid": 226490491908593,
 					"parameters": {
 						"variable": "touchedUid",
 						"value": "0"
@@ -332,19 +341,10 @@
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Clickable",
-					"sid": 623980147963768,
+					"sid": 853927819045273,
 					"parameters": {
 						"instance-variable": "isPressed",
 						"value": "false"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Clickable",
-					"sid": 875502242011133,
-					"parameters": {
-						"width": "Self.InitialWidth",
-						"height": "Self.initialHeight"
 					}
 				}
 			],

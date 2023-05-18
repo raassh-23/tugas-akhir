@@ -8,16 +8,16 @@ import BaseExpression from "./expressions/base-expression.js";
 
 export default class CodeBlocksContainer {
     /**
-     * @type {CodeBlock[]}
-     */
-    codeBlocks = [];
-
-    /**
      * 
      * @param {"command" | "expression"} type 
      */
     constructor(type) {
         this._type = type;
+
+        /**
+         * @type {CodeBlock[]}
+         */
+        this.codeBlocks = []
     }
 
     /**

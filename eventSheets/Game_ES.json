@@ -7,6 +7,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "GRID_SIZE",
+			"type": "number",
+			"initialValue": "64",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 109618598389210
+		},
+		{
+			"eventType": "variable",
 			"name": "isRunning",
 			"type": "boolean",
 			"initialValue": "false",
@@ -4548,20 +4558,104 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Game",
+			"title": "Bullet",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "variable",
-					"name": "GRID_SIZE",
+					"name": "BULLET_RANGE",
 					"type": "number",
-					"initialValue": "64",
+					"initialValue": "5",
 					"comment": "",
 					"isStatic": true,
 					"isConstant": true,
-					"sid": 403828507208253
+					"sid": 654815479073182
 				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet",
+							"sid": 449256297570389,
+							"parameters": {
+								"object": "SolidObstacle"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet",
+							"sid": 674990224080119
+						}
+					],
+					"sid": 699783535092130
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet",
+							"sid": 847399536488494,
+							"parameters": {
+								"object": "MovingEnemyCollision"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet",
+							"sid": 118445454490833
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 884927459214947,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 257390564904569
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "Bullet",
+							"sid": 932763450287858,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 4,
+								"distance": "GRID_SIZE * BULLET_RANGE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet",
+							"sid": 405506401316078
+						}
+					],
+					"sid": 756809420271803
+				}
+			],
+			"sid": 343834548842833
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"eventType": "variable",
 					"name": "GAME_OVER_TWEEN_TAG",
@@ -5725,77 +5819,6 @@
 						}
 					],
 					"sid": 541108730608813
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 587957771994864,
-							"parameters": {
-								"key": 32
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.callFunction(\"PlayerShoot\", 0);\nruntime.callFunction(\"PlayerShoot\", 90);\nruntime.callFunction(\"PlayerShoot\", 180);\nruntime.callFunction(\"PlayerShoot\", 270);"
-						}
-					],
-					"sid": 710987137471118
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Bullet",
-							"sid": 174763091646381,
-							"parameters": {
-								"object": "SolidObstacle"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Bullet",
-							"sid": 673916000024933
-						}
-					],
-					"sid": 405829888051021
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Bullet",
-							"sid": 312128472379076,
-							"parameters": {
-								"object": "MovingEnemyCollision"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Bullet",
-							"sid": 191597466323272
-						},
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "MovingEnemyCollision",
-							"sid": 101541030060547,
-							"parameters": {
-								"instance-variable": "health",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 888252047509256
 				}
 			],
 			"sid": 991077192111983

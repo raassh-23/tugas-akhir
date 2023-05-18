@@ -8,13 +8,17 @@ const operators = [
 ];
 
 /**
- * @extends CodeBlock
+ * @extends BaseExpression
  */
 export default class OperatorBlock extends BaseExpression {
     constructor() {
         super("OperatorBlock");
     }
 
+    /**
+     * 
+     * @returns {string}
+     */
     evaluate() {
         return ` ${operators[this.animationFrame]} `;
     }

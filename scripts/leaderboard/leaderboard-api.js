@@ -43,13 +43,14 @@
  */
 
 export default class LeaderboardAPI {
-    _url = "";
-
     /**
      * 
      * @param {string} url 
      */
     constructor(url) {
+        /**
+         * @type {string}
+         */
         this._url = url;
     }
 

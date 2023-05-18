@@ -8,36 +8,6 @@ import RunnerCommand from "../runner-command.js";
  */
 export default class LoopCommand extends CommandsContainer {
     /**
-     * @type {string}
-     */
-    _condition = "0";
-
-    /**
-     * @type {string}
-     */
-    _defaultCondition = "0";
-
-    /**
-     * @type {IWorldInstance?}
-     */
-    _background = null;
-
-    /**
-     * @type {ITextInstance?}
-     */
-    _text = null;
-
-    /**
-     * @type {ISpriteInstance}
-     */
-    _icon = null;
-
-    /**
-     * @type {IWorldInstance}
-     */
-    _popUpButton = null;
-
-    /**
      * 
      * @param {string} name 
      * @param {string} defaultCondition 
@@ -45,8 +15,35 @@ export default class LoopCommand extends CommandsContainer {
     constructor(name, defaultCondition) {
         super(name);
 
-        this._defaultCondition = defaultCondition;
+        /**
+         * @type {string}
+         */
         this._condition = defaultCondition;
+
+        /**
+         * @type {string}
+         */
+        this._defaultCondition = defaultCondition;
+
+        /**
+         * @type {IWorldInstance?}
+         */
+        this._background = null;
+
+        /**
+         * @type {ITextInstance?}
+         */
+        this._text = null;
+
+        /**
+         * @type {ISpriteInstance}
+         */
+        this._icon = null;
+
+        /**
+         * @type {IWorldInstance}
+         */
+        this._popUpButton = null;
 
         const lowercaseName = name.toLowerCase();
 

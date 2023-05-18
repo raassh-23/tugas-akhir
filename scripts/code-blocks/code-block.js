@@ -6,39 +6,31 @@ import { MAX_LEVEL, SHRINK_FACTOR } from "./code-block-constants.js";
  */
 export default class CodeBlock extends ISpriteInstance {
     /**
-     * @type {ISpriteInstance[]}
-     */
-    _highlightedObjects = [];
-
-    /**
-     * @type {ICodeBlockShadow[]}
-     */
-    _codeBlockShadows = [];
-
-    /**
-     * @type {number}
-     */
-    level = 0;
-
-    /**
-     * @type {number}
-     */
-    savedWidth = 0;
-
-    /**
-     * @type {number}
-     */
-    savedHeight = 0;
-
-    /**
      * 
      * @param {string} name 
      */
     constructor(name) {
         super();
+
+        /**
+         * @type {string}
+         */
         this.name = name;
+
+        /**
+         * @type {number}
+         */
         this.savedWidth = this.width;
+
+        /**
+         * @type {number}
+         */
         this.savedHeight = this.height;
+
+            /**
+         * @type {ICodeBlockShadow[]}
+         */
+        this._codeBlockShadows = [];
 
         // TODO: bug https://github.com/Scirra/Construct-bugs/issues/6997
         // wait for the next stable release
@@ -50,6 +42,19 @@ export default class CodeBlock extends ISpriteInstance {
             }
         }
 
+        /**
+         * @type {IWorldInstance[]}
+         */
+        this._highlightedObjects = [];
+
+        /**
+         * @type {number}
+         */
+        this.level = 0;
+
+        /**
+         * @type {string}
+         */
         this.originalAnimation = this.animationName;
     }
 

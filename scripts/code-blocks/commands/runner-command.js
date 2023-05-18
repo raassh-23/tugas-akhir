@@ -6,13 +6,13 @@ import { waitUnlessStopped } from "../code-block-utils.js";
  * @extends CommandsContainer
  */
 export default class RunnerCommand extends CommandsContainer {
-    /**
-     * @type {ISpriteInstance?}
-     */
-    _parent = null;
-
     constructor() {
         super("Runner");
+
+        /**
+         * @type {IWorldInstance?}
+         */
+        this._parent = null;
     }
 
     /**

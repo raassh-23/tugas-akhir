@@ -7,16 +7,16 @@ import { FINISHED, GAME_OVER } from "../code-block-constants.js";
  */
 export default class CommandsContainer extends BaseCommand {
     /**
-     * @type {CodeBlocksContainer}
-     */
-    container = new CodeBlocksContainer("command");
-
-    /**
      * 
      * @param {string} name 
      */
     constructor(name) {
         super(name);
+
+        /**
+         * @type {CodeBlocksContainer}
+         */
+        this.container = new CodeBlocksContainer("command");
     }
 
     /**

@@ -1,10 +1,4 @@
-import {
-    MARGIN,
-    FINISHED,
-    ERROR,
-} from "../../code-block-constants.js";
-import { getContainerParent } from "../../../utils/misc.js";
-import RunnerCommand from "../runner-command.js";
+import { FINISHED, ERROR } from "../../code-block-constants.js";
 import { waitUnlessStopped } from "../../code-block-utils.js";
 import LoopCommand from "./loop-command.js";
 

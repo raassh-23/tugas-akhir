@@ -6,18 +6,18 @@ import BaseExpression from "./base-expression.js";
  * @extends BaseExpression
  */
 export default class ExpressionsContainer extends BaseExpression {
-    /**
-     * @type {ISpriteInstance?}
-     */
-    _parent = null;
-
-    /**
-     * @type {CodeBlocksContainer}
-     */
-    container = new CodeBlocksContainer("expression");
-
     constructor() {
         super("RepeatConditionCommand");
+
+        /**
+         * @type {IWorldInstance?}
+         */
+        this._parent = null;
+
+        /**
+        * @type {CodeBlocksContainer}
+        */
+        this.container = new CodeBlocksContainer("expression");
     }
 
     /**
