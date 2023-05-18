@@ -22,6 +22,16 @@
 			"sid": 685914032582024
 		},
 		{
+			"eventType": "variable",
+			"name": "touchedUid",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 515056914732997
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -285,6 +295,15 @@
 				{
 					"callFunction": "PlayTap",
 					"sid": 434100238047829
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 543908231250467,
+					"parameters": {
+						"variable": "touchedUid",
+						"value": "Clickable.UID"
+					}
 				}
 			],
 			"sid": 486298277187877
@@ -301,6 +320,15 @@
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 833292668949066,
+					"parameters": {
+						"variable": "touchedUid",
+						"value": "0"
+					}
+				},
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Clickable",
@@ -354,6 +382,16 @@
 						"instance-variable": "isDisabled"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 145819018007528,
+					"parameters": {
+						"variable": "touchedUid",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
@@ -397,6 +435,14 @@
 						"instance-variable": "isDisabled"
 					},
 					"isInverted": true
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "Clickable",
+					"sid": 486155353879319,
+					"parameters": {
+						"unique-id": "touchedUid"
+					}
 				}
 			],
 			"actions": [

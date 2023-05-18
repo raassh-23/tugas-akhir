@@ -31,11 +31,6 @@ export default class CodeBlock extends ISpriteInstance {
     savedHeight = 0;
 
     /**
-     * @type {string}
-     */
-    _originalAnimationName = "";
-
-    /**
      * 
      * @param {string} name 
      */
