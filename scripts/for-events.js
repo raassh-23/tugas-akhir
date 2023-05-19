@@ -9,7 +9,8 @@ import {
 	getContainerParent,
 	getTopCodeBlockContainer,
 	getInstanceById,
-	createCodeBlockButton,
+	setupCommands,
+	setupExpressions,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -216,10 +217,6 @@ function getCodeBlockCount(runtime) {
 	return count;
 }
 
-const AVAILABLE_COMMANDS_MARGIN = 16;
-const COMMAND_WIDTH = 96;
-const COMMAND_HEIGHT = 96;
-
 /**
  * 
  * @param {IRuntime} runtime 
@@ -231,70 +228,11 @@ function setupAvailableCommands(runtime) {
 
 	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-commands")
 
-	const minLength = scrollable.instVars.initialLength;
-	const x = scrollable.x + (scrollable.width - COMMAND_WIDTH)/2;
-	let y = scrollable.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
-
-	for (const command of availableCommands) {
-		createCodeBlockButton(
-			runtime.objects.CodeBlockButton,
-			"AvailableCommandList",
-			x,
-			y,
-			command,
-			scrollable,
-		);
-
-		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
-	}
-
-	scrollable.height = Math.max(minLength, y - scrollable.y - AVAILABLE_COMMANDS_MARGIN);
-	scrollable.instVars.min = scrollable.y - (scrollable.height - minLength);
-}
-
-const AVAILABLE_EXPRESSION_MARGIN = 16;
-const EXPRESSION_WIDTH = 72;
-const EXPRESSION_HEIGHT = 72;
-
-/**
- * 
- * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject
- * @param {IWorldInstance} parent 
- * @param {string} layer 
- * @param {import("./level-data.js").CodeBlockDefinition[]} definitions 
- */
-function setupExpressions(codeBlockButtonObject, parent, layer, definitions) {
-	const minLength = parent.instVars.initialLength;
-	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN)/2;
-	const x2 = x1 + EXPRESSION_WIDTH + AVAILABLE_EXPRESSION_MARGIN;
-
-	let x = x1;
-	let y = parent.y + 3 * AVAILABLE_EXPRESSION_MARGIN + EXPRESSION_HEIGHT/2;
-
-	for (const expression of definitions) {
-		createCodeBlockButton(
-			codeBlockButtonObject,
-			layer,
-			x,
-			y,
-			expression,
-			parent,
-		);
-
-		if (x === x1) {
-			x = x2;
-		} else {
-			x = x1;
-			y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
-		}
-	}
-
-	if (x === x2) {
-		y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
-	}
-
-	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_EXPRESSION_MARGIN/2);
-	parent.instVars.min = parent.y - (parent.height - minLength);
+	setupCommands(
+		runtime.objects.CodeBlockButton,
+		scrollable,
+		availableCommands,
+	);
 }
 
 /**
@@ -315,7 +253,6 @@ function setupAvailableRepeatExpressions(runtime) {
 	setupExpressions(
 		runtime.objects.CodeBlockButton,
 		scrollable,
-		"RepeatPopUpCodeBlocks",
 		availableRepeatExpressions,
 	);
 }
@@ -338,7 +275,6 @@ function setupAvailableWhileExpressions(runtime) {
 	setupExpressions(
 		runtime.objects.CodeBlockButton,
 		scrollable,
-		"WhilePopUpCodeBlocks",
 		availableWhileExpressions,
 	);
 }

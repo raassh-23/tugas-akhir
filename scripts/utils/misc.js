@@ -105,3 +105,76 @@ export function createCodeBlockButton(codeBlockButtonObject, layer, x, y, defini
 		transformY: true,
 	})
 }
+
+const AVAILABLE_COMMANDS_MARGIN = 16;
+const COMMAND_WIDTH = 96;
+const COMMAND_HEIGHT = 96;
+
+export function setupCommands(codeBlockButtonObject, parent, definitions) {
+	const layer = parent.layer.name;
+	const minLength = parent.instVars.initialLength;
+	const x = parent.x + (parent.width - COMMAND_WIDTH)/2;
+	let y = parent.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
+
+	for (const command of definitions) {
+		createCodeBlockButton(
+			codeBlockButtonObject,
+			layer,
+			x,
+			y,
+			command,
+			parent,
+		);
+
+		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
+	}
+
+	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_COMMANDS_MARGIN);
+	parent.instVars.min = parent.y - (parent.height - minLength);
+}
+
+const AVAILABLE_EXPRESSION_MARGIN = 16;
+const EXPRESSION_WIDTH = 72;
+const EXPRESSION_HEIGHT = 72;
+
+/**
+ * 
+ * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject
+ * @param {IWorldInstance} parent 
+ * @param {string} layer 
+ * @param {import("./level-data.js").CodeBlockDefinition[]} definitions 
+ */
+export function setupExpressions(codeBlockButtonObject, parent, definitions) {
+	const layer = parent.layer.name;
+	const minLength = parent.instVars.initialLength;
+	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN)/2;
+	const x2 = x1 + EXPRESSION_WIDTH + AVAILABLE_EXPRESSION_MARGIN;
+
+	let x = x1;
+	let y = parent.y + 3 * AVAILABLE_EXPRESSION_MARGIN + EXPRESSION_HEIGHT/2;
+
+	for (const expression of definitions) {
+		createCodeBlockButton(
+			codeBlockButtonObject,
+			layer,
+			x,
+			y,
+			expression,
+			parent,
+		);
+
+		if (x === x1) {
+			x = x2;
+		} else {
+			x = x1;
+			y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
+		}
+	}
+
+	if (x === x2) {
+		y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
+	}
+
+	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_EXPRESSION_MARGIN/2);
+	parent.instVars.min = parent.y - (parent.height - minLength);
+}

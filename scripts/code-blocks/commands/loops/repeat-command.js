@@ -13,7 +13,7 @@ export default class RepeatCommand extends LoopCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {import("../../for-events.js").GameState} state
+     * @param {import("../../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
