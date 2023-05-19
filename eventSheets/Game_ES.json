@@ -2658,6 +2658,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "SCROLL_SPEED",
+					"type": "number",
+					"initialValue": "2500",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 390490733059004
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -2976,6 +2986,192 @@
 								}
 							],
 							"sid": 107023226186674
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 377670777497961,
+							"parameters": {
+								"direction": "up"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 669115927927341,
+							"parameters": {
+								"object": "ScrollablePanel"
+							}
+						},
+						{
+							"id": "is-dragging",
+							"objectClass": "ScrollablePanel",
+							"sid": 623122953361529,
+							"behaviorType": "DragDrop",
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 612358786859230,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 754446662973228,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 221107156620935,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"horizontal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "ScrollablePanel",
+									"sid": 379686429509210,
+									"parameters": {
+										"x": "Self.X - SCROLL_SPEED * dt"
+									}
+								}
+							],
+							"sid": 749061676975308
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 233822294722307,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"vertical\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "ScrollablePanel",
+									"sid": 834034470529110,
+									"parameters": {
+										"y": "Self.Y - SCROLL_SPEED * dt"
+									}
+								}
+							],
+							"sid": 428023860311237
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 672525111645430,
+							"parameters": {
+								"direction": "down"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 323172994551898,
+							"parameters": {
+								"object": "ScrollablePanel"
+							}
+						},
+						{
+							"id": "is-dragging",
+							"objectClass": "ScrollablePanel",
+							"sid": 108239973323535,
+							"behaviorType": "DragDrop",
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 714219522900026,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 506117745687482,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 656930432821263,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"horizontal\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "ScrollablePanel",
+									"sid": 981254233862543,
+									"parameters": {
+										"x": "Self.X + SCROLL_SPEED * dt"
+									}
+								}
+							],
+							"sid": 821611529551893
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "ScrollablePanel",
+									"sid": 918659662729614,
+									"parameters": {
+										"instance-variable": "direction",
+										"comparison": 0,
+										"value": "\"vertical\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "ScrollablePanel",
+									"sid": 471641732717301,
+									"parameters": {
+										"y": "Self.Y + SCROLL_SPEED * dt"
+									}
+								}
+							],
+							"sid": 684907758285206
 						}
 					]
 				}
@@ -3779,6 +3975,15 @@
 							"parameters": {
 								"direction": "up"
 							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 834345218680199,
+							"parameters": {
+								"object": "ScrollablePanel"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -3799,8 +4004,7 @@
 							]
 						}
 					],
-					"sid": 863151459271077,
-					"isOrBlock": true
+					"sid": 863151459271077
 				},
 				{
 					"eventType": "block",
@@ -3845,6 +4049,15 @@
 							"parameters": {
 								"direction": "down"
 							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 525325169513408,
+							"parameters": {
+								"object": "ScrollablePanel"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -3865,8 +4078,7 @@
 							]
 						}
 					],
-					"sid": 374904246632052,
-					"isOrBlock": true
+					"sid": 374904246632052
 				},
 				{
 					"eventType": "block",
@@ -4161,49 +4373,6 @@
 						}
 					],
 					"sid": 328780680241080
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 450592102266395,
-							"parameters": {
-								"key": 32
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 317711866958315,
-							"parameters": {
-								"type": "log",
-								"message": "scrollx & \" \" & scrolly  & \" \" & LayerScale(\"game\")"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 793768305410182,
-							"parameters": {
-								"type": "log",
-								"message": "ViewportMidX(\"game\") & \" \" & ViewportMidy(\"game\") & \" \""
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 765872845333265,
-							"parameters": {
-								"type": "log",
-								"message": "OriginalViewportWidth & \" \" & OriginalViewportHeight & \" \""
-							}
-						}
-					],
-					"sid": 686906762818853
 				}
 			],
 			"sid": 292331183861215
