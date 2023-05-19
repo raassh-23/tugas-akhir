@@ -2997,7 +2997,7 @@
 					"comment": "ID of the touch using to pan",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 161592618937485
+					"sid": 484170253854635
 				},
 				{
 					"eventType": "variable",
@@ -3007,7 +3007,7 @@
 					"comment": "ID of second touch using to zoom",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 833069046728089
+					"sid": 195843784352337
 				},
 				{
 					"eventType": "variable",
@@ -3017,7 +3017,7 @@
 					"comment": "Initial X position of touch (for pan)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 924761276669851
+					"sid": 280206379566161
 				},
 				{
 					"eventType": "variable",
@@ -3027,7 +3027,7 @@
 					"comment": "Initial Y position of touch (for pan)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 497000473213126
+					"sid": 244502033228830
 				},
 				{
 					"eventType": "variable",
@@ -3037,7 +3037,7 @@
 					"comment": "Initial distance apart of touches (for zoom)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 612541891773322
+					"sid": 520457257397378
 				},
 				{
 					"eventType": "variable",
@@ -3047,7 +3047,7 @@
 					"comment": "Initial scale of layout (for zoom)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 273236510037230
+					"sid": 935562321489622
 				},
 				{
 					"eventType": "variable",
@@ -3057,7 +3057,7 @@
 					"comment": "Minimal scale of layout (for zoom)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 345602677849194
+					"sid": 897733246658984
 				},
 				{
 					"eventType": "variable",
@@ -3067,7 +3067,27 @@
 					"comment": "Max scale of layout (for zoom)",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 610432664717117
+					"sid": 114775859860561
+				},
+				{
+					"eventType": "variable",
+					"name": "OriginalMidX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 999991456960705
+				},
+				{
+					"eventType": "variable",
+					"name": "OriginalMidY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 694770292995889
 				},
 				{
 					"eventType": "block",
@@ -3082,6 +3102,24 @@
 						{
 							"callFunction": "ResetPanAndZoomVariable",
 							"sid": 457925344639206
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 336422422438019,
+							"parameters": {
+								"variable": "OriginalMidX",
+								"value": "OriginalViewportWidth/2"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179602698653196,
+							"parameters": {
+								"variable": "OriginalMidY",
+								"value": "OriginalViewportHeight/2"
+							}
 						}
 					],
 					"sid": 356182281223981
@@ -3840,20 +3878,28 @@
 							"parameters": {
 								"key": 87
 							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 605046252904890,
+							"parameters": {
+								"key": 38
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "scroll-to-position",
+							"id": "scroll-to-y",
 							"objectClass": "System",
-							"sid": 843337987363289,
+							"sid": 946823342446909,
 							"parameters": {
-								"x": "scrollx",
 								"y": "scrolly - 400 * dt"
 							}
 						}
 					],
-					"sid": 907552827902668
+					"sid": 907552827902668,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3865,20 +3911,28 @@
 							"parameters": {
 								"key": 83
 							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 223380072494067,
+							"parameters": {
+								"key": 40
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "scroll-to-position",
+							"id": "scroll-to-y",
 							"objectClass": "System",
-							"sid": 722770119266368,
+							"sid": 408646804234785,
 							"parameters": {
-								"x": "scrollx",
 								"y": "scrolly + 400 * dt"
 							}
 						}
 					],
-					"sid": 903959736133675
+					"sid": 903959736133675,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3890,20 +3944,28 @@
 							"parameters": {
 								"key": 65
 							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 316042409304323,
+							"parameters": {
+								"key": 37
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "scroll-to-position",
+							"id": "scroll-to-x",
 							"objectClass": "System",
-							"sid": 345141754139328,
+							"sid": 469935930987397,
 							"parameters": {
-								"x": "scrollx  - 400 * dt",
-								"y": "scrolly"
+								"x": "scrollx  - 400 * dt"
 							}
 						}
 					],
-					"sid": 968434351854700
+					"sid": 968434351854700,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3915,20 +3977,28 @@
 							"parameters": {
 								"key": 68
 							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 844967174564702,
+							"parameters": {
+								"key": 39
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "scroll-to-position",
+							"id": "scroll-to-x",
 							"objectClass": "System",
-							"sid": 736795997019385,
+							"sid": 458774806504498,
 							"parameters": {
-								"x": "scrollx  + 400 * dt",
-								"y": "scrolly"
+								"x": "scrollx  + 400 * dt"
 							}
 						}
 					],
-					"sid": 565750069680589
+					"sid": 565750069680589,
+					"isOrBlock": true
 				},
 				{
 					"functionName": "SetZoom",
@@ -3987,6 +4057,153 @@
 						}
 					],
 					"sid": 914421911441929
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 231966119690185,
+							"parameters": {
+								"first-value": "scrollx",
+								"comparison": 2,
+								"second-value": "OriginalMidX / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 912960120397022,
+							"parameters": {
+								"x": "OriginalMidX / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 910289460210569
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 152775138484634,
+							"parameters": {
+								"first-value": "scrollx",
+								"comparison": 4,
+								"second-value": "LayoutWidth - OriginalMidX / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 799556947231148,
+							"parameters": {
+								"x": "LayoutWidth - OriginalMidX / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 293478735438977
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 933995793534188,
+							"parameters": {
+								"first-value": "scrolly",
+								"comparison": 2,
+								"second-value": "OriginalMidY / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-y",
+							"objectClass": "System",
+							"sid": 114867944770522,
+							"parameters": {
+								"y": "OriginalMidY / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 669373502951487
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 431523679452340,
+							"parameters": {
+								"first-value": "scrolly",
+								"comparison": 4,
+								"second-value": "LayoutHeight - OriginalMidY / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-y",
+							"objectClass": "System",
+							"sid": 212040984393081,
+							"parameters": {
+								"y": "LayoutHeight - OriginalMidY / LayerScale(\"Game\")"
+							}
+						}
+					],
+					"sid": 328780680241080
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 450592102266395,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 317711866958315,
+							"parameters": {
+								"type": "log",
+								"message": "scrollx & \" \" & scrolly  & \" \" & LayerScale(\"game\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 793768305410182,
+							"parameters": {
+								"type": "log",
+								"message": "ViewportMidX(\"game\") & \" \" & ViewportMidy(\"game\") & \" \""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 765872845333265,
+							"parameters": {
+								"type": "log",
+								"message": "OriginalViewportWidth & \" \" & OriginalViewportHeight & \" \""
+							}
+						}
+					],
+					"sid": 686906762818853
 				}
 			],
 			"sid": 292331183861215
