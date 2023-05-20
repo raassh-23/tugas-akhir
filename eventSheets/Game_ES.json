@@ -579,6 +579,38 @@
 												}
 											],
 											"sid": 357452802498426
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 232770565965346,
+													"parameters": {
+														"first-value": "CodeBlock.ObjectTypeName",
+														"comparison": 0,
+														"second-value": "IfCommand.ObjectTypeName"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "CreateIfPanel",
+													"sid": 281119205776677,
+													"parameters": [
+														"CodeBlock.UID"
+													]
+												},
+												{
+													"callFunction": "SetIfCommandPopUp",
+													"sid": 231326879461305,
+													"parameters": [
+														true
+													]
+												}
+											],
+											"sid": 796969940262454
 										}
 									]
 								},
@@ -836,6 +868,31 @@
 								}
 							],
 							"sid": 871117696094054
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockDecoration",
+									"sid": 446176630685254,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"if-pop-up\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetIfCommandPopUp",
+									"sid": 651584677506559,
+									"parameters": [
+										true
+									]
+								}
+							],
+							"sid": 204817460683988
 						}
 					]
 				},
@@ -2167,6 +2224,246 @@
 					]
 				},
 				{
+					"functionName": "CreateIfPanel",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "Creation",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "CommandUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 198045101225719
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 460992723058759,
+							"parameters": {
+								"object-to-create": "UIPanel",
+								"layer": "\"PopUpBack\"",
+								"x": "192",
+								"y": "180",
+								"create-hierarchy": true,
+								"template-name": "\"if-panel\""
+							}
+						}
+					],
+					"sid": 497807768118207,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 178094199912150,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"if-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UIPanel",
+									"sid": 986914530378749,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"if-panel-\" & CommandUID"
+									}
+								}
+							],
+							"sid": 278217232522548
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockPanel",
+									"sid": 418327281454359,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"if-panel-input-background\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlockPanel",
+									"sid": 243945613547583,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"if-panel-input-background-\" & CommandUID"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockPanel",
+									"sid": 648094337642661,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								}
+							],
+							"sid": 321887135112289
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 675546852374223,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"if-panel-input-background\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 144538478020822,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"if-panel-input-background-\" & CommandUID"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockPanelBorder",
+									"sid": 935565080338743,
+									"parameters": {
+										"layer": "\"PopUpFront\""
+									}
+								}
+							],
+							"sid": 491484268096304
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 465368437336379,
+									"parameters": {
+										"child": "ScrollablePanel",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "ScrollablePanel",
+									"sid": 145278370569945,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 920482227136752,
+									"parameters": {
+										"instance-variable": "min",
+										"value": "Self.x"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 484556360665647,
+									"parameters": {
+										"instance-variable": "max",
+										"value": "Self.x"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ScrollablePanel",
+									"sid": 869754392474531,
+									"parameters": {
+										"instance-variable": "id",
+										"value": "\"if-condition-container-\" & CommandUID"
+									}
+								},
+								{
+									"callFunction": "SetupScrollable",
+									"sid": 173586295613742
+								}
+							],
+							"sid": 809560464075179
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 154351387531668,
+									"parameters": {
+										"child": "ExpressionsContainer",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "ExpressionsContainer",
+									"sid": 673584590522608,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								}
+							],
+							"sid": 129200455611506
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 522148646748197,
+									"parameters": {
+										"child": "CodeBlockShadow",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockShadow",
+									"sid": 297790418124341,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								}
+							],
+							"sid": 411298698171432
+						}
+					]
+				},
+				{
 					"functionName": "SetWhileCommandPopUp",
 					"functionCopyPicked": true,
 					"functionDescription": "",
@@ -2412,6 +2709,257 @@
 										}
 									],
 									"sid": 255852407178531
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "SetIfCommandPopUp",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "CodeBlock",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 324256792768531
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 395617731393966,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "commandUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 893898259034360
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 817485133341103,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "pickedCommand = runtime.objects.CodeBlock.getFirstPickedInstance();\nlocalVars.commandUID = pickedCommand.uid;"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 471876747347423,
+									"parameters": {
+										"seconds": "0.01"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 284083702499084,
+									"parameters": {
+										"layer": "\"ConditionalPopUp\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 458408909054288,
+									"parameters": {
+										"layer": "\"ConditionalPopUp\"",
+										"interactive": true
+									}
+								},
+								{
+									"callFunction": "showLevelPopUp",
+									"sid": 638652980101700,
+									"parameters": [
+										true
+									]
+								}
+							],
+							"sid": 635838107978772,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 491536984221402,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"if-panel-\"&commandUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "UIPanel",
+											"sid": 339468489791118,
+											"parameters": {
+												"y": "147.5"
+											}
+										}
+									],
+									"sid": 656211482238971
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "CodeBlockButton",
+											"sid": 771693659911217,
+											"parameters": {
+												"layer": "\"ConditionalPopUpCodeBlocks\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "CodeBlockButton",
+											"sid": 111978931007660,
+											"parameters": {
+												"instance-variable": "panelId",
+												"value": "\"if-panel-input-background-\"&commandUID"
+											}
+										}
+									],
+									"sid": 956222244667157
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 784794246256527
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "localVars.commandUID = pickedCommand.uid;"
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 624976953539509,
+									"parameters": {
+										"layer": "\"ConditionalPopUp\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 498608750432301,
+									"parameters": {
+										"layer": "\"ConditionalPopUp\"",
+										"interactive": false
+									}
+								},
+								{
+									"callFunction": "showLevelPopUp",
+									"sid": 484373410676602,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 767184361823831,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIPanel",
+											"sid": 160663518451250,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"if-panel-\"&commandUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "UIPanel",
+											"sid": 491195619261313,
+											"parameters": {
+												"y": "-1000"
+											}
+										}
+									],
+									"sid": 928766733135151,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 435413096527612,
+													"parameters": {
+														"object": "ExpressionsContainer"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "UIPanel",
+													"sid": 972734507244035,
+													"parameters": {
+														"child": "ExpressionsContainer",
+														"which": "all"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "script",
+													"script": "const condition = runtime.objects.ExpressionsContainer\n\t.getFirstPickedInstance().evaluate();\npickedCommand.setCondition(condition);"
+												}
+											],
+											"sid": 829916467737299
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"type": "script",
+											"script": "pickedCommand = null;"
+										}
+									],
+									"sid": 418099715152946
 								}
 							]
 						}
@@ -5607,6 +6155,31 @@
 								}
 							],
 							"sid": 208902495191513
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 607734510726319,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"close-if-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetIfCommandPopUp",
+									"sid": 617929904529562,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 106824517961951
 						},
 						{
 							"eventType": "block",
