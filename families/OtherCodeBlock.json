@@ -12,6 +12,7 @@
 		"OperatorBlock",
 		"VariableBlock",
 		"ShootCommand",
-		"WhileCommand"
+		"WhileCommand",
+		"IfCommand"
 	]
 }

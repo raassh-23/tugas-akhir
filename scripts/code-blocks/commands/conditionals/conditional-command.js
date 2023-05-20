@@ -6,7 +6,7 @@ import RunnerCommand from "../runner-command.js";
 /**
  * @extends CommandsContainer
  */
-export default class LoopCommand extends CommandsContainer {
+export default class ConditionalCommand extends CommandsContainer {
     /**
      * 
      * @param {string} name 

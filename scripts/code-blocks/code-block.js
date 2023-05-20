@@ -42,6 +42,8 @@ export default class CodeBlock extends ISpriteInstance {
             }
         }
 
+        this._codeBlockShadows.sort((a, b) => a.x - b.x);
+
         /**
          * @type {IWorldInstance[]}
          */

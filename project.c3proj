@@ -227,7 +227,8 @@
 					"OperatorBlock",
 					"VariableBlock",
 					"ShootCommand",
-					"WhileCommand"
+					"WhileCommand",
+					"IfCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -384,32 +385,47 @@
 								{
 									"items": [
 										{
-											"name": "repeat-command.js",
-											"type": "application/javascript",
-											"sid": 288352540292147,
-											"script-info": {
-												"purpose": "none"
-											}
-										},
-										{
-											"name": "while-command.js",
-											"type": "application/javascript",
-											"sid": 953206079232703,
-											"script-info": {
-												"purpose": "none"
-											}
-										},
-										{
-											"name": "loop-command.js",
+											"name": "conditional-command.js",
 											"type": "application/javascript",
 											"sid": 721483488721220,
 											"script-info": {
 												"purpose": "none"
 											}
+										},
+										{
+											"name": "if-command.js",
+											"type": "application/javascript",
+											"sid": 432651070778720,
+											"script-info": {
+												"purpose": "none"
+											}
 										}
 									],
-									"subfolders": [],
-									"name": "loops"
+									"subfolders": [
+										{
+											"items": [
+												{
+													"name": "repeat-command.js",
+													"type": "application/javascript",
+													"sid": 288352540292147,
+													"script-info": {
+														"purpose": "none"
+													}
+												},
+												{
+													"name": "while-command.js",
+													"type": "application/javascript",
+													"sid": 953206079232703,
+													"script-info": {
+														"purpose": "none"
+													}
+												}
+											],
+											"subfolders": [],
+											"name": "loops"
+										}
+									],
+									"name": "conditionals"
 								},
 								{
 									"items": [

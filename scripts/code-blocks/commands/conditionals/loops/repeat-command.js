@@ -1,11 +1,11 @@
-import { FINISHED, ERROR } from "../../code-block-constants.js";
-import { waitUnlessStopped } from "../../code-block-utils.js";
-import LoopCommand from "./loop-command.js";
+import { FINISHED, ERROR } from "../../../code-block-constants.js";
+import { waitUnlessStopped } from "../../../code-block-utils.js";
+import ConditionalCommand from "../conditional-command.js";
 
 /**
- * @extends LoopCommand
+ * @extends ConditionalCommand
  */
-export default class RepeatCommand extends LoopCommand {
+export default class RepeatCommand extends ConditionalCommand {
     constructor() {
         super("Repeat", "0");
     }
@@ -13,7 +13,7 @@ export default class RepeatCommand extends LoopCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {import("../../../for-events.js").GameState} state
+     * @param {import("../../../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */

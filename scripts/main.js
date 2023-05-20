@@ -8,6 +8,7 @@ import {
 	VariableBlock,
 	ShootCommand,
 	WhileCommand,
+	IfCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -48,6 +49,7 @@ runOnStartup(async runtime =>
 	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);
 	runtime.objects.ShootCommand.setInstanceClass(ShootCommand);
 	runtime.objects.WhileCommand.setInstanceClass(WhileCommand);
+	runtime.objects.IfCommand.setInstanceClass(IfCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

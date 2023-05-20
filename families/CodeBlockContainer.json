@@ -9,6 +9,7 @@
 		"StartCommand",
 		"RepeatCommand",
 		"ExpressionsContainer",
-		"WhileCommand"
+		"WhileCommand",
+		"IfCommand"
 	]
 }

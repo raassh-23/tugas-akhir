@@ -22,6 +22,7 @@ export const levelVariables = {
  *  commands: CodeBlockDefinition[],
  *  repeatExpressions: CodeBlockDefinition[],
  *  whileExpressions: CodeBlockDefinition[],
+ *  ifExpressions: CodeBlockDefinition[],
  * }}}
  */
 export const levelAvailableCodeBlocks = {
@@ -65,6 +66,12 @@ export const levelAvailableCodeBlocks = {
             },
             {
                 name: "WhileCommand",
+                frame: 0,
+                inactiveLayer: "UI",
+                panelId: "active-commands-panel",
+            },
+            {
+                name: "IfCommand",
                 frame: 0,
                 inactiveLayer: "UI",
                 panelId: "active-commands-panel",
@@ -187,6 +194,176 @@ export const levelAvailableCodeBlocks = {
             },
         ],
         whileExpressions: [
+            {
+                name: "NumberBlock",
+                frame: 0,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 1,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 2,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 3,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 4,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 5,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 6,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 7,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 8,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "NumberBlock",
+                frame: 9,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 0,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 1,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 2,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 3,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 4,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 5,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 6,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 7,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 8,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 9,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 10,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 11,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 12,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 13,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 14,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "OperatorBlock",
+                frame: 15,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "VariableBlock",
+                frame: 0,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+            {
+                name: "VariableBlock",
+                frame: 1,
+                inactiveLayer: "WhilePopUp",
+                panelId: "",
+            },
+        ],
+        ifExpressions: [
             {
                 name: "NumberBlock",
                 frame: 0,
