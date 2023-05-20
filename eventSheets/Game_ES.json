@@ -2225,18 +2225,18 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 974625841125917,
+									"sid": 649008910330414,
 									"parameters": {
-										"layer": "\"WhilePopUp\"",
+										"layer": "\"ConditionalPopUp\"",
 										"visibility": "visible"
 									}
 								},
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 294087701798369,
+									"sid": 979179980574986,
 									"parameters": {
-										"layer": "\"WhilePopUp\"",
+										"layer": "\"ConditionalPopUp\"",
 										"interactive": true
 									}
 								},
@@ -2282,9 +2282,9 @@
 										{
 											"id": "is-on-layer",
 											"objectClass": "CodeBlockButton",
-											"sid": 186383572997568,
+											"sid": 480720725646769,
 											"parameters": {
-												"layer": "\"WhilePopUpCodeBlocks\""
+												"layer": "\"ConditionalPopUpCodeBlocks\""
 											}
 										}
 									],
@@ -2320,18 +2320,18 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 993454308816726,
+									"sid": 525964162957499,
 									"parameters": {
-										"layer": "\"WhilePopUp\"",
+										"layer": "\"ConditionalPopUp\"",
 										"visibility": "invisible"
 									}
 								},
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 749103507066418,
+									"sid": 269718750409198,
 									"parameters": {
-										"layer": "\"WhilePopUp\"",
+										"layer": "\"ConditionalPopUp\"",
 										"interactive": false
 									}
 								},
@@ -5142,18 +5142,18 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 154092135204420,
+							"sid": 229746325659279,
 							"parameters": {
-								"layer": "\"WhilePopUp\"",
+								"layer": "\"ConditionalPopUp\"",
 								"visibility": "invisible"
 							}
 						},
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 993603068422583,
+							"sid": 407452513525210,
 							"parameters": {
-								"layer": "\"WhilePopUp\"",
+								"layer": "\"ConditionalPopUp\"",
 								"interactive": false
 							}
 						},

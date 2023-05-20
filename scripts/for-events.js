@@ -65,7 +65,7 @@ function setupLevel(runtime) {
 
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);
-	setupAvailableWhileExpressions(runtime);
+	setupAvailableConditionalExpressions(runtime);
 }
 
 /**
@@ -261,16 +261,16 @@ function setupAvailableRepeatExpressions(runtime) {
  * 
  * @param {IRuntime} runtime 
  */
-function setupAvailableWhileExpressions(runtime) {
+function setupAvailableConditionalExpressions(runtime) {
 	const level = runtime.globalVars.level;
 
-	const availableWhileExpressions = levelAvailableCodeBlocks[level].whileExpressions;
+	const availableWhileExpressions = levelAvailableCodeBlocks[level].conditionalExpressions;
 
 	if (availableWhileExpressions.length === 0) {
 		return;
 	}
 
-	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-while-expressions");
+	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-conditional-expressions");
 
 	setupExpressions(
 		runtime.objects.CodeBlockButton,
