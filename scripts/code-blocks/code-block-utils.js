@@ -1,5 +1,8 @@
 import { waitForMilisecond } from "../utils/misc.js";
-import { CHECK_INTERVAL, DURATION, FINISHED, STOPPED } from "./code-block-constants.js";
+import { 
+    CHECK_INTERVAL, CONTINUE, DURATION,
+    ERROR, FINISHED, STOPPED,
+} from "./code-block-constants.js";
 
 /**
  * 
@@ -29,4 +32,27 @@ export async function waitUnlessStopped(state, {
     } while (totalDuration < duration || extraCondition());
 
     return afterWait();
+}
+
+/**
+ * 
+ * @param {import("./commands/base-command.js").default} command 
+ * @param {string} lastName 
+ * @param {number} lastResult 
+ * @returns {number}
+ */
+export function checkElseValid(command, lastName, lastResult) {
+    if (command.name !== "Else" && command.name !== "Elif") {
+        return FINISHED;
+    }
+
+    if (lastName !== "If" && lastName !== "Elif") {
+        command.showError(true);
+
+        return ERROR;
+    }
+
+    if (lastResult === FINISHED) {
+        return CONTINUE;
+    }
 }

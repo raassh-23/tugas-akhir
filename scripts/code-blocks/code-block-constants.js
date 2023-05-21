@@ -14,6 +14,8 @@ export const GAME_OVER = 3;
 
 export const CONDITION_NOT_MET = 4;
 
+export const CONTINUE = 5;
+
 export const DURATION = 500;
 
 export const CHECK_INTERVAL = 100;

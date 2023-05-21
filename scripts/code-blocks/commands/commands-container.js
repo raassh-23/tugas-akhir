@@ -1,6 +1,7 @@
 import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
-import { CONDITION_NOT_MET, ERROR, FINISHED, GAME_OVER } from "../code-block-constants.js";
+import { CONDITION_NOT_MET, CONTINUE, ERROR, FINISHED, GAME_OVER } from "../code-block-constants.js";
+import { checkElseValid } from "../code-block-utils.js";
 
 /**
  * @extends BaseCommand
@@ -27,22 +28,16 @@ export default class CommandsContainer extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        let skip = false;
         let lastCommandName = "";
+        let lastResult = FINISHED;
 
         for (const command of this.container.codeBlocks) {
-            if (command.name === "Else") {
-                if (lastCommandName !== "If") {
-                    command.showError(true);
+            const valid = checkElseValid(command, lastCommandName, lastResult);
 
-                    return ERROR;
-                }
-
-                if (skip) {
-                    skip = false;
-                    
-                    continue;
-                }
+            if (valid === ERROR) {
+                return ERROR;
+            } else if (valid === CONTINUE) {
+                continue;
             }
 
             command.showHighlight(true);
@@ -50,10 +45,6 @@ export default class CommandsContainer extends BaseCommand {
             const result = await command.run(player, state);
 
             command.showHighlight(false);
-
-            if (command.name === "If" && result === FINISHED) {
-                skip = true;
-            }
 
             if (result !== FINISHED && result !== CONDITION_NOT_MET) {
                 return result;
@@ -64,6 +55,7 @@ export default class CommandsContainer extends BaseCommand {
             }
 
             lastCommandName = command.name;
+            lastResult = result;
         }
 
         return FINISHED;
