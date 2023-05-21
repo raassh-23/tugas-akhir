@@ -1,4 +1,4 @@
-import { FINISHED, ERROR } from "../../../code-block-constants.js";
+import { FINISHED, ERROR, CONDITION_NOT_MET } from "../../../code-block-constants.js";
 import { waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
@@ -56,7 +56,7 @@ export default class IfCommand extends ConditionalCommand {
         }
 
         if (!evaluatedCondition) {
-            return FINISHED;
+            return CONDITION_NOT_MET;
         }
 
         const result = await super.run(player, state);
