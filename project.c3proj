@@ -229,7 +229,8 @@
 					"ShootCommand",
 					"WhileCommand",
 					"IfCommand",
-					"ElseCommand"
+					"ElseCommand",
+					"ElseIfCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -431,6 +432,14 @@
 													"name": "if-command.js",
 													"type": "application/javascript",
 													"sid": 432651070778720,
+													"script-info": {
+														"purpose": "none"
+													}
+												},
+												{
+													"name": "else-if-command.js",
+													"type": "application/javascript",
+													"sid": 528056536464259,
 													"script-info": {
 														"purpose": "none"
 													}

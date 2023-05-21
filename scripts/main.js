@@ -10,6 +10,7 @@ import {
 	WhileCommand,
 	IfCommand,
 	ElseCommand,
+	ElseIfCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -52,6 +53,7 @@ runOnStartup(async runtime =>
 	runtime.objects.WhileCommand.setInstanceClass(WhileCommand);
 	runtime.objects.IfCommand.setInstanceClass(IfCommand);
 	runtime.objects.ElseCommand.setInstanceClass(ElseCommand);
+	runtime.objects.ElseIfCommand.setInstanceClass(ElseIfCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

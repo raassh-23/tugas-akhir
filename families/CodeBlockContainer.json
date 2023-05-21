@@ -11,6 +11,7 @@
 		"ExpressionsContainer",
 		"WhileCommand",
 		"IfCommand",
-		"ElseCommand"
+		"ElseCommand",
+		"ElseIfCommand"
 	]
 }

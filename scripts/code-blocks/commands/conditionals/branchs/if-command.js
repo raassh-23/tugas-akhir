@@ -6,8 +6,12 @@ import ConditionalCommand from "../conditional-command.js";
  * @extends ConditionalCommand
  */
 export default class IfCommand extends ConditionalCommand {
-    constructor() {
-        super("If", "false");
+    /**
+     * 
+     * @param {string} name 
+     */
+    constructor(name = "If") {
+        super(name, "false");
     }
 
     /**
