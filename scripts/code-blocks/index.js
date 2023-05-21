@@ -9,8 +9,8 @@ import OperatorBlock from "./expressions/operator-block.js";
 import VariableBlock from "./expressions/variable-block.js";
 import ShootCommand from "./commands/actions/shoot-command.js";
 import WhileCommand from "./commands/conditionals/loops/while-command.js";
-import IfCommand from "./commands/conditionals/if-command.js";
-import ElseCommand from "./commands/conditionals/else-command.js";
+import IfCommand from "./commands/conditionals/branchs/if-command.js";
+import ElseCommand from "./commands/conditionals/branchs/else-command.js";
 
 export {
     CodeBlock,

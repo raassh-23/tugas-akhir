@@ -1,6 +1,6 @@
-import { FINISHED, ERROR } from "../../code-block-constants.js";
-import { waitUnlessStopped } from "../../code-block-utils.js";
-import ConditionalCommand from "./conditional-command.js";
+import { FINISHED, ERROR } from "../../../code-block-constants.js";
+import { waitUnlessStopped } from "../../../code-block-utils.js";
+import ConditionalCommand from "../conditional-command.js";
 
 /**
  * @extends ConditionalCommand
@@ -13,7 +13,7 @@ export default class IfCommand extends ConditionalCommand {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {import("../../../for-events.js").GameState} state
+     * @param {import("../../../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */
