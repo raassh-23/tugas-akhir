@@ -76,6 +76,12 @@ export const levelAvailableCodeBlocks = {
                 inactiveLayer: "UI",
                 panelId: "active-commands-panel",
             },
+            {
+                name: "ElseCommand",
+                frame: 0,
+                inactiveLayer: "UI",
+                panelId: "active-commands-panel",
+            },
         ],
         repeatExpressions: [
             {

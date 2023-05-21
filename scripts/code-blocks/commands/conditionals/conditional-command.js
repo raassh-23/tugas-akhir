@@ -36,12 +36,12 @@ export default class ConditionalCommand extends CommandsContainer {
         this._text = null;
 
         /**
-         * @type {ISpriteInstance}
+         * @type {ISpriteInstance?}
          */
         this._icon = null;
 
         /**
-         * @type {IWorldInstance}
+         * @type {IWorldInstance?}
          */
         this._popUpButton = null;
 
@@ -118,7 +118,10 @@ export default class ConditionalCommand extends CommandsContainer {
         }
 
         this.showError(false);
-        this._text.text = this._condition.replace(/ /g, '');
+        
+        if (this._text != null) {
+            this._text.text = this._condition;
+        }
     }
 
     setSizeBasedOnLevel() {
@@ -130,11 +133,15 @@ export default class ConditionalCommand extends CommandsContainer {
         this.height = this.savedHeight * multiplier;
         this.width = this.getWidthOnLevel(this.level);
 
-        this._popUpButton.x = this.x + this._icon.width - this._popUpButton.width / 2 - 10 * multiplier;
-        this._popUpButton.y = this.y + 45 * multiplier;
-
-        this._text.x = this._popUpButton.x;
-        this._text.y = this._popUpButton.y;
+        if (this._popUpButton != null) {
+            this._popUpButton.x = this.x + this._icon.width - this._popUpButton.width / 2 - 10 * multiplier;
+            this._popUpButton.y = this.y + 45 * multiplier;
+        }
+        
+        if (this._text != null) {
+            this._text.x = this._popUpButton?.x ?? this.x + this._icon.width + MARGIN;
+            this._text.y = this._popUpButton?.y ?? this.y + 45 * multiplier;
+        }
 
         let currentX = this.x + this._icon.width + MARGIN;
         this.container.codeBlocks.forEach((command) => {
@@ -175,11 +182,15 @@ export default class ConditionalCommand extends CommandsContainer {
     showError(show) {
         this._icon.animationFrame = show ? 1 : 0;
 
-        this._popUpButton.animationFrame = show ? 3 : 2;
+        if (this._popUpButton != null) {
+            this._popUpButton.animationFrame = show ? 3 : 2;
+        }
     }
 
     reset(withError) {
-        this._text.text = this._condition.replace(/ /g, '');
+        if (this._text != null) {
+            this._text.text = this._condition.replace(/ /g, '');
+        }
 
         super.reset(withError);
     }

@@ -69,6 +69,7 @@
 		"VariableBlock",
 		"ShootCommand",
 		"WhileCommand",
-		"IfCommand"
+		"IfCommand",
+		"ElseCommand"
 	]
 }

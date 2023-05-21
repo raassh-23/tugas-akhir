@@ -9,6 +9,7 @@ import {
 	ShootCommand,
 	WhileCommand,
 	IfCommand,
+	ElseCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -50,6 +51,7 @@ runOnStartup(async runtime =>
 	runtime.objects.ShootCommand.setInstanceClass(ShootCommand);
 	runtime.objects.WhileCommand.setInstanceClass(WhileCommand);
 	runtime.objects.IfCommand.setInstanceClass(IfCommand);
+	runtime.objects.ElseCommand.setInstanceClass(ElseCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)
