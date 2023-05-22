@@ -83,22 +83,31 @@ export function getInstanceById(object, id) {
 }
 
 /**
+ * @typedef {import('../level-data.js').CodeBlockDefinition} CodeBlockDefinition
+ */
+
+/**
  * 
  * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject 
  * @param {string} layer 
  * @param {number} x 
  * @param {number} y 
- * @param {import('../level-data.js').CodeBlockDefinition} definition 
+ * @param {CodeBlockDefinition} definition 
  * @param {IWorldInstance} parent 
+ * @param {{ inactiveLayer: string, panelId: string }} blockInstVars
  */
-export function createCodeBlockButton(codeBlockButtonObject, layer, x, y, definition, parent) {
+export function createCodeBlockButton(
+	codeBlockButtonObject, layer, 
+	x, y, definition, parent,
+	{ inactiveLayer, panelId },
+) {
 	const button = codeBlockButtonObject.createInstance(layer, x, y);
 
 	button.setAnimation(definition.name);
 	button.animationFrame = definition.frame;
 
-	button.instVars.panelId = definition.panelId;
-	button.instVars.inactiveLayer = definition.inactiveLayer;
+	button.instVars.panelId = panelId;
+	button.instVars.inactiveLayer = inactiveLayer;
 
 	parent.addChild(button, {
 		transformX: true,
@@ -110,7 +119,14 @@ const AVAILABLE_COMMANDS_MARGIN = 16;
 const COMMAND_WIDTH = 96;
 const COMMAND_HEIGHT = 96;
 
-export function setupCommands(codeBlockButtonObject, parent, definitions) {
+/**
+ * 
+ * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject
+ * @param {IWorldInstance} parent 
+ * @param {CodeBlockDefinition[]} definitions 
+ * @param {{ inactiveLayer: string, panelId: string }} blockInstVars
+ */
+export function setupCommands(codeBlockButtonObject, parent, definitions, blockInstVars) {
 	const layer = parent.layer.name;
 	const minLength = parent.instVars.initialLength;
 	const x = parent.x + (parent.width - COMMAND_WIDTH)/2;
@@ -124,6 +140,7 @@ export function setupCommands(codeBlockButtonObject, parent, definitions) {
 			y,
 			command,
 			parent,
+			blockInstVars,
 		);
 
 		y += COMMAND_HEIGHT + AVAILABLE_COMMANDS_MARGIN;
@@ -141,10 +158,10 @@ const EXPRESSION_HEIGHT = 72;
  * 
  * @param {IObjectClass<ICodeBlockButton>} codeBlockButtonObject
  * @param {IWorldInstance} parent 
- * @param {string} layer 
- * @param {import("./level-data.js").CodeBlockDefinition[]} definitions 
+ * @param {CodeBlockDefinition[]} definitions 
+ * @param {{ inactiveLayer: string, panelId: string }} blockInstVars
  */
-export function setupExpressions(codeBlockButtonObject, parent, definitions) {
+export function setupExpressions(codeBlockButtonObject, parent, definitions, blockInstVars) {
 	const layer = parent.layer.name;
 	const minLength = parent.instVars.initialLength;
 	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN)/2;
@@ -161,6 +178,7 @@ export function setupExpressions(codeBlockButtonObject, parent, definitions) {
 			y,
 			expression,
 			parent,
+			blockInstVars,
 		);
 
 		if (x === x1) {

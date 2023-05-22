@@ -232,6 +232,10 @@ function setupAvailableCommands(runtime) {
 		runtime.objects.CodeBlockButton,
 		scrollable,
 		availableCommands,
+		{
+			inactiveLayer: "UI",
+			panelId: "active-commands-panel",
+		},
 	);
 }
 
@@ -254,6 +258,10 @@ function setupAvailableRepeatExpressions(runtime) {
 		runtime.objects.CodeBlockButton,
 		scrollable,
 		availableRepeatExpressions,
+		{
+			inactiveLayer: "RepeatPopUp",
+			panelId: "",
+		},
 	);
 }
 
@@ -276,5 +284,9 @@ function setupAvailableConditionalExpressions(runtime) {
 		runtime.objects.CodeBlockButton,
 		scrollable,
 		availableWhileExpressions,
+		{
+			inactiveLayer: "ConditionalPopUp",
+			panelId: "",
+		},
 	);
 }
