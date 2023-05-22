@@ -2678,9 +2678,18 @@
 						{
 							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 669115927927341,
+							"sid": 912137914707992,
 							"parameters": {
-								"object": "ScrollablePanel"
+								"object": "CodeBlockPanel"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "CodeBlockPanel",
+							"sid": 529579649916153,
+							"parameters": {
+								"child": "ScrollablePanel",
+								"which": "own"
 							}
 						},
 						{
@@ -2771,9 +2780,18 @@
 						{
 							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 323172994551898,
+							"sid": 550510580837204,
 							"parameters": {
-								"object": "ScrollablePanel"
+								"object": "CodeBlockPanel"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "CodeBlockPanel",
+							"sid": 175184540327922,
+							"parameters": {
+								"child": "ScrollablePanel",
+								"which": "own"
 							}
 						},
 						{
