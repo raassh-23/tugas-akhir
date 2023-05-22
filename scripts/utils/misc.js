@@ -8,8 +8,8 @@
  * @param {Number} ms 
  * @returns {Promise} Promise that resolves after ms milliseconds
  */
-export function waitForMilisecond(ms) { 
-	return new Promise(res => setTimeout(res, ms)); 
+export function waitForMilisecond(ms) {
+	return new Promise(res => setTimeout(res, ms));
 }
 
 /**
@@ -97,7 +97,7 @@ export function getInstanceById(object, id) {
  * @param {{ inactiveLayer: string, panelId: string }} blockInstVars
  */
 export function createCodeBlockButton(
-	codeBlockButtonObject, layer, 
+	codeBlockButtonObject, layer,
 	x, y, definition, parent,
 	{ inactiveLayer, panelId },
 ) {
@@ -129,8 +129,8 @@ const COMMAND_HEIGHT = 96;
 export function setupCommands(codeBlockButtonObject, parent, definitions, blockInstVars) {
 	const layer = parent.layer.name;
 	const minLength = parent.instVars.initialLength;
-	const x = parent.x + (parent.width - COMMAND_WIDTH)/2;
-	let y = parent.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT/2;
+	const x = parent.x + (parent.width - COMMAND_WIDTH) / 2;
+	let y = parent.y + 3 * AVAILABLE_COMMANDS_MARGIN + COMMAND_HEIGHT / 2;
 
 	for (const command of definitions) {
 		createCodeBlockButton(
@@ -164,11 +164,11 @@ const EXPRESSION_HEIGHT = 72;
 export function setupExpressions(codeBlockButtonObject, parent, definitions, blockInstVars) {
 	const layer = parent.layer.name;
 	const minLength = parent.instVars.initialLength;
-	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN)/2;
+	const x1 = parent.x + (parent.width - 2 * EXPRESSION_WIDTH - AVAILABLE_EXPRESSION_MARGIN) / 2;
 	const x2 = x1 + EXPRESSION_WIDTH + AVAILABLE_EXPRESSION_MARGIN;
 
 	let x = x1;
-	let y = parent.y + 3 * AVAILABLE_EXPRESSION_MARGIN + EXPRESSION_HEIGHT/2;
+	let y = parent.y + 3 * AVAILABLE_EXPRESSION_MARGIN + EXPRESSION_HEIGHT / 2;
 
 	for (const expression of definitions) {
 		createCodeBlockButton(
@@ -193,6 +193,53 @@ export function setupExpressions(codeBlockButtonObject, parent, definitions, blo
 		y += EXPRESSION_HEIGHT + AVAILABLE_EXPRESSION_MARGIN;
 	}
 
-	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_EXPRESSION_MARGIN/2);
+	parent.height = Math.max(minLength, y - parent.y - AVAILABLE_EXPRESSION_MARGIN / 2);
 	parent.instVars.min = parent.y - (parent.height - minLength);
+}
+
+const positionMap = [
+	{ dx: 0, dy: 0, targetProperty: 'center' },
+	{ dx: 0, dy: -1, targetProperty: 'up' },
+	{ dx: 0, dy: 1, targetProperty: 'down' },
+	{ dx: -1, dy: 0, targetProperty: 'left' },
+	{ dx: 1, dy: 0, targetProperty: 'right' },
+	{ dx: -1, dy: -1, targetProperty: 'upperleft' },
+	{ dx: 1, dy: -1, targetProperty: 'upperright' },
+	{ dx: -1, dy: 1, targetProperty: 'lowerleft' },
+	{ dx: 1, dy: 1, targetProperty: 'lowerright' },
+];
+
+/**
+ * 
+ * @param {IPlayer} player 
+ * @param {import('../for-events.js').GameState} state
+ */
+export function setPlayerSurrounding(player, state) {
+	const runtime = player.runtime;
+	const [gridX, gridY] = player.behaviors.TileMovement.getGridPosition();
+
+	state.surrounding = {
+		up: 0,
+		down: 0,
+		left: 0,
+		right: 0,
+		upperleft: 0,
+		upperright: 0,
+		lowerleft: 0,
+		lowerright: 0,
+		center: 0,
+	}
+
+	runtime.objects.LevelText.getAllInstances().forEach((text) => {
+		const textGridX = text.instVars.gridX;
+		const textGridY = text.instVars.gridY;
+		const value = Number(text.text);
+
+		for (const { dx, dy, targetProperty } of positionMap) {
+			if (gridX + dx === textGridX && gridY + dy === textGridY) {
+				state.surrounding[targetProperty] = value;
+				break;
+			}
+		}
+	});
 }

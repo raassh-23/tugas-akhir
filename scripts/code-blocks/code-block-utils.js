@@ -1,12 +1,16 @@
-import { waitForMilisecond } from "../utils/misc.js";
-import { 
+import { setPlayerSurrounding, waitForMilisecond } from "../utils/misc.js";
+import {
     CHECK_INTERVAL, CONTINUE, DURATION,
     ERROR, FINISHED, STOPPED,
 } from "./code-block-constants.js";
 
 /**
+ * @typedef {import("../for-events").GameState} GameState
+ */
+
+/**
  * 
- * @param {import("../for-events").GameState} state 
+ * @param {GameState} state 
  * @param {{
  *  extraCondition?: () => boolean,
  *  duration?: number,
@@ -55,4 +59,16 @@ export function checkElseValid(command, lastName, lastResult) {
     if (lastResult === FINISHED) {
         return CONTINUE;
     }
+}
+
+/**
+ * 
+ * @param {IRuntime} runtime
+ * @param {IPlayer} player 
+ * @param {GameState} state
+ */
+export function startCommmand(runtime, player, state) {
+    runtime.callFunction("OnCommandStart");
+
+    setPlayerSurrounding(player, state);
 }

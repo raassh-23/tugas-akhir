@@ -1,5 +1,5 @@
 import { ERROR } from "../../code-block-constants.js";
-import { waitUnlessStopped } from "../../code-block-utils.js";
+import { startCommmand, waitUnlessStopped } from "../../code-block-utils.js";
 import BaseCommand from "../base-command.js";
 
 const directionToAngle = {
@@ -25,7 +25,7 @@ export default class ShootCommand extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        this.runtime.callFunction("OnCommandStart")
+        startCommmand(this.runtime, player, state);
 
         if (state.variables.ammo != undefined) {
             if (state.variables.ammo <= 0) {

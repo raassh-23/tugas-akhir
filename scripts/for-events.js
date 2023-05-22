@@ -11,6 +11,7 @@ import {
 	getInstanceById,
 	setupCommands,
 	setupExpressions,
+	setPlayerSurrounding,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -30,8 +31,20 @@ let pickedCommand = null;
  * isGameOver: boolean,
  * isError: boolean,
  * actionCount: number,
- * variables: {[variable: string]: number}
- * }} GameState
+ * variables: {
+ *  [variable: string]: number,
+ * }
+ * surrounding: {
+ * 	up: number,
+ * 	down: number,
+ * 	left: number,
+ * 	right: number,
+ *  upperleft: number,
+ *  upperright: number,
+ * 	lowerleft: number,
+ * 	lowerright: number,
+ * 	center: number,
+ * }}} GameState
  */
 
 /**
@@ -43,6 +56,17 @@ const state = {
 	isError: false,
 	actionCount: 0,
 	variables: {},
+	surrounding: {
+		up: 0,
+		down: 0,
+		left: 0,
+		right: 0,
+		upperleft: 0,
+		upperright: 0,
+		lowerleft: 0,
+		lowerright: 0,
+		center: 0,
+	}
 }
 
 /**
@@ -77,6 +101,17 @@ function resetState(level, resetVariables = true) {
 	state.isGameOver = false;
 	state.isError = false;
 	state.actionCount = 0;
+	state.surrounding = {
+		up: 0,
+		down: 0,
+		left: 0,
+		right: 0,
+		upperleft: 0,
+		upperright: 0,
+		lowerleft: 0,
+		lowerright: 0,
+		center: 0,
+	};
 	
 	if (resetVariables) {
 		state.variables = {...levelVariables[level]};

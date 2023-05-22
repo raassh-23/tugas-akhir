@@ -39,7 +39,7 @@ export default class CommandsContainer extends BaseCommand {
             } else if (valid === CONTINUE) {
                 continue;
             }
-
+            
             command.showHighlight(true);
 
             const result = await command.run(player, state);

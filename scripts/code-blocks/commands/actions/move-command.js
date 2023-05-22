@@ -1,4 +1,4 @@
-import { waitUnlessStopped } from "../../code-block-utils.js";
+import { startCommmand, waitUnlessStopped } from "../../code-block-utils.js";
 import BaseCommand from "../base-command.js";
 
 const frameToDirections = ["left", "up", "right", "down"];
@@ -25,7 +25,7 @@ export default class MoveCommand extends BaseCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        this.runtime.callFunction("OnCommandStart")
+        startCommmand(this.runtime, player, state);
 
         const direction = frameToDirections[this.animationFrame];
 

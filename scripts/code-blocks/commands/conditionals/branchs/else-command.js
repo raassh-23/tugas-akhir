@@ -1,5 +1,5 @@
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
-import { waitUnlessStopped } from "../../../code-block-utils.js";
+import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
 /**
@@ -19,7 +19,7 @@ export default class ElseCommand extends ConditionalCommand {
      */
     async run(player, state) {
         this.showHighlight(true);
-        this.runtime.callFunction("OnCommandStart")
+        startCommmand(this.runtime, player, state);
 
         const waitResult = await waitUnlessStopped(state, {
             afterWait: () => {

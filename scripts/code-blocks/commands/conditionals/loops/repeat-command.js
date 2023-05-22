@@ -1,5 +1,5 @@
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
-import { waitUnlessStopped } from "../../../code-block-utils.js";
+import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
 /**
@@ -24,7 +24,8 @@ export default class RepeatCommand extends ConditionalCommand {
             .replace(/x/g, '*');
 
         try {
-            repeatCount = math.evaluate(cleanedRepeatCondition, state.variables);
+            const symbols = { ...state.variables, ...state.surrounding };
+            repeatCount = math.evaluate(cleanedRepeatCondition, symbols);
 
             if (repeatCount < 0) {
                 throw new Error("Repeat count must be positive");
@@ -41,7 +42,7 @@ export default class RepeatCommand extends ConditionalCommand {
         let i = 0;
         while (true) {
             this.showHighlight(true);
-            this.runtime.callFunction("OnCommandStart")
+            startCommmand(this.runtime, player, state);
             this._text.text = (repeatCount - i).toString();
 
             const waitResult = await waitUnlessStopped(state, {

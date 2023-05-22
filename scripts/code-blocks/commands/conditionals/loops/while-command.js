@@ -1,5 +1,5 @@
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
-import { waitUnlessStopped } from "../../../code-block-utils.js";
+import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
 /**
@@ -22,17 +22,19 @@ export default class WhileCommand extends ConditionalCommand {
             .replace(/&/g, 'and')
             .replace(/\|/g, 'or')
             .replace(/ ! /g, ' not ')
+            .replace(/ = /g, ' == ')
             .replace(/%/g, 'mod')
             .replace(/x/g, '*');
 
         while (true) {
             this.showHighlight(true);
-            this.runtime.callFunction("OnCommandStart")
+            startCommmand(this.runtime, player, state);
 
             let evaluatedCondition = false;
 
             try {
-                evaluatedCondition = math.evaluate(cleanedCondition, state.variables);
+                const symbols = { ...state.variables, ...state.surrounding };
+                evaluatedCondition = math.evaluate(cleanedCondition, symbols);
                 evaluatedCondition = !!evaluatedCondition; // convert to boolean
             } catch (error) {
                 console.error(error);
