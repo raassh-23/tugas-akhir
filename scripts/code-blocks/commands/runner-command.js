@@ -18,7 +18,7 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {IPlayer} player 
-     * @param {import("../../for-events.js").GameState}} state
+     * @param {import("../../for-events.js").GameState} state
      * 
      * @returns {Promise<number>}
      */

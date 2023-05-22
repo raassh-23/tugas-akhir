@@ -21,6 +21,7 @@
 		"WhileCommand",
 		"IfCommand",
 		"ElseCommand",
-		"ElseIfCommand"
+		"ElseIfCommand",
+		"ReadBlock"
 	]
 }

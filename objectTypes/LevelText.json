@@ -1,0 +1,42 @@
+{
+	"name": "LevelText",
+	"plugin-id": "Spritefont2",
+	"sid": 117226242417942,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 778279965296619
+		},
+		{
+			"name": "gridX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 793605366122749
+		},
+		{
+			"name": "gridY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 590919624926188
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5273421,
+		"useCollisionPoly": true
+	}
+}

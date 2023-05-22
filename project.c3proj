@@ -214,7 +214,8 @@
 			"Bullet",
 			"MovingEnemyCollision",
 			"MovingEnemy",
-			"MovingEnemyCheckpoint"
+			"MovingEnemyCheckpoint",
+			"LevelText"
 		],
 		"subfolders": [
 			{
@@ -230,7 +231,8 @@
 					"WhileCommand",
 					"IfCommand",
 					"ElseCommand",
-					"ElseIfCommand"
+					"ElseIfCommand",
+					"ReadBlock"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -514,6 +516,14 @@
 									"name": "variable-block.js",
 									"type": "application/javascript",
 									"sid": 575962800501217,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "read-block.js",
+									"type": "application/javascript",
+									"sid": 405069725203457,
 									"script-info": {
 										"purpose": "none"
 									}

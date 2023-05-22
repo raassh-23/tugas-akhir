@@ -4375,6 +4375,37 @@
 							"sid": 116353686508916
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "LevelText",
+							"sid": 500848096201539
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LevelText",
+							"sid": 901912962546778,
+							"parameters": {
+								"instance-variable": "gridX",
+								"value": "(Self.X - GRID_SIZE/2) / GRID_SIZE"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LevelText",
+							"sid": 830178026067721,
+							"parameters": {
+								"instance-variable": "gridY",
+								"value": "(Self.Y - GRID_SIZE/2) / GRID_SIZE"
+							}
+						}
+					],
+					"sid": 547316695695729
 				}
 			],
 			"sid": 361619522203103
@@ -4938,11 +4969,33 @@
 							"sid": 270705358816653
 						},
 						{
+							"id": "destroy",
+							"objectClass": "LevelText",
+							"sid": 857519724679092
+						},
+						{
 							"id": "recreate-initial-objects",
 							"objectClass": "System",
 							"sid": 478867782860744,
 							"parameters": {
 								"object": "ResetObjects",
+								"from-x": "0",
+								"from-y": "0",
+								"to-x": "LayoutWidth",
+								"to-y": "LayoutWidth",
+								"source-layout": "LayoutName",
+								"source-layer": "\"Game\"",
+								"offset-x": "0",
+								"offset-y": "0",
+								"create-hierarchy": true
+							}
+						},
+						{
+							"id": "recreate-initial-objects",
+							"objectClass": "System",
+							"sid": 695474686579092,
+							"parameters": {
+								"object": "LevelText",
 								"from-x": "0",
 								"from-y": "0",
 								"to-x": "LayoutWidth",

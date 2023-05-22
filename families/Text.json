@@ -29,6 +29,7 @@
 	"effectTypes": [],
 	"members": [
 		"CodeBlockText",
-		"UIText"
+		"UIText",
+		"LevelText"
 	]
 }

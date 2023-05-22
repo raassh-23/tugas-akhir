@@ -11,6 +11,7 @@ import {
 	IfCommand,
 	ElseCommand,
 	ElseIfCommand,
+	ReadBlock,
 } from "./code-blocks/index.js";
 
 [
@@ -35,7 +36,7 @@ import {
 	document.head.appendChild(link);
 });
 
-runOnStartup(async runtime =>
+runOnStartup(async (runtime) =>
 {
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
@@ -54,6 +55,7 @@ runOnStartup(async runtime =>
 	runtime.objects.IfCommand.setInstanceClass(IfCommand);
 	runtime.objects.ElseCommand.setInstanceClass(ElseCommand);
 	runtime.objects.ElseIfCommand.setInstanceClass(ElseIfCommand);
+	runtime.objects.ReadBlock.setInstanceClass(ReadBlock);
 });
 
 // async function OnBeforeProjectStart(runtime)

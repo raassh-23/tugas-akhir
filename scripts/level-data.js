@@ -143,6 +143,42 @@ export const levelAvailableCodeBlocks = {
                 name: "VariableBlock",
                 frame: 1,
             },
+            {
+                name: "ReadBlock",
+                frame: 0,
+            },
+            {
+                name: "ReadBlock",
+                frame: 2,
+            },
+            {
+                name: "ReadBlock",
+                frame: 1,
+            },
+            {
+                name: "ReadBlock",
+                frame: 3,
+            },
+            {
+                name: "ReadBlock",
+                frame: 4,
+            },
+            {
+                name: "ReadBlock",
+                frame: 5,
+            },
+            {
+                name: "ReadBlock",
+                frame: 7,
+            },
+            {
+                name: "ReadBlock",
+                frame: 6,
+            },
+            {
+                name: "ReadBlock",
+                frame: 8,
+            },
         ],
         conditionalExpressions: [
             {
@@ -256,6 +292,42 @@ export const levelAvailableCodeBlocks = {
             {
                 name: "VariableBlock",
                 frame: 1,
+            },
+            {
+                name: "ReadBlock",
+                frame: 0,
+            },
+            {
+                name: "ReadBlock",
+                frame: 2,
+            },
+            {
+                name: "ReadBlock",
+                frame: 1,
+            },
+            {
+                name: "ReadBlock",
+                frame: 3,
+            },
+            {
+                name: "ReadBlock",
+                frame: 4,
+            },
+            {
+                name: "ReadBlock",
+                frame: 5,
+            },
+            {
+                name: "ReadBlock",
+                frame: 7,
+            },
+            {
+                name: "ReadBlock",
+                frame: 6,
+            },
+            {
+                name: "ReadBlock",
+                frame: 8,
             },
         ],
     },
