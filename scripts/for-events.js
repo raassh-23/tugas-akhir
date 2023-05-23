@@ -133,6 +133,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 	}
 
 	codeBlock.setPosition(...codeBlockShadow.getPosition());
+	
 	parent.container.addCodeBlock(codeBlock);
 	parent.addChild(codeBlock, {
 		transformX: true,

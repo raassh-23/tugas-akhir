@@ -1141,10 +1141,38 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
+							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);",
+							"disabled": true
 						}
 					],
-					"sid": 844392995573375
+					"sid": 844392995573375,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "prevUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 979098035579844
+						},
+						{
+							"eventType": "comment",
+							"text": "TODO: look for better solution"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nif (localVars.prevUid === pickedUid) {\n\truntime.setReturnValue(pickedUid);\n} else {\n\tlocalVars.prevUid = pickedUid;\n\truntime.setReturnValue(0);\n}"
+								}
+							],
+							"sid": 487867792649454
+						}
+					]
 				},
 				{
 					"functionName": "ShowCodeBlockShadow",
@@ -1444,10 +1472,10 @@
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 560088516486017,
+									"sid": 969989727405044,
 									"parameters": {
 										"comparison": 5,
-										"x-co-ordinate": "x - 0.1"
+										"x-co-ordinate": "x"
 									}
 								}
 							],
@@ -1469,10 +1497,10 @@
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 452053802630361,
+									"sid": 517090480549705,
 									"parameters": {
 										"comparison": 2,
-										"x-co-ordinate": "x - 0.1"
+										"x-co-ordinate": "x"
 									}
 								}
 							],
@@ -6088,6 +6116,62 @@
 					],
 					"sid": 103616995341753,
 					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 332749278380782,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 927407420144812,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-dragging",
+									"objectClass": "CodeBlock",
+									"sid": 886661181028777,
+									"behaviorType": "DragDrop"
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockPanel",
+									"sid": 105402087033275,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "CodeBlock.panelId"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "CodeBlockPanel",
+									"sid": 758918454813809,
+									"parameters": {
+										"child": "CodeBlockShadow",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const c =  runtime.objects.CodeBlock.getFirstPickedInstance();\nconsole.log(c.x, c.y);\n\nfor(const d of runtime.objects.CodeBlockShadow.getPickedInstances()) {\n\tconst distance = getSquaredDistance(c, d);\n\tconsole.log(d.uid, d.x, d.y, distance);\n\n}"
+								}
+							],
+							"sid": 185835125033345,
+							"disabled": true
+						}
+					]
 				}
 			],
 			"sid": 371561682910378

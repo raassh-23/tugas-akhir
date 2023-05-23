@@ -14,8 +14,8 @@ export function waitForMilisecond(ms) {
 
 /**
  * 
- * @param {IWorldInstance} a 
- * @param {IWorldInstance} b 
+ * @param {{x: number, y: number}} a 
+ * @param {{x: number, y: number}} b 
  * @returns {number} squared distance between a and b
  */
 export function getSquaredDistance(a, b) {
