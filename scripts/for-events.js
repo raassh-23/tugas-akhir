@@ -3,15 +3,14 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
-import {levelVariables, levelAvailableCodeBlocks} from "./level-data.js";
-import { 
+import { levelVariables, levelAvailableCodeBlocks } from "./level-data.js";
+import {
 	getSquaredDistance,
 	getContainerParent,
 	getTopCodeBlockContainer,
 	getInstanceById,
 	setupCommands,
 	setupExpressions,
-	setPlayerSurrounding,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
 
@@ -112,9 +111,9 @@ function resetState(level, resetVariables = true) {
 		lowerright: 0,
 		center: 0,
 	};
-	
+
 	if (resetVariables) {
-		state.variables = {...levelVariables[level]};
+		state.variables = { ...levelVariables[level] };
 	}
 }
 
@@ -133,7 +132,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 	}
 
 	codeBlock.setPosition(...codeBlockShadow.getPosition());
-	
+
 	parent.container.addCodeBlock(codeBlock);
 	parent.addChild(codeBlock, {
 		transformX: true,
@@ -143,7 +142,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 
 	top.updateLevel(0);
 	top.container.logCodeBlocks();
-	top.expand();
+	top.expand(0, true);
 }
 
 /**
@@ -156,7 +155,7 @@ function removeCodeBlock(codeBlock) {
 
 	parent.container.removeCodeBlock(codeBlock);
 	codeBlock.removeFromParent();
-	
+
 	top.updateLevel(0);
 }
 
@@ -167,22 +166,9 @@ function removeCodeBlock(codeBlock) {
  * @returns {number} uid of code block shadow to show, 0 if no code block shadow to show
  */
 function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
-	const excludedShadows = []
-
-	for (const shadowChild of codeBlock.children()) {
-		if (shadowChild.objectType.name === "CodeBlockShadow") {
-			excludedShadows.push(shadowChild.uid);
-		}
-	}
-
-	const pickedShadow = codeBlockShadows.filter((s) => s.layer.isSelfAndParentsInteractive)
-		.sort((a, b) => {
-			const squaredDistanceA = getSquaredDistance(codeBlock, a);
-			const squaredDistanceB = getSquaredDistance(codeBlock, b);
-
-			return squaredDistanceA - squaredDistanceB;
-		})
-		.find((s) => !excludedShadows.includes(s.uid));
+	const pickedShadow = codeBlockShadows
+		.map((shadow) => ({uid: shadow.uid, distance: getSquaredDistance(codeBlock, shadow)}))
+		.sort((a, b) => a.distance - b.distance)[0];
 
 	if (pickedShadow) {
 		return pickedShadow.uid;
@@ -193,12 +179,12 @@ function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 
 /**
  * 
- * @param {CommandsContainer} containers 
+ * @param {CommandsContainer[]} containers 
  */
 function resetContainerLength(containers) {
 	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
 		.forEach((c) => {
-			c.expand();
+			c.expand(0, true);
 		});
 }
 
@@ -235,8 +221,8 @@ function logParent(sprite) {
 
 function getVariables() {
 	return Object.entries(state.variables)
-			.map(([key, value]) => `${key}: ${value}`)
-			.join("\n");
+		.map(([key, value]) => `${key}: ${value}`)
+		.join("\n");
 }
 
 /**
@@ -259,7 +245,7 @@ function getCodeBlockCount(runtime) {
  */
 function setupAvailableCommands(runtime) {
 	const level = runtime.globalVars.level;
-	
+
 	const availableCommands = levelAvailableCodeBlocks[level].commands;
 
 	const scrollable = getInstanceById(runtime.objects.ScrollablePanel, "available-commands")

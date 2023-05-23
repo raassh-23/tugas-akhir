@@ -80,6 +80,7 @@ export default class ConditionalCommand extends CommandsContainer {
     /**
      * 
      * @param {number} width 
+     * @param {boolean} shiftLastCommand
      */
     expand(width = 0, shiftLastCommand = false) {
         const oldWidth = this.width;

@@ -436,6 +436,12 @@
 								}
 							],
 							"sid": 441139817013168
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 288874218212689
 						}
 					]
 				},
@@ -1141,38 +1147,10 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);",
-							"disabled": true
+							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
 						}
 					],
-					"sid": 844392995573375,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "prevUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 979098035579844
-						},
-						{
-							"eventType": "comment",
-							"text": "TODO: look for better solution"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"type": "script",
-									"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nif (localVars.prevUid === pickedUid) {\n\truntime.setReturnValue(pickedUid);\n} else {\n\tlocalVars.prevUid = pickedUid;\n\truntime.setReturnValue(0);\n}"
-								}
-							],
-							"sid": 487867792649454
-						}
-					]
+					"sid": 844392995573375
 				},
 				{
 					"functionName": "ShowCodeBlockShadow",

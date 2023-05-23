@@ -63,9 +63,10 @@ export default class CommandsContainer extends BaseCommand {
 
     /**
      * 
-     * @param {number} width 
+     * @param {number} width
+     * @param {boolean} shiftLastCommand 
      */
-    expand(width = 0) {
+    expand(width = 0, shiftLastCommand = false) {
         throw new Error("Abstract Method");
     }
 
