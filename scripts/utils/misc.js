@@ -230,7 +230,7 @@ export function setPlayerSurrounding(player, state) {
 		center: 0,
 	}
 
-	runtime.objects.LevelText.getAllInstances().forEach((text) => {
+	for (const text of runtime.objects.LevelText.instances()) {
 		const textGridX = text.instVars.gridX;
 		const textGridY = text.instVars.gridY;
 		const value = Number(text.text);
@@ -241,5 +241,5 @@ export function setPlayerSurrounding(player, state) {
 				break;
 			}
 		}
-	});
+	}
 }

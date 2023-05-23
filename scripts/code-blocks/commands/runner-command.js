@@ -1,5 +1,5 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, FINISHED, STOPPED, ERROR, GAME_OVER } from "../code-block-constants.js";
+import { MARGIN, FINISHED } from "../code-block-constants.js";
 import { waitUnlessStopped } from "../code-block-utils.js";
 
 /**
@@ -23,28 +23,17 @@ export default class RunnerCommand extends CommandsContainer {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        if (!this.runtime.globalVars.isRunning) {
-            this.runtime.globalVars.isRunning = true;
+        this.reset(true); // reset commands, including errors
 
-            this.reset(true); // reset commands, including errors
+        const result = await super.run(player, state);
 
-            const result = await super.run(player, state);
-
-            if (result === STOPPED || result === ERROR) {
-                this.runtime.callFunction("ResetGame");
-                return result;
-            } else if (result === GAME_OVER) {
-                this.runtime.callFunction("GameOver");
-                return result;
-            }
-
-            await waitUnlessStopped(state);
-
-            this.runtime.globalVars.isRunning = false;
-            this.reset(false); // reset commands, except errors
-            // temp
-            this.runtime.callFunction("ResetGame");
+        if (result !== FINISHED) {
+            return result;
         }
+
+        await waitUnlessStopped(state);
+
+        this.reset(false); // reset commands, except errors
 
         return FINISHED;
     }
@@ -99,6 +88,6 @@ export default class RunnerCommand extends CommandsContainer {
      */
     getCount() {
         return this.container.codeBlocks
-                .reduce((acc, command) => acc + command.getCount(), 0);
+            .reduce((acc, command) => acc + command.getCount(), 0);
     }
 }

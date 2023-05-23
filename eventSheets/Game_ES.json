@@ -5286,7 +5286,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level, true);\n\nrunner.run(runtime.objects.Player.getFirstInstance(), state)"
+											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level, true);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
 										}
 									],
 									"sid": 239940556527685

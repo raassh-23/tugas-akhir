@@ -13,6 +13,7 @@ import {
 	setupExpressions,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
+import { ERROR, GAME_OVER, STOPPED } from "./code-blocks/code-block-constants.js";
 
 /**
  * @type {RunnerCommand?}
@@ -93,9 +94,39 @@ function setupLevel(runtime) {
 
 /**
  * 
+ * @param {IRuntime} runtime
+ * @param {IPlayer[]} players 
+ */
+async function runCommands(runtime, players) {
+	if (!runtime.globalVars.isRunning) {
+		runtime.globalVars.isRunning = true;
+
+		for (const player of players) {
+			const result = await runner.run(player, state);
+
+			if (result === STOPPED || result === ERROR) {
+				runtime.callFunction("ResetGame");
+				return;
+			} else if (result === GAME_OVER) {
+				runtime.callFunction("GameOver");
+				return;
+			}
+
+			resetVariables(runtime.globalVars.level);
+		}
+
+		runtime.globalVars.isRunning = false;
+
+		// temp
+		runtime.callFunction("ResetGame");
+	}
+}
+
+/**
+ * 
  * @param {number} level 
  */
-function resetState(level, resetVariables = true) {
+function resetState(level, shouldResetVariables = true) {
 	state.isStopped = false;
 	state.isGameOver = false;
 	state.isError = false;
@@ -112,9 +143,13 @@ function resetState(level, resetVariables = true) {
 		center: 0,
 	};
 
-	if (resetVariables) {
-		state.variables = { ...levelVariables[level] };
+	if (shouldResetVariables) {
+		resetVariables(level);
 	}
+}
+
+function resetVariables(level) {
+	state.variables = { ...levelVariables[level] };
 }
 
 /**
