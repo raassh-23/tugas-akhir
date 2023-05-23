@@ -1,4 +1,4 @@
-import { ERROR, FINISHED } from "../code-block-constants.js";
+import { ERROR, FINISHED, PLAYER_REACHED_GOAL } from "../code-block-constants.js";
 import CodeBlock from "../code-block.js";
 
 /**
@@ -30,15 +30,20 @@ export default class BaseCommand extends CodeBlock {
 
     /**
      * 
+     * @param {IPlayer} player
      * @param {GameState} state 
      * @returns {number}
      */
-    checkCollisions(state) {
+    checkCollisions(player, state) {
         this.runtime.callFunction("CheckCollisions");
 
         if (state.isError) {
             this.showError(true);
             return ERROR;
+        }
+
+        if (player.instVars.reachedGoal) {
+            return PLAYER_REACHED_GOAL;
         }
 
         return FINISHED;

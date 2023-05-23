@@ -39,7 +39,7 @@ export default class MoveCommand extends BaseCommand {
                 player.animationSpeed = 0;
                 state.actionCount++;
 
-                return this.checkCollisions(state);
+                return this.checkCollisions(player, state);
             },
         });
     }

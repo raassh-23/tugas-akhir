@@ -25,7 +25,7 @@ export default class ElseCommand extends ConditionalCommand {
             afterWait: () => {
                 this.showHighlight(false);
 
-                return this.checkCollisions(state);
+                return this.checkCollisions(player, state);
             },
         });
 

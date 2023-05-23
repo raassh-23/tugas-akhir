@@ -46,7 +46,7 @@ export default class ShootCommand extends BaseCommand {
             afterWait: () => {
                 state.actionCount++;
 
-                return this.checkCollisions(state);
+                return this.checkCollisions(player, state);
             },
         });
     }

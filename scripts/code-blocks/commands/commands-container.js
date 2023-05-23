@@ -1,6 +1,6 @@
 import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
-import { CONDITION_NOT_MET, CONTINUE, ERROR, FINISHED, GAME_OVER } from "../code-block-constants.js";
+import { CONDITION_NOT_MET, CONTINUE, ERROR, FINISHED } from "../code-block-constants.js";
 import { checkElseValid } from "../code-block-utils.js";
 
 /**
@@ -48,10 +48,6 @@ export default class CommandsContainer extends BaseCommand {
 
             if (result !== FINISHED && result !== CONDITION_NOT_MET) {
                 return result;
-            }
-
-            if (state.isGameOver) {
-                return GAME_OVER;
             }
 
             lastCommandName = command.name;

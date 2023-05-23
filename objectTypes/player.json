@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 286186782506091,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "reachedGoal",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 541334414194815
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "TileMovement",

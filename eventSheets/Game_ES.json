@@ -17,6 +17,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "currentPlayerUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 609270761893114
+		},
+		{
+			"eventType": "variable",
 			"name": "isRunning",
 			"type": "boolean",
 			"initialValue": "false",
@@ -5024,7 +5034,7 @@
 						},
 						{
 							"type": "script",
-							"script": "resetState(runtime.globalVars.level, !state.isError);"
+							"script": "resetState(runtime, !state.isError);"
 						}
 					],
 					"sid": 650488692869568
@@ -5041,10 +5051,21 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "start-fade",
-							"objectClass": "Player",
-							"sid": 739694419030219,
-							"behaviorType": "Fade"
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 714126832618019,
+							"parameters": {
+								"seconds": "Player.Fade.FadeOutTime"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 622458699497123,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "false"
+							}
 						},
 						{
 							"id": "set-text",
@@ -5052,14 +5073,6 @@
 							"sid": 439856039595636,
 							"parameters": {
 								"text": "username"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 370606030058077,
-							"parameters": {
-								"seconds": "Player.Fade.FadeOutTime"
 							}
 						},
 						{
@@ -5286,7 +5299,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime.globalVars.level, true);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
+											"script": "console.log(\"running commands\")\n\nresetState(runtime, true);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
 										}
 									],
 									"sid": 239940556527685
@@ -5838,7 +5851,16 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Player",
+							"sid": 532691019715706,
+							"parameters": {
+								"unique-id": "currentPlayerUID"
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "set-function-return-value",
@@ -5880,15 +5902,21 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "state.isGameOver = true;"
+									"script": "state.playerCount--;"
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 622458699497123,
+									"id": "start-fade",
+									"objectClass": "Player",
+									"sid": 739694419030219,
+									"behaviorType": "Fade"
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 401135475560399,
 									"parameters": {
-										"variable": "isPlaying",
-										"value": "false"
+										"instance-variable": "reachedGoal",
+										"value": "true"
 									}
 								}
 							],
@@ -5987,7 +6015,16 @@
 						}
 					],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Player",
+							"sid": 839008688200988,
+							"parameters": {
+								"unique-id": "currentPlayerUID"
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "spawn-another-object",

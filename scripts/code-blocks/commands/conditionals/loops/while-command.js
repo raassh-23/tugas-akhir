@@ -50,7 +50,7 @@ export default class WhileCommand extends ConditionalCommand {
                 afterWait: () => {
                     this.showHighlight(false);
 
-                    return this.checkCollisions(state);
+                    return this.checkCollisions(player, state);
                 },
             });
 

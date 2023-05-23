@@ -13,7 +13,7 @@ import {
 	setupExpressions,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
-import { ERROR, GAME_OVER, STOPPED } from "./code-blocks/code-block-constants.js";
+import { ERROR, PLAYER_REACHED_GOAL, STOPPED } from "./code-blocks/code-block-constants.js";
 
 /**
  * @type {RunnerCommand?}
@@ -28,8 +28,8 @@ let pickedCommand = null;
 /**
  * @typedef {{
  * isStopped: boolean,
- * isGameOver: boolean,
  * isError: boolean,
+ * playerCount: number,
  * actionCount: number,
  * variables: {
  *  [variable: string]: number,
@@ -52,8 +52,8 @@ let pickedCommand = null;
  */
 const state = {
 	isStopped: false,
-	isGameOver: false,
 	isError: false,
+	playerCount: 0,
 	actionCount: 0,
 	variables: {},
 	surrounding: {
@@ -85,7 +85,7 @@ function setupLevel(runtime) {
 		throw new Error("cannot find runner");
 	}
 
-	resetState(runtime.globalVars.level, true);
+	resetState(runtime, true);
 
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);
@@ -102,12 +102,14 @@ async function runCommands(runtime, players) {
 		runtime.globalVars.isRunning = true;
 
 		for (const player of players) {
+			runtime.globalVars.currentPlayerUID = player.uid;
+
 			const result = await runner.run(player, state);
 
 			if (result === STOPPED || result === ERROR) {
 				runtime.callFunction("ResetGame");
 				return;
-			} else if (result === GAME_OVER) {
+			} else if (result === PLAYER_REACHED_GOAL && state.playerCount === 0) {
 				runtime.callFunction("GameOver");
 				return;
 			}
@@ -124,12 +126,16 @@ async function runCommands(runtime, players) {
 
 /**
  * 
- * @param {number} level 
+ * @param {IRuntime} runtime 
+ * @param {boolean} shouldResetVariables
  */
-function resetState(level, shouldResetVariables = true) {
+function resetState(runtime, shouldResetVariables = true) {
+	const level = runtime.globalVars.level;
+	const playerCount = runtime.objects.Player.getAllInstances().length;
+
 	state.isStopped = false;
-	state.isGameOver = false;
 	state.isError = false;
+	state.playerCount = playerCount;
 	state.actionCount = 0;
 	state.surrounding = {
 		up: 0,

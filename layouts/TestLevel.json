@@ -376,7 +376,9 @@
 						"live-preview": false
 					},
 					"uid": 3,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"reachedGoal": false
+					},
 					"behaviors": {
 						"TileMovement": {
 							"properties": {
@@ -1535,7 +1537,9 @@
 						"live-preview": false
 					},
 					"uid": 194,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"reachedGoal": false
+					},
 					"behaviors": {
 						"TileMovement": {
 							"properties": {
