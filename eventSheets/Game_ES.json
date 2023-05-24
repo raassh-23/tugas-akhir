@@ -3970,6 +3970,15 @@
 						{
 							"id": "set-layer-scale",
 							"objectClass": "System",
+							"sid": 689285337601278,
+							"parameters": {
+								"layer": "\"Border\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
 							"sid": 412512560759578,
 							"parameters": {
 								"layer": "\"Tilemap\"",
@@ -4847,10 +4856,6 @@
 								"variable": "levelTimer",
 								"value": "0"
 							}
-						},
-						{
-							"type": "script",
-							"script": "setupLevel(runtime);"
 						},
 						{
 							"id": "set-layer-visible",

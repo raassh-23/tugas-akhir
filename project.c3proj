@@ -214,7 +214,8 @@
 			"MovingEnemyCollision",
 			"MovingEnemy",
 			"MovingEnemyCheckpoint",
-			"LevelText"
+			"LevelText",
+			"LevelBorder"
 		],
 		"subfolders": [
 			{
@@ -270,11 +271,18 @@
 	},
 	"layouts": {
 		"items": [
-			"TestLevel",
 			"Menu",
 			"ObjectRepository"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"TestLevel"
+				],
+				"subfolders": [],
+				"name": "levels"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
@@ -282,7 +290,15 @@
 			"Menu_ES",
 			"Common_ES"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"TestLevel_ES"
+				],
+				"subfolders": [],
+				"name": "levels"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
