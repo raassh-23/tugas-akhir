@@ -234,13 +234,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
+									"id": "else",
 									"objectClass": "System",
-									"sid": 941327846399168,
-									"parameters": {
-										"variable": "isDragging"
-									},
-									"isInverted": true
+									"sid": 936587390509648
 								}
 							],
 							"actions": [
@@ -327,21 +323,17 @@
 													]
 												},
 												{
-													"callFunction": "ShiftActiveCodeBlocks",
-													"sid": 460664071702417,
+													"type": "comment",
+													"text": "second call saveCommandPosition, after shifting active position without the dragged command"
+												},
+												{
+													"callFunction": "ShiftActiveCodeBlocksSavedPosition",
+													"sid": 856502921323088,
 													"parameters": [
 														"CodeBlock.X",
 														"-CodeBlock.Width",
 														"CodeBlock.panelId"
 													]
-												},
-												{
-													"type": "comment",
-													"text": "second call saveCommandPosition, after shifting active position without the dragged command"
-												},
-												{
-													"callFunction": "SaveAllCodeBlocksPosition",
-													"sid": 195177666138114
 												}
 											],
 											"sid": 610675001549488
@@ -1497,6 +1489,118 @@
 								}
 							],
 							"sid": 827707683916332
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "FIXME: really hacky, same problem as /Scripts/code-blocks/conditionals/conditional-command.js:87-90"
+				},
+				{
+					"functionName": "ShiftActiveCodeBlocksSavedPosition",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "CodeBlock",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 748988872432343
+						},
+						{
+							"name": "deltaWidth",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 580787801313359
+						},
+						{
+							"name": "panelId",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 425517459909055
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "CodeBlock",
+							"sid": 722458680188234,
+							"parameters": {
+								"instance-variable": "isActive"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "CodeBlock",
+							"sid": 659265625743306,
+							"parameters": {
+								"instance-variable": "panelId",
+								"comparison": 0,
+								"value": "panelId"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 992038029959061,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "CodeBlock",
+									"sid": 322769625283499,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlock",
+									"sid": 440475048691116,
+									"parameters": {
+										"instance-variable": "savedX",
+										"value": "Self.savedX + deltaWidth"
+									}
+								}
+							],
+							"sid": 370357816019075
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "CodeBlock",
+									"sid": 912877863795842,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CodeBlock",
+									"sid": 333590241807354,
+									"parameters": {
+										"instance-variable": "savedX",
+										"value": "Self.savedX"
+									}
+								}
+							],
+							"sid": 531155528416362
 						}
 					]
 				},
@@ -5261,17 +5365,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 172363086272753,
-							"parameters": {
-								"type": "log",
-								"message": "Button.id"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 917418169826131,
 					"children": [
 						{

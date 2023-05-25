@@ -148,7 +148,7 @@ export default class ConditionalCommand extends CommandsContainer {
         this._codeBlockShadows[0].height = this.savedHeight * this.getMultiplier(this.level + 1);
 
         this._codeBlockShadows[1].x = this.x + this.width;
-        this._codeBlockShadows[1].height = this.height;
+        this._codeBlockShadows[1].height = this.savedHeight * this.getMultiplier(this.level);
     }
 
     /**
