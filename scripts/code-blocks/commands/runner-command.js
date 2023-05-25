@@ -1,5 +1,5 @@
 import CommandsContainer from "./commands-container.js";
-import { MARGIN, FINISHED } from "../code-block-constants.js";
+import { MARGIN, FINISHED, PLAYER_REACHED_GOAL } from "../code-block-constants.js";
 import { waitUnlessStopped } from "../code-block-utils.js";
 
 /**
@@ -23,19 +23,15 @@ export default class RunnerCommand extends CommandsContainer {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        this.reset(true); // reset commands, including errors
-
         const result = await super.run(player, state);
 
-        if (result !== FINISHED) {
+        if (result !== FINISHED && result !== PLAYER_REACHED_GOAL) {
             return result;
         }
 
         await waitUnlessStopped(state);
 
-        this.reset(false); // reset commands, except errors
-
-        return FINISHED;
+        return result;
     }
 
     /**

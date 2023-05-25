@@ -113,10 +113,8 @@ export default class ConditionalCommand extends CommandsContainer {
         }
 
         this.showError(false);
-        
-        if (this._text != null) {
-            this._text.text = this._condition;
-        }
+
+        this.setText({ text: this._condition.replace(/ /g, '') });
     }
 
     setSizeBasedOnLevel() {
@@ -128,15 +126,15 @@ export default class ConditionalCommand extends CommandsContainer {
         this.height = this.savedHeight * multiplier;
         this.width = this.getWidthOnLevel(this.level);
 
-        if (this._popUpButton != null) {
-            this._popUpButton.x = this.x + this._icon.width - this._popUpButton.width / 2 - 10 * multiplier;
-            this._popUpButton.y = this.y + 45 * multiplier;
-        }
-        
-        if (this._text != null) {
-            this._text.x = this._popUpButton?.x ?? this.x + this._icon.width + MARGIN;
-            this._text.y = this._popUpButton?.y ?? this.y + 45 * multiplier;
-        }
+        this.setPopUpButton({ 
+            x: this.x + this._icon.width - this._popUpButton?.width / 2 - 10 * multiplier,
+            y: this.y + 45 * multiplier,
+        });
+
+        this.setText({
+            x: this._popUpButton?.x ?? this.x + this._icon.width + MARGIN,
+            y: this._popUpButton?.y ?? this.y + 45 * multiplier,
+        });
 
         let currentX = this.x + this._icon.width + MARGIN;
         this.container.codeBlocks.forEach((command) => {
@@ -182,11 +180,38 @@ export default class ConditionalCommand extends CommandsContainer {
         }
     }
 
+    /**
+     * 
+     * @param {boolean} withError 
+     */
     reset(withError) {
-        if (this._text != null) {
-            this._text.text = this._condition.replace(/ /g, '');
-        }
+        console.log("resetting condition");
+
+        this.setText({ text: this._condition.replace(/ /g, '') });
 
         super.reset(withError);
+    }
+
+    /**
+     * 
+     * @param {{ text: string, x: number, y: number }} parameter 
+     */
+    setText({ text, x, y } = {}) {
+        if (this._text != null) {
+            this._text.text = text ?? this._text.text;
+            this._text.x = x ?? this._text.x;
+            this._text.y = y ?? this._text.y;
+        }
+    }
+
+    /**
+     * 
+     * @param {{x: number, y: number}} param0 
+     */
+    setPopUpButton({ x, y } = {}) {
+        if (this._popUpButton != null) {
+            this._popUpButton.x = x ?? this._popUpButton.x;
+            this._popUpButton.y = y ?? this._popUpButton.y;
+        }
     }
 }
