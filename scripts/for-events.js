@@ -183,7 +183,7 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 
 	top.updateLevel(0);
 	top.container.logCodeBlocks();
-	top.expand(0, true);
+	top.expand(0);
 }
 
 /**
@@ -225,7 +225,7 @@ function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 function resetContainerLength(containers) {
 	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
 		.forEach((c) => {
-			c.expand(0, true);
+			c.expand(0);
 		});
 }
 
@@ -242,7 +242,7 @@ function expandCodeBlockShadowContainer(codeBlockShadow) {
 		parent = getContainerParent(parent);
 	}
 
-	parent.expand(codeBlockShadow.width, true);
+	parent.expand(codeBlockShadow.width);
 }
 
 /**

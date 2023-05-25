@@ -41,9 +41,8 @@ export default class RunnerCommand extends CommandsContainer {
     /**
      * 
      * @param {number} width 
-     * @param {boolean} shiftLastCommand
      */
-    expand(width = 0, shiftLastCommand = false) {
+    expand(width = 0) {
         if (this._parent == null) {
             this._parent = this.getParent();
         }

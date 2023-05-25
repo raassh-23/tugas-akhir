@@ -80,28 +80,16 @@ export default class ConditionalCommand extends CommandsContainer {
     /**
      * 
      * @param {number} width 
-     * @param {boolean} shiftLastCommand
      */
-    expand(width = 0, shiftLastCommand = false) {
-        const oldWidth = this.width;
-        const commands = this.container.codeBlocks;
-
+    expand(width = 0) {
         this.width = this.getWidthOnLevel(this.level) + width;
 
         this._codeBlockShadows[1].x = this.x + this.width;
 
-        if (this.width < oldWidth && shiftLastCommand) {
-            const lastCommand = commands[commands.length - 1];
-            if (lastCommand != null) {
-                lastCommand.x = this.x + this.width - lastCommand.width - MARGIN;
-                lastCommand.instVars.savedX = lastCommand.x;
-            }
-        }
-
         const parent = getContainerParent(this);
 
-        if (parent != null && !(parent instanceof RunnerCommand)) {
-            parent.expand(width, false);
+        if (parent != null) {
+            parent.expand(width);
         }
     }
 
