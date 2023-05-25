@@ -223,7 +223,7 @@ function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
  * @param {CommandsContainer[]} containers 
  */
 function resetContainerLength(containers) {
-	containers.filter((c) => c.layer.isSelfAndParentsInteractive)
+	containers.filter((c) => c.layer.isSelfAndParentsInteractive && c.container.isLeaf())
 		.forEach((c) => {
 			c.expand(0);
 		});

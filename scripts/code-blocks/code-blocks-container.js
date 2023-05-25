@@ -49,4 +49,14 @@ export default class CodeBlocksContainer {
     logCodeBlocks() {
         console.log(this.codeBlocks);
     }
+
+    isLeaf() {
+        for (const block of this.codeBlocks) {
+            if (block.container != null) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

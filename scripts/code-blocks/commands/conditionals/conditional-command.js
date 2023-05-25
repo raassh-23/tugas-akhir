@@ -1,6 +1,6 @@
 import CommandsContainer from "../commands-container.js";
 import { MARGIN } from "../../code-block-constants.js";
-import { getContainerParent } from "../../../utils/misc.js";
+import { getContainerParent, waitForMilisecond } from "../../../utils/misc.js";
 import RunnerCommand from "../runner-command.js";
 
 /**
@@ -84,7 +84,13 @@ export default class ConditionalCommand extends CommandsContainer {
     expand(width = 0) {
         this.width = this.getWidthOnLevel(this.level) + width;
 
-        this._codeBlockShadows[1].x = this.x + this.width;
+        // FIXME: This is really hacky, but it works for now.
+        // the properties of child in a hierarchy is not updated immediately
+        // so we need to wait for a milisecond before we can update the shadow
+        // to be able to shift blocks correctly 
+        waitForMilisecond(1).then(() => {
+            this._codeBlockShadows[1].x = this.x + this.width;
+        }).catch((error) => { console.error(error); });
 
         const parent = getContainerParent(this);
 

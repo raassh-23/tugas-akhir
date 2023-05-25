@@ -1151,7 +1151,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
+							"script": "console.log(runtime.objects.CodeBlockShadow\n\t\t\t.getPickedInstances()\n\t\t.map((shadow) => ({\n\t\t\tuid: shadow.uid,\n\t\t\tx: shadow.x,\n\t\t\ty: shadow.y,\n\t\t}))\n\t\t.sort((a, b) => a.x - b.x)\n\t\t.map((shadow) => `${shadow.uid} -> (${shadow.x}, ${shadow.y})`)\n\t\t.join(\"\\n\"));\n\nconst pickedUid = pickCodeBlockShadowToShow(\n\truntime.objects.CodeBlock.getFirstPickedInstance(), \n\truntime.objects.CodeBlockShadow.getPickedInstances()\n);\n\nruntime.setReturnValue(pickedUid);"
 						}
 					],
 					"sid": 844392995573375
