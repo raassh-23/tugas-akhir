@@ -277,7 +277,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"TestLevel"
+					"TestLevel",
+					"TestLevel2"
 				],
 				"subfolders": [],
 				"name": "levels"
