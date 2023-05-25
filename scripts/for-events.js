@@ -100,6 +100,8 @@ function setupLevel(runtime) {
 async function runCommands(runtime, players) {
 	if (!runtime.globalVars.isRunning) {
 		runtime.globalVars.isRunning = true;
+		
+		players.sort((a, b) => a.instVars.order - b.instVars.order);
 
 		for (const player of players) {
 			runtime.globalVars.currentPlayerUID = player.uid;

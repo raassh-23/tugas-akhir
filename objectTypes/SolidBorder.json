@@ -1,21 +1,20 @@
 {
-	"name": "Background",
-	"plugin-id": "Tilemap",
-	"sid": 119539503406266,
+	"name": "SolidBorder",
+	"plugin-id": "TiledBg",
+	"sid": 320229895114679,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 1088,
-		"height": 768,
+		"width": 64,
+		"height": 64,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7242489,
+		"imageSpriteId": 400196,
 		"useCollisionPoly": true
-	},
-	"tile-collision-polys": {}
+	}
 }

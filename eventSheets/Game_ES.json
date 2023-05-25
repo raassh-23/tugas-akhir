@@ -3964,9 +3964,18 @@
 						{
 							"id": "set-layer-scale",
 							"objectClass": "System",
-							"sid": 689285337601278,
+							"sid": 973061524316979,
 							"parameters": {
-								"layer": "\"Border\"",
+								"layer": "\"Water\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 270266198656253,
+							"parameters": {
+								"layer": "\"SolidBorder\"",
 								"scale": "zoom"
 							}
 						},

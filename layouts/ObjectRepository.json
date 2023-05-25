@@ -10266,6 +10266,45 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "BackgroundWater",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 203,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 315.1652892561983,
+						"y": 1393.157065147211,
+						"width": 160,
+						"height": 146,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.996078431372549,
+							0.596078431372549,
+							0.3843137254901961,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 684765821513527,

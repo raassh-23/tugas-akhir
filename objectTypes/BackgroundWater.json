@@ -1,16 +1,10 @@
 {
-	"name": "LevelBorder",
+	"name": "BackgroundWater",
 	"plugin-id": "TiledBg",
 	"sid": 250542500547644,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 976611014594422
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
 		"width": 64,
@@ -20,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3624890,
+		"imageSpriteId": 4575797,
 		"useCollisionPoly": true
 	}
 }

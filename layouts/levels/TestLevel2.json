@@ -6,6 +6,95 @@
 			"overriden": 0,
 			"subLayers": [
 				{
+					"name": "Water",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "BackgroundWater",
+							"properties": {
+								"initially-visible": true,
+								"origin": "top-left",
+								"wrap-horizontal": "repeat",
+								"wrap-vertical": "repeat",
+								"image-offset-x": 0,
+								"image-offset-y": 0,
+								"image-scale-x": 1,
+								"image-scale-y": 1,
+								"image-angle": 0,
+								"enable-tile-randomization": true,
+								"x-random": 1,
+								"y-random": 1,
+								"angle-random": 1,
+								"blend-margin-x": 0.1,
+								"blend-margin-y": 0.1
+							},
+							"uid": 311,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": -32,
+								"y": 0,
+								"width": 1408,
+								"height": 1120,
+								"originX": 0,
+								"originY": 0,
+								"color": [
+									0.5725490196078431,
+									0.5647058823529412,
+									0.996078431372549,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
+					"sid": 540888313380169,
+					"effectTypes": [
+						{
+							"effectId": "warplayout",
+							"name": "WarpLayout",
+							"instance": {
+								"isEnabled": true,
+								"parameters": {
+									"x-period": 60,
+									"y-period": 60,
+									"x-amplitude": 5,
+									"y-amplitude": 5,
+									"x-speed": 0.25,
+									"y-speed": 0.25
+								}
+							}
+						}
+					],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
 					"name": "Tilemap",
 					"overriden": 0,
 					"subLayers": [],
@@ -24,16 +113,16 @@
 								"tile-y-drawing-offset": 0,
 								"drawing-mode": "top-to-right"
 							},
-							"uid": 247,
+							"uid": 294,
 							"instanceVariables": {},
 							"behaviors": {},
 							"ownData": {
 								"tilemapData": {
-									"width": 80,
-									"height": 45,
-									"max-width": 88,
-									"max-height": 54,
-									"data": "1,15x37,3,2x2,37,2,3x37,1,2x37,1,7x37,3,9x37,9x0,2,11x38,2,39,38,1,39,4x38,1,7x38,2,15x38,9x0,3,4x39,40,3,2,2x39,2,2x39,3,2x39,1,39,2x1,2x3,2,9x39,1,2x39,3,9x39,9x0,2,2x38,40,2,3,2x40,38,39,3x38,1,2x2,2x38,3,39,1,2x38,3,17x38,1,3x38,9x0,2,38,40,38,3x3,38,40,38,3,38,1,2x38,2,1,3,2,3x38,1,2,40,9x38,1,7x38,3x37,9x0,3,2,40,2x39,3,39,3,2,39,1,4,39,2,2x39,2x2,5x39,2,2x40,7x39,2,3x39,2x37,39,37,4x39,9x0,2,40,2x38,2x39,2x38,3,2x40,1,2x40,1,38,3,38,3,2,3,3x38,40,38,3,6x38,37,2x38,37,8x38,9x0,2,40,38,39,3,3x38,3,4,2x40,2x2,40,3,2x38,2,38,2,39,2,38,2,40,5x38,37,38,37,2x38,2x39,7x38,9x0,3,39,40,2x39,2,2x40,39,40,2,4,3x40,3,40,3x39,2x2,4x3,1,39,37,9x39,1,3x39,1,2x39,9x0,2,38,40,38,40,3,38,39,4,3,39,40,38,1,2x40,38,40,3x39,2,2x38,2,38,40,3,37,39,5x38,2x39,2x38,1,5x38,9x0,2,2x38,2x40,2x39,2,2x39,40,3,2,39,38,39,37,39,2,38,4,39,37,4,40,3,37,38,2,39,5x38,39,3,2x38,1,5x38,9x0,3,4x39,37,4x40,37,39,1,39,3,40,37,2,1,40,3,3x39,37,1,3,1,3,2x39,2x38,5x39,1,6x39,9x0,3x37,3,40,3x37,2,39,3,3x39,38,4,39,3,3x38,3,3x38,4,38,1,3,39,4x38,40,39,40,1,40,6x38,9x0,2,38,2,2x37,2,3x37,3,1,40,39,38,40,39,1,38,3,2x38,2,2x39,40,4,1,40,3,38,39,3x38,40,2x3,39,2x40,5x38,9x0,3,1,2x39,3x37,39,2x37,39,1,39,2x38,39,2,37,2x39,37,39,37,2,2x1,3,2,1,2,2x39,1,40,3x3,37,2x39,40,2x39,1,39,9x0,2,2x38,2,2x37,2x2,37,2x2,40,1,2x38,2,38,2,2x38,3,37,39,37,38,3,38,39,38,1,7x38,2x37,39,40,4x38,9x0,2,3,38,2x37,3,2x40,37,2,3x38,2x1,2,39,37,2,2x1,40,38,39,37,40,1,38,40,1,2x38,3,38,3x2,38,2x2,40,4x38,9x0,1,3x39,37,3,3x40,39,38,37,2,2x38,3,1,3,2x1,39,3,2x1,3x39,3x37,39,2,2x39,3,39,2x40,2x37,39,40,3x39,9x0,1,2,38,39,2x37,40,37,38,40,38,40,38,1,2x38,1,40,2,1,2x37,1,2,1,3,2,38,3,1,37,2x40,2x38,37,40,37,40,6x38,9x0,3,2,38,5x37,38,39,2x38,2,3,1,38,4,39,38,39,2,37,3,39,3x3,38,2,1,38,40,38,37,2x40,3,39,37,2x38,40,3x38,9x0,3,5x39,37,40,38,39,40,39,40,3,38,2x2,2x40,1,40,2,3x39,1,40,2,3x37,38,3,2x39,40,39,37,40,39,2,2x39,1,39,9x0,2,1,2x38,3,38,2,2x38,39,40,3,1,2x38,2x1,2,38,1,2,40,37,4,3,1,3,38,37,3x38,2x39,38,40,38,3,3x38,40,3x38,9x0,2,2x38,1,3x38,37,40,2x38,40,38,3,38,40,3,38,3,38,2,3,39,38,2x37,2x38,1,3,38,2x39,38,2,37,40,3,40,38,40,4x38,9x0,6x39,2,38,3x39,3,38,2x2,2x37,38,2x3,2,39,37,40,3,39,2,3,38,2x2,40,2,3,39,2,40,37,3,39,40,39,2,2x39,9x0,2,5x38,40,38,1,37,39,1,38,40,38,2,39,2x3,2x1,40,3,38,40,38,37,1,40,2,3,39,38,37,2x38,37,2x38,37,5x38,9x0,2,6x38,1,38,3,38,40,2x3,1,38,2x3,37,4,37,40,2,1,39,38,1,37,38,1,3,39,40,2,2x38,3,2x38,3,2x38,1,2x38,9x0,3,3x39,38,39,38,2x2,1,38,3,2,39,38,1,2x3,1,3,40,3x39,37,40,38,3,2,37,39,2,3,3x39,37,2x39,37,2,4x39,9x0,37,5x38,40,38,2x2,1,38,4x40,3,40,4,40,1,38,1,38,1,40,3x1,39,37,39,4x40,3x38,3,5x38,9x0,2,5x38,40,3,2,2x38,37,38,2x40,1,37,3x1,2,37,39,38,3,39,3,38,3,2x40,2x3,37,2,40,37,38,2,3,5x38,9x0,2,3,4x39,37,1,38,1,38,2,1,3x39,3,40,37,39,3x2,39,2,3,40,37,39,40,3,39,38,2,3,37,38,2x39,37,3,2x39,2,39,9x0,37,5x38,3,38,1,40,2,40,38,2x37,38,37,2x40,2x2,1,2,1,38,39,3,39,2,40,1,40,3,2,40,2,37,2x38,3,5x38,9x0,37,6x38,2,4,2x3,2x4,2x38,40,3,38,2x40,3,40,2x3,37,2x39,2,38,3,40,3,2,37,38,37,40,2x38,3,2,3,3x38,9x0,37,39,2,3,2x39,3,4,1,3,2x1,3x38,2x39,2x40,3x39,3,39,2x2,40,3,2x40,37,39,2,39,3,38,37,2x39,3,5x39,9x0,37,5x38,2x1,3x38,1,38,3,2,38,3,40,2,40,3,40,1,2,2x1,4x40,2x39,38,40,39,2,39,2x38,37,2x38,3,2,38,9x0,2x2,2x38,1,2x38,2x3,1,38,37,38,2x3,2,2x40,4,1,3,1,3,39,3,37,2,1,40,3,1,38,39,2,1,40,3,38,2x39,5x38,9x0,37,4x39,1,39,3,39,3,40,39,2,3x39,2,40,2x37,1,39,38,2x39,1,39,40,39,40,3,39,38,39,3,38,39,2,38,3x39,3,2x39,9x0,2x37,3x38,1,38,2x3,1,3,38,3,38,37,39,37,40,3x3,37,38,1,40,3,1,40,37,2,39,2x38,2,2x40,1,2,3,2x38,39,3x38,9x0,2,2x38,2,38,39,3,2,38,3,38,2,39,40,38,37,40,37,40,1,2x3,40,2x3,1,40,1,38,2,1,2,38,39,3,2,3,2,3,2x38,39,38,2,38,9x0,2x39,1,2x39,1,2x39,3,1,40,2,3,2,39,40,37,40,39,2,39,40,3,2,40,39,2x40,39,40,3,38,39,40,2x2,40,37,2x3,5x39,9x0,37,38,2,38,1,4x38,3,3x38,3,40,2x37,3x3,1,38,39,37,40,2,37,1,38,2,2x3,4x38,2x40,38,2,3,4x38,9x0,37,38,39,2x38,39,38,39,2x2,40,39,3,40,2,3,38,3,40,37,38,37,1,3x40,38,1,2,1,40,38,2,38,39,37,40,1,2x40,37,39,3x38,9x0,37,4x39,1,39,2,3,39,2x3,40,37,39,1,3,39,1,40,2,39,3,39,40,39,2,1,39,2x3,2,40,38,2,37,3x3,2x40,2,3x39,9x0,37,4x38,2,1,2x38,2,38,2x40,3,39,1,40,39,3,2,39,1,40,2x2,38,3,3x2,3,37,2,3,2x40,4x38,39,3,3x38,9x0,2,1,5x38,39,2,38,1,2,38,2,3,1,37,1,37,2x40,2,38,2,40,2,2x1,3,2,3,38,3,38,37,38,39,1,2x38,37,4x38,9x0,3,7x39,2,39,2,38,3x40,39,2x37,40,39,40,39,40,2,39,2x2,3,2,37,3,2,40,2,38,2x37,39,3,2,39,3,3x39,9x0,2,3x38,37,2x38,1,2,39,2x38,2,2x37,40,2x3,38,40,2,3x40,2x1,38,3,37,3,2,38,2,1,2,1,38,39,3,37,38,3,37,2x38,9x0,2,6x38,2,38,39,2,38,2,1,2x2,40,3x3,40,2,40,38,3,38,37,3,39,1,2,38,37,3,1,38,37,2,38,39,5x38,9x0,3,6x39,2,2x39,1,39,38,1,37,39,2,38,3x40,39,40,2,39,37,2x1,39,37,1,2,37,2,39,1,2x39,3,2x39,3,3x39,9x0,2,6x38,2x39,2x38,1,38,39,1,2x2,2x1,3,2,3,2,3,2,37,3,37,3x2,38,3x1,37,38,2,3,39,5x38,9x0,1,6x38,2x2,1,38,39,2,2x38,3,2x1,2,4x1,2,1,2x39,1,2x2,1,2x38,2,38,1,37,38,3,2x38,3,1,2x38,9x0,3,6x39,2,2x39,38,39,38,1,2x39,2,39,2,2x1,2,1,2x2,39,4x3,2,39,37,39,1,2,9x39,9x0,2,6x38,37,6x38,1,2,38,1,3,1,2x2,2x1,2,39,2x3,38,3,2x37,4,2x37,2,1,38,1,38,39,3,3x38,9x0,1,6x38,2,3x38,39,3x38,2,37,4x38,3,2,38,2x3,2x2,1,38,3,37,2,2x1,2,6x38,1,2x38,9x0,3,5x39,2x40,2,39,38,39,38,4x39,1,2,39,2,37,3x2,3,2,3,3x39,1,2x3,2,39,2,39,3,2x38,3,39,1,39,9x0,2,5x38,40,38,37,2,5x38,2,38,2,3x38,3,2x38,2x3,2x38,37,2x2,1,38,3,1,3x38,3,2x38,39,38,1,38,9x0,2,38,1,3x38,40,38,37,2,5x38,1,3x38,2,38,2,39,2,37,39,38,3,2x2,37,2,2x4,3,10x38,9x0,3,6x39,2,37,2x39,38,39,38,39,1,39,2,1,2x39,1,2,3,3x2,3,1,39,4,2,1,39,1,2,2x39,3,38,2x39,1,39,1,9x0,2,3x38,1,3x38,37,2,3x38,39,2,38,2,1,39,38,3x2,39,1,3,37,39,2,1,38,2,4x38,4,2x38,2,2x38,39,2x38,9x0,2,5x38,2,1,38,39,4x38,1,38,3x2,38,1,38,2,1,38,2x1,2,39,3x2,1,2x38,39,7x38,39,37,9x0,3,5x39,2x2,2x39,37,39,3,1,4x39,2x2,39,2,39,3,2x39,1,37,2x2,2x1,4x39,1,3,2x38,39,1,39,37,39,9x0,2,5x38,39,4x38,2,37,2x38,2x39,38,2x39,38,37,38,2,37,3x39,1,39,2x1,3,2x38,2,38,4,38,3,2x38,37,2x38,9x0,2,4x38,39,3x38,39,3x38,37,3x38,2,4x39,2x38,2,4,39,38,2x39,2x38,4x1,2x38,2,2x38,37,3x38,9x0,3,11x39,1,39,37,39,37,2x40,39,37,2,37,3,2x37,2x39,2,39,2,3x39,3,39,4,2x39,1,37,4x39,9x0,2,2x38,37,39,3x38,39,6x38,2,38,3x39,2x37,38,3x37,38,3x39,38,3,39,3,3x38,2,2x38,37,4x38,9x0,1,2x38,37,39,3x38,39,2x38,3,3x38,37,38,37,39,37,38,3x37,38,4,38,2,2x38,3,39,3,3x38,2,3x39,37,3,38,3,38,9x0,3,3x39,37,2x39,3,39,2,39,37,39,37,8x39,37,2x39,4,3,39,3,2,39,2,39,2x2,5x39,38,3,3x39,9x0,2,2x38,1,37,39,37,3,38,37,3,1,38,2,38,1,37,39,2x3,38,39,3,37,38,2,2x38,2,39,3,2x38,2,38,1,3x38,39,37,3,3x38,9x0,2,2x38,39,38,39,38,3x37,3,1,3,38,3,2x39,3,39,38,2,38,2,39,37,39,4,39,3x38,39,7x38,39,37,3,3x38,9x0,2x3,3x39,37,39,3,3x37,1,39,37,2x39,2,39,2x2,39,3x2,3,39,2x2,4x39,1,2x39,4,39,2x3,39,38,4x39,9x0,3,38,2x3,2x39,3x38,39,37,2,37,39,2x3,38,2x3,2,38,2,2x38,37,2x38,4,38,3,38,2,39,38,2,3,2,38,39,37,5x38,9x0,2x3,3x38,39,3,39,3,3x39,1,2x38,37,2x3,38,3x2,38,37,2x3,2x38,3,2,3,38,4,2,39,3,2x38,39,37,5x38,9x0,3,39,3x3,4x39,37,3,2x39,1,3,2x39,1,2,3,38,2x37,39,37,2x3,37,3,2,37,4,37,3,39,2x37,39,2x37,38,4x39,9x0,2,3x38,10x3,38,3,1,38,3,2,3,2,38,1,38,3,38,3,38,3,38,3,38,2,2x38,2x39,5x38,1,38,9x0,2,3x38,3,38,3,37,2x38,2,5x38,2,38,1,38,2,38,3x2,2x38,2,3,2x38,2,2x38,3,10x38,9x0,3,8x39,3,7x39,1,7x39,2,2x39,2,2x3,2,2x3,3x39,38,39,38,5x39,9x0,2,9x38,2x2,3,38,2,3,5x38,2x2,18x38,1,3x38,9x0,2,16x38,1,38,3,3x38,2x2,3x38,2x2,15x38,9x0,3,17x39,1,5x39,3,3x2,3,10x39,1,4x39,3,9x0,2,10x38,2,19x38,3,3x38,3,3x38,2,2x38,3,2x38,9x0,4,19x40,1,16x40,1,7x40,441x0"
+									"width": 40,
+									"height": 32,
+									"max-width": 128,
+									"max-height": 79,
+									"data": "349x0,395,2x361,2x497,531,73x0,397,2x363,397,498,532,78x0,533,78x0,534,78x0,533,78x0,533,46x0,293,327,361,2x395,497,531,5x0,293,327,361,2x395,497,531,13x0,534,46x0,294,363,329,2x364,362,532,5x0,294,2x363,397,2x363,532,13x0,533,46x0,295,3x364,2x362,533,5x0,295,2x364,431,2x364,533,13x0,533,46x0,296,2x363,364,362,399,534,5x0,296,364,363,397,431,363,534,13x0,534,46x0,295,2x363,364,2x399,533,5x0,295,2x364,2x365,363,533,13x0,533,46x0,296,2x364,398,364,399,534,5x0,296,399,2x364,365,329,534,13x0,533,46x0,295,2x363,397,331,364,533,5x0,295,365,364,431,363,365,533,13x0,534,46x0,296,2x363,397,331,431,534,5x0,296,431,399,2x364,365,534,13x0,533,46x0,295,2x364,398,331,431,533,5x0,295,362,364,399,2x364,533,13x0,533,46x0,296,2x363,397,363,331,534,5x0,296,363,431,364,2x363,534,13x0,534,46x0,295,2x363,397,363,398,533,5x0,295,362,363,397,399,363,533,13x0,533,46x0,296,2x364,398,364,331,534,5x0,296,365,4x364,534,13x0,533,46x0,295,2x363,397,363,331,533,5x0,295,364,362,364,2x362,533,13x0,534,46x0,296,2x363,397,2x363,534,5x0,296,331,2x364,2x362,534,13x0,533,46x0,295,2x364,398,364,331,533,5x0,295,5x362,533,13x0,533,46x0,296,2x363,397,363,331,534,5x0,296,2x331,2x362,364,534,13x0,534,46x0,295,2x363,397,2x363,533,5x0,295,2x364,2x362,363,533,13x0,533,46x0,296,2x364,398,2x364,534,5x0,296,2x364,362,364,362,534,13x0,533,46x0,297,2x363,397,2x363,535,5x0,297,364,2x362,2x363,535,13x0,534,46x0,298,332,2x366,400,502,536,5x0,298,332,2x366,400,502,536,13x0,533,78x0,533,78x0,534,73x0,397,2x363,397,499,533,73x0,329,2x364,398,499,533,73x0,397,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,73x0,329,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,399,363,331,2x362,4x399,331,399,398,4x331,2x363,397,363,329,397,2x363,397,500,534,44x0,295,363,397,2x363,397,2x363,3x331,2x362,365,397,362,331,362,331,431,397,3x331,2x363,399,365,2x398,2x363,397,499,533,44x0,295,364,398,2x364,398,2x364,399,2x331,362,2x364,362,364,362,398,399,431,398,2x364,331,398,365,399,329,2x398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,331,362,331,2x362,363,365,2x362,365,399,331,397,2x363,331,363,365,362,399,398,397,2x363,397,500,534,44x0,295,363,397,2x363,397,2x363,331,399,363,331,3x362,2x365,397,2x365,331,398,363,331,398,365,399,365,398,397,2x363,397,499,533,44x0,295,364,398,2x364,398,2x364,398,2x362,398,331,364,431,2x365,329,399,362,365,2x364,331,365,2x399,398,364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,331,399,362,397,331,363,2x365,362,397,399,331,397,331,363,397,365,399,365,2x363,397,2x363,397,500,534,44x0,295,363,397,2x363,397,363,6x362,331,2x329,398,329,2x331,365,2x363,331,399,362,365,2x363,397,2x363,397,499,533,44x0,295,364,398,2x364,398,364,362,331,364,399,398,364,331,2x365,362,331,399,362,2x331,364,331,399,329,365,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,363,362,397,398,363,331,2x365,331,362,363,331,365,363,399,398,365,397,2x363,397,2x363,397,501,534,44x0,295,363,397,2x363,397,2x363,397,363,399,397,2x363,329,2x362,365,363,399,362,331,399,331,363,362,397,2x363,397,2x363,397,498,533,44x0,295,364,398,2x364,398,364,362,331,364,362,399,398,364,329,365,362,365,398,364,431,2x399,398,364,362,398,2x364,398,2x364,398,498,533,44x0,296,363,397,2x363,397,363,362,397,363,362,4x399,362,431,331,365,2x399,365,363,331,363,329,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,331,2x363,2x362,431,362,5x399,2x331,363,397,362,329,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,364,362,331,2x364,398,364,362,398,364,365,329,331,399,331,431,364,331,362,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,398,363,362,2x331,431,365,363,362,399,363,331,365,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,331,2x363,397,362,431,397,2x331,431,365,331,399,431,365,397,2x363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,331,2x364,398,5x362,2x331,365,399,3x365,329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,6x331,431,4x331,362,363,2x399,362,397,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,2x331,2x431,365,431,398,397,398,329,431,329,362,399,362,363,397,365,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,431,2x364,365,2x431,398,329,364,431,398,2x399,2x364,398,365,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,2x431,6x365,2x329,399,2x362,363,2x365,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,397,363,431,365,2x363,2x431,8x365,329,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,362,364,398,2x364,365,431,364,2x398,329,362,399,364,329,364,362,2x329,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x362,397,363,398,365,398,3x431,362,399,2x363,329,2x363,2x362,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,3x362,398,363,365,399,363,398,362,363,329,2x363,329,2x363,397,5x362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x362,329,365,399,364,362,398,399,4x329,2x364,398,2x364,398,2x362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,362,363,329,399,2x365,398,363,397,2x329,397,2x363,397,329,363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,398,362,329,399,362,329,363,399,397,2x363,397,2x363,397,329,363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x398,362,398,399,362,398,399,329,398,2x364,398,364,3x329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,363,398,362,399,363,399,363,7x329,397,2x363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,2x363,397,2x399,397,2x363,397,363,2x329,2x363,397,2x363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,499,534,44x0,297,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,501,535,44x0,298,332,366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,366,2x502,536,4148x0"
 								},
 								"tile-width": 32,
 								"tile-height": 32,
@@ -43,10 +132,10 @@
 								"tile-y-spacing": 0
 							},
 							"world": {
-								"x": 0,
+								"x": -64,
 								"y": 0,
-								"width": 2560,
-								"height": 1440,
+								"width": 1280,
+								"height": 1024,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -59,7 +148,7 @@
 							}
 						}
 					],
-					"sid": 451722662043330,
+					"sid": 100370106032063,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -88,14 +177,14 @@
 					"global": false
 				},
 				{
-					"name": "Border",
+					"name": "SolidBorder",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "LevelBorder",
+							"type": "SolidBorder",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"origin": "top-left",
 								"wrap-horizontal": "repeat",
 								"wrap-vertical": "repeat",
@@ -111,66 +200,13 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 248,
+							"uid": 295,
 							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"behaviors": {},
 							"world": {
-								"x": -32,
-								"y": 0,
-								"width": 352,
-								"height": 1440,
-								"originX": 0,
-								"originY": 0,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelBorder",
-							"properties": {
-								"initially-visible": true,
-								"origin": "top-left",
-								"wrap-horizontal": "repeat",
-								"wrap-vertical": "repeat",
-								"image-offset-x": 0,
-								"image-offset-y": 0,
-								"image-scale-x": 1,
-								"image-scale-y": 1,
-								"image-angle": 0,
-								"enable-tile-randomization": false,
-								"x-random": 1,
-								"y-random": 1,
-								"angle-random": 1,
-								"blend-margin-x": 0.1,
-								"blend-margin-y": 0.1
-							},
-							"uid": 249,
-							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 0,
-								"y": -32,
-								"width": 2560,
+								"x": 128,
+								"y": 1216,
+								"width": 2432,
 								"height": 224,
 								"originX": 0,
 								"originY": 0,
@@ -178,16 +214,16 @@
 									1,
 									1,
 									1,
-									1
+									0.5
 								],
 								"angle": 0,
 								"zElevation": 0
 							}
 						},
 						{
-							"type": "LevelBorder",
+							"type": "SolidBorder",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"origin": "top-left",
 								"wrap-horizontal": "repeat",
 								"wrap-vertical": "repeat",
@@ -203,64 +239,11 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 250,
+							"uid": 296,
 							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"behaviors": {},
 							"world": {
-								"x": 0,
-								"y": 768,
-								"width": 2560,
-								"height": 320,
-								"originX": 0,
-								"originY": 0,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelBorder",
-							"properties": {
-								"initially-visible": true,
-								"origin": "top-left",
-								"wrap-horizontal": "repeat",
-								"wrap-vertical": "repeat",
-								"image-offset-x": 0,
-								"image-offset-y": 0,
-								"image-scale-x": 1,
-								"image-scale-y": 1,
-								"image-angle": 0,
-								"enable-tile-randomization": false,
-								"x-random": 1,
-								"y-random": 1,
-								"angle-random": 1,
-								"blend-margin-x": 0.1,
-								"blend-margin-y": 0.1
-							},
-							"uid": 251,
-							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 2432,
+								"x": -32,
 								"y": 0,
 								"width": 160,
 								"height": 1440,
@@ -270,16 +253,16 @@
 									1,
 									1,
 									1,
-									1
+									0.5
 								],
 								"angle": 0,
 								"zElevation": 0
 							}
 						},
 						{
-							"type": "LevelBorder",
+							"type": "SolidBorder",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"origin": "top-left",
 								"wrap-horizontal": "repeat",
 								"wrap-vertical": "repeat",
@@ -295,37 +278,30 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 194,
+							"uid": 297,
 							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"behaviors": {},
 							"world": {
-								"x": 896,
+								"x": 2432,
 								"y": 0,
-								"width": 384,
-								"height": 1440,
+								"width": 160,
+								"height": 1216,
 								"originX": 0,
 								"originY": 0,
 								"color": [
 									1,
 									1,
 									1,
-									1
+									0.5
 								],
 								"angle": 0,
 								"zElevation": 0
 							}
 						},
 						{
-							"type": "LevelBorder",
+							"type": "SolidBorder",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"origin": "top-left",
 								"wrap-horizontal": "repeat",
 								"wrap-vertical": "repeat",
@@ -341,35 +317,28 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 199,
+							"uid": 298,
 							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"behaviors": {},
 							"world": {
-								"x": -32,
-								"y": 384,
-								"width": 2560,
-								"height": 192,
+								"x": 128,
+								"y": -96,
+								"width": 2304,
+								"height": 224,
 								"originX": 0,
 								"originY": 0,
 								"color": [
 									1,
 									1,
 									1,
-									1
+									0.5
 								],
 								"angle": 0,
 								"zElevation": 0
 							}
 						}
 					],
-					"sid": 150044090238647,
+					"sid": 730506700792506,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -421,7 +390,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 252,
+							"uid": 299,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -442,7 +411,7 @@
 							}
 						}
 					],
-					"sid": 530233158227503,
+					"sid": 511537933173875,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -472,7 +441,7 @@
 				}
 			],
 			"instances": [],
-			"sid": 224323809659381,
+			"sid": 414172957138560,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -514,9 +483,10 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 202,
+					"uid": 210,
 					"instanceVariables": {
-						"reachedGoal": false
+						"reachedGoal": false,
+						"order": 1
 					},
 					"behaviors": {
 						"TileMovement": {
@@ -544,7 +514,7 @@
 						}
 					},
 					"world": {
-						"x": 416,
+						"x": 352,
 						"y": 288,
 						"width": 64,
 						"height": 64,
@@ -569,96 +539,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 209,
+					"uid": 218,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
 						"x": 800,
 						"y": 288,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "right",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 201,
-					"instanceVariables": {
-						"reachedGoal": false
-					},
-					"behaviors": {
-						"TileMovement": {
-							"properties": {
-								"grid-width": 64,
-								"grid-height": 64,
-								"grid-offset-x": 32,
-								"grid-offset-y": 32,
-								"speed-x": 150,
-								"speed-y": 150,
-								"enabled": true,
-								"default-controls": false,
-								"isometric": false
-							}
-						},
-						"Fade": {
-							"properties": {
-								"fade-in-time": 0,
-								"wait-time": 0,
-								"fade-out-time": 1,
-								"destroy": false,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 416,
-						"y": 672,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Portal",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Default",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 200,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 800,
-						"y": 672,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -678,11 +564,11 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 0,
+						"initial-frame": 3,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 207,
+					"uid": 205,
 					"instanceVariables": {},
 					"behaviors": {
 						"Solid": {
@@ -693,7 +579,7 @@
 						}
 					},
 					"world": {
-						"x": 608,
+						"x": 544,
 						"y": 672,
 						"width": 64,
 						"height": 64,
@@ -728,7 +614,7 @@
 						"origin": "center",
 						"read-aloud": false
 					},
-					"uid": 211,
+					"uid": 206,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -739,7 +625,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 608,
+						"x": 544,
 						"y": 672,
 						"width": 64,
 						"height": 64,
@@ -754,9 +640,94 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "right",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 208,
+					"instanceVariables": {
+						"reachedGoal": false,
+						"order": 2
+					},
+					"behaviors": {
+						"TileMovement": {
+							"properties": {
+								"grid-width": 64,
+								"grid-height": 64,
+								"grid-offset-x": 32,
+								"grid-offset-y": 32,
+								"speed-x": 150,
+								"speed-y": 150,
+								"enabled": true,
+								"default-controls": false,
+								"isometric": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 352,
+						"y": 672,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Portal",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 212,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 800,
+						"y": 672,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
-			"sid": 573876252721066,
+			"sid": 326534910572956,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -789,7 +760,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 821706757337045,
+			"sid": 527172285768028,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -839,7 +810,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 253,
+							"uid": 300,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -857,10 +828,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 253,
+								"uid": 300,
 								"children": [
 									{
-										"uid": 254,
+										"uid": 301,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -875,7 +846,7 @@
 										}
 									},
 									{
-										"uid": 230,
+										"uid": 277,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -941,7 +912,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 254,
+							"uid": 301,
 							"instanceVariables": {
 								"min": 226,
 								"max": 226,
@@ -965,11 +936,11 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 253,
-								"uid": 254,
+								"parent-uid": 300,
+								"uid": 301,
 								"children": [
 									{
-										"uid": 255,
+										"uid": 302,
 										"flags": {
 											"x": true,
 											"y": false,
@@ -1035,15 +1006,15 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 255,
+							"uid": 302,
 							"instanceVariables": {},
 							"behaviors": {},
 							"sceneGraphData": {
-								"parent-uid": 254,
-								"uid": 255,
+								"parent-uid": 301,
+								"uid": 302,
 								"children": [
 									{
-										"uid": 256,
+										"uid": 303,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -1114,7 +1085,7 @@
 								"origin": "left",
 								"seams": "overlap"
 							},
-							"uid": 256,
+							"uid": 303,
 							"instanceVariables": {
 								"level": 1,
 								"addToGrandParent": false,
@@ -1123,8 +1094,8 @@
 							},
 							"behaviors": {},
 							"sceneGraphData": {
-								"parent-uid": 255,
-								"uid": 256,
+								"parent-uid": 302,
+								"uid": 303,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1168,7 +1139,7 @@
 							}
 						}
 					],
-					"sid": 726450063874276,
+					"sid": 535970181203895,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1214,7 +1185,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 257,
+							"uid": 304,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -1232,10 +1203,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 257,
+								"uid": 304,
 								"children": [
 									{
-										"uid": 231,
+										"uid": 278,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -1250,7 +1221,7 @@
 										}
 									},
 									{
-										"uid": 258,
+										"uid": 305,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -1316,7 +1287,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 258,
+							"uid": 305,
 							"instanceVariables": {
 								"min": 130.496427,
 								"max": 130.496427,
@@ -1340,8 +1311,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 257,
-								"uid": 258,
+								"parent-uid": 304,
+								"uid": 305,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1385,7 +1356,7 @@
 							}
 						}
 					],
-					"sid": 284922804698510,
+					"sid": 588338869764232,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1424,7 +1395,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 225,
+					"uid": 272,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -1470,7 +1441,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 226,
+					"uid": 273,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -1514,7 +1485,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 227,
+					"uid": 274,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -1548,7 +1519,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 228,
+					"uid": 275,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -1584,7 +1555,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 229,
+					"uid": 276,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -1624,14 +1595,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 230,
+					"uid": 277,
 					"instanceVariables": {
 						"id": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 253,
-						"uid": 230,
+						"parent-uid": 300,
+						"uid": 277,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1687,14 +1658,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 231,
+					"uid": 278,
 					"instanceVariables": {
 						"id": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 257,
-						"uid": 231,
+						"parent-uid": 304,
+						"uid": 278,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1746,7 +1717,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 232,
+					"uid": 279,
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -1771,7 +1742,7 @@
 					}
 				}
 			],
-			"sid": 650983398465900,
+			"sid": 791724842863698,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -1827,7 +1798,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 259,
+							"uid": 306,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -1848,7 +1819,7 @@
 							}
 						}
 					],
-					"sid": 725840815599003,
+					"sid": 942909209583074,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1881,7 +1852,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 416142839691557,
+					"sid": 299070512393081,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1914,7 +1885,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 381672872619870,
+					"sid": 502350298333952,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1947,7 +1918,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 369006286647703,
+					"sid": 452281784433671,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -1990,7 +1961,7 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 233,
+					"uid": 280,
 					"instanceVariables": {
 						"originX": 0,
 						"originY": -564,
@@ -2008,10 +1979,10 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 233,
+						"uid": 280,
 						"children": [
 							{
-								"uid": 234,
+								"uid": 281,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2026,7 +1997,7 @@
 								}
 							},
 							{
-								"uid": 235,
+								"uid": 282,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2041,7 +2012,7 @@
 								}
 							},
 							{
-								"uid": 236,
+								"uid": 283,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2056,7 +2027,7 @@
 								}
 							},
 							{
-								"uid": 237,
+								"uid": 284,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2071,7 +2042,7 @@
 								}
 							},
 							{
-								"uid": 239,
+								"uid": 286,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2086,7 +2057,7 @@
 								}
 							},
 							{
-								"uid": 240,
+								"uid": 287,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2101,7 +2072,7 @@
 								}
 							},
 							{
-								"uid": 241,
+								"uid": 288,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2116,7 +2087,7 @@
 								}
 							},
 							{
-								"uid": 242,
+								"uid": 289,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2131,7 +2102,7 @@
 								}
 							},
 							{
-								"uid": 243,
+								"uid": 290,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2146,7 +2117,7 @@
 								}
 							},
 							{
-								"uid": 244,
+								"uid": 291,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2222,7 +2193,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 234,
+					"uid": 281,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2231,8 +2202,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 234,
+						"parent-uid": 280,
+						"uid": 281,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2294,7 +2265,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 235,
+					"uid": 282,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2303,8 +2274,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 235,
+						"parent-uid": 280,
+						"uid": 282,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2366,7 +2337,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 236,
+					"uid": 283,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2375,8 +2346,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 236,
+						"parent-uid": 280,
+						"uid": 283,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2438,7 +2409,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 237,
+					"uid": 284,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2447,8 +2418,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 237,
+						"parent-uid": 280,
+						"uid": 284,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2506,7 +2477,7 @@
 						"id": "",
 						"class": ""
 					},
-					"uid": 238,
+					"uid": 285,
 					"instanceVariables": {},
 					"behaviors": {
 						"Pin": {
@@ -2563,7 +2534,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 239,
+					"uid": 286,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2572,8 +2543,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 239,
+						"parent-uid": 280,
+						"uid": 286,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2625,7 +2596,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 240,
+					"uid": 287,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -2636,8 +2607,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 240,
+						"parent-uid": 280,
+						"uid": 287,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2689,7 +2660,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 241,
+					"uid": 288,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -2700,8 +2671,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 241,
+						"parent-uid": 280,
+						"uid": 288,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2753,7 +2724,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 242,
+					"uid": 289,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -2764,8 +2735,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 242,
+						"parent-uid": 280,
+						"uid": 289,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2817,7 +2788,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 243,
+					"uid": 290,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -2828,8 +2799,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 243,
+						"parent-uid": 280,
+						"uid": 290,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2891,7 +2862,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 244,
+					"uid": 291,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2900,8 +2871,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 233,
-						"uid": 244,
+						"parent-uid": 280,
+						"uid": 291,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2945,7 +2916,7 @@
 					}
 				}
 			],
-			"sid": 874596086584546,
+			"sid": 464590920521897,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -2995,7 +2966,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 260,
+							"uid": 307,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -3013,10 +2984,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 260,
+								"uid": 307,
 								"children": [
 									{
-										"uid": 261,
+										"uid": 308,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -3082,7 +3053,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 261,
+							"uid": 308,
 							"instanceVariables": {
 								"min": 27.234455,
 								"max": 27.234455,
@@ -3106,8 +3077,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 260,
-								"uid": 261,
+								"parent-uid": 307,
+								"uid": 308,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3151,7 +3122,7 @@
 							}
 						}
 					],
-					"sid": 128416532165833,
+					"sid": 333028182808248,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3194,14 +3165,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 245,
+					"uid": 292,
 					"instanceVariables": {
 						"id": "repeat-available-code-blocks-panel"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 245,
+						"uid": 292,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3245,7 +3216,7 @@
 					}
 				}
 			],
-			"sid": 976298244617421,
+			"sid": 131349026604464,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -3295,7 +3266,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 262,
+							"uid": 309,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -3313,10 +3284,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 262,
+								"uid": 309,
 								"children": [
 									{
-										"uid": 263,
+										"uid": 310,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -3382,7 +3353,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 263,
+							"uid": 310,
 							"instanceVariables": {
 								"min": 27.234455,
 								"max": 27.234455,
@@ -3406,8 +3377,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 262,
-								"uid": 263,
+								"parent-uid": 309,
+								"uid": 310,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3451,7 +3422,7 @@
 							}
 						}
 					],
-					"sid": 633498824702061,
+					"sid": 716073192395491,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3494,14 +3465,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 246,
+					"uid": 293,
 					"instanceVariables": {
 						"id": "conditional-available-code-blocks-panel"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 246,
+						"uid": 293,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3545,7 +3516,7 @@
 					}
 				}
 			],
-			"sid": 592136004389021,
+			"sid": 634342969374596,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -3574,7 +3545,7 @@
 			"global": false
 		}
 	],
-	"sid": 411654536726409,
+	"sid": 793292745960674,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,

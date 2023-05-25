@@ -181,6 +181,13 @@
 			"name": "Adjust HSL",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warplayout",
+			"name": "Warp layout",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "lz9sfmmsjui",
@@ -215,7 +222,8 @@
 			"MovingEnemy",
 			"MovingEnemyCheckpoint",
 			"LevelText",
-			"LevelBorder"
+			"BackgroundWater",
+			"SolidBorder"
 		],
 		"subfolders": [
 			{
