@@ -110,8 +110,6 @@ async function runCommands(runtime, players) {
 
 			const result = await runner.run(player, state);
 
-			console.log(result, state);
-
 			if (result === STOPPED || result === ERROR) {
 				runtime.callFunction("ResetGame");
 
@@ -122,6 +120,8 @@ async function runCommands(runtime, players) {
 				runtime.callFunction("GameOver");
 				return;
 			}
+
+			console.log(state.actionCount);
 
 			resetVariables(runtime.globalVars.level);
 		}
