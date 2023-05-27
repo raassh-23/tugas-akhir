@@ -305,7 +305,7 @@
 							"world": {
 								"x": 2432,
 								"y": 0,
-								"width": 160,
+								"width": 128,
 								"height": 1216,
 								"originX": 0,
 								"originY": 0,
@@ -350,9 +350,9 @@
 							},
 							"world": {
 								"x": 128,
-								"y": -96,
+								"y": 0,
 								"width": 2304,
-								"height": 224,
+								"height": 128,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -2109,7 +2109,7 @@
 						{
 							"type": "StartCommand",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -2231,7 +2231,7 @@
 								}
 							},
 							"world": {
-								"x": 338,
+								"x": 242,
 								"y": 585,
 								"width": 96,
 								"height": 96,
@@ -2877,7 +2877,7 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
-			"global": false
+			"global": true
 		},
 		{
 			"name": "LevelPopUp",
@@ -4651,7 +4651,7 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
-			"global": false
+			"global": true
 		}
 	],
 	"sid": 373917761480583,

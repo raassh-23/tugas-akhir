@@ -121,14 +121,11 @@ async function runCommands(runtime, players) {
 				return;
 			}
 
-			console.log(state.actionCount);
-
 			resetVariables(runtime.globalVars.level);
 		}
 
 		runtime.globalVars.isRunning = false;
 
-		// temp
 		runtime.callFunction("ResetGame");
 	}
 }
