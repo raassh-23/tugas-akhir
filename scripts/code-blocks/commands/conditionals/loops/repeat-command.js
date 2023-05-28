@@ -33,6 +33,7 @@ export default class RepeatCommand extends ConditionalCommand {
         } catch (error) {
             state.isError = true;
             this.showError(true);
+            this.runtime.callFunction("ShowError", "Penulisan kondisi salah", 2);
 
             return ERROR
         }

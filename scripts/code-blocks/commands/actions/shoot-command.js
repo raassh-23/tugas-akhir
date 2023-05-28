@@ -10,7 +10,7 @@ const directionToAngle = {
 }
 
 /**
- * @extends CodeBlock
+ * @extends BaseCommand
  */
 export default class ShootCommand extends BaseCommand {
     constructor() {
@@ -31,6 +31,8 @@ export default class ShootCommand extends BaseCommand {
             if (state.variables.ammo <= 0) {
                 state.isError = true;
                 this.showError(true);
+                this.runtime.callFunction("ShowError", "Peluru habis", 2);
+
                 return ERROR;
             }
 

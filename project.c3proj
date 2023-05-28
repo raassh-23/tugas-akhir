@@ -223,7 +223,8 @@
 			"MovingEnemyCheckpoint",
 			"LevelText",
 			"BackgroundWater",
-			"SolidBorder"
+			"SolidBorder",
+			"UIPanel2"
 		],
 		"subfolders": [
 			{

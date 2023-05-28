@@ -693,6 +693,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "",
 						"gridX": 0,
 						"gridY": 0
@@ -864,7 +865,7 @@
 		},
 		{
 			"name": "UI",
-			"overriden": 0,
+			"overriden": 1,
 			"subLayers": [
 				{
 					"name": "ActiveCommandList",
@@ -1520,6 +1521,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "timer"
 					},
 					"behaviors": {},
@@ -1564,6 +1566,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "variables"
 					},
 					"behaviors": {},
@@ -2272,6 +2275,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-text"
 					},
 					"behaviors": {},
@@ -2344,6 +2348,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-time"
 					},
 					"behaviors": {},
@@ -2416,6 +2421,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-actions"
 					},
 					"behaviors": {},
@@ -2488,6 +2494,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-code-count"
 					},
 					"behaviors": {},
@@ -2613,6 +2620,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-leaderboard"
 					},
 					"behaviors": {},
@@ -2941,6 +2949,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "game-over-leaderboard-status"
 					},
 					"behaviors": {},
@@ -3320,7 +3329,7 @@
 		},
 		{
 			"name": "ConditionalPopUp",
-			"overriden": 0,
+			"overriden": 1,
 			"subLayers": [
 				{
 					"name": "ConditionalPopUpCodeBlocks",

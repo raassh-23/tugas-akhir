@@ -2330,7 +2330,12 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"callFunction": "DestroyToast",
+							"sid": 132284823473660
+						}
+					],
 					"sid": 673736646726318,
 					"children": [
 						{
@@ -4267,9 +4272,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 502919094419020,
+									"sid": 100309100634882,
 									"parameters": {
-										"first-value": "Functions.ShouldShrink",
+										"first-value": "Functions.ShouldShrink(Text.UID)",
 										"comparison": 4,
 										"second-value": "0"
 									}
@@ -4291,14 +4296,31 @@
 				},
 				{
 					"functionName": "ShouldShrink",
-					"functionCopyPicked": true,
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "uid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 640757954945194
+						}
+					],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Text",
+							"sid": 665947438841797,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
 					"actions": [],
 					"sid": 423693351159561,
 					"children": [
@@ -4308,21 +4330,21 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 902611582574147,
+									"sid": 772990974536853,
 									"parameters": {
 										"first-value": "Text.TextWidth",
 										"comparison": 4,
-										"second-value": "Text.Width * 0.9"
+										"second-value": "Text.Width * 0.95"
 									}
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 833623512391617,
+									"sid": 847549540053801,
 									"parameters": {
 										"first-value": "Text.TextHeight",
 										"comparison": 4,
-										"second-value": "Text.CharacterHeight * Text.CharacterScale"
+										"second-value": "Text.CharacterHeight * Text.CharacterScale * Text.maxLine"
 									}
 								}
 							],
@@ -4909,6 +4931,36 @@
 					"sid": 357281100725744
 				},
 				{
+					"eventType": "variable",
+					"name": "TOAST_TWEEN_TAG",
+					"type": "string",
+					"initialValue": "toast_tween",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 948384446021809
+				},
+				{
+					"eventType": "variable",
+					"name": "TOAST_MAX",
+					"type": "number",
+					"initialValue": "840",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 511594515122802
+				},
+				{
+					"eventType": "variable",
+					"name": "TOAST_MIN",
+					"type": "number",
+					"initialValue": "360",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 228341114472469
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -5382,7 +5434,12 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "DestroyToast",
+									"sid": 215479892156681
+								}
+							],
 							"sid": 829767052210114,
 							"children": [
 								{
@@ -6057,7 +6114,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n}\n"
+									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n\truntime.callFunction(\n\t\t\"ShowError\",\n\t\t\"Player mati\",\n\t\t2,\n\t);\n}\n"
 								}
 							],
 							"sid": 188760965931083
@@ -6150,6 +6207,252 @@
 						}
 					],
 					"sid": 541108730608813
+				},
+				{
+					"functionName": "ShowError",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "message",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 272341453641574
+						},
+						{
+							"name": "duration",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "in seconds",
+							"sid": 248972845096939
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "DestroyToast",
+							"sid": 100576952914483
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 614129818012558,
+							"parameters": {
+								"object-to-create": "UIPanel2",
+								"layer": "\"Toast\"",
+								"x": "632",
+								"y": "448",
+								"create-hierarchy": true,
+								"template-name": "\"toast\""
+							}
+						},
+						{
+							"id": "set-wait-time",
+							"objectClass": "UIPanel2",
+							"sid": 316753953891884,
+							"behaviorType": "Fade",
+							"parameters": {
+								"wait-time": "duration"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "UIPanel2",
+							"sid": 573708132042919,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TOAST_TWEEN_TAG",
+								"property": "offsetY",
+								"end-value": "Self.Y - 32",
+								"time": "0.25",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 468867175222648,
+							"parameters": {
+								"text": "message"
+							}
+						},
+						{
+							"callFunction": "ResizeToast",
+							"sid": 377045281371293
+						}
+					],
+					"sid": 308783838399707,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 490341256020384,
+									"parameters": {
+										"first-value": "Functions.ShouldShrink(UIText.UID)",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UIText",
+									"sid": 207246177445137,
+									"parameters": {
+										"instance-variable": "maxLine",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "UIPanel2",
+									"sid": 647371977878631,
+									"parameters": {
+										"width": "TOAST_MIN"
+									}
+								},
+								{
+									"callFunction": "ResizeToast",
+									"sid": 321468788619686
+								}
+							],
+							"sid": 599224600204569
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 322264118337691,
+									"parameters": {
+										"first-value": "Functions.ShouldShrink(UIText.UID)",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "UIText",
+									"sid": 574193782881741,
+									"parameters": {
+										"instance-variable": "autoFit",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "UIText",
+									"sid": 185120802131554,
+									"parameters": {
+										"instance-variable": "maxLine",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 146255398908460
+						}
+					]
+				},
+				{
+					"functionName": "ResizeToast",
+					"functionCopyPicked": true,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 489795228590340,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 106434364729824
+								},
+								{
+									"id": "compare-width",
+									"objectClass": "UIPanel2",
+									"sid": 271236140987920,
+									"parameters": {
+										"comparison": 2,
+										"width": "TOAST_MAX"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 467915482961948,
+									"parameters": {
+										"first-value": "Functions.ShouldShrink(UIText.UID)",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "UIPanel2",
+									"sid": 899906085005713,
+									"parameters": {
+										"width": "Self.Width + 10"
+									}
+								}
+							],
+							"sid": 284004455693964
+						}
+					]
+				},
+				{
+					"functionName": "DestroyToast",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIPanel2",
+							"sid": 733855581976117,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"toast-panel\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "UIPanel2",
+							"sid": 148322996833318
+						}
+					],
+					"sid": 674097158106837
 				}
 			],
 			"sid": 991077192111983
@@ -6240,55 +6543,33 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 332749278380782,
+							"sid": 295504417772915,
 							"parameters": {
 								"key": 32
 							}
 						}
 					],
-					"actions": [],
-					"sid": 927407420144812,
-					"disabled": true,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-dragging",
-									"objectClass": "CodeBlock",
-									"sid": 886661181028777,
-									"behaviorType": "DragDrop"
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "CodeBlockPanel",
-									"sid": 105402087033275,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "CodeBlock.panelId"
-									}
-								},
-								{
-									"id": "pick-children",
-									"objectClass": "CodeBlockPanel",
-									"sid": 758918454813809,
-									"parameters": {
-										"child": "CodeBlockShadow",
-										"which": "all"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "script",
-									"script": "const c =  runtime.objects.CodeBlock.getFirstPickedInstance();\nconsole.log(c.x, c.y);\n\nfor(const d of runtime.objects.CodeBlockShadow.getPickedInstances()) {\n\tconst distance = getSquaredDistance(c, d);\n\tconsole.log(d.uid, d.x, d.y, distance);\n\n}"
-								}
-							],
-							"sid": 185835125033345,
-							"disabled": true
+							"callFunction": "ShowError",
+							"sid": 139866720652286,
+							"parameters": [
+								"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque arcu eu sodales rhoncus. Morbi pulvinar interdum porttitor\"",
+								"2"
+							]
+						},
+						{
+							"callFunction": "ShowError",
+							"sid": 163472485878811,
+							"disabled": true,
+							"parameters": [
+								"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque arcu eu sodales rhoncus. Morbi pulvinar interdum porttitor. Phasellus nec velit placerat, ultricies enim at, tincidunt sapie\"",
+								"2"
+							]
 						}
-					]
+					],
+					"sid": 613390451839088,
+					"disabled": true
 				}
 			],
 			"sid": 371561682910378

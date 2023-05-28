@@ -1,0 +1,26 @@
+{
+	"name": "UIPanel2",
+	"plugin-id": "NinePatch",
+	"sid": 585137950259872,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 598940316790579
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 98,
+		"height": 89,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 934246,
+		"useCollisionPoly": true
+	}
+}

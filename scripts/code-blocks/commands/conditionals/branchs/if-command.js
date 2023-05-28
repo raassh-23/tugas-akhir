@@ -43,6 +43,7 @@ export default class IfCommand extends ConditionalCommand {
             console.error(error);
             state.isError = true;
             this.showError(true);
+            this.runtime.callFunction("ShowError", "Penulisan kondisi salah", 2);
 
             return ERROR
         }

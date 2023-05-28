@@ -35,6 +35,8 @@ export default class CommandsContainer extends BaseCommand {
             const valid = checkElseValid(command, lastCommandName, lastResult);
 
             if (valid === ERROR) {
+                this.runtime.callFunction("ShowError", "Penempatan Blok Else/Else If salah", 2);
+
                 return ERROR;
             } else if (valid === CONTINUE) {
                 continue;

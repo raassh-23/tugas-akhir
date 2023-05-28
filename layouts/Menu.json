@@ -35,7 +35,7 @@
 			"global": false
 		},
 		{
-			"name": "UI",
+			"name": "MenuUI",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -99,6 +99,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "version"
 					},
 					"behaviors": {},
@@ -215,6 +216,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "title"
 					},
 					"behaviors": {},
@@ -559,6 +561,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
+						"maxLine": 1,
 						"id": "leaderboard"
 					},
 					"behaviors": {},

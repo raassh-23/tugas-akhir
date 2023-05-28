@@ -56,6 +56,7 @@
 	"effectTypes": [],
 	"members": [
 		"CodeBlockPanel",
-		"UIPanel"
+		"UIPanel",
+		"UIPanel2"
 	]
 }
