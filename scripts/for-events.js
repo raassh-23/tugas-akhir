@@ -90,6 +90,7 @@ function setupLevel(runtime) {
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);
 	setupAvailableConditionalExpressions(runtime);
+	setupVariablesList(runtime);
 }
 
 /**
@@ -266,12 +267,6 @@ function logParent(sprite) {
 	}
 }
 
-function getVariables() {
-	return Object.entries(state.variables)
-		.map(([key, value]) => `${key}: ${value}`)
-		.join("\n");
-}
-
 /**
  * 
  * @param {IRuntime} runtime 
@@ -358,4 +353,59 @@ function setupAvailableConditionalExpressions(runtime) {
 			panelId: "",
 		},
 	);
+}
+
+const VARIABLE_X = 64;
+const VARIABLE_START_Y = 128;
+const VARIABLE_SPACING_Y = 64;
+
+const variableIconMap = {
+	"health": 0,
+	"ammo": 2,
+}
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ */
+function setupVariablesList(runtime) {
+	const variables = Object.entries(state.variables);
+
+	runtime.globalVars.variableNames = variables
+		.map(([name]) => name)
+		.join("|");
+
+	for (let i = 0; i < variables.length; i++) {
+		const [name, value] = variables[i];
+
+		const variable = runtime.objects.VariableIcon.createInstance(
+			"UI",
+			VARIABLE_X,
+			VARIABLE_START_Y + VARIABLE_SPACING_Y * i,
+			true,
+			"variable"
+		);
+
+		variable.instVars.id = name;
+		variable.animationFrame = variableIconMap[name] ?? 0;
+
+		const variableText = variable.getChildAt(0);
+		variableText.text = value.toString();
+		variableText.instVars.id = name;
+	}
+}
+
+/**
+ * 
+ * @param {string} name 
+ * @returns {number}
+ */
+function getVariableByName(name) {
+	const variable = state.variables[name];
+
+	if (variable == null) {
+		throw new Error(`Variable ${name} does not exist.`);
+	}
+
+	return variable;
 }

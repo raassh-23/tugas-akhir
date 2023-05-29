@@ -225,7 +225,8 @@
 			"BackgroundWater",
 			"SolidBorder",
 			"UIPanel2",
-			"Gem"
+			"Gem",
+			"VariableIcon"
 		],
 		"subfolders": [
 			{

@@ -106,6 +106,16 @@
 			"sid": 907515181854290
 		},
 		{
+			"eventType": "variable",
+			"name": "variableNames",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 410605398835309
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -4399,32 +4409,6 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "UIText",
-							"sid": 391265822416662,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"variables\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UIText",
-							"sid": 275857252910940,
-							"parameters": {
-								"text": "Functions.GetVariables"
-							}
-						}
-					],
-					"sid": 620594553154912
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIText",
 							"sid": 949341296327912,
 							"parameters": {
 								"instance-variable": "id",
@@ -4437,31 +4421,13 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 299129257745057,
+							"sid": 764403926971537,
 							"parameters": {
-								"text": "\"Time: \" & Functions.FormatTime(levelTimer)"
+								"text": "Functions.FormatTime(levelTimer)"
 							}
 						}
 					],
 					"sid": 490625007754107
-				},
-				{
-					"functionName": "GetVariables",
-					"functionCopyPicked": false,
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "string",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"type": "script",
-							"script": "runtime.setReturnValue(getVariables());"
-						}
-					],
-					"sid": 959573130061458
 				},
 				{
 					"functionName": "FormatTime",
@@ -4569,6 +4535,66 @@
 						}
 					],
 					"sid": 547316695695729
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 264142896130400,
+							"parameters": {
+								"count": "tokencount(variableNames, \"|\")"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 380682668408168,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "tokenat(variableNames, loopindex, \"|\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 311021610840276,
+							"parameters": {
+								"text": "Functions.GetVariable(Self.id)"
+							}
+						}
+					],
+					"sid": 324949992461061
+				},
+				{
+					"functionName": "GetVariable",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "name",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 520018058764807
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.setReturnValue(\n\tgetVariableByName(localVars.name),\n);"
+						}
+					],
+					"sid": 158044661581720
 				}
 			],
 			"sid": 361619522203103
@@ -4950,26 +4976,6 @@
 					"sid": 948384446021809
 				},
 				{
-					"eventType": "variable",
-					"name": "TOAST_MAX",
-					"type": "number",
-					"initialValue": "840",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 511594515122802
-				},
-				{
-					"eventType": "variable",
-					"name": "TOAST_MIN",
-					"type": "number",
-					"initialValue": "360",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 228341114472469
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -5138,6 +5144,29 @@
 								}
 							],
 							"sid": 671137814517311
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "VariableIcon",
+									"sid": 794920925950466,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"variable\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "VariableIcon",
+									"sid": 686740626931398
+								}
+							],
+							"sid": 163224128340546
 						}
 					]
 				},
@@ -6268,6 +6297,26 @@
 						}
 					],
 					"sid": 541108730608813
+				},
+				{
+					"eventType": "variable",
+					"name": "TOAST_MAX",
+					"type": "number",
+					"initialValue": "840",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 289626810918342
+				},
+				{
+					"eventType": "variable",
+					"name": "TOAST_MIN",
+					"type": "number",
+					"initialValue": "360",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 976276633508343
 				},
 				{
 					"functionName": "ShowError",
