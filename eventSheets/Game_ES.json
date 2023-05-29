@@ -6118,6 +6118,41 @@
 								}
 							],
 							"sid": 188760965931083
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 416272106017455,
+									"parameters": {
+										"object": "Gem"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 798376026477776,
+									"parameters": {
+										"first-value": "distance(Player.X, Player.Y, Gem.X, Gem.Y)",
+										"comparison": 2,
+										"second-value": "GRID_SIZE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "console.log(\"Gem Collected\");\n"
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Gem",
+									"sid": 547153070014696
+								}
+							],
+							"sid": 973731706778069
 						}
 					]
 				},

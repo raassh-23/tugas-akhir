@@ -224,7 +224,8 @@
 			"LevelText",
 			"BackgroundWater",
 			"SolidBorder",
-			"UIPanel2"
+			"UIPanel2",
+			"Gem"
 		],
 		"subfolders": [
 			{
