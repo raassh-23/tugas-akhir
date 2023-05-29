@@ -9,6 +9,7 @@
 		"Player",
 		"SolidObstacle",
 		"MovingEnemyCollision",
-		"Gem"
+		"Gem",
+		"Spike"
 	]
 }

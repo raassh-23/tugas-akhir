@@ -4055,6 +4055,15 @@
 						{
 							"id": "set-layer-scale",
 							"objectClass": "System",
+							"sid": 272029286197277,
+							"parameters": {
+								"layer": "\"LevelObjects\"",
+								"scale": "zoom"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
 							"sid": 370253580988173,
 							"parameters": {
 								"layer": "\"BG\"",
@@ -5156,9 +5165,9 @@
 						{
 							"id": "recreate-initial-objects",
 							"objectClass": "System",
-							"sid": 478867782860744,
+							"sid": 643965710010429,
 							"parameters": {
-								"object": "ResetObjects",
+								"object": "Player",
 								"from-x": "0",
 								"from-y": "0",
 								"to-x": "LayoutWidth",
@@ -5173,7 +5182,24 @@
 						{
 							"id": "recreate-initial-objects",
 							"objectClass": "System",
-							"sid": 695474686579092,
+							"sid": 846453972800759,
+							"parameters": {
+								"object": "ResetObjects",
+								"from-x": "0",
+								"from-y": "0",
+								"to-x": "LayoutWidth",
+								"to-y": "LayoutWidth",
+								"source-layout": "LayoutName",
+								"source-layer": "\"LevelObjects\"",
+								"offset-x": "0",
+								"offset-y": "0",
+								"create-hierarchy": true
+							}
+						},
+						{
+							"id": "recreate-initial-objects",
+							"objectClass": "System",
+							"sid": 133814911041402,
 							"parameters": {
 								"object": "LevelText",
 								"from-x": "0",
@@ -5181,7 +5207,7 @@
 								"to-x": "LayoutWidth",
 								"to-y": "LayoutWidth",
 								"source-layout": "LayoutName",
-								"source-layer": "\"Game\"",
+								"source-layer": "\"LevelObjects\"",
 								"offset-x": "0",
 								"offset-y": "0",
 								"create-hierarchy": true
@@ -6223,10 +6249,10 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player",
-							"sid": 977180601643449,
+							"sid": 287834577508155,
 							"parameters": {
 								"object": "Bullet",
-								"layer": "\"Game\"",
+								"layer": "\"LevelObjects\"",
 								"image-point": "0",
 								"create-hierarchy": false
 							}
