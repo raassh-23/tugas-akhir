@@ -24,18 +24,6 @@ import {
 	document.head.appendChild(script);
 });
 
-// temporary workaround for 
-// https://github.com/Scirra/Construct-bugs/issues/7022
-[
-	"./lib/css/bootstrap.min.css",
-	"./lib/css/leaderboard.css",
-].forEach((href) => {
-	const link = document.createElement("link");
-	link.href = href;
-	link.rel = "stylesheet";
-	document.head.appendChild(link);
-});
-
 runOnStartup(async (runtime) =>
 {
 	// Code to run on the loading screen.
