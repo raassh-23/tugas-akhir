@@ -5041,6 +5041,15 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 543916739377684,
+							"parameters": {
+								"layer": "\"Menu\"",
+								"interactive": false
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 780955087097625,
@@ -5653,6 +5662,16 @@
 										"comparison": 0,
 										"value": "\"game-over-home\""
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 868632383415450,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"menu-home\""
+									}
 								}
 							],
 							"actions": [
@@ -5665,7 +5684,8 @@
 									}
 								}
 							],
-							"sid": 898805136872208
+							"sid": 898805136872208,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -5696,6 +5716,16 @@
 										"comparison": 0,
 										"value": "\"game-over-restart\""
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 534095246373811,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"menu-restart\""
+									}
 								}
 							],
 							"actions": [
@@ -5705,7 +5735,8 @@
 									"sid": 198179371559751
 								}
 							],
-							"sid": 831666814216673
+							"sid": 831666814216673,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -5862,6 +5893,85 @@
 										}
 									],
 									"sid": 617339742470544
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 439730187551308,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"menu\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 341640453652627,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "Button",
+											"sid": 725506237891964,
+											"parameters": {
+												"comparison": 0,
+												"number": "14"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ShowSideMenu",
+											"sid": 633198997587410,
+											"parameters": [
+												true
+											]
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Button",
+											"sid": 476509945781856,
+											"parameters": {
+												"frame-number": "15"
+											}
+										}
+									],
+									"sid": 123215241996379
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 674122285791280
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ShowSideMenu",
+											"sid": 196564013382864,
+											"parameters": [
+												false
+											]
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Button",
+											"sid": 178462419776931,
+											"parameters": {
+												"frame-number": "14"
+											}
+										}
+									],
+									"sid": 348353882388654
 								}
 							]
 						}
@@ -6563,6 +6673,141 @@
 						}
 					],
 					"sid": 674097158106837
+				},
+				{
+					"eventType": "variable",
+					"name": "SIDE_MENU_TWEEN_TAG",
+					"type": "string",
+					"initialValue": "side_menu",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 513214900134723
+				},
+				{
+					"eventType": "variable",
+					"name": "SIDE_MENU_TWEEN_SPEED",
+					"type": "number",
+					"initialValue": "260",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 247209769084142
+				},
+				{
+					"functionName": "ShowSideMenu",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 803535181872749
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIPanel2",
+							"sid": 875880509173182,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"menu-panel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 520875319167477,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 413086309166992,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 658726663146937,
+									"parameters": {
+										"layer": "\"Menu\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "UIPanel2",
+									"sid": 608033357395534,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "SIDE_MENU_TWEEN_TAG",
+										"property": "offsetX",
+										"end-value": "Self.targetX",
+										"time": "abs(Self.X - Self.targetX)/SIDE_MENU_TWEEN_SPEED",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 938221257916246
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 143988935966421
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 305950588927014,
+									"parameters": {
+										"layer": "\"Menu\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "UIPanel2",
+									"sid": 462031703388045,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "SIDE_MENU_TWEEN_TAG",
+										"property": "offsetX",
+										"end-value": "Self.originX",
+										"time": "abs(Self.X - Self.originX)/SIDE_MENU_TWEEN_SPEED",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 204632111290599
+						}
+					]
 				}
 			],
 			"sid": 991077192111983

@@ -2229,10 +2229,10 @@
 				{
 					"type": "UIPanel",
 					"properties": {
-						"left-margin": 64,
-						"right-margin": 64,
-						"top-margin": 64,
-						"bottom-margin": 64,
+						"left-margin": 32,
+						"right-margin": 32,
+						"top-margin": 32,
+						"bottom-margin": 32,
 						"edges": "stretch",
 						"fill": "stretch",
 						"initially-visible": true,

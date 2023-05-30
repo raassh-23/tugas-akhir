@@ -226,7 +226,8 @@
 			"SolidBorder",
 			"UIPanel2",
 			"Gem",
-			"VariableIcon"
+			"VariableIcon",
+			"BlendMask"
 		],
 		"subfolders": [
 			{

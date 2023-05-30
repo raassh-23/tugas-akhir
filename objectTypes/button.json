@@ -194,7 +194,19 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6986278,
+						"imageSpriteId": 3012273,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 81,
+						"height": 84,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8698706,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
