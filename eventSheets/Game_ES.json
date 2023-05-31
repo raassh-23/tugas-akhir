@@ -819,13 +819,8 @@
 											}
 										},
 										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 943708220887441,
-											"parameters": {
-												"type": "log",
-												"message": "\"should show popup\""
-											}
+											"callFunction": "ShowHelp",
+											"sid": 623929014210815
 										}
 									],
 									"sid": 308165957473214
@@ -2449,135 +2444,6 @@
 								}
 							],
 							"sid": 153290914979140
-						}
-					]
-				},
-				{
-					"functionName": "showLevelPopUp",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "show",
-							"type": "boolean",
-							"initialValue": "false",
-							"comment": "",
-							"sid": 226195300177141
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"callFunction": "DestroyToast",
-							"sid": 132284823473660
-						}
-					],
-					"sid": 673736646726318,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 927866559747060,
-									"parameters": {
-										"variable": "show"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 843872287095396,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 500342314462378,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 910125017172146,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 934663872332394,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": false
-									}
-								}
-							],
-							"sid": 901625312363298
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 476066603390763
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 780634880509116,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 435367418480782,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 638838213693120,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 526127119263903,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": true
-									}
-								}
-							],
-							"sid": 881116491643937
 						}
 					]
 				}
@@ -5217,6 +5083,15 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 532984619691327,
+							"parameters": {
+								"variable": "popUpCount",
+								"value": "1"
+							}
+						},
+						{
 							"callFunction": "showLevelPopUp",
 							"sid": 549906104014383,
 							"parameters": [
@@ -5780,6 +5655,46 @@
 								}
 							],
 							"sid": 733068504735902
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 394679724221996,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"close-help-panel\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 238644027688593,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"help-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "UIPanel",
+									"sid": 598817987782941
+								},
+								{
+									"callFunction": "showLevelPopUp",
+									"sid": 273436770198501,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 795639719907514
 						},
 						{
 							"eventType": "block",
@@ -6541,6 +6456,210 @@
 				},
 				{
 					"eventType": "variable",
+					"name": "popUpCount",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "init 1 because it will be call when start layout",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 708840702886902
+				},
+				{
+					"functionName": "showLevelPopUp",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 226195300177141
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "DestroyToast",
+							"sid": 458534399058018
+						}
+					],
+					"sid": 916555315663570,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 700498383015516,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 665307425136364,
+									"parameters": {
+										"variable": "popUpCount",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 452558652978986
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 795597748112985
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 268650511506289,
+									"parameters": {
+										"variable": "popUpCount",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 804096857330192
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 380784833528942,
+									"parameters": {
+										"variable": "popUpCount",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 519220412824723,
+									"parameters": {
+										"layer": "\"LevelPopUp\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 744554147941275,
+									"parameters": {
+										"layer": "\"LevelPopUp\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 704956287481353,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 340333685730876,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 589291695115256
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 209813423923725
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 608319837204024,
+									"parameters": {
+										"layer": "\"LevelPopUp\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 636800557834204,
+									"parameters": {
+										"layer": "\"LevelPopUp\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 280326632420931,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 882424939355192,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 355883376539319
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 956898874505138,
+									"parameters": {
+										"type": "log",
+										"message": "popUpCount"
+									}
+								}
+							],
+							"sid": 745564262774535
+						}
+					]
+				},
+				{
+					"eventType": "variable",
 					"name": "TOAST_MAX",
 					"type": "number",
 					"initialValue": "840",
@@ -6939,6 +7058,44 @@
 							"sid": 204632111290599
 						}
 					]
+				},
+				{
+					"functionName": "ShowHelp",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 101586461624031,
+							"parameters": {
+								"object-to-create": "UIPanel",
+								"layer": "\"Help\"",
+								"x": "337",
+								"y": "224",
+								"create-hierarchy": true,
+								"template-name": "\"help-panel\""
+							}
+						},
+						{
+							"callFunction": "showLevelPopUp",
+							"sid": 234520529916073,
+							"parameters": [
+								true
+							]
+						},
+						{
+							"type": "script",
+							"script": "const codeBlock = runtime.objects.CodeBlock.getFirstPickedInstance();\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `Help for ${codeBlock.name}`"
+						}
+					],
+					"sid": 357787829975458
 				}
 			],
 			"sid": 991077192111983
