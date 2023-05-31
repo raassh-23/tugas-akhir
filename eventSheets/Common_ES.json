@@ -236,6 +236,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": true,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
@@ -269,6 +270,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": true,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
@@ -315,6 +317,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": true,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
@@ -463,10 +466,10 @@
 		},
 		{
 			"functionName": "ButtonClicked",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -495,10 +498,10 @@
 		},
 		{
 			"functionName": "PlayTap",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",

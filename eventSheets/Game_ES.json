@@ -430,7 +430,35 @@
 									]
 								}
 							],
-							"sid": 519996175298180
+							"sid": 519996175298180,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "CodeBlockPanel",
+											"sid": 824932931372067,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"help-drop-panel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "CodeBlockPanel",
+											"sid": 240728628127040,
+											"parameters": {
+												"color": "rgbEx(100, 100, 100)"
+											}
+										}
+									],
+									"sid": 655019470670261
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -444,10 +472,67 @@
 							"actions": [
 								{
 									"callFunction": "ResetActiveCodeBlocks",
-									"sid": 733125477755939
+									"sid": 390150144518679
 								}
 							],
-							"sid": 441139817013168
+							"sid": 441139817013168,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "CodeBlock",
+											"sid": 473158691778624,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "CodeBlockPanel",
+											"sid": 846410808680328,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"help-drop-panel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "CodeBlockPanel",
+											"sid": 426255791857412,
+											"parameters": {
+												"color": "rgbEx(68, 62, 49)"
+											}
+										}
+									],
+									"sid": 412974862696826
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 696931425827637
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "CodeBlockPanel",
+											"sid": 128050370111801,
+											"parameters": {
+												"color": "rgbEx(100, 100, 100)"
+											}
+										}
+									],
+									"sid": 825984138252637
+								}
+							]
 						}
 					]
 				},
@@ -700,7 +785,52 @@
 									"sid": 530019295501329
 								}
 							],
-							"sid": 839084713117325
+							"sid": 839084713117325,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "CodeBlock",
+											"sid": 661666997505977,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "CodeBlockPanel",
+											"sid": 666363734080766,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"help-drop-panel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "CodeBlockPanel",
+											"sid": 795552808966349,
+											"parameters": {
+												"color": "rgbEx(100, 100, 100)"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 943708220887441,
+											"parameters": {
+												"type": "log",
+												"message": "\"should show popup\""
+											}
+										}
+									],
+									"sid": 308165957473214
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -979,10 +1109,10 @@
 				},
 				{
 					"functionName": "CreateNewCodeBlockObject",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "Creation",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1122,10 +1252,10 @@
 				},
 				{
 					"functionName": "PickCodeBlockShadowToShow",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "number",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1160,10 +1290,10 @@
 				},
 				{
 					"functionName": "ShowCodeBlockShadow",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1287,10 +1417,10 @@
 				},
 				{
 					"functionName": "SaveAllCodeBlocksPosition",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1327,10 +1457,10 @@
 				},
 				{
 					"functionName": "ResetActiveCodeBlocks",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1398,10 +1528,10 @@
 				},
 				{
 					"functionName": "ShiftActiveCodeBlocks",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1508,10 +1638,10 @@
 				},
 				{
 					"functionName": "ShiftActiveCodeBlocksSavedPosition",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1616,10 +1746,10 @@
 				},
 				{
 					"functionName": "PseudoDropCodeBlock",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1661,10 +1791,10 @@
 				},
 				{
 					"functionName": "SetCodeBlockActive",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1687,10 +1817,10 @@
 				},
 				{
 					"functionName": "CreatePopUpPanel",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "Creation",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1934,10 +2064,10 @@
 				},
 				{
 					"functionName": "SetCommandPopUpPanel",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2218,10 +2348,10 @@
 				},
 				{
 					"functionName": "GetExpectedWidth",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "number",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2244,10 +2374,10 @@
 				},
 				{
 					"functionName": "CheckCanDragCodeBlock",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "CodeBlock",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2324,10 +2454,10 @@
 				},
 				{
 					"functionName": "showLevelPopUp",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2622,10 +2752,10 @@
 				},
 				{
 					"functionName": "SetupScrollable",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "Scrollable",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2728,10 +2858,10 @@
 				},
 				{
 					"functionName": "ClampScrollable",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "Scrollable",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2885,9 +3015,9 @@
 								{
 									"id": "set-y",
 									"objectClass": "ScrollablePanel",
-									"sid": 834034470529110,
+									"sid": 334833243627030,
 									"parameters": {
-										"y": "Self.Y - SCROLL_SPEED * dt"
+										"y": "Self.Y + SCROLL_SPEED * dt"
 									}
 								}
 							],
@@ -2987,9 +3117,9 @@
 								{
 									"id": "set-y",
 									"objectClass": "ScrollablePanel",
-									"sid": 471641732717301,
+									"sid": 223291974264453,
 									"parameters": {
-										"y": "Self.Y + SCROLL_SPEED * dt"
+										"y": "Self.Y - SCROLL_SPEED * dt"
 									}
 								}
 							],
@@ -3144,10 +3274,10 @@
 				},
 				{
 					"functionName": "ResetPanAndZoomVariable",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -4036,10 +4166,10 @@
 				},
 				{
 					"functionName": "SetZoom",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -4315,10 +4445,10 @@
 				},
 				{
 					"functionName": "ShouldShrink",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -4431,10 +4561,10 @@
 				},
 				{
 					"functionName": "FormatTime",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "string",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -4572,10 +4702,10 @@
 				},
 				{
 					"functionName": "GetVariable",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -4613,6 +4743,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "custom-ace-block",
@@ -5181,10 +5312,10 @@
 				},
 				{
 					"functionName": "ResetGame",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "Game",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -5269,10 +5400,10 @@
 				},
 				{
 					"functionName": "GameOver",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -5456,10 +5587,10 @@
 				},
 				{
 					"functionName": "GameButtonClicked",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -5979,10 +6110,10 @@
 				},
 				{
 					"functionName": "GetBlockCount",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -5997,10 +6128,10 @@
 				},
 				{
 					"functionName": "GetActionCount",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6037,10 +6168,10 @@
 				},
 				{
 					"functionName": "AddToLeaderboardError",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6168,10 +6299,10 @@
 				},
 				{
 					"functionName": "CheckCollisions",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6323,10 +6454,10 @@
 				},
 				{
 					"functionName": "OnCommandStart",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6359,10 +6490,10 @@
 				},
 				{
 					"functionName": "PlayerShoot",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -6430,10 +6561,10 @@
 				},
 				{
 					"functionName": "ShowError",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -6591,10 +6722,10 @@
 				},
 				{
 					"functionName": "ResizeToast",
-					"functionCopyPicked": true,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": true,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6646,10 +6777,10 @@
 				},
 				{
 					"functionName": "DestroyToast",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -6696,10 +6827,10 @@
 				},
 				{
 					"functionName": "ShowSideMenu",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{

@@ -2856,9 +2856,9 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": -20.23382601267687,
+								"x": -17.083619429497404,
 								"y": 64.5619076915721,
-								"width": 100,
+								"width": 106.30041316635894,
 								"height": 91,
 								"originX": 0.5,
 								"originY": 0.5054945054945055,
@@ -2878,20 +2878,20 @@
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
-								"initial-frame": 1,
+								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 219,
+							"uid": 223,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 76.15473605140072,
-								"y": 64.45894782989612,
-								"width": 6.547076697661014,
-								"height": 73.88769190050351,
-								"originX": 7.285714285714286,
-								"originY": 0.5053763440860215,
+								"x": 64,
+								"y": 64,
+								"width": 68.85,
+								"height": 71.4,
+								"originX": 0.5,
+								"originY": 0.5,
 								"color": [
 									1,
 									1,
@@ -2921,8 +2921,8 @@
 						1
 					],
 					"isTransparent": true,
-					"parallaxX": 1,
-					"parallaxY": 1,
+					"parallaxX": 0,
+					"parallaxY": 0,
 					"scaleRate": 1,
 					"forceOwnTexture": true,
 					"renderingMode": "3d",
@@ -3729,6 +3729,69 @@
 							0,
 							0,
 							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CodeBlockPanelBorder",
+					"properties": {
+						"left-margin": 45,
+						"right-margin": 45,
+						"top-margin": 45,
+						"bottom-margin": 45,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 222,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 222,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1094,
+						"y": 507,
+						"width": 158,
+						"height": 185.12495,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
 							1
 						],
 						"angle": 0,

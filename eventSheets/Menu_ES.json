@@ -164,10 +164,10 @@
 		},
 		{
 			"functionName": "MenuButtonClicked",
-			"functionCopyPicked": true,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": true,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -564,10 +564,10 @@
 		},
 		{
 			"functionName": "GetLeaderboard",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -611,10 +611,10 @@
 		},
 		{
 			"functionName": "showMenuPopUp",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
