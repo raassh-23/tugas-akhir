@@ -820,7 +820,10 @@
 										},
 										{
 											"callFunction": "ShowHelp",
-											"sid": 623929014210815
+											"sid": 921066040494346,
+											"parameters": [
+												true
+											]
 										}
 									],
 									"sid": 308165957473214
@@ -1839,11 +1842,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 434914503054531,
+							"sid": 252401619101590,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"PopUpBack\"",
-								"x": "192",
+								"x": "90",
 								"y": "name = \"repeat\" ? 147.5 : 180",
 								"create-hierarchy": true,
 								"template-name": "name & \"-panel\""
@@ -2170,6 +2173,33 @@
 									"parameters": [
 										true
 									]
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 715150573630932,
+									"parameters": {
+										"type": "log",
+										"message": "\"set comman panel\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 673990087969661,
+									"parameters": {
+										"type": "log",
+										"message": "shownLayer"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 762045451552710,
+									"parameters": {
+										"type": "log",
+										"message": "show"
+									}
 								}
 							],
 							"sid": 669991091029476,
@@ -3432,9 +3462,9 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 839402406437740,
+							"sid": 436121822143428,
 							"parameters": {
-								"layer": "\"PopUpBG\""
+								"layer": "\"LevelPopUp\""
 							},
 							"isInverted": true
 						}
@@ -3490,9 +3520,9 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 618834679803551,
+							"sid": 393904005651952,
 							"parameters": {
-								"layer": "\"PopUpBG\""
+								"layer": "\"LevelPopUp\""
 							},
 							"isInverted": true
 						}
@@ -5038,6 +5068,15 @@
 							}
 						},
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 876285015313260,
+							"parameters": {
+								"layer": "\"Help\"",
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
 							"sid": 543916739377684,
@@ -5080,15 +5119,6 @@
 							"parameters": {
 								"layer": "\"ConditionalPopUp\"",
 								"interactive": false
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 532984619691327,
-							"parameters": {
-								"variable": "popUpCount",
-								"value": "1"
 							}
 						},
 						{
@@ -5682,13 +5712,8 @@
 							],
 							"actions": [
 								{
-									"id": "destroy",
-									"objectClass": "UIPanel",
-									"sid": 598817987782941
-								},
-								{
-									"callFunction": "showLevelPopUp",
-									"sid": 273436770198501,
+									"callFunction": "ShowHelp",
+									"sid": 905727467181441,
 									"parameters": [
 										false
 									]
@@ -6455,16 +6480,6 @@
 					"sid": 541108730608813
 				},
 				{
-					"eventType": "variable",
-					"name": "popUpCount",
-					"type": "number",
-					"initialValue": "1",
-					"comment": "init 1 because it will be call when start layout",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 708840702886902
-				},
-				{
 					"functionName": "showLevelPopUp",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -6504,12 +6519,39 @@
 							],
 							"actions": [
 								{
-									"id": "add-to-eventvar",
+									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 665307425136364,
+									"sid": 174671890943932,
 									"parameters": {
-										"variable": "popUpCount",
-										"value": "1"
+										"layer": "\"LevelPopUp\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 743989810161031,
+									"parameters": {
+										"layer": "\"LevelPopUp\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 759360656623919,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 266449088180080,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": false
 									}
 								}
 							],
@@ -6521,90 +6563,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 795597748112985
-								}
-							],
-							"actions": [
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 268650511506289,
-									"parameters": {
-										"variable": "popUpCount",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 804096857330192
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 380784833528942,
-									"parameters": {
-										"variable": "popUpCount",
-										"comparison": 4,
-										"value": "0"
-									}
+									"sid": 664414639174068
 								}
 							],
 							"actions": [
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 519220412824723,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 744554147941275,
-									"parameters": {
-										"layer": "\"LevelPopUp\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 704956287481353,
-									"parameters": {
-										"layer": "\"UI\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 340333685730876,
-									"parameters": {
-										"layer": "\"Game\"",
-										"interactive": false
-									}
-								}
-							],
-							"sid": 589291695115256
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 209813423923725
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 608319837204024,
+									"sid": 967555351012801,
 									"parameters": {
 										"layer": "\"LevelPopUp\"",
 										"visibility": "invisible"
@@ -6613,7 +6579,7 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 636800557834204,
+									"sid": 474141354013854,
 									"parameters": {
 										"layer": "\"LevelPopUp\"",
 										"interactive": false
@@ -6622,7 +6588,7 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 280326632420931,
+									"sid": 461353484853687,
 									"parameters": {
 										"layer": "\"UI\"",
 										"interactive": true
@@ -6631,30 +6597,14 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 882424939355192,
+									"sid": 159124395293312,
 									"parameters": {
 										"layer": "\"Game\"",
 										"interactive": true
 									}
 								}
 							],
-							"sid": 355883376539319
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 956898874505138,
-									"parameters": {
-										"type": "log",
-										"message": "popUpCount"
-									}
-								}
-							],
-							"sid": 745564262774535
+							"sid": 589291695115256
 						}
 					]
 				},
@@ -7066,36 +7016,336 @@
 					"functionReturnType": "none",
 					"functionCopyPicked": true,
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "show",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 218886244508399
+						}
+					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 357787829975458,
+					"children": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 101586461624031,
-							"parameters": {
-								"object-to-create": "UIPanel",
-								"layer": "\"Help\"",
-								"x": "337",
-								"y": "224",
-								"create-hierarchy": true,
-								"template-name": "\"help-panel\""
-							}
-						},
-						{
-							"callFunction": "showLevelPopUp",
-							"sid": 234520529916073,
-							"parameters": [
-								true
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 822398306040190,
+									"parameters": {
+										"variable": "show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 535477324135448,
+									"parameters": {
+										"layer": "\"Help\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 997236791062677,
+									"parameters": {
+										"object-to-create": "UIPanel",
+										"layer": "\"Help\"",
+										"x": "337",
+										"y": "224",
+										"create-hierarchy": true,
+										"template-name": "\"help-panel\""
+									}
+								},
+								{
+									"type": "script",
+									"script": "const codeBlock = runtime.objects.CodeBlock.getFirstPickedInstance();\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `Help for ${codeBlock.name}`"
+								}
+							],
+							"sid": 336805739126448,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 900700994794830,
+											"parameters": {
+												"layer": "\"RepeatPopUp\""
+											}
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 249240427830741,
+											"parameters": {
+												"layer": "\"ConditionalPopUp\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 532177994812292,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 352345877275089,
+													"parameters": {
+														"layer": "\"RepeatPopUp\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 832353412680452,
+													"parameters": {
+														"layer": "\"RepeatPopUp\"",
+														"interactive": false
+													}
+												}
+											],
+											"sid": 513876577295559
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 384439668182435,
+													"parameters": {
+														"layer": "\"ConditionalPopUp\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 897449835108199,
+													"parameters": {
+														"layer": "\"ConditionalPopUp\"",
+														"interactive": false
+													}
+												}
+											],
+											"sid": 549462821179912
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 355047074855804
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "showLevelPopUp",
+											"sid": 228891672138922,
+											"parameters": [
+												true
+											]
+										}
+									],
+									"sid": 374923094296333
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 532969893327116,
+											"parameters": {
+												"layer": "\"LevelPopUp\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 990634611822032,
+											"parameters": {
+												"layer": "\"PopUpBg\"",
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 535963204096810
+								}
 							]
 						},
 						{
-							"type": "script",
-							"script": "const codeBlock = runtime.objects.CodeBlock.getFirstPickedInstance();\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `Help for ${codeBlock.name}`"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 659461904823760
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 712878551797143,
+									"parameters": {
+										"layer": "\"Help\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "UIPanel",
+									"sid": 598817987782941
+								}
+							],
+							"sid": 727717528066938,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 157693948480752,
+											"parameters": {
+												"layer": "\"RepeatPopUp\""
+											}
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 265772187584281,
+											"parameters": {
+												"layer": "\"ConditionalPopUp\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 145183982441735,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 869564477984939,
+													"parameters": {
+														"layer": "\"RepeatPopUp\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 403142551880367,
+													"parameters": {
+														"layer": "\"RepeatPopUp\"",
+														"interactive": true
+													}
+												}
+											],
+											"sid": 803268288648147
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 325084368932760,
+													"parameters": {
+														"layer": "\"ConditionalPopUp\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 486682919064442,
+													"parameters": {
+														"layer": "\"ConditionalPopUp\"",
+														"interactive": true
+													}
+												}
+											],
+											"sid": 572752448795985
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 565312136472816
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "showLevelPopUp",
+											"sid": 892248562112092,
+											"parameters": [
+												false
+											]
+										}
+									],
+									"sid": 604261895174013
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 936306605313629,
+											"parameters": {
+												"layer": "\"LevelPopUp\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 971387838981314,
+											"parameters": {
+												"layer": "\"PopUpBg\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 127844338402880
+								}
+							]
 						}
-					],
-					"sid": 357787829975458
+					]
 				}
 			],
 			"sid": 991077192111983
