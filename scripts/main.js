@@ -12,6 +12,7 @@ import {
 	ElseCommand,
 	ElseIfCommand,
 	ReadBlock,
+	RotateCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -44,6 +45,7 @@ runOnStartup(async (runtime) =>
 	runtime.objects.ElseCommand.setInstanceClass(ElseCommand);
 	runtime.objects.ElseIfCommand.setInstanceClass(ElseIfCommand);
 	runtime.objects.ReadBlock.setInstanceClass(ReadBlock);
+	runtime.objects.RotateCommand.setInstanceClass(RotateCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

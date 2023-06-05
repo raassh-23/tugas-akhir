@@ -33,6 +33,18 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
+						"imageSpriteId": 4409714,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
 						"imageSpriteId": 3000396,
 						"useCollisionPoly": true,
 						"duration": 1
@@ -702,6 +714,41 @@
 				],
 				"sid": 499443992635390,
 				"name": "ReadBlock",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8608821,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 96,
+						"height": 96,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2864801,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 656498113050720,
+				"name": "RotateCommand",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

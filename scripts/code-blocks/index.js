@@ -13,6 +13,7 @@ import IfCommand from "./commands/conditionals/branchs/if-command.js";
 import ElseCommand from "./commands/conditionals/branchs/else-command.js";
 import ElseIfCommand from "./commands/conditionals/branchs/else-if-command.js";
 import ReadBlock from "./expressions/read-block.js";
+import RotateCommand from "./commands/actions/rotate-command.js";
 
 export {
     CodeBlock,
@@ -30,4 +31,5 @@ export {
     ElseCommand,
     ElseIfCommand,
     ReadBlock,
+    RotateCommand,
 };

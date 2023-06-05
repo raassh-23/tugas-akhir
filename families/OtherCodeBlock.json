@@ -16,6 +16,7 @@
 		"IfCommand",
 		"ElseCommand",
 		"ElseIfCommand",
-		"ReadBlock"
+		"ReadBlock",
+		"RotateCommand"
 	]
 }

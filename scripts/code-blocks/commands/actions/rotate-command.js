@@ -1,19 +1,15 @@
 import { startCommmand, waitUnlessStopped } from "../../code-block-utils.js";
 import BaseCommand from "../base-command.js";
 
-const dirAnimationSpeed = {
-    "right": 6,
-    "down": 0,
-    "left": 6,
-    "up": 0,
-};
+const directions = ["left", "up", "right", "down"];
+const rotations = [+1, -1];
 
 /**
  * @extends BaseCommand
  */
-export default class MoveCommand extends BaseCommand {
+export default class RotateCommand extends BaseCommand {
     constructor() {
-        super("Move");
+        super("Rotate");
     }
 
     /**
@@ -26,15 +22,16 @@ export default class MoveCommand extends BaseCommand {
     async run(player, state) {
         startCommmand(this.runtime, player, state);
 
-        const direction = player.animationName;
+        const rotation = rotations[this.animationFrame];
+        const oldAnimation = player.animationName;
 
-		player.behaviors.TileMovement.simulateControl(direction);
-        player.animationSpeed = dirAnimationSpeed[direction];
+        const newAnimation = directions[(directions.indexOf(oldAnimation) + rotation + directions.length) % directions.length];
+
+        player.setAnimation(newAnimation);
 
         return waitUnlessStopped(state, {
             extraCondition: () => player.behaviors.TileMovement.isMoving(),
             afterWait: () => {
-                player.animationSpeed = 0;
                 state.actionCount++;
 
                 return this.checkCollisions(player, state);

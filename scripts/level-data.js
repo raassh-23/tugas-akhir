@@ -30,16 +30,12 @@ export const levelAvailableCodeBlocks = {
                 frame: 0,
             },
             {
-                name: "MoveCommand",
+                name: "RotateCommand",
+                frame: 0,
+            },
+            {
+                name: "RotateCommand",
                 frame: 1,
-            },
-            {
-                name: "MoveCommand",
-                frame: 2,
-            },
-            {
-                name: "MoveCommand",
-                frame: 3,
             },
             {
                 name: "ShootCommand",

@@ -244,7 +244,8 @@
 					"IfCommand",
 					"ElseCommand",
 					"ElseIfCommand",
-					"ReadBlock"
+					"ReadBlock",
+					"RotateCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -495,6 +496,14 @@
 											"name": "shoot-command.js",
 											"type": "application/javascript",
 											"sid": 686546884391812,
+											"script-info": {
+												"purpose": "none"
+											}
+										},
+										{
+											"name": "rotate-command.js",
+											"type": "application/javascript",
+											"sid": 666724001260474,
 											"script-info": {
 												"purpose": "none"
 											}
