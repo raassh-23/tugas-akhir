@@ -5369,7 +5369,7 @@
 								"targetX": 0,
 								"targetY": 0,
 								"duration": 0.5,
-								"id": "conditional-available-code-blocks--panel"
+								"id": "conditional-available-code-blocks-panel"
 							},
 							"behaviors": {
 								"Tween": {
