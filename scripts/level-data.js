@@ -8,7 +8,10 @@ export const levelVariables = {
     },
     1: {
         //
-    }
+    },
+    2: {
+        //
+    },
 };
 
 /**
@@ -344,4 +347,22 @@ export const levelAvailableCodeBlocks = {
             //
         ],
     },
+    2: {
+        commands: [
+            {
+                name: "MoveCommand",
+                frame: 0,
+            },
+            {
+                name: "RotateCommand",
+                frame: 0,
+            },
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    }
 };
