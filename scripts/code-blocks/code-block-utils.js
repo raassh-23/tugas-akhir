@@ -50,7 +50,7 @@ export function checkElseValid(command, lastName, lastResult) {
         return FINISHED;
     }
 
-    if (lastName !== "If" && lastName !== "Elif") {
+    if ((lastName !== "If" && lastName !== "Elif") || lastName === "Else") {
         command.showError(true);
 
         return ERROR;
@@ -59,6 +59,8 @@ export function checkElseValid(command, lastName, lastResult) {
     if (lastResult === FINISHED) {
         return CONTINUE;
     }
+
+    return FINISHED;
 }
 
 /**

@@ -436,9 +436,17 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 228391540320947,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
 											"id": "compare-instance-variable",
 											"objectClass": "CodeBlockPanel",
-											"sid": 824932931372067,
+											"sid": 206329513042469,
 											"parameters": {
 												"instance-variable": "id",
 												"comparison": 0,
@@ -450,13 +458,13 @@
 										{
 											"id": "set-default-color",
 											"objectClass": "CodeBlockPanel",
-											"sid": 240728628127040,
+											"sid": 179581352937280,
 											"parameters": {
 												"color": "rgbEx(100, 100, 100)"
 											}
 										}
 									],
-									"sid": 655019470670261
+									"sid": 762001975430596
 								}
 							]
 						},
@@ -793,7 +801,7 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "CodeBlock",
-											"sid": 661666997505977,
+											"sid": 113595095755952,
 											"parameters": {
 												"object": "CodeBlockPanel"
 											}
@@ -811,22 +819,46 @@
 									],
 									"actions": [
 										{
+											"callFunction": "ShowHelp",
+											"sid": 405863992495908,
+											"parameters": [
+												true
+											]
+										},
+										{
 											"id": "set-default-color",
 											"objectClass": "CodeBlockPanel",
 											"sid": 795552808966349,
 											"parameters": {
 												"color": "rgbEx(100, 100, 100)"
 											}
-										},
-										{
-											"callFunction": "ShowHelp",
-											"sid": 921066040494346,
-											"parameters": [
-												true
-											]
 										}
 									],
 									"sid": 308165957473214
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 840105681531051,
+											"parameters": {
+												"object": "UIPanel",
+												"expression": "RegexMatchCount(UIPanel.id, \".*\"&CodeBlock.UID, \"i\")",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "UIPanel",
+											"sid": 516525105160790
+										}
+									],
+									"sid": 691284115059614
 								}
 							]
 						},

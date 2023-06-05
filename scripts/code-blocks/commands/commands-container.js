@@ -39,6 +39,7 @@ export default class CommandsContainer extends BaseCommand {
 
                 return ERROR;
             } else if (valid === CONTINUE) {
+                lastCommandName = command.name;
                 continue;
             }
             
