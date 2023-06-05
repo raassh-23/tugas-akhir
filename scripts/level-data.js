@@ -6,6 +6,9 @@ export const levelVariables = {
         health: 5,
         ammo: 10,
     },
+    1: {
+        //
+    }
 };
 
 /**
@@ -325,6 +328,20 @@ export const levelAvailableCodeBlocks = {
                 name: "ReadBlock",
                 frame: 8,
             },
+        ],
+    },
+    1: {
+        commands: [
+            {
+                name: "MoveCommand",
+                frame: 0,
+            },
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            //
         ],
     },
 };

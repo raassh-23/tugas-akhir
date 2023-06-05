@@ -291,7 +291,8 @@
 			{
 				"items": [
 					"TestLevel",
-					"TestLevel2"
+					"TestLevel2",
+					"Level1"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -307,7 +308,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"TestLevel_ES"
+					"TestLevel_ES",
+					"Level1_ES"
 				],
 				"subfolders": [],
 				"name": "levels"
