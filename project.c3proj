@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -226,8 +233,10 @@
 			"SolidBorder",
 			"UIPanel2",
 			"Gem",
-			"VariableIcon",
-			"BlendMask"
+			"Icon",
+			"BlendMask",
+			"LevelScoreData",
+			"Star"
 		],
 		"subfolders": [
 			{

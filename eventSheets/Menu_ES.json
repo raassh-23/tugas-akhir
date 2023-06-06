@@ -37,6 +37,46 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MAX_LEVEL",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 775521172807663
+		},
+		{
+			"eventType": "variable",
+			"name": "TIME_INDEX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 709724633838091
+		},
+		{
+			"eventType": "variable",
+			"name": "ACTIONS_INDEX",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 168817022629085
+		},
+		{
+			"eventType": "variable",
+			"name": "CODE_BLOCKS_INDEX",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 800249008974328
+		},
+		{
+			"eventType": "variable",
 			"name": "versionText",
 			"type": "string",
 			"initialValue": "",
@@ -60,7 +100,7 @@
 					"objectClass": "Functions",
 					"sid": 261691035456120,
 					"parameters": {
-						"name": "BUTTON_CLICKED",
+						"name": "CLICKABLE_CLICKED",
 						"string": "LayoutName",
 						"function": "MenuButtonClicked"
 					}
@@ -88,6 +128,24 @@
 					"parameters": [
 						false
 					]
+				},
+				{
+					"id": "set-size",
+					"objectClass": "LevelScoreData",
+					"sid": 125655933999392,
+					"parameters": {
+						"width": "MAX_LEVEL + 1",
+						"height": "3",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "clear",
+					"objectClass": "LevelScoreData",
+					"sid": 820113195215437,
+					"parameters": {
+						"value": "-1"
+					}
 				}
 			],
 			"sid": 514121468304681,

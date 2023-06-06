@@ -3,7 +3,11 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
-import { levelVariables, levelAvailableCodeBlocks } from "./level-data.js";
+import { 
+	levelVariables,
+	levelAvailableCodeBlocks,
+	levelTarget,
+} from "./level-data.js";
 import {
 	getSquaredDistance,
 	getContainerParent,
@@ -91,6 +95,13 @@ function setupLevel(runtime) {
 	setupAvailableRepeatExpressions(runtime);
 	setupAvailableConditionalExpressions(runtime);
 	setupVariablesList(runtime);
+
+	const {actions, codeBlocks} = levelTarget[runtime.globalVars.level];
+
+	runtime.globalVars.targetActions = actions ?? 0;
+	runtime.globalVars.targetCodeBlocks = codeBlocks ?? 0;
+
+	console.log(`target actions: ${actions}, target code blocks: ${codeBlocks}`);
 }
 
 /**
@@ -269,16 +280,10 @@ function logParent(sprite) {
 
 /**
  * 
- * @param {IRuntime} runtime 
  * @returns {number}
  */
-function getCodeBlockCount(runtime) {
-	let count = runner.getCount();
-
-	count += runtime.objects.ExpressionsContainer.getAllInstances()
-		.reduce((acc, curr) => acc + curr.getCount(), 0);
-
-	return count;
+function getCodeBlockCount() {
+	return runner.getCount();
 }
 
 /**
@@ -378,7 +383,7 @@ function setupVariablesList(runtime) {
 	for (let i = 0; i < variables.length; i++) {
 		const [name, value] = variables[i];
 
-		const variable = runtime.objects.VariableIcon.createInstance(
+		const variable = runtime.objects.Icon.createInstance(
 			"UI",
 			VARIABLE_X,
 			VARIABLE_START_Y + VARIABLE_SPACING_Y * i,

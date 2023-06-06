@@ -15,6 +15,27 @@ export const levelVariables = {
 };
 
 /**
+ * @type {{[level: number]: {
+ *  actions: number,
+ *  codeBlocks: number,
+ * }}}
+ */
+export const levelTarget = {
+    0: { // test level
+        actions: 9,
+        codeBlocks: 7,
+    },
+    1: {
+        actions: 3,
+        codeBlocks: 3,
+    },
+    2: {
+        actions: 6,
+        codeBlocks: 6,
+    },
+}
+
+/**
  * @typedef {{
  *  name: string,
  *  frame: number,

@@ -116,6 +116,26 @@
 			"sid": 410605398835309
 		},
 		{
+			"eventType": "variable",
+			"name": "targetCodeBlocks",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 352379368525724
+		},
+		{
+			"eventType": "variable",
+			"name": "targetActions",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 920193605730427
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -5049,7 +5069,7 @@
 							"objectClass": "Functions",
 							"sid": 149596359493225,
 							"parameters": {
-								"name": "BUTTON_CLICKED",
+								"name": "CLICKABLE_CLICKED",
 								"string": "LayoutName",
 								"function": "GameButtonClicked"
 							}
@@ -5227,7 +5247,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "VariableIcon",
+									"objectClass": "Icon",
 									"sid": 794920925950466,
 									"parameters": {
 										"instance-variable": "id",
@@ -5239,7 +5259,7 @@
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "VariableIcon",
+									"objectClass": "Icon",
 									"sid": 686740626931398
 								}
 							],
@@ -5435,13 +5455,39 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 417377374124261,
+									"sid": 876711341697054,
 									"parameters": {
-										"text": "\"Waktu: \" & Functions.FormatTime(levelTimer)"
+										"text": "Functions.FormatTime(levelTimer)"
 									}
 								}
 							],
 							"sid": 619131238150019
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 447167874638699,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-actions\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 330609722202940,
+									"parameters": {
+										"text": "Functions.GetActionCount"
+									}
+								}
+							],
+							"sid": 363159724114012
 						},
 						{
 							"eventType": "block",
@@ -5461,9 +5507,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 193215939188327,
+									"sid": 354045464718799,
 									"parameters": {
-										"text": "\"Blok Kode: \" & Functions.GetBlockCount"
+										"text": "Functions.GetBlockCount"
 									}
 								}
 							],
@@ -5475,11 +5521,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 469640092718196,
+									"sid": 845777981593146,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-actions\""
+										"value": "\"game-over-actions-target\""
 									}
 								}
 							],
@@ -5487,13 +5533,261 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 172348805358043,
+									"sid": 578124135516455,
 									"parameters": {
-										"text": "\"Aksi: \" & Functions.GetActionCount"
+										"text": "targetActions"
 									}
 								}
 							],
-							"sid": 785463805172623
+							"sid": 146409394336154
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 818699699279520,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-code-count-target\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 199030335759094,
+									"parameters": {
+										"text": "targetCodeBlocks"
+									}
+								}
+							],
+							"sid": 221465467942215
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 446424417342170,
+									"parameters": {
+										"x": "level",
+										"y": "TIME_INDEX",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 762139996011704,
+									"parameters": {
+										"x": "level",
+										"y": "TIME_INDEX",
+										"value": "levelTimer"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 203001324421357,
+									"parameters": {
+										"x": "level",
+										"y": "ACTIONS_INDEX",
+										"value": "actionCount"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 253906558692831,
+									"parameters": {
+										"x": "level",
+										"y": "CODE_BLOCKS_INDEX",
+										"value": "codeBlockCount"
+									}
+								}
+							],
+							"sid": 444112610262190
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 703036105465504
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 338473298930364,
+									"parameters": {
+										"x": "level",
+										"y": "TIME_INDEX",
+										"value": "levelTimer < LevelScoreData.At(level, TIME_INDEX) ? levelTimer : LevelScoreData.At(level, TIME_INDEX)"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 896280309114609,
+									"parameters": {
+										"x": "level",
+										"y": "ACTIONS_INDEX",
+										"value": "actionCount < LevelScoreData.At(level, ACTIONS_INDEX) ? actionCount : LevelScoreData.At(level, ACTIONS_INDEX)"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 189526062237885,
+									"parameters": {
+										"x": "level",
+										"y": "CODE_BLOCKS_INDEX",
+										"value": "codeBlockCount < LevelScoreData.At(level, CODE_BLOCKS_INDEX) ? codeBlockCount : LevelScoreData.At(level, CODE_BLOCKS_INDEX)"
+									}
+								}
+							],
+							"sid": 292750393914456
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 759369668484392,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-time-best\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 444859239817403,
+									"parameters": {
+										"text": "Functions.FormatTime(LevelScoreData.At(level, TIME_INDEX))"
+									}
+								}
+							],
+							"sid": 586838262228691
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 490582528576547,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-code-count-best\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 463720215004598,
+									"parameters": {
+										"text": "LevelScoreData.At(level, CODE_BLOCKS_INDEX)"
+									}
+								}
+							],
+							"sid": 419618492784611
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 976098160974092,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-actions-best\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 701119699039626,
+									"parameters": {
+										"text": "LevelScoreData.At(level, ACTIONS_INDEX)"
+									}
+								}
+							],
+							"sid": 636150181273487
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Star",
+									"sid": 654318494941440,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"actions\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Star",
+									"sid": 284874201792608,
+									"parameters": {
+										"frame-number": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 1 : 0"
+									}
+								}
+							],
+							"sid": 459045006650287
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Star",
+									"sid": 503409111037739,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"code-count\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Star",
+									"sid": 663442822039470,
+									"parameters": {
+										"frame-number": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 1 : 0"
+									}
+								}
+							],
+							"sid": 458309626814913
 						}
 					]
 				},
@@ -6093,7 +6387,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.globalVars.codeBlockCount = \n\tgetCodeBlockCount(runtime);\nruntime.setReturnValue(runtime.globalVars.codeBlockCount);"
+							"script": "runtime.globalVars.codeBlockCount = \n\tgetCodeBlockCount();\nruntime.setReturnValue(runtime.globalVars.codeBlockCount);"
 						}
 					],
 					"sid": 526036823975888

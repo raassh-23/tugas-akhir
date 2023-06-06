@@ -13,9 +13,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BUTTON_CLICKED",
+			"name": "CLICKABLE_CLICKED",
 			"type": "string",
-			"initialValue": "ButtonClicked",
+			"initialValue": "ClickableClicked",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -488,7 +488,7 @@
 					"objectClass": "Functions",
 					"sid": 126896395098456,
 					"parameters": {
-						"name": "BUTTON_CLICKED",
+						"name": "CLICKABLE_CLICKED",
 						"string": "LayoutName",
 						"forward-params": "0"
 					}

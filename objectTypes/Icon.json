@@ -1,5 +1,5 @@
 {
-	"name": "VariableIcon",
+	"name": "Icon",
 	"plugin-id": "Sprite",
 	"sid": 119613513572017,
 	"isGlobal": false,
@@ -74,7 +74,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2172022,
+						"imageSpriteId": 2665367,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -86,7 +86,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2665367,
+						"imageSpriteId": 2172022,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
