@@ -236,7 +236,8 @@
 			"Icon",
 			"BlendMask",
 			"LevelScoreData",
-			"Star"
+			"Star",
+			"Level"
 		],
 		"subfolders": [
 			{
@@ -294,7 +295,8 @@
 	"layouts": {
 		"items": [
 			"Menu",
-			"ObjectRepository"
+			"ObjectRepository",
+			"LevelSelect"
 		],
 		"subfolders": [
 			{
@@ -313,7 +315,8 @@
 		"items": [
 			"Game_ES",
 			"Menu_ES",
-			"Common_ES"
+			"Common_ES",
+			"LevelSelect_ES"
 		],
 		"subfolders": [
 			{

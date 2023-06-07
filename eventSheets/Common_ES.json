@@ -455,6 +455,14 @@
 					"sid": 242322337006756
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 904566366330073,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
 					"callFunction": "ButtonClicked",
 					"sid": 818246436152090,
 					"parameters": [

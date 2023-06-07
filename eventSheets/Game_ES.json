@@ -5402,6 +5402,16 @@
 					"sid": 967244321279655,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "star",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 315752160114781
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -5573,12 +5583,12 @@
 								{
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
-									"sid": 446424417342170,
+									"sid": 446221438791619,
 									"parameters": {
 										"x": "level",
-										"y": "TIME_INDEX",
+										"y": "STAR_INDEX",
 										"comparison": 0,
-										"value": "-1"
+										"value": "0"
 									}
 								}
 							],
@@ -5611,6 +5621,16 @@
 										"x": "level",
 										"y": "CODE_BLOCKS_INDEX",
 										"value": "codeBlockCount"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 862788593387142,
+									"parameters": {
+										"x": "level + 1",
+										"y": "STAR_INDEX",
+										"value": "0"
 									}
 								}
 							],
@@ -5759,6 +5779,15 @@
 									"parameters": {
 										"frame-number": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 1 : 0"
 									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 786574557113451,
+									"parameters": {
+										"variable": "star",
+										"value": "Star.AnimationFrame"
+									}
 								}
 							],
 							"sid": 459045006650287
@@ -5785,9 +5814,35 @@
 									"parameters": {
 										"frame-number": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 1 : 0"
 									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 108206633520674,
+									"parameters": {
+										"variable": "star",
+										"value": "Star.AnimationFrame"
+									}
 								}
 							],
 							"sid": 458309626814913
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 729472959366893,
+									"parameters": {
+										"x": "level",
+										"y": "STAR_INDEX",
+										"value": "star"
+									}
+								}
+							],
+							"sid": 384088881618227
 						}
 					]
 				},
@@ -6098,7 +6153,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 787360491273499,
+									"parameters": {
+										"layout": "\"Level\"&level+1"
+									}
+								}
+							],
 							"sid": 258605957485199
 						},
 						{

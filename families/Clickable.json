@@ -42,6 +42,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Button"
+		"Button",
+		"Level"
 	]
 }

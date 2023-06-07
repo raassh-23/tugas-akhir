@@ -47,9 +47,19 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIME_INDEX",
+			"name": "STAR_INDEX",
 			"type": "number",
 			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 703604767859485
+		},
+		{
+			"eventType": "variable",
+			"name": "TIME_INDEX",
+			"type": "number",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -59,7 +69,7 @@
 			"eventType": "variable",
 			"name": "ACTIONS_INDEX",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -69,7 +79,7 @@
 			"eventType": "variable",
 			"name": "CODE_BLOCKS_INDEX",
 			"type": "number",
-			"initialValue": "2",
+			"initialValue": "3",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -84,6 +94,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 337356531335739
+		},
+		{
+			"eventType": "variable",
+			"name": "firstOpen",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 710439874346238
 		},
 		{
 			"eventType": "block",
@@ -106,46 +126,11 @@
 					}
 				},
 				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 473803889344871,
-					"parameters": {
-						"tag": "LEADERBOARD_FILE_TAG",
-						"file": "leaderboard.html"
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "LocalStorage",
-					"sid": 900754253314743,
-					"parameters": {
-						"key": "USERNAME_TAG"
-					}
-				},
-				{
 					"callFunction": "showMenuPopUp",
 					"sid": 631772526945743,
 					"parameters": [
 						false
 					]
-				},
-				{
-					"id": "set-size",
-					"objectClass": "LevelScoreData",
-					"sid": 125655933999392,
-					"parameters": {
-						"width": "MAX_LEVEL + 1",
-						"height": "3",
-						"depth": "1"
-					}
-				},
-				{
-					"id": "clear",
-					"objectClass": "LevelScoreData",
-					"sid": 820113195215437,
-					"parameters": {
-						"value": "-1"
-					}
 				}
 			],
 			"sid": 514121468304681,
@@ -217,6 +202,90 @@
 						}
 					],
 					"sid": 151638449849747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 161244421954923,
+							"parameters": {
+								"variable": "firstOpen"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 309598415424742,
+							"parameters": {
+								"tag": "LEADERBOARD_FILE_TAG",
+								"file": "leaderboard.html"
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 539761062932380,
+							"parameters": {
+								"key": "USERNAME_TAG"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "LevelScoreData",
+							"sid": 892786546348575,
+							"parameters": {
+								"width": "MAX_LEVEL + 1",
+								"height": "4",
+								"depth": "1"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "LevelScoreData",
+							"sid": 212965403880515,
+							"parameters": {
+								"value": "-1"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "0 is test level"
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "LevelScoreData",
+							"sid": 795221806011971,
+							"parameters": {
+								"x": "0",
+								"y": "STAR_INDEX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "LevelScoreData",
+							"sid": 999145293165699,
+							"parameters": {
+								"x": "1",
+								"y": "STAR_INDEX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 368931575847569,
+							"parameters": {
+								"variable": "firstOpen",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 284301865572904
 				}
 			]
 		},
@@ -268,9 +337,9 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 768825461490793,
+							"sid": 889211614503247,
 							"parameters": {
-								"layout": "TestLevel"
+								"layout": "LevelSelect"
 							}
 						}
 					],
