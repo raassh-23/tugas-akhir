@@ -52,7 +52,6 @@ export default class IfCommand extends ConditionalCommand {
 
         const waitResult = await waitUnlessStopped(state, {
             afterWait: () => {
-                state.actionCount++;
                 this.showHighlight(false);
 
                 return this.checkCollisions(player, state);

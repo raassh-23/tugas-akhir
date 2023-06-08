@@ -107,6 +107,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": true
 													},
@@ -468,6 +488,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -831,6 +871,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -1192,6 +1252,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -1555,6 +1635,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -1916,6 +2016,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -2279,6 +2399,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -2640,6 +2780,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -3003,6 +3163,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -3364,6 +3544,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -3727,6 +3927,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -4088,6 +4308,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -4451,6 +4691,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -4812,6 +5072,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -5175,6 +5455,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -5536,6 +5836,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -5899,6 +6219,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -6260,6 +6600,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false
@@ -6623,6 +6983,26 @@
 												"key": "instance-variable",
 												"state": [
 													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
+													{
 														"iv": "level",
 														"state": false
 													},
@@ -6984,6 +7364,26 @@
 											{
 												"key": "instance-variable",
 												"state": [
+													{
+														"iv": "initialWidth",
+														"state": true
+													},
+													{
+														"iv": "initialHeight",
+														"state": true
+													},
+													{
+														"iv": "isPressed",
+														"state": true
+													},
+													{
+														"iv": "clickable",
+														"state": true
+													},
+													{
+														"iv": "isDisabled",
+														"state": true
+													},
 													{
 														"iv": "level",
 														"state": false

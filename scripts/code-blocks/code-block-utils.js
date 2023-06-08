@@ -70,6 +70,8 @@ export function checkElseValid(command, lastName, lastResult) {
  * @param {GameState} state
  */
 export function startCommmand(runtime, player, state) {
+    state.actionCount++;
+
     runtime.callFunction("OnCommandStart");
 
     setPlayerSurrounding(player, state);

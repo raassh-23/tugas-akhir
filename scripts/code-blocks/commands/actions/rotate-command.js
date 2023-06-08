@@ -32,8 +32,6 @@ export default class RotateCommand extends BaseCommand {
         return waitUnlessStopped(state, {
             extraCondition: () => player.behaviors.TileMovement.isMoving(),
             afterWait: () => {
-                state.actionCount++;
-
                 return this.checkCollisions(player, state);
             },
         });

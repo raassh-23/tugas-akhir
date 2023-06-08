@@ -4508,6 +4508,58 @@
 					"sid": 490625007754107
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 741295605760343,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"actions\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 867326813798262,
+							"parameters": {
+								"text": "(Functions.GetActionCount < 10 ? \"0\" : \"\") & actionCount"
+							}
+						}
+					],
+					"sid": 235328767298559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 701826804643302,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"code-count\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 472533014023474,
+							"parameters": {
+								"text": "(Functions.GetBlockCount< 10 ? \"0\" : \"\") & codeBlockCount"
+							}
+						}
+					],
+					"sid": 393295814295644
+				},
+				{
 					"functionName": "FormatTime",
 					"functionDescription": "",
 					"functionCategory": "",

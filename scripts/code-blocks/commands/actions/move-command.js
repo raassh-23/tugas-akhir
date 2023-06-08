@@ -35,7 +35,6 @@ export default class MoveCommand extends BaseCommand {
             extraCondition: () => player.behaviors.TileMovement.isMoving(),
             afterWait: () => {
                 player.animationSpeed = 0;
-                state.actionCount++;
 
                 return this.checkCollisions(player, state);
             },
