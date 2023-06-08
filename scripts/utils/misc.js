@@ -83,7 +83,7 @@ export function getInstanceById(object, id) {
 }
 
 /**
- * @typedef {import('../level-data.js').CodeBlockDefinition} CodeBlockDefinition
+ * @typedef {import('../code-blocks/code-block-definitions.js').CodeBlockDefinition} CodeBlockDefinition
  */
 
 /**

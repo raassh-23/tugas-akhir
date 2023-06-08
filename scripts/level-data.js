@@ -1,3 +1,5 @@
+import * as blocks from "./code-blocks/code-block-definitions.js";
+
 /**
  * @type {{[level: number]: {[variable: string]: number}}}
  */
@@ -10,6 +12,9 @@ export const levelVariables = {
         //
     },
     2: {
+        //
+    },
+    3: {
         //
     },
 };
@@ -33,13 +38,14 @@ export const levelTarget = {
         actions: 6,
         codeBlocks: 6,
     },
+    3: {
+        actions: 11,
+        codeBlocks: 11,
+    }
 }
 
 /**
- * @typedef {{
- *  name: string,
- *  frame: number,
- * }} CodeBlockDefinition
+ * @typedef {import('../code-blocks/code-block-definitions.js').CodeBlockDefinition} CodeBlockDefinition
  */
 
 /**
@@ -52,314 +58,89 @@ export const levelTarget = {
 export const levelAvailableCodeBlocks = {
     0: { // test level
         commands: [
-            {
-                name: "MoveCommand",
-                frame: 0,
-            },
-            {
-                name: "RotateCommand",
-                frame: 0,
-            },
-            {
-                name: "RotateCommand",
-                frame: 1,
-            },
-            {
-                name: "ShootCommand",
-                frame: 0,
-            },
-            {
-                name: "RepeatCommand",
-                frame: 0,
-            },
-            {
-                name: "WhileCommand",
-                frame: 0,
-            },
-            {
-                name: "IfCommand",
-                frame: 0,
-            },
-            {
-                name: "ElseIfCommand",
-                frame: 0,
-            },
-            {
-                name: "ElseCommand",
-                frame: 0,
-            },
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.shootCommand,
+            blocks.forCommand,
+            blocks.whileCommand,
+            blocks.ifCommand,
+            blocks.elseIfCommand,
+            blocks.elseCommand,
         ],
         repeatExpressions: [
-            {
-                name: "NumberBlock",
-                frame: 0,
-            },
-            {
-                name: "NumberBlock",
-                frame: 1,
-            },
-            {
-                name: "NumberBlock",
-                frame: 2,
-            },
-            {
-                name: "NumberBlock",
-                frame: 3,
-            },
-            {
-                name: "NumberBlock",
-                frame: 4,
-            },
-            {
-                name: "NumberBlock",
-                frame: 5,
-            },
-            {
-                name: "NumberBlock",
-                frame: 6,
-            },
-            {
-                name: "NumberBlock",
-                frame: 7,
-            },
-            {
-                name: "NumberBlock",
-                frame: 8,
-            },
-            {
-                name: "NumberBlock",
-                frame: 9,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 0,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 1,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 2,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 3,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 4,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 5,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 6,
-            },
-            {
-                name: "VariableBlock",
-                frame: 0,
-            },
-            {
-                name: "VariableBlock",
-                frame: 1,
-            },
-            {
-                name: "ReadBlock",
-                frame: 0,
-            },
-            {
-                name: "ReadBlock",
-                frame: 2,
-            },
-            {
-                name: "ReadBlock",
-                frame: 1,
-            },
-            {
-                name: "ReadBlock",
-                frame: 3,
-            },
-            {
-                name: "ReadBlock",
-                frame: 4,
-            },
-            {
-                name: "ReadBlock",
-                frame: 5,
-            },
-            {
-                name: "ReadBlock",
-                frame: 7,
-            },
-            {
-                name: "ReadBlock",
-                frame: 6,
-            },
-            {
-                name: "ReadBlock",
-                frame: 8,
-            },
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.addExpression,
+            blocks.subtractExpression,
+            blocks.multiplyExpression,
+            blocks.divideExpression,
+            blocks.moduloExpression,
+            blocks.openParenthesisExpression,
+            blocks.closeParenthesisExpression,
+            blocks.healthExpression,
+            blocks.ammoExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+            blocks.centerExpression,
         ],
         conditionalExpressions: [
-            {
-                name: "NumberBlock",
-                frame: 0,
-            },
-            {
-                name: "NumberBlock",
-                frame: 1,
-            },
-            {
-                name: "NumberBlock",
-                frame: 2,
-            },
-            {
-                name: "NumberBlock",
-                frame: 3,
-            },
-            {
-                name: "NumberBlock",
-                frame: 4,
-            },
-            {
-                name: "NumberBlock",
-                frame: 5,
-            },
-            {
-                name: "NumberBlock",
-                frame: 6,
-            },
-            {
-                name: "NumberBlock",
-                frame: 7,
-            },
-            {
-                name: "NumberBlock",
-                frame: 8,
-            },
-            {
-                name: "NumberBlock",
-                frame: 9,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 0,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 1,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 2,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 3,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 4,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 5,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 6,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 7,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 8,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 9,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 10,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 11,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 12,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 13,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 14,
-            },
-            {
-                name: "OperatorBlock",
-                frame: 15,
-            },
-            {
-                name: "VariableBlock",
-                frame: 0,
-            },
-            {
-                name: "VariableBlock",
-                frame: 1,
-            },
-            {
-                name: "ReadBlock",
-                frame: 0,
-            },
-            {
-                name: "ReadBlock",
-                frame: 2,
-            },
-            {
-                name: "ReadBlock",
-                frame: 1,
-            },
-            {
-                name: "ReadBlock",
-                frame: 3,
-            },
-            {
-                name: "ReadBlock",
-                frame: 4,
-            },
-            {
-                name: "ReadBlock",
-                frame: 5,
-            },
-            {
-                name: "ReadBlock",
-                frame: 7,
-            },
-            {
-                name: "ReadBlock",
-                frame: 6,
-            },
-            {
-                name: "ReadBlock",
-                frame: 8,
-            },
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.addExpression,
+            blocks.subtractExpression,
+            blocks.multiplyExpression,
+            blocks.divideExpression,
+            blocks.moduloExpression,
+            blocks.openParenthesisExpression,
+            blocks.closeParenthesisExpression,
+            blocks.equalExpression,
+            blocks.notEqualExpression,
+            blocks.greaterExpression,
+            blocks.greaterEqualExpression,
+            blocks.lessExpression,
+            blocks.lessEqualExpression,
+            blocks.andExpression,
+            blocks.orExpression,
+            blocks.notExpression,
+            blocks.healthExpression,
+            blocks.ammoExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+            blocks.centerExpression,
         ],
     },
     1: {
         commands: [
-            {
-                name: "MoveCommand",
-                frame: 0,
-            },
+            blocks.moveForwardCommand,
         ],
         repeatExpressions: [
             //
@@ -370,14 +151,21 @@ export const levelAvailableCodeBlocks = {
     },
     2: {
         commands: [
-            {
-                name: "MoveCommand",
-                frame: 0,
-            },
-            {
-                name: "RotateCommand",
-                frame: 0,
-            },
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    3: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
         ],
         repeatExpressions: [
             //
