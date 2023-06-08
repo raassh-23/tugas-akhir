@@ -185,8 +185,6 @@ export default class ConditionalCommand extends CommandsContainer {
      * @param {boolean} withError 
      */
     reset(withError) {
-        console.log("resetting condition");
-
         this.setText({ text: this._condition.replace(/ /g, '') });
 
         super.reset(withError);

@@ -402,36 +402,6 @@
 								}
 							],
 							"sid": 209885823224037
-						},
-						{
-							"eventType": "comment",
-							"text": "For debugging purposes only, disable for production!"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Button",
-									"sid": 178899822679405,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"test-level\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 794041755712327,
-									"parameters": {
-										"layout": "TestLevel"
-									}
-								}
-							],
-							"sid": 619809673125344
 						}
 					]
 				},

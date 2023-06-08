@@ -5892,6 +5892,15 @@
 										"y": "STAR_INDEX",
 										"value": "star"
 									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 513138590061756,
+									"parameters": {
+										"key": "LEVEL_SCORE_TAG",
+										"value": "LevelScoreData.AsJSON"
+									}
 								}
 							],
 							"sid": 384088881618227
@@ -6160,21 +6169,21 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 693012158227798,
+									"sid": 273812927444770,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-home\""
+										"value": "\"game-over-level\""
 									}
 								},
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 868632383415450,
+									"sid": 287142190486737,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"menu-home\""
+										"value": "\"menu-level\""
 									}
 								}
 							],
@@ -6182,9 +6191,9 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 977373070074876,
+									"sid": 577813155215871,
 									"parameters": {
-										"layout": "Menu"
+										"layout": "LevelSelect"
 									}
 								}
 							],

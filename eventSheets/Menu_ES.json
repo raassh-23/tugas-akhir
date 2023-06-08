@@ -17,16 +17,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "USERNAME_TAG",
-			"type": "string",
-			"initialValue": "username",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 510098358535263
-		},
-		{
-			"eventType": "variable",
 			"name": "LEADERBOARD_TWEEN_TAG",
 			"type": "string",
 			"initialValue": "leaderboard",
@@ -34,6 +24,26 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 961199557566402
+		},
+		{
+			"eventType": "variable",
+			"name": "USERNAME_TAG",
+			"type": "string",
+			"initialValue": "username",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 669807397532759
+		},
+		{
+			"eventType": "variable",
+			"name": "LEVEL_SCORE_TAG",
+			"type": "string",
+			"initialValue": "level-score",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 933897568424239
 		},
 		{
 			"eventType": "variable",
@@ -236,53 +246,19 @@
 							}
 						},
 						{
-							"id": "get-item",
+							"id": "check-item-exists",
 							"objectClass": "LocalStorage",
-							"sid": 539761062932380,
+							"sid": 141896745178757,
 							"parameters": {
 								"key": "USERNAME_TAG"
 							}
 						},
 						{
-							"id": "set-size",
-							"objectClass": "LevelScoreData",
-							"sid": 892786546348575,
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 866830337303389,
 							"parameters": {
-								"width": "MAX_LEVEL + 1",
-								"height": "4",
-								"depth": "1"
-							}
-						},
-						{
-							"id": "clear",
-							"objectClass": "LevelScoreData",
-							"sid": 212965403880515,
-							"parameters": {
-								"value": "-1"
-							}
-						},
-						{
-							"type": "comment",
-							"text": "0 is test level"
-						},
-						{
-							"id": "set-at-xy",
-							"objectClass": "LevelScoreData",
-							"sid": 795221806011971,
-							"parameters": {
-								"x": "0",
-								"y": "STAR_INDEX",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-at-xy",
-							"objectClass": "LevelScoreData",
-							"sid": 999145293165699,
-							"parameters": {
-								"x": "1",
-								"y": "STAR_INDEX",
-								"value": "0"
+								"key": "LEVEL_SCORE_TAG"
 							}
 						},
 						{
@@ -570,6 +546,64 @@
 							"sid": 638615781475662
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "For debugging purposes only, disable for production!"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 178899822679405,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"test-level\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 794041755712327,
+							"parameters": {
+								"layout": "TestLevel"
+							}
+						}
+					],
+					"sid": 619809673125344
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 955671473279608,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"reset-data\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 283155726377361
+						},
+						{
+							"id": "reload",
+							"objectClass": "Browser",
+							"sid": 478602824324197
+						}
+					],
+					"sid": 637468301979699
 				}
 			]
 		},
@@ -666,6 +700,30 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 266008620885378,
+					"parameters": {
+						"key": "USERNAME_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 202964758601257,
+					"parameters": {
+						"key": "USERNAME_TAG"
+					}
+				}
+			],
+			"sid": 827090674691591
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-item-get",
 					"objectClass": "LocalStorage",
 					"sid": 333435874359539,
@@ -691,23 +749,155 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-error",
+					"id": "on-item-missing",
 					"objectClass": "LocalStorage",
-					"sid": 515462121456269
+					"sid": 121609569842312,
+					"parameters": {
+						"key": "USERNAME_TAG"
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 331006245834303,
+					"sid": 504313137592418,
 					"parameters": {
 						"variable": "username",
 						"value": "\"\""
 					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 690140366620264,
+					"parameters": {
+						"key": "USERNAME_TAG",
+						"value": "username"
+					}
 				}
 			],
-			"sid": 939785179824294
+			"sid": 727719701636245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 373434726792267,
+					"parameters": {
+						"key": "LEVEL_SCORE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 916112991327094,
+					"parameters": {
+						"key": "LEVEL_SCORE_TAG"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 348078016429725
+				}
+			],
+			"sid": 425711297408908
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 582237681293328,
+					"parameters": {
+						"key": "LEVEL_SCORE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "LevelScoreData",
+					"sid": 788651544783224,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 900654853351216
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 831973873356371,
+					"parameters": {
+						"key": "LEVEL_SCORE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "LevelScoreData",
+					"sid": 892786546348575,
+					"parameters": {
+						"width": "MAX_LEVEL + 1",
+						"height": "4",
+						"depth": "1"
+					}
+				},
+				{
+					"id": "clear",
+					"objectClass": "LevelScoreData",
+					"sid": 212965403880515,
+					"parameters": {
+						"value": "-1"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "0 is test level"
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "LevelScoreData",
+					"sid": 795221806011971,
+					"parameters": {
+						"x": "0",
+						"y": "STAR_INDEX",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "LevelScoreData",
+					"sid": 999145293165699,
+					"parameters": {
+						"x": "1",
+						"y": "STAR_INDEX",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 156395480806660,
+					"parameters": {
+						"key": "LEVEL_SCORE_TAG",
+						"value": "LevelScoreData.AsJSON"
+					}
+				}
+			],
+			"sid": 757929967542404
 		},
 		{
 			"functionName": "GetLeaderboard",

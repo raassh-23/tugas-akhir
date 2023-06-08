@@ -2780,7 +2780,7 @@
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
-								"initial-frame": 5,
+								"initial-frame": 18,
 								"enable-collisions": true,
 								"live-preview": false
 							},
@@ -2791,7 +2791,7 @@
 								"isPressed": false,
 								"clickable": false,
 								"isDisabled": false,
-								"id": "menu-home"
+								"id": "menu-level"
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2826,7 +2826,7 @@
 								"x": 2.944084232354868,
 								"y": 64.00000000000001,
 								"width": 52.65,
-								"height": 54.75599999999999,
+								"height": 54.755999999999986,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2916,8 +2916,8 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": -17.083619429497404,
-								"y": 64.5619076915721,
+								"x": 7.2632489598389895,
+								"y": 65.39035159942881,
 								"width": 106.30041316635894,
 								"height": 91,
 								"originX": 0.5,
@@ -5285,7 +5285,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 5,
+						"initial-frame": 18,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -5296,7 +5296,7 @@
 						"isPressed": false,
 						"clickable": false,
 						"isDisabled": false,
-						"id": "game-over-home"
+						"id": "game-over-level"
 					},
 					"behaviors": {},
 					"sceneGraphData": {

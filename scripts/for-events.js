@@ -100,8 +100,6 @@ function setupLevel(runtime) {
 
 	runtime.globalVars.targetActions = actions ?? 0;
 	runtime.globalVars.targetCodeBlocks = codeBlocks ?? 0;
-
-	console.log(`target actions: ${actions}, target code blocks: ${codeBlocks}`);
 }
 
 /**
