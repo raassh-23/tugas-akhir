@@ -36,6 +36,16 @@
 			"sid": 338136670842580
 		},
 		{
+			"eventType": "variable",
+			"name": "SWIPE_SPEED",
+			"type": "number",
+			"initialValue": "3000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 708849399465430
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -45,6 +55,13 @@
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "ShowChangeLevelPageButton",
+					"sid": 384643984752809,
+					"parameters": [
+						true
+					]
+				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
@@ -348,41 +365,15 @@
 										"comparison": 0,
 										"value": "\"prev-select\""
 									}
-								},
-								{
-									"id": "is-any-playing",
-									"objectClass": "Level",
-									"sid": 901889203263980,
-									"behaviorType": "Tween",
-									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 525294441081061,
-									"parameters": {
-										"variable": "levelPage",
-										"value": "1"
-									}
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "Level",
-									"sid": 755614023126006,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "LEVEL_TWEEN_TAG",
-										"property": "offsetX",
-										"end-value": "Self.originX - levelPage * LayoutWidth",
-										"time": "0.5",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
+									"callFunction": "changeLevelPage",
+									"sid": 890320417883395,
+									"parameters": [
+										false
+									]
 								}
 							],
 							"sid": 724095126292137
@@ -399,41 +390,15 @@
 										"comparison": 0,
 										"value": "\"next-select\""
 									}
-								},
-								{
-									"id": "is-any-playing",
-									"objectClass": "Level",
-									"sid": 506356469975400,
-									"behaviorType": "Tween",
-									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 697798756308706,
-									"parameters": {
-										"variable": "levelPage",
-										"value": "1"
-									}
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "Level",
-									"sid": 983982802264511,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "LEVEL_TWEEN_TAG",
-										"property": "offsetX",
-										"end-value": "Self.originX - levelPage * LayoutWidth",
-										"time": "0.5",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
+									"callFunction": "changeLevelPage",
+									"sid": 150669715145042,
+									"parameters": [
+										true
+									]
 								}
 							],
 							"sid": 209885823224037
@@ -497,113 +462,49 @@
 			]
 		},
 		{
-			"eventType": "block",
+			"functionName": "changeLevelPage",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "toNext",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 900196698942466
+				}
+			],
+			"eventType": "function-block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Button",
-					"sid": 701243659004623,
-					"parameters": {
-						"instance-variable": "id",
-						"comparison": 0,
-						"value": "\"prev-select\""
-					}
+					"id": "is-any-playing",
+					"objectClass": "Level",
+					"sid": 506356469975400,
+					"behaviorType": "Tween",
+					"isInverted": true
 				}
 			],
 			"actions": [],
-			"sid": 123807208196620,
+			"sid": 688174779047911,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 558483895250503,
+							"sid": 310663322415296,
 							"parameters": {
-								"variable": "levelPage",
-								"comparison": 4,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Button",
-							"sid": 169064040856865,
-							"parameters": {
-								"instance-variable": "isDisabled",
-								"value": "false"
+								"variable": "toNext"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "Button",
-							"sid": 398096133455134,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 589210060227363
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 781264008408048
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Button",
-							"sid": 266040158909312,
-							"parameters": {
-								"instance-variable": "isDisabled",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Button",
-							"sid": 208689484487589,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 245867447737176
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Button",
-					"sid": 395467690889048,
-					"parameters": {
-						"instance-variable": "id",
-						"comparison": 0,
-						"value": "\"next-select\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 309163409035968,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 134726765666598,
+							"sid": 940177074324912,
 							"parameters": {
 								"variable": "levelPage",
 								"comparison": 2,
@@ -613,24 +514,422 @@
 					],
 					"actions": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Button",
-							"sid": 237033723792361,
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 242491284197065,
 							"parameters": {
-								"instance-variable": "isDisabled",
-								"value": "false"
+								"variable": "levelPage",
+								"value": "1"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "Button",
-							"sid": 233616248587594,
+							"callFunction": "ShowChangeLevelPageButton",
+							"sid": 958461559270575,
+							"parameters": [
+								false
+							]
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Level",
+							"sid": 642048564200882,
+							"behaviorType": "Tween",
 							"parameters": {
-								"visibility": "visible"
+								"tags": "LEVEL_TWEEN_TAG",
+								"property": "offsetX",
+								"end-value": "Self.originX - levelPage * LayoutWidth",
+								"time": "1",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 992307115857820
+						},
+						{
+							"callFunction": "ShowChangeLevelPageButton",
+							"sid": 216562003113639,
+							"parameters": [
+								true
+							]
+						}
+					],
+					"sid": 933253044997643
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 331118328082343,
+							"parameters": {
+								"variable": "toNext"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 952068075378516,
+							"parameters": {
+								"variable": "levelPage",
+								"comparison": 4,
+								"value": "0"
 							}
 						}
 					],
-					"sid": 859874465454796
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 523510205625934,
+							"parameters": {
+								"variable": "levelPage",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "ShowChangeLevelPageButton",
+							"sid": 989058602135434,
+							"parameters": [
+								false
+							]
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Level",
+							"sid": 309061424839431,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "LEVEL_TWEEN_TAG",
+								"property": "offsetX",
+								"end-value": "Self.originX - levelPage * LayoutWidth",
+								"time": "1",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 373839866706927
+						},
+						{
+							"callFunction": "ShowChangeLevelPageButton",
+							"sid": 922359124746711,
+							"parameters": [
+								true
+							]
+						}
+					],
+					"sid": 310314729561649
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-touch-speed",
+					"objectClass": "Touch",
+					"sid": 662588346014229,
+					"parameters": {
+						"touch-index": "0",
+						"comparison": 4,
+						"speed": "SWIPE_SPEED"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 681547088090947,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 234010071699802,
+							"parameters": {
+								"first-value": "Touch.AngleAt(0)",
+								"comparison": 4,
+								"second-value": "135"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 737941146899356,
+							"parameters": {
+								"first-value": "Touch.AngleAt(0)",
+								"comparison": 2,
+								"second-value": "-135"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "changeLevelPage",
+							"sid": 454443054902844,
+							"parameters": [
+								false
+							]
+						}
+					],
+					"sid": 296911459404475,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 995893029955458,
+							"parameters": {
+								"first-value": "Touch.AngleAt(0)",
+								"comparison": 4,
+								"second-value": "-45"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 261078675568978,
+							"parameters": {
+								"first-value": "Touch.AngleAt(0)",
+								"comparison": 2,
+								"second-value": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "changeLevelPage",
+							"sid": 681218723811329,
+							"parameters": [
+								true
+							]
+						}
+					],
+					"sid": 259727150939033
+				}
+			]
+		},
+		{
+			"functionName": "ShowChangeLevelPageButton",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "show",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 558128894243372
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 374264972190602,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 730936233586089,
+							"parameters": {
+								"variable": "show"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 934994976678453,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 701243659004623,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"prev-select\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 123807208196620,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 558483895250503,
+											"parameters": {
+												"variable": "levelPage",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 169064040856865,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 398096133455134,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 589210060227363
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 781264008408048
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 266040158909312,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 208689484487589,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 245867447737176
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 395467690889048,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"next-select\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 309163409035968,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 134726765666598,
+											"parameters": {
+												"variable": "levelPage",
+												"comparison": 2,
+												"value": "MAX_PAGE"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 237033723792361,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 233616248587594,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 859874465454796
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 315125158820682
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 114516484503673,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 299729681102094,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 191600328410634
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -638,29 +937,59 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 315125158820682
+							"sid": 773536452119410
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 194616497199144,
+					"children": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Button",
-							"sid": 114516484503673,
-							"parameters": {
-								"instance-variable": "isDisabled",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Button",
-							"sid": 299729681102094,
-							"parameters": {
-								"visibility": "invisible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 691534075855827,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"prev-select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 100075293965326,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"next-select\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 308883122994745,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 522009866996931,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 163017753234988,
+							"isOrBlock": true
 						}
-					],
-					"sid": 191600328410634
+					]
 				}
 			]
 		}
