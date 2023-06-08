@@ -7,16 +7,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "LEADERBOARD_FILE_TAG",
-			"type": "string",
-			"initialValue": "leaderboard",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 259937624818626
-		},
-		{
-			"eventType": "variable",
 			"name": "LEADERBOARD_TWEEN_TAG",
 			"type": "string",
 			"initialValue": "leaderboard",
@@ -117,13 +107,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "leaderboardHTML",
-			"type": "string",
-			"initialValue": "",
+			"name": "leaderboardPage",
+			"type": "number",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 230604672857773
+			"sid": 265558360045090
 		},
 		{
 			"eventType": "block",
@@ -237,15 +227,6 @@
 					],
 					"actions": [
 						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 309598415424742,
-							"parameters": {
-								"tag": "LEADERBOARD_FILE_TAG",
-								"file": "leaderboard.html"
-							}
-						},
-						{
 							"id": "check-item-exists",
 							"objectClass": "LocalStorage",
 							"sid": 141896745178757,
@@ -282,12 +263,7 @@
 							"sid": 755527402933107
 						}
 					],
-					"actions": [
-						{
-							"callFunction": "setupLeaderboard",
-							"sid": 752466338738073
-						}
-					],
+					"actions": [],
 					"sid": 231657467805036
 				}
 			]
@@ -364,11 +340,19 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 763811982086010,
+							"parameters": {
+								"variable": "leaderboardPage",
+								"value": "1"
+							}
+						},
+						{
 							"callFunction": "GetLeaderboard",
-							"sid": 192332795482254,
+							"sid": 405267598111804,
 							"parameters": [
 								"0",
-								"1",
 								"\"timeMs\"",
 								true
 							]
@@ -420,6 +404,78 @@
 							"sid": 477280879212814
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 410788737588916,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"prev-board\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 346902963490216,
+							"parameters": {
+								"variable": "leaderboardPage",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "GetLeaderboard",
+							"sid": 331931754192967,
+							"parameters": [
+								"0",
+								"\"timeMs\"",
+								true
+							]
+						}
+					],
+					"sid": 321397664309100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 292933607207156,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"next-board\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 807715395403482,
+							"parameters": {
+								"variable": "leaderboardPage",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "GetLeaderboard",
+							"sid": 218598285596087,
+							"parameters": [
+								"0",
+								"\"timeMs\"",
+								true
+							]
+						}
+					],
+					"sid": 381593657277494
 				},
 				{
 					"eventType": "block",
@@ -671,35 +727,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-completed",
-					"objectClass": "AJAX",
-					"sid": 817813528523328,
-					"parameters": {
-						"tag": "LEADERBOARD_FILE_TAG"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 525702137647880,
-					"parameters": {
-						"variable": "leaderboardHTML",
-						"value": "AJAX.LastData"
-					}
-				},
-				{
-					"callFunction": "setupLeaderboard",
-					"sid": 325530520865338
-				}
-			],
-			"sid": 284694020062305
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-item-exists",
 					"objectClass": "LocalStorage",
 					"sid": 266008620885378,
@@ -915,13 +942,6 @@
 					"sid": 391729239163127
 				},
 				{
-					"name": "page",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 543199046618738
-				},
-				{
 					"name": "sortBy",
 					"type": "string",
 					"initialValue": "",
@@ -940,8 +960,85 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 686003079865477,
+					"parameters": {
+						"layer": "\"LeaderboardLoading\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 170253402848307,
+					"parameters": {
+						"layer": "\"LeaderboardLoading\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 463084133503863,
+					"parameters": {
+						"layer": "\"LeaderboardContent\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 838270759362306,
+					"parameters": {
+						"layer": "\"LeaderboardContent\"",
+						"interactive": false
+					}
+				},
+				{
 					"type": "script",
-					"script": "const {\n\tleaderboardLevel,\n\tpage,\n\tsortBy,\n\tascending,\n} = localVars;\n\nconst data = await leaderboard.getLeaderboard(\n\tleaderboardLevel,\n\tpage,\n\t5,\n\tsortBy,\n\tascending ? \"asc\" : \"desc\",\n);\n\nparent.postMessage({\n\tname: \"leaderboard-data\",\n\tvalue: data,\n});"
+					"script": "const {\n\tleaderboardPage: page,\n} = runtime.globalVars;\n\nconst {\n\tleaderboardLevel: level,\n\tsortBy,\n\tascending,\n} = localVars;\n\nawait showLeaderboard(\n\truntime,\n\t{\n\t\tlevel,\n\t\tpage,\n\t\tsortBy,\n\t\torder: ascending ? \"asc\" : \"desc\",\n\t},\n);"
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 229453258106696
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 143390240420952,
+					"parameters": {
+						"layer": "\"LeaderboardLoading\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 635099427666829,
+					"parameters": {
+						"layer": "\"LeaderboardLoading\"",
+						"interactive": false
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 327960693434479,
+					"parameters": {
+						"layer": "\"LeaderboardContent\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 535033796512822,
+					"parameters": {
+						"layer": "\"LeaderboardContent\"",
+						"interactive": true
+					}
 				}
 			],
 			"sid": 837762995904189
@@ -1051,40 +1148,6 @@
 					"sid": 353318414787076
 				}
 			]
-		},
-		{
-			"functionName": "setupLeaderboard",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-content",
-					"objectClass": "LeaderboardContainer",
-					"sid": 705534430976853,
-					"parameters": {
-						"content-type": "html",
-						"string": "leaderboardHTML",
-						"selector": "\"\"",
-						"type": "one"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 100760583970615
-				},
-				{
-					"type": "script",
-					"script": "parent.postMessage({\n\tname: \"leaderboard-created\",\n});"
-				}
-			],
-			"sid": 241687095024639
 		}
 	],
 	"sid": 170200532006030

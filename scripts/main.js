@@ -16,9 +16,7 @@ import {
 } from "./code-blocks/index.js";
 
 [
-	"./lib/js/math.min.js",
-	"./lib/js/bootstrap.bundle.min.js",
-	"./lib/js/leaderboard.js",
+	"./lib/math.min.js",
 ].forEach((src) => {
 	const script = document.createElement("script");
 	script.src = src;

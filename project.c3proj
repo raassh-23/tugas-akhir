@@ -237,7 +237,8 @@
 			"BlendMask",
 			"LevelScoreData",
 			"Star",
-			"Level"
+			"Level",
+			"Loading"
 		],
 		"subfolders": [
 			{
@@ -720,61 +721,17 @@
 			],
 			"subfolders": [
 				{
-					"items": [],
-					"subfolders": [
+					"items": [
 						{
-							"items": [
-								{
-									"name": "math.min.js",
-									"type": "application/javascript",
-									"sid": 823562490379026,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "bootstrap.bundle.min.js",
-									"type": "text/javascript",
-									"sid": 855889973044937,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "leaderboard.js",
-									"type": "application/javascript",
-									"sid": 287775350475707,
-									"file-info": {
-										"purpose": "none"
-									}
-								}
-							],
-							"subfolders": [],
-							"name": "js"
-						},
-						{
-							"items": [
-								{
-									"name": "bootstrap.min.css",
-									"type": "text/css",
-									"sid": 345796589612857,
-									"file-info": {
-										"purpose": "stylesheet"
-									}
-								},
-								{
-									"name": "custom.css",
-									"type": "text/css",
-									"sid": 914029060710007,
-									"file-info": {
-										"purpose": "stylesheet"
-									}
-								}
-							],
-							"subfolders": [],
-							"name": "css"
+							"name": "math.min.js",
+							"type": "application/javascript",
+							"sid": 823562490379026,
+							"file-info": {
+								"purpose": "none"
+							}
 						}
 					],
+					"subfolders": [],
 					"name": "lib"
 				}
 			]

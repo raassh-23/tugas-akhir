@@ -111,14 +111,19 @@ export default class LeaderboardAPI {
 
     /**
      * 
-     * @param {number} level 
-     * @param {number} page 
-     * @param {number} pageSize 
-     * @param {"actions" | "codeBlocks" | "timeMs"} sortBy 
-     * @param {"asc" | "desc"} order 
+     * @param {{
+     * level: number,
+     * page: number,
+     * pageSize: number,
+     * sortBy: "actions" | "codeBlocks" | "timeMs",
+     * order: "asc" | "desc"
+     * }} options 
      * @returns {Promise<GetLeaderboardData>}
      */
-    async getLeaderboard(level, page, pageSize, sortBy, order) {
+    async getLeaderboard({
+        level, page, pageSize = 5,
+        sortBy = "timeMs", order = "asc",
+    }) {
         const url = this._getUrl("leaderboard", {
             level,
             page,

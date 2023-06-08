@@ -516,6 +516,176 @@
 			"conditions": [],
 			"actions": [],
 			"sid": 886736655115396
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Text",
+					"sid": 499305980485067,
+					"parameters": {
+						"instance-variable": "autoFit"
+					}
+				},
+				{
+					"id": "is-on-screen",
+					"objectClass": "Text",
+					"sid": 571503139249927
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 887868504774359,
+					"parameters": {
+						"object": "Text"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "Text",
+					"sid": 930425231773144,
+					"parameters": {
+						"scale": "Self.maxScale"
+					}
+				}
+			],
+			"sid": 489643567450341,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 131384664559704
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 781453459981651,
+							"parameters": {
+								"first-value": "Text.CharacterScale",
+								"comparison": 4,
+								"second-value": "Text.minScale"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 100309100634882,
+							"parameters": {
+								"first-value": "Functions.ShouldShrink(Text.UID)",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-scale",
+							"objectClass": "Text",
+							"sid": 596783275106231,
+							"parameters": {
+								"scale": "Self.CharacterScale - 0.01"
+							}
+						}
+					],
+					"sid": 958500142888681
+				}
+			]
+		},
+		{
+			"functionName": "ShouldShrink",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 640757954945194
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "Text",
+					"sid": 665947438841797,
+					"parameters": {
+						"unique-id": "uid"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 423693351159561,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 772990974536853,
+							"parameters": {
+								"first-value": "Text.TextWidth",
+								"comparison": 4,
+								"second-value": "Text.Width * 0.95"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 847549540053801,
+							"parameters": {
+								"first-value": "Text.TextHeight",
+								"comparison": 4,
+								"second-value": "Text.CharacterHeight * Text.CharacterScale * Text.maxLine"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 596053632027465,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 883460163713896,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 328804596357381
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 149172777667805,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 375527864987637
+				}
+			]
 		}
 	],
 	"sid": 126636898885233

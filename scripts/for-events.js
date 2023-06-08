@@ -412,3 +412,95 @@ function getVariableByName(name) {
 
 	return variable;
 }
+
+/**
+ * 
+ * @param {IRuntime} runtime 
+ * @param {{
+ * level: number,
+ * page: number,
+ * pageSize: number,
+ * sortBy: "actions" | "codeBlocks" | "timeMs",
+ * order: "asc" | "desc"
+ * }} options 
+ */
+async function showLeaderboard(runtime, options) {
+	const {
+		page,
+		maxPage,
+		count,
+		items,
+	} = await leaderboard.getLeaderboard(options);
+
+	const PAGE_SIZE = 5;
+
+	const rankTexts = [];
+	const nameTexts = [];
+	const timeTexts = [];
+	const actionTexts = [];
+	const codeBlockTexts = [];
+	const dateTexts = [];
+
+	for (const text of runtime.objects.UIText.getAllInstances()) {
+		const id = text.instVars.id;
+
+		if (id != "rank" && id.startsWith("rank")) {
+			rankTexts.push(text);
+		} else if (id != "name" && id.startsWith("name")) {
+			nameTexts.push(text);
+		} else if (id != "time" && id.startsWith("time")) {
+			timeTexts.push(text);
+		} else if (id != "actions" && id.startsWith("actions")) {
+			actionTexts.push(text);
+		} else if (id != "code-count" && id.startsWith("code-count")) {
+			codeBlockTexts.push(text);
+		} else if (id != "datetime" && id.startsWith("datetime")) {
+			dateTexts.push(text);
+		}
+	}
+
+	rankTexts.sort();
+	nameTexts.sort();
+	timeTexts.sort();
+	actionTexts.sort();
+	codeBlockTexts.sort();
+	dateTexts.sort();
+
+	let i = 0;
+
+	for (; i < count; i++) {
+		const {
+			username,
+			actions,
+			codeBlocks,
+			timeMs,
+			createdAt,
+		} = items[i];
+
+		rankTexts[i].text = `${(page - 1) * PAGE_SIZE + i + 1}`;
+		nameTexts[i].text = username;
+		timeTexts[i].text = runtime.callFunction("FormatTime", timeMs / 1000);
+		actionTexts[i].text = `${actions}`;
+		codeBlockTexts[i].text = `${codeBlocks}`;
+		dateTexts[i].text = new Date(createdAt).toLocaleString();
+	}
+
+	for (; i < PAGE_SIZE; i++) {
+		rankTexts[i].text = "";
+		nameTexts[i].text = "";
+		timeTexts[i].text = "";
+		actionTexts[i].text = "";
+		codeBlockTexts[i].text = "";
+		dateTexts[i].text = "";
+	}
+
+	for (const button of runtime.objects.Button.getAllInstances()) {
+		if (button.instVars.id == "prev-board") {
+			button.isVisible = page > 1;
+			button.instVars.isDisabled = page <= 1;
+		} else if (button.instVars.id == "next-board") {
+			button.isVisible = page < maxPage;
+			button.instVars.isDisabled = page >= maxPage;
+		}
+	}
+}
