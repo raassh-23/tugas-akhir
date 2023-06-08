@@ -16,7 +16,7 @@ import {
 	setupCommands,
 	setupExpressions,
 } from "./utils/misc.js";
-import LeaderboardAPI from "./leaderboard/leaderboard-api.js";
+import LeaderboardAPI from "./leaderboard-api.js";
 import { ERROR, PLAYER_REACHED_GOAL, STOPPED } from "./code-blocks/code-block-constants.js";
 
 /**

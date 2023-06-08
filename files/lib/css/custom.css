@@ -2,6 +2,15 @@ body {
   background-color: #000000;
 }
 
+/* css for loading */
+.loading-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;

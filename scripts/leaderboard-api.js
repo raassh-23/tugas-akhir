@@ -56,6 +56,22 @@ export default class LeaderboardAPI {
 
     /**
      * 
+     * @param {string} path 
+     * @param {{[key: string]: string | number}} params
+     * @returns 
+     */
+    _getUrl(path, params = {}) {
+        const url = new URL(path, this._url);
+
+        for (const key in params) {
+            url.searchParams.append(key, params[key]);
+        }
+
+        return url;
+    }
+
+    /**
+     * 
      * @param {number} level 
      * @param {string} username 
      * @param {number} actions 
@@ -64,7 +80,8 @@ export default class LeaderboardAPI {
      * @returns {Promise<AddToLeaderboardData>}
      */
     async addToLeaderboard(level, username, actions, codeBlocks, timeMs) {
-        const response = await fetch(`${this._url}/leaderboard`, {
+        const url = this._getUrl("leaderboard");
+        const response = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -102,10 +119,15 @@ export default class LeaderboardAPI {
      * @returns {Promise<GetLeaderboardData>}
      */
     async getLeaderboard(level, page, pageSize, sortBy, order) {
-        const response = await fetch(
-            `${this._url}/leaderboard?level=${level}&page=${page}\
-            &pageSize=${pageSize}&order=${order}&sortBy=${sortBy}`
-        );
+        const url = this._getUrl("leaderboard", {
+            level,
+            page,
+            pageSize,
+            sortBy,
+            order,
+        });
+
+        const response = await fetch(url);
 
         if (!response.ok && response.status != 400) {
             throw new Error("Failed to get leaderboard");

@@ -356,6 +356,14 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "leaderboard-api.js",
+					"type": "application/javascript",
+					"sid": 186867696341201,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -609,20 +617,6 @@
 					],
 					"subfolders": [],
 					"name": "utils"
-				},
-				{
-					"items": [
-						{
-							"name": "leaderboard-api.js",
-							"type": "application/javascript",
-							"sid": 186867696341201,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
-					"subfolders": [],
-					"name": "leaderboard"
 				}
 			]
 		},
@@ -759,7 +753,7 @@
 									}
 								},
 								{
-									"name": "leaderboard.css",
+									"name": "custom.css",
 									"type": "text/css",
 									"sid": 914029060710007,
 									"file-info": {

@@ -1,3 +1,5 @@
+let leaderboard = document.querySelector("#leaderboard");
+let loading = document.querySelector("#loading");
 let tableBody = document.querySelector("tbody");
 let prevButton = document.querySelector("#prev");
 let nextButton = document.querySelector("#next");
@@ -10,6 +12,8 @@ let maxShownPage = 1;
 
 parent.addEventListener("message", ({ data }) => {
     if (data.name === "leaderboard-created") {
+        leaderboard = document.querySelector("#leaderboard");
+        loading = document.querySelector("#loading");
         tableBody = document.querySelector("tbody");
         prevButton = document.querySelector("#prev");
         nextButton = document.querySelector("#next");
@@ -19,10 +23,15 @@ parent.addEventListener("message", ({ data }) => {
 });
 
 function getLeaderboard(level, page, sortBy, ascending) {
+    loading.classList.remove("d-none");
+    leaderboard.classList.add("d-none");
     parent.c3_callFunction("GetLeaderboard", [level, page, sortBy, ascending]);
 }
 
 function showLeaderboard({ page, maxPage, items }) {
+    loading.classList.add("d-none");
+    leaderboard.classList.remove("d-none");
+	
     tableBody.innerHTML = "";
 
     items.forEach((item, index) => {
