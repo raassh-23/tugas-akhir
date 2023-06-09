@@ -126,7 +126,7 @@
 									"objectClass": "System",
 									"sid": 123875661819039,
 									"parameters": {
-										"first-value": "LevelScoreData.At(LevelScoreData.CurX, LOCK_INDEX)",
+										"first-value": "LevelScoreData.At(LevelScoreData.CurX, SOLVED_INDEX)",
 										"comparison": 4,
 										"second-value": "-1"
 									}
@@ -159,24 +159,104 @@
 										{
 											"id": "pick-children",
 											"objectClass": "Level",
-											"sid": 794554350459417,
+											"sid": 883281577532934,
 											"parameters": {
-												"child": "Star",
+												"child": "Icon",
 												"which": "own"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-animation-frame",
-											"objectClass": "Star",
-											"sid": 870039154606107,
+											"id": "set-visible",
+											"objectClass": "Icon",
+											"sid": 316473490091807,
 											"parameters": {
-												"frame-number": "int(right(Star.id, 1)) <= LevelScoreData.At(LevelScoreData.CurX, LOCK_INDEX) ? 1 : 0"
+												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 637271423885813
+									"sid": 637271423885813,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Icon",
+													"sid": 113083104150705,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "\"solved-level\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "Icon",
+													"sid": 632049151502615,
+													"parameters": {
+														"opacity": "LevelScoreData.At(LevelScoreData.CurX, SOLVED_INDEX) * 100"
+													}
+												}
+											],
+											"sid": 165670688834733
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Icon",
+													"sid": 652900761710236,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "\"code-count-level\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "Icon",
+													"sid": 178653747945233,
+													"parameters": {
+														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_CODE_BLOCKS_INDEX) * 100"
+													}
+												}
+											],
+											"sid": 335362138499201
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Icon",
+													"sid": 522237868895219,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "\"actions-level\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "Icon",
+													"sid": 854440964852583,
+													"parameters": {
+														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_ACTIONS_INDEX) * 100"
+													}
+												}
+											],
+											"sid": 873775521108720
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -243,7 +323,7 @@
 											"objectClass": "Level",
 											"sid": 652702321177639,
 											"parameters": {
-												"child": "Star",
+												"child": "Icon",
 												"which": "own"
 											}
 										}
@@ -251,7 +331,7 @@
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Star",
+											"objectClass": "Icon",
 											"sid": 222559650124709,
 											"parameters": {
 												"visibility": "invisible"

@@ -5458,13 +5458,23 @@
 									"sid": 446221438791619,
 									"parameters": {
 										"x": "level",
-										"y": "LOCK_INDEX",
+										"y": "SOLVED_INDEX",
 										"comparison": 0,
 										"value": "0"
 									}
 								}
 							],
 							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 447331405267534,
+									"parameters": {
+										"x": "level",
+										"y": "SOLVED_INDEX",
+										"value": "1"
+									}
+								},
 								{
 									"id": "set-at-xy",
 									"objectClass": "LevelScoreData",
@@ -5501,7 +5511,7 @@
 									"sid": 862788593387142,
 									"parameters": {
 										"x": "level + 1",
-										"y": "LOCK_INDEX",
+										"y": "SOLVED_INDEX",
 										"value": "0"
 									}
 								}

@@ -47,7 +47,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "LOCK_INDEX",
+			"name": "SOLVED_INDEX",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -1045,7 +1045,7 @@
 					"sid": 795221806011971,
 					"parameters": {
 						"x": "0",
-						"y": "LOCK_INDEX",
+						"y": "SOLVED_INDEX",
 						"value": "0"
 					}
 				},
@@ -1055,7 +1055,7 @@
 					"sid": 999145293165699,
 					"parameters": {
 						"x": "1",
-						"y": "LOCK_INDEX",
+						"y": "SOLVED_INDEX",
 						"value": "0"
 					}
 				},
