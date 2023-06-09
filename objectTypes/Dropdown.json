@@ -1,0 +1,22 @@
+{
+	"name": "Dropdown",
+	"plugin-id": "List",
+	"sid": 781732955421684,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 340532666497940
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 293536107043273
+		}
+	]
+}

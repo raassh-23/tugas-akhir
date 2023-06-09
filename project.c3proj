@@ -37,15 +37,15 @@
 		},
 		{
 			"type": "plugin",
-			"id": "HTMLElement",
-			"name": "HTML Element",
+			"id": "Keyboard",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
+			"id": "List",
+			"name": "List",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -216,7 +216,6 @@
 			"Portal",
 			"ZZZZ_Unused",
 			"TextInputName",
-			"LeaderboardContainer",
 			"UIPanel",
 			"CodeBlockPanelBorder",
 			"NestedCodeBlockBackground",
@@ -238,7 +237,8 @@
 			"LevelScoreData",
 			"Star",
 			"Level",
-			"Loading"
+			"Loading",
+			"Dropdown"
 		],
 		"subfolders": [
 			{

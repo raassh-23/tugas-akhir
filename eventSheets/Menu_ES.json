@@ -87,6 +87,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "SORT_BY_VALUES",
+			"type": "string",
+			"initialValue": "Waktu,Langkah,Blok",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 734536801806639
+		},
+		{
+			"eventType": "variable",
+			"name": "SORT_BY_REAL_VALUES",
+			"type": "string",
+			"initialValue": "timeMs,actions,codeBlocks",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 419391375628681
+		},
+		{
+			"eventType": "variable",
 			"name": "versionText",
 			"type": "string",
 			"initialValue": "",
@@ -114,6 +134,26 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 265558360045090
+		},
+		{
+			"eventType": "variable",
+			"name": "leaderboardLevel",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 354568392513656
+		},
+		{
+			"eventType": "variable",
+			"name": "leaderboardSortBy",
+			"type": "string",
+			"initialValue": "timeMs",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 834679098207567
 		},
 		{
 			"eventType": "block",
@@ -197,8 +237,8 @@
 					"actions": [
 						{
 							"id": "pin-to-object-properties",
-							"objectClass": "LeaderboardContainer",
-							"sid": 625954136692870,
+							"objectClass": "Dropdown",
+							"sid": 483654120760442,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "UIPanel",
@@ -258,13 +298,117 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 755527402933107
+							"id": "compare-instance-variable",
+							"objectClass": "Dropdown",
+							"sid": 164428080940088,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"level\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 231657467805036
+					"actions": [
+						{
+							"id": "set-css-style",
+							"objectClass": "Dropdown",
+							"sid": 275149594088974,
+							"parameters": {
+								"property-name": "\"font-size\"",
+								"value": "\"1.25vw\""
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "Dropdown",
+							"sid": 840703214924971
+						}
+					],
+					"sid": 386870333666675,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 988365832716926,
+									"parameters": {
+										"count": "MAX_LEVEL"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-item",
+									"objectClass": "Dropdown",
+									"sid": 940328462393544,
+									"parameters": {
+										"text": "str(loopindex)"
+									}
+								}
+							],
+							"sid": 682682178424568
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Dropdown",
+							"sid": 586780296460059,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"sort\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-css-style",
+							"objectClass": "Dropdown",
+							"sid": 376499665329842,
+							"parameters": {
+								"property-name": "\"font-size\"",
+								"value": "\"1.25vw\""
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "Dropdown",
+							"sid": 631379093638176
+						}
+					],
+					"sid": 736293576110993,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 422496653633014,
+									"parameters": {
+										"count": "tokencount(SORT_BY_VALUES, \",\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-item",
+									"objectClass": "Dropdown",
+									"sid": 164984771082193,
+									"parameters": {
+										"text": "tokenat(SORT_BY_VALUES, loopindex, \",\")"
+									}
+								}
+							],
+							"sid": 208258833821651
+						}
+					]
 				}
 			]
 		},
@@ -340,22 +484,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 763811982086010,
-							"parameters": {
-								"variable": "leaderboardPage",
-								"value": "1"
-							}
-						},
-						{
 							"callFunction": "GetLeaderboard",
-							"sid": 405267598111804,
-							"parameters": [
-								"0",
-								"\"timeMs\"",
-								true
-							]
+							"sid": 405267598111804
 						}
 					],
 					"sid": 887354956605955,
@@ -431,12 +561,7 @@
 						},
 						{
 							"callFunction": "GetLeaderboard",
-							"sid": 331931754192967,
-							"parameters": [
-								"0",
-								"\"timeMs\"",
-								true
-							]
+							"sid": 283661535836919
 						}
 					],
 					"sid": 321397664309100
@@ -467,12 +592,7 @@
 						},
 						{
 							"callFunction": "GetLeaderboard",
-							"sid": 218598285596087,
-							"parameters": [
-								"0",
-								"\"timeMs\"",
-								true
-							]
+							"sid": 950898977542826
 						}
 					],
 					"sid": 381593657277494
@@ -927,35 +1047,85 @@
 			"sid": 757929967542404
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-selection-changed",
+					"objectClass": "Dropdown",
+					"sid": 469474729472653
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Dropdown",
+					"sid": 355760659791687,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"level\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 747889162019857,
+					"parameters": {
+						"variable": "leaderboardLevel",
+						"value": "int(Dropdown.SelectedText)"
+					}
+				},
+				{
+					"callFunction": "GetLeaderboard",
+					"sid": 968215976878966
+				}
+			],
+			"sid": 866537078826256
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-selection-changed",
+					"objectClass": "Dropdown",
+					"sid": 267052923092847
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Dropdown",
+					"sid": 672224637576777,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"sort\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 870946321541016,
+					"parameters": {
+						"variable": "leaderboardSortBy",
+						"value": "tokenat(SORT_BY_REAL_VALUES, Dropdown.SelectedIndex, \",\")"
+					}
+				},
+				{
+					"callFunction": "GetLeaderboard",
+					"sid": 476439771548400
+				}
+			],
+			"sid": 979726838173396
+		},
+		{
 			"functionName": "GetLeaderboard",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "leaderboardLevel",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 391729239163127
-				},
-				{
-					"name": "sortBy",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 862276478172325
-				},
-				{
-					"name": "ascending",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"sid": 217061602902734
-				}
-			],
+			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
@@ -997,7 +1167,7 @@
 				},
 				{
 					"type": "script",
-					"script": "const {\n\tleaderboardPage: page,\n} = runtime.globalVars;\n\nconst {\n\tleaderboardLevel: level,\n\tsortBy,\n\tascending,\n} = localVars;\n\nawait showLeaderboard(\n\truntime,\n\t{\n\t\tlevel,\n\t\tpage,\n\t\tsortBy,\n\t\torder: ascending ? \"asc\" : \"desc\",\n\t},\n);"
+					"script": "const {\n\tleaderboardPage: page,\n\tleaderboardLevel: level,\n\tleaderboardSortBy: sortBy,\n} = runtime.globalVars;\n\nawait showLeaderboard(\n\truntime,\n\t{\n\t\tlevel,\n\t\tpage,\n\t\tsortBy\n\t},\n);"
 				},
 				{
 					"id": "wait-for-previous-actions",
