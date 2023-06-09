@@ -126,7 +126,7 @@
 									"objectClass": "System",
 									"sid": 123875661819039,
 									"parameters": {
-										"first-value": "LevelScoreData.At(LevelScoreData.CurX, STAR_INDEX)",
+										"first-value": "LevelScoreData.At(LevelScoreData.CurX, LOCK_INDEX)",
 										"comparison": 4,
 										"second-value": "-1"
 									}
@@ -172,7 +172,7 @@
 											"objectClass": "Star",
 											"sid": 870039154606107,
 											"parameters": {
-												"frame-number": "int(right(Star.id, 1)) <= LevelScoreData.At(LevelScoreData.CurX, STAR_INDEX) ? 1 : 0"
+												"frame-number": "int(right(Star.id, 1)) <= LevelScoreData.At(LevelScoreData.CurX, LOCK_INDEX) ? 1 : 0"
 											}
 										}
 									],

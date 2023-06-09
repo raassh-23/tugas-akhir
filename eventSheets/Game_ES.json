@@ -5284,16 +5284,6 @@
 					"sid": 967244321279655,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "star",
-							"type": "number",
-							"initialValue": "1",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 315752160114781
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -5425,9 +5415,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 578124135516455,
+									"sid": 450513651540697,
 									"parameters": {
-										"text": "targetActions"
+										"text": "\"Target: \" & targetActions"
 									}
 								}
 							],
@@ -5451,9 +5441,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 199030335759094,
+									"sid": 521223464765330,
 									"parameters": {
-										"text": "targetCodeBlocks"
+										"text": "\"Target: \" & targetCodeBlocks"
 									}
 								}
 							],
@@ -5468,7 +5458,7 @@
 									"sid": 446221438791619,
 									"parameters": {
 										"x": "level",
-										"y": "STAR_INDEX",
+										"y": "LOCK_INDEX",
 										"comparison": 0,
 										"value": "0"
 									}
@@ -5511,7 +5501,7 @@
 									"sid": 862788593387142,
 									"parameters": {
 										"x": "level + 1",
-										"y": "STAR_INDEX",
+										"y": "LOCK_INDEX",
 										"value": "0"
 									}
 								}
@@ -5579,9 +5569,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 444859239817403,
+									"sid": 938765797458702,
 									"parameters": {
-										"text": "Functions.FormatTime(LevelScoreData.At(level, TIME_INDEX))"
+										"text": "\"Terbaik: \" & Functions.FormatTime(LevelScoreData.At(level, TIME_INDEX))"
 									}
 								}
 							],
@@ -5605,9 +5595,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 463720215004598,
+									"sid": 902182287502077,
 									"parameters": {
-										"text": "LevelScoreData.At(level, CODE_BLOCKS_INDEX)"
+										"text": "\"Terbaik: \" & LevelScoreData.At(level, CODE_BLOCKS_INDEX)"
 									}
 								}
 							],
@@ -5631,9 +5621,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 701119699039626,
+									"sid": 939994414121658,
 									"parameters": {
-										"text": "LevelScoreData.At(level, ACTIONS_INDEX)"
+										"text": "\"Terbaik: \" & LevelScoreData.At(level, ACTIONS_INDEX)"
 									}
 								}
 							],
@@ -5644,31 +5634,22 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Star",
-									"sid": 654318494941440,
+									"objectClass": "Icon",
+									"sid": 237446269542749,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"actions\""
+										"value": "\"action-game-over-icon\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "Star",
-									"sid": 284874201792608,
+									"id": "set-opacity",
+									"objectClass": "Icon",
+									"sid": 949784813634277,
 									"parameters": {
-										"frame-number": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 1 : 0"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 786574557113451,
-									"parameters": {
-										"variable": "star",
-										"value": "Star.AnimationFrame"
+										"opacity": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 100 : 50"
 									}
 								}
 							],
@@ -5679,31 +5660,22 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Star",
-									"sid": 503409111037739,
+									"objectClass": "Icon",
+									"sid": 303080328887608,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"code-count\""
+										"value": "\"code-count-game-over-icon\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "Star",
-									"sid": 663442822039470,
+									"id": "set-opacity",
+									"objectClass": "Icon",
+									"sid": 248726426033731,
 									"parameters": {
-										"frame-number": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 1 : 0"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 108206633520674,
-									"parameters": {
-										"variable": "star",
-										"value": "Star.AnimationFrame"
+										"opacity": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 100 : 50"
 									}
 								}
 							],
@@ -5716,11 +5688,21 @@
 								{
 									"id": "set-at-xy",
 									"objectClass": "LevelScoreData",
-									"sid": 729472959366893,
+									"sid": 503881728495644,
 									"parameters": {
 										"x": "level",
-										"y": "STAR_INDEX",
-										"value": "star"
+										"y": "TARGET_ACTIONS_INDEX",
+										"value": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 1 : 0"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 524630562021207,
+									"parameters": {
+										"x": "level",
+										"y": "TARGET_CODE_BLOCKS_INDEX",
+										"value": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 1 : 0"
 									}
 								},
 								{

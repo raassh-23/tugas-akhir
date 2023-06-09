@@ -4379,8 +4379,8 @@
 					"instanceVariables": {
 						"originX": 0,
 						"originY": 0,
-						"targetX": 341.5,
-						"targetY": 100,
+						"targetX": 300,
+						"targetY": 115.35,
 						"duration": 0.5,
 						"id": "game-over"
 					},
@@ -4636,21 +4636,6 @@
 								}
 							},
 							{
-								"uid": 374,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
 								"uid": 375,
 								"flags": {
 									"x": true,
@@ -4676,81 +4661,6 @@
 									"a": false,
 									"o": true,
 									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 377,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 378,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 379,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 380,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 381,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -4797,10 +4707,10 @@
 						}
 					},
 					"world": {
-						"x": 341.5,
-						"y": -719.6504531331846,
-						"width": 597,
-						"height": 514.2451616767553,
+						"x": 300,
+						"y": -695.6504531331846,
+						"width": 680,
+						"height": 490,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -4870,8 +4780,8 @@
 						}
 					},
 					"world": {
-						"x": 476,
-						"y": -697,
+						"x": 478,
+						"y": -662,
 						"width": 328,
 						"height": 84,
 						"originX": 0,
@@ -4943,10 +4853,10 @@
 						}
 					},
 					"world": {
-						"x": 453.323,
-						"y": -568.9126769707192,
-						"width": 128,
-						"height": 64,
+						"x": 330,
+						"y": -504,
+						"width": 200,
+						"height": 45,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5016,10 +4926,10 @@
 						}
 					},
 					"world": {
-						"x": 453.323,
-						"y": -514.7933933019041,
-						"width": 128,
-						"height": 64,
+						"x": 540,
+						"y": -504,
+						"width": 200,
+						"height": 45,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5089,10 +4999,10 @@
 						}
 					},
 					"world": {
-						"x": 453.323,
-						"y": -460.9842042282889,
-						"width": 128,
-						"height": 64,
+						"x": 750,
+						"y": -504,
+						"width": 200,
+						"height": 45,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5101,7 +5011,7 @@
 							0,
 							1
 						],
-						"angle": 0,
+						"angle": 6.273745941028528,
 						"zElevation": 0
 					}
 				},
@@ -5571,7 +5481,7 @@
 					},
 					"uid": 368,
 					"instanceVariables": {
-						"id": "time-icon"
+						"id": "time-game-over-icon"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5603,10 +5513,10 @@
 						}
 					},
 					"world": {
-						"x": 416.121,
-						"y": -542.1148637488982,
-						"width": 48,
-						"height": 48,
+						"x": 430,
+						"y": -536,
+						"width": 56,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -5630,7 +5540,7 @@
 					},
 					"uid": 369,
 					"instanceVariables": {
-						"id": "code-count-icon"
+						"id": "code-count-game-over-icon"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5662,10 +5572,10 @@
 						}
 					},
 					"world": {
-						"x": 416.121,
-						"y": -487.99558008008313,
-						"width": 48,
-						"height": 48,
+						"x": 640,
+						"y": -536,
+						"width": 56,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -5674,7 +5584,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 0.002003772444460261,
 						"zElevation": 0
 					}
 				},
@@ -5689,7 +5599,7 @@
 					},
 					"uid": 370,
 					"instanceVariables": {
-						"id": "action-icon"
+						"id": "action-game-over-icon"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5721,10 +5631,10 @@
 						}
 					},
 					"world": {
-						"x": 416.121,
-						"y": -434.1863910064679,
-						"width": 48,
-						"height": 48,
+						"x": 850,
+						"y": -536,
+						"width": 56,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -5740,13 +5650,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "999:99",
+						"text": "Terbaik 999:99",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -5759,7 +5669,7 @@
 					"uid": 371,
 					"instanceVariables": {
 						"minScale": 0,
-						"maxScale": 0.8,
+						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "game-over-time-best"
@@ -5794,10 +5704,10 @@
 						}
 					},
 					"world": {
-						"x": 579.323,
-						"y": -568.9126769707192,
-						"width": 128,
-						"height": 64,
+						"x": 330,
+						"y": -462.43380213546806,
+						"width": 200,
+						"height": 33,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5813,13 +5723,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "99999",
+						"text": "Terbaik: 99999",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -5832,7 +5742,7 @@
 					"uid": 372,
 					"instanceVariables": {
 						"minScale": 0,
-						"maxScale": 0.8,
+						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "game-over-code-count-best"
@@ -5867,10 +5777,10 @@
 						}
 					},
 					"world": {
-						"x": 579.323,
-						"y": -514.7933933019041,
-						"width": 128,
-						"height": 64,
+						"x": 540,
+						"y": -462.43380213546806,
+						"width": 200,
+						"height": 33,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5886,13 +5796,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "99999",
+						"text": "Terbaik: 99999",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -5905,7 +5815,7 @@
 					"uid": 373,
 					"instanceVariables": {
 						"minScale": 0,
-						"maxScale": 0.8,
+						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "game-over-actions-best"
@@ -5940,10 +5850,10 @@
 						}
 					},
 					"world": {
-						"x": 579.323,
-						"y": -460.9842042282889,
-						"width": 128,
-						"height": 64,
+						"x": 750,
+						"y": -462.43380213546806,
+						"width": 200,
+						"height": 33,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -5959,86 +5869,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "--:--",
+						"text": "Target: 99999",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 374,
-					"instanceVariables": {
-						"minScale": 0,
-						"maxScale": 0.8,
-						"autoFit": true,
-						"maxLine": 1,
-						"id": "game-over-time-target"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 374,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 707.323,
-						"y": -568.9126769707192,
-						"width": 128,
-						"height": 64,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "99999",
-						"enable-bbcode": true,
-						"character-width": 50,
-						"character-height": 56,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -6051,7 +5888,7 @@
 					"uid": 375,
 					"instanceVariables": {
 						"minScale": 0,
-						"maxScale": 0.8,
+						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "game-over-code-count-target"
@@ -6086,10 +5923,10 @@
 						}
 					},
 					"world": {
-						"x": 707.323,
-						"y": -514.7933933019041,
-						"width": 128,
-						"height": 64,
+						"x": 540,
+						"y": -432.43380213546806,
+						"width": 200,
+						"height": 33,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -6105,13 +5942,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "99999",
+						"text": "Target: 99999",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -6124,7 +5961,7 @@
 					"uid": 376,
 					"instanceVariables": {
 						"minScale": 0,
-						"maxScale": 0.8,
+						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "game-over-actions-target"
@@ -6159,10 +5996,10 @@
 						}
 					},
 					"world": {
-						"x": 707.323,
-						"y": -460.9842042282889,
-						"width": 128,
-						"height": 64,
+						"x": 750,
+						"y": -432.43380213546806,
+						"width": 200,
+						"height": 33,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -6171,330 +6008,7 @@
 							0,
 							1
 						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "Terbaik",
-						"enable-bbcode": true,
-						"character-width": 50,
-						"character-height": 56,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 377,
-					"instanceVariables": {
-						"minScale": 0,
-						"maxScale": 0,
-						"autoFit": false,
-						"maxLine": 1,
-						"id": "game-over-best-title"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 377,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 579.323,
-						"y": -616.9446297694876,
-						"width": 128,
-						"height": 64,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "Target",
-						"enable-bbcode": true,
-						"character-width": 50,
-						"character-height": 56,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.8,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 378,
-					"instanceVariables": {
-						"minScale": 0,
-						"maxScale": 0,
-						"autoFit": false,
-						"maxLine": 1,
-						"id": "game-over-target-title"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 378,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 707.323,
-						"y": -616.9446297694876,
-						"width": 128,
-						"height": 64,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Star",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 379,
-					"instanceVariables": {
-						"id": "actions"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 379,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 868.379,
-						"y": -434.1863910064679,
-						"width": 39,
-						"height": 38,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Star",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 380,
-					"instanceVariables": {
-						"id": "code-count"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 380,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 868.379,
-						"y": -487.99558008008313,
-						"width": 39,
-						"height": 38,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Star",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 381,
-					"instanceVariables": {
-						"id": "time"
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 42,
-						"uid": 381,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 868.379,
-						"y": -542.1148637488982,
-						"width": 39,
-						"height": 38,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
+						"angle": 6.273745941028528,
 						"zElevation": 0
 					}
 				},

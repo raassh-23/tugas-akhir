@@ -47,7 +47,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "STAR_INDEX",
+			"name": "LOCK_INDEX",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -57,9 +57,29 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIME_INDEX",
+			"name": "TARGET_ACTIONS_INDEX",
 			"type": "number",
 			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 817096589346392
+		},
+		{
+			"eventType": "variable",
+			"name": "TARGET_CODE_BLOCKS_INDEX",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 674002664947332
+		},
+		{
+			"eventType": "variable",
+			"name": "TIME_INDEX",
+			"type": "number",
+			"initialValue": "3",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -69,7 +89,7 @@
 			"eventType": "variable",
 			"name": "ACTIONS_INDEX",
 			"type": "number",
-			"initialValue": "2",
+			"initialValue": "4",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -79,7 +99,7 @@
 			"eventType": "variable",
 			"name": "CODE_BLOCKS_INDEX",
 			"type": "number",
-			"initialValue": "3",
+			"initialValue": "5",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -774,6 +794,11 @@
 							"sid": 283155726377361
 						},
 						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 521366256862844
+						},
+						{
 							"id": "reload",
 							"objectClass": "Browser",
 							"sid": 478602824324197
@@ -995,10 +1020,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "LevelScoreData",
-					"sid": 892786546348575,
+					"sid": 807789045866926,
 					"parameters": {
 						"width": "MAX_LEVEL + 1",
-						"height": "4",
+						"height": "6",
 						"depth": "1"
 					}
 				},
@@ -1020,7 +1045,7 @@
 					"sid": 795221806011971,
 					"parameters": {
 						"x": "0",
-						"y": "STAR_INDEX",
+						"y": "LOCK_INDEX",
 						"value": "0"
 					}
 				},
@@ -1030,7 +1055,7 @@
 					"sid": 999145293165699,
 					"parameters": {
 						"x": "1",
-						"y": "STAR_INDEX",
+						"y": "LOCK_INDEX",
 						"value": "0"
 					}
 				},

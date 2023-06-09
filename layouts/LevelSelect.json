@@ -11257,7 +11257,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "Pilih Level",
+						"text": "Level",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
