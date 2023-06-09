@@ -342,9 +342,9 @@
 								{
 									"id": "add-item",
 									"objectClass": "Dropdown",
-									"sid": 940328462393544,
+									"sid": 126482676161270,
 									"parameters": {
-										"text": "str(loopindex)"
+										"text": "str(loopindex + 1)"
 									}
 								}
 							],

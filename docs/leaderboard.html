@@ -1,26 +1,39 @@
-<table class="table table-striped">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nama Pengguna</th>
-            <th scope="col">Waktu</th>
-            <th scope="col">Jumlah Aksi</th>
-            <th scope="col">Jumlah Blok Kode</th>
-            <th scope="col">Tanggal</th>
-        </tr>
-    </thead>
-    <tbody class="table-light"></tbody>
-</table>
-<nav>
-    <ul class="pagination" style="--bs-pagination-font-size: 1vw">
-        <li class="page-item disabled" id="prev">
-            <a class="page-link" onclick="changePage(false)">Previous</a>
-        </li>
-        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-        <li class="page-item" id="next">
-            <a class="page-link" onclick="changePage(true)">Next</a>
-        </li>
-    </ul>
-</nav>
+<div id="loading" class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<div id="leaderboard" class="d-none">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama Pengguna</th>
+                <th scope="col">Waktu</th>
+                <th scope="col">Jumlah Aksi</th>
+                <th scope="col">Jumlah Blok Kode</th>
+                <th scope="col">Tanggal</th>
+            </tr>
+        </thead>
+        <tbody class="table-light"></tbody>
+    </table>
+    <nav>
+        <ul class="pagination" style="--bs-pagination-font-size: 1vw">
+            <li class="page-item disabled" id="prev">
+                <a class="page-link" onclick="changePage(false)">Previous</a>
+            </li>
+    
+            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+    
+            <li class="page-item" id="next">
+                <a class="page-link" onclick="changePage(true)">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
