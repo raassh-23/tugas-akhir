@@ -4355,9 +4355,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 867326813798262,
+							"sid": 772184076146310,
 							"parameters": {
-								"text": "(Functions.GetActionCount < 10 ? \"0\" : \"\") & actionCount"
+								"text": "zeropad(Functions.GetActionCount , 2)"
 							}
 						}
 					],
@@ -4381,9 +4381,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 472533014023474,
+							"sid": 993383626093012,
 							"parameters": {
-								"text": "(Functions.GetBlockCount< 10 ? \"0\" : \"\") & codeBlockCount"
+								"text": "zeropad(Functions.GetBlockCount, 2)"
 							}
 						}
 					],
@@ -4455,9 +4455,9 @@
 								{
 									"id": "set-function-return-value",
 									"objectClass": "Functions",
-									"sid": 313645759363002,
+									"sid": 864601976698091,
 									"parameters": {
-										"value": "(minutes < 10 ? \"0\" & minutes : minutes) & \":\" & (seconds< 10 ? \"0\" & seconds : seconds)"
+										"value": "zeropad(minutes, 2) & \":\" & zeropad(seconds, 2) "
 									}
 								}
 							],
@@ -5341,9 +5341,44 @@
 									"parameters": {
 										"text": "Functions.FormatTime(levelTimer)"
 									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "UIText",
+									"sid": 390289365971739,
+									"parameters": {
+										"width": "Self.TextWidth"
+									}
 								}
 							],
-							"sid": 619131238150019
+							"sid": 619131238150019,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 397464899999203,
+											"parameters": {
+												"child": "Icon",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Icon",
+											"sid": 519442305219666,
+											"parameters": {
+												"x": "UIText.X - UIText.Width/2 - 6 - Icon.Width/2"
+											}
+										}
+									],
+									"sid": 713954370141718
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -5367,9 +5402,44 @@
 									"parameters": {
 										"text": "Functions.GetActionCount"
 									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "UIText",
+									"sid": 328588064078911,
+									"parameters": {
+										"width": "Self.TextWidth"
+									}
 								}
 							],
-							"sid": 363159724114012
+							"sid": 363159724114012,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 991209614124125,
+											"parameters": {
+												"child": "Icon",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Icon",
+											"sid": 234889937407565,
+											"parameters": {
+												"x": "UIText.X - UIText.Width/2 - 6 - Icon.Width/2"
+											}
+										}
+									],
+									"sid": 848502766617733
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -5393,9 +5463,44 @@
 									"parameters": {
 										"text": "Functions.GetBlockCount"
 									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "UIText",
+									"sid": 554951270481135,
+									"parameters": {
+										"width": "Self.TextWidth"
+									}
 								}
 							],
-							"sid": 757168391319465
+							"sid": 757168391319465,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 597089264223765,
+											"parameters": {
+												"child": "Icon",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Icon",
+											"sid": 492553305587809,
+											"parameters": {
+												"x": "UIText.X - UIText.Width/2 - 6 - Icon.Width/2"
+											}
+										}
+									],
+									"sid": 846985855954459
+								}
+							]
 						},
 						{
 							"eventType": "block",
