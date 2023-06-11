@@ -19,9 +19,7 @@ export default class RepeatCommand extends ConditionalCommand {
      */
     async run(player, state) {
         let repeatCount = 0;
-        const cleanedRepeatCondition = this._condition
-            .replace(/%/g, 'mod')
-            .replace(/x/g, '*');
+        const cleanedRepeatCondition = this.getCleanedCondition();
 
         try {
             const symbols = { ...state.variables, ...state.surrounding };

@@ -18,13 +18,7 @@ export default class WhileCommand extends ConditionalCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        const cleanedCondition = this._condition
-            .replace(/&/g, 'and')
-            .replace(/\|/g, 'or')
-            .replace(/ ! /g, ' not ')
-            .replace(/ = /g, ' == ')
-            .replace(/%/g, 'mod')
-            .replace(/x/g, '*');
+        const cleanedCondition = this.getCleanedCondition();
 
         while (true) {
             this.showHighlight(true);
@@ -50,7 +44,7 @@ export default class WhileCommand extends ConditionalCommand {
             const waitResult = await waitUnlessStopped(state, {
                 afterWait: () => {
                     this.showHighlight(false);
-                    this._text.text = this._condition;
+                    this._text.text = this.getCondition();
 
                     return this.checkCollisions(player, state);
                 },

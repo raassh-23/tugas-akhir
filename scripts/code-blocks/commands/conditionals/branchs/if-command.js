@@ -22,13 +22,7 @@ export default class IfCommand extends ConditionalCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        const cleanedCondition = this._condition
-            .replace(/&/g, 'and')
-            .replace(/\|/g, 'or')
-            .replace(/ ! /g, ' not ')
-            .replace(/ = /g, ' == ')
-            .replace(/%/g, 'mod')
-            .replace(/x/g, '*');
+        const cleanedCondition = this.getCleanedCondition();
 
         this.showHighlight(true);
         startCommmand(this.runtime, player, state);
@@ -53,7 +47,7 @@ export default class IfCommand extends ConditionalCommand {
         const waitResult = await waitUnlessStopped(state, {
             afterWait: () => {
                 this.showHighlight(false);
-                this._text.text = this._condition;
+                this._text.text = this.getCondition();
 
                 return this.checkCollisions(player, state);
             },

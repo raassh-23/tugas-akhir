@@ -5,8 +5,8 @@ import * as blocks from "./code-blocks/code-block-definitions.js";
  */
 export const levelVariables = {
     0: { // test level
-        health: 5,
-        ammo: 10,
+        "health": 5,
+        "ammo": 10,
     },
     1: {
         //

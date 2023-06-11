@@ -1,7 +1,11 @@
 import CommandsContainer from "../commands-container.js";
 import { MARGIN } from "../../code-block-constants.js";
 import { getContainerParent, waitForMilisecond } from "../../../utils/misc.js";
-import RunnerCommand from "../runner-command.js";
+
+const variableIconMap = new Map([
+    [/♥/g, "health"],
+    [/⁍/g, "ammo"],
+]);
 
 /**
  * @extends CommandsContainer
@@ -57,7 +61,7 @@ export default class ConditionalCommand extends CommandsContainer {
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this._text = child;
-                this._text.text = this._condition;
+                this._text.text = this.getCondition();
                 continue;
             }
 
@@ -114,7 +118,28 @@ export default class ConditionalCommand extends CommandsContainer {
 
         this.showError(false);
 
-        this.setText({ text: this._condition.replace(/ /g, '') });
+        this.setText({ text: this.getCondition() });
+    }
+
+    getCondition() {
+        return this._condition.replace(/\s+/g, '');
+    }
+
+    getCleanedCondition() {
+        let replacedIcon = this._condition;
+
+        for (const [regex, value] of variableIconMap) {
+            replacedIcon = replacedIcon.replace(regex, value);
+        }
+
+        return replacedIcon
+            .replace(/&/g, 'and')
+            .replace(/\|/g, 'or')
+            .replace(/ ! /g, ' not ')
+            .replace(/ = /g, ' == ')
+            .replace(/%/g, 'mod')
+            .replace(/x/g, '*')
+            .replace(/\s+/g, '');;
     }
 
     setSizeBasedOnLevel() {
@@ -126,7 +151,7 @@ export default class ConditionalCommand extends CommandsContainer {
         this.height = this.savedHeight * multiplier;
         this.width = this.getWidthOnLevel(this.level);
 
-        this.setPopUpButton({ 
+        this.setPopUpButton({
             x: this.x + this._icon.width - this._popUpButton?.width / 2 - 10 * multiplier,
             y: this.y + 45 * multiplier,
         });
@@ -185,7 +210,7 @@ export default class ConditionalCommand extends CommandsContainer {
      * @param {boolean} withError 
      */
     reset(withError) {
-        this.setText({ text: this._condition.replace(/ /g, '') });
+        this.setText({ text: this._condition.replace(/\s+/g, '') });
 
         super.reset(withError);
     }

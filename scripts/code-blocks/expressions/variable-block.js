@@ -1,6 +1,6 @@
 import BaseExpression from "./base-expression.js";
 
-const variableName = ["health", "ammo"];
+const variableName = ["♥", "⁍"];
 
 /**
  * @extends BaseExpression
