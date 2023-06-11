@@ -25,11 +25,9 @@ export default class RunnerCommand extends CommandsContainer {
     async run(player, state) {
         const result = await super.run(player, state);
 
-        if (result !== FINISHED && result !== PLAYER_REACHED_GOAL) {
-            return result;
+        if (result === FINISHED || result === PLAYER_REACHED_GOAL) {
+            await waitUnlessStopped(state);
         }
-
-        await waitUnlessStopped(state);
 
         return result;
     }

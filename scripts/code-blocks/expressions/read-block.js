@@ -1,9 +1,9 @@
 import BaseExpression from "./base-expression.js";
 
 const directions = [
-    "left", "up", "right", "down",
-    "upperleft", "upperright", "lowerright", "lowerleft", 
-    "center",
+    "←", "↑", "→", "↓",
+    "↖", "↗", "↘", "↙", 
+    "·",
 ];
 
 /**

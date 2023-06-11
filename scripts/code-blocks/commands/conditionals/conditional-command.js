@@ -2,9 +2,18 @@ import CommandsContainer from "../commands-container.js";
 import { MARGIN } from "../../code-block-constants.js";
 import { getContainerParent, waitForMilisecond } from "../../../utils/misc.js";
 
-const variableIconMap = new Map([
+const iconMap = new Map([
     [/♥/g, "health"],
     [/⁍/g, "ammo"],
+    [/→/g, "right"],
+    [/←/g, "left"],
+    [/↑/g, "up"],
+    [/↓/g, "down"],
+    [/↘/g, "lowerright"],
+    [/↙/g, "lowerleft"],
+    [/↖/g, "upperleft"],
+    [/↗/g, "upperright"],
+    [/·/g, "center"],
 ]);
 
 /**
@@ -128,7 +137,7 @@ export default class ConditionalCommand extends CommandsContainer {
     getCleanedCondition() {
         let replacedIcon = this._condition;
 
-        for (const [regex, value] of variableIconMap) {
+        for (const [regex, value] of iconMap) {
             replacedIcon = replacedIcon.replace(regex, value);
         }
 
