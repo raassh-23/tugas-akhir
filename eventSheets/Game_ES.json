@@ -3973,13 +3973,12 @@
 							}
 						},
 						{
-							"id": "layer-is-visible",
+							"id": "layer-is-interactive",
 							"objectClass": "System",
-							"sid": 436121822143428,
+							"sid": 158128908856742,
 							"parameters": {
-								"layer": "\"LevelPopUp\""
-							},
-							"isInverted": true
+								"layer": "\"Game\""
+							}
 						}
 					],
 					"actions": [
@@ -4031,13 +4030,12 @@
 							}
 						},
 						{
-							"id": "layer-is-visible",
+							"id": "layer-is-interactive",
 							"objectClass": "System",
-							"sid": 393904005651952,
+							"sid": 329299244522158,
 							"parameters": {
-								"layer": "\"LevelPopUp\""
-							},
-							"isInverted": true
+								"layer": "\"Game\""
+							}
 						}
 					],
 					"actions": [],
@@ -4297,281 +4295,296 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 218531258319181,
-							"parameters": {
-								"key": 187
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
+							"id": "layer-is-interactive",
 							"objectClass": "System",
-							"sid": 958542980863833,
+							"sid": 148305487306528,
 							"parameters": {
-								"variable": "InitialScale",
-								"value": "LayerScale(\"Game\")"
+								"layer": "\"Game\""
 							}
+						}
+					],
+					"actions": [],
+					"sid": 444900404170198,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 418916290209522,
+									"parameters": {
+										"key": 187
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 439044916807277,
+									"parameters": {
+										"variable": "InitialScale",
+										"value": "LayerScale(\"Game\")"
+									}
+								},
+								{
+									"callFunction": "SetZoom",
+									"sid": 685062507386419,
+									"parameters": [
+										"clamp(InitialScale + 1 * dt, minScale, MaxScale)"
+									]
+								}
+							],
+							"sid": 659900349852480
 						},
 						{
-							"callFunction": "SetZoom",
-							"sid": 407148366444918,
-							"parameters": [
-								"clamp(InitialScale + 1 * dt, minScale, MaxScale)"
-							]
-						}
-					],
-					"sid": 380050891548844,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-mouse-wheel",
-							"objectClass": "Mouse",
-							"sid": 809347557124826,
-							"parameters": {
-								"direction": "up"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 559281144466525,
+									"parameters": {
+										"key": 189
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 346464265197981,
+									"parameters": {
+										"variable": "InitialScale",
+										"value": "LayerScale(\"Game\")"
+									}
+								},
+								{
+									"callFunction": "SetZoom",
+									"sid": 576338389216543,
+									"parameters": [
+										"clamp(InitialScale - 1 * dt, minScale, MaxScale)"
+									]
+								}
+							],
+							"sid": 862578181906738
 						},
 						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 834345218680199,
-							"parameters": {
-								"object": "ScrollablePanel"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 265244920424644,
-							"parameters": {
-								"variable": "InitialScale",
-								"value": "LayerScale(\"Game\")"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 993537486401448,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 337470866406010,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-y",
+									"objectClass": "System",
+									"sid": 510937735390021,
+									"parameters": {
+										"y": "scrolly - 400 * dt"
+									}
+								}
+							],
+							"sid": 599291869732372,
+							"isOrBlock": true
 						},
 						{
-							"callFunction": "SetZoom",
-							"sid": 547108321925462,
-							"parameters": [
-								"clamp(InitialScale + 5 * dt, minScale, MaxScale)"
-							]
-						}
-					],
-					"sid": 863151459271077
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 967829930942547,
-							"parameters": {
-								"key": 189
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 445281941760378,
-							"parameters": {
-								"variable": "InitialScale",
-								"value": "LayerScale(\"Game\")"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 198838114467649,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 454251444283180,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-y",
+									"objectClass": "System",
+									"sid": 432216759812809,
+									"parameters": {
+										"y": "scrolly + 400 * dt"
+									}
+								}
+							],
+							"sid": 362180752471225,
+							"isOrBlock": true
 						},
 						{
-							"callFunction": "SetZoom",
-							"sid": 257499592252607,
-							"parameters": [
-								"clamp(InitialScale - 1 * dt, minScale, MaxScale)"
-							]
-						}
-					],
-					"sid": 868630627755720,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-mouse-wheel",
-							"objectClass": "Mouse",
-							"sid": 534093345012016,
-							"parameters": {
-								"direction": "down"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 612255446758447,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 493586656369445,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-x",
+									"objectClass": "System",
+									"sid": 744163930055217,
+									"parameters": {
+										"x": "scrollx  - 400 * dt"
+									}
+								}
+							],
+							"sid": 126628782022583,
+							"isOrBlock": true
 						},
 						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 525325169513408,
-							"parameters": {
-								"object": "ScrollablePanel"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 222896850724332,
-							"parameters": {
-								"variable": "InitialScale",
-								"value": "LayerScale(\"Game\")"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 683312266008924,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 758968147965763,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-x",
+									"objectClass": "System",
+									"sid": 972860370814479,
+									"parameters": {
+										"x": "scrollx  + 400 * dt"
+									}
+								}
+							],
+							"sid": 957684832261435,
+							"isOrBlock": true
 						},
 						{
-							"callFunction": "SetZoom",
-							"sid": 638454115762409,
-							"parameters": [
-								"clamp(InitialScale - 5 * dt, minScale, MaxScale)"
-							]
-						}
-					],
-					"sid": 374904246632052
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 869305269241514,
-							"parameters": {
-								"key": 87
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-mouse-wheel",
+									"objectClass": "Mouse",
+									"sid": 414335364331840,
+									"parameters": {
+										"direction": "up"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 809043866441168,
+									"parameters": {
+										"object": "ScrollablePanel"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 769799124658780,
+									"parameters": {
+										"variable": "InitialScale",
+										"value": "LayerScale(\"Game\")"
+									}
+								},
+								{
+									"callFunction": "SetZoom",
+									"sid": 706774601641563,
+									"parameters": [
+										"clamp(InitialScale + 5 * dt, minScale, MaxScale)"
+									]
+								}
+							],
+							"sid": 575821547495748
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 605046252904890,
-							"parameters": {
-								"key": 38
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-mouse-wheel",
+									"objectClass": "Mouse",
+									"sid": 485673567415840,
+									"parameters": {
+										"direction": "down"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 894926984682013,
+									"parameters": {
+										"object": "ScrollablePanel"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 388066775604810,
+									"parameters": {
+										"variable": "InitialScale",
+										"value": "LayerScale(\"Game\")"
+									}
+								},
+								{
+									"callFunction": "SetZoom",
+									"sid": 605544470722248,
+									"parameters": [
+										"clamp(InitialScale - 5 * dt, minScale, MaxScale)"
+									]
+								}
+							],
+							"sid": 974712527538236
 						}
-					],
-					"actions": [
-						{
-							"id": "scroll-to-y",
-							"objectClass": "System",
-							"sid": 946823342446909,
-							"parameters": {
-								"y": "scrolly - 400 * dt"
-							}
-						}
-					],
-					"sid": 907552827902668,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 536784194005425,
-							"parameters": {
-								"key": 83
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 223380072494067,
-							"parameters": {
-								"key": 40
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "scroll-to-y",
-							"objectClass": "System",
-							"sid": 408646804234785,
-							"parameters": {
-								"y": "scrolly + 400 * dt"
-							}
-						}
-					],
-					"sid": 903959736133675,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 337746849976356,
-							"parameters": {
-								"key": 65
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 316042409304323,
-							"parameters": {
-								"key": 37
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "scroll-to-x",
-							"objectClass": "System",
-							"sid": 469935930987397,
-							"parameters": {
-								"x": "scrollx  - 400 * dt"
-							}
-						}
-					],
-					"sid": 968434351854700,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 614045596199830,
-							"parameters": {
-								"key": 68
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 844967174564702,
-							"parameters": {
-								"key": 39
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "scroll-to-x",
-							"objectClass": "System",
-							"sid": 458774806504498,
-							"parameters": {
-								"x": "scrollx  + 400 * dt"
-							}
-						}
-					],
-					"sid": 565750069680589,
-					"isOrBlock": true
+					]
 				},
 				{
 					"functionName": "SetZoom",
@@ -4742,7 +4755,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 431523679452340,
+							"sid": 568446855001908,
 							"parameters": {
 								"first-value": "scrolly",
 								"comparison": 4,
@@ -4754,13 +4767,13 @@
 						{
 							"id": "scroll-to-y",
 							"objectClass": "System",
-							"sid": 212040984393081,
+							"sid": 975632282286745,
 							"parameters": {
 								"y": "LayoutHeight - OriginalMidY / LayerScale(\"Game\")"
 							}
 						}
 					],
-					"sid": 328780680241080
+					"sid": 270898364881934
 				}
 			],
 			"sid": 292331183861215
@@ -5472,11 +5485,20 @@
 							}
 						},
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 405983666745003,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 543916739377684,
+							"sid": 138406013215350,
 							"parameters": {
-								"layer": "\"Menu\"",
+								"layer": "\"Pause\"",
 								"interactive": false
 							}
 						},
@@ -6645,11 +6667,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 287142190486737,
+									"sid": 340650844632771,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"menu-level\""
+										"value": "\"pause-level\""
 									}
 								}
 							],
@@ -6708,11 +6730,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 534095246373811,
+									"sid": 879852467638239,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"menu-restart\""
+										"value": "\"pause-restart\""
 									}
 								}
 							],
@@ -6867,7 +6889,7 @@
 										},
 										{
 											"type": "script",
-											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tconsole.log(await leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t))\n} catch(error) {\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
+											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tawait leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t);\n} catch(error) {\n\tconsole.error(error);\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
 										},
 										{
 											"id": "wait-for-previous-actions",
@@ -6901,78 +6923,49 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 439730187551308,
+									"sid": 898154726266188,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"menu\""
+										"value": "\"pause\""
 									}
 								}
 							],
-							"actions": [],
-							"sid": 341640453652627,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-animation-frame",
-											"objectClass": "Button",
-											"sid": 725506237891964,
-											"parameters": {
-												"comparison": 0,
-												"number": "14"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "ShowSideMenu",
-											"sid": 633198997587410,
-											"parameters": [
-												true
-											]
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Button",
-											"sid": 476509945781856,
-											"parameters": {
-												"frame-number": "15"
-											}
-										}
-									],
-									"sid": 123215241996379
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 674122285791280
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "ShowSideMenu",
-											"sid": 196564013382864,
-											"parameters": [
-												false
-											]
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Button",
-											"sid": 178462419776931,
-											"parameters": {
-												"frame-number": "14"
-											}
-										}
-									],
-									"sid": 348353882388654
+									"callFunction": "ShowPause",
+									"sid": 925509916984229,
+									"parameters": [
+										true
+									]
 								}
-							]
+							],
+							"sid": 341640453652627
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 133223815949715,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"close-pause-panel\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ShowPause",
+									"sid": 717554895955429,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 337615965898272
 						}
 					]
 				},
@@ -7812,9 +7805,9 @@
 				},
 				{
 					"eventType": "variable",
-					"name": "SIDE_MENU_TWEEN_TAG",
+					"name": "PAUSE_TWEEN_TAG",
 					"type": "string",
-					"initialValue": "side_menu",
+					"initialValue": "pause",
 					"comment": "",
 					"isStatic": true,
 					"isConstant": true,
@@ -7822,16 +7815,16 @@
 				},
 				{
 					"eventType": "variable",
-					"name": "SIDE_MENU_TWEEN_SPEED",
+					"name": "PAUSE_TWEEN_SPEED",
 					"type": "number",
-					"initialValue": "260",
+					"initialValue": "1000",
 					"comment": "",
 					"isStatic": true,
 					"isConstant": true,
 					"sid": 247209769084142
 				},
 				{
-					"functionName": "ShowSideMenu",
+					"functionName": "ShowPause",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -7850,12 +7843,12 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 875880509173182,
+							"objectClass": "UIPanel",
+							"sid": 161935591102130,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
-								"value": "\"menu-panel\""
+								"value": "\"pause-panel\""
 							}
 						}
 					],
@@ -7876,24 +7869,51 @@
 							],
 							"actions": [
 								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 997755522946864,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "visible"
+									}
+								},
+								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 658726663146937,
+									"sid": 360505085051406,
 									"parameters": {
-										"layer": "\"Menu\"",
+										"layer": "\"Pause\"",
 										"interactive": true
 									}
 								},
 								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 367143119854717,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 307101517186336,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "tween-one-property",
-									"objectClass": "UIPanel2",
-									"sid": 608033357395534,
+									"objectClass": "UIPanel",
+									"sid": 133655911178614,
 									"behaviorType": "Tween",
 									"parameters": {
-										"tags": "SIDE_MENU_TWEEN_TAG",
-										"property": "offsetX",
-										"end-value": "Self.targetX",
-										"time": "abs(Self.X - Self.targetX)/SIDE_MENU_TWEEN_SPEED",
+										"tags": "PAUSE_TWEEN_TAG",
+										"property": "offsetY",
+										"end-value": "Self.targetY",
+										"time": "abs(Self.Y - Self.targetY)/PAUSE_TWEEN_SPEED",
 										"ease": "easeoutsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
@@ -7915,29 +7935,61 @@
 							],
 							"actions": [
 								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 305950588927014,
-									"parameters": {
-										"layer": "\"Menu\"",
-										"interactive": false
-									}
-								},
-								{
 									"id": "tween-one-property",
-									"objectClass": "UIPanel2",
-									"sid": 462031703388045,
+									"objectClass": "UIPanel",
+									"sid": 748739019549687,
 									"behaviorType": "Tween",
 									"parameters": {
-										"tags": "SIDE_MENU_TWEEN_TAG",
-										"property": "offsetX",
-										"end-value": "Self.originX",
-										"time": "abs(Self.X - Self.originX)/SIDE_MENU_TWEEN_SPEED",
+										"tags": "PAUSE_TWEEN_TAG",
+										"property": "offsetY",
+										"end-value": "Self.originY",
+										"time": "abs(Self.Y - Self.originY)/PAUSE_TWEEN_SPEED",
 										"ease": "easeinsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
 										"ping-pong": "no",
 										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 698720778067732
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 446075738478706,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 733141724543871,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 598480893873180,
+									"parameters": {
+										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 970026149540498,
+									"parameters": {
+										"layer": "\"Game\"",
+										"interactive": true
 									}
 								}
 							],
