@@ -356,7 +356,7 @@ function setupAvailableConditionalExpressions(runtime) {
 	);
 }
 
-const VARIABLE_X = 64;
+const VARIABLE_X = 1216;
 const VARIABLE_START_Y = 160;
 const VARIABLE_SPACING_Y = 64;
 

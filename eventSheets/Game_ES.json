@@ -1894,11 +1894,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 271708432073164,
+							"sid": 909948007785450,
 							"parameters": {
 								"object-to-create": "UIPanel",
 								"layer": "\"PopUpBack\"",
-								"x": "165",
+								"x": "424",
 								"y": "name = \"repeat\" ? 147.5 : 180",
 								"create-hierarchy": true,
 								"template-name": "name & \"-panel\""
@@ -2593,15 +2593,6 @@
 								{
 									"id": "is-touching-object",
 									"objectClass": "Touch",
-									"sid": 517000797714432,
-									"parameters": {
-										"object": "CodeBlockPanel"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-touching-object",
-									"objectClass": "Touch",
 									"sid": 591124741407882,
 									"parameters": {
 										"object": "CodeBlock"
@@ -2616,8 +2607,39 @@
 									"behaviorType": "DragDrop"
 								}
 							],
-							"sid": 413518804764320,
-							"isOrBlock": true
+							"sid": 413518804764320
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-parent",
+									"objectClass": "ScrollablePanel",
+									"sid": 707750083224186,
+									"parameters": {
+										"parent": "CodeBlockPanel",
+										"which": "all"
+									}
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 824342082699792,
+									"parameters": {
+										"object": "CodeBlockPanel"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "drop",
+									"objectClass": "ScrollablePanel",
+									"sid": 781955766708471,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"sid": 314399558593886
 						}
 					]
 				},
@@ -5232,7 +5254,7 @@
 						},
 						{
 							"type": "script",
-							"script": "resetState(runtime, !state.isError);"
+							"script": "runner.reset(!state.isError); // reset commands, except errors if result is ERROR\nresetState(runtime, !state.isError);"
 						}
 					],
 					"sid": 650488692869568
@@ -7136,12 +7158,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 614129818012558,
+							"sid": 922581142382945,
 							"parameters": {
 								"object-to-create": "UIPanel2",
 								"layer": "\"Toast\"",
-								"x": "632",
-								"y": "448",
+								"x": "648",
+								"y": "480",
 								"create-hierarchy": true,
 								"template-name": "\"toast\""
 							}
