@@ -835,6 +835,14 @@
 												"comparison": 0,
 												"value": "\"help-drop-panel\""
 											}
+										},
+										{
+											"id": "layer-is-interactive",
+											"objectClass": "System",
+											"sid": 913003034280332,
+											"parameters": {
+												"layer": "CodeBlockPanel.LayerName"
+											}
 										}
 									],
 									"actions": [
@@ -2109,6 +2117,31 @@
 								}
 							],
 							"sid": 125429818451015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 278972540651051,
+									"parameters": {
+										"child": "HelpObject",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "HelpObject",
+									"sid": 570854809511054,
+									"parameters": {
+										"layer": "name = \"repeat\" ? \"RepeatPopUp\" : \"ConditionalPopUp\""
+									}
+								}
+							],
+							"sid": 444071495224084
 						}
 					]
 				},
@@ -2526,6 +2559,412 @@
 								}
 							],
 							"sid": 153290914979140
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drag-start",
+							"objectClass": "HelpObject",
+							"sid": 114187730684285,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "HelpObject",
+							"sid": 501823908656260,
+							"parameters": {
+								"instance-variable": "originX",
+								"value": "Self.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "HelpObject",
+							"sid": 746000271160462,
+							"parameters": {
+								"instance-variable": "originY",
+								"value": "Self.Y"
+							}
+						}
+					],
+					"sid": 494592169597623,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 358249060784011,
+									"parameters": {
+										"variable": "isDragging"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "HelpObject",
+									"sid": 225372618728947,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "HelpObject",
+									"sid": 248398332348622,
+									"behaviorType": "DragDrop",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 443877867447202,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 847450507162173
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 335105056775426,
+									"parameters": {
+										"variable": "isDragging",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 967892980603272
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drop",
+							"objectClass": "HelpObject",
+							"sid": 279923196945780,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 338002864915673,
+							"parameters": {
+								"variable": "isDragging",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 817283290314354,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "CodeBlockPanel",
+									"sid": 266841106903470,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"help-drop-panel\""
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "HelpObject",
+									"sid": 244483306836163,
+									"parameters": {
+										"object": "CodeBlockPanel"
+									}
+								},
+								{
+									"id": "layer-is-interactive",
+									"objectClass": "System",
+									"sid": 344156537915497,
+									"parameters": {
+										"layer": "CodeBlockPanel.LayerName"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "intentionally empty"
+								}
+							],
+							"sid": 147972116120678
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 364526649716575
+								}
+							],
+							"actions": [],
+							"sid": 728490548507204,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "HelpObject",
+											"sid": 474331329117458,
+											"parameters": {
+												"object": "CodeBlock"
+											}
+										},
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 234131465462500,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "CodeBlock",
+											"sid": 119813068961823,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "CodeBlock",
+											"sid": 507328631644993,
+											"parameters": {
+												"which": "nearest",
+												"x": "HelpObject.X",
+												"y": "HelpObject.Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 961191895614451,
+											"parameters": {
+												"type": "log",
+												"message": "\"test\""
+											}
+										},
+										{
+											"callFunction": "ShowHelp",
+											"sid": 700738763250366,
+											"parameters": [
+												true
+											]
+										}
+									],
+									"sid": 347468950300338
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "HelpObject",
+											"sid": 237698388842418,
+											"parameters": {
+												"object": "CodeBlockButton"
+											}
+										},
+										{
+											"id": "compare-opacity",
+											"objectClass": "CodeBlockButton",
+											"sid": 528543141127937,
+											"parameters": {
+												"comparison": 4,
+												"opacity": "90"
+											}
+										},
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 904995912124787,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "CodeBlockButton",
+											"sid": 819133637434330,
+											"parameters": {
+												"object": "CodeBlockPanel"
+											}
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "CodeBlockButton",
+											"sid": 365629069937367,
+											"parameters": {
+												"which": "nearest",
+												"x": "HelpObject.X",
+												"y": "HelpObject.Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "FIXME: Really hacky, fix later"
+										},
+										{
+											"callFunction": "CreateNewCodeBlockObject",
+											"sid": 896073392544161,
+											"parameters": [
+												"CodeBlockButton.AnimationName",
+												"CodeBlockButton.inactiveLayer",
+												"CodeBlockButton.panelId",
+												"CodeBlockButton.X",
+												"CodeBlockButton.Y",
+												"CodeBlockButton.AnimationFrame"
+											]
+										}
+									],
+									"sid": 985626708173449,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 491729681669390,
+													"parameters": {
+														"object": "CodeBlock"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ShowHelp",
+													"sid": 180846827817052,
+													"parameters": [
+														true
+													]
+												},
+												{
+													"id": "destroy",
+													"objectClass": "CodeBlock",
+													"sid": 122689321141853
+												}
+											],
+											"sid": 503130580336199
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "HelpObject",
+									"sid": 104100112711649,
+									"parameters": {
+										"x": "Self.originX",
+										"y": "Self.originY"
+									}
+								}
+							],
+							"sid": 471363849971036
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 139989760240357,
+							"parameters": {
+								"object": "CodeBlockButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "FIXME: Also really hacky, fix later"
+						}
+					],
+					"sid": 819899141235067,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-interactive",
+									"objectClass": "System",
+									"sid": 690393693187497,
+									"parameters": {
+										"layer": "CodeBlockButton.LayerName"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "CodeBlockButton",
+									"sid": 266316881275431,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 379479784602611
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 604224088550962
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "CodeBlockButton",
+									"sid": 879601947982998,
+									"parameters": {
+										"opacity": "90"
+									}
+								}
+							],
+							"sid": 665622737700109
 						}
 					]
 				}

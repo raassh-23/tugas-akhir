@@ -238,7 +238,8 @@
 			"Star",
 			"Level",
 			"Loading",
-			"Dropdown"
+			"Dropdown",
+			"HelpObject"
 		],
 		"subfolders": [
 			{
