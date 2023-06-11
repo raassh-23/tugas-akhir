@@ -123,8 +123,6 @@ async function runCommands(runtime, players) {
 			if (result === STOPPED || result === ERROR) {
 				runtime.callFunction("ResetGame");
 
-				runner.reset(result !== ERROR); // reset commands, except errors if result is ERROR
-
 				return;
 			} else if (result === PLAYER_REACHED_GOAL && state.playerCount === 0) {
 				runtime.callFunction("GameOver");

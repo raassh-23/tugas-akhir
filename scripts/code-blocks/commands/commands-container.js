@@ -87,6 +87,8 @@ export default class CommandsContainer extends BaseCommand {
         super.reset(withError);
 
         this.container.codeBlocks.forEach((command) => command.reset(withError));
+
+        console.log("resetting container", this.name);
     }
 
     /**
