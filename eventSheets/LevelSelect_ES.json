@@ -161,7 +161,7 @@
 											"objectClass": "Level",
 											"sid": 883281577532934,
 											"parameters": {
-												"child": "Icon",
+												"child": "Star",
 												"which": "own"
 											}
 										}
@@ -169,7 +169,7 @@
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Icon",
+											"objectClass": "Star",
 											"sid": 316473490091807,
 											"parameters": {
 												"visibility": "visible"
@@ -183,19 +183,19 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Icon",
-													"sid": 113083104150705,
+													"objectClass": "Star",
+													"sid": 876157189657699,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
-														"value": "\"solved-level\""
+														"value": "\"solved\""
 													}
 												}
 											],
 											"actions": [
 												{
 													"id": "set-opacity",
-													"objectClass": "Icon",
+													"objectClass": "Star",
 													"sid": 632049151502615,
 													"parameters": {
 														"opacity": "LevelScoreData.At(LevelScoreData.CurX, SOLVED_INDEX) * 100"
@@ -209,19 +209,19 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Icon",
-													"sid": 652900761710236,
+													"objectClass": "Star",
+													"sid": 343435058487208,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
-														"value": "\"code-count-level\""
+														"value": "\"code-count\""
 													}
 												}
 											],
 											"actions": [
 												{
 													"id": "set-opacity",
-													"objectClass": "Icon",
+													"objectClass": "Star",
 													"sid": 178653747945233,
 													"parameters": {
 														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_CODE_BLOCKS_INDEX) * 100"
@@ -235,19 +235,19 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Icon",
-													"sid": 522237868895219,
+													"objectClass": "Star",
+													"sid": 803211235215235,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
-														"value": "\"actions-level\""
+														"value": "\"actions\""
 													}
 												}
 											],
 											"actions": [
 												{
 													"id": "set-opacity",
-													"objectClass": "Icon",
+													"objectClass": "Star",
 													"sid": 854440964852583,
 													"parameters": {
 														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_ACTIONS_INDEX) * 100"
@@ -323,7 +323,7 @@
 											"objectClass": "Level",
 											"sid": 652702321177639,
 											"parameters": {
-												"child": "Icon",
+												"child": "Star",
 												"which": "own"
 											}
 										}
@@ -331,7 +331,7 @@
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Icon",
+											"objectClass": "Star",
 											"sid": 222559650124709,
 											"parameters": {
 												"visibility": "invisible"

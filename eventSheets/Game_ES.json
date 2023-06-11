@@ -5345,9 +5345,9 @@
 								{
 									"id": "set-width",
 									"objectClass": "UIText",
-									"sid": 390289365971739,
+									"sid": 388671563593187,
 									"parameters": {
-										"width": "Self.TextWidth"
+										"width": "Self.TextWidth + 8"
 									}
 								}
 							],
@@ -5377,6 +5377,32 @@
 										}
 									],
 									"sid": 713954370141718
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 518420753239992,
+											"parameters": {
+												"child": "Star",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Star",
+											"sid": 490929491715772,
+											"parameters": {
+												"x": "UIText.X + UIText.Width/2  + 12",
+												"y": "UIText.Y - UIText.Height/2"
+											}
+										}
+									],
+									"sid": 322798885310094
 								}
 							]
 						},
@@ -5406,9 +5432,9 @@
 								{
 									"id": "set-width",
 									"objectClass": "UIText",
-									"sid": 328588064078911,
+									"sid": 130038846631473,
 									"parameters": {
-										"width": "Self.TextWidth"
+										"width": "Self.TextWidth  + 8"
 									}
 								}
 							],
@@ -5438,6 +5464,32 @@
 										}
 									],
 									"sid": 848502766617733
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 222908916867350,
+											"parameters": {
+												"child": "Star",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Star",
+											"sid": 246184501031895,
+											"parameters": {
+												"x": "UIText.X + UIText.Width/2  + 12",
+												"y": "UIText.Y - UIText.Height/2"
+											}
+										}
+									],
+									"sid": 336662926144181
 								}
 							]
 						},
@@ -5467,9 +5519,9 @@
 								{
 									"id": "set-width",
 									"objectClass": "UIText",
-									"sid": 554951270481135,
+									"sid": 595877442431339,
 									"parameters": {
-										"width": "Self.TextWidth"
+										"width": "Self.TextWidth  + 8"
 									}
 								}
 							],
@@ -5499,6 +5551,32 @@
 										}
 									],
 									"sid": 846985855954459
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "UIText",
+											"sid": 685728127111446,
+											"parameters": {
+												"child": "Star",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Star",
+											"sid": 756277801777536,
+											"parameters": {
+												"x": "UIText.X + UIText.Width/2  + 12",
+												"y": "UIText.Y - UIText.Height/2"
+											}
+										}
+									],
+									"sid": 760817017831314
 								}
 							]
 						},
@@ -5749,22 +5827,22 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Icon",
-									"sid": 237446269542749,
+									"objectClass": "Star",
+									"sid": 224677869664483,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"action-game-over-icon\""
+										"value": "\"actions\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-opacity",
-									"objectClass": "Icon",
-									"sid": 949784813634277,
+									"objectClass": "Star",
+									"sid": 118297688056055,
 									"parameters": {
-										"opacity": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 100 : 50"
+										"opacity": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 100 : 0"
 									}
 								}
 							],
@@ -5775,22 +5853,22 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Icon",
-									"sid": 303080328887608,
+									"objectClass": "Star",
+									"sid": 595280487656736,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"code-count-game-over-icon\""
+										"value": "\"code-count\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-opacity",
-									"objectClass": "Icon",
-									"sid": 248726426033731,
+									"objectClass": "Star",
+									"sid": 830532196002280,
 									"parameters": {
-										"opacity": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 100 : 50"
+										"opacity": "LevelScoreData.At(level, CODE_BLOCKS_INDEX) <= targetCodeBlocks? 100 : 0"
 									}
 								}
 							],
