@@ -58,6 +58,15 @@
 						"instance-variable": "originY",
 						"value": "Self.Y"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 487064480050336,
+					"parameters": {
+						"variable": "touchedUid",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 869417131084892
