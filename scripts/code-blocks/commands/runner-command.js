@@ -84,4 +84,12 @@ export default class RunnerCommand extends CommandsContainer {
         return this.container.codeBlocks
             .reduce((acc, command) => acc + command.getCount(), 0);
     }
+
+    /**
+     * 
+     * @param {boolean} isActive 
+     */
+    setActive(isActive) {
+        // intentionally empty
+    }
 }

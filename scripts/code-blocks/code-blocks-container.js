@@ -59,4 +59,8 @@ export default class CodeBlocksContainer {
 
         return true;
     }
+
+    isCodeBlockFirst(codeBlock) {
+        return this.codeBlocks[0] === codeBlock;
+    }
 }

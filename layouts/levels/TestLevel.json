@@ -1973,6 +1973,114 @@
 			"overriden": 0,
 			"subLayers": [
 				{
+					"name": "ActiveCommandListBG",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "CodeBlockPanel",
+							"properties": {
+								"left-margin": 45,
+								"right-margin": 45,
+								"top-margin": 45,
+								"bottom-margin": 45,
+								"edges": "stretch",
+								"fill": "stretch",
+								"initially-visible": true,
+								"origin": "top-left",
+								"seams": "overlap"
+							},
+							"uid": 216,
+							"instanceVariables": {
+								"originX": 0,
+								"originY": 0,
+								"targetX": 0,
+								"targetY": 0,
+								"duration": 0,
+								"id": "active-commands-panel-bg"
+							},
+							"behaviors": {
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
+								}
+							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 216,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 221,
+								"y": 507,
+								"width": 852.8431207097119,
+								"height": 185.12494995995996,
+								"originX": 0,
+								"originY": 0,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
+					"sid": 488806211844230,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 0,
+					"parallaxY": 0,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
 					"name": "ActiveCommandList",
 					"overriden": 0,
 					"subLayers": [],
@@ -2161,9 +2269,9 @@
 								}
 							},
 							"world": {
-								"x": 241,
-								"y": 513,
-								"width": 812.6411136822529,
+								"x": 221,
+								"y": 507,
+								"width": 850.6411136822529,
 								"height": 174.7231260462924,
 								"originX": 0,
 								"originY": 0,
@@ -2276,6 +2384,23 @@
 							"sceneGraphData": {
 								"parent-uid": 17,
 								"uid": 36,
+								"children": [
+									{
+										"uid": 451,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": false,
+											"h": false,
+											"a": true,
+											"o": true,
+											"v": true,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2306,6 +2431,63 @@
 								"y": 600,
 								"width": 96,
 								"height": 96,
+								"originX": 0,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "CodeBlockShadowProtrusion",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 451,
+							"instanceVariables": {},
+							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 36,
+								"uid": 451,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 353,
+								"y": 600,
+								"width": 8,
+								"height": 62,
 								"originX": 0,
 								"originY": 0.5,
 								"color": [
@@ -3691,6 +3873,39 @@
 			"global": true
 		},
 		{
+			"name": "InactiveCodeBlocks",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 930342058942235,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": true,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "Toast",
 			"overriden": 0,
 			"subLayers": [],
@@ -3721,7 +3936,7 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
-			"global": false
+			"global": true
 		},
 		{
 			"name": "LevelPopUp",

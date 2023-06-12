@@ -1,0 +1,62 @@
+{
+	"name": "CodeBlockProtrusion",
+	"plugin-id": "Sprite",
+	"sid": 373987673116367,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "hsladjust",
+			"name": "AdjustHSL"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 62,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 469006,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.875,
+								0.04838709677419355,
+								1,
+								0.0967741935483871,
+								1,
+								0.9032258064516129,
+								0.375,
+								1,
+								0,
+								0.967741935483871,
+								0,
+								0.9032258064516129,
+								0,
+								0.0967741935483871
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 876758042059251,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

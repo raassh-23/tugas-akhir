@@ -27,25 +27,35 @@ export default class CodeBlock extends ISpriteInstance {
          */
         this.savedHeight = this.height;
 
-            /**
+        /**
          * @type {ICodeBlockShadow[]}
          */
         this._codeBlockShadows = [];
+
+        /**
+         * @type {ICodeBlockProtrusion[]}
+         */
+        this._codeBlockProtrusions = [];
+
+        /**
+         * @type {IWorldInstance[]}
+         */
+        this._highlightedObjects = [];
 
         for (const child of this.children()) {
             if (child.objectType.name === "CodeBlockShadow") {
                 child.savedWidth = child.width;
                 child.savedHeight = child.height;
                 this._codeBlockShadows.push(child);
+            } else if (child.objectType.name === "CodeBlockProtrusion") {
+                child.savedWidth = child.width;
+                child.savedHeight = child.height;
+                this._codeBlockProtrusions.push(child);
             }
         }
 
         this._codeBlockShadows.sort((a, b) => a.x - b.x);
-
-        /**
-         * @type {IWorldInstance[]}
-         */
-        this._highlightedObjects = [];
+        this._codeBlockProtrusions.sort((a, b) => a.x - b.x);
 
         /**
          * @type {number}
@@ -56,6 +66,9 @@ export default class CodeBlock extends ISpriteInstance {
          * @type {string}
          */
         this.originalAnimation = this.animationName;
+
+        /** @type {import("./code-blocks-container.js").default} */
+        this.containerParent = null;
     }
 
     /**
@@ -68,6 +81,26 @@ export default class CodeBlock extends ISpriteInstance {
         this._highlightedObjects.forEach((object) => {
             object.effects.forEach((effect) => effect.isActive = show);
         });
+
+        const protrusion0 = this._codeBlockProtrusions[0];
+        const protrusion1 = this._codeBlockProtrusions[1];
+
+        if (this.objectType.name === "RotateCommand") {
+            console.log(protrusion0);
+            console.log(protrusion1);
+        }
+
+        protrusion1?.effects?.forEach((effect) => effect.isActive = show);
+
+        if (show) {
+            if (!this.containerParent.isCodeBlockFirst(this)) {
+                protrusion0?.moveToTop()
+            }
+
+            protrusion1?.moveToTop()
+        } else {
+            this.setActive(this.instVars?.isActive ?? false);
+        }
     }
 
     /**
@@ -99,6 +132,12 @@ export default class CodeBlock extends ISpriteInstance {
                 child.instVars.isActive = isActive;
             }
         });
+
+        if (!isActive) {
+            this._codeBlockProtrusions[0].blendMode = "destination-out";
+        } else {
+            this._codeBlockProtrusions[0].moveToBottom();
+        }
     }
 
     /**

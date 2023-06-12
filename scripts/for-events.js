@@ -195,6 +195,8 @@ function addCodeBlock(codeBlock, codeBlockShadow) {
 		destroyWithParent: true,
 	});
 
+	codeBlock.containerParent = parent.container;
+
 	top.updateLevel(0);
 	top.container.logCodeBlocks();
 	top.expand(0);
@@ -298,7 +300,7 @@ function setupAvailableCommands(runtime) {
 		scrollable,
 		availableCommands,
 		{
-			inactiveLayer: "UI",
+			inactiveLayer: "InactiveCodeBlocks",
 			panelId: "active-commands-panel",
 		},
 	);

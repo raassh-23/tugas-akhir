@@ -239,7 +239,9 @@
 			"Level",
 			"Loading",
 			"Dropdown",
-			"HelpObject"
+			"HelpObject",
+			"CodeBlockProtrusion",
+			"CodeBlockShadowProtrusion"
 		],
 		"subfolders": [
 			{

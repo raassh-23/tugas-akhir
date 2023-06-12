@@ -794,6 +794,47 @@
 										}
 									],
 									"sid": 134334595025956
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 982803795438800,
+											"parameters": {
+												"object": "CodeBlock"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CodeBlock",
+											"sid": 664797462886905,
+											"parameters": {
+												"instance-variable": "isActive"
+											}
+										},
+										{
+											"id": "for-each-ordered",
+											"objectClass": "System",
+											"sid": 478148715193241,
+											"parameters": {
+												"object": "CodeBlock",
+												"expression": "CodeBlock.X",
+												"order": "ascending"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SetCodeBlockActive",
+											"sid": 227455631628875,
+											"parameters": [
+												true
+											]
+										}
+									],
+									"sid": 991388899602508
 								}
 							]
 						},
@@ -1417,7 +1458,31 @@
 									"script": "expandCodeBlockShadowContainer(\n\truntime.objects.CodeBlockShadow.getFirstPickedInstance()\n);"
 								}
 							],
-							"sid": 406506094909100
+							"sid": 406506094909100,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nth-child",
+											"objectClass": "CodeBlockShadow",
+											"sid": 634199083321555,
+											"parameters": {
+												"child": "CodeBlockShadowProtrusion",
+												"instance": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-top",
+											"objectClass": "CodeBlockShadowProtrusion",
+											"sid": 131835867674310
+										}
+									],
+									"sid": 914593531158748
+								}
+							]
 						},
 						{
 							"eventType": "block",
