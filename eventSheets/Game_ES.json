@@ -1478,6 +1478,14 @@
 											"id": "move-to-top",
 											"objectClass": "CodeBlockShadowProtrusion",
 											"sid": 131835867674310
+										},
+										{
+											"id": "set-x",
+											"objectClass": "CodeBlockShadowProtrusion",
+											"sid": 904600474168850,
+											"parameters": {
+												"x": "CodeBlockShadow.X + CodeBlockShadow.Width"
+											}
 										}
 									],
 									"sid": 914593531158748

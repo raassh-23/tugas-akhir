@@ -105,6 +105,8 @@ export default class ConditionalCommand extends CommandsContainer {
             this._codeBlockShadows[1].x = this.x + this.width;
         }).catch((error) => { console.log(error); });
 
+        this._codeBlockProtrusions[1].x = this.x + this.width;
+
         const parent = getContainerParent(this);
 
         if (parent != null) {
@@ -181,6 +183,14 @@ export default class ConditionalCommand extends CommandsContainer {
 
         this._codeBlockShadows[1].x = this.x + this.width;
         this._codeBlockShadows[1].height = this.savedHeight * this.getMultiplier(this.level);
+
+        this._codeBlockProtrusions.forEach((protrusion) => {
+            protrusion.width = protrusion.savedWidth * multiplier;
+            protrusion.height = protrusion.savedHeight * multiplier;
+        });
+
+        this._codeBlockProtrusions[0].x = this.x;
+        this._codeBlockProtrusions[1].x = this.x + this.width;
     }
 
     /**
@@ -245,5 +255,15 @@ export default class ConditionalCommand extends CommandsContainer {
             this._popUpButton.x = x ?? this._popUpButton.x;
             this._popUpButton.y = y ?? this._popUpButton.y;
         }
+    }
+
+    /**
+     * 
+     * @param {boolean} show 
+     */
+    showHighlight(show) {
+        super.showHighlight(show);
+
+        this._codeBlockProtrusions?.[1]?.effects?.forEach((effect) => effect.isActive = false);
     }
 }

@@ -85,11 +85,6 @@ export default class CodeBlock extends ISpriteInstance {
         const protrusion0 = this._codeBlockProtrusions[0];
         const protrusion1 = this._codeBlockProtrusions[1];
 
-        if (this.objectType.name === "RotateCommand") {
-            console.log(protrusion0);
-            console.log(protrusion1);
-        }
-
         protrusion1?.effects?.forEach((effect) => effect.isActive = show);
 
         if (show) {
@@ -135,6 +130,7 @@ export default class CodeBlock extends ISpriteInstance {
 
         if (!isActive) {
             this._codeBlockProtrusions[0].blendMode = "destination-out";
+            this._codeBlockProtrusions[0].moveToTop();
         } else {
             this._codeBlockProtrusions[0].moveToBottom();
         }
@@ -160,6 +156,14 @@ export default class CodeBlock extends ISpriteInstance {
         this.height = this.savedHeight * multiplier;
 
         this._codeBlockShadows[0].x = this.x + this.width;
+
+        this._codeBlockProtrusions.forEach((protrusion) => {
+            protrusion.width = protrusion.savedWidth * multiplier;
+            protrusion.height = protrusion.savedHeight * multiplier;
+        });
+
+        this._codeBlockProtrusions[0].x = this.x;
+        this._codeBlockProtrusions[1].x = this.x + this.width;
     }
 
     /**
@@ -191,6 +195,11 @@ export default class CodeBlock extends ISpriteInstance {
         }
 
         this.setAnimation(newAnimationName, "current-frame");
+
+        this._codeBlockProtrusions?.[1]?.setAnimation(
+            show ? "Error" : "Normal",
+            "current-frame",
+        );
     }
 
     /**
