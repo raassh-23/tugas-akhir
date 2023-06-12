@@ -326,7 +326,7 @@ function setupAvailableRepeatExpressions(runtime) {
 		scrollable,
 		availableRepeatExpressions,
 		{
-			inactiveLayer: "RepeatPopUp",
+			inactiveLayer: "InactiveCodeBlocks",
 			panelId: "",
 		},
 	);
@@ -352,7 +352,7 @@ function setupAvailableConditionalExpressions(runtime) {
 		scrollable,
 		availableWhileExpressions,
 		{
-			inactiveLayer: "ConditionalPopUp",
+			inactiveLayer: "InactiveCodeBlocks",
 			panelId: "",
 		},
 	);

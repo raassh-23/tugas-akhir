@@ -1063,11 +1063,29 @@
 							}
 						},
 						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 202034333277369,
+							"parameters": {
+								"object": "Button"
+							},
+							"isInverted": true
+						},
+						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 704770514676817,
 							"parameters": {
 								"variable": "isRunning"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 928892809039439,
+							"parameters": {
+								"variable": "isDragging"
 							},
 							"isInverted": true
 						},
@@ -1094,6 +1112,23 @@
 							"sid": 852886327909860,
 							"parameters": {
 								"instance-variable": "isActive"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "CodeBlockDecoration",
+							"sid": 217433140687454,
+							"parameters": {
+								"parent": "CodeBlockPanel",
+								"which": "top"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "CodeBlockDecoration",
+							"sid": 716190897899348,
+							"parameters": {
+								"object": "CodeBlockPanel"
 							}
 						}
 					],
@@ -2190,6 +2225,31 @@
 								}
 							],
 							"sid": 125429818451015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "UIPanel",
+									"sid": 467540668100243,
+									"parameters": {
+										"child": "CodeBlockShadowProtrusion",
+										"which": "all"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "CodeBlockShadowProtrusion",
+									"sid": 523943646958795,
+									"parameters": {
+										"layer": "\"PopUpMiddle\""
+									}
+								}
+							],
+							"sid": 779563750349645
 						},
 						{
 							"eventType": "block",
