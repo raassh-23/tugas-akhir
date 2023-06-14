@@ -84,6 +84,7 @@ export const levelAvailableCodeBlocks = {
             blocks.rotateClockwiseCommand,
             blocks.rotateCounterClockwiseCommand,
             blocks.shootCommand,
+            blocks.takeGemCommand,
             blocks.forCommand,
             blocks.whileCommand,
             blocks.ifCommand,

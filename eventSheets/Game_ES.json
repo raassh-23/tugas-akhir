@@ -7280,26 +7280,6 @@
 					]
 				},
 				{
-					"eventType": "variable",
-					"name": "FINISHED",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "check code-block-constants.js",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 937819680652057
-				},
-				{
-					"eventType": "variable",
-					"name": "ERROR",
-					"type": "number",
-					"initialValue": "2",
-					"comment": "check code-block-constants.js",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 168315360186451
-				},
-				{
 					"functionName": "CheckCollisions",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -7318,16 +7298,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 964088649790328,
-							"parameters": {
-								"value": "FINISHED"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 691736778397864,
 					"children": [
 						{
@@ -7416,6 +7387,63 @@
 								}
 							],
 							"sid": 188760965931083
+						}
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "FINISHED",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "check code-block-constants.js",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 982155436141199
+				},
+				{
+					"eventType": "variable",
+					"name": "CONDITION_NOT_MET",
+					"type": "number",
+					"initialValue": "4",
+					"comment": "check code-block-constants.js",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 694296546765168
+				},
+				{
+					"functionName": "CheckGemCollisions",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Player",
+							"sid": 118674200595939,
+							"parameters": {
+								"unique-id": "currentPlayerUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 513963894634935,
+							"parameters": {
+								"value": "CONDITION_NOT_MET"
+							}
+						}
+					],
+					"sid": 109926928853241,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Check if player and portal are in the same grid"
 						},
 						{
 							"eventType": "block",
@@ -7423,7 +7451,7 @@
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Player",
-									"sid": 416272106017455,
+									"sid": 885539665174760,
 									"parameters": {
 										"object": "Gem"
 									}
@@ -7431,7 +7459,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 798376026477776,
+									"sid": 716565465780108,
 									"parameters": {
 										"first-value": "distance(Player.X, Player.Y, Gem.X, Gem.Y)",
 										"comparison": 2,
@@ -7445,12 +7473,20 @@
 									"script": "console.log(\"Gem Collected\");\n"
 								},
 								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 306599686606587,
+									"parameters": {
+										"value": "FINISHED"
+									}
+								},
+								{
 									"id": "destroy",
 									"objectClass": "Gem",
-									"sid": 547153070014696
+									"sid": 396812451228996
 								}
 							],
-							"sid": 973731706778069
+							"sid": 287508753202009
 						}
 					]
 				},

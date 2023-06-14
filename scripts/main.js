@@ -13,6 +13,7 @@ import {
 	ElseIfCommand,
 	ReadBlock,
 	RotateCommand,
+	TakeGemCommand,
 } from "./code-blocks/index.js";
 
 [
@@ -44,6 +45,7 @@ runOnStartup(async (runtime) =>
 	runtime.objects.ElseIfCommand.setInstanceClass(ElseIfCommand);
 	runtime.objects.ReadBlock.setInstanceClass(ReadBlock);
 	runtime.objects.RotateCommand.setInstanceClass(RotateCommand);
+	runtime.objects.TakeGemCommand.setInstanceClass(TakeGemCommand);
 });
 
 // async function OnBeforeProjectStart(runtime)

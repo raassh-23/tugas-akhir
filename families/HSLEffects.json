@@ -23,6 +23,7 @@
 		"ElseCommand",
 		"ElseIfCommand",
 		"ReadBlock",
-		"RotateCommand"
+		"RotateCommand",
+		"TakeGemCommand"
 	]
 }

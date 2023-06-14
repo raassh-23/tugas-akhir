@@ -34,6 +34,12 @@ export const shootCommand = {
 }
 
 /** @type {CodeBlockDefinition} */
+export const takeGemCommand = {
+    name: "TakeGemCommand",
+    frame: 0,
+}
+
+/** @type {CodeBlockDefinition} */
 export const forCommand = {
     name: "RepeatCommand",
     frame: 0,

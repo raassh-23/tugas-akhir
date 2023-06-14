@@ -14,6 +14,7 @@ import ElseCommand from "./commands/conditionals/branchs/else-command.js";
 import ElseIfCommand from "./commands/conditionals/branchs/else-if-command.js";
 import ReadBlock from "./expressions/read-block.js";
 import RotateCommand from "./commands/actions/rotate-command.js";
+import TakeGemCommand from "./commands/actions/take-gem-command.js";
 
 export {
     CodeBlock,
@@ -32,4 +33,5 @@ export {
     ElseIfCommand,
     ReadBlock,
     RotateCommand,
+    TakeGemCommand,
 };

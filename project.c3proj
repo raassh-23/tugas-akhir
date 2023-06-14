@@ -259,7 +259,8 @@
 					"ElseCommand",
 					"ElseIfCommand",
 					"ReadBlock",
-					"RotateCommand"
+					"RotateCommand",
+					"TakeGemCommand"
 				],
 				"subfolders": [],
 				"name": "CodeBlock"
@@ -548,6 +549,14 @@
 											"name": "rotate-command.js",
 											"type": "application/javascript",
 											"sid": 666724001260474,
+											"script-info": {
+												"purpose": "none"
+											}
+										},
+										{
+											"name": "take-gem-command.js",
+											"type": "application/javascript",
+											"sid": 263129458884252,
 											"script-info": {
 												"purpose": "none"
 											}
