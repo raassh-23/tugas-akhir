@@ -17,6 +17,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "CREDITS_TWEEN_TAG",
+			"type": "string",
+			"initialValue": "credits",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 127695738614322
+		},
+		{
+			"eventType": "variable",
+			"name": "SETTING_TWEEN_TAG",
+			"type": "string",
+			"initialValue": "setting",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 470029263581792
+		},
+		{
+			"eventType": "variable",
 			"name": "USERNAME_TAG",
 			"type": "string",
 			"initialValue": "username",
@@ -500,6 +520,16 @@
 								"comparison": 0,
 								"value": "\"leaderboard\""
 							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 200815542089663,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "LEADERBOARD_TWEEN_TAG"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -552,6 +582,150 @@
 								}
 							],
 							"sid": 477280879212814
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 193744330334544,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"credits\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 760255430020337,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "CREDITS_TWEEN_TAG"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 801534133010341,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 933847673494588,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"credits\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 298154348753467,
+									"parameters": [
+										true
+									]
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel",
+									"sid": 945652802898687,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "CREDITS_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.duration",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 234893084715966
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 788773860314321,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 829632921788707,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "SETTING_TWEEN_TAG"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 752933057636412,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 616950712372308,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 144697473827970,
+									"parameters": [
+										true
+									]
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel",
+									"sid": 796525682919685,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "SETTING_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.duration",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 347062022738268
 						}
 					]
 				},
@@ -629,6 +803,16 @@
 								"comparison": 0,
 								"value": "\"close-leaderboard\""
 							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 696333822465380,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "LEADERBOARD_TWEEN_TAG"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -681,6 +865,160 @@
 								}
 							],
 							"sid": 872709766484865
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 848424870895245,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"close-credits\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 857719270435830,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "CREDITS_TWEEN_TAG"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 722240954591905,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 557990116437561,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"credits\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel",
+									"sid": 541513081877394,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "CREDITS_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.originX",
+										"end-y": "Self.originY",
+										"time": "Self.duration",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 187041932990440
+								},
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 583583370817264,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 305954040956737
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 171302313700619,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"close-setting\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "UIPanel",
+							"sid": 456369075509448,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "SETTING_TWEEN_TAG"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 877883694744081,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIPanel",
+									"sid": 474278553434424,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "UIPanel",
+									"sid": 722204355666666,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "SETTING_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.originX",
+										"end-y": "Self.originY",
+										"time": "Self.duration",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 219711563337026
+								},
+								{
+									"callFunction": "showMenuPopUp",
+									"sid": 158686287234666,
+									"parameters": [
+										false
+									]
+								}
+							],
+							"sid": 232391404329882
 						}
 					]
 				},
@@ -1293,9 +1631,9 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 175701204130954,
+							"sid": 568160236050828,
 							"parameters": {
-								"layer": "\"UI\"",
+								"layer": "\"MenuUI\"",
 								"interactive": false
 							}
 						}
@@ -1333,9 +1671,9 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 187950487123149,
+							"sid": 696138421296051,
 							"parameters": {
-								"layer": "\"UI\"",
+								"layer": "\"MenuUI\"",
 								"interactive": true
 							}
 						}
