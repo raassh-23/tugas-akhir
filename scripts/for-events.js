@@ -365,6 +365,7 @@ const VARIABLE_SPACING_Y = 64;
 const variableIconMap = {
 	"health": 0,
 	"ammo": 2,
+	"gem": 6,
 }
 
 /**

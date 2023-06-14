@@ -5,6 +5,7 @@ import { getContainerParent, waitForMilisecond } from "../../../utils/misc.js";
 const iconMap = new Map([
     [/♥/g, "health"],
     [/⁍/g, "ammo"],
+    [/◆/g, "gem"],
     [/→/g, "right"],
     [/←/g, "left"],
     [/↑/g, "up"],

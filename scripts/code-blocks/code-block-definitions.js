@@ -236,6 +236,12 @@ export const ammoExpression = {
 };
 
 /** @type {CodeBlockDefinition} */
+export const gemExpression = {
+    name: "VariableBlock",
+    frame: 2,
+};
+
+/** @type {CodeBlockDefinition} */
 export const leftExpression = {
     name: "ReadBlock",
     frame: 0,

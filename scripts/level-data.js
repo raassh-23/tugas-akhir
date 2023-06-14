@@ -7,6 +7,7 @@ export const levelVariables = {
     0: { // test level
         "health": 5,
         "ammo": 10,
+        "gem": 3,
     },
     1: {
         //
@@ -109,6 +110,7 @@ export const levelAvailableCodeBlocks = {
             blocks.closeParenthesisExpression,
             blocks.healthExpression,
             blocks.ammoExpression,
+            blocks.gemExpression,
             blocks.leftExpression,
             blocks.rightExpression,
             blocks.upExpression,
@@ -148,6 +150,7 @@ export const levelAvailableCodeBlocks = {
             blocks.notExpression,
             blocks.healthExpression,
             blocks.ammoExpression,
+            blocks.gemExpression,
             blocks.leftExpression,
             blocks.rightExpression,
             blocks.upExpression,
