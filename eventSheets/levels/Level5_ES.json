@@ -1,0 +1,36 @@
+{
+	"name": "Level5_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 395307436315636
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 321028740548580,
+					"parameters": {
+						"variable": "level",
+						"value": "5"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 562188374885580
+		}
+	],
+	"sid": 923600656737146
+}

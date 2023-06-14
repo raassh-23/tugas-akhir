@@ -132,7 +132,7 @@
 								"tile-y-spacing": 0
 							},
 							"world": {
-								"x": -64,
+								"x": 64,
 								"y": 0,
 								"width": 1280,
 								"height": 736,
@@ -213,7 +213,7 @@
 							"world": {
 								"x": -32,
 								"y": 0,
-								"width": 416,
+								"width": 544,
 								"height": 768,
 								"originX": 0,
 								"originY": 0,
@@ -257,9 +257,9 @@
 								}
 							},
 							"world": {
-								"x": 768,
+								"x": 896,
 								"y": 0,
-								"width": 512,
+								"width": 384,
 								"height": 768,
 								"originX": 0,
 								"originY": 0,
@@ -303,7 +303,7 @@
 								}
 							},
 							"world": {
-								"x": 384,
+								"x": 512,
 								"y": 0,
 								"width": 384,
 								"height": 128,
@@ -349,7 +349,7 @@
 								}
 							},
 							"world": {
-								"x": 384,
+								"x": 512,
 								"y": 448,
 								"width": 384,
 								"height": 320,
@@ -519,7 +519,7 @@
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 672,
+								"x": 800,
 								"y": 352,
 								"width": 64,
 								"height": 64,
@@ -606,7 +606,7 @@
 						}
 					},
 					"world": {
-						"x": 480,
+						"x": 608,
 						"y": 224,
 						"width": 64,
 						"height": 64,

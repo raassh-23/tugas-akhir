@@ -1,0 +1,36 @@
+{
+	"name": "Level6_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 830533632330717
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 451126646438135,
+					"parameters": {
+						"variable": "level",
+						"value": "5"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 485502910235197
+		}
+	],
+	"sid": 949360532177062
+}

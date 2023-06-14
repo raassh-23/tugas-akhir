@@ -17,6 +17,15 @@ export const levelVariables = {
     3: {
         //
     },
+    4: {
+        //
+    },
+    5: {
+        //
+    },
+    6: {
+        //
+    },
 };
 
 /**
@@ -39,9 +48,21 @@ export const levelTarget = {
         codeBlocks: 6,
     },
     3: {
+        actions: 6,
+        codeBlocks: 6,
+    },
+    4: {
         actions: 11,
         codeBlocks: 11,
-    }
+    },
+    5: {
+        actions: 4,
+        codeBlocks: 2,
+    },
+    6: {
+        actions: 11,
+        codeBlocks: 8,
+    },
 }
 
 /**
@@ -173,5 +194,64 @@ export const levelAvailableCodeBlocks = {
         conditionalExpressions: [
             //
         ],
-    }
+    },
+    4: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    5: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    6: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
 };
