@@ -10049,7 +10049,7 @@
 						"originY": -564,
 						"targetX": 180.5,
 						"targetY": 114.5,
-						"duration": 0.5,
+						"duration": 0.25,
 						"id": "toast-panel"
 					},
 					"behaviors": {

@@ -7811,13 +7811,13 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "UIPanel2",
-							"sid": 573708132042919,
+							"sid": 903523163286197,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TOAST_TWEEN_TAG",
 								"property": "offsetY",
 								"end-value": "Self.Y - 32",
-								"time": "0.25",
+								"time": "Self.duration",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -8013,16 +8013,6 @@
 					"sid": 513214900134723
 				},
 				{
-					"eventType": "variable",
-					"name": "PAUSE_TWEEN_SPEED",
-					"type": "number",
-					"initialValue": "1000",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 247209769084142
-				},
-				{
 					"functionName": "ShowPause",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -8113,13 +8103,13 @@
 								{
 									"id": "tween-one-property",
 									"objectClass": "UIPanel",
-									"sid": 133655911178614,
+									"sid": 957867043413151,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "PAUSE_TWEEN_TAG",
 										"property": "offsetY",
 										"end-value": "Self.targetY",
-										"time": "abs(Self.Y - Self.targetY)/PAUSE_TWEEN_SPEED",
+										"time": "Self.duration",
 										"ease": "easeoutsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
@@ -8143,13 +8133,13 @@
 								{
 									"id": "tween-one-property",
 									"objectClass": "UIPanel",
-									"sid": 748739019549687,
+									"sid": 363093031933762,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "PAUSE_TWEEN_TAG",
 										"property": "offsetY",
 										"end-value": "Self.originY",
-										"time": "abs(Self.Y - Self.originY)/PAUSE_TWEEN_SPEED",
+										"time": "Self.duration",
 										"ease": "easeinsine",
 										"destroy-on-complete": "no",
 										"loop": "no",
@@ -8688,7 +8678,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const {id: targetId, ids} = localVars;\n\nif (ids === \"\") {\n\truntime.setReturnValue(0);\n}\n\nruntime.setReturnValue(\n\tids.split(\",\").find((id) => parseInt(id) === targetId) ? 1 : 0\n);"
+							"script": "const {id: targetId, ids} = localVars;\n\nconsole.log(targetId, ids);\n\nif (ids === \"\") {\n\truntime.setReturnValue(1);\n\treturn;\n}\n\nruntime.setReturnValue(\n\tids.split(\",\").find((id) => parseInt(id) === targetId) ? 1 : 0\n);"
 						}
 					],
 					"sid": 655063444628570

@@ -1,5 +1,5 @@
 {
-	"name": "Level6_ES",
+	"name": "Level8_ES",
 	"events": [
 		{
 			"eventType": "include",
@@ -11,17 +11,17 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 830533632330717
+					"sid": 965834137221232
 				}
 			],
 			"actions": [
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 182874718333094,
+					"sid": 319478959463603,
 					"parameters": {
 						"variable": "level",
-						"value": "6"
+						"value": "8"
 					}
 				},
 				{
@@ -29,8 +29,8 @@
 					"script": "setupLevel(runtime);"
 				}
 			],
-			"sid": 485502910235197
+			"sid": 166176944603658
 		}
 	],
-	"sid": 949360532177062
+	"sid": 702589552824959
 }

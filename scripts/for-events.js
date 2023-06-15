@@ -178,7 +178,9 @@ function resetState(runtime, shouldResetVariables = true) {
  * @param {IPlayer} player
  */
 function resetVariables(level, player) {
-	state.variables = levelVariables[level].reduce((acc, variable) => {
+	const variablesList = levelVariables[level] ?? [];
+
+	state.variables = variablesList.reduce((acc, variable) => {
 		Object.defineProperty(acc, variable, {
 			set: (value) => {
 				player.instVars[variable] = value;
@@ -424,7 +426,7 @@ function setupVariablesList(runtime) {
  * @returns {number}
  */
 function getVariableByName(name) {
-	const variable = state.variables[name];
+	const variable = state.variables[name] ?? 0;
 
 	if (variable == null) {
 		throw new Error(`Variable ${name} does not exist.`);

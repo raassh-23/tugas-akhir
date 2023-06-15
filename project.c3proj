@@ -313,7 +313,9 @@
 					"Level3",
 					"Level4",
 					"Level5",
-					"Level6"
+					"Level6",
+					"Level7",
+					"Level8"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -336,7 +338,9 @@
 					"Level3_ES",
 					"Level4_ES",
 					"Level5_ES",
-					"Level6_ES"
+					"Level6_ES",
+					"Level7_ES",
+					"Level8_ES"
 				],
 				"subfolders": [],
 				"name": "levels"

@@ -11,6 +11,8 @@ export const levelVariables = {
     4: [/* */],
     5: [/* */],
     6: [/* */],
+    7: [/* */],
+    8: [ "gem" ],
 };
 
 /**
@@ -47,6 +49,14 @@ export const levelTarget = {
     6: {
         actions: 11,
         codeBlocks: 8,
+    },
+    7: {
+        actions: 19,
+        codeBlocks: 11,
+    },
+    8: {
+        actions: 5,
+        codeBlocks: 7,
     },
 }
 
@@ -224,6 +234,53 @@ export const levelAvailableCodeBlocks = {
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
             blocks.rotateCounterClockwiseCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    7: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    8: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
             blocks.forCommand,
         ],
         repeatExpressions: [
