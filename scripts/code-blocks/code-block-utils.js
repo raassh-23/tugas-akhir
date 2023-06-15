@@ -31,9 +31,11 @@ export async function waitUnlessStopped(state, {
             return STOPPED;
         }
 
-        totalDuration += checkInterval;
+        if (!state.isPaused) {
+            totalDuration += checkInterval;
+        }
         await waitForMilisecond(checkInterval);
-    } while (totalDuration < duration || extraCondition());
+    } while (totalDuration < duration || extraCondition() || state.isPaused);
 
     return afterWait();
 }

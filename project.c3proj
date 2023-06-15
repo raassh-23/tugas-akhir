@@ -288,7 +288,7 @@
 			"OtherCodeBlock",
 			"CodeBlockContainer",
 			"HSLEffects",
-			"ResetObjects",
+			"GameObjects",
 			"Text",
 			"Panel",
 			"Clickable",

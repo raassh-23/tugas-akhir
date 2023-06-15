@@ -1,5 +1,5 @@
 {
-	"name": "ResetObjects",
+	"name": "GameObjects",
 	"plugin-id": "Sprite",
 	"sid": 700012522366645,
 	"instanceVariables": [],
@@ -10,6 +10,9 @@
 		"SolidObstacle",
 		"MovingEnemyCollision",
 		"Gem",
-		"Spike"
+		"Spike",
+		"Portal",
+		"MovingEnemy",
+		"Bullet"
 	]
 }

@@ -5672,6 +5672,13 @@
 							}
 						},
 						{
+							"callFunction": "PauseGame",
+							"sid": 454300514281573,
+							"parameters": [
+								false
+							]
+						},
+						{
 							"callFunction": "showLevelPopUp",
 							"sid": 549906104014383,
 							"parameters": [
@@ -5778,7 +5785,7 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "ResetObjects",
+							"objectClass": "GameObjects",
 							"sid": 270705358816653
 						},
 						{
@@ -5808,7 +5815,7 @@
 							"objectClass": "System",
 							"sid": 846453972800759,
 							"parameters": {
-								"object": "ResetObjects",
+								"object": "GameObjects",
 								"from-x": "0",
 								"from-y": "0",
 								"to-x": "LayoutWidth",
@@ -8074,6 +8081,13 @@
 									}
 								},
 								{
+									"callFunction": "PauseGame",
+									"sid": 461865788719217,
+									"parameters": [
+										true
+									]
+								},
+								{
 									"id": "tween-one-property",
 									"objectClass": "UIPanel",
 									"sid": 133655911178614,
@@ -8160,6 +8174,13 @@
 										"layer": "\"Game\"",
 										"interactive": true
 									}
+								},
+								{
+									"callFunction": "PauseGame",
+									"sid": 289337582583241,
+									"parameters": [
+										false
+									]
 								}
 							],
 							"sid": 204632111290599
@@ -8501,6 +8522,118 @@
 									"sid": 127844338402880
 								}
 							]
+						}
+					]
+				},
+				{
+					"functionName": "PauseGame",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "paused",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 231597634020417
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 506469466622014,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 605488041850164,
+									"parameters": {
+										"variable": "paused"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 195512617872501,
+									"parameters": {
+										"variable": "isPlaying",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 875596930156771,
+									"parameters": {
+										"object": "GameObjects",
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 655629403918903,
+									"parameters": {
+										"object": "TimerManager",
+										"time-scale": "0"
+									}
+								},
+								{
+									"type": "script",
+									"script": "state.isPaused = true;"
+								}
+							],
+							"sid": 211347206335659
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 230902620168562
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 369072407639561,
+									"parameters": {
+										"variable": "isPlaying",
+										"value": "true"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 310675091661533,
+									"parameters": {
+										"object": "GameObjects"
+									}
+								},
+								{
+									"id": "restore-object-time-scale",
+									"objectClass": "System",
+									"sid": 713194438181268,
+									"parameters": {
+										"object": "TimerManager"
+									}
+								},
+								{
+									"type": "script",
+									"script": "state.isPaused = false;"
+								}
+							],
+							"sid": 609659987528772
 						}
 					]
 				}

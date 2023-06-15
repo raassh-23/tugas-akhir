@@ -33,6 +33,7 @@ let pickedCommand = null;
  * @typedef {{
  * isStopped: boolean,
  * isError: boolean,
+ * isPaused: boolean,
  * playerCount: number,
  * actionCount: number,
  * variables: {
@@ -57,6 +58,7 @@ let pickedCommand = null;
 const state = {
 	isStopped: false,
 	isError: false,
+	isPaused: false,
 	playerCount: 0,
 	actionCount: 0,
 	variables: {},
@@ -148,6 +150,7 @@ function resetState(runtime, shouldResetVariables = true) {
 
 	state.isStopped = false;
 	state.isError = false;
+	state.isPaused = false;
 	state.playerCount = playerCount;
 	state.actionCount = 0;
 	state.surrounding = {
