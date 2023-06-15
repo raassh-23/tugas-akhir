@@ -1862,7 +1862,10 @@
 					"uid": 3,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"order": 0
+						"order": 0,
+						"gem": 3,
+						"health": 5,
+						"ammo": 10
 					},
 					"behaviors": {
 						"TileMovement": {
@@ -1892,6 +1895,65 @@
 					"world": {
 						"x": 608,
 						"y": 480,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "right",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 724,
+					"instanceVariables": {
+						"reachedGoal": false,
+						"order": 1,
+						"gem": 1,
+						"health": 2,
+						"ammo": 3
+					},
+					"behaviors": {
+						"TileMovement": {
+							"properties": {
+								"grid-width": 64,
+								"grid-height": 64,
+								"grid-offset-x": 32,
+								"grid-offset-y": 32,
+								"speed-x": 150,
+								"speed-y": 150,
+								"enabled": true,
+								"default-controls": false,
+								"isometric": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 608.6399884065072,
+						"y": 223.13263147545567,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,

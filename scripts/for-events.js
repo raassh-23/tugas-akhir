@@ -115,6 +115,7 @@ async function runCommands(runtime, players) {
 
 		for (const player of players) {
 			runner.reset(true); // reset commands, including errors
+			resetVariables(runtime.globalVars.level, player);
 
 			runtime.globalVars.currentPlayerUID = player.uid;
 
@@ -128,8 +129,6 @@ async function runCommands(runtime, players) {
 				runtime.callFunction("GameOver");
 				return;
 			}
-
-			resetVariables(runtime.globalVars.level);
 		}
 
 		runtime.globalVars.isRunning = false;
@@ -164,12 +163,22 @@ function resetState(runtime, shouldResetVariables = true) {
 	};
 
 	if (shouldResetVariables) {
-		resetVariables(level);
+		const firstPlayer = runtime.objects.Player.getAllInstances()
+			.reduce((prev, curr) => prev.instVars.order < curr.instVars.order ? prev : curr);
+		resetVariables(level, firstPlayer);
 	}
 }
 
-function resetVariables(level) {
-	state.variables = { ...levelVariables[level] };
+/**
+ * 
+ * @param {number} level 
+ * @param {IPlayer} player
+ */
+function resetVariables(level, player) {
+	state.variables = levelVariables[level].reduce((acc, variable) => {
+		acc[variable] = player.instVars?.[variable] ?? 0;
+		return acc;
+	}, {});
 }
 
 /**

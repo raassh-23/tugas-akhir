@@ -17,6 +17,27 @@
 			"desc": "",
 			"show": true,
 			"sid": 637987612064509
+		},
+		{
+			"name": "gem",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 340811488106895
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 996113579342458
+		},
+		{
+			"name": "ammo",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 602637390224076
 		}
 	],
 	"behaviorTypes": [

@@ -1,32 +1,16 @@
 import * as blocks from "./code-blocks/code-block-definitions.js";
 
 /**
- * @type {{[level: number]: {[variable: string]: number}}}
+ * @type {{[level: number]: string[]}}
  */
 export const levelVariables = {
-    0: { // test level
-        "health": 5,
-        "ammo": 10,
-        "gem": 3,
-    },
-    1: {
-        //
-    },
-    2: {
-        //
-    },
-    3: {
-        //
-    },
-    4: {
-        //
-    },
-    5: {
-        //
-    },
-    6: {
-        //
-    },
+    0: [ "health", "ammo", "gem" ],// test level
+    1: [/* */],
+    2: [/* */],
+    3: [/* */],
+    4: [/* */],
+    5: [/* */],
+    6: [/* */],
 };
 
 /**
