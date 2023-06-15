@@ -727,16 +727,7 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [
-				{
-					"name": "leaderboard.html",
-					"type": "text/html",
-					"sid": 409367011356375,
-					"file-info": {
-						"purpose": "none"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": [
 				{
 					"items": [

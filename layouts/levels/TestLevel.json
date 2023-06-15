@@ -2094,8 +2094,8 @@
 						"reachedGoal": false,
 						"id": 1,
 						"gem": 2,
-						"health": 5,
-						"ammo": 10
+						"health": 3,
+						"ammo": 5
 					},
 					"behaviors": {
 						"TileMovement": {

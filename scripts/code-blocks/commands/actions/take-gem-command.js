@@ -1,4 +1,4 @@
-import { ERROR, FINISHED } from "../../code-block-constants.js";
+import { FINISHED } from "../../code-block-constants.js";
 import { startCommmand, waitUnlessStopped } from "../../code-block-utils.js";
 import BaseCommand from "../base-command.js";
 

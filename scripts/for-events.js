@@ -3,7 +3,7 @@ import {
 	CommandsContainer,
 	RunnerCommand,
 } from "./code-blocks/index.js";
-import { 
+import {
 	levelVariables,
 	levelAvailableCodeBlocks,
 	levelTarget,
@@ -92,15 +92,13 @@ function setupLevel(runtime) {
 	}
 
 	resetState(runtime, true);
-	
-	console.log("setup level", state.variables);
 
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);
 	setupAvailableConditionalExpressions(runtime);
 	setupVariablesList(runtime);
 
-	const {actions, codeBlocks} = levelTarget[runtime.globalVars.level];
+	const { actions, codeBlocks } = levelTarget[runtime.globalVars.level];
 
 	runtime.globalVars.targetActions = actions ?? 0;
 	runtime.globalVars.targetCodeBlocks = codeBlocks ?? 0;
@@ -114,7 +112,7 @@ function setupLevel(runtime) {
 async function runCommands(runtime, players) {
 	if (!runtime.globalVars.isRunning) {
 		runtime.globalVars.isRunning = true;
-		
+
 		players.sort((a, b) => a.instVars.id - b.instVars.id);
 
 		for (const player of players) {
@@ -181,16 +179,15 @@ function resetState(runtime, shouldResetVariables = true) {
  */
 function resetVariables(level, player) {
 	state.variables = levelVariables[level].reduce((acc, variable) => {
-		return {
-			...acc,
-
-			set [variable](value) {
+		Object.defineProperty(acc, variable, {
+			set: (value) => {
 				player.instVars[variable] = value;
 			},
-			get [variable]() {
-				return player.instVars[variable] ?? 0;
-			}
-		};
+			get: () => player.instVars[variable],
+			enumerable: true,
+		});
+
+		return acc;
 	}, {});
 }
 
@@ -246,7 +243,7 @@ function removeCodeBlock(codeBlock) {
  */
 function pickCodeBlockShadowToShow(codeBlock, codeBlockShadows) {
 	const pickedShadow = codeBlockShadows
-		.map((shadow) => ({uid: shadow.uid, distance: getSquaredDistance(codeBlock, shadow)}))
+		.map((shadow) => ({ uid: shadow.uid, distance: getSquaredDistance(codeBlock, shadow) }))
 		.sort((a, b) => a.distance - b.distance)[0];
 
 	if (pickedShadow) {
@@ -457,41 +454,36 @@ async function showLeaderboard(runtime, options) {
 
 	const PAGE_SIZE = 5;
 
-	const rankTexts = [];
-	const nameTexts = [];
-	const timeTexts = [];
-	const actionTexts = [];
-	const codeBlockTexts = [];
-	const dateTexts = [];
+	const elements = {
+		rank: [],
+		name: [],
+		time: [],
+		actions: [],
+		codeCount: [],
+		datetime: []
+	};
 
 	for (const text of runtime.objects.UIText.getAllInstances()) {
 		const id = text.instVars.id;
 
 		if (id != "rank" && id.startsWith("rank")) {
-			rankTexts.push(text);
+			elements.rank.push(text);
 		} else if (id != "name" && id.startsWith("name")) {
-			nameTexts.push(text);
+			elements.name.push(text);
 		} else if (id != "time" && id.startsWith("time")) {
-			timeTexts.push(text);
+			elements.time.push(text);
 		} else if (id != "actions" && id.startsWith("actions")) {
-			actionTexts.push(text);
+			elements.actions.push(text);
 		} else if (id != "code-count" && id.startsWith("code-count")) {
-			codeBlockTexts.push(text);
+			elements.codeCount.push(text);
 		} else if (id != "datetime" && id.startsWith("datetime")) {
-			dateTexts.push(text);
+			elements.datetime.push(text);
 		}
 	}
 
-	rankTexts.sort();
-	nameTexts.sort();
-	timeTexts.sort();
-	actionTexts.sort();
-	codeBlockTexts.sort();
-	dateTexts.sort();
+	Object.values(elements).forEach(texts => texts.sort());
 
-	let i = 0;
-
-	for (; i < count; i++) {
+	for (let i = 0; i < count; i++) {
 		const {
 			username,
 			actions,
@@ -500,21 +492,21 @@ async function showLeaderboard(runtime, options) {
 			createdAt,
 		} = items[i];
 
-		rankTexts[i].text = `${(page - 1) * PAGE_SIZE + i + 1}`;
-		nameTexts[i].text = username;
-		timeTexts[i].text = runtime.callFunction("FormatTime", timeMs / 1000);
-		actionTexts[i].text = `${actions}`;
-		codeBlockTexts[i].text = `${codeBlocks}`;
-		dateTexts[i].text = new Date(createdAt).toLocaleString();
+		elements.rank[i].text = `${(page - 1) * PAGE_SIZE + i + 1}`;
+		elements.name[i].text = username;
+		elements.time[i].text = runtime.callFunction("FormatTime", timeMs / 1000);
+		elements.actions[i].text = `${actions}`;
+		elements.codeCount[i].text = `${codeBlocks}`;
+		elements.datetime[i].text = new Date(createdAt).toLocaleString();
 	}
 
-	for (; i < PAGE_SIZE; i++) {
-		rankTexts[i].text = "";
-		nameTexts[i].text = "";
-		timeTexts[i].text = "";
-		actionTexts[i].text = "";
-		codeBlockTexts[i].text = "";
-		dateTexts[i].text = "";
+	for (let i = count; i < PAGE_SIZE; i++) {
+		elements.rank[i].text = "";
+		elements.name[i].text = "";
+		elements.time[i].text = "";
+		elements.actions[i].text = "";
+		elements.codeCount[i].text = "";
+		elements.datetime[i].text = "";
 	}
 
 	for (const button of runtime.objects.Button.getAllInstances()) {
