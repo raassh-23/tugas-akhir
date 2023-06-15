@@ -92,6 +92,8 @@ function setupLevel(runtime) {
 	}
 
 	resetState(runtime, true);
+	
+	console.log("setup level", state.variables);
 
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);
@@ -113,7 +115,7 @@ async function runCommands(runtime, players) {
 	if (!runtime.globalVars.isRunning) {
 		runtime.globalVars.isRunning = true;
 		
-		players.sort((a, b) => a.instVars.order - b.instVars.order);
+		players.sort((a, b) => a.instVars.id - b.instVars.id);
 
 		for (const player of players) {
 			runner.reset(true); // reset commands, including errors
@@ -167,7 +169,7 @@ function resetState(runtime, shouldResetVariables = true) {
 
 	if (shouldResetVariables) {
 		const firstPlayer = runtime.objects.Player.getAllInstances()
-			.reduce((prev, curr) => prev.instVars.order < curr.instVars.order ? prev : curr);
+			.reduce((prev, curr) => prev.instVars.id < curr.instVars.id ? prev : curr);
 		resetVariables(level, firstPlayer);
 	}
 }
@@ -179,8 +181,16 @@ function resetState(runtime, shouldResetVariables = true) {
  */
 function resetVariables(level, player) {
 	state.variables = levelVariables[level].reduce((acc, variable) => {
-		acc[variable] = player.instVars?.[variable] ?? 0;
-		return acc;
+		return {
+			...acc,
+
+			set [variable](value) {
+				player.instVars[variable] = value;
+			},
+			get [variable]() {
+				return player.instVars[variable] ?? 0;
+			}
+		};
 	}, {});
 }
 

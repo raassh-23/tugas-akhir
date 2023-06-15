@@ -516,8 +516,21 @@
 								"live-preview": false
 							},
 							"uid": 521,
-							"instanceVariables": {},
-							"behaviors": {},
+							"instanceVariables": {
+								"forIds": ""
+							},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": true,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"world": {
 								"x": 800,
 								"y": 224,
@@ -722,7 +735,7 @@
 					"uid": 492,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"order": 1,
+						"id": 1,
 						"gem": 0,
 						"health": 0,
 						"ammo": 0

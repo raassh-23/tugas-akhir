@@ -3,8 +3,22 @@
 	"plugin-id": "Sprite",
 	"sid": 116309571330693,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "forIds",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 738585196968108
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 157072465716366
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

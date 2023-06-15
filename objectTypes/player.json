@@ -12,7 +12,7 @@
 			"sid": 541334414194815
 		},
 		{
-			"name": "order",
+			"name": "id",
 			"type": "number",
 			"desc": "",
 			"show": true,

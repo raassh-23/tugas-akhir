@@ -26,6 +26,7 @@ export async function waitUnlessStopped(state, {
     afterWait = () => FINISHED,
 } = {}) {
     let totalDuration = 0;
+    
     do {
         if (state.isStopped) {
             return STOPPED;
@@ -34,6 +35,7 @@ export async function waitUnlessStopped(state, {
         if (!state.isPaused) {
             totalDuration += checkInterval;
         }
+
         await waitForMilisecond(checkInterval);
     } while (totalDuration < duration || extraCondition() || state.isPaused);
 

@@ -7332,6 +7332,23 @@
 										"comparison": 2,
 										"second-value": "GRID_SIZE"
 									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 277538387401346,
+									"parameters": {
+										"value": "Functions.CheckPortalIds(Player.id, Portal.forIds)"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Portal",
+									"sid": 124005491296106,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "100"
+									}
 								}
 							],
 							"actions": [
@@ -7353,6 +7370,12 @@
 										"instance-variable": "reachedGoal",
 										"value": "true"
 									}
+								},
+								{
+									"id": "start-fade",
+									"objectClass": "Portal",
+									"sid": 242865318754257,
+									"behaviorType": "Fade"
 								}
 							],
 							"sid": 107424056995809
@@ -8634,6 +8657,128 @@
 								}
 							],
 							"sid": 609659987528772
+						}
+					]
+				},
+				{
+					"functionName": "CheckPortalIds",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "id",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 399421166930395
+						},
+						{
+							"name": "ids",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 580324025647413
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const {id: targetId, ids} = localVars;\n\nif (ids === \"\") {\n\truntime.setReturnValue(0);\n}\n\nruntime.setReturnValue(\n\tids.split(\",\").find((id) => parseInt(id) === targetId) ? 1 : 0\n);"
+						}
+					],
+					"sid": 655063444628570
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Player",
+							"sid": 734357623938098,
+							"parameters": {
+								"unique-id": "currentPlayerUID"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player",
+							"sid": 100063475629537,
+							"parameters": {
+								"instance-variable": "reachedGoal"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 827526906189594,
+							"parameters": {
+								"object": "Portal"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 501901951021898,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 125221681877518,
+									"parameters": {
+										"value": "Functions.CheckPortalIds(Player.id, Portal.forIds)"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 514286046645347,
+									"parameters": {
+										"instance-variable": "gem",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Portal",
+									"sid": 504420719645344,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 365050253558279
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 872221932927549
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Portal",
+									"sid": 106334444782869,
+									"parameters": {
+										"opacity": "50"
+									}
+								}
+							],
+							"sid": 727734631104926
 						}
 					]
 				}

@@ -562,8 +562,21 @@
 								"live-preview": false
 							},
 							"uid": 218,
-							"instanceVariables": {},
-							"behaviors": {},
+							"instanceVariables": {
+								"forIds": ""
+							},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": true,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
 							"world": {
 								"x": 736,
 								"y": 288,
@@ -674,8 +687,21 @@
 								"live-preview": false
 							},
 							"uid": 212,
-							"instanceVariables": {},
-							"behaviors": {},
+							"instanceVariables": {
+								"forIds": ""
+							},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": true,
+										"enabled": true,
+										"live-preview": false
+									}
+								}
+							},
 							"world": {
 								"x": 736,
 								"y": 672,
@@ -902,7 +928,7 @@
 					"uid": 210,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"order": 1,
+						"id": 1,
 						"gem": 0,
 						"health": 0,
 						"ammo": 0
@@ -961,7 +987,7 @@
 					"uid": 208,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"order": 2,
+						"id": 2,
 						"gem": 0,
 						"health": 0,
 						"ammo": 0
