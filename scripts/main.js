@@ -17,7 +17,8 @@ import {
 } from "./code-blocks/index.js";
 
 [
-	"./lib/math.min.js",
+	"./lib/mathjs@11.8.1.js",
+	"./lib/i18next@23.1.0.js",
 ].forEach((src) => {
 	const script = document.createElement("script");
 	script.src = src;

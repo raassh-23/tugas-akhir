@@ -2391,33 +2391,6 @@
 									"parameters": [
 										true
 									]
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 715150573630932,
-									"parameters": {
-										"type": "log",
-										"message": "\"set comman panel\""
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 673990087969661,
-									"parameters": {
-										"type": "log",
-										"message": "shownLayer"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 762045451552710,
-									"parameters": {
-										"type": "log",
-										"message": "show"
-									}
 								}
 							],
 							"sid": 669991091029476,
@@ -2898,15 +2871,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 961191895614451,
-											"parameters": {
-												"type": "log",
-												"message": "\"test\""
-											}
-										},
 										{
 											"callFunction": "ShowHelp",
 											"sid": 700738763250366,
@@ -7499,10 +7463,6 @@
 							],
 							"actions": [
 								{
-									"type": "script",
-									"script": "console.log(\"Gem Collected\");\n"
-								},
-								{
 									"id": "set-function-return-value",
 									"objectClass": "Functions",
 									"sid": 306599686606587,
@@ -8678,7 +8638,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "const {id: targetId, ids} = localVars;\n\nconsole.log(targetId, ids);\n\nif (ids === \"\") {\n\truntime.setReturnValue(1);\n\treturn;\n}\n\nruntime.setReturnValue(\n\tids.split(\",\").find((id) => parseInt(id) === targetId) ? 1 : 0\n);"
+							"script": "const {id: targetId, ids} = localVars;\n\nif (ids === \"\") {\n\truntime.setReturnValue(1);\n\treturn;\n}\n\nruntime.setReturnValue(\n\tids.split(\",\").find((id) => parseInt(id) === targetId) ? 1 : 0\n);"
 						}
 					],
 					"sid": 655063444628570

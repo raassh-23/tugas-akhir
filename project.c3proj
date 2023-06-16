@@ -726,9 +726,17 @@
 				{
 					"items": [
 						{
-							"name": "math.min.js",
-							"type": "application/javascript",
-							"sid": 823562490379026,
+							"name": "i18next@23.1.0.js",
+							"type": "text/javascript",
+							"sid": 513931843124954,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "mathjs@11.8.1.js",
+							"type": "text/javascript",
+							"sid": 789526826775530,
 							"file-info": {
 								"purpose": "none"
 							}
