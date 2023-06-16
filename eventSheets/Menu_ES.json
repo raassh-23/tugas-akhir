@@ -1164,17 +1164,37 @@
 						"variable": "versionText",
 						"value": "\"Versi \" & projectversion & \" (versi baru ditemukan, mendownload versi terbaru...)\""
 					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "UIText",
-					"sid": 615286623036491,
-					"parameters": {
-						"text": "versionText"
-					}
 				}
 			],
-			"sid": 996447243694099
+			"sid": 996447243694099,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 273823823099274,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 111705980200202,
+							"parameters": {
+								"text": "versionText"
+							}
+						}
+					],
+					"sid": 726528092216164
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1194,17 +1214,37 @@
 						"variable": "versionText",
 						"value": "\"Versi \" & projectversion & \" (versi terbaru telah didownload, silahkan refresh untuk mengupdate!)\""
 					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "UIText",
-					"sid": 633329428689366,
-					"parameters": {
-						"text": "versionText"
-					}
 				}
 			],
-			"sid": 280770723004987
+			"sid": 280770723004987,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 952786615578965,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 146332882771540,
+							"parameters": {
+								"text": "versionText"
+							}
+						}
+					],
+					"sid": 881704452666734
+				}
+			]
 		},
 		{
 			"eventType": "block",

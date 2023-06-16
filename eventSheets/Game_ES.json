@@ -8904,11 +8904,19 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "console.log(runtime.objects.CodeBlock.getAllInstances().map((c) => {\n\tconst {uid, blendMode} = c;\n\treturn {uid, blendMode};\n}))\nconsole.log(runtime.objects.CodeBlockShadow.getAllInstances().map((c) => {\n\tconst {uid, blendMode} = c;\n\treturn {uid, blendMode};\n}))"
+							"script": "// console.log(runtime.objects.CodeBlock.getAllInstances().map((c) => {\n// \tconst {uid, blendMode} = c;\n// \treturn {uid, blendMode};\n// }))\n// console.log(runtime.objects.CodeBlockShadow.getAllInstances().map((c) => {\n// \tconst {uid, blendMode} = c;\n// \treturn {uid, blendMode};\n// }))"
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 498224345571143,
+							"parameters": {
+								"type": "log",
+								"message": "scrollx & \" \" & scrolly & \" \" & LayerScale(\"Game\")"
+							}
 						}
 					],
-					"sid": 266239803642659,
-					"disabled": true
+					"sid": 266239803642659
 				}
 			],
 			"sid": 371561682910378
