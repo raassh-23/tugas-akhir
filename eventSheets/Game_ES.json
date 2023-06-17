@@ -5698,15 +5698,6 @@
 										"height-type": "no",
 										"z": false
 									}
-								},
-								{
-									"id": "set-css-style",
-									"objectClass": "TextInputName",
-									"sid": 167104355310217,
-									"parameters": {
-										"property-name": "\"font-size\"",
-										"value": "\"2vw\""
-									}
 								}
 							],
 							"sid": 671137814517311

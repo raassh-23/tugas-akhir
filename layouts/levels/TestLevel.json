@@ -4910,8 +4910,8 @@
 						"spell-check": false,
 						"type": "text",
 						"auto-font-size": false,
-						"id": "",
-						"class": ""
+						"id": "name",
+						"class": "text-input"
 					},
 					"uid": 102,
 					"instanceVariables": {},

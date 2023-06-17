@@ -278,11 +278,84 @@
 							}
 						}
 					],
+					"actions": [],
+					"sid": 151638449849747,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 640736622837702,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"level\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 841082713935605,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"sort\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "Dropdown",
+									"sid": 284917888576308,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "UIPanel",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 337402843536963,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIPanel",
+							"sid": 815030134333975,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Dropdown",
+							"sid": 637948141954460,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-language\""
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "pin-to-object-properties",
 							"objectClass": "Dropdown",
-							"sid": 483654120760442,
+							"sid": 599803836357384,
 							"behaviorType": "Pin",
 							"parameters": {
 								"pin-to": "UIPanel",
@@ -295,7 +368,7 @@
 							}
 						}
 					],
-					"sid": 151638449849747
+					"sid": 792994297414927
 				},
 				{
 					"eventType": "block",
@@ -354,15 +427,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-css-style",
-							"objectClass": "Dropdown",
-							"sid": 275149594088974,
-							"parameters": {
-								"property-name": "\"font-size\"",
-								"value": "\"1.25vw\""
-							}
-						},
-						{
 							"id": "clear",
 							"objectClass": "Dropdown",
 							"sid": 840703214924971
@@ -411,15 +475,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-css-style",
-							"objectClass": "Dropdown",
-							"sid": 376499665329842,
-							"parameters": {
-								"property-name": "\"font-size\"",
-								"value": "\"1.25vw\""
-							}
-						},
 						{
 							"id": "clear",
 							"objectClass": "Dropdown",
@@ -537,6 +592,90 @@
 							"sid": 143065944743827
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-mobile",
+							"objectClass": "PlatformInfo",
+							"sid": 138642451965791
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 647536111609628,
+							"parameters": {
+								"first-value": "Functions.CheckInstallation",
+								"comparison": 0,
+								"second-value": "\"installed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "Switch",
+							"sid": 373269258269318,
+							"parameters": {
+								"opacity": "50"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Switch",
+							"sid": 655947943202811,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 455824055773903
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Slider",
+							"sid": 674137779080146,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-volume\""
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "Slider",
+							"sid": 314240370937003,
+							"parameters": {
+								"parent": "SliderBG",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Slider",
+							"sid": 954146728338499,
+							"parameters": {
+								"instance-variable": "min",
+								"value": "SliderBG.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Slider",
+							"sid": 179722217214725,
+							"parameters": {
+								"instance-variable": "max",
+								"value": "SliderBG.X + SliderBG.Width"
+							}
+						}
+					],
+					"sid": 670280051519638
 				}
 			]
 		},
@@ -1852,6 +1991,269 @@
 				}
 			],
 			"sid": 946060214256293
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-opacity",
+					"objectClass": "Switch",
+					"sid": 812245822362672,
+					"parameters": {
+						"comparison": 4,
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Switch",
+					"sid": 796347545395297,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-fullscreen\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 158159171240165,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 459897129061272
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Switch",
+							"sid": 113797960802877,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 609990899828476
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 172465127084801
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Switch",
+							"sid": 203106114373690,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 614024926233432
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 168839854415097,
+					"parameters": {
+						"object": "Switch"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Switch",
+					"sid": 902777681580200,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-fullscreen\""
+					}
+				},
+				{
+					"id": "compare-opacity",
+					"objectClass": "Switch",
+					"sid": 487828935789811,
+					"parameters": {
+						"comparison": 4,
+						"opacity": "50"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 290291043430297,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Switch",
+							"sid": 344914445255750,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 642070358397053,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "hide"
+							}
+						}
+					],
+					"sid": 251517395140016
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Switch",
+							"sid": 295559913450255,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 883158202022992
+						}
+					],
+					"sid": 741202860683466
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Slider",
+					"sid": 927733996085171,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-volume\""
+					}
+				},
+				{
+					"id": "pick-children",
+					"objectClass": "Slider",
+					"sid": 876654466336751,
+					"parameters": {
+						"child": "UIText",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 635793113750637,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drag-start",
+							"objectClass": "Slider",
+							"sid": 921298538849378,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 380004742702937,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 794200724528326
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "Slider",
+							"sid": 963199798893945,
+							"behaviorType": "DragDrop"
+						},
+						{
+							"id": "on-drop",
+							"objectClass": "Slider",
+							"sid": 564645161057000,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Slider",
+							"sid": 517696275658486,
+							"parameters": {
+								"x": "clamp(Self.X, Self.min, Self.max)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 179586509682178,
+							"parameters": {
+								"text": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
+							}
+						}
+					],
+					"sid": 198209777926503,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-drop",
+							"objectClass": "Slider",
+							"sid": 987374871152650,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 746413603714626,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 938701531911088
+				}
+			]
 		}
 	],
 	"sid": 170200532006030

@@ -65,6 +65,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -232,7 +239,11 @@
 			"Dropdown",
 			"HelpObject",
 			"CodeBlockProtrusion",
-			"CodeBlockShadowProtrusion"
+			"CodeBlockShadowProtrusion",
+			"Switch",
+			"PlatformInfo",
+			"SliderBG",
+			"Slider"
 		],
 		"subfolders": [
 			{
@@ -729,7 +740,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "game-style.css",
+					"type": "text/css",
+					"sid": 768709410664620,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				}
+			],
 			"subfolders": [
 				{
 					"items": [
