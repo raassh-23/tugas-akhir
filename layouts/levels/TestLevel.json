@@ -2935,7 +2935,8 @@
 						"maxScale": 0.8,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "timer"
+						"id": "timer",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -3008,7 +3009,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "variable"
+						"id": "variable",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -3749,7 +3751,8 @@
 						"maxScale": 0.8,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "code-count"
+						"id": "code-count",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -3881,7 +3884,8 @@
 						"maxScale": 0.8,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "actions"
+						"id": "actions",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4550,7 +4554,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-text"
+						"id": "game-over-text",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4623,7 +4628,8 @@
 						"maxScale": 0.8,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-time"
+						"id": "game-over-time",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4713,7 +4719,8 @@
 						"maxScale": 0.8,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-code-count"
+						"id": "game-over-code-count",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4818,7 +4825,8 @@
 						"maxScale": 0.8,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-actions"
+						"id": "game-over-actions",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4976,7 +4984,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-leaderboard"
+						"id": "game-over-leaderboard",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5305,7 +5314,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-leaderboard-status"
+						"id": "game-over-leaderboard-status",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5555,7 +5565,8 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-time-best"
+						"id": "game-over-time-best",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5628,7 +5639,8 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-code-count-best"
+						"id": "game-over-code-count-best",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5701,7 +5713,8 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-actions-best"
+						"id": "game-over-actions-best",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5774,7 +5787,8 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-code-count-target"
+						"id": "game-over-code-count-target",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5847,7 +5861,8 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-actions-target"
+						"id": "game-over-actions-target",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7079,7 +7094,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "pause-text"
+						"id": "pause-text",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7378,7 +7394,8 @@
 						"maxScale": 0.75,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "pause-restart-text"
+						"id": "pause-restart-text",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7451,7 +7468,8 @@
 						"maxScale": 0.75,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "pause-level-text"
+						"id": "pause-level-text",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {

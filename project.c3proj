@@ -659,6 +659,36 @@
 					],
 					"subfolders": [],
 					"name": "utils"
+				},
+				{
+					"items": [
+						{
+							"name": "translations.js",
+							"type": "application/javascript",
+							"sid": 316600616634505,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "en.js",
+							"type": "application/javascript",
+							"sid": 578787780363772,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "id.js",
+							"type": "application/javascript",
+							"sid": 450454928102756,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "translations"
 				}
 			]
 		},

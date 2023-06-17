@@ -100,7 +100,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "version"
+						"id": "version",
+						"translation": ""
 					},
 					"behaviors": {},
 					"world": {
@@ -181,7 +182,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "title"
+						"id": "title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"world": {
@@ -1188,7 +1190,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "leaderboard"
+								"id": "leaderboard",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1261,7 +1264,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "leaderboard-level"
+								"id": "leaderboard-level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1373,7 +1377,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "leaderboard-sort"
+								"id": "leaderboard-sort",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1519,7 +1524,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank"
+								"id": "rank",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1592,7 +1598,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name"
+								"id": "name",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1665,7 +1672,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time"
+								"id": "time",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1738,7 +1746,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions"
+								"id": "actions",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1811,7 +1820,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count"
+								"id": "code-count",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1884,7 +1894,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime"
+								"id": "datetime",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1957,7 +1968,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank1"
+								"id": "rank1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2030,7 +2042,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name1"
+								"id": "name1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2103,7 +2116,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time1"
+								"id": "time1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2176,7 +2190,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions1"
+								"id": "actions1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2249,7 +2264,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count1"
+								"id": "code-count1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2322,7 +2338,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime1"
+								"id": "datetime1",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2395,7 +2412,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank2"
+								"id": "rank2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2468,7 +2486,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name2"
+								"id": "name2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2541,7 +2560,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time2"
+								"id": "time2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2614,7 +2634,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions2"
+								"id": "actions2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2687,7 +2708,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count2"
+								"id": "code-count2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2760,7 +2782,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime2"
+								"id": "datetime2",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2833,7 +2856,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank3"
+								"id": "rank3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2906,7 +2930,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name3"
+								"id": "name3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2979,7 +3004,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time3"
+								"id": "time3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3052,7 +3078,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions3"
+								"id": "actions3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3125,7 +3152,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count3"
+								"id": "code-count3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3198,7 +3226,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime3"
+								"id": "datetime3",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3271,7 +3300,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank4"
+								"id": "rank4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3344,7 +3374,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name4"
+								"id": "name4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3417,7 +3448,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time4"
+								"id": "time4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3490,7 +3522,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions4"
+								"id": "actions4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3563,7 +3596,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count4"
+								"id": "code-count4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3636,7 +3670,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime4"
+								"id": "datetime4",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3709,7 +3744,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "rank5"
+								"id": "rank5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3782,7 +3818,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "name5"
+								"id": "name5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3855,7 +3892,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "time5"
+								"id": "time5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3928,7 +3966,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions5"
+								"id": "actions5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4001,7 +4040,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "code-count5"
+								"id": "code-count5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4074,7 +4114,8 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "datetime5"
+								"id": "datetime5",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4720,7 +4761,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits"
+						"id": "credits",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4793,7 +4835,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_dev_title"
+						"id": "credits_dev_title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4866,7 +4909,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_advisors_title"
+						"id": "credits_advisors_title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4939,7 +4983,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_advisors"
+						"id": "credits_advisors",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5012,7 +5057,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_dev"
+						"id": "credits_dev",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5085,7 +5131,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_arts_title"
+						"id": "credits_arts_title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5158,7 +5205,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_arts"
+						"id": "credits_arts",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5231,7 +5279,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_sounds_title"
+						"id": "credits_sounds_title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5304,7 +5353,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "credits_sounds"
+						"id": "credits_sounds",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5686,7 +5736,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting"
+						"id": "setting",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5759,7 +5810,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-volume"
+						"id": "setting-volume",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5832,7 +5884,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-fullscreen"
+						"id": "setting-fullscreen",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5905,7 +5958,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-language"
+						"id": "setting-language",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6059,7 +6113,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-install"
+						"id": "setting-install",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6213,7 +6268,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-reset-data"
+						"id": "setting-reset-data",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6553,7 +6609,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "setting-volume-value"
+						"id": "setting-volume-value",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6870,7 +6927,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "confirm-title"
+						"id": "confirm-title",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7024,7 +7082,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "confirm-no"
+						"id": "confirm-no",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7178,7 +7237,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "confirm-yes"
+						"id": "confirm-yes",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7251,7 +7311,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "confirm-subtitle"
+						"id": "confirm-subtitle",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {

@@ -151,6 +151,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "LANGUAGE_VALUES",
+			"type": "string",
+			"initialValue": "id,en",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 124182602673873
+		},
+		{
+			"eventType": "variable",
 			"name": "versionText",
 			"type": "string",
 			"initialValue": "",
@@ -243,45 +253,18 @@
 						"layer": "\"ResetConfirm\"",
 						"interactive": false
 					}
+				},
+				{
+					"callFunction": "SetStaticTextTranslation",
+					"sid": 991963807509444
+				},
+				{
+					"callFunction": "OnSetLanguage",
+					"sid": 571747890694290
 				}
 			],
 			"sid": 514121468304681,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIText",
-							"sid": 761341025484329,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"version\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 939712208134061,
-							"parameters": {
-								"variable": "versionText",
-								"value": "\"Versi \" & projectversion"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "UIText",
-							"sid": 297329887240854,
-							"parameters": {
-								"text": "versionText"
-							}
-						}
-					],
-					"sid": 372872872820150
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1964,6 +1947,45 @@
 			"sid": 979726838173396
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-selection-changed",
+					"objectClass": "Dropdown",
+					"sid": 656168773574909
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Dropdown",
+					"sid": 333752721176962,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-language\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ChangeLanguage",
+					"sid": 364691460280862,
+					"parameters": [
+						"tokenat(LANGUAGE_VALUES, Dropdown.SelectedIndex, \",\")"
+					]
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 480932846795354
+				},
+				{
+					"callFunction": "OnSetLanguage",
+					"sid": 550159927952538
+				}
+			],
+			"sid": 368807500312063
+		},
+		{
 			"functionName": "GetLeaderboard",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -2472,6 +2494,47 @@
 				}
 			],
 			"sid": 612237113480283
+		},
+		{
+			"functionName": "OnSetLanguage",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 622435075913917,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 521305992719649,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 340475530525195,
+							"parameters": {
+								"text": "Functions.Translate(\"menu.version\", \"version:\" & projectversion)"
+							}
+						}
+					],
+					"sid": 580684366863843
+				}
+			]
 		}
 	],
 	"sid": 170200532006030

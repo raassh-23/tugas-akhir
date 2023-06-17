@@ -695,6 +695,111 @@
 					"sid": 375527864987637
 				}
 			]
+		},
+		{
+			"functionName": "SetStaticTextTranslation",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UIText",
+					"sid": 182032835717288,
+					"parameters": {
+						"instance-variable": "translation",
+						"comparison": 1,
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 971468203585174,
+					"parameters": {
+						"object": "UIText"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UIText",
+					"sid": 416403503188142,
+					"parameters": {
+						"text": "Functions.Translate(Self.translation, \"\")"
+					}
+				}
+			],
+			"sid": 185052956278049
+		},
+		{
+			"functionName": "Translate",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "key",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 646262772143657
+				},
+				{
+					"name": "values",
+					"type": "string",
+					"initialValue": "",
+					"comment": "in the format of `key:value`",
+					"sid": 460321877912781
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "const { key, values } = localVars;\n\nruntime.setReturnValue(translate(key, values));"
+				}
+			],
+			"sid": 773410472741668
+		},
+		{
+			"functionName": "ChangeLanguage",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "langCode",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 897179226110378
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "await changeLanguage(localVars.langCode)"
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 200713396486225
+				}
+			],
+			"sid": 648869073918412
 		}
 	],
 	"sid": 126636898885233

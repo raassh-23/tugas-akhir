@@ -19,6 +19,7 @@ import {
 import LeaderboardAPI from "./leaderboard-api.js";
 import { ERROR, PLAYER_REACHED_GOAL, STOPPED } from "./code-blocks/code-block-constants.js";
 import { checkPrompt, installGame } from "./installation.js";
+import { translate, changeLanguage } from "./translations/translations.js";
 
 /**
  * @type {RunnerCommand?}

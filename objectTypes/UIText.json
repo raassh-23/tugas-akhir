@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 303640941240328
+		},
+		{
+			"name": "translation",
+			"type": "string",
+			"desc": "for static text only",
+			"show": true,
+			"sid": 333661351121120
 		}
 	],
 	"behaviorTypes": [],

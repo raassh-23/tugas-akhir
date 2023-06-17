@@ -377,7 +377,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -759,7 +760,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1141,7 +1143,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1523,7 +1526,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -1905,7 +1909,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2287,7 +2292,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -2669,7 +2675,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3051,7 +3058,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3433,7 +3441,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -3815,7 +3824,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4197,7 +4207,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4579,7 +4590,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -4961,7 +4973,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -5343,7 +5356,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -5725,7 +5739,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -6107,7 +6122,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -6489,7 +6505,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -6871,7 +6888,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -7253,7 +7271,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -7635,7 +7654,8 @@
 								"maxScale": 0,
 								"autoFit": false,
 								"maxLine": 1,
-								"id": "level"
+								"id": "level",
+								"translation": ""
 							},
 							"behaviors": {},
 							"sceneGraphData": {
@@ -7739,7 +7759,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "level-select"
+						"id": "level-select",
+						"translation": ""
 					},
 					"behaviors": {},
 					"world": {
