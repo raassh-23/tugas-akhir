@@ -475,11 +475,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "evaluate-expression",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 146810069559284,
+									"sid": 636209312048050,
 									"parameters": {
-										"value": "Functions.CheckInstallation"
+										"first-value": "Functions.CheckInstallation",
+										"comparison": 0,
+										"second-value": "\"installable\""
 									}
 								}
 							],
@@ -1124,6 +1126,7 @@
 					],
 					"actions": [],
 					"sid": 355627615425926,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1141,7 +1144,8 @@
 									"sid": 981627936571852
 								}
 							],
-							"sid": 198934454034576
+							"sid": 198934454034576,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1163,9 +1167,65 @@
 									}
 								}
 							],
-							"sid": 638615781475662
+							"sid": 638615781475662,
+							"disabled": true
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 277473256298361,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-reset-data\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 125518756363654
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 932927258089284
+						},
+						{
+							"id": "reload",
+							"objectClass": "Browser",
+							"sid": 777657936730497
+						}
+					],
+					"sid": 778282695795669
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 194374993447338,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-install\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const button = runtime.objects.Button.getFirstPickedInstance();\n\nconst result = await installGame();\n\nif (result) {\n\tbutton.opacity = 0.5;\n\tbutton.instVars.isDisabled = true;\n}"
+						}
+					],
+					"sid": 680193872789611
 				},
 				{
 					"eventType": "comment",
@@ -1196,61 +1256,6 @@
 						}
 					],
 					"sid": 619809673125344
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 756640133243562,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"setting-reset-data\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "clear-storage",
-							"objectClass": "LocalStorage",
-							"sid": 283155726377361
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 521366256862844
-						},
-						{
-							"id": "reload",
-							"objectClass": "Browser",
-							"sid": 478602824324197
-						}
-					],
-					"sid": 637468301979699
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 343988838704021,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"setting-install\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "script",
-							"script": "installGame();"
-						}
-					],
-					"sid": 172815029040639
 				}
 			]
 		},
@@ -1834,7 +1839,7 @@
 			"functionName": "CheckInstallation",
 			"functionDescription": "",
 			"functionCategory": "",
-			"functionReturnType": "number",
+			"functionReturnType": "string",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
