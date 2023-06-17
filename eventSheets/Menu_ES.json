@@ -2,6 +2,10 @@
 	"name": "Menu_ES",
 	"events": [
 		{
+			"eventType": "script",
+			"script": "let test = \"Test\""
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Common_ES"
 		},
@@ -447,6 +451,88 @@
 								}
 							],
 							"sid": 208258833821651
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 381261331606033,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-install\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 193395254565145,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 146810069559284,
+									"parameters": {
+										"value": "Functions.CheckInstallation"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Button",
+									"sid": 828550359793505,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 175177935818691,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 627513766885107
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 963578015613732
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Button",
+									"sid": 532598060203618,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 860949332131949,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 143065944743827
 						}
 					]
 				}
@@ -1117,11 +1203,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
-							"sid": 955671473279608,
+							"sid": 756640133243562,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
-								"value": "\"reset-data\""
+								"value": "\"setting-reset-data\""
 							}
 						}
 					],
@@ -1143,6 +1229,28 @@
 						}
 					],
 					"sid": 637468301979699
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 343988838704021,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-install\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "installGame();"
+						}
+					],
+					"sid": 172815029040639
 				}
 			]
 		},
@@ -1721,6 +1829,24 @@
 					"sid": 353318414787076
 				}
 			]
+		},
+		{
+			"functionName": "CheckInstallation",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "script",
+					"script": "runtime.setReturnValue(checkPrompt());"
+				}
+			],
+			"sid": 946060214256293
 		}
 	],
 	"sid": 170200532006030

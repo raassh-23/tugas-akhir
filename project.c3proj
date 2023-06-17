@@ -371,6 +371,14 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "installation.js",
+					"type": "application/javascript",
+					"sid": 246684789947950,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
