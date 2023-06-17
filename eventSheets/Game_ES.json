@@ -8722,6 +8722,56 @@
 							"sid": 727734631104926
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 202793840165645,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 508877700056230,
+							"parameters": {
+								"layer": "\"LevelPopUp\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 677232053842191,
+							"parameters": {
+								"layer": "\"Help\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 857025431328649,
+							"parameters": {
+								"layer": "\"Pause\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowPause",
+							"sid": 823380693448014,
+							"parameters": [
+								true
+							]
+						}
+					],
+					"sid": 101827522720427
 				}
 			],
 			"sid": 991077192111983

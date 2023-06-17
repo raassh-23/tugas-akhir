@@ -225,6 +225,24 @@
 					"parameters": [
 						false
 					]
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 164004472452684,
+					"parameters": {
+						"layer": "\"ResetConfirm\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 321899872311238,
+					"parameters": {
+						"layer": "\"ResetConfirm\"",
+						"interactive": false
+					}
 				}
 			],
 			"sid": 514121468304681,
@@ -627,6 +645,14 @@
 							"sid": 655947943202811,
 							"parameters": {
 								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Switch",
+							"sid": 479126759095245,
+							"parameters": {
+								"color": "rgbEx(50, 50, 50)"
 							}
 						}
 					],
@@ -1327,22 +1353,186 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 592392912407178,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 547491364805073,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 124528121512877,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 358361626028928,
+							"parameters": {
+								"layer": "\"PopUpBg\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 778282695795669,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 163524294062253,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting-language\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Dropdown",
+									"sid": 144704056620446,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 263736981542105
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 619549864133347,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"confirm-no\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 930948025926744,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 104607983012795,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 404622273213281,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 961643425731304,
+							"parameters": {
+								"layer": "\"PopUpBg\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 650202476788513,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 493172441630155,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting-language\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Dropdown",
+									"sid": 125620004500566,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 924895663844548
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 985894320737795,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"confirm-yes\""
+							}
+						}
+					],
+					"actions": [
+						{
 							"id": "clear-storage",
 							"objectClass": "LocalStorage",
-							"sid": 125518756363654
+							"sid": 868761986026251
 						},
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 932927258089284
+							"sid": 811098197297651
 						},
 						{
 							"id": "reload",
 							"objectClass": "Browser",
-							"sid": 777657936730497
+							"sid": 455011328573696
 						}
 					],
-					"sid": 778282695795669
+					"sid": 640780290366245
 				},
 				{
 					"eventType": "block",
@@ -2254,6 +2444,34 @@
 					"sid": 938701531911088
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "for debugging purposes"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 726677887537990,
+					"parameters": {
+						"key": 192
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 433981584618942,
+					"parameters": {
+						"layout": "TestLevel"
+					}
+				}
+			],
+			"sid": 612237113480283
 		}
 	],
 	"sid": 170200532006030
