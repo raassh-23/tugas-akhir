@@ -34,6 +34,12 @@ const en = {
                     'no': 'Cancel',
                 }
             },
+            'update': {
+                'title': 'Update Available',
+                'subtitle': 'Reload the game to update.',
+                'yes': 'Reload',
+                'no': 'Ignore',
+            },
         }
     }
 };

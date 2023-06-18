@@ -32,6 +32,16 @@
 			"sid": 515056914732997
 		},
 		{
+			"eventType": "variable",
+			"name": "shouldShowUpdate",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 915385586880257
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -800,6 +810,28 @@
 				}
 			],
 			"sid": 648869073918412
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-update-ready-sw",
+					"objectClass": "Browser",
+					"sid": 645186538898867
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 625330453675770,
+					"parameters": {
+						"variable": "shouldShowUpdate",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 280770723004987
 		}
 	],
 	"sid": 126636898885233

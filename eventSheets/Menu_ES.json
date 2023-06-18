@@ -285,6 +285,24 @@
 					}
 				},
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 227457249523799,
+					"parameters": {
+						"layer": "\"Update\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 958605134716787,
+					"parameters": {
+						"layer": "\"UpdateBg\"",
+						"interactive": false
+					}
+				},
+				{
 					"callFunction": "OnSetLanguage",
 					"sid": 571747890694290
 				}
@@ -1408,71 +1426,14 @@
 					],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 592392912407178,
-							"parameters": {
-								"layer": "\"ResetConfirm\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 547491364805073,
-							"parameters": {
-								"layer": "\"ResetConfirm\"",
-								"interactive": true
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 124528121512877,
-							"parameters": {
-								"layer": "\"Setting\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 358361626028928,
-							"parameters": {
-								"layer": "\"PopUpBg\"",
-								"visibility": "invisible"
-							}
+							"callFunction": "ShowResetConfirmPopUp",
+							"sid": 232337562137714,
+							"parameters": [
+								true
+							]
 						}
 					],
-					"sid": 778282695795669,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Dropdown",
-									"sid": 163524294062253,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"setting-language\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Dropdown",
-									"sid": 144704056620446,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 263736981542105
-						}
-					]
+					"sid": 778282695795669
 				},
 				{
 					"eventType": "block",
@@ -1490,71 +1451,14 @@
 					],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 930948025926744,
-							"parameters": {
-								"layer": "\"ResetConfirm\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 104607983012795,
-							"parameters": {
-								"layer": "\"ResetConfirm\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 404622273213281,
-							"parameters": {
-								"layer": "\"Setting\"",
-								"interactive": true
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 961643425731304,
-							"parameters": {
-								"layer": "\"PopUpBg\"",
-								"visibility": "visible"
-							}
+							"callFunction": "ShowResetConfirmPopUp",
+							"sid": 405177747285057,
+							"parameters": [
+								false
+							]
 						}
 					],
-					"sid": 650202476788513,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Dropdown",
-									"sid": 493172441630155,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"setting-language\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Dropdown",
-									"sid": 125620004500566,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 924895663844548
-						}
-					]
+					"sid": 650202476788513
 				},
 				{
 					"eventType": "block",
@@ -1588,6 +1492,54 @@
 						}
 					],
 					"sid": 640780290366245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 645346365828803,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"update-no\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowUpdatePopUp",
+							"sid": 941765290549525,
+							"parameters": [
+								false
+							]
+						}
+					],
+					"sid": 491433218590163
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 661873847975241,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"update-yes\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reload",
+							"objectClass": "Browser",
+							"sid": 407688418097925
+						}
+					],
+					"sid": 232457874480597
 				},
 				{
 					"eventType": "block",
@@ -1647,101 +1599,51 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-update-found-sw",
-					"objectClass": "Browser",
-					"sid": 974614323339559
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 254930026115299,
+					"parameters": {
+						"variable": "shouldShowUpdate"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 111180731698710,
+					"parameters": {
+						"layer": "\"MenuPopUp\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 439382197854889,
+					"parameters": {
+						"layer": "\"ResetConfirm\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
+					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 176154772533270,
+					"sid": 198192290953999,
 					"parameters": {
-						"variable": "versionText",
-						"value": "\"Versi \" & projectversion & \" (versi baru ditemukan, mendownload versi terbaru...)\""
+						"variable": "shouldShowUpdate",
+						"value": "false"
 					}
+				},
+				{
+					"callFunction": "ShowUpdatePopUp",
+					"sid": 738561313745555,
+					"parameters": [
+						true
+					]
 				}
 			],
-			"sid": 996447243694099,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIText",
-							"sid": 273823823099274,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"version\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UIText",
-							"sid": 111705980200202,
-							"parameters": {
-								"text": "versionText"
-							}
-						}
-					],
-					"sid": 726528092216164
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-update-ready-sw",
-					"objectClass": "Browser",
-					"sid": 645186538898867
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 163549626460296,
-					"parameters": {
-						"variable": "versionText",
-						"value": "\"Versi \" & projectversion & \" (versi terbaru telah didownload, silahkan refresh untuk mengupdate!)\""
-					}
-				}
-			],
-			"sid": 280770723004987,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIText",
-							"sid": 952786615578965,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"version\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UIText",
-							"sid": 146332882771540,
-							"parameters": {
-								"text": "versionText"
-							}
-						}
-					],
-					"sid": 881704452666734
-				}
-			]
+			"sid": 827090674691591
 		},
 		{
 			"eventType": "block",
@@ -1749,7 +1651,7 @@
 				{
 					"id": "on-item-exists",
 					"objectClass": "LocalStorage",
-					"sid": 266008620885378,
+					"sid": 533493907201879,
 					"parameters": {
 						"key": "USERNAME_TAG"
 					}
@@ -1759,13 +1661,13 @@
 				{
 					"id": "get-item",
 					"objectClass": "LocalStorage",
-					"sid": 202964758601257,
+					"sid": 756385583281350,
 					"parameters": {
 						"key": "USERNAME_TAG"
 					}
 				}
 			],
-			"sid": 827090674691591
+			"sid": 894315228011865
 		},
 		{
 			"eventType": "block",
@@ -2954,6 +2856,292 @@
 								}
 							],
 							"sid": 208258833821651
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "ShowUpdatePopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "show",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 363562160586957
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 382302404927506,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 693160191616428,
+							"parameters": {
+								"variable": "show"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 226318686403876,
+							"parameters": {
+								"layer": "\"Update\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 807238893160048,
+							"parameters": {
+								"layer": "\"UpdateBg\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 306028498487798,
+							"parameters": {
+								"layer": "\"MenuUI\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 882811734304367
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 806573323570086
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 251954703999337,
+							"parameters": {
+								"layer": "\"Update\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 293256502568313,
+							"parameters": {
+								"layer": "\"UpdateBg\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 670517641989813,
+							"parameters": {
+								"layer": "\"MenuUI\"",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 280461451200043
+				}
+			]
+		},
+		{
+			"functionName": "ShowResetConfirmPopUp",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "show",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 668375686119722
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 509930676467876,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 220480713308622,
+							"parameters": {
+								"variable": "show"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 110455796146617,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 969757347461990,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 192828856000958,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 876891271333525,
+							"parameters": {
+								"layer": "\"PopUpBg\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 576277560522182,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 602588841466232,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting-language\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Dropdown",
+									"sid": 166811652151475,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 663918557483211
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 441590296996589
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 212938066496571,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 262211036750557,
+							"parameters": {
+								"layer": "\"ResetConfirm\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 497856901056106,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 697188728039586,
+							"parameters": {
+								"layer": "\"PopUpBg\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 205533685065395,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Dropdown",
+									"sid": 280044399480881,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"setting-language\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Dropdown",
+									"sid": 687020054401385,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 990554518294290
 						}
 					]
 				}

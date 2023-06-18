@@ -34,6 +34,12 @@ const id = {
                     'no': 'Batal',
                 }
             },
+            'update': {
+                'title': 'Pembaruan Tersedia',
+                'subtitle': 'Muat ulang game untuk memperbarui.',
+                'yes': 'Muat Ulang',
+                'no': 'Abaikan',
+            },
         },
     }
 };
