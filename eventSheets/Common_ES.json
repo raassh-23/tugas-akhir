@@ -77,6 +77,10 @@
 						"variable": "touchedUid",
 						"value": "0"
 					}
+				},
+				{
+					"callFunction": "SetStaticTextTranslation",
+					"sid": 643809921157787
 				}
 			],
 			"sid": 869417131084892
@@ -743,6 +747,15 @@
 					"parameters": {
 						"text": "Functions.Translate(Self.translation, \"\")"
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 691227392454514,
+					"parameters": {
+						"type": "log",
+						"message": "Functions.Translate(UIText.translation, \"\")"
+					}
 				}
 			],
 			"sid": 185052956278049
@@ -810,6 +823,43 @@
 				}
 			],
 			"sid": 648869073918412
+		},
+		{
+			"functionName": "Interpolate",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "key",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 694093196138201
+				},
+				{
+					"name": "value",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 995658619788350
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 945994471807121,
+					"parameters": {
+						"value": "key&\"::\"&value"
+					}
+				}
+			],
+			"sid": 408684667216482
 		},
 		{
 			"eventType": "block",

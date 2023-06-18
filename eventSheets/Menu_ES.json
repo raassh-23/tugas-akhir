@@ -191,16 +191,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "versionText",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 337356531335739
-		},
-		{
-			"eventType": "variable",
 			"name": "firstOpen",
 			"type": "boolean",
 			"initialValue": "true",
@@ -2802,9 +2792,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 340475530525195,
+							"sid": 673891738908790,
 							"parameters": {
-								"text": "Functions.Translate(\"menu.version\", \"version:\" & projectversion)"
+								"text": "Functions.Translate(\"menu.version\", Functions.Interpolate(\"version\", projectversion))"
 							}
 						}
 					],

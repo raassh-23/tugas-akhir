@@ -41,6 +41,37 @@ const id = {
                 'no': 'Abaikan',
             },
         },
+        'level-select': {
+            'title': 'Pilih Level',
+        },
+        'game': {
+            'game-over': {
+                'title': 'Hebat!',
+                'add-leaderboard': 'Tambahkan ke papan peringkat?',
+                'add-leaderboard-success': 'Berhasil ditambahkan',
+                'username-placeholder': 'Nama kamu',
+                'target': 'Target: {{value}}',
+                'best': 'Terbaik: {{value}}',
+            },
+            'pause': {
+                'title': 'Dijeda',
+                'restart': 'Mulai Ulang',
+                'select-level': 'Pilih Level',
+            },
+            'repeat-pop-up': {
+                'title': 'Ulangi sebanyak',
+                'subtitle': 'kali',
+            },
+            'if-pop-up': {
+                'title': 'Jika',
+            },
+            'else-if-pop-up': {
+                'title': 'Lain jika',
+            },
+            'while-pop-up': {
+                'title': 'Ulangi selama',
+            },
+        },
     }
 };
 

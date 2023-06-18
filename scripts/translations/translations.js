@@ -22,7 +22,7 @@ export function translate(key, interpolations) {
     const options = {};
 
     interpolations.split(",").forEach((interpolation) => {
-        const [interpolationKey, interpolationValue] = interpolation.split(":");
+        const [interpolationKey, interpolationValue] = interpolation.split("::");
         options[interpolationKey] = interpolationValue;
     })
 

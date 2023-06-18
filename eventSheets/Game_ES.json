@@ -2275,6 +2275,25 @@
 								}
 							],
 							"sid": 444071495224084
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 274069094455476,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"callFunction": "SetStaticTextTranslation",
+									"sid": 188597049696441
+								}
+							],
+							"sid": 527494490183039
 						}
 					]
 				},
@@ -5852,6 +5871,14 @@
 							}
 						},
 						{
+							"id": "set-placeholder",
+							"objectClass": "TextInputName",
+							"sid": 474466180267777,
+							"parameters": {
+								"placeholder": "Functions.Translate(\"game.game-over.username-placeholder\", \"\")"
+							}
+						},
+						{
 							"callFunction": "showLevelPopUp",
 							"sid": 972775298150073,
 							"parameters": [
@@ -6176,9 +6203,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 450513651540697,
+									"sid": 331287284709901,
 									"parameters": {
-										"text": "\"Target: \" & targetActions"
+										"text": "Functions.Translate(\"game.game-over.target\", Functions.Interpolate(\"value\", str(targetActions)))"
 									}
 								}
 							],
@@ -6202,9 +6229,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 521223464765330,
+									"sid": 607044367680783,
 									"parameters": {
-										"text": "\"Target: \" & targetCodeBlocks"
+										"text": "Functions.Translate(\"game.game-over.target\", Functions.Interpolate(\"value\", str(targetCodeBlocks)))"
 									}
 								}
 							],
@@ -6340,9 +6367,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 938765797458702,
+									"sid": 600671603780597,
 									"parameters": {
-										"text": "\"Terbaik: \" & Functions.FormatTime(LevelScoreData.At(level, TIME_INDEX))"
+										"text": "Functions.Translate(\"game.game-over.best\", Functions.Interpolate(\"value\", Functions.FormatTime(LevelScoreData.At(level, TIME_INDEX))))"
 									}
 								}
 							],
@@ -6366,9 +6393,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 902182287502077,
+									"sid": 657768586280797,
 									"parameters": {
-										"text": "\"Terbaik: \" & LevelScoreData.At(level, CODE_BLOCKS_INDEX)"
+										"text": "Functions.Translate(\"game.game-over.best\", Functions.Interpolate(\"value\", LevelScoreData.At(level, CODE_BLOCKS_INDEX)))"
 									}
 								}
 							],
@@ -6392,9 +6419,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 939994414121658,
+									"sid": 248497896540357,
 									"parameters": {
-										"text": "\"Terbaik: \" & LevelScoreData.At(level, ACTIONS_INDEX)"
+										"text": "Functions.Translate(\"game.game-over.best\", Functions.Interpolate(\"value\", LevelScoreData.At(level, ACTIONS_INDEX)))"
 									}
 								}
 							],

@@ -7760,7 +7760,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "level-select",
-						"translation": ""
+						"translation": "level-select.title"
 					},
 					"behaviors": {},
 					"world": {

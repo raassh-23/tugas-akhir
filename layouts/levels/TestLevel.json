@@ -4555,7 +4555,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "game-over-text",
-						"translation": ""
+						"translation": "game.game-over.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -4985,7 +4985,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "game-over-leaderboard",
-						"translation": ""
+						"translation": "game.game-over.add-leaderboard"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -5315,7 +5315,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "game-over-leaderboard-status",
-						"translation": ""
+						"translation": "game.game-over.add-leaderboard-success"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7095,7 +7095,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "pause-text",
-						"translation": ""
+						"translation": "game.pause.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7127,9 +7127,9 @@
 						}
 					},
 					"world": {
-						"x": 543,
+						"x": 512,
 						"y": -396,
-						"width": 194,
+						"width": 256,
 						"height": 84,
 						"originX": 0,
 						"originY": 0,
@@ -7395,7 +7395,7 @@
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "pause-restart-text",
-						"translation": ""
+						"translation": "game.pause.restart"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7469,7 +7469,7 @@
 						"autoFit": true,
 						"maxLine": 1,
 						"id": "pause-level-text",
-						"translation": ""
+						"translation": "game.pause.select-level"
 					},
 					"behaviors": {},
 					"sceneGraphData": {

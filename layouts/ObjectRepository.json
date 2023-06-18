@@ -2084,7 +2084,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "repeat-text",
-						"translation": ""
+						"translation": "game.repeat-pop-up.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2158,7 +2158,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "repeat-text",
-						"translation": ""
+						"translation": "game.repeat-pop-up.subtitle"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6095,7 +6095,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "while-text",
-						"translation": ""
+						"translation": "game.while-pop-up.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -7626,7 +7626,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "if-text",
-						"translation": ""
+						"translation": "game.if-pop-up.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -9454,7 +9454,7 @@
 						"autoFit": false,
 						"maxLine": 1,
 						"id": "elif-text",
-						"translation": ""
+						"translation": "game.else-if-pop-up.title"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
