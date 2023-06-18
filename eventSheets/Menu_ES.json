@@ -61,6 +61,36 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "SETTING_VOLUME_TAG",
+			"type": "string",
+			"initialValue": "volume",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 563197051670499
+		},
+		{
+			"eventType": "variable",
+			"name": "SETTING_FULLSCREEN_TAG",
+			"type": "string",
+			"initialValue": "fullscreen",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 708348930078167
+		},
+		{
+			"eventType": "variable",
+			"name": "SETTING_LANGUAGE_TAG",
+			"type": "string",
+			"initialValue": "lang",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 278342499365071
+		},
+		{
+			"eventType": "variable",
 			"name": "MAX_LEVEL",
 			"type": "number",
 			"initialValue": "20",
@@ -371,47 +401,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 161244421954923,
-							"parameters": {
-								"variable": "firstOpen"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "check-item-exists",
-							"objectClass": "LocalStorage",
-							"sid": 141896745178757,
-							"parameters": {
-								"key": "USERNAME_TAG"
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "LocalStorage",
-							"sid": 866830337303389,
-							"parameters": {
-								"key": "LEVEL_SCORE_TAG"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 368931575847569,
-							"parameters": {
-								"variable": "firstOpen",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 284301865572904
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-instance-variable",
 							"objectClass": "Dropdown",
 							"sid": 164428080940088,
@@ -480,7 +469,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 636209312048050,
+									"sid": 425424874609799,
 									"parameters": {
 										"first-value": "Functions.CheckInstallation",
 										"comparison": 0,
@@ -513,6 +502,41 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 801990184741143,
+									"parameters": {
+										"first-value": "Functions.CheckInstallation",
+										"comparison": 0,
+										"second-value": "\"installed\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 451258823893041,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 648083331811602,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 956207021728388
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "else",
 									"objectClass": "System",
 									"sid": 963578015613732
@@ -540,6 +564,42 @@
 							"sid": 143065944743827
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 119552996328658,
+							"parameters": {
+								"first-value": "Functions.CheckInstallation",
+								"comparison": 0,
+								"second-value": "\"installed\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 884363431313215,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"setting-installed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 326061695002446,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 900053832227619
 				},
 				{
 					"eventType": "block",
@@ -632,6 +692,71 @@
 						}
 					],
 					"sid": 670280051519638
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 447112950361251,
+							"parameters": {
+								"variable": "firstOpen"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 897015167226289,
+							"parameters": {
+								"key": "USERNAME_TAG"
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 760646908003852,
+							"parameters": {
+								"key": "LEVEL_SCORE_TAG"
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 773069571696205,
+							"parameters": {
+								"key": "SETTING_VOLUME_TAG"
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 707604245226947,
+							"parameters": {
+								"key": "SETTING_FULLSCREEN_TAG"
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 485880989571610,
+							"parameters": {
+								"key": "SETTING_LANGUAGE_TAG"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 177965460776576,
+							"parameters": {
+								"variable": "firstOpen",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 527373558353997
 				}
 			]
 		},
@@ -1721,11 +1846,6 @@
 					"parameters": {
 						"key": "LEVEL_SCORE_TAG"
 					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 348078016429725
 				}
 			],
 			"sid": 425711297408908
@@ -1825,6 +1945,272 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 715788364189814,
+					"parameters": {
+						"key": "SETTING_VOLUME_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 794834948658876,
+					"parameters": {
+						"key": "SETTING_VOLUME_TAG"
+					}
+				}
+			],
+			"sid": 452109059456170
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 544705790900235,
+					"parameters": {
+						"key": "SETTING_VOLUME_TAG"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Slider",
+					"sid": 123701582173883,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-volume\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Slider",
+					"sid": 485757908027469,
+					"parameters": {
+						"x": "LocalStorage.ItemValue/100 * (Self.max - Self.min) + Self.min"
+					}
+				}
+			],
+			"sid": 360692566091886
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 899678721551387,
+					"parameters": {
+						"key": "SETTING_VOLUME_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 608960596723819,
+					"parameters": {
+						"key": "SETTING_VOLUME_TAG",
+						"value": "50"
+					}
+				}
+			],
+			"sid": 812967343670218
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 731724524446482,
+					"parameters": {
+						"key": "SETTING_FULLSCREEN_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 163364120473698,
+					"parameters": {
+						"key": "SETTING_FULLSCREEN_TAG"
+					}
+				}
+			],
+			"sid": 494283823282849
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 152687382081768,
+					"parameters": {
+						"key": "SETTING_FULLSCREEN_TAG"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 177078400839780,
+					"parameters": {
+						"first-value": "LocalStorage.ItemValue",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 951938118665189,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
+				}
+			],
+			"sid": 111995576900277
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 914777055587221,
+					"parameters": {
+						"key": "SETTING_FULLSCREEN_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 185272300632913,
+					"parameters": {
+						"key": "SETTING_FULLSCREEN_TAG",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 596463380282739
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 225649360453989,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 915360802822330,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG"
+					}
+				}
+			],
+			"sid": 451012365318945
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 222741365929729,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Dropdown",
+					"sid": 491641811115919,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-language\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-selection",
+					"objectClass": "Dropdown",
+					"sid": 662281108479576,
+					"parameters": {
+						"index": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"callFunction": "ChangeLanguage",
+					"sid": 473035375340745,
+					"parameters": [
+						"tokenat(LANGUAGE_VALUES, Dropdown.SelectedIndex, \",\")"
+					]
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 913095657388857
+				},
+				{
+					"callFunction": "OnSetLanguage",
+					"sid": 168806024101169
+				}
+			],
+			"sid": 114216664792651
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 164534183245447,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 425748659081723,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 994348723966016
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-selection-changed",
 					"objectClass": "Dropdown",
 					"sid": 469474729472653
@@ -1919,6 +2305,15 @@
 					"parameters": [
 						"tokenat(LANGUAGE_VALUES, Dropdown.SelectedIndex, \",\")"
 					]
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 698851969827243,
+					"parameters": {
+						"key": "SETTING_LANGUAGE_TAG",
+						"value": "Dropdown.SelectedIndex"
+					}
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -2277,6 +2672,15 @@
 								"mode": "stretch-letterbox-scale",
 								"navigation-ui": "hide"
 							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 188955257653872,
+							"parameters": {
+								"key": "SETTING_FULLSCREEN_TAG",
+								"value": "1"
+							}
 						}
 					],
 					"sid": 251517395140016
@@ -2299,6 +2703,15 @@
 							"id": "cancel-fullscreen",
 							"objectClass": "Browser",
 							"sid": 883158202022992
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 557146400834423,
+							"parameters": {
+								"key": "SETTING_FULLSCREEN_TAG",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 741202860683466
@@ -2384,6 +2797,15 @@
 							"sid": 179586509682178,
 							"parameters": {
 								"text": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 374918788390475,
+							"parameters": {
+								"key": "SETTING_VOLUME_TAG",
+								"value": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
 							}
 						}
 					],

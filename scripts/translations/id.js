@@ -26,7 +26,7 @@ const id = {
                 'language': 'Bahasa',
                 'reset': 'Reset Data',
                 'install': 'Install',
-                'installed': 'Terinstall',
+                'installed': 'Game Terinstall',
                 'reset-confirm': {
                     'title': 'Apa kamu yakin?',
                     'subtitle': 'Semua progress kamu akan hilang.',

@@ -753,7 +753,7 @@
 					"sid": 646262772143657
 				},
 				{
-					"name": "values",
+					"name": "interpolations",
 					"type": "string",
 					"initialValue": "",
 					"comment": "in the format of `key:value`",
@@ -765,7 +765,7 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "const { key, values } = localVars;\n\nruntime.setReturnValue(translate(key, values));"
+					"script": "const { key, interpolations } = localVars;\n\nruntime.setReturnValue(translate(key, interpolations));"
 				}
 			],
 			"sid": 773410472741668

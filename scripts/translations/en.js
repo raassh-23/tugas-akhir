@@ -26,7 +26,7 @@ const en = {
                 'language': 'Language',
                 'reset': 'Reset Data',
                 'install': 'Install',
-                'installed': 'Installed',
+                'installed': 'Game Installed',
                 'reset-confirm': {
                     'title': 'Are you sure?',
                     'subtitle': 'All your progress will be lost.',
