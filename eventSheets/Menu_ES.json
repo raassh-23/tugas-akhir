@@ -133,7 +133,7 @@
 			"eventType": "variable",
 			"name": "SORT_BY_VALUES",
 			"type": "string",
-			"initialValue": "Waktu,Langkah,Blok",
+			"initialValue": "time,steps,code-blocks",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -253,10 +253,6 @@
 						"layer": "\"ResetConfirm\"",
 						"interactive": false
 					}
-				},
-				{
-					"callFunction": "SetStaticTextTranslation",
-					"sid": 991963807509444
 				},
 				{
 					"callFunction": "OnSetLanguage",
@@ -458,55 +454,6 @@
 								}
 							],
 							"sid": 682682178424568
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Dropdown",
-							"sid": 586780296460059,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"sort\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "clear",
-							"objectClass": "Dropdown",
-							"sid": 631379093638176
-						}
-					],
-					"sid": 736293576110993,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 422496653633014,
-									"parameters": {
-										"count": "tokencount(SORT_BY_VALUES, \",\")"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-item",
-									"objectClass": "Dropdown",
-									"sid": 164984771082193,
-									"parameters": {
-										"text": "tokenat(SORT_BY_VALUES, loopindex, \",\")"
-									}
-								}
-							],
-							"sid": 208258833821651
 						}
 					]
 				},
@@ -2505,7 +2452,12 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"callFunction": "SetStaticTextTranslation",
+					"sid": 991963807509444
+				}
+			],
 			"sid": 622435075913917,
 			"children": [
 				{
@@ -2533,6 +2485,55 @@
 						}
 					],
 					"sid": 580684366863843
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Dropdown",
+							"sid": 586780296460059,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"sort\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "clear",
+							"objectClass": "Dropdown",
+							"sid": 631379093638176
+						}
+					],
+					"sid": 736293576110993,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 422496653633014,
+									"parameters": {
+										"count": "tokencount(SORT_BY_VALUES, \",\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-item",
+									"objectClass": "Dropdown",
+									"sid": 619453819993566,
+									"parameters": {
+										"text": "Functions.Translate(\"menu.leaderboard.\" & tokenat(SORT_BY_VALUES, loopindex, \",\"), \"\")"
+									}
+								}
+							],
+							"sid": 208258833821651
+						}
+					]
 				}
 			]
 		}
