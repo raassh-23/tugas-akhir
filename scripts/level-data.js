@@ -13,6 +13,8 @@ export const levelVariables = {
     6: [/* */],
     7: [/* */],
     8: [ "gem" ],
+    9: [ "gem" ],
+    10: [ "gem" ],
 };
 
 /**
@@ -57,6 +59,14 @@ export const levelTarget = {
     8: {
         actions: 5,
         codeBlocks: 7,
+    },
+    9: {
+        actions: 16,
+        codeBlocks: 9,
+    },
+    10: {
+        actions: 20,
+        codeBlocks: 9,
     },
 }
 
@@ -294,6 +304,56 @@ export const levelAvailableCodeBlocks = {
             blocks.sevenExpression,
             blocks.eightExpression,
             blocks.nineExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    9: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.gemExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    10: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.gemExpression,
         ],
         conditionalExpressions: [
             //

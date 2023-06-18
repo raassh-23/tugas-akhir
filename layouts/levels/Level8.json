@@ -1436,7 +1436,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "timer"
+						"id": "timer",
+						"translation": ""
 					},
 					"behaviors": {},
 					"world": {
@@ -1481,7 +1482,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "variables"
+						"id": "variables",
+						"translation": ""
 					},
 					"behaviors": {},
 					"world": {
@@ -2223,7 +2225,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-text"
+						"id": "game-over-text",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2296,7 +2299,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-time"
+						"id": "game-over-time",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2369,7 +2373,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-actions"
+						"id": "game-over-actions",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2442,7 +2447,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-code-count"
+						"id": "game-over-code-count",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2568,7 +2574,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-leaderboard"
+						"id": "game-over-leaderboard",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -2897,7 +2904,8 @@
 						"maxScale": 0,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-leaderboard-status"
+						"id": "game-over-leaderboard-status",
+						"translation": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {

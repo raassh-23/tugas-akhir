@@ -747,15 +747,6 @@
 					"parameters": {
 						"text": "Functions.Translate(Self.translation, \"\")"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 691227392454514,
-					"parameters": {
-						"type": "log",
-						"message": "Functions.Translate(UIText.translation, \"\")"
-					}
 				}
 			],
 			"sid": 185052956278049

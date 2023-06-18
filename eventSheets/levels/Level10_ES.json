@@ -1,0 +1,36 @@
+{
+	"name": "Level10_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 647204753658405
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 735109513571122,
+					"parameters": {
+						"variable": "level",
+						"value": "10"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 723076577887854
+		}
+	],
+	"sid": 405196208212221
+}

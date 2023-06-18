@@ -15,7 +15,7 @@ export async function initTranslations() {
 /**
  * 
  * @param {string} key 
- * @param {string} interpolations in format "key1:value1,key2:value2,..."
+ * @param {string} interpolations in format "key1::value1,key2::value2,..."
  * @returns 
  */
 export function translate(key, interpolations) {
