@@ -57,7 +57,8 @@ export default class RepeatCommand extends ConditionalCommand {
             }
 
             if (repeatCount <= i++) {
-                break;
+                this._text.text = this.getCondition();
+                return FINISHED;
             }
 
             const result = await super.run(player, state);
@@ -66,7 +67,5 @@ export default class RepeatCommand extends ConditionalCommand {
                 return result;
             }
         }
-
-        return FINISHED;
     }
 }

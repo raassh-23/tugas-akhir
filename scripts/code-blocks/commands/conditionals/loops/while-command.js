@@ -55,7 +55,7 @@ export default class WhileCommand extends ConditionalCommand {
             }
 
             if (!evaluatedCondition) {
-                break;
+                return FINISHED;
             }
 
             const result = await super.run(player, state);
@@ -64,7 +64,5 @@ export default class WhileCommand extends ConditionalCommand {
                 return result;
             }
         }
-
-        return FINISHED;
     }
 }
