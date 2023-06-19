@@ -17,13 +17,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "currentPlayerUID",
+			"name": "currentPlayerId",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 609270761893114
+		},
+		{
+			"eventType": "variable",
+			"name": "showPlayerId",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 302951901383474
 		},
 		{
 			"eventType": "variable",
@@ -5137,11 +5147,22 @@
 						}
 					],
 					"eventType": "function-block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 657787754545963,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "showPlayerId"
+							}
+						}
+					],
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.setReturnValue(\n\tgetVariableByName(localVars.name),\n);"
+							"script": "runtime.setReturnValue(\n\tgetVariableValue(runtime.objects.Player.getFirstPickedInstance(), localVars.name),\n);"
 						}
 					],
 					"sid": 158044661581720
@@ -5530,6 +5551,81 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-created",
+							"objectClass": "Player",
+							"sid": 667593770980055
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-top",
+							"objectClass": "Player",
+							"sid": 118230068012313
+						},
+						{
+							"id": "set-grid-dimensions",
+							"objectClass": "Player",
+							"sid": 671094482723245,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"width": "GRID_SIZE",
+								"height": "GRID_SIZE",
+								"x-offset": "GRID_SIZE/2",
+								"y-offset": "GRID_SIZE/2"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player",
+							"sid": 323940619805025,
+							"parameters": {
+								"object": "PlayerMarker",
+								"layer": "Player.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PlayerMarker",
+							"sid": 923430173685023,
+							"parameters": {
+								"x": "Player.X",
+								"y": "Player.Y - Player.Height/2 - 8"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Player",
+							"sid": 288398050502009,
+							"parameters": {
+								"child": "PlayerMarker",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-o": true,
+								"transform-z-elevation": true,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PlayerMarker",
+							"sid": 285748666114116,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 321048517186223
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 950887717804199
@@ -5667,23 +5763,6 @@
 							"parameters": [
 								false
 							]
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "Player",
-							"sid": 195950738083213
-						},
-						{
-							"id": "set-grid-dimensions",
-							"objectClass": "Player",
-							"sid": 345622271370274,
-							"behaviorType": "TileMovement",
-							"parameters": {
-								"width": "GRID_SIZE",
-								"height": "GRID_SIZE",
-								"x-offset": "GRID_SIZE/2",
-								"y-offset": "GRID_SIZE/2"
-							}
 						}
 					],
 					"sid": 821739008563039,
@@ -5743,6 +5822,30 @@
 								}
 							],
 							"sid": 163224128340546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-highestlowest",
+									"objectClass": "Player",
+									"sid": 926271047119826,
+									"parameters": {
+										"which": "lowest",
+										"instance-variable": "id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetShownPlayer",
+									"sid": 218901201287570,
+									"parameters": [
+										"Player.id"
+									]
+								}
+							],
+							"sid": 606786119326455
 						}
 					]
 				},
@@ -5757,6 +5860,15 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 187290540870123,
+							"parameters": {
+								"variable": "isRunning",
+								"value": "false"
+							}
+						},
 						{
 							"id": "destroy",
 							"objectClass": "GameObjects",
@@ -5819,13 +5931,11 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 926897094449397,
-							"parameters": {
-								"variable": "isRunning",
-								"value": "false"
-							}
+							"callFunction": "SetShownPlayer",
+							"sid": 694963219607879,
+							"parameters": [
+								"showPlayerId"
+							]
 						},
 						{
 							"type": "script",
@@ -7279,11 +7389,13 @@
 					"eventType": "function-block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 532691019715706,
+							"sid": 520186668424603,
 							"parameters": {
-								"unique-id": "currentPlayerUID"
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "currentPlayerId"
 							}
 						}
 					],
@@ -7431,16 +7543,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Player",
-							"sid": 118674200595939,
-							"parameters": {
-								"unique-id": "currentPlayerUID"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-function-return-value",
@@ -7460,6 +7563,16 @@
 						{
 							"eventType": "block",
 							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 356093511335010,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "currentPlayerId"
+									}
+								},
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Player",
@@ -7553,11 +7666,13 @@
 					"eventType": "function-block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 839008688200988,
+							"sid": 243190308698346,
 							"parameters": {
-								"unique-id": "currentPlayerUID"
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "currentPlayerId"
 							}
 						}
 					],
@@ -8665,11 +8780,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-by-unique-id",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 734357623938098,
+							"sid": 414248517232138,
 							"parameters": {
-								"unique-id": "currentPlayerUID"
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "currentPlayerId"
 							}
 						},
 						{
@@ -8799,6 +8916,126 @@
 						}
 					],
 					"sid": 101827522720427
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 870610530553725,
+							"parameters": {
+								"object": "Player"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 304385148953667,
+							"parameters": {
+								"variable": "isRunning"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetShownPlayer",
+							"sid": 563432382412446,
+							"parameters": [
+								"Player.id"
+							]
+						}
+					],
+					"sid": 607069294881318
+				},
+				{
+					"functionName": "SetShownPlayer",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "id",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 544050795805788
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 637568563362712,
+							"parameters": {
+								"variable": "showPlayerId",
+								"value": "id"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PlayerMarker",
+							"sid": 140502494072034,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "this wait is needed because when resetting the level, it recreate the player and newly created child can't be picked on the same tick "
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 260844416893647,
+							"parameters": {
+								"seconds": "0"
+							}
+						}
+					],
+					"sid": 307762600978691,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 990097336999148,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "id"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 128158633849731,
+									"parameters": {
+										"child": "PlayerMarker",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "PlayerMarker",
+									"sid": 681000593227458,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 517228973532929
+						}
+					]
 				}
 			],
 			"sid": 991077192111983

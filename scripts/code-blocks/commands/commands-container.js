@@ -36,6 +36,7 @@ export default class CommandsContainer extends BaseCommand {
             const valid = checkElseValid(command, lastCommandName, lastResult);
 
             if (valid === ERROR) {
+                state.isError = true;
                 this.runtime.callFunction("ShowError", translate('game.error.else-placement'), 2);
 
                 return ERROR;

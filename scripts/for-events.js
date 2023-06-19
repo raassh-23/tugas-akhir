@@ -117,11 +117,15 @@ async function runCommands(runtime, players) {
 
 		players.sort((a, b) => a.instVars.id - b.instVars.id);
 
+		let previousShownPlayer = runtime.globalVars.showPlayerId;
+
 		for (const player of players) {
 			runner.reset(true); // reset commands, including errors
 			resetVariables(runtime.globalVars.level, player);
 
-			runtime.globalVars.currentPlayerUID = player.uid;
+			runtime.globalVars.currentPlayerId = player.instVars.id;
+
+			runtime.callFunction("SetShownPlayer", player.instVars.id);
 
 			const result = await runner.run(player, state);
 
@@ -135,8 +139,7 @@ async function runCommands(runtime, players) {
 			}
 		}
 
-		runtime.globalVars.isRunning = false;
-
+		runtime.globalVars.showPlayerId = previousShownPlayer;
 		runtime.callFunction("ResetGame");
 	}
 }
@@ -427,8 +430,8 @@ function setupVariablesList(runtime) {
  * @param {string} name 
  * @returns {number}
  */
-function getVariableByName(name) {
-	const variable = state.variables[name] ?? 0;
+function getVariableValue(player, name) {
+	const variable = player.instVars[name] ?? 0;
 
 	if (variable == null) {
 		throw new Error(`Variable ${name} does not exist.`);

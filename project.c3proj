@@ -243,7 +243,8 @@
 			"Switch",
 			"PlatformInfo",
 			"SliderBG",
-			"Slider"
+			"Slider",
+			"PlayerMarker"
 		],
 		"subfolders": [
 			{
