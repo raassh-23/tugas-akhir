@@ -5110,7 +5110,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "UIText",
-							"sid": 380682668408168,
+							"sid": 917525440932794,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
@@ -5122,7 +5122,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 311021610840276,
+							"sid": 898175256132653,
 							"parameters": {
 								"text": "Functions.GetVariable(Self.id)"
 							}
@@ -7507,7 +7507,7 @@
 							"actions": [
 								{
 									"type": "script",
-									"script": "if (state.variables.health === undefined) {\n\treturn;\n}\n\nstate.variables.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (state.variables.health <= 0) {\n\tstate.isError = true;\n\truntime.callFunction(\n\t\t\"ShowError\",\n\t\t\"Player mati\",\n\t\t2,\n\t);\n}\n"
+									"script": "if (!runtime.globalVars.variableNames.includes(\"health\")) {\n\treturn;\n}\n\nconst player = runtime.objects.Player.getFirstPickedInstance();\n\nplayer.instVars.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (player.instVars.health <= 0) {\n\tstate.isError = true;\n\truntime.callFunction(\n\t\t\"ShowError\",\n\t\ttranslate(\"game.error.player-died\"),\n\t\t2,\n\t);\n}\n"
 								}
 							],
 							"sid": 188760965931083

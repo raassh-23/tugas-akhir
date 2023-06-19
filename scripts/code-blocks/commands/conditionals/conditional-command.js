@@ -154,6 +154,22 @@ export default class ConditionalCommand extends CommandsContainer {
             .replace(/\s+/g, '');;
     }
 
+    /**
+     * 
+     * @param {IPlayer} player 
+     * @param {import("../../../for-events.js").GameState} state 
+     */
+    getSymbols(player, state) {
+        const variableNames = this.runtime.globalVars.variableNames.split("|");
+        const variables = {};
+
+        for (const variableName of variableNames) {
+            variables[variableName] = player.instVars[variableName];
+        }
+
+        return { ...variables, ...state.surrounding };
+    }
+
     setSizeBasedOnLevel() {
         const multiplier = this.getMultiplier(this.level);
 

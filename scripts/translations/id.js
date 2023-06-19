@@ -75,6 +75,7 @@ const id = {
                 'else-placement': 'Kamu tidak bisa menaruh Else atau Else If disana',
                 'no-ammo': 'Robot kamu kehabisan peluru',
                 'invalid-condition': 'Kondisi kamu tidak valid',
+                'player-died': 'Robot kamu hancur',
             },
         },
     }

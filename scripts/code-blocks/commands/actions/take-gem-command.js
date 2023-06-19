@@ -22,8 +22,8 @@ export default class TakeGemCommand extends BaseCommand {
 
         const result = this.runtime.callFunction("CheckGemCollisions");
 
-        if (result === FINISHED && state.variables.gem > 0) {
-            state.variables.gem--;
+        if (result === FINISHED && player.instVars.gem > 0) {
+            player.instVars.gem--;
         }
 
         return waitUnlessStopped(state, {

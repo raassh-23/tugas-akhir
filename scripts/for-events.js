@@ -38,9 +38,6 @@ let pickedCommand = null;
  * isPaused: boolean,
  * playerCount: number,
  * actionCount: number,
- * variables: {
- *  [variable: string]: number,
- * }
  * surrounding: {
  * 	up: number,
  * 	down: number,
@@ -63,7 +60,6 @@ const state = {
 	isPaused: false,
 	playerCount: 0,
 	actionCount: 0,
-	variables: {},
 	surrounding: {
 		up: 0,
 		down: 0,
@@ -121,7 +117,6 @@ async function runCommands(runtime, players) {
 
 		for (const player of players) {
 			runner.reset(true); // reset commands, including errors
-			resetVariables(runtime.globalVars.level, player);
 
 			runtime.globalVars.currentPlayerId = player.instVars.id;
 
@@ -149,8 +144,7 @@ async function runCommands(runtime, players) {
  * @param {IRuntime} runtime 
  * @param {boolean} shouldResetVariables
  */
-function resetState(runtime, shouldResetVariables = true) {
-	const level = runtime.globalVars.level;
+function resetState(runtime) {
 	const playerCount = runtime.objects.Player.getAllInstances().length;
 
 	state.isStopped = false;
@@ -169,33 +163,6 @@ function resetState(runtime, shouldResetVariables = true) {
 		lowerright: 0,
 		center: 0,
 	};
-
-	if (shouldResetVariables) {
-		const firstPlayer = runtime.objects.Player.getAllInstances()
-			.reduce((prev, curr) => prev.instVars.id < curr.instVars.id ? prev : curr);
-		resetVariables(level, firstPlayer);
-	}
-}
-
-/**
- * 
- * @param {number} level 
- * @param {IPlayer} player
- */
-function resetVariables(level, player) {
-	const variablesList = levelVariables[level] ?? [];
-
-	state.variables = variablesList.reduce((acc, variable) => {
-		Object.defineProperty(acc, variable, {
-			set: (value) => {
-				player.instVars[variable] = value;
-			},
-			get: () => player.instVars[variable],
-			enumerable: true,
-		});
-
-		return acc;
-	}, {});
 }
 
 /**
@@ -399,14 +366,18 @@ const variableIconMap = {
  * @param {IRuntime} runtime 
  */
 function setupVariablesList(runtime) {
-	const variables = Object.entries(state.variables);
+	const variables = levelVariables[runtime.globalVars.level];
+
+	if (variables.length === 0) {
+		return;
+	}
 
 	runtime.globalVars.variableNames = variables
-		.map(([name]) => name)
+		.map((name) => name)
 		.join("|");
 
 	for (let i = 0; i < variables.length; i++) {
-		const [name, value] = variables[i];
+		const name = variables[i];
 
 		const variable = runtime.objects.Icon.createInstance(
 			"UI",
@@ -420,7 +391,6 @@ function setupVariablesList(runtime) {
 		variable.animationFrame = variableIconMap[name] ?? 0;
 
 		const variableText = variable.getChildAt(0);
-		variableText.text = value.toString();
 		variableText.instVars.id = name;
 	}
 }

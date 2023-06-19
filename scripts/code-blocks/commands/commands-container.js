@@ -37,7 +37,7 @@ export default class CommandsContainer extends BaseCommand {
 
             if (valid === ERROR) {
                 state.isError = true;
-                this.runtime.callFunction("ShowError", translate('game.error.else-placement'), 2);
+                this.runtime.callFunction("ShowError", translate("game.error.else-placement"), 2);
 
                 return ERROR;
             } else if (valid === CONTINUE) {

@@ -1,3 +1,4 @@
+import { translate } from "../../../../translations/translations.js";
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
 import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
@@ -27,7 +28,7 @@ export default class WhileCommand extends ConditionalCommand {
             let evaluatedCondition = false;
 
             try {
-                const symbols = { ...state.variables, ...state.surrounding };
+                const symbols = this.getSymbols(player, state);
                 evaluatedCondition = math.evaluate(cleanedCondition, symbols);
                 evaluatedCondition = !!evaluatedCondition; // convert to boolean
             } catch (error) {

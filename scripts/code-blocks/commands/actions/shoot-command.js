@@ -28,8 +28,8 @@ export default class ShootCommand extends BaseCommand {
     async run(player, state) {
         startCommmand(this.runtime, player, state);
 
-        if (state.variables.ammo != undefined) {
-            if (state.variables.ammo <= 0) {
+        if (this.runtime.globalVars.variableNames.includes("ammo")) {
+            if (player.instVars.ammo <= 0) {
                 state.isError = true;
                 this.showError(true);
                 this.runtime.callFunction("ShowError", translate("game.error.no-ammo"), 2);
@@ -37,7 +37,7 @@ export default class ShootCommand extends BaseCommand {
                 return ERROR;
             }
 
-            state.variables.ammo--;
+            player.instVars.ammo--;
         }
 
         const dir = player.animationName;

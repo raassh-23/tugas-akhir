@@ -1,3 +1,4 @@
+import { translate } from "../../../../translations/translations.js";
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
 import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
@@ -22,7 +23,7 @@ export default class RepeatCommand extends ConditionalCommand {
         const cleanedRepeatCondition = this.getCleanedCondition();
 
         try {
-            const symbols = { ...state.variables, ...state.surrounding };
+            const symbols = this.getSymbols(player, state);
             repeatCount = math.evaluate(cleanedRepeatCondition, symbols);
 
             if (repeatCount < 0) {
