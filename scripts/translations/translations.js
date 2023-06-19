@@ -18,7 +18,7 @@ export async function initTranslations() {
  * @param {string} interpolations in format "key1::value1,key2::value2,..."
  * @returns 
  */
-export function translate(key, interpolations) {
+export function translate(key, interpolations = "") {
     const options = {};
 
     interpolations.split(",").forEach((interpolation) => {

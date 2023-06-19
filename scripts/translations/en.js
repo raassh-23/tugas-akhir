@@ -71,6 +71,11 @@ const en = {
             'while-pop-up': {
                 'title': 'Repeat while',
             },
+            'error': {
+                'else-placement': 'You can\'t put Else If or Else there',
+                'no-ammo': 'The robot ran out of ammo',
+                'invalid-condition': 'The condition is not valid',
+            },
         },
     }
 };

@@ -31,7 +31,7 @@ export default class RepeatCommand extends ConditionalCommand {
         } catch (error) {
             state.isError = true;
             this.showError(true);
-            this.runtime.callFunction("ShowError", "Penulisan kondisi salah", 2);
+            this.runtime.callFunction("ShowError", translate("game.error.invalid-condition"), 2);
 
             return ERROR
         }

@@ -71,6 +71,11 @@ const id = {
             'while-pop-up': {
                 'title': 'Ulangi selama',
             },
+            'error': {
+                'else-placement': 'Kamu tidak bisa menaruh Else atau Else If disana',
+                'no-ammo': 'Robot kamu kehabisan peluru',
+                'invalid-condition': 'Kondisi kamu tidak valid',
+            },
         },
     }
 };

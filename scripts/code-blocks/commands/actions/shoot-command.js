@@ -1,3 +1,4 @@
+import { translate } from "../../../translations/translations.js";
 import { ERROR } from "../../code-block-constants.js";
 import { startCommmand, waitUnlessStopped } from "../../code-block-utils.js";
 import BaseCommand from "../base-command.js";
@@ -31,7 +32,7 @@ export default class ShootCommand extends BaseCommand {
             if (state.variables.ammo <= 0) {
                 state.isError = true;
                 this.showError(true);
-                this.runtime.callFunction("ShowError", "Peluru habis", 2);
+                this.runtime.callFunction("ShowError", translate("game.error.no-ammo"), 2);
 
                 return ERROR;
             }

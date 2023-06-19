@@ -2,6 +2,7 @@ import BaseCommand from "./base-command.js";
 import CodeBlocksContainer from "../code-blocks-container.js";
 import { CONDITION_NOT_MET, CONTINUE, ERROR, FINISHED } from "../code-block-constants.js";
 import { checkElseValid } from "../code-block-utils.js";
+import { translate } from "../../translations/translations.js";
 
 /**
  * @extends BaseCommand
@@ -35,7 +36,7 @@ export default class CommandsContainer extends BaseCommand {
             const valid = checkElseValid(command, lastCommandName, lastResult);
 
             if (valid === ERROR) {
-                this.runtime.callFunction("ShowError", "Penempatan Blok Else/Else If salah", 2);
+                this.runtime.callFunction("ShowError", translate('game.error.else-placement'), 2);
 
                 return ERROR;
             } else if (valid === CONTINUE) {
