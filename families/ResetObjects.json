@@ -1,18 +1,14 @@
 {
-	"name": "GameObjects",
+	"name": "ResetObjects",
 	"plugin-id": "Sprite",
-	"sid": 536331939863493,
+	"sid": 700012522366645,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
 		"Player",
-		"SolidObstacle",
 		"MovingEnemyCollision",
 		"Gem",
-		"Spike",
-		"Portal",
-		"Bullet",
-		"MovingEnemy"
+		"Portal"
 	]
 }

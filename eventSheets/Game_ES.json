@@ -5871,7 +5871,12 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "GameObjects",
+							"objectClass": "Bullet",
+							"sid": 746806072736526
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ResetObjects",
 							"sid": 270705358816653
 						},
 						{
@@ -5901,7 +5906,7 @@
 							"objectClass": "System",
 							"sid": 846453972800759,
 							"parameters": {
-								"object": "GameObjects",
+								"object": "ResetObjects",
 								"from-x": "0",
 								"from-y": "0",
 								"to-x": "LayoutWidth",
@@ -5939,7 +5944,7 @@
 						},
 						{
 							"type": "script",
-							"script": "runner.reset(!state.isError); // reset commands, except errors if result is ERROR\nresetState(runtime, !state.isError);"
+							"script": "runner.reset(!state.isError);\nresetState(runtime);"
 						}
 					],
 					"sid": 650488692869568
@@ -6720,7 +6725,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime, true);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
+											"script": "console.log(\"running commands\")\n\nresetState(runtime);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
 										}
 									],
 									"sid": 239940556527685
@@ -8677,7 +8682,7 @@
 								{
 									"id": "set-object-time-scale",
 									"objectClass": "System",
-									"sid": 875596930156771,
+									"sid": 254865225386559,
 									"parameters": {
 										"object": "GameObjects",
 										"time-scale": "0"
@@ -8721,7 +8726,7 @@
 								{
 									"id": "restore-object-time-scale",
 									"objectClass": "System",
-									"sid": 310675091661533,
+									"sid": 113107095123146,
 									"parameters": {
 										"object": "GameObjects"
 									}

@@ -89,7 +89,7 @@ function setupLevel(runtime) {
 		throw new Error("cannot find runner");
 	}
 
-	resetState(runtime, true);
+	resetState(runtime);
 
 	setupAvailableCommands(runtime);
 	setupAvailableRepeatExpressions(runtime);

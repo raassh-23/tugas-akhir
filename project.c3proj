@@ -290,12 +290,13 @@
 			"OtherCodeBlock",
 			"CodeBlockContainer",
 			"HSLEffects",
-			"GameObjects",
+			"ResetObjects",
 			"Text",
 			"Panel",
 			"Clickable",
 			"PanelBorder",
-			"Damaging"
+			"Damaging",
+			"GameObjects"
 		],
 		"subfolders": []
 	},
