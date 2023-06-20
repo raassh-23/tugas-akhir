@@ -1,0 +1,36 @@
+{
+	"name": "Level16_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 420133406504837
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 250314580112124,
+					"parameters": {
+						"variable": "level",
+						"value": "16"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 492374421249349
+		}
+	],
+	"sid": 908505464890027
+}
