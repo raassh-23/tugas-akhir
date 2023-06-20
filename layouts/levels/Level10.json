@@ -1014,7 +1014,7 @@
 					"uid": 923,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"id": 1,
+						"id": 0,
 						"gem": 3,
 						"health": 0,
 						"ammo": 0

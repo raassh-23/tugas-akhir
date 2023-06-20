@@ -1,0 +1,36 @@
+{
+	"name": "Level11_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 286050823061427
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 198078985848515,
+					"parameters": {
+						"variable": "level",
+						"value": "11"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 710812768514933
+		}
+	],
+	"sid": 143992809150586
+}

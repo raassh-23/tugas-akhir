@@ -735,7 +735,7 @@
 					"uid": 474,
 					"instanceVariables": {
 						"reachedGoal": false,
-						"id": 1,
+						"id": 0,
 						"gem": 0,
 						"health": 0,
 						"ammo": 0

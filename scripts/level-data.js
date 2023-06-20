@@ -15,6 +15,7 @@ export const levelVariables = {
     8: [ "gem" ],
     9: [ "gem" ],
     10: [ "gem" ],
+    11: [ "gem" ],
 };
 
 /**
@@ -67,6 +68,10 @@ export const levelTarget = {
     10: {
         actions: 20,
         codeBlocks: 9,
+    },
+    11: {
+        actions: 32,
+        codeBlocks: 3,
     },
 }
 
@@ -335,6 +340,31 @@ export const levelAvailableCodeBlocks = {
         ],
     },
     10: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.gemExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    11: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
