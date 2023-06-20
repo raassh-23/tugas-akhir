@@ -1,7 +1,7 @@
 import { translate } from "../../../../translations/translations.js";
 import { setPlayerSurrounding } from "../../../../utils/misc.js";
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
-import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
+import { evaluateExpression, startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
 /**
@@ -26,7 +26,7 @@ export default class RepeatCommand extends ConditionalCommand {
         try {
             setPlayerSurrounding(player, state);
             const symbols = this.getSymbols(player, state);
-            repeatCount = math.evaluate(cleanedRepeatCondition, symbols);
+            repeatCount = evaluateExpression(cleanedRepeatCondition, symbols);
 
             if (repeatCount < 0) {
                 throw new Error("Repeat count must be positive");

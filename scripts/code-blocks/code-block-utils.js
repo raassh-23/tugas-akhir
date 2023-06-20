@@ -82,3 +82,26 @@ export function startCommmand(runtime, player, state) {
 
     console.log(state.surrounding);
 }
+
+/**
+ * 
+ * @param {MathExpression} expression 
+ * @param {object} scope 
+ * 
+ * @returns {number}
+ */
+export function evaluateExpression(expression, scope = {}) {
+	const node = math.parse(expression);
+
+	node.traverse((node, path, parent) => {
+		if ((node.type === 'OperatorNode')) {
+			if ((node.op === '*') && (node['implicit'])) {
+				throw new Error('Invalid syntax: Implicit multiplication found');
+			}
+		}
+	});
+
+	const code = node.compile();
+	
+	return code.evaluate(scope);
+}

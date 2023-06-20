@@ -1,6 +1,6 @@
 import { translate } from "../../../../translations/translations.js";
 import { FINISHED, ERROR } from "../../../code-block-constants.js";
-import { startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
+import { evaluateExpression, startCommmand, waitUnlessStopped } from "../../../code-block-utils.js";
 import ConditionalCommand from "../conditional-command.js";
 
 /**
@@ -29,10 +29,9 @@ export default class WhileCommand extends ConditionalCommand {
 
             try {
                 const symbols = this.getSymbols(player, state);
-                evaluatedCondition = math.evaluate(cleanedCondition, symbols);
+                evaluatedCondition = evaluateExpression(cleanedCondition, symbols);
                 evaluatedCondition = !!evaluatedCondition; // convert to boolean
             } catch (error) {
-                console.error(error);
                 state.isError = true;
                 this.showError(true);
                 this.runtime.callFunction("ShowError", translate("game.error.invalid-condition"), 2);
