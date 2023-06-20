@@ -19,6 +19,7 @@ export const levelVariables = {
     12: ["gem"],
     13: ["gem"],
     14: ["gem"],
+    15: ["gem", "health"],
 };
 
 /**
@@ -87,6 +88,10 @@ export const levelTarget = {
     14: {
         actions: 33,
         codeBlocks: 6,
+    },
+    15: {
+        actions: 37,
+        codeBlocks: 11,
     },
 }
 
@@ -456,6 +461,40 @@ export const levelAvailableCodeBlocks = {
         ],
     },
     14: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.gemExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+            blocks.centerExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    15: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
