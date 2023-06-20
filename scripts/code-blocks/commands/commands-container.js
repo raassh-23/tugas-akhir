@@ -81,16 +81,10 @@ export default class CommandsContainer extends BaseCommand {
         super.updateLevel(level);
     }
 
-    /**
-     * 
-     * @param {boolean} withError 
-     */
-    reset(withError) {
-        super.reset(withError);
+    reset() {
+        super.reset();
 
-        this.container.codeBlocks.forEach((command) => command.reset(withError));
-
-        console.log("resetting container", this.name);
+        this.container.codeBlocks.forEach((command) => command.reset());
     }
 
     /**

@@ -204,14 +204,10 @@ export default class CodeBlock extends ISpriteInstance {
 
     /**
      * 
-     * @param {boolean} withError 
      */
-    reset(withError) {
+    reset() {
         this.showHighlight(false);
-
-        if (withError) {
-            this.showError(false);
-        }
+        this.showError(false);
     }
 
     /**

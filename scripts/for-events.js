@@ -15,9 +15,10 @@ import {
 	getInstanceById,
 	setupCommands,
 	setupExpressions,
+	waitForMilisecond,
 } from "./utils/misc.js";
 import LeaderboardAPI from "./leaderboard-api.js";
-import { ERROR, PLAYER_REACHED_GOAL, STOPPED } from "./code-blocks/code-block-constants.js";
+import { CHECK_INTERVAL, ERROR, PLAYER_REACHED_GOAL, STOPPED } from "./code-blocks/code-block-constants.js";
 import { checkPrompt, installGame } from "./installation.js";
 import { translate, changeLanguage } from "./translations/translations.js";
 
@@ -116,7 +117,7 @@ async function runCommands(runtime, players) {
 		let previousShownPlayer = runtime.globalVars.showPlayerId;
 
 		for (const player of players) {
-			runner.reset(true); // reset commands, including errors
+			runner.reset();
 
 			runtime.globalVars.currentPlayerId = player.instVars.id;
 
@@ -125,15 +126,18 @@ async function runCommands(runtime, players) {
 			const result = await runner.run(player, state);
 
 			if (result === STOPPED || result === ERROR) {
-				runtime.callFunction("ResetGame");
-
-				return;
+				break;
 			} else if (result === PLAYER_REACHED_GOAL && state.playerCount === 0) {
 				runtime.callFunction("GameOver");
 				return;
 			}
 		}
+		
+		while (!state.isStopped) {
+			await waitForMilisecond(CHECK_INTERVAL);
+		}
 
+		runtime.globalVars.isRunning = false;
 		runtime.globalVars.showPlayerId = previousShownPlayer;
 		runtime.callFunction("ResetGame");
 	}

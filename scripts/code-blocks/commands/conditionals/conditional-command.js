@@ -241,14 +241,10 @@ export default class ConditionalCommand extends CommandsContainer {
         }
     }
 
-    /**
-     * 
-     * @param {boolean} withError 
-     */
-    reset(withError) {
+    reset() {
         this.setText({ text: this._condition.replace(/\s+/g, '') });
 
-        super.reset(withError);
+        super.reset();
     }
 
     /**

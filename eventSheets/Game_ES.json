@@ -5861,15 +5861,6 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 187290540870123,
-							"parameters": {
-								"variable": "isRunning",
-								"value": "false"
-							}
-						},
-						{
 							"id": "destroy",
 							"objectClass": "Bullet",
 							"sid": 746806072736526
@@ -5944,7 +5935,7 @@
 						},
 						{
 							"type": "script",
-							"script": "runner.reset(!state.isError);\nresetState(runtime);"
+							"script": "runner.reset();\nresetState(runtime);"
 						}
 					],
 					"sid": 650488692869568
@@ -6725,7 +6716,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nresetState(runtime);\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
+											"script": "console.log(\"running commands\")\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
 										}
 									],
 									"sid": 239940556527685
