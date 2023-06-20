@@ -4,7 +4,7 @@ import * as blocks from "./code-blocks/code-block-definitions.js";
  * @type {{[level: number]: string[]}}
  */
 export const levelVariables = {
-    0: [ "health", "ammo", "gem" ],// test level
+    0: ["health", "ammo", "gem"],// test level
     1: [/* */],
     2: [/* */],
     3: [/* */],
@@ -12,11 +12,12 @@ export const levelVariables = {
     5: [/* */],
     6: [/* */],
     7: [/* */],
-    8: [ "gem" ],
-    9: [ "gem" ],
-    10: [ "gem" ],
-    11: [ "gem" ],
-    12: [ "gem" ],
+    8: ["gem"],
+    9: ["gem"],
+    10: ["gem"],
+    11: ["gem"],
+    12: ["gem"],
+    13: ["gem"],
 };
 
 /**
@@ -77,7 +78,11 @@ export const levelTarget = {
     12: {
         actions: 36,
         codeBlocks: 7,
-    }
+    },
+    13: {
+        actions: 30,
+        codeBlocks: 7,
+    },
 }
 
 /**
@@ -414,6 +419,32 @@ export const levelAvailableCodeBlocks = {
             blocks.eightExpression,
             blocks.nineExpression,
             blocks.gemExpression,
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    13: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.forCommand,
+        ],
+        repeatExpressions: [
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+            blocks.gemExpression,
+            blocks.centerExpression,
         ],
         conditionalExpressions: [
             //

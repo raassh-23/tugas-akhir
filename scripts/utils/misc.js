@@ -233,7 +233,7 @@ export function setPlayerSurrounding(player, state) {
 	for (const text of runtime.objects.LevelText.instances()) {
 		const textGridX = text.instVars.gridX;
 		const textGridY = text.instVars.gridY;
-		const value = Number(text.text);
+		const value = parseInt(text.text);
 
 		for (const { dx, dy, targetProperty } of positionMap) {
 			if (gridX + dx === textGridX && gridY + dy === textGridY) {

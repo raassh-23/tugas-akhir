@@ -79,4 +79,6 @@ export function startCommmand(runtime, player, state) {
     runtime.callFunction("OnCommandStart");
 
     setPlayerSurrounding(player, state);
+
+    console.log(state.surrounding);
 }
