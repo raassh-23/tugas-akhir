@@ -5626,6 +5626,64 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-created",
+							"objectClass": "Portal",
+							"sid": 475348242428268
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Portal",
+							"sid": 666139569334960,
+							"parameters": {
+								"object": "PlayerMarker",
+								"layer": "Portal.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PlayerMarker",
+							"sid": 504384057668826,
+							"parameters": {
+								"x": "Portal.X",
+								"y": "Portal.Y - Portal.Height/2 - 8"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Portal",
+							"sid": 803625331793169,
+							"parameters": {
+								"child": "PlayerMarker",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PlayerMarker",
+							"sid": 629301976255049,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 479810896314592
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 950887717804199
@@ -5932,6 +5990,14 @@
 							"parameters": [
 								"showPlayerId"
 							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 298930198626875,
+							"parameters": {
+								"seconds": "0"
+							}
 						},
 						{
 							"type": "script",
@@ -9030,6 +9096,47 @@
 								}
 							],
 							"sid": 517228973532929
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 957593433510382,
+									"parameters": {
+										"object": "Portal"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 286762528106632,
+									"parameters": {
+										"value": "Functions.CheckPortalIds(id, Portal.forIds)"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Portal",
+									"sid": 492098675152915,
+									"parameters": {
+										"child": "PlayerMarker",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "PlayerMarker",
+									"sid": 758064163116127,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 768279098424318
 						}
 					]
 				}

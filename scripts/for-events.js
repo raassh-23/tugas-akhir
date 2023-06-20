@@ -150,6 +150,7 @@ async function runCommands(runtime, players) {
  */
 function resetState(runtime) {
 	const playerCount = runtime.objects.Player.getAllInstances().length;
+	console.log("player count", runtime.objects.Player.getAllInstances(), playerCount);
 
 	state.isStopped = false;
 	state.isError = false;
