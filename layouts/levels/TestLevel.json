@@ -56,7 +56,7 @@
 							"effectId": "warplayout",
 							"name": "WarpLayout",
 							"instance": {
-								"isEnabled": true,
+								"isEnabled": false,
 								"parameters": {
 									"x-period": 60,
 									"y-period": 60,

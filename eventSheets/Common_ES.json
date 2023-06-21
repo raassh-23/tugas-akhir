@@ -204,51 +204,6 @@
 						}
 					],
 					"sid": 587713777115320
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Clickable",
-							"sid": 268145127003880,
-							"parameters": {
-								"instance-variable": "isDisabled"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-opacity",
-							"objectClass": "Clickable",
-							"sid": 292321136931813,
-							"parameters": {
-								"opacity": "50"
-							}
-						}
-					],
-					"sid": 620676191633296
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 244837899210061
-						}
-					],
-					"actions": [
-						{
-							"id": "set-opacity",
-							"objectClass": "Clickable",
-							"sid": 709173387835961,
-							"parameters": {
-								"opacity": "100"
-							}
-						}
-					],
-					"sid": 722571366860386
 				}
 			]
 		},

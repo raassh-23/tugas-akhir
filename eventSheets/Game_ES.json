@@ -314,13 +314,11 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-two-values",
+													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 875596165430695,
+													"sid": 420971322990777,
 													"parameters": {
-														"first-value": "Functions.CheckCanDragCodeBlock",
-														"comparison": 1,
-														"second-value": "0"
+														"value": "Functions.CheckCanDragCodeBlock"
 													}
 												}
 											],
@@ -379,6 +377,22 @@
 											"sid": 610675001549488
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 302807397751415,
+											"parameters": {
+												"variable": "isDragging",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 415813131840340
 								}
 							]
 						}
@@ -5904,6 +5918,52 @@
 								}
 							],
 							"sid": 606786119326455
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-mobile",
+									"objectClass": "PlatformInfo",
+									"sid": 766087747449010
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-effect-enabled",
+									"objectClass": "System",
+									"sid": 934986409628632,
+									"parameters": {
+										"layer": "\"Water\"",
+										"mode": "disable",
+										"effect": "\"WarpLayout\""
+									}
+								}
+							],
+							"sid": 391422966605188
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 251730055721818
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-effect-enabled",
+									"objectClass": "System",
+									"sid": 434459751965518,
+									"parameters": {
+										"layer": "\"Water\"",
+										"mode": "enable",
+										"effect": "\"WarpLayout\""
+									}
+								}
+							],
+							"sid": 834172375786300
 						}
 					]
 				},
@@ -9137,6 +9197,78 @@
 								}
 							],
 							"sid": 768279098424318
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-layer",
+							"objectClass": "Button",
+							"sid": 750349598716819,
+							"parameters": {
+								"layer": "\"UI\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 215834844474517,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 269066054942567,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 159684370609250,
+									"parameters": {
+										"variable": "isDragging"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 955744473200421,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 166913433456070
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 956231560751856
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 572958099347055,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 212568648733620
 						}
 					]
 				}
