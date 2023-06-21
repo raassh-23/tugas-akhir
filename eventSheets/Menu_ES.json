@@ -2729,34 +2729,6 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "for debugging purposes"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 726677887537990,
-					"parameters": {
-						"key": 192
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 433981584618942,
-					"parameters": {
-						"layout": "TestLevel"
-					}
-				}
-			],
-			"sid": 612237113480283
-		},
-		{
 			"functionName": "OnSetLanguage",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -3132,6 +3104,163 @@
 								}
 							],
 							"sid": 990554518294290
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "for debugging purposes"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 450845092548998,
+					"parameters": {
+						"key": 192
+					}
+				}
+			],
+			"actions": [],
+			"sid": 787538805103523,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "debugCommand",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 515517644688325
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"script": "localVars.debugCommand = prompt(\"Debug command\")"
+						}
+					],
+					"sid": 735520220711802,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 924838865852669,
+									"parameters": {
+										"variable": "debugCommand",
+										"comparison": 0,
+										"value": "\"test\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 508846883923383,
+									"parameters": {
+										"layout": "TestLevel"
+									}
+								}
+							],
+							"sid": 888325845579273
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 719943427102602,
+									"parameters": {
+										"variable": "debugCommand",
+										"comparison": 0,
+										"value": "\"reset\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "clear-storage",
+									"objectClass": "LocalStorage",
+									"sid": 618118072186273
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 684167559297352
+								},
+								{
+									"id": "reload",
+									"objectClass": "Browser",
+									"sid": 737241726710213
+								}
+							],
+							"sid": 844765391203098
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 463966630874493,
+									"parameters": {
+										"variable": "debugCommand",
+										"comparison": 0,
+										"value": "\"unlock\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 144020499256750,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 301552764908062,
+											"parameters": {
+												"count": "LevelScoreData.Width"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-xy",
+											"objectClass": "LevelScoreData",
+											"sid": 967374281119175,
+											"parameters": {
+												"x": "loopindex",
+												"y": "SOLVED_INDEX",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 440084358717955,
+											"parameters": {
+												"key": "LEVEL_SCORE_TAG",
+												"value": "LevelScoreData.AsJSON"
+											}
+										}
+									],
+									"sid": 497946076669448
+								}
+							]
 						}
 					]
 				}

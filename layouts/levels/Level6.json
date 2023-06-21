@@ -532,7 +532,7 @@
 								}
 							},
 							"world": {
-								"x": 672,
+								"x": 864,
 								"y": 352,
 								"width": 64,
 								"height": 64,
@@ -571,78 +571,6 @@
 								"x": 672,
 								"y": 288,
 								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "SolidObstacle",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 1,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 756,
-							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 736,
-								"y": 288,
-								"width": -64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "SolidObstacle",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 1,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 757,
-							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 608,
-								"y": 224,
-								"width": -64,
 								"height": 64,
 								"originX": 0.5,
 								"originY": 0.5,
@@ -712,7 +640,7 @@
 								}
 							},
 							"world": {
-								"x": 864,
+								"x": 736,
 								"y": 352,
 								"width": 64,
 								"height": 64,
@@ -784,8 +712,8 @@
 								}
 							},
 							"world": {
-								"x": 864,
-								"y": 288,
+								"x": 672,
+								"y": 352,
 								"width": 64,
 								"height": 64,
 								"originX": 0.5,
@@ -801,7 +729,65 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Gem",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 756,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 800,
+								"y": 288,
+								"width": 45,
+								"height": 31.25,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "Gem",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 757,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 736,
+								"y": 288,
+								"width": 45,
+								"height": 31.25,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "Gem",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -811,19 +797,41 @@
 							},
 							"uid": 762,
 							"instanceVariables": {},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"behaviors": {},
 							"world": {
-								"x": 608,
-								"y": 352,
-								"width": 64,
-								"height": 64,
+								"x": 736,
+								"y": 224,
+								"width": 45,
+								"height": 31.25,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "Gem",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1414,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 800,
+								"y": 224,
+								"width": 45,
+								"height": 31.25,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -880,7 +888,7 @@
 					"instanceVariables": {
 						"reachedGoal": false,
 						"id": 0,
-						"gem": 0,
+						"gem": 3,
 						"health": 0,
 						"ammo": 0
 					},
@@ -910,7 +918,7 @@
 						}
 					},
 					"world": {
-						"x": 672,
+						"x": 608,
 						"y": 224,
 						"width": 64,
 						"height": 64,
