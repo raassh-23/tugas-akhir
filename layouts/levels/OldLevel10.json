@@ -693,7 +693,9 @@
 								"live-preview": false
 							},
 							"uid": 1026,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -729,7 +731,9 @@
 								"live-preview": false
 							},
 							"uid": 1027,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -765,7 +769,9 @@
 								"live-preview": false
 							},
 							"uid": 1028,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -801,7 +807,9 @@
 								"live-preview": false
 							},
 							"uid": 1029,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -837,7 +845,9 @@
 								"live-preview": false
 							},
 							"uid": 1030,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -873,7 +883,9 @@
 								"live-preview": false
 							},
 							"uid": 1031,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -909,7 +921,9 @@
 								"live-preview": false
 							},
 							"uid": 1032,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -945,7 +959,9 @@
 								"live-preview": false
 							},
 							"uid": 1033,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {

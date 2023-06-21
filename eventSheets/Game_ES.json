@@ -1868,7 +1868,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "FIXME: really hacky, same problem as /Scripts/code-blocks/conditionals/conditional-command.js:87-90"
+					"text": "FIXME: really hacky, same problem as /Scripts/code-blocks/conditionals/conditional-command.js@expand"
 				},
 				{
 					"functionName": "ShiftActiveCodeBlocksSavedPosition",
@@ -5364,29 +5364,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "MovingEnemyCollision",
-							"sid": 845873090057922,
-							"parameters": {
-								"instance-variable": "health",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "MovingEnemyCollision",
-							"sid": 399094979538874
-						}
-					],
-					"sid": 793604773058100
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "MovingEnemyCollision",
 							"sid": 255645246603298,
@@ -5480,6 +5457,29 @@
 						}
 					],
 					"sid": 473196078612887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 393618918823076,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy",
+							"sid": 430602166260716
+						}
+					],
+					"sid": 287863711322327
 				}
 			],
 			"sid": 589913040622524
@@ -5520,7 +5520,30 @@
 							"sid": 674990224080119
 						}
 					],
-					"sid": 699783535092130
+					"sid": 699783535092130,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "SolidObstacle",
+									"sid": 638186992988429,
+									"parameters": {
+										"instance-variable": "destroyable"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SolidObstacle",
+									"sid": 304906979588619
+								}
+							],
+							"sid": 526765666987190
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -5530,7 +5553,7 @@
 							"objectClass": "Bullet",
 							"sid": 847399536488494,
 							"parameters": {
-								"object": "MovingEnemyCollision"
+								"object": "Enemy"
 							}
 						}
 					],
@@ -5542,8 +5565,8 @@
 						},
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "MovingEnemyCollision",
-							"sid": 884927459214947,
+							"objectClass": "Enemy",
+							"sid": 885729477212197,
 							"parameters": {
 								"instance-variable": "health",
 								"value": "1"

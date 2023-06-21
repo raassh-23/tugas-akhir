@@ -13,6 +13,7 @@
 		"Spike",
 		"Portal",
 		"Bullet",
-		"MovingEnemy"
+		"MovingEnemy",
+		"StaticEnemy"
 	]
 }

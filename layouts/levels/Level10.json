@@ -558,7 +558,9 @@
 								"live-preview": false
 							},
 							"uid": 1847,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -694,7 +696,9 @@
 								"live-preview": false
 							},
 							"uid": 1850,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -995,7 +999,9 @@
 						"live-preview": false
 					},
 					"uid": 1848,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"destroyable": false
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {
@@ -1031,7 +1037,9 @@
 						"live-preview": false
 					},
 					"uid": 1849,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"destroyable": false
+					},
 					"behaviors": {
 						"Solid": {
 							"properties": {

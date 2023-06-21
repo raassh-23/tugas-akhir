@@ -545,7 +545,9 @@
 								"live-preview": false
 							},
 							"uid": 1333,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -581,7 +583,9 @@
 								"live-preview": false
 							},
 							"uid": 1335,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3202,7 +3206,9 @@
 								"live-preview": false
 							},
 							"uid": 1328,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3238,7 +3244,9 @@
 								"live-preview": false
 							},
 							"uid": 1329,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3274,7 +3282,9 @@
 								"live-preview": false
 							},
 							"uid": 1330,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3310,7 +3320,9 @@
 								"live-preview": false
 							},
 							"uid": 1332,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3346,7 +3358,9 @@
 								"live-preview": false
 							},
 							"uid": 1336,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -3382,7 +3396,9 @@
 								"live-preview": false
 							},
 							"uid": 1337,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {

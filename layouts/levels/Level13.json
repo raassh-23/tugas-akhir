@@ -157,7 +157,9 @@
 								"live-preview": false
 							},
 							"uid": 1943,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -193,7 +195,9 @@
 								"live-preview": false
 							},
 							"uid": 1944,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -630,7 +634,9 @@
 								"live-preview": false
 							},
 							"uid": 1951,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -666,7 +672,9 @@
 								"live-preview": false
 							},
 							"uid": 1952,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -702,7 +710,9 @@
 								"live-preview": false
 							},
 							"uid": 1953,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {

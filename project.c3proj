@@ -245,7 +245,9 @@
 			"SliderBG",
 			"Slider",
 			"PlayerMarker",
-			"UITextBorder"
+			"UITextBorder",
+			"StaticEnemyCollision",
+			"StaticEnemy"
 		],
 		"subfolders": [
 			{
@@ -297,7 +299,8 @@
 			"Clickable",
 			"PanelBorder",
 			"Damaging",
-			"GameObjects"
+			"GameObjects",
+			"Enemy"
 		],
 		"subfolders": []
 	},

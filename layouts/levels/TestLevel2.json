@@ -604,7 +604,9 @@
 								"live-preview": false
 							},
 							"uid": 205,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -729,7 +731,9 @@
 								"live-preview": false
 							},
 							"uid": 209,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -812,7 +816,9 @@
 								"live-preview": false
 							},
 							"uid": 213,
-							"instanceVariables": {},
+							"instanceVariables": {
+								"destroyable": false
+							},
 							"behaviors": {
 								"Solid": {
 									"properties": {
