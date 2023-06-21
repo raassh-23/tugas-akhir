@@ -13,6 +13,11 @@ export const levelVariables = {
     6: ["gem"],
     7: ["gem"],
     8: ["gem"],
+    9: ["gem"],
+    10: ["gem"],
+    11: ["gem"],
+    12: ["gem"],
+    13: ["gem"],
 };
 
 /**
@@ -51,13 +56,33 @@ export const levelTarget = {
         codeBlocks: 11,
     },
     7: {
-        actions: 6,
+        actions: 12,
         codeBlocks: 6,
     },
     8: {
-        actions: 7,
+        actions: 14,
         codeBlocks: 7,
-    }
+    },
+    9: {
+        actions: 14,
+        codeBlocks: 9,
+    },
+    10: {
+        actions: 18,
+        codeBlocks: 11,
+    },
+    11: {
+        actions: 15,
+        codeBlocks: 8,
+    },
+    12: {
+        actions: 19,
+        codeBlocks: 11,
+    },
+    13: {
+        actions: 14,
+        codeBlocks: 9,
+    },
 }
 
 /**
@@ -260,6 +285,101 @@ export const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             //
+        ],
+    },
+    9: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+        ],
+    },
+    10: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+        ],
+    },
+    11: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.centerExpression,
+        ],
+    },
+    12: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+        ],
+    },
+    13: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+            blocks.elseCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
         ],
     },
 };
