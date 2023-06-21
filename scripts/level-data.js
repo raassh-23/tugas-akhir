@@ -12,13 +12,14 @@ export const levelVariables = {
     5: ["gem"],
     6: ["gem"],
     7: ["gem"],
-    8: ["gem"],
+    8: ["gem"], 
     9: ["gem"],
     10: ["gem"],
-    11: ["gem"],
-    12: ["gem"],
-    13: ["gem"],
-    14: ["gem"],
+    11: ["gem", "health"],
+    _11: ["gem"],
+    _12: ["gem"],
+    _13: ["gem"],
+    _14: ["gem"],
 };
 
 /**
@@ -73,18 +74,22 @@ export const levelTarget = {
         codeBlocks: 11,
     },
     11: {
+        actions: 14,
+        codeBlocks: 7,
+    },
+    _11: {
         actions: 15,
         codeBlocks: 8,
     },
-    12: {
+    _12: {
         actions: 19,
         codeBlocks: 11,
     },
-    13: {
+    _13: {
         actions: 14,
         codeBlocks: 9,
     },
-    14: {
+    _14: {
         actions: 19,
         codeBlocks: 14,
     },
@@ -328,7 +333,6 @@ export const levelAvailableCodeBlocks = {
             blocks.rotateClockwiseCommand,
             blocks.rotateCounterClockwiseCommand,
             blocks.takeGemCommand,
-            blocks.ifCommand,
         ],
         repeatExpressions: [
             //
@@ -338,7 +342,21 @@ export const levelAvailableCodeBlocks = {
             blocks.centerExpression,
         ],
     },
-    12: {
+    _11: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            //
+        ],
+    },
+    _12: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -362,7 +380,7 @@ export const levelAvailableCodeBlocks = {
             blocks.downRightExpression,
         ],
     },
-    13: {
+    _13: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -387,7 +405,7 @@ export const levelAvailableCodeBlocks = {
             blocks.downRightExpression,
         ],
     },
-    14: {
+    _14: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,

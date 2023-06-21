@@ -75,7 +75,7 @@ const en = {
                 'else-placement': 'You can\'t put Else If or Else there',
                 'no-ammo': 'Your robot ran out of ammo',
                 'invalid-condition': 'The condition is not valid',
-                'player-died': 'Your robot is destroyed',
+                'player-died': 'Your robot is broken',
             },
             'tutorial': {
                 'level-1': {
