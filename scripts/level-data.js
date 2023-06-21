@@ -17,10 +17,10 @@ export const levelVariables = {
     10: ["gem"],
     11: ["gem", "health"],
     12: ["gem", "health"],
-    _11: ["gem"],
-    _12: ["gem"],
-    _13: ["gem"],
-    _14: ["gem"],
+    13: ["gem", "health"],
+    14: ["gem", "health"],
+    15: ["gem", "health"],
+    16: ["gem", "health"],
 };
 
 /**
@@ -82,19 +82,19 @@ export const levelTarget = {
         actions: 15,
         codeBlocks: 8,
     },
-    _11: {
+    13: {
         actions: 15,
         codeBlocks: 8,
     },
-    _12: {
+    14: {
         actions: 19,
         codeBlocks: 11,
     },
-    _13: {
+    15: {
         actions: 14,
         codeBlocks: 9,
     },
-    _14: {
+    16: {
         actions: 19,
         codeBlocks: 14,
     },
@@ -364,21 +364,7 @@ export const levelAvailableCodeBlocks = {
             blocks.healthExpression,
         ],
     },
-    _11: {
-        commands: [
-            blocks.moveForwardCommand,
-            blocks.rotateClockwiseCommand,
-            blocks.rotateCounterClockwiseCommand,
-            blocks.takeGemCommand,
-        ],
-        repeatExpressions: [
-            //
-        ],
-        conditionalExpressions: [
-            //
-        ],
-    },
-    _12: {
+    13: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -391,6 +377,24 @@ export const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             blocks.gemExpression,
+            blocks.healthExpression,
+            blocks.centerExpression,
+        ],
+    },
+    14: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.healthExpression,
             blocks.centerExpression,
             blocks.leftExpression,
             blocks.rightExpression,
@@ -402,7 +406,7 @@ export const levelAvailableCodeBlocks = {
             blocks.downRightExpression,
         ],
     },
-    _13: {
+    15: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -416,6 +420,7 @@ export const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             blocks.gemExpression,
+            blocks.healthExpression,
             blocks.centerExpression,
             blocks.leftExpression,
             blocks.rightExpression,
@@ -427,7 +432,7 @@ export const levelAvailableCodeBlocks = {
             blocks.downRightExpression,
         ],
     },
-    _14: {
+    16: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -441,6 +446,7 @@ export const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             blocks.gemExpression,
+            blocks.healthExpression,
             blocks.centerExpression,
             blocks.leftExpression,
             blocks.rightExpression,
