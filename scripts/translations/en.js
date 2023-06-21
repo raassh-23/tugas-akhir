@@ -77,6 +77,16 @@ const en = {
                 'invalid-condition': 'The condition is not valid',
                 'player-died': 'Your robot is destroyed',
             },
+            'tutorial': {
+                'level-1': {
+                    0: 'Help GigaBot to enter the portal!',
+                    1: 'Drag the command block from here...',
+                    2: '...to this command area',
+                    3: 'Click this to start moving',
+                    4: 'Click this again to reset',
+                    5: 'Well done, let\'s start coding!',
+                },
+            }
         },
     }
 };

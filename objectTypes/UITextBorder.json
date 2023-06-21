@@ -1,0 +1,35 @@
+{
+	"name": "UITextBorder",
+	"plugin-id": "Spritefont2",
+	"sid": 594626219070496,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 635061500531854
+		},
+		{
+			"name": "translation",
+			"type": "string",
+			"desc": "for static text only",
+			"show": true,
+			"sid": 752120672798966
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5118390,
+		"useCollisionPoly": true
+	}
+}

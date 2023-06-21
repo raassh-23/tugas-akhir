@@ -37,6 +37,7 @@
 	"members": [
 		"CodeBlockText",
 		"UIText",
-		"LevelText"
+		"LevelText",
+		"UITextBorder"
 	]
 }

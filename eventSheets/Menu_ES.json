@@ -161,6 +161,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "SHOW_TUTORIAL_INDEX",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 783465369395599
+		},
+		{
+			"eventType": "variable",
 			"name": "SORT_BY_VALUES",
 			"type": "string",
 			"initialValue": "time,steps,code-blocks",
@@ -1782,10 +1792,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "LevelScoreData",
-					"sid": 807789045866926,
+					"sid": 841505553137732,
 					"parameters": {
 						"width": "MAX_LEVEL + 1",
-						"height": "6",
+						"height": "7",
 						"depth": "1"
 					}
 				},

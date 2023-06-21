@@ -674,37 +674,79 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
-			"conditions": [
+			"conditions": [],
+			"actions": [],
+			"sid": 185052956278049,
+			"children": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "UIText",
-					"sid": 182032835717288,
-					"parameters": {
-						"instance-variable": "translation",
-						"comparison": 1,
-						"value": "\"\""
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 587693331438346,
+							"parameters": {
+								"instance-variable": "translation",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 108477640994304,
+							"parameters": {
+								"object": "UIText"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 464002872964089,
+							"parameters": {
+								"text": "Functions.Translate(Self.translation, \"\")"
+							}
+						}
+					],
+					"sid": 691266072029569
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 971468203585174,
-					"parameters": {
-						"object": "UIText"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UITextBorder",
+							"sid": 799722594441589,
+							"parameters": {
+								"instance-variable": "translation",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 742406099875804,
+							"parameters": {
+								"object": "UITextBorder"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UITextBorder",
+							"sid": 152621820515499,
+							"parameters": {
+								"text": "Functions.Translate(Self.translation, \"\")"
+							}
+						}
+					],
+					"sid": 542539967692271
 				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "UIText",
-					"sid": 416403503188142,
-					"parameters": {
-						"text": "Functions.Translate(Self.translation, \"\")"
-					}
-				}
-			],
-			"sid": 185052956278049
+			]
 		},
 		{
 			"functionName": "Translate",

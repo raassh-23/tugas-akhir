@@ -146,6 +146,36 @@
 			"sid": 920193605730427
 		},
 		{
+			"eventType": "variable",
+			"name": "BLOCK_DROP_SIGNAL",
+			"type": "string",
+			"initialValue": "block drop",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 756739878184594
+		},
+		{
+			"eventType": "variable",
+			"name": "START_SIGNAL",
+			"type": "string",
+			"initialValue": "start",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 276993788331453
+		},
+		{
+			"eventType": "variable",
+			"name": "RESET_SIGNAL",
+			"type": "string",
+			"initialValue": "reset",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 605709268357877
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -646,6 +676,14 @@
 								{
 									"callFunction": "SaveAllCodeBlocksPosition",
 									"sid": 786191275505392
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 316907880923842,
+									"parameters": {
+										"tag": "BLOCK_DROP_SIGNAL"
+									}
 								}
 							],
 							"sid": 467262502036328,
@@ -6498,6 +6536,16 @@
 								{
 									"id": "set-at-xy",
 									"objectClass": "LevelScoreData",
+									"sid": 930220531742290,
+									"parameters": {
+										"x": "level",
+										"y": "SHOW_TUTORIAL_INDEX",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "LevelScoreData",
 									"sid": 762139996011704,
 									"parameters": {
 										"x": "level",
@@ -6843,6 +6891,14 @@
 										{
 											"type": "script",
 											"script": "console.log(\"running commands\")\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 343163632773527,
+											"parameters": {
+												"tag": "START_SIGNAL"
+											}
 										}
 									],
 									"sid": 239940556527685
@@ -6860,6 +6916,14 @@
 										{
 											"type": "script",
 											"script": "console.log(\"stopping commands\")\n\nstate.isStopped = true;"
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 880179212369287,
+											"parameters": {
+												"tag": "RESET_SIGNAL"
+											}
 										}
 									],
 									"sid": 126068633089528
@@ -7320,6 +7384,33 @@
 								}
 							],
 							"sid": 337615965898272
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 916618771553925,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"next-tutorial\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 516046688244453,
+									"parameters": {
+										"variable": "tutorialStep",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 316212476332993
 						}
 					]
 				},
