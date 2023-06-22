@@ -1,5 +1,5 @@
 {
-	"name": "Level18",
+	"name": "RemovedLevel12",
 	"layers": [
 		{
 			"name": "BG",
@@ -29,7 +29,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1779,
+							"uid": 1439,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -50,7 +50,7 @@
 							}
 						}
 					],
-					"sid": 567974882646321,
+					"sid": 705720021539483,
 					"effectTypes": [
 						{
 							"effectId": "warplayout",
@@ -113,7 +113,7 @@
 								"tile-y-drawing-offset": 0,
 								"drawing-mode": "top-to-right"
 							},
-							"uid": 1498,
+							"uid": 1079,
 							"instanceVariables": {},
 							"behaviors": {},
 							"ownData": {
@@ -122,7 +122,7 @@
 									"height": 23,
 									"max-width": 130,
 									"max-height": 79,
-									"data": "349x0,395,2x361,2x497,531,74x0,2x363,397,498,532,44x0,293,327,361,2x395,361,395,361,395,429,463,23x0,533,44x0,294,328,363,397,396,2x363,397,396,430,464,23x0,534,44x0,295,329,364,398,363,397,364,398,363,397,465,23x0,533,44x0,296,330,362,396,364,2x398,397,364,398,466,23x0,533,44x0,295,329,3x398,397,398,2x397,499,533,23x0,534,44x0,296,330,397,328,396,362,396,2x364,500,534,23x0,533,44x0,296,398,2x397,363,2x397,2x364,499,533,23x0,533,44x0,295,364,2x398,364,398,397,2x328,500,534,23x0,534,44x0,296,2x363,397,363,2x397,2x328,499,533,23x0,533,44x0,295,364,363,397,2x363,2x397,328,500,534,23x0,533,44x0,296,3x397,2x363,328,397,328,499,533,23x0,534,44x0,295,3x398,364,398,328,397,328,500,534,23x0,533,44x0,296,398,397,329,363,397,328,397,328,499,533,23x0,533,44x0,295,2x397,330,364,3x397,328,500,534,23x0,534,44x0,296,2x398,329,363,397,3x363,499,533,23x0,533,44x0,295,2x397,330,364,2x397,398,397,500,534,23x0,533,44x0,295,329,398,331,365,399,2x397,399,431,465,23x0,534,44x0,296,3x330,2x397,3x330,432,466,23x0,533,44x0,295,329,2x330,365,399,397,399,365,431,465,23x0,533,44x0,296,364,398,364,398,364,398,364,398,432,466,23x0,534,44x0,297,365,399,365,399,365,399,365,399,433,467,23x0,533,44x0,298,332,366,400,366,400,2x366,400,434,468,23x0,533,78x0,534,78x0,533,78x0,533,78x0,534,73x0,397,2x363,397,499,533,73x0,329,2x364,398,499,533,73x0,397,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,73x0,329,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,70x0,397,363,329,397,2x363,397,500,534,70x0,399,365,2x398,2x363,397,499,533,68x0,398,365,399,329,2x398,2x364,398,499,533,68x0,363,365,362,399,398,397,2x363,397,500,534,67x0,331,398,365,399,365,398,397,2x363,397,499,533,66x0,364,331,365,2x399,398,364,398,2x364,398,499,533,59x0,365,362,397,399,331,397,331,363,397,365,399,365,2x363,397,2x363,397,500,534,58x0,2x329,398,329,2x331,365,2x363,331,399,362,365,2x363,397,2x363,397,499,533,44x0,295,12x0,331,2x365,362,331,399,362,2x331,364,331,399,329,365,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,363,362,397,398,363,331,2x365,331,362,363,331,365,363,399,398,365,397,2x363,397,2x363,397,501,534,44x0,295,363,397,2x363,397,2x363,397,363,399,397,2x363,329,2x362,365,363,399,362,331,399,331,363,362,397,2x363,397,2x363,397,498,533,44x0,295,364,398,2x364,398,364,362,331,364,362,399,398,364,329,365,362,365,398,364,431,2x399,398,364,362,398,2x364,398,2x364,398,498,533,44x0,296,363,397,2x363,397,363,362,397,363,362,4x399,362,431,331,365,2x399,365,363,331,363,329,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,331,2x363,2x362,431,362,5x399,2x331,363,397,362,329,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,364,362,331,2x364,398,364,362,398,364,365,329,331,399,331,431,364,331,362,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,398,363,362,2x331,431,365,363,362,399,363,331,365,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,331,2x363,397,362,431,397,2x331,431,365,331,399,431,365,397,2x363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,331,2x364,398,5x362,2x331,365,399,3x365,329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,6x331,431,4x331,362,363,2x399,362,397,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,2x331,2x431,365,431,398,397,398,329,431,329,362,399,362,363,397,365,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,431,2x364,365,2x431,398,329,364,431,398,2x399,2x364,398,365,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,2x431,6x365,2x329,399,2x362,363,2x365,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,397,363,431,365,2x363,2x431,8x365,329,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,362,364,398,2x364,365,431,364,2x398,329,362,399,364,329,364,362,2x329,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x362,397,363,398,365,398,3x431,362,399,2x363,329,2x363,2x362,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,3x362,398,363,365,399,363,398,362,363,329,2x363,329,2x363,397,5x362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x362,329,365,399,364,362,398,399,4x329,2x364,398,2x364,398,2x362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,362,363,329,399,2x365,398,363,397,2x329,397,2x363,397,329,363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,398,362,329,399,362,329,363,399,397,2x363,397,2x363,397,329,363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x398,362,398,399,362,398,399,329,398,2x364,398,364,3x329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,363,398,362,399,363,399,363,7x329,397,2x363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,2x363,397,2x399,397,2x363,397,363,2x329,2x363,397,2x363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,499,534,44x0,297,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,501,535,44x0,298,332,366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,366,2x502,536,4306x0"
+									"data": "349x0,395,2x361,2x497,531,74x0,2x363,397,498,532,78x0,533,78x0,534,44x0,293,327,361,395,361,395,361,2x395,497,531,23x0,533,44x0,294,328,362,396,398,396,362,2x397,498,532,23x0,533,44x0,295,329,3x398,397,398,2x397,499,533,23x0,534,44x0,296,330,397,328,396,362,396,2x364,500,534,23x0,533,44x0,296,398,2x397,363,2x397,2x364,499,533,23x0,533,44x0,295,364,2x398,364,398,397,2x328,500,534,23x0,534,44x0,296,2x363,397,363,2x397,2x328,499,533,23x0,533,44x0,295,364,363,397,2x363,2x397,328,500,534,23x0,533,44x0,296,3x397,2x363,328,397,328,499,533,23x0,534,44x0,295,3x398,364,398,328,397,328,500,534,23x0,533,44x0,296,398,397,329,363,397,328,397,328,499,533,23x0,533,44x0,295,2x397,330,364,3x397,328,500,534,23x0,534,44x0,296,2x398,329,363,397,3x363,499,533,23x0,533,44x0,295,2x397,330,364,2x397,398,397,500,534,23x0,533,44x0,295,329,398,331,365,399,2x397,399,431,465,23x0,534,44x0,296,3x330,2x397,3x330,432,466,23x0,533,44x0,297,331,2x330,365,399,397,399,365,501,535,23x0,533,44x0,298,332,366,400,366,400,366,400,366,502,536,23x0,534,78x0,533,78x0,533,78x0,534,78x0,533,78x0,533,78x0,534,73x0,397,2x363,397,499,533,73x0,329,2x364,398,499,533,73x0,397,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,73x0,329,2x363,397,500,534,73x0,329,2x363,397,499,533,73x0,398,2x364,398,499,533,70x0,397,363,329,397,2x363,397,500,534,70x0,399,365,2x398,2x363,397,499,533,68x0,398,365,399,329,2x398,2x364,398,499,533,68x0,363,365,362,399,398,397,2x363,397,500,534,67x0,331,398,365,399,365,398,397,2x363,397,499,533,66x0,364,331,365,2x399,398,364,398,2x364,398,499,533,59x0,365,362,397,399,331,397,331,363,397,365,399,365,2x363,397,2x363,397,500,534,58x0,2x329,398,329,2x331,365,2x363,331,399,362,365,2x363,397,2x363,397,499,533,44x0,295,12x0,331,2x365,362,331,399,362,2x331,364,331,399,329,365,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,363,362,397,398,363,331,2x365,331,362,363,331,365,363,399,398,365,397,2x363,397,2x363,397,501,534,44x0,295,363,397,2x363,397,2x363,397,363,399,397,2x363,329,2x362,365,363,399,362,331,399,331,363,362,397,2x363,397,2x363,397,498,533,44x0,295,364,398,2x364,398,364,362,331,364,362,399,398,364,329,365,362,365,398,364,431,2x399,398,364,362,398,2x364,398,2x364,398,498,533,44x0,296,363,397,2x363,397,363,362,397,363,362,4x399,362,431,331,365,2x399,365,363,331,363,329,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,331,2x363,2x362,431,362,5x399,2x331,363,397,362,329,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,364,362,331,2x364,398,364,362,398,364,365,329,331,399,331,431,364,331,362,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,398,363,362,2x331,431,365,363,362,399,363,331,365,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,331,2x363,397,362,431,397,2x331,431,365,331,399,431,365,397,2x363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,331,2x364,398,5x362,2x331,365,399,3x365,329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,6x331,431,4x331,362,363,2x399,362,397,329,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,2x331,2x431,365,431,398,397,398,329,431,329,362,399,362,363,397,365,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,431,2x364,365,2x431,398,329,364,431,398,2x399,2x364,398,365,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,363,362,397,2x431,6x365,2x329,399,2x362,363,2x365,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,363,362,397,363,431,365,2x363,2x431,8x365,329,363,397,363,362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,362,364,398,2x364,365,431,364,2x398,329,362,399,364,329,364,362,2x329,364,398,364,362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x362,397,363,398,365,398,3x431,362,399,2x363,329,2x363,2x362,363,397,363,362,397,2x363,397,499,534,44x0,295,363,397,2x363,397,3x362,398,363,365,399,363,398,362,363,329,2x363,329,2x363,397,5x362,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x362,329,365,399,364,362,398,399,4x329,2x364,398,2x364,398,2x362,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,362,363,329,399,2x365,398,363,397,2x329,397,2x363,397,329,363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,398,362,329,399,362,329,363,399,397,2x363,397,2x363,397,329,363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,2x398,362,398,399,362,398,399,329,398,2x364,398,364,3x329,364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,363,398,362,399,363,399,363,7x329,397,2x363,397,2x363,397,2x363,397,499,534,44x0,295,363,397,2x363,397,2x363,397,2x363,397,2x399,397,2x363,397,363,2x329,2x363,397,2x363,397,2x363,397,2x363,397,500,533,44x0,295,364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,2x364,398,499,533,44x0,296,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,499,534,44x0,297,363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,2x363,397,501,535,44x0,298,332,366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,2x366,400,366,2x502,536,4306x0"
 								},
 								"tile-width": 32,
 								"tile-height": 32,
@@ -148,7 +148,7 @@
 							}
 						}
 					],
-					"sid": 496638364545197,
+					"sid": 628512875890180,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -200,7 +200,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1499,
+							"uid": 1080,
 							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
@@ -213,7 +213,7 @@
 							"world": {
 								"x": -96,
 								"y": 0,
-								"width": 480,
+								"width": 544,
 								"height": 768,
 								"originX": 0,
 								"originY": 0,
@@ -246,7 +246,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1500,
+							"uid": 1081,
 							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
@@ -257,9 +257,9 @@
 								}
 							},
 							"world": {
-								"x": 1088,
+								"x": 1024,
 								"y": 0,
-								"width": 224,
+								"width": 320,
 								"height": 768,
 								"originX": 0,
 								"originY": 0,
@@ -292,7 +292,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1502,
+							"uid": 1082,
 							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
@@ -303,9 +303,9 @@
 								}
 							},
 							"world": {
-								"x": 384,
+								"x": 448,
 								"y": 0,
-								"width": 704,
+								"width": 576,
 								"height": 128,
 								"originX": 0,
 								"originY": 0,
@@ -338,7 +338,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1611,
+							"uid": 1083,
 							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
@@ -349,9 +349,9 @@
 								}
 							},
 							"world": {
-								"x": 384,
+								"x": 448,
 								"y": 448,
-								"width": 704,
+								"width": 576,
 								"height": 320,
 								"originX": 0,
 								"originY": 0,
@@ -366,7 +366,7 @@
 							}
 						}
 					],
-					"sid": 949829239305858,
+					"sid": 107715868865581,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -418,7 +418,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1613,
+							"uid": 1084,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -439,7 +439,7 @@
 							}
 						}
 					],
-					"sid": 998642920587202,
+					"sid": 900715791475341,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -469,7 +469,7 @@
 				}
 			],
 			"instances": [],
-			"sid": 853320503438900,
+			"sid": 634132457996612,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -515,7 +515,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1614,
+							"uid": 1085,
 							"instanceVariables": {
 								"forIds": "0"
 							},
@@ -532,7 +532,7 @@
 								}
 							},
 							"world": {
-								"x": 736,
+								"x": 672,
 								"y": 352,
 								"width": 64,
 								"height": 64,
@@ -549,31 +549,22 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Gem",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
-								"initial-frame": 1,
+								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1615,
-							"instanceVariables": {
-								"destroyable": false
-							},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
+							"uid": 1087,
+							"instanceVariables": {},
+							"behaviors": {},
 							"world": {
-								"x": 608,
+								"x": 928,
 								"y": 288,
-								"width": 64,
-								"height": 64,
+								"width": 45,
+								"height": 31.25,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -595,7 +586,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1616,
+							"uid": 1088,
 							"instanceVariables": {
 								"forIds": "1"
 							},
@@ -612,7 +603,7 @@
 								}
 							},
 							"world": {
-								"x": 928,
+								"x": 800,
 								"y": 224,
 								"width": 64,
 								"height": 64,
@@ -637,444 +628,12 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1617,
+							"uid": 1089,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 672,
-								"y": 352,
-								"width": 45,
-								"height": 31.25,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "Spike",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1618,
-							"instanceVariables": {},
-							"behaviors": {},
-							"sceneGraphData": {
-								"parent-uid": 1619,
-								"uid": 1618,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								},
-								"preview": {
-									"transformX": 0,
-									"transformY": 0,
-									"transformZElevation": 0,
-									"transformW": 0,
-									"transformH": 0,
-									"transformA": 0,
-									"transformSX": 0,
-									"transformSY": 0,
-									"transformO": 0,
-									"previewSceneGraph": false
-								}
-							},
-							"world": {
-								"x": 800,
+								"x": 544,
 								"y": 288,
-								"width": 49.677156437328165,
-								"height": 25.591262407108445,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "SpikeCollision",
-							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1619,
-							"instanceVariables": {
-								"damage": 1,
-								"active": true
-							},
-							"behaviors": {},
-							"template": {
-								"mode": "replica",
-								"templateName": "",
-								"sourceTemplateName": "spike",
-								"components": [
-									{
-										"id": "plugin",
-										"component": [
-											{
-												"key": "plugin",
-												"state": [
-													[
-														"initially-visible",
-														true
-													],
-													[
-														"initial-animation",
-														true
-													],
-													[
-														"initial-frame",
-														true
-													],
-													[
-														"enable-collisions",
-														true
-													]
-												]
-											}
-										]
-									},
-									{
-										"id": "instance-variable",
-										"component": [
-											{
-												"key": "instance-variable",
-												"state": [
-													{
-														"iv": "damage",
-														"state": true
-													},
-													{
-														"iv": "active",
-														"state": true
-													}
-												]
-											}
-										]
-									},
-									{
-										"id": "behavior",
-										"component": []
-									},
-									{
-										"id": "effect",
-										"component": []
-									},
-									{
-										"id": "world-instance",
-										"component": [
-											{
-												"key": "world-instance",
-												"state": [
-													[
-														"x",
-														false
-													],
-													[
-														"y",
-														false
-													],
-													[
-														"z",
-														true
-													],
-													[
-														"w",
-														true
-													],
-													[
-														"h",
-														true
-													],
-													[
-														"a",
-														true
-													],
-													[
-														"o",
-														true
-													],
-													[
-														"c",
-														true
-													],
-													[
-														"sx",
-														true
-													],
-													[
-														"sy",
-														true
-													],
-													[
-														"bm",
-														true
-													],
-													[
-														"twpx",
-														true
-													],
-													[
-														"twpy",
-														true
-													],
-													[
-														"twpz",
-														true
-													],
-													[
-														"twpw",
-														true
-													],
-													[
-														"twph",
-														true
-													],
-													[
-														"twpa",
-														true
-													],
-													[
-														"dwp",
-														true
-													],
-													[
-														"ssm",
-														true
-													]
-												]
-											}
-										]
-									}
-								],
-								"replicasUIDs": null
-							},
-							"sceneGraphData": {
-								"parent-uid": null,
-								"uid": 1619,
-								"children": [
-									{
-										"uid": 1618,
-										"flags": {
-											"x": true,
-											"y": true,
-											"z": true,
-											"w": false,
-											"h": false,
-											"a": false,
-											"o": false,
-											"v": false,
-											"d": true,
-											"sm": "normal"
-										}
-									}
-								],
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": false,
-									"v": false,
-									"d": true,
-									"sm": "normal"
-								},
-								"preview": {
-									"transformX": 0,
-									"transformY": 0,
-									"transformZElevation": 0,
-									"transformW": 0,
-									"transformH": 0,
-									"transformA": 0,
-									"transformSX": 0,
-									"transformSY": 0,
-									"transformO": 0,
-									"previewSceneGraph": false
-								}
-							},
-							"world": {
-								"x": 800,
-								"y": 288,
-								"width": 32,
-								"height": 32,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "2",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1623,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 672,
-								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "3",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1624,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 672,
-								"y": 416,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "Gem",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1760,
-							"instanceVariables": {},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 352,
-								"width": 45,
-								"height": 31.25,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "Gem",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1761,
-							"instanceVariables": {},
-							"behaviors": {},
-							"world": {
-								"x": 672,
-								"y": 224,
 								"width": 45,
 								"height": 31.25,
 								"originX": 0.5,
@@ -1098,7 +657,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1762,
+							"uid": 1091,
 							"instanceVariables": {
 								"destroyable": false
 							},
@@ -1111,7 +670,7 @@
 								}
 							},
 							"world": {
-								"x": 544,
+								"x": 864,
 								"y": 288,
 								"width": -64,
 								"height": 64,
@@ -1128,62 +687,15 @@
 							}
 						},
 						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1765,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
-								"initial-frame": 0,
+								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1766,
+							"uid": 1092,
 							"instanceVariables": {
 								"destroyable": false
 							},
@@ -1196,92 +708,7 @@
 								}
 							},
 							"world": {
-								"x": 480,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "4",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1767,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 800,
-								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "SolidObstacle",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 1,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 1763,
-							"instanceVariables": {
-								"destroyable": false
-							},
-							"behaviors": {
-								"Solid": {
-									"properties": {
-										"enabled": true,
-										"tags": ""
-									}
-								}
-							},
-							"world": {
-								"x": 672,
+								"x": 608,
 								"y": 288,
 								"width": 64,
 								"height": 64,
@@ -1306,12 +733,12 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1620,
+							"uid": 1451,
 							"instanceVariables": {},
 							"behaviors": {},
 							"sceneGraphData": {
-								"parent-uid": 1621,
-								"uid": 1620,
+								"parent-uid": 1452,
+								"uid": 1451,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1338,8 +765,8 @@
 								}
 							},
 							"world": {
-								"x": 864,
-								"y": 288,
+								"x": 800,
+								"y": 352,
 								"width": 49.677156437328165,
 								"height": 25.591262407108445,
 								"originX": 0.5,
@@ -1363,7 +790,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1621,
+							"uid": 1452,
 							"instanceVariables": {
 								"damage": 1,
 								"active": true
@@ -1517,10 +944,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 1621,
+								"uid": 1452,
 								"children": [
 									{
-										"uid": 1620,
+										"uid": 1451,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -1561,8 +988,8 @@
 								}
 							},
 							"world": {
-								"x": 864,
-								"y": 288,
+								"x": 800,
+								"y": 352,
 								"width": 32,
 								"height": 32,
 								"originX": 0.5,
@@ -1578,382 +1005,6 @@
 							}
 						},
 						{
-							"type": "LevelText",
-							"properties": {
-								"text": "2",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1781,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 800,
-								"y": 416,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "4",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1782,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 672,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1783,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 800,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1784,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 416,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "2",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1785,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 992,
-								"y": 416,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "3",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1786,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 992,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "3",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1787,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "2",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1788,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 992,
-								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
 							"type": "Gem",
 							"properties": {
 								"initially-visible": true,
@@ -1962,11 +1013,11 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1622,
+							"uid": 1090,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
-								"x": 800,
+								"x": 864,
 								"y": 352,
 								"width": 45,
 								"height": 31.25,
@@ -1991,7 +1042,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1625,
+							"uid": 1440,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -2012,7 +1063,7 @@
 							}
 						},
 						{
-							"type": "Gem",
+							"type": "Spike",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2020,14 +1071,265 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1764,
+							"uid": 1629,
 							"instanceVariables": {},
 							"behaviors": {},
+							"sceneGraphData": {
+								"parent-uid": 1630,
+								"uid": 1629,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
 							"world": {
-								"x": 608,
-								"y": 352,
-								"width": 45,
-								"height": 31.25,
+								"x": 672,
+								"y": 224,
+								"width": 49.677156437328165,
+								"height": 25.591262407108445,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "SpikeCollision",
+							"properties": {
+								"initially-visible": false,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 1630,
+							"instanceVariables": {
+								"damage": 1,
+								"active": true
+							},
+							"behaviors": {},
+							"template": {
+								"mode": "replica",
+								"templateName": "",
+								"sourceTemplateName": "spike",
+								"components": [
+									{
+										"id": "plugin",
+										"component": [
+											{
+												"key": "plugin",
+												"state": [
+													[
+														"initially-visible",
+														true
+													],
+													[
+														"initial-animation",
+														true
+													],
+													[
+														"initial-frame",
+														true
+													],
+													[
+														"enable-collisions",
+														true
+													]
+												]
+											}
+										]
+									},
+									{
+										"id": "instance-variable",
+										"component": [
+											{
+												"key": "instance-variable",
+												"state": [
+													{
+														"iv": "damage",
+														"state": true
+													},
+													{
+														"iv": "active",
+														"state": true
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "behavior",
+										"component": []
+									},
+									{
+										"id": "effect",
+										"component": []
+									},
+									{
+										"id": "world-instance",
+										"component": [
+											{
+												"key": "world-instance",
+												"state": [
+													[
+														"x",
+														false
+													],
+													[
+														"y",
+														false
+													],
+													[
+														"z",
+														true
+													],
+													[
+														"w",
+														true
+													],
+													[
+														"h",
+														true
+													],
+													[
+														"a",
+														true
+													],
+													[
+														"o",
+														true
+													],
+													[
+														"c",
+														true
+													],
+													[
+														"sx",
+														true
+													],
+													[
+														"sy",
+														true
+													],
+													[
+														"bm",
+														true
+													],
+													[
+														"twpx",
+														true
+													],
+													[
+														"twpy",
+														true
+													],
+													[
+														"twpz",
+														true
+													],
+													[
+														"twpw",
+														true
+													],
+													[
+														"twph",
+														true
+													],
+													[
+														"twpa",
+														true
+													],
+													[
+														"dwp",
+														true
+													],
+													[
+														"ssm",
+														true
+													]
+												]
+											}
+										]
+									}
+								],
+								"replicasUIDs": null
+							},
+							"sceneGraphData": {
+								"parent-uid": null,
+								"uid": 1630,
+								"children": [
+									{
+										"uid": 1629,
+										"flags": {
+											"x": true,
+											"y": true,
+											"z": true,
+											"w": false,
+											"h": false,
+											"a": false,
+											"o": false,
+											"v": false,
+											"d": true,
+											"sm": "normal"
+										}
+									}
+								],
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								},
+								"preview": {
+									"transformX": 0,
+									"transformY": 0,
+									"transformZElevation": 0,
+									"transformW": 0,
+									"transformH": 0,
+									"transformA": 0,
+									"transformSX": 0,
+									"transformSY": 0,
+									"transformO": 0,
+									"previewSceneGraph": false
+								}
+							},
+							"world": {
+								"x": 672,
+								"y": 224,
+								"width": 32,
+								"height": 32,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2041,7 +1343,7 @@
 							}
 						}
 					],
-					"sid": 542268865992265,
+					"sid": 159592064197209,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -2075,74 +1377,15 @@
 					"type": "Player",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "right",
+						"initial-animation": "left",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1474,
+					"uid": 1051,
 					"instanceVariables": {
 						"reachedGoal": false,
 						"id": 1,
-						"gem": 2,
-						"health": 1,
-						"ammo": 0
-					},
-					"behaviors": {
-						"TileMovement": {
-							"properties": {
-								"grid-width": 64,
-								"grid-height": 64,
-								"grid-offset-x": 32,
-								"grid-offset-y": 32,
-								"speed-x": 150,
-								"speed-y": 150,
-								"enabled": true,
-								"default-controls": false,
-								"isometric": false
-							}
-						},
-						"Fade": {
-							"properties": {
-								"fade-in-time": 0,
-								"wait-time": 0,
-								"fade-out-time": 1,
-								"destroy": false,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"world": {
-						"x": 480,
-						"y": 352,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "right",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 1475,
-					"instanceVariables": {
-						"reachedGoal": false,
-						"id": 0,
 						"gem": 1,
 						"health": 1,
 						"ammo": 0
@@ -2173,7 +1416,66 @@
 						}
 					},
 					"world": {
-						"x": 480,
+						"x": 928,
+						"y": 352,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "down",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1052,
+					"instanceVariables": {
+						"reachedGoal": false,
+						"id": 0,
+						"gem": 0,
+						"health": 1,
+						"ammo": 0
+					},
+					"behaviors": {
+						"TileMovement": {
+							"properties": {
+								"grid-width": 64,
+								"grid-height": 64,
+								"grid-offset-x": 32,
+								"grid-offset-y": 32,
+								"speed-x": 150,
+								"speed-y": 150,
+								"enabled": true,
+								"default-controls": false,
+								"isometric": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 544,
 						"y": 224,
 						"width": 64,
 						"height": 64,
@@ -2190,7 +1492,7 @@
 					}
 				}
 			],
-			"sid": 594150315861535,
+			"sid": 369072677736945,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -2223,7 +1525,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 305126097952750,
+			"sid": 805563658087485,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -2273,7 +1575,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 1768,
+							"uid": 1093,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -2291,10 +1593,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 1768,
+								"uid": 1093,
 								"children": [
 									{
-										"uid": 1769,
+										"uid": 1094,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -2309,7 +1611,7 @@
 										}
 									},
 									{
-										"uid": 1481,
+										"uid": 1058,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -2375,7 +1677,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1769,
+							"uid": 1094,
 							"instanceVariables": {
 								"min": 226,
 								"max": 226,
@@ -2399,11 +1701,11 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 1768,
-								"uid": 1769,
+								"parent-uid": 1093,
+								"uid": 1094,
 								"children": [
 									{
-										"uid": 1770,
+										"uid": 1095,
 										"flags": {
 											"x": true,
 											"y": false,
@@ -2469,15 +1771,15 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1770,
+							"uid": 1095,
 							"instanceVariables": {},
 							"behaviors": {},
 							"sceneGraphData": {
-								"parent-uid": 1769,
-								"uid": 1770,
+								"parent-uid": 1094,
+								"uid": 1095,
 								"children": [
 									{
-										"uid": 1771,
+										"uid": 1096,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -2548,7 +1850,7 @@
 								"origin": "left",
 								"seams": "overlap"
 							},
-							"uid": 1771,
+							"uid": 1096,
 							"instanceVariables": {
 								"level": 1,
 								"addToGrandParent": false,
@@ -2557,8 +1859,8 @@
 							},
 							"behaviors": {},
 							"sceneGraphData": {
-								"parent-uid": 1770,
-								"uid": 1771,
+								"parent-uid": 1095,
+								"uid": 1096,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2602,7 +1904,7 @@
 							}
 						}
 					],
-					"sid": 442830907635715,
+					"sid": 325981596850260,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -2648,7 +1950,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 1772,
+							"uid": 1097,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -2666,10 +1968,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 1772,
+								"uid": 1097,
 								"children": [
 									{
-										"uid": 1482,
+										"uid": 1059,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -2684,7 +1986,7 @@
 										}
 									},
 									{
-										"uid": 1773,
+										"uid": 1098,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -2750,7 +2052,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1773,
+							"uid": 1098,
 							"instanceVariables": {
 								"min": 130.496427,
 								"max": 130.496427,
@@ -2774,8 +2076,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 1772,
-								"uid": 1773,
+								"parent-uid": 1097,
+								"uid": 1098,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -2819,7 +2121,7 @@
 							}
 						}
 					],
-					"sid": 987049574170724,
+					"sid": 330269977641749,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -2858,7 +2160,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1476,
+					"uid": 1053,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -2904,7 +2206,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1477,
+					"uid": 1054,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2950,7 +2252,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1478,
+					"uid": 1055,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -2986,7 +2288,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1479,
+					"uid": 1056,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -3022,7 +2324,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1480,
+					"uid": 1057,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -3062,14 +2364,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 1481,
+					"uid": 1058,
 					"instanceVariables": {
 						"id": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1768,
-						"uid": 1481,
+						"parent-uid": 1093,
+						"uid": 1058,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3125,14 +2427,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 1482,
+					"uid": 1059,
 					"instanceVariables": {
 						"id": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1772,
-						"uid": 1482,
+						"parent-uid": 1097,
+						"uid": 1059,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3184,7 +2486,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1483,
+					"uid": 1060,
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -3209,7 +2511,7 @@
 					}
 				}
 			],
-			"sid": 302771305101138,
+			"sid": 545311590407123,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -3242,7 +2544,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 596575159123279,
+			"sid": 745850672686641,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -3298,7 +2600,7 @@
 								"blend-margin-x": 0.1,
 								"blend-margin-y": 0.1
 							},
-							"uid": 1774,
+							"uid": 1099,
 							"instanceVariables": {},
 							"behaviors": {},
 							"world": {
@@ -3319,7 +2621,7 @@
 							}
 						}
 					],
-					"sid": 812143721915258,
+					"sid": 517038149924007,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3352,7 +2654,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 237418871176152,
+					"sid": 939785572611160,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3385,7 +2687,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 291437627839491,
+					"sid": 834671585412901,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3418,7 +2720,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 519055339917907,
+					"sid": 970216815673405,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -3461,7 +2763,7 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 1484,
+					"uid": 1061,
 					"instanceVariables": {
 						"originX": 0,
 						"originY": -564,
@@ -3479,10 +2781,10 @@
 					},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 1484,
+						"uid": 1061,
 						"children": [
 							{
-								"uid": 1485,
+								"uid": 1062,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3497,7 +2799,7 @@
 								}
 							},
 							{
-								"uid": 1486,
+								"uid": 1063,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3512,7 +2814,7 @@
 								}
 							},
 							{
-								"uid": 1487,
+								"uid": 1064,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3527,7 +2829,7 @@
 								}
 							},
 							{
-								"uid": 1488,
+								"uid": 1065,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3542,7 +2844,7 @@
 								}
 							},
 							{
-								"uid": 1490,
+								"uid": 1067,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3557,7 +2859,7 @@
 								}
 							},
 							{
-								"uid": 1491,
+								"uid": 1068,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3572,7 +2874,7 @@
 								}
 							},
 							{
-								"uid": 1492,
+								"uid": 1069,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3587,7 +2889,7 @@
 								}
 							},
 							{
-								"uid": 1493,
+								"uid": 1070,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3602,7 +2904,7 @@
 								}
 							},
 							{
-								"uid": 1494,
+								"uid": 1071,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3617,7 +2919,7 @@
 								}
 							},
 							{
-								"uid": 1495,
+								"uid": 1072,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -3693,7 +2995,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1485,
+					"uid": 1062,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -3704,8 +3006,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1485,
+						"parent-uid": 1061,
+						"uid": 1062,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3767,7 +3069,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1486,
+					"uid": 1063,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -3778,8 +3080,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1486,
+						"parent-uid": 1061,
+						"uid": 1063,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3841,7 +3143,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1487,
+					"uid": 1064,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -3852,8 +3154,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1487,
+						"parent-uid": 1061,
+						"uid": 1064,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3915,7 +3217,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1488,
+					"uid": 1065,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -3926,8 +3228,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1488,
+						"parent-uid": 1061,
+						"uid": 1065,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -3985,7 +3287,7 @@
 						"id": "",
 						"class": ""
 					},
-					"uid": 1489,
+					"uid": 1066,
 					"instanceVariables": {},
 					"behaviors": {
 						"Pin": {
@@ -4042,7 +3344,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1490,
+					"uid": 1067,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -4053,8 +3355,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1490,
+						"parent-uid": 1061,
+						"uid": 1067,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4106,7 +3408,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1491,
+					"uid": 1068,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -4117,8 +3419,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1491,
+						"parent-uid": 1061,
+						"uid": 1068,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4170,7 +3472,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1492,
+					"uid": 1069,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -4181,8 +3483,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1492,
+						"parent-uid": 1061,
+						"uid": 1069,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4234,7 +3536,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1493,
+					"uid": 1070,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -4245,8 +3547,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1493,
+						"parent-uid": 1061,
+						"uid": 1070,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4298,7 +3600,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 1494,
+					"uid": 1071,
 					"instanceVariables": {
 						"initialWidth": 0,
 						"initialHeight": 0,
@@ -4309,8 +3611,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1494,
+						"parent-uid": 1061,
+						"uid": 1071,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4372,7 +3674,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 1495,
+					"uid": 1072,
 					"instanceVariables": {
 						"minScale": 0,
 						"maxScale": 0,
@@ -4383,8 +3685,8 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 1484,
-						"uid": 1495,
+						"parent-uid": 1061,
+						"uid": 1072,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4428,7 +3730,7 @@
 					}
 				}
 			],
-			"sid": 826109505913044,
+			"sid": 839389190122404,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -4478,7 +3780,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 1775,
+							"uid": 1100,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -4496,10 +3798,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 1775,
+								"uid": 1100,
 								"children": [
 									{
-										"uid": 1776,
+										"uid": 1101,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -4565,7 +3867,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1776,
+							"uid": 1101,
 							"instanceVariables": {
 								"min": 27.234455,
 								"max": 27.234455,
@@ -4589,8 +3891,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 1775,
-								"uid": 1776,
+								"parent-uid": 1100,
+								"uid": 1101,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -4634,7 +3936,7 @@
 							}
 						}
 					],
-					"sid": 417812612354238,
+					"sid": 601725032830264,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -4677,14 +3979,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 1496,
+					"uid": 1077,
 					"instanceVariables": {
 						"id": "repeat-available-code-blocks-panel"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 1496,
+						"uid": 1077,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -4728,7 +4030,7 @@
 					}
 				}
 			],
-			"sid": 984648076566304,
+			"sid": 497462896928060,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -4778,7 +4080,7 @@
 								"origin": "top-left",
 								"seams": "overlap"
 							},
-							"uid": 1777,
+							"uid": 1102,
 							"instanceVariables": {
 								"originX": 0,
 								"originY": 0,
@@ -4796,10 +4098,10 @@
 							},
 							"sceneGraphData": {
 								"parent-uid": null,
-								"uid": 1777,
+								"uid": 1102,
 								"children": [
 									{
-										"uid": 1778,
+										"uid": 1438,
 										"flags": {
 											"x": true,
 											"y": true,
@@ -4865,7 +4167,7 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 1778,
+							"uid": 1438,
 							"instanceVariables": {
 								"min": 27.234455,
 								"max": 27.234455,
@@ -4889,8 +4191,8 @@
 								}
 							},
 							"sceneGraphData": {
-								"parent-uid": 1777,
-								"uid": 1778,
+								"parent-uid": 1102,
+								"uid": 1438,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -4934,7 +4236,7 @@
 							}
 						}
 					],
-					"sid": 968167068174004,
+					"sid": 507238379252142,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -4977,14 +4279,14 @@
 						"origin": "top-left",
 						"seams": "overlap"
 					},
-					"uid": 1497,
+					"uid": 1078,
 					"instanceVariables": {
 						"id": "conditional-available-code-blocks-panel"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
-						"uid": 1497,
+						"uid": 1078,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -5028,7 +4330,7 @@
 					}
 				}
 			],
-			"sid": 476565444792616,
+			"sid": 860829827607916,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -5061,7 +4363,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 365990987383995,
+			"sid": 263736876329975,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -5094,7 +4396,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 954944313298263,
+			"sid": 861618149145460,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -5127,7 +4429,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 968858762116339,
+			"sid": 489758287498837,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -5156,7 +4458,7 @@
 			"global": false
 		}
 	],
-	"sid": 352540414858201,
+	"sid": 893912740327616,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,
@@ -5165,5 +4467,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Level18_ES"
+	"eventSheet": "Level12_ES"
 }

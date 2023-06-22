@@ -137,6 +137,7 @@ const levelAvailableCodeBlocks = {
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
             blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
         ],
         repeatExpressions: [
             //
@@ -193,12 +194,13 @@ const levelAvailableCodeBlocks = {
             blocks.rotateClockwiseCommand,
             blocks.rotateCounterClockwiseCommand,
             blocks.takeGemCommand,
+            blocks.ifCommand,
         ],
         repeatExpressions: [
             //
         ],
         conditionalExpressions: [
-            //
+            blocks.gemExpression,
         ],
     },
     9: {
@@ -214,6 +216,7 @@ const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             blocks.gemExpression,
+            blocks.healthExpression,
         ],
     },
     10: {
@@ -229,6 +232,9 @@ const levelAvailableCodeBlocks = {
         ],
         conditionalExpressions: [
             blocks.gemExpression,
+            blocks.healthExpression,
+            blocks.centerExpression,
+
         ],
     },
     11: {
@@ -245,6 +251,15 @@ const levelAvailableCodeBlocks = {
         conditionalExpressions: [
             blocks.gemExpression,
             blocks.healthExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
         ],
     },
     12: {
@@ -254,6 +269,7 @@ const levelAvailableCodeBlocks = {
             blocks.rotateCounterClockwiseCommand,
             blocks.takeGemCommand,
             blocks.ifCommand,
+            blocks.elseCommand,
         ],
         repeatExpressions: [
             //
@@ -261,6 +277,15 @@ const levelAvailableCodeBlocks = {
         conditionalExpressions: [
             blocks.gemExpression,
             blocks.healthExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
         ],
     },
     13: {
@@ -270,6 +295,7 @@ const levelAvailableCodeBlocks = {
             blocks.rotateCounterClockwiseCommand,
             blocks.takeGemCommand,
             blocks.ifCommand,
+            blocks.elseCommand,
         ],
         repeatExpressions: [
             //
@@ -278,86 +304,17 @@ const levelAvailableCodeBlocks = {
             blocks.gemExpression,
             blocks.healthExpression,
             blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
         ],
     },
     14: {
-        commands: [
-            blocks.moveForwardCommand,
-            blocks.rotateClockwiseCommand,
-            blocks.rotateCounterClockwiseCommand,
-            blocks.takeGemCommand,
-            blocks.ifCommand,
-        ],
-        repeatExpressions: [
-            //
-        ],
-        conditionalExpressions: [
-            blocks.gemExpression,
-            blocks.healthExpression,
-            blocks.centerExpression,
-            blocks.leftExpression,
-            blocks.rightExpression,
-            blocks.upExpression,
-            blocks.downExpression,
-            blocks.upLeftExpression,
-            blocks.upRightExpression,
-            blocks.downLeftExpression,
-            blocks.downRightExpression,
-        ],
-    },
-    15: {
-        commands: [
-            blocks.moveForwardCommand,
-            blocks.rotateClockwiseCommand,
-            blocks.rotateCounterClockwiseCommand,
-            blocks.takeGemCommand,
-            blocks.ifCommand,
-            blocks.elseCommand,
-        ],
-        repeatExpressions: [
-            //
-        ],
-        conditionalExpressions: [
-            blocks.gemExpression,
-            blocks.healthExpression,
-            blocks.centerExpression,
-            blocks.leftExpression,
-            blocks.rightExpression,
-            blocks.upExpression,
-            blocks.downExpression,
-            blocks.upLeftExpression,
-            blocks.upRightExpression,
-            blocks.downLeftExpression,
-            blocks.downRightExpression,
-        ],
-    },
-    16: {
-        commands: [
-            blocks.moveForwardCommand,
-            blocks.rotateClockwiseCommand,
-            blocks.rotateCounterClockwiseCommand,
-            blocks.takeGemCommand,
-            blocks.ifCommand,
-            blocks.elseCommand,
-        ],
-        repeatExpressions: [
-            //
-        ],
-        conditionalExpressions: [
-            blocks.gemExpression,
-            blocks.healthExpression,
-            blocks.centerExpression,
-            blocks.leftExpression,
-            blocks.rightExpression,
-            blocks.upExpression,
-            blocks.downExpression,
-            blocks.upLeftExpression,
-            blocks.upRightExpression,
-            blocks.downLeftExpression,
-            blocks.downRightExpression,
-        ],
-    },
-    17: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -388,7 +345,49 @@ const levelAvailableCodeBlocks = {
             blocks.threeExpression,
         ],
     },
-    18: {
+    15: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+            blocks.elseCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.healthExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+            blocks.equalExpression,
+            blocks.notEqualExpression,
+            blocks.greaterExpression,
+            blocks.greaterEqualExpression,
+            blocks.lessExpression,
+            blocks.lessEqualExpression,
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+    },
+    16: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
