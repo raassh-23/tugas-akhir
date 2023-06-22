@@ -8585,7 +8585,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 618670652780293,
+									"sid": 930700606044039,
 									"parameters": {
 										"object-to-create": "UIPanel",
 										"layer": "\"Help\"",
@@ -8597,7 +8597,7 @@
 								},
 								{
 									"type": "script",
-									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content] = getBlockHelp(block);\n\nfor (const text of runtime.objects.UIText.getPickedInstances()) {\n\tif (text.instVars.id === 'help-title-text') {\n\t\ttext.text = title;\n\t} else if (text.instVars.id === 'help-text') {\n\t\ttext.text = content;\n\t}\n}"
+									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content] = getBlockHelp(block);\n\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `[scale=1]${title}[/scale]\\n${content}`;"
 								}
 							],
 							"sid": 336805739126448,

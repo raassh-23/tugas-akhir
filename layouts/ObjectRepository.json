@@ -10685,21 +10685,6 @@
 									"d": true,
 									"sm": "normal"
 								}
-							},
-							{
-								"uid": 1780,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": false,
-									"h": false,
-									"a": false,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
 							}
 						],
 						"flags": {
@@ -10731,7 +10716,7 @@
 						"x": 1656,
 						"y": 1540,
 						"width": 640.843121,
-						"height": 343.15013708876336,
+						"height": 343.150137,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -10757,7 +10742,7 @@
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "top-left",
@@ -10768,7 +10753,7 @@
 						"minScale": 0,
 						"maxScale": 0.75,
 						"autoFit": true,
-						"maxLine": 5,
+						"maxLine": 6,
 						"id": "help-text",
 						"translation": ""
 					},
@@ -10803,9 +10788,9 @@
 					},
 					"world": {
 						"x": 1679,
-						"y": 1638.2134412451624,
+						"y": 1575,
 						"width": 596,
-						"height": 214,
+						"height": 272,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -16241,80 +16226,6 @@
 							1,
 							1,
 							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "help title",
-						"enable-bbcode": true,
-						"character-width": 50,
-						"character-height": 56,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 1780,
-					"instanceVariables": {
-						"minScale": 0,
-						"maxScale": 1,
-						"autoFit": false,
-						"maxLine": 1,
-						"id": "help-title-text",
-						"translation": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 219,
-						"uid": 1780,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1679,
-						"y": 1570.2264008361944,
-						"width": 596,
-						"height": 64.5702529781122,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							0,
-							0,
-							0,
 							1
 						],
 						"angle": 0,
