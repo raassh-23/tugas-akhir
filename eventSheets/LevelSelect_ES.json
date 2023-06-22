@@ -57,19 +57,10 @@
 			"actions": [
 				{
 					"callFunction": "ShowChangeLevelPageButton",
-					"sid": 384643984752809,
+					"sid": 397889535161321,
 					"parameters": [
 						true
 					]
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 275656238214641,
-					"parameters": {
-						"variable": "levelPage",
-						"value": "0"
-					}
 				},
 				{
 					"id": "map-function",
@@ -115,7 +106,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Level",
+							"sid": 380692701362184,
+							"parameters": {
+								"x": "Self.originX - levelPage * LayoutWidth"
+							}
+						}
+					],
 					"sid": 763453700858384,
 					"children": [
 						{
