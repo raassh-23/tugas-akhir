@@ -71,7 +71,7 @@ export const levelTarget = {
         codeBlocks: 9,
     },
     10: {
-        actions: 18,
+        actions: 19,
         codeBlocks: 11,
     },
     11: {
@@ -95,8 +95,8 @@ export const levelTarget = {
         codeBlocks: 9,
     },
     16: {
-        actions: 19,
-        codeBlocks: 14,
+        actions: 17,
+        codeBlocks: 10,
     },
 }
 
