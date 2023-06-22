@@ -79,14 +79,28 @@ const en = {
             },
             'tutorial': {
                 'level-1': {
-                    0: 'Help GigaBot to enter the portal!',
-                    1: 'Drag the command block from here...',
-                    2: '...to this command area',
-                    3: 'Click this to start moving',
-                    4: 'Click this again to reset',
-                    5: 'Well done, let\'s start coding!',
+                    '0': 'Help GigaBot to enter the portal!',
+                    '1': 'Drag the command block from here...',
+                    '2': '...to this command area',
+                    '3': 'Click this to start moving',
+                    '4': 'Click this again to reset',
+                    '5': 'Well done, let\'s start coding!',
                 },
-            }
+            },
+            'blocks': {
+                'move': {
+                    '0': 'This block makes your robot move forward. In JavaScript, this can be written as [background=#9c9c9c]moveForward()[/background]',
+                },
+                'rotate': {
+                    '0': 'This block makes your robot rotate clockwise. In JavaScript, this can be written as [background=#9c9c9c]rotateClockwise()[/background]',
+                    '1': 'This block makes your robot rotate anti-clockwise. In JavaScript, this can be written as [background=#9c9c9c]rotateAntiClockwise()[/background]',
+                },
+                'number': {
+                    '0': 'This block gives you the number 0. This block can be combined with other number block to make bigger number',
+                    '1': 'This block gives you the number 1. This block can be combined with other number block to make bigger number',
+                    '2': 'This block gives you the number 2. This block can be combined with other number block to make bigger number',
+                },
+            },
         },
     }
 };

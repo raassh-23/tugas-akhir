@@ -501,3 +501,29 @@ async function showLeaderboard(runtime, options) {
 		}
 	}
 }
+
+/**
+ * 
+ * @param {ICodeBlockButton | ICodeBlock} block 
+ * @returns {string}
+ */
+function getBlockHelp(block) {
+	let name;
+
+	if (block.objectType.name === 'CodeBlockButton') {
+		name = /** @type {ICodeBlockButton} */ block.animationName;
+	} else {
+		name = /** @type {ICodeBlock} */ block.objectType.name;
+	}
+	
+	const frame = block.animationFrame;
+
+	const match = RegExp(/(.+)(Command|Block)/).exec(name);
+
+	if (!match) {
+		throw Error("Not a valid CodeBlock name");
+	}
+	const key = `game.blocks.${match[1].toLowerCase()}.${frame}`
+
+	return translate(key);
+}

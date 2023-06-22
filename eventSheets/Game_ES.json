@@ -959,7 +959,8 @@
 											"callFunction": "ShowHelp",
 											"sid": 405863992495908,
 											"parameters": [
-												true
+												true,
+												false
 											]
 										},
 										{
@@ -2972,7 +2973,8 @@
 											"callFunction": "ShowHelp",
 											"sid": 700738763250366,
 											"parameters": [
-												true
+												true,
+												false
 											]
 										}
 									],
@@ -3027,53 +3029,15 @@
 									],
 									"actions": [
 										{
-											"type": "comment",
-											"text": "FIXME: Really hacky, fix later"
-										},
-										{
-											"callFunction": "CreateNewCodeBlockObject",
-											"sid": 896073392544161,
+											"callFunction": "ShowHelp",
+											"sid": 201783570796438,
 											"parameters": [
-												"CodeBlockButton.AnimationName",
-												"CodeBlockButton.inactiveLayer",
-												"CodeBlockButton.panelId",
-												"CodeBlockButton.X",
-												"CodeBlockButton.Y",
-												"CodeBlockButton.AnimationFrame"
+												true,
+												true
 											]
 										}
 									],
-									"sid": 985626708173449,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-last-created",
-													"objectClass": "System",
-													"sid": 491729681669390,
-													"parameters": {
-														"object": "CodeBlock"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "ShowHelp",
-													"sid": 180846827817052,
-													"parameters": [
-														true
-													]
-												},
-												{
-													"id": "destroy",
-													"objectClass": "CodeBlock",
-													"sid": 122689321141853
-												}
-											],
-											"sid": 503130580336199
-										}
-									]
+									"sid": 985626708173449
 								}
 							]
 						},
@@ -7124,6 +7088,7 @@
 									"callFunction": "ShowHelp",
 									"sid": 905727467181441,
 									"parameters": [
+										false,
 										false
 									]
 								}
@@ -8581,6 +8546,13 @@
 							"initialValue": "false",
 							"comment": "",
 							"sid": 218886244508399
+						},
+						{
+							"name": "byButton",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 393345390240561
 						}
 					],
 					"eventType": "function-block",
@@ -8625,7 +8597,7 @@
 								},
 								{
 									"type": "script",
-									"script": "const codeBlock = runtime.objects.CodeBlock.getFirstPickedInstance();\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `Help for ${codeBlock.name}`"
+									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = getBlockHelp(block);"
 								}
 							],
 							"sid": 336805739126448,
