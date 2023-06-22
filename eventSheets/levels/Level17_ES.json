@@ -1,0 +1,36 @@
+{
+	"name": "Level17_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 364677940392740
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 219509209621484,
+					"parameters": {
+						"variable": "level",
+						"value": "16"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 171444588188429
+		}
+	],
+	"sid": 381050374408524
+}
