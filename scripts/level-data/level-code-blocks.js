@@ -1,117 +1,16 @@
-import * as blocks from "./code-blocks/code-block-definitions.js";
+import * as blocks from "../code-blocks/code-block-definitions.js";
 
 /**
- * @type {{[level: number]: string[]}}
- */
-export const levelVariables = {
-    0: ["health", "ammo", "gem"],// test level
-    1: [/* */],
-    2: [/* */],
-    3: [/* */],
-    4: [/* */],
-    5: ["gem"],
-    6: ["gem"],
-    7: ["gem"],
-    8: ["gem"], 
-    9: ["gem"],
-    10: ["gem"],
-    11: ["gem", "health"],
-    12: ["gem", "health"],
-    13: ["gem", "health"],
-    14: ["gem", "health"],
-    15: ["gem", "health"],
-    16: ["gem", "health"],
-};
-
-/**
- * @type {{[level: number]: {
- *  actions: number,
- *  codeBlocks: number,
- * }}}
- */
-export const levelTarget = {
-    0: { // test level
-        actions: 9,
-        codeBlocks: 7,
-    },
-    1: {
-        actions: 3,
-        codeBlocks: 3,
-    },
-    2: {
-        actions: 6,
-        codeBlocks: 6,
-    },
-    3: {
-        actions: 6,
-        codeBlocks: 6,
-    },
-    4: {
-        actions: 11,
-        codeBlocks: 11,
-    },
-    5: {
-        actions: 5,
-        codeBlocks: 5,
-    },
-    6: {
-        actions: 11,
-        codeBlocks: 11,
-    },
-    7: {
-        actions: 12,
-        codeBlocks: 6,
-    },
-    8: {
-        actions: 14,
-        codeBlocks: 7,
-    },
-    9: {
-        actions: 14,
-        codeBlocks: 9,
-    },
-    10: {
-        actions: 19,
-        codeBlocks: 11,
-    },
-    11: {
-        actions: 18,
-        codeBlocks: 9,
-    },
-    12: {
-        actions: 15,
-        codeBlocks: 8,
-    },
-    13: {
-        actions: 15,
-        codeBlocks: 8,
-    },
-    14: {
-        actions: 19,
-        codeBlocks: 11,
-    },
-    15: {
-        actions: 14,
-        codeBlocks: 9,
-    },
-    16: {
-        actions: 17,
-        codeBlocks: 10,
-    },
-}
-
-/**
+ * 
  * @typedef {import('../code-blocks/code-block-definitions.js').CodeBlockDefinition} CodeBlockDefinition
- */
-
-/**
+ * 
  * @type {{[level: number]: {
  *  commands: CodeBlockDefinition[],
  *  repeatExpressions: CodeBlockDefinition[],
  *  conditionalExpressions: CodeBlockDefinition[],
  * }}}
  */
-export const levelAvailableCodeBlocks = {
+const levelAvailableCodeBlocks = {
     0: { // test level
         commands: [
             blocks.moveForwardCommand,
@@ -459,3 +358,5 @@ export const levelAvailableCodeBlocks = {
         ],
     }
 };
+
+export default levelAvailableCodeBlocks;

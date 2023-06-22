@@ -7,7 +7,7 @@ import {
 	levelVariables,
 	levelAvailableCodeBlocks,
 	levelTarget,
-} from "./level-data.js";
+} from "./level-data/level-data.js";
 import {
 	getSquaredDistance,
 	getContainerParent,

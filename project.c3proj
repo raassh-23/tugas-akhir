@@ -397,14 +397,6 @@
 					}
 				},
 				{
-					"name": "level-data.js",
-					"type": "application/javascript",
-					"sid": 443565266676114,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
 					"name": "leaderboard-api.js",
 					"type": "application/javascript",
 					"sid": 186867696341201,
@@ -718,6 +710,44 @@
 					],
 					"subfolders": [],
 					"name": "translations"
+				},
+				{
+					"items": [
+						{
+							"name": "level-variables.js",
+							"type": "application/javascript",
+							"sid": 597053604230354,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "level-target.js",
+							"type": "application/javascript",
+							"sid": 862692255708267,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "level-code-blocks.js",
+							"type": "application/javascript",
+							"sid": 228462929041034,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "level-data.js",
+							"type": "application/javascript",
+							"sid": 443565266676114,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "level-data"
 				}
 			]
 		},
