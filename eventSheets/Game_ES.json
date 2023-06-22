@@ -5716,10 +5716,10 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Portal",
-							"sid": 666139569334960,
+							"sid": 932463822127835,
 							"parameters": {
 								"object": "PlayerMarker",
-								"layer": "Portal.LayerName",
+								"layer": "Player.LayerName",
 								"image-point": "0",
 								"create-hierarchy": false
 							}
@@ -6031,6 +6031,28 @@
 								}
 							],
 							"sid": 834172375786300
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 733877136181052,
+									"parameters": {
+										"first-value": "Player.Count",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "HideRobotCount",
+									"sid": 593073500372755
+								}
+							],
+							"sid": 201801839288486
 						}
 					]
 				},
@@ -9228,6 +9250,11 @@
 							}
 						},
 						{
+							"id": "move-to-top",
+							"objectClass": "PlayerMarker",
+							"sid": 590380318100878
+						},
+						{
 							"type": "comment",
 							"text": "this wait is needed because when resetting the level, it recreate the player and newly created child can't be picked on the same tick "
 						},
@@ -9317,6 +9344,32 @@
 								}
 							],
 							"sid": 768279098424318
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 802857780395414,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"robot-count\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 668925197526683,
+									"parameters": {
+										"text": "id + 1 & \"/\" & Player.Count"
+									}
+								}
+							],
+							"sid": 141971655218040
 						}
 					]
 				},
@@ -9389,6 +9442,124 @@
 								}
 							],
 							"sid": 212568648733620
+						}
+					]
+				},
+				{
+					"functionName": "HideRobotCount",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 339374531163552,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "iconX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 151119581088246
+						},
+						{
+							"eventType": "variable",
+							"name": "ICON_SPACING",
+							"type": "number",
+							"initialValue": "64",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 904319050248893
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Icon",
+									"sid": 196265290320446,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"robot-count\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 988758782339362,
+									"parameters": {
+										"variable": "iconX",
+										"value": "Icon.X"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Icon",
+									"sid": 151908301091716
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 655294683294890,
+									"parameters": {
+										"seconds": "0"
+									}
+								}
+							],
+							"sid": 155742418727165,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 949071366305395,
+											"parameters": {
+												"object": "Icon"
+											}
+										},
+										{
+											"id": "compare-x",
+											"objectClass": "Icon",
+											"sid": 333649692908437,
+											"parameters": {
+												"comparison": 0,
+												"x-co-ordinate": "iconX"
+											}
+										},
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 732541857959548,
+											"parameters": {
+												"object": "Icon"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Icon",
+											"sid": 833031903692586,
+											"parameters": {
+												"y": "Self.Y - ICON_SPACING"
+											}
+										}
+									],
+									"sid": 675671629985290
+								}
+							]
 						}
 					]
 				}

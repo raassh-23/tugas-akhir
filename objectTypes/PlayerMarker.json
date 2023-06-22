@@ -4,7 +4,13 @@
 	"sid": 253283658709352,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 397315209391031
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
