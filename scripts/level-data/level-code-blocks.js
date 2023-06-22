@@ -357,7 +357,7 @@ const levelAvailableCodeBlocks = {
             blocks.downRightExpression,
         ],
     },
-    16: {
+    17: {
         commands: [
             blocks.moveForwardCommand,
             blocks.rotateClockwiseCommand,
@@ -387,7 +387,49 @@ const levelAvailableCodeBlocks = {
             blocks.twoExpression,
             blocks.threeExpression,
         ],
-    }
+    },
+    18: {
+        commands: [
+            blocks.moveForwardCommand,
+            blocks.rotateClockwiseCommand,
+            blocks.rotateCounterClockwiseCommand,
+            blocks.takeGemCommand,
+            blocks.ifCommand,
+            blocks.elseCommand,
+        ],
+        repeatExpressions: [
+            //
+        ],
+        conditionalExpressions: [
+            blocks.gemExpression,
+            blocks.healthExpression,
+            blocks.centerExpression,
+            blocks.leftExpression,
+            blocks.rightExpression,
+            blocks.upExpression,
+            blocks.downExpression,
+            blocks.upLeftExpression,
+            blocks.upRightExpression,
+            blocks.downLeftExpression,
+            blocks.downRightExpression,
+            blocks.equalExpression,
+            blocks.notEqualExpression,
+            blocks.greaterExpression,
+            blocks.greaterEqualExpression,
+            blocks.lessExpression,
+            blocks.lessEqualExpression,
+            blocks.zeroExpression,
+            blocks.oneExpression,
+            blocks.twoExpression,
+            blocks.threeExpression,
+            blocks.fourExpression,
+            blocks.fiveExpression,
+            blocks.sixExpression,
+            blocks.sevenExpression,
+            blocks.eightExpression,
+            blocks.nineExpression,
+        ],
+    },
 };
 
 export default levelAvailableCodeBlocks;

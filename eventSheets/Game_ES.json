@@ -1815,15 +1815,25 @@
 					"sid": 836732642885252,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "X_TOLERANCE",
+							"type": "number",
+							"initialValue": "-0.001",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 141732414568754
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 969989727405044,
+									"sid": 276703496311317,
 									"parameters": {
 										"comparison": 5,
-										"x-co-ordinate": "x"
+										"x-co-ordinate": "x + X_TOLERANCE"
 									}
 								}
 							],
@@ -1845,10 +1855,10 @@
 								{
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
-									"sid": 517090480549705,
+									"sid": 643527559710128,
 									"parameters": {
 										"comparison": 2,
-										"x-co-ordinate": "x"
+										"x-co-ordinate": "x + X_TOLERANCE"
 									}
 								}
 							],

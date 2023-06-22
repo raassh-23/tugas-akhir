@@ -332,6 +332,7 @@
 					"Level15",
 					"Level16",
 					"Level17",
+					"Level18",
 					"OldLevel7",
 					"OldLevel10",
 					"OldLevel12",
@@ -372,7 +373,8 @@
 					"Level14_ES",
 					"Level15_ES",
 					"Level16_ES",
-					"Level17_ES"
+					"Level17_ES",
+					"Level18_ES"
 				],
 				"subfolders": [],
 				"name": "levels"
