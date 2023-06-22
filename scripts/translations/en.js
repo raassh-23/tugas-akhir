@@ -89,13 +89,16 @@ const en = {
             },
             'blocks': {
                 'move': {
-                    '0': 'This block makes your robot move forward. In JavaScript, this can be written as [background=#9c9c9c]moveForward()[/background]',
+                    'title': 'Move Command',
+                    '0': 'This block makes your robot move forward. In JavaScript, this can be written as [background=#cccccc]moveForward()[/background]',
                 },
                 'rotate': {
-                    '0': 'This block makes your robot rotate clockwise. In JavaScript, this can be written as [background=#9c9c9c]rotateClockwise()[/background]',
-                    '1': 'This block makes your robot rotate anti-clockwise. In JavaScript, this can be written as [background=#9c9c9c]rotateAntiClockwise()[/background]',
+                    'title': 'Rotate Command',
+                    '0': 'This block makes your robot rotate clockwise. In JavaScript, this can be written as [background=#cccccc]rotateClockwise()[/background]',
+                    '1': 'This block makes your robot rotate anti-clockwise. In JavaScript, this can be written as [background=#cccccc]rotateAntiClockwise()[/background]',
                 },
                 'number': {
+                    'title': 'Number Expression',
                     '0': 'This block gives you the number 0. This block can be combined with other number block to make bigger number',
                     '1': 'This block gives you the number 1. This block can be combined with other number block to make bigger number',
                     '2': 'This block gives you the number 2. This block can be combined with other number block to make bigger number',

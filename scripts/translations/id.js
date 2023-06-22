@@ -89,13 +89,16 @@ const id = {
             },
             'blocks': {
                 'move': {
-                    '0': 'Blok ini membuat robotmu maju. Di JavaScript, blok ini bisa ditulis seperti [background=#9c9c9c]moveForward()[/background]',
+                    'title': 'Perintah Bergerak',
+                    '0': 'Blok ini membuat robotmu maju. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]moveForward()[/background]',
                 },
                 'rotate': {
-                    '0': 'Blok ini memutar robotmu searah jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#9c9c9c]rotateClockwise()[/background]',
-                    '1': 'Blok ini memutar robotmu berlawanan jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#9c9c9c]rotateAntiClockwise()[/background]',
+                    'title': 'Perintah Berputar',
+                    '0': 'Blok ini memutar robotmu searah jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]rotateClockwise()[/background]',
+                    '1': 'Blok ini memutar robotmu berlawanan jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]rotateAntiClockwise()[/background]',
                 },
                 'number': {
+                    'title': 'Ekspresi Angka',
                     '0': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
                     '1': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
                     '2': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',

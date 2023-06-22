@@ -523,7 +523,10 @@ function getBlockHelp(block) {
 	if (!match) {
 		throw Error("Not a valid CodeBlock name");
 	}
-	const key = `game.blocks.${match[1].toLowerCase()}.${frame}`
 
-	return translate(key);
+	const key = `game.blocks.${match[1].toLowerCase()}`;
+	const titleKey = `${key}.title`;
+	const contentKey = `${key}.${frame}`;
+
+	return [translate(titleKey), translate(contentKey)];
 }
