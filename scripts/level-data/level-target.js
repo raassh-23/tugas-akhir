@@ -73,6 +73,14 @@ const levelTarget = {
         actions: 25,
         codeBlocks: 16,
     },
+    17: {
+        actions: 31,
+        codeBlocks: 12,
+    },
+    18: {
+        actions: 32,
+        codeBlocks: 15,
+    },
 }
 
 export default levelTarget;
