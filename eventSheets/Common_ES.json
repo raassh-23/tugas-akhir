@@ -320,6 +320,14 @@
 					}
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 320222072479875,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Clickable",
 					"sid": 853927819045273,
@@ -361,6 +369,15 @@
 					"sid": 724729307079613,
 					"parameters": {
 						"instance-variable": "isDisabled"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Clickable",
+					"sid": 536819162740754,
+					"parameters": {
+						"instance-variable": "isPressed"
 					},
 					"isInverted": true
 				},
@@ -418,6 +435,14 @@
 					"isInverted": true
 				},
 				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Clickable",
+					"sid": 812199920003157,
+					"parameters": {
+						"instance-variable": "isPressed"
+					}
+				},
+				{
 					"id": "pick-by-unique-id",
 					"objectClass": "Clickable",
 					"sid": 486155353879319,
@@ -428,14 +453,9 @@
 			],
 			"actions": [
 				{
-					"customAction": "IsReleased",
-					"objectClass": "Clickable",
-					"sid": 242322337006756
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 904566366330073,
+					"sid": 421163499973738,
 					"parameters": {
 						"seconds": "0.1"
 					}

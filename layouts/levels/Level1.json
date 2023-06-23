@@ -2033,7 +2033,7 @@
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.75,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -2048,7 +2048,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
-						"maxLine": 1,
+						"maxLine": 0.6,
 						"id": "tutorial1",
 						"translation": "game.tutorial.level-1.0"
 					},
@@ -2194,6 +2194,23 @@
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 850,
+						"children": [
+							{
+								"uid": 474,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2220,8 +2237,8 @@
 						}
 					},
 					"world": {
-						"x": 173,
-						"y": 82,
+						"x": 211.37929390136898,
+						"y": 82.50406239638306,
 						"width": 248.76938747125007,
 						"height": 82,
 						"originX": 0,
@@ -2268,6 +2285,23 @@
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 851,
+						"children": [
+							{
+								"uid": 475,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2294,8 +2328,8 @@
 						}
 					},
 					"world": {
-						"x": 254,
-						"y": 457,
+						"x": 519,
+						"y": 377,
 						"width": 248.76938747125007,
 						"height": 82,
 						"originX": 0,
@@ -2342,6 +2376,23 @@
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 852,
+						"children": [
+							{
+								"uid": 477,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2368,10 +2419,10 @@
 						}
 					},
 					"world": {
-						"x": 1091,
-						"y": 430,
-						"width": 163.76938747125007,
-						"height": 82,
+						"x": 1076.1530803508008,
+						"y": 318.6674032842492,
+						"width": 201.08997788802878,
+						"height": 140.59332980167767,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -2416,6 +2467,23 @@
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 853,
+						"children": [
+							{
+								"uid": 476,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -2443,9 +2511,9 @@
 					},
 					"world": {
 						"x": 1079,
-						"y": 431,
+						"y": 377.7703261253197,
 						"width": 190.059952445754,
-						"height": 82,
+						"height": 81,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -2558,9 +2626,9 @@
 						}
 					},
 					"world": {
-						"x": 704,
-						"y": 372.7152135743115,
-						"width": 512,
+						"x": 703,
+						"y": 373,
+						"width": 611,
 						"height": 80,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -2583,7 +2651,7 @@
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.75,
+						"scale": 0.6,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -2598,7 +2666,7 @@
 						"minScale": 0,
 						"maxScale": 0,
 						"autoFit": false,
-						"maxLine": 1,
+						"maxLine": 0.6,
 						"id": "tutorial5",
 						"translation": "game.tutorial.level-1.5"
 					},
@@ -2632,9 +2700,9 @@
 						}
 					},
 					"world": {
-						"x": 704,
-						"y": 372.715214,
-						"width": 512,
+						"x": 703,
+						"y": 373,
+						"width": 611,
 						"height": 80,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -2696,8 +2764,8 @@
 						}
 					},
 					"world": {
-						"x": 947,
-						"y": 414.7152135743115,
+						"x": 995,
+						"y": 415,
 						"width": 48,
 						"height": 48,
 						"originX": 0.5,
@@ -2709,6 +2777,234 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Arrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 474,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 850,
+						"uid": 474,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 183.03739975809228,
+						"y": 121.28140295385296,
+						"width": 39.40600631037525,
+						"height": 17.5861515765311,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Arrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 475,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 851,
+						"uid": 475,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 644,
+						"y": 480,
+						"width": 39.40600631037525,
+						"height": 17.5861515765311,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Arrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 476,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 853,
+						"uid": 476,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1176.5327116175652,
+						"y": 484.57539303721205,
+						"width": 39.40600631037525,
+						"height": 17.5861515765311,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Arrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 477,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 852,
+						"uid": 477,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1176.5327116175652,
+						"y": 484.57539303721205,
+						"width": 39.40600631037525,
+						"height": 17.5861515765311,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
 				}

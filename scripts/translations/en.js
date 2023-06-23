@@ -82,9 +82,9 @@ const en = {
                     '0': 'Help GigaBot to enter the portal!',
                     '1': 'Drag the command block from here...',
                     '2': '...to this command area',
-                    '3': 'Click this to start moving',
+                    '3': 'Click this to run your command',
                     '4': 'Click this again to reset',
-                    '5': 'Well done, let\'s start coding!',
+                    '5': 'Well done, now try to arrange the command blocks yourself!',
                 },
             },
             'blocks': {

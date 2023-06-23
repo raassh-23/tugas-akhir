@@ -247,7 +247,8 @@
 			"PlayerMarker",
 			"UITextBorder",
 			"StaticEnemyCollision",
-			"StaticEnemy"
+			"StaticEnemy",
+			"Arrow"
 		],
 		"subfolders": [
 			{

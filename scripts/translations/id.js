@@ -82,9 +82,9 @@ const id = {
                     0: 'Bantu GigaBot masuk ke portal!',
                     1: 'Drag blok perintah dari sini...',
                     2: '...ke area perintah ini',
-                    3: 'Klik ini untuk mulai berjalan',
+                    3: 'Klik ini untuk menjalakan perintahmu',
                     4: 'Klik ini lagi untuk mereset',
-                    5: 'Bagus, ayo mulai ngoding!',
+                    5: 'Bagus, sekarang ayo coba susun perintahmu sendiri!',
                 },
             },
             'blocks': {
@@ -100,8 +100,8 @@ const id = {
                 'number': {
                     'title': 'Ekspresi Angka',
                     '0': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
-                    '1': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
-                    '2': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
+                    '1': 'Blok ini akan memberikan angka 1. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
+                    '2': 'Blok ini akan memberikan angka 2. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
                 },
             },
         },
