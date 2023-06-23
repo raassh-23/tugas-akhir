@@ -83,12 +83,17 @@ const id = {
             },
             'tutorial': {
                 'level-1': {
-                    0: 'Bantu GigaBot masuk ke portal!',
-                    1: 'Drag blok perintah dari sini...',
-                    2: '...ke area perintah ini',
-                    3: 'Klik ini untuk menjalakan perintahmu',
-                    4: 'Klik ini lagi untuk mereset',
-                    5: 'Bagus, sekarang ayo coba susun perintahmu sendiri!',
+                    '0': 'Bantu GigaBot masuk ke portal!',
+                    '1': 'Drag blok perintah dari sini...',
+                    '2': '...ke area perintah ini',
+                    '3': 'Klik ini untuk menjalakan perintahmu',
+                    '4': 'Klik ini lagi untuk mereset',
+                    '5': 'Bagus, sekarang ayo coba susun perintahmu sendiri!',
+                },
+                'level-2': {
+                    '0': 'Lihat, ada blok baru!',
+                    '1': 'Seret bloknya ke sini untuk melihat gunanya',
+                    '2': 'Tanda tanya ini juga bisa diseret ke blok yang ingin kamu lihat gunanya',
                 },
             },
             'blocks': {

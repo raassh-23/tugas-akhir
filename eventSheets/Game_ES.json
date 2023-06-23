@@ -176,6 +176,16 @@
 			"sid": 605709268357877
 		},
 		{
+			"eventType": "variable",
+			"name": "SHOW_HELP_SIGNAL",
+			"type": "string",
+			"initialValue": "show help",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 370710762233881
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -8725,6 +8735,14 @@
 										"string": "htmlContent",
 										"selector": "\"\"",
 										"type": "one"
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 346724261592232,
+									"parameters": {
+										"tag": "SHOW_HELP_SIGNAL"
 									}
 								}
 							],

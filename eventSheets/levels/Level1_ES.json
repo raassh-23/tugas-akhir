@@ -142,15 +142,6 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 359431415672379,
-									"parameters": {
-										"type": "log",
-										"message": "\"set disable \" & Button.UID "
-									}
-								},
-								{
 									"id": "set-boolean-instvar",
 									"objectClass": "Button",
 									"sid": 318717464313189,
@@ -569,15 +560,6 @@
 						"variable": "tutorialStep",
 						"value": "1"
 					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 647984601234938,
-					"parameters": {
-						"layer": "\"UI\"",
-						"interactive": false
-					}
 				}
 			],
 			"sid": 191292949540418,
@@ -688,15 +670,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 735726889153702,
-					"parameters": {
-						"layer": "\"UI\"",
-						"interactive": true
-					}
-				},
 				{
 					"id": "set-at-xy",
 					"objectClass": "LevelScoreData",

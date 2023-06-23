@@ -90,6 +90,11 @@ const en = {
                     '4': 'Click this again to reset',
                     '5': 'Well done, now try to arrange the command blocks yourself!',
                 },
+                'level-2': {
+                    '0': 'Look, a new block!',
+                    '1': 'Drag the block to this to see what it does',
+                    '2': 'This question mark can also be dragged to the block that you want to see',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",
