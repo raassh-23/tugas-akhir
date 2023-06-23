@@ -92,20 +92,42 @@ const id = {
                 },
             },
             'blocks': {
+                'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",
                 'move': {
-                    'title': 'Perintah Bergerak',
-                    '0': 'Blok ini membuat robotmu maju. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]moveForward()[/background]',
+                    '0': {
+                        'title': 'Perintah Maju',
+                        'content': 'Blok ini membuat robotmu maju.',
+                        'example': 'moveForward()',
+                    }
                 },
                 'rotate': {
-                    'title': 'Perintah Berputar',
-                    '0': 'Blok ini memutar robotmu searah jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]rotateClockwise()[/background]',
-                    '1': 'Blok ini memutar robotmu berlawanan jarum jam. Di JavaScript, blok ini bisa ditulis seperti [background=#cccccc]rotateAntiClockwise()[/background]',
+                    '0': {
+                        'title': 'Perintah Berputar',
+                        'content': 'Blok ini memutar robotmu searah jarum jam.',
+                        'example': 'rotateClockwise()',
+                    },
+                    '1': {
+                        'title': 'Perintah Berputar',
+                        'content': 'Blok ini memutar robotmu berlawanan jarum jam.',
+                        'example': 'rotateAntiClockwise()',
+                    }
                 },
                 'number': {
-                    'title': 'Ekspresi Angka',
-                    '0': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
-                    '1': 'Blok ini akan memberikan angka 1. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
-                    '2': 'Blok ini akan memberikan angka 2. Blok ini dapat digabungkan dengan blok lain untuk membuat angka yang lebih besar',
+                    '0': {
+                        'title': 'Ekspresi Angka',
+                        'content': 'Blok ini akan memberikan angka 0. Blok ini dapat digabungkan dengan ekspresi angka lain untuk membuat angka yang lebih besar',
+                        'example': '0',
+                    },
+                    '1': {
+                        'title': 'Ekspresi Angka',
+                        'content': 'Blok ini akan memberikan angka 1. Blok ini dapat digabungkan dengan ekspresi angka lain untuk membuat angka yang lebih besar',
+                        'example': '1',
+                    },
+                    '2': {
+                        'title': 'Ekspresi Angka',
+                        'content': 'Blok ini akan memberikan angka 2. Blok ini dapat digabungkan dengan ekspresi angka lain untuk membuat angka yang lebih besar',
+                        'example': '2',
+                    },
                 },
             },
         },

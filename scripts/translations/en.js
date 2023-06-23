@@ -92,20 +92,42 @@ const en = {
                 },
             },
             'blocks': {
+                'example-title': "In JavaScript, this can be written as:",
                 'move': {
-                    'title': 'Move Command',
-                    '0': 'This block makes your robot move forward. In JavaScript, this can be written as [background=#cccccc]moveForward()[/background]',
+                    '0': {
+                        'title': 'Move Command',
+                        'content': 'This block makes your robot move forward.',
+                        'example': 'moveForward()',
+                    }
                 },
                 'rotate': {
-                    'title': 'Rotate Command',
-                    '0': 'This block makes your robot rotate clockwise. In JavaScript, this can be written as [background=#cccccc]rotateClockwise()[/background]',
-                    '1': 'This block makes your robot rotate anti-clockwise. In JavaScript, this can be written as [background=#cccccc]rotateAntiClockwise()[/background]',
+                    '0': {
+                        'title': 'Rotate Command',
+                        'content': 'This block makes your robot rotate clockwise.',
+                        'example': 'rotateClockwise()',
+                    },
+                    '1': {
+                        'title': 'Rotate Command',
+                        'content': 'This block makes your robot rotate anti-clockwise.',
+                        'example': 'rotateAntiClockwise()',
+                    }
                 },
                 'number': {
-                    'title': 'Number Expression',
-                    '0': 'This block gives you the number 0. This block can be combined with other number block to make bigger number',
-                    '1': 'This block gives you the number 1. This block can be combined with other number block to make bigger number',
-                    '2': 'This block gives you the number 2. This block can be combined with other number block to make bigger number',
+                    '0': {
+                        'title': 'Number Expression',
+                        'content': 'This block gives you the number 0. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '0',
+                    },
+                    '1': {
+                        'title': 'Number Expression',
+                        'content': 'This block gives you the number 1. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '1',
+                    },
+                    '2': {
+                        'title': 'Number Expression',
+                        'content': 'This block gives you the number 2. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '2',
+                    },
                 },
             },
         },

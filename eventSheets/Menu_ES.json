@@ -240,6 +240,26 @@
 			"sid": 834679098207567
 		},
 		{
+			"eventType": "variable",
+			"name": "helpHTML",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 214160588108218
+		},
+		{
+			"eventType": "variable",
+			"name": "HELP_HTML_TAG",
+			"type": "string",
+			"initialValue": "help",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 647300839251019
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -296,10 +316,19 @@
 				{
 					"id": "set-layer-interactive",
 					"objectClass": "System",
-					"sid": 958605134716787,
+					"sid": 654146624317311,
 					"parameters": {
-						"layer": "\"UpdateBg\"",
+						"layer": "\"Update\"",
 						"interactive": false
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 766199099330691,
+					"parameters": {
+						"tag": "HELP_HTML_TAG",
+						"file": "help.html"
 					}
 				},
 				{
@@ -3035,9 +3064,9 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 807238893160048,
+							"sid": 916621832002233,
 							"parameters": {
-								"layer": "\"UpdateBg\"",
+								"layer": "\"Update\"",
 								"interactive": true
 							}
 						},
@@ -3075,9 +3104,9 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 293256502568313,
+							"sid": 570363528014959,
 							"parameters": {
-								"layer": "\"UpdateBg\"",
+								"layer": "\"Update\"",
 								"interactive": false
 							}
 						},
@@ -3458,6 +3487,31 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 948132475124299,
+					"parameters": {
+						"tag": "HELP_HTML_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 471880558384943,
+					"parameters": {
+						"variable": "helpHTML",
+						"value": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 464595266742223
 		}
 	],
 	"sid": 170200532006030

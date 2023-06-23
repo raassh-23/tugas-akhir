@@ -8654,6 +8654,16 @@
 					"sid": 357787829975458,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "htmlContent",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 888555284164805
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -8689,8 +8699,33 @@
 									}
 								},
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 294252194469935,
+									"parameters": {
+										"variable": "htmlContent",
+										"value": "helpHTML"
+									}
+								},
+								{
 									"type": "script",
-									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content] = getBlockHelp(block);\n\nconst text = runtime.objects.UIText.getFirstPickedInstance();\n\ntext.text = `[scale=1]${title}[/scale]\\n${content}`;"
+									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content, exampleTitle, example] = getBlockHelp(block);\n\nlocalVars.htmlContent = localVars.htmlContent\n\t.replace(\"{{title}}\", title)\n\t.replace(\"{{content}}\", content)\n\t.replace(\"{{exampleTitle}}\", exampleTitle)\n\t.replace(\"{{example}}\", example);"
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 818138615656708
+								},
+								{
+									"id": "set-content",
+									"objectClass": "HelpHTML",
+									"sid": 313116659816684,
+									"parameters": {
+										"content-type": "html",
+										"string": "htmlContent",
+										"selector": "\"\"",
+										"type": "one"
+									}
 								}
 							],
 							"sid": 336805739126448,

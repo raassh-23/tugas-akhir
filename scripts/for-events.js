@@ -528,9 +528,11 @@ function getBlockHelp(block) {
 		throw Error("Not a valid CodeBlock name");
 	}
 
-	const key = `game.blocks.${match[1].toLowerCase()}`;
+	const key = `game.blocks.${match[1].toLowerCase()}.${frame}`;
 	const titleKey = `${key}.title`;
-	const contentKey = `${key}.${frame}`;
+	const contentKey = `${key}.content`;
+	const exampleKey = `${key}.example`;
+	const exampleTitleKey = `game.blocks.example-title`;
 
-	return [translate(titleKey), translate(contentKey)];
+	return [translate(titleKey), translate(contentKey), translate(exampleTitleKey), translate(exampleKey)];
 }
