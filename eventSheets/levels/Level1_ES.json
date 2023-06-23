@@ -81,20 +81,20 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 306841091053600,
+							"parameters": {
+								"layer": "\"Tutorial\"",
+								"interactive": true
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "UITextBorder",
 							"sid": 461091979003590,
 							"parameters": {
 								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 478064518995756,
-							"parameters": {
-								"layer": "\"UI\"",
-								"interactive": false
 							}
 						}
 					],
@@ -125,6 +125,42 @@
 								}
 							],
 							"sid": 140240180371646
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 173529828460178,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 359431415672379,
+									"parameters": {
+										"type": "log",
+										"message": "\"set disable \" & Button.UID "
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 318717464313189,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 347031175116135
 						}
 					]
 				},
@@ -225,17 +261,7 @@
 					"sid": 649396128336389
 				}
 			],
-			"actions": [
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 871231291805168,
-					"parameters": {
-						"layer": "\"UI\"",
-						"interactive": true
-					}
-				}
-			],
+			"actions": [],
 			"sid": 572553515232636,
 			"children": [
 				{
@@ -380,6 +406,33 @@
 						}
 					],
 					"sid": 248703828497919
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 309939073933476,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 890648031839182,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 767052412470255
 				}
 			]
 		},
@@ -577,6 +630,33 @@
 						}
 					],
 					"sid": 801068766540436
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 886266828515666,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 750672128390373,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 153110988050579
 				}
 			]
 		},
@@ -652,6 +732,33 @@
 						}
 					],
 					"sid": 989245942803708
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 273744988497395,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 305413496650239,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 809335647266109
 				}
 			]
 		}

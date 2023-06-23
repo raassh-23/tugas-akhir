@@ -364,6 +364,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 258876228440690,
+					"parameters": {
+						"variable": "isDragging"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "Clickable",
 					"sid": 724729307079613,
@@ -424,6 +433,15 @@
 					"parameters": {
 						"instance-variable": "clickable"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 142684687217752,
+					"parameters": {
+						"variable": "isDragging"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "is-boolean-instance-variable-set",

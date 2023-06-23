@@ -3271,6 +3271,33 @@
 									"sid": 497946076669448
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 951900209065730,
+									"parameters": {
+										"variable": "debugCommand",
+										"comparison": 0,
+										"value": "\"update\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 595825868934322,
+									"parameters": {
+										"variable": "shouldShowUpdate",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 820123553529469
 						}
 					]
 				}

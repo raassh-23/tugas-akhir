@@ -8419,6 +8419,15 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
+									"sid": 955541531874900,
+									"parameters": {
+										"layer": "\"Tutorial\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
 									"sid": 307101517186336,
 									"parameters": {
 										"layer": "\"Game\"",
@@ -8508,6 +8517,15 @@
 									"sid": 598480893873180,
 									"parameters": {
 										"layer": "\"UI\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 773468884641315,
+									"parameters": {
+										"layer": "\"Tutorial\"",
 										"interactive": true
 									}
 								},
@@ -9356,78 +9374,6 @@
 					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-on-layer",
-							"objectClass": "Button",
-							"sid": 750349598716819,
-							"parameters": {
-								"layer": "\"UI\""
-							}
-						},
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 215834844474517,
-							"parameters": {
-								"object": "Button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 269066054942567,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 159684370609250,
-									"parameters": {
-										"variable": "isDragging"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 955744473200421,
-									"parameters": {
-										"instance-variable": "isDisabled",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 166913433456070
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 956231560751856
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 572958099347055,
-									"parameters": {
-										"instance-variable": "isDisabled",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 212568648733620
-						}
-					]
-				},
-				{
 					"functionName": "HideRobotCount",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -9542,6 +9488,81 @@
 									"sid": 675671629985290
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-layer",
+							"objectClass": "Button",
+							"sid": 819888363425237,
+							"parameters": {
+								"layer": "\"UI\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 838772516590065,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 448350597897647,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 342861199471645,
+									"parameters": {
+										"variable": "isDragging"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 999125515913659,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 848646976779847,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 178195219966059
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 684707321757705,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 813879212304153,
+							"disabled": true
 						}
 					]
 				}
