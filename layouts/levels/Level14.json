@@ -1736,7 +1736,7 @@
 						"reachedGoal": false,
 						"id": 1,
 						"gem": 1,
-						"health": 1,
+						"health": 2,
 						"ammo": 0
 					},
 					"behaviors": {

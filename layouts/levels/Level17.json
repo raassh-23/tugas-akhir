@@ -4476,7 +4476,7 @@
 						"reachedGoal": false,
 						"id": 1,
 						"gem": 2,
-						"health": 3,
+						"health": 2,
 						"ammo": 0
 					},
 					"behaviors": {
@@ -4594,7 +4594,7 @@
 						"reachedGoal": false,
 						"id": 2,
 						"gem": 2,
-						"health": 3,
+						"health": 1,
 						"ammo": 0
 					},
 					"behaviors": {
