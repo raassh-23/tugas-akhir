@@ -598,15 +598,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 3,
+								"initial-animation": "non-destroyable",
+								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 205,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -725,15 +723,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 3,
+								"initial-animation": "non-destroyable",
+								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 209,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -810,15 +806,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 3,
+								"initial-animation": "non-destroyable",
+								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 213,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {

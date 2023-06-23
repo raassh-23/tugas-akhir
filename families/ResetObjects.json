@@ -9,6 +9,7 @@
 		"Player",
 		"MovingEnemyCollision",
 		"Gem",
-		"Portal"
+		"Portal",
+		"SolidObstacle"
 	]
 }

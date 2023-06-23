@@ -3,15 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 418134240527575,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "destroyable",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 641168094094909
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
@@ -59,7 +51,18 @@
 						"imageSpriteId": 1583354,
 						"useCollisionPoly": true,
 						"duration": 1
-					},
+					}
+				],
+				"sid": 864550598904097,
+				"name": "non-destroyable",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
 					{
 						"width": 64,
 						"height": 64,
@@ -68,7 +71,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 349310,
+						"imageSpriteId": 1425878,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -80,7 +83,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4655584,
+						"imageSpriteId": 2442304,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -92,13 +95,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 310693,
+						"imageSpriteId": 3500086,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 864550598904097,
-				"name": "Animation 1",
+				"sid": 676763320156189,
+				"name": "destroyable",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

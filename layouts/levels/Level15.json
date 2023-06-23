@@ -623,15 +623,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "non-destroyable",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 1882,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -1268,15 +1266,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "non-destroyable",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 1874,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -1306,15 +1302,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "non-destroyable",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 1875,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {
@@ -1344,15 +1338,13 @@
 							"type": "SolidObstacle",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "non-destroyable",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 1876,
-							"instanceVariables": {
-								"destroyable": false
-							},
+							"instanceVariables": {},
 							"behaviors": {
 								"Solid": {
 									"properties": {

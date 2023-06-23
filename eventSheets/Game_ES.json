@@ -5500,11 +5500,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-boolean-instance-variable-set",
+									"id": "is-animation-playing",
 									"objectClass": "SolidObstacle",
-									"sid": 638186992988429,
+									"sid": 153650860805758,
 									"parameters": {
-										"instance-variable": "destroyable"
+										"animation": "\"destroyable\""
 									}
 								}
 							],
