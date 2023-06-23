@@ -425,6 +425,8 @@ function getVariableValue(player, name) {
  * sortBy: "actions" | "codeBlocks" | "timeMs",
  * order: "asc" | "desc"
  * }} options 
+ * 
+ * @returns {boolean} true if the leaderboard is not empty, false otherwise
  */
 async function showLeaderboard(runtime, options) {
 	const {
@@ -500,6 +502,8 @@ async function showLeaderboard(runtime, options) {
 			button.instVars.isDisabled = page >= maxPage;
 		}
 	}
+
+	return count > 0;
 }
 
 /**

@@ -2518,20 +2518,6 @@
 							"properties": {
 								"destroy": true
 							}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 0.125,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 10,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
 						}
 					},
 					"world": {

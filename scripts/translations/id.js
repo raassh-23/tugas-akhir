@@ -11,6 +11,8 @@ const id = {
                 'steps': 'Langkah',
                 'code-blocks': 'Blok',
                 'date': 'Tanggal',
+                'error': 'Error memuat papan peringkat, coba lagi nanti',
+                'empty': 'Papan peringkat kosong, jadilah yang pertama menambahkan skormu!',
             },
             'credits': {
                 'title': 'Kredit',
@@ -49,6 +51,8 @@ const id = {
                 'title': 'Hebat!',
                 'add-leaderboard': 'Tambahkan ke papan peringkat?',
                 'add-leaderboard-success': 'Berhasil ditambahkan',
+                'add-leaderboard-no-name': 'Kamu harus memasukkan nama kamu',
+                'add-leaderboard-error': 'Gagal menambahkan ke papan peringkat, coba lagi nanti',
                 'username-placeholder': 'Nama kamu',
                 'target': 'Target: {{value}}',
                 'best': 'Terbaik: {{value}}',

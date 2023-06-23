@@ -11,6 +11,8 @@ const en = {
                 'steps': 'Steps',
                 'code-blocks': 'Blocks',
                 'date': 'Date',
+                'error': 'Error loading leaderboard, try again later',
+                'empty': 'Leaderboard is empty, be the first to add your score!',
             },
             'credits': {
                 'title': 'Credits',
@@ -49,6 +51,8 @@ const en = {
                 'title': 'Good Job!',
                 'add-leaderboard': 'Add to leaderboard?',
                 'add-leaderboard-success': 'Successfully added',
+                'add-leaderboard-no-name': 'You need to enter your name',
+                'add-leaderboard-error': 'Error adding to leaderboard, try again later',
                 'username-placeholder': 'Your name',
                 'target': 'Target: {{value}}',
                 'best': 'Best: {{value}}',

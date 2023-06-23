@@ -7240,42 +7240,52 @@
 									],
 									"actions": [
 										{
-											"id": "set-active",
+											"id": "set-elem-attribute",
 											"objectClass": "TextInputName",
-											"sid": 499777999045299,
-											"behaviorType": "Sine",
+											"sid": 980523976285842,
 											"parameters": {
-												"state": "active"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 690480632989473,
-											"parameters": {
-												"seconds": "0.25"
-											}
-										},
-										{
-											"id": "set-active",
-											"objectClass": "TextInputName",
-											"sid": 827598280193094,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "inactive"
-											}
-										},
-										{
-											"id": "set-cycle-position",
-											"objectClass": "TextInputName",
-											"sid": 458316485480402,
-											"behaviorType": "Sine",
-											"parameters": {
-												"cycle-position": "0"
+												"attribute-name": "\"class\"",
+												"attribute-value": "\"text-input is-invalid\""
 											}
 										}
 									],
 									"sid": 643789937931812,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "UIText",
+													"sid": 178907520985222,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "\"game-over-leaderboard-error\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "UIText",
+													"sid": 792688376923112,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "UIText",
+													"sid": 119826689167055,
+													"parameters": {
+														"text": "Functions.Translate(\"game.game-over.add-leaderboard-no-name\", \"\")"
+													}
+												}
+											],
+											"sid": 116109176876887
+										}
+									],
 									"isOrBlock": true
 								},
 								{
@@ -7333,28 +7343,7 @@
 										},
 										{
 											"type": "script",
-											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tawait leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t);\n} catch(error) {\n\tconsole.error(error);\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
-										},
-										{
-											"id": "wait-for-previous-actions",
-											"objectClass": "System",
-											"sid": 845445275656187
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Loading",
-											"sid": 557721659323232,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "UIText",
-											"sid": 542553117495360,
-											"parameters": {
-												"visibility": "visible"
-											}
+											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tawait leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t);\n\t\n\truntime.callFunction(\"AddToLeaderboardSuccess\")\n} catch(error) {\n\tconsole.error(error);\n\t\n\tlocalVars.isError = true;\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
 										}
 									],
 									"sid": 617339742470544
@@ -7441,6 +7430,174 @@
 					]
 				},
 				{
+					"functionName": "AddToLeaderboardSuccess",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 821893589994214,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"game-over-leaderboard-status\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Loading",
+							"sid": 654839638077558,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 450916672712473,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 138242369789208
+				},
+				{
+					"functionName": "AddToLeaderboardError",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TextInputName",
+							"sid": 806821871991843,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-elem-attribute",
+							"objectClass": "TextInputName",
+							"sid": 758013379004399,
+							"parameters": {
+								"attribute-name": "\"class\"",
+								"attribute-value": "\"text-input is-invalid\""
+							}
+						}
+					],
+					"sid": 343868924380953,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 541505018488090,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-leaderboard-status\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "UIText",
+									"sid": 964785249007106,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Loading",
+									"sid": 602027913598776,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 583289218515602
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 847196340931191,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-leaderboard-error\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "UIText",
+									"sid": 193510875863385,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 758908103698386,
+									"parameters": {
+										"text": "Functions.Translate(\"game.game-over.add-leaderboard-error\", \"\")"
+									}
+								}
+							],
+							"sid": 876300954791169
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 419732765252556,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"game-over-ok\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 915798851828829,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 745624087104928
+						}
+					]
+				},
+				{
 					"functionName": "GetBlockCount",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -7487,6 +7644,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-elem-attribute",
+							"objectClass": "TextInputName",
+							"sid": 228150287351654,
+							"parameters": {
+								"attribute-name": "\"class\"",
+								"attribute-value": "\"text-input\""
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 914188421270284,
@@ -7496,64 +7662,7 @@
 							}
 						}
 					],
-					"sid": 781591767916452
-				},
-				{
-					"functionName": "AddToLeaderboardError",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "TextInputName",
-							"sid": 688061032974825,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-active",
-							"objectClass": "TextInputName",
-							"sid": 135536650348492,
-							"behaviorType": "Sine",
-							"parameters": {
-								"state": "active"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 949387563176670,
-							"parameters": {
-								"seconds": "0.25"
-							}
-						},
-						{
-							"id": "set-active",
-							"objectClass": "TextInputName",
-							"sid": 554558033128301,
-							"behaviorType": "Sine",
-							"parameters": {
-								"state": "inactive"
-							}
-						},
-						{
-							"id": "set-cycle-position",
-							"objectClass": "TextInputName",
-							"sid": 659278388427169,
-							"behaviorType": "Sine",
-							"parameters": {
-								"cycle-position": "0"
-							}
-						}
-					],
-					"sid": 901093444505180,
+					"sid": 781591767916452,
 					"children": [
 						{
 							"eventType": "block",
@@ -7561,11 +7670,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 685997052453206,
+									"sid": 274817475089360,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-leaderboard-status\""
+										"value": "\"game-over-leaderboard-error\""
 									}
 								}
 							],
@@ -7573,47 +7682,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "UIText",
-									"sid": 330126792286263,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "Loading",
-									"sid": 199258291186624,
+									"sid": 110019727639733,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 934440643126036
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Button",
-									"sid": 238658217860542,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"game-over-ok\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Button",
-									"sid": 207344693689276,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 964854083124326
+							"sid": 375932102019547
 						}
 					]
 				},

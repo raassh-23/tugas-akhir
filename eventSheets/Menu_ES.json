@@ -2139,6 +2139,15 @@
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 793543003868733,
+					"parameters": {
+						"variable": "leaderboardPage",
+						"value": "1"
+					}
+				},
+				{
 					"callFunction": "GetLeaderboard",
 					"sid": 968215976878966
 				}
@@ -2172,6 +2181,15 @@
 					"parameters": {
 						"variable": "leaderboardSortBy",
 						"value": "tokenat(SORT_BY_REAL_VALUES, Dropdown.SelectedIndex, \",\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 164566240868936,
+					"parameters": {
+						"variable": "leaderboardPage",
+						"value": "1"
 					}
 				},
 				{
@@ -2277,8 +2295,26 @@
 					}
 				},
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 942323816522534,
+					"parameters": {
+						"layer": "\"LeaderboardError\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 985306673450520,
+					"parameters": {
+						"layer": "\"LeaderboardError\"",
+						"interactive": false
+					}
+				},
+				{
 					"type": "script",
-					"script": "const {\n\tleaderboardPage: page,\n\tleaderboardLevel: level,\n\tleaderboardSortBy: sortBy,\n} = runtime.globalVars;\n\nawait showLeaderboard(\n\truntime,\n\t{\n\t\tlevel,\n\t\tpage,\n\t\tsortBy\n\t},\n);"
+					"script": "const {\n\tleaderboardPage: page,\n\tleaderboardLevel: level,\n\tleaderboardSortBy: sortBy,\n} = runtime.globalVars;\n\ntry {\n\tconst isNotEmpty = await showLeaderboard(\n\t\truntime,\n\t\t{\n\t\t\tlevel,\n\t\t\tpage,\n\t\t\tsortBy\n\t\t},\n\t);\n\t\n\truntime.callFunction(\"GetLeaderboardSuccess\", isNotEmpty);\n} catch(error) {\n\tconsole.log(error);\n\truntime.callFunction(\"GetLeaderboardError\");\n}"
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -2302,11 +2338,33 @@
 						"layer": "\"LeaderboardLoading\"",
 						"interactive": false
 					}
-				},
+				}
+			],
+			"sid": 837762995904189
+		},
+		{
+			"functionName": "GetLeaderboardSuccess",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "notEmpty",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 793470748107045
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 327960693434479,
+					"sid": 731767824483838,
 					"parameters": {
 						"layer": "\"LeaderboardContent\"",
 						"visibility": "visible"
@@ -2315,14 +2373,112 @@
 				{
 					"id": "set-layer-interactive",
 					"objectClass": "System",
-					"sid": 535033796512822,
+					"sid": 525995857952796,
 					"parameters": {
 						"layer": "\"LeaderboardContent\"",
 						"interactive": true
 					}
 				}
 			],
-			"sid": 837762995904189
+			"sid": 225538325059327,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 156773920647685,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"leaderboard-empty\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 133683234953350,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 216998125566493,
+									"parameters": {
+										"variable": "notEmpty"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "UIText",
+									"sid": 873733582860520,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 763447141031808
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 613710394231961
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "UIText",
+									"sid": 267899663227595,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 991280334279172
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "GetLeaderboardError",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 982170777327336,
+					"parameters": {
+						"layer": "\"LeaderboardError\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 527361760509585,
+					"parameters": {
+						"layer": "\"LeaderboardError\"",
+						"interactive": true
+					}
+				}
+			],
+			"sid": 947759054404253
 		},
 		{
 			"functionName": "showMenuPopUp",
