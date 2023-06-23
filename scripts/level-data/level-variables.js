@@ -22,6 +22,7 @@ const levelVariables = {
     17: ["gem", "health"],
     18: ["gem", "health"],
     19: ["gem", "health"],
+    20: ["gem", "health"],
 };
 
 export default levelVariables;
