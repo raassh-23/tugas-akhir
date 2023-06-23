@@ -1,0 +1,36 @@
+{
+	"name": "Level22_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 397936459493430
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 706337251273701,
+					"parameters": {
+						"variable": "level",
+						"value": "22"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 968343360524984
+		}
+	],
+	"sid": 586702243671883
+}

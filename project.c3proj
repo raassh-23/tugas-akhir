@@ -353,9 +353,8 @@
 					"Level19",
 					"Level20",
 					"Level21",
-					"OldLevel10",
-					"OldLevel12",
-					"OldLevel16"
+					"Level22",
+					"OldLevel10"
 				],
 				"subfolders": [],
 				"name": "levels"
@@ -393,7 +392,8 @@
 					"Level18_ES",
 					"Level19_ES",
 					"Level20_ES",
-					"Level21_ES"
+					"Level21_ES",
+					"Level22_ES"
 				],
 				"subfolders": [],
 				"name": "levels"
