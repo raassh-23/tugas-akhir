@@ -97,6 +97,38 @@ const levelTarget = {
         actions: 37,
         codeBlocks: 7,
     },
+    23: {
+        actions: 63,
+        codeBlocks: 7,
+    },
+    24: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    25: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    26: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    27: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    28: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    29: {
+        actions: 1,
+        codeBlocks: 1,
+    },
+    30: {
+        actions: 1,
+        codeBlocks: 1,
+    },
 }
 
 export default levelTarget;

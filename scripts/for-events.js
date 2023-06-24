@@ -119,6 +119,8 @@ async function runCommands(runtime, players) {
 		for (const player of players) {
 			runner.reset();
 
+			player.moveToTop();
+
 			runtime.globalVars.currentPlayerId = player.instVars.id;
 
 			runtime.callFunction("SetShownPlayer", player.instVars.id);

@@ -1,0 +1,36 @@
+{
+	"name": "Level23_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 687566411648738
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 513526800685876,
+					"parameters": {
+						"variable": "level",
+						"value": "23"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 281045579956237
+		}
+	],
+	"sid": 339045565288302
+}

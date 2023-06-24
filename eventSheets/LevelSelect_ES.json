@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "MAX_PAGE",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

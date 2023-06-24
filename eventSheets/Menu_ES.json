@@ -93,7 +93,7 @@
 			"eventType": "variable",
 			"name": "MAX_LEVEL",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "30",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

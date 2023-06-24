@@ -1,0 +1,36 @@
+{
+	"name": "Level30_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Game_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 480320304622135
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 947804366967816,
+					"parameters": {
+						"variable": "level",
+						"value": "30"
+					}
+				},
+				{
+					"type": "script",
+					"script": "setupLevel(runtime);"
+				}
+			],
+			"sid": 364137895727168
+		}
+	],
+	"sid": 326283304354145
+}
