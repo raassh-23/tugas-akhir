@@ -9702,6 +9702,260 @@
 							"disabled": true
 						}
 					]
+				},
+				{
+					"functionName": "checkTutorial",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 790888296592759,
+							"parameters": {
+								"variable": "tutorialStep",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 213870279885590,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "LevelScoreData",
+									"sid": 554009939397180,
+									"parameters": {
+										"x": "level",
+										"y": "SHOW_TUTORIAL_INDEX",
+										"comparison": 0,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 520968508107079,
+									"parameters": {
+										"layer": "\"Tutorial\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 306841091053600,
+									"parameters": {
+										"layer": "\"Tutorial\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 600944529177447,
+									"parameters": {
+										"layer": "\"Tutorial0\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 815775977051186,
+									"parameters": {
+										"layer": "\"Tutorial0\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 161413146466302,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 686416492018464,
+											"parameters": {
+												"count": "maxTutorial"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 329824548723605,
+											"parameters": {
+												"layer": "\"Tutorial\"&loopindex+1",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 235238673991306,
+											"parameters": {
+												"layer": "\"Tutorial\"&loopindex+1",
+												"interactive": false
+											}
+										}
+									],
+									"sid": 599213088856032
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 112742327658556
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 879955604246526,
+									"parameters": {
+										"layer": "\"Tutorial\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 748675934990331,
+									"parameters": {
+										"layer": "\"Tutorial\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 388756732813899
+						}
+					]
+				},
+				{
+					"functionName": "tutorialFinished",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "LevelScoreData",
+							"sid": 308690858589660,
+							"parameters": {
+								"x": "level",
+								"y": "SHOW_TUTORIAL_INDEX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 443769151411361,
+							"parameters": {
+								"layer": "\"Tutorial\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 161497359071732,
+							"parameters": {
+								"layer": "\"Tutorial\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 340124743297957
+				},
+				{
+					"functionName": "showTutorial",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "old",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 343989684417570
+						},
+						{
+							"name": "new",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 591510298399251
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 968800594794419,
+							"parameters": {
+								"layer": "\"Tutorial\"&old",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 426446462734203,
+							"parameters": {
+								"layer": "\"Tutorial\"&old",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 590065150061232,
+							"parameters": {
+								"layer": "\"Tutorial\"&new",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 319799460596030,
+							"parameters": {
+								"layer": "\"Tutorial\"&new",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 584175518373631
 				}
 			],
 			"sid": 991077192111983

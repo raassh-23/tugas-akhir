@@ -31,35 +31,58 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 269243928964695,
+					"sid": 213830114322139,
 					"parameters": {
-						"variable": "tutorialStep",
-						"value": "0"
+						"variable": "maxTutorial",
+						"value": "3"
+					}
+				},
+				{
+					"callFunction": "checkTutorial",
+					"sid": 161579811902586
+				}
+			],
+			"sid": 278304545944696
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 977430621996890,
+					"parameters": {
+						"layer": "\"Tutorial\""
 					}
 				}
 			],
-			"sid": 278304545944696,
+			"actions": [],
+			"sid": 271962288208915,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-at-xy",
-							"objectClass": "LevelScoreData",
-							"sid": 235538471831376,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 266387156689634,
 							"parameters": {
-								"x": "level",
-								"y": "SHOW_TUTORIAL_INDEX",
+								"variable": "tutorialStep",
 								"comparison": 0,
-								"value": "-1"
+								"value": "0"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 448236459234365
 						}
 					],
 					"actions": [
 						{
 							"id": "set-enabled",
 							"objectClass": "HelpObject",
-							"sid": 536812711959603,
+							"sid": 876165706044175,
 							"behaviorType": "DragDrop",
 							"parameters": {
 								"state": "disabled"
@@ -68,7 +91,7 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 196948764403190,
+							"sid": 781127609030880,
 							"parameters": {
 								"layer": "\"ActiveCommandList\"",
 								"interactive": false
@@ -77,48 +100,14 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 878972308820496,
+							"sid": 624197238956469,
 							"parameters": {
 								"layer": "\"AvailableCommandList\"",
 								"interactive": false
 							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 556744073621697,
-							"parameters": {
-								"layer": "\"Tutorial\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 571381528928957,
-							"parameters": {
-								"layer": "\"Tutorial\"",
-								"interactive": true
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UITextBorder",
-							"sid": 862151731142050,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "UIPanel2",
-							"sid": 565901020212719,
-							"parameters": {
-								"visibility": "invisible"
-							}
 						}
 					],
-					"sid": 468334676560086,
+					"sid": 595605209699944,
 					"children": [
 						{
 							"eventType": "block",
@@ -126,7 +115,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Button",
-									"sid": 155931532207027,
+									"sid": 873379831862384,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
@@ -138,40 +127,14 @@
 								{
 									"id": "set-boolean-instvar",
 									"objectClass": "Button",
-									"sid": 704773088473820,
+									"sid": 316070865005346,
 									"parameters": {
 										"instance-variable": "isDisabled",
 										"value": "true"
 									}
 								}
 							],
-							"sid": 790412218574864
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel2",
-									"sid": 819404109541088,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"tutorial1-panel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "UIPanel2",
-									"sid": 855568172163782,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 494555923748079
+							"sid": 274785598790833
 						}
 					]
 				},
@@ -179,423 +142,187 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 230776105943078
-						}
-					],
-					"actions": [
+							"sid": 470537947208698,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
 						{
-							"id": "set-layer-visible",
+							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 705421186808221,
-							"parameters": {
-								"layer": "\"Tutorial\"",
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 295773506353989
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 874468681166842,
-					"parameters": {
-						"variable": "tutorialStep",
-						"comparison": 0,
-						"value": "1"
-					}
-				},
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 425532058737697,
-					"parameters": {
-						"layer": "\"Tutorial\""
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 938661729167633
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 378685197131431,
-					"parameters": {
-						"seconds": "0"
-					}
-				}
-			],
-			"sid": 390627715595609,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 818114106548232,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"tutorial1-panel\""
-							}
+							"sid": 631323038686520
 						}
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "UIPanel2",
-							"sid": 537509949460005
+							"callFunction": "showTutorial",
+							"sid": 506646147697717,
+							"parameters": [
+								"0",
+								"1"
+							]
 						}
 					],
-					"sid": 777669590595957
+					"sid": 274179692076603
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 973389415004378,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 800503235805643,
 							"parameters": {
-								"instance-variable": "id",
+								"variable": "tutorialStep",
 								"comparison": 0,
-								"value": "\"tutorial2-panel\""
+								"value": "2"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 704649471826721
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "UIPanel2",
-							"sid": 376534854435218,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"callFunction": "showTutorial",
+							"sid": 126137911168110,
+							"parameters": [
+								"1",
+								"2"
+							]
 						}
 					],
-					"sid": 687739373085588
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 113855581649801,
-					"parameters": {
-						"variable": "tutorialStep",
-						"comparison": 0,
-						"value": "2"
-					}
-				},
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 411159238745802,
-					"parameters": {
-						"layer": "\"Tutorial\""
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 177388271308854
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 617413715123027,
-					"parameters": {
-						"seconds": "0"
-					}
-				}
-			],
-			"sid": 269840151822975,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 561518835391682,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"tutorial2-panel\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "UIPanel2",
-							"sid": 439832569339253
-						}
-					],
-					"sid": 688096723883817
+					"sid": 251041423094647
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 286017079320869,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 164071314539401,
 							"parameters": {
-								"instance-variable": "id",
+								"variable": "tutorialStep",
 								"comparison": 0,
-								"value": "\"tutorial3-panel\""
+								"value": "3"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 277166102725378
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "UIPanel2",
-							"sid": 569124673443591,
+							"callFunction": "showTutorial",
+							"sid": 861924047244906,
+							"parameters": [
+								"2",
+								"3"
+							]
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "HelpObject",
+							"sid": 108533846197724,
+							"behaviorType": "DragDrop",
 							"parameters": {
-								"visibility": "visible"
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 806904757087743,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 151106778399556,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": true
 							}
 						}
 					],
-					"sid": 794236013576621
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 511940430896382,
-					"parameters": {
-						"variable": "tutorialStep",
-						"comparison": 0,
-						"value": "3"
-					}
-				},
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 198284245043193,
-					"parameters": {
-						"layer": "\"Tutorial\""
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 613423932724694
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "HelpObject",
-					"sid": 108533846197724,
-					"behaviorType": "DragDrop",
-					"parameters": {
-						"state": "enabled"
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 806904757087743,
-					"parameters": {
-						"layer": "\"ActiveCommandList\"",
-						"interactive": true
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 151106778399556,
-					"parameters": {
-						"layer": "\"AvailableCommandList\"",
-						"interactive": true
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 874575741235810,
-					"parameters": {
-						"seconds": "0"
-					}
-				}
-			],
-			"sid": 970394961304579,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 592205038398970,
+					"children": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "UIPanel2",
-							"sid": 812777204853149,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"tutorial3-panel\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 627046168054828,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 267025900204625,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 475443413936004
 						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "UIPanel2",
-							"sid": 362780340246620
-						}
-					],
-					"sid": 933820959003757
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "UITextBorder",
-							"sid": 336784283051791,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 500501721172106,
 							"parameters": {
-								"instance-variable": "id",
+								"variable": "tutorialStep",
 								"comparison": 0,
-								"value": "\"tutorial4\""
+								"value": "3"
 							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 571269255570675,
+							"parameters": {
+								"instance-variable": "gem",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 926866497797337
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "UITextBorder",
-							"sid": 510129351693942,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"callFunction": "tutorialFinished",
+							"sid": 598246401711404
 						}
 					],
-					"sid": 910518641313483
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 627046168054828,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"play\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Button",
-							"sid": 267025900204625,
-							"parameters": {
-								"instance-variable": "isDisabled",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 475443413936004
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 247431162466843,
-					"parameters": {
-						"variable": "tutorialStep",
-						"comparison": 0,
-						"value": "3"
-					}
-				},
-				{
-					"id": "layer-is-visible",
-					"objectClass": "System",
-					"sid": 767895176263952,
-					"parameters": {
-						"layer": "\"Tutorial\""
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 553991768086864,
-					"parameters": {
-						"instance-variable": "gem",
-						"comparison": 0,
-						"value": "0"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 110256691662171
-				}
-			],
-			"actions": [
-				{
-					"id": "set-at-xy",
-					"objectClass": "LevelScoreData",
-					"sid": 264071652385156,
-					"parameters": {
-						"x": "level",
-						"y": "SHOW_TUTORIAL_INDEX",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 836503268772279,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UITextBorder",
-							"sid": 157894869234334,
-							"parameters": {
-								"instance-variable": "id",
-								"comparison": 0,
-								"value": "\"tutorial4\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "UITextBorder",
-							"sid": 658409252889057
-						}
-					],
-					"sid": 978021599915850
+					"sid": 332370312917525
 				}
 			]
 		}

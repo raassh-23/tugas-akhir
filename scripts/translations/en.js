@@ -101,7 +101,7 @@ const en = {
                 },
                 'level-4': {
                     '0': 'The portal is not open yet!',
-                    '1': 'You have to collect gems to open the portal',
+                    '1': 'You have to collect gems with The Collect Gem Block to open the portal',
                     '2': 'The number of gems you need to collect is saved in a variable',
                     '3': 'Collect gems until this variable is 0',
                 },

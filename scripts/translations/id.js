@@ -101,7 +101,7 @@ const id = {
                 },
                 'level-4': {
                     '0': 'Portalnya masih belum terbuka!',
-                    '1': 'Kamu perlu mengumpulkan permata untuk membukanya',
+                    '1': 'Kamu perlu mengumpulkan permata dengan Blok Ambil Permata untuk membukanya',
                     '2': 'Jumlah permata yang perlu dikumpulkan disimpan di sebuah variabel',
                     '3': 'Kumpulkan permata hingga variabel ini bernilai 0',
                 },
@@ -129,7 +129,7 @@ const id = {
                 },
                 'takegem': {
                     '0': {
-                        'title': 'Perintah Mengambil Permata',
+                        'title': 'Perintah Ambil Permata',
                         'content': 'Blok ini membuat robotmu mengambil permata yang ada di petak yang sama.',
                         'example': 'collectGem()',
                     },
