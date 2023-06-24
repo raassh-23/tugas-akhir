@@ -84,11 +84,11 @@ const id = {
             'tutorial': {
                 'level-1': {
                     '0': 'Bantu GigaBot masuk ke portal!',
-                    '1': 'Drag blok perintah dari sini...',
-                    '2': '...ke area perintah ini',
-                    '3': 'Klik ini untuk menjalakan perintahmu',
+                    '1': 'Drag blok kode dari sini...',
+                    '2': '...ke area kode ini',
+                    '3': 'Klik ini untuk menjalakan kodemu',
                     '4': 'Klik ini lagi untuk mereset',
-                    '5': 'Bagus, sekarang ayo coba susun perintahmu sendiri!',
+                    '5': 'Bagus, sekarang ayo coba susun blok kodenya!',
                 },
                 'level-2': {
                     '0': 'Lihat, ada blok baru!',
@@ -104,6 +104,12 @@ const id = {
                     '1': 'Kamu perlu mengumpulkan permata dengan Blok Ambil Permata untuk membukanya',
                     '2': 'Jumlah permata yang perlu dikumpulkan disimpan di sebuah variabel',
                     '3': 'Kumpulkan permata hingga variabel ini bernilai 0',
+                },
+                'level-6': {
+                    '0': 'Ada semakin banyak GigaBot yang perlu bantuanmu!',
+                    '1': 'Kamu harus menyusun kode yang bisa membantu semua GigaBot ini',
+                    '2': 'GigaBot akan menjalankan kode secara bergantian',
+                    '3': 'Kamu bisa mengklik GigaBot untuk melihat urutan eksekusi, portal tujuannya, dan variabelnya',
                 },
             },
             'blocks': {

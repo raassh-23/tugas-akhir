@@ -84,11 +84,11 @@ const en = {
             'tutorial': {
                 'level-1': {
                     '0': 'Help GigaBot to enter the portal!',
-                    '1': 'Drag the command block from here...',
-                    '2': '...to this command area',
-                    '3': 'Click this to run your command',
+                    '1': 'Drag the code block from here...',
+                    '2': '...to this code area',
+                    '3': 'Click this to run your code',
                     '4': 'Click this again to reset',
-                    '5': 'Well done, now try to arrange the command blocks yourself!',
+                    '5': 'Well done, now try to arrange the code blocks!',
                 },
                 'level-2': {
                     '0': 'Look, a new block!',
@@ -104,6 +104,12 @@ const en = {
                     '1': 'You have to collect gems with The Collect Gem Block to open the portal',
                     '2': 'The number of gems you need to collect is saved in a variable',
                     '3': 'Collect gems until this variable is 0',
+                },
+                'level-6': {
+                    '0': 'There are more GigaBots that need your help!',
+                    '1': 'You must arrange your code that can help all of them',
+                    '2': 'GigaBot will run your code one by one',
+                    '3': 'You can click a GigaBot to see its order, target portal, and variables',
                 },
             },
             'blocks': {

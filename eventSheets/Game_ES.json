@@ -9702,7 +9702,17 @@
 							"disabled": true
 						}
 					]
-				},
+				}
+			],
+			"sid": 991077192111983
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
 					"functionName": "checkTutorial",
 					"functionDescription": "",
@@ -9717,14 +9727,14 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 790888296592759,
+							"sid": 348179172668876,
 							"parameters": {
 								"variable": "tutorialStep",
 								"value": "0"
 							}
 						}
 					],
-					"sid": 213870279885590,
+					"sid": 842979035371558,
 					"children": [
 						{
 							"eventType": "block",
@@ -9732,7 +9742,7 @@
 								{
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
-									"sid": 554009939397180,
+									"sid": 746339739516060,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",
@@ -9745,7 +9755,7 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 520968508107079,
+									"sid": 836907003280039,
 									"parameters": {
 										"layer": "\"Tutorial\"",
 										"visibility": "visible"
@@ -9754,7 +9764,7 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 306841091053600,
+									"sid": 240452011220711,
 									"parameters": {
 										"layer": "\"Tutorial\"",
 										"interactive": true
@@ -9763,7 +9773,7 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 600944529177447,
+									"sid": 655188102574343,
 									"parameters": {
 										"layer": "\"Tutorial0\"",
 										"visibility": "visible"
@@ -9772,14 +9782,14 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 815775977051186,
+									"sid": 478881345894108,
 									"parameters": {
 										"layer": "\"Tutorial0\"",
 										"interactive": true
 									}
 								}
 							],
-							"sid": 161413146466302,
+							"sid": 483876347028402,
 							"children": [
 								{
 									"eventType": "block",
@@ -9787,7 +9797,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 686416492018464,
+											"sid": 325646319262165,
 											"parameters": {
 												"count": "maxTutorial"
 											}
@@ -9797,7 +9807,7 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 329824548723605,
+											"sid": 686249885350713,
 											"parameters": {
 												"layer": "\"Tutorial\"&loopindex+1",
 												"visibility": "invisible"
@@ -9806,14 +9816,14 @@
 										{
 											"id": "set-layer-interactive",
 											"objectClass": "System",
-											"sid": 235238673991306,
+											"sid": 963938831839141,
 											"parameters": {
 												"layer": "\"Tutorial\"&loopindex+1",
 												"interactive": false
 											}
 										}
 									],
-									"sid": 599213088856032
+									"sid": 995012557876734
 								}
 							]
 						},
@@ -9823,14 +9833,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 112742327658556
+									"sid": 774674260414933
 								}
 							],
 							"actions": [
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 879955604246526,
+									"sid": 210096583329501,
 									"parameters": {
 										"layer": "\"Tutorial\"",
 										"visibility": "invisible"
@@ -9839,14 +9849,14 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 748675934990331,
+									"sid": 405640162674505,
 									"parameters": {
 										"layer": "\"Tutorial\"",
 										"interactive": false
 									}
 								}
 							],
-							"sid": 388756732813899
+							"sid": 203118321823348
 						}
 					]
 				},
@@ -9864,7 +9874,7 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "LevelScoreData",
-							"sid": 308690858589660,
+							"sid": 876755442916599,
 							"parameters": {
 								"x": "level",
 								"y": "SHOW_TUTORIAL_INDEX",
@@ -9874,7 +9884,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 443769151411361,
+							"sid": 241668848753215,
 							"parameters": {
 								"layer": "\"Tutorial\"",
 								"visibility": "invisible"
@@ -9883,14 +9893,14 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 161497359071732,
+							"sid": 828724225916895,
 							"parameters": {
 								"layer": "\"Tutorial\"",
 								"interactive": false
 							}
 						}
 					],
-					"sid": 340124743297957
+					"sid": 484552256305071
 				},
 				{
 					"functionName": "showTutorial",
@@ -9921,7 +9931,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 968800594794419,
+							"sid": 922782367041279,
 							"parameters": {
 								"layer": "\"Tutorial\"&old",
 								"visibility": "invisible"
@@ -9930,7 +9940,7 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 426446462734203,
+							"sid": 765613580131346,
 							"parameters": {
 								"layer": "\"Tutorial\"&old",
 								"interactive": false
@@ -9939,7 +9949,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 590065150061232,
+							"sid": 397011416366561,
 							"parameters": {
 								"layer": "\"Tutorial\"&new",
 								"visibility": "visible"
@@ -9948,17 +9958,17 @@
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 319799460596030,
+							"sid": 216652481741689,
 							"parameters": {
 								"layer": "\"Tutorial\"&new",
 								"interactive": true
 							}
 						}
 					],
-					"sid": 584175518373631
+					"sid": 311990543451768
 				}
 			],
-			"sid": 991077192111983
+			"sid": 901734812989130
 		},
 		{
 			"eventType": "group",
