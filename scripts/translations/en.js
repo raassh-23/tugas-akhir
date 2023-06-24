@@ -118,14 +118,21 @@ const en = {
                 'rotate': {
                     '0': {
                         'title': 'Rotate Command',
-                        'content': 'This block makes your robot rotate clockwise.',
+                        'content': 'This block makes your robot rotate 90 degrees clockwise.',
                         'example': 'rotateClockwise()',
                     },
                     '1': {
                         'title': 'Rotate Command',
-                        'content': 'This block makes your robot rotate anti-clockwise.',
+                        'content': 'This block makes your robot rotate 90 degrees anti-clockwise.',
                         'example': 'rotateAntiClockwise()',
                     }
+                },
+                'takegem': {
+                    '0': {
+                        'title': 'Collect Gem Command',
+                        'content': 'This block makes your robot collect a gem that is in the same grid.',
+                        'example': 'collectGem()',
+                    },
                 },
                 'number': {
                     '0': {

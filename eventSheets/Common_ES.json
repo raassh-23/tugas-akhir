@@ -309,35 +309,62 @@
 						"width": "Self.InitialWidth",
 						"height": "Self.initialHeight"
 					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 226490491908593,
-					"parameters": {
-						"variable": "touchedUid",
-						"value": "0"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 320222072479875,
-					"parameters": {
-						"seconds": "0.1"
-					}
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "Clickable",
-					"sid": 853927819045273,
-					"parameters": {
-						"instance-variable": "isPressed",
-						"value": "false"
-					}
 				}
 			],
-			"sid": 168455397104812
+			"sid": 168455397104812,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 326357131574842,
+							"parameters": {
+								"variable": "touchedUid",
+								"comparison": 0,
+								"value": "Clickable.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 908773224006755,
+							"parameters": {
+								"variable": "touchedUid",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 967984871733620
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 249910279794896,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Clickable",
+							"sid": 223031485011185,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 314156745894331
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -908,6 +935,34 @@
 				}
 			],
 			"sid": 280770723004987
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 994480219763198,
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 703628334141005
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 216820134707568,
+					"parameters": {
+						"variable": "touchedUid",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 499648425224841
 		}
 	],
 	"sid": 126636898885233

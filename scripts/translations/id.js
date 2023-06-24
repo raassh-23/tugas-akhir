@@ -118,14 +118,21 @@ const id = {
                 'rotate': {
                     '0': {
                         'title': 'Perintah Berputar',
-                        'content': 'Blok ini memutar robotmu searah jarum jam.',
+                        'content': 'Blok ini memutar robotmu 90 derajat searah jarum jam.',
                         'example': 'rotateClockwise()',
                     },
                     '1': {
                         'title': 'Perintah Berputar',
-                        'content': 'Blok ini memutar robotmu berlawanan jarum jam.',
+                        'content': 'Blok ini memutar robotmu 90 derajat melawan arah jarum jam.',
                         'example': 'rotateAntiClockwise()',
                     }
+                },
+                'takegem': {
+                    '0': {
+                        'title': 'Perintah Mengambil Permata',
+                        'content': 'Blok ini membuat robotmu mengambil permata yang ada di petak yang sama.',
+                        'example': 'collectGem()',
+                    },
                 },
                 'number': {
                     '0': {
