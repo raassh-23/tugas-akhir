@@ -8023,10 +8023,9 @@
 							}
 						},
 						{
-							"id": "set-angle-of-motion",
+							"id": "set-angle",
 							"objectClass": "Bullet",
-							"sid": 910489931083206,
-							"behaviorType": "Bullet",
+							"sid": 271098596248685,
 							"parameters": {
 								"angle": "shootAngle"
 							}

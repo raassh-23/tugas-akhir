@@ -106,8 +106,8 @@ const levelTarget = {
         codeBlocks: 9,
     },
     25: {
-        actions: 1,
-        codeBlocks: 1,
+        actions: 60,
+        codeBlocks: 10,
     },
     26: {
         actions: 1,
