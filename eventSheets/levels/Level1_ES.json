@@ -90,6 +90,24 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 809654095910539,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 427034102050908,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": false
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "UITextBorder",
 							"sid": 461091979003590,
@@ -252,7 +270,26 @@
 					"sid": 649396128336389
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 322392755112881,
+					"parameters": {
+						"layer": "\"ActiveCommandList\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 177837789682077,
+					"parameters": {
+						"layer": "\"AvailableCommandList\"",
+						"interactive": true
+					}
+				}
+			],
 			"sid": 572553515232636,
 			"children": [
 				{

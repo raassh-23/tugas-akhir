@@ -95,6 +95,16 @@ const id = {
                     '1': 'Seret bloknya ke sini untuk melihat gunanya',
                     '2': 'Tanda tanya ini juga bisa diseret ke blok yang ingin kamu lihat gunanya',
                 },
+                'level-3': {
+                    '0': 'Ada batu di depanmu!',
+                    '1': 'Kamu tidak bisa melewati petak yang ada batunya',
+                },
+                'level-4': {
+                    '0': 'Portalnya masih belum terbuka!',
+                    '1': 'Kamu perlu mengumpulkan permata untuk membukanya',
+                    '2': 'Jumlah permata yang perlu dikumpulkan disimpan di sebuah variabel',
+                    '3': 'Kumpulkan permata hingga variabel ini bernilai 0',
+                },
             },
             'blocks': {
                 'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",

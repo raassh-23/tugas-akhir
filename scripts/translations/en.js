@@ -95,6 +95,16 @@ const en = {
                     '1': 'Drag the block to this to see what it does',
                     '2': 'This question mark can also be dragged to the block that you want to see',
                 },
+                'level-3': {
+                    '0': 'There\'s a rock in your way!',
+                    '1': 'You can\'t go through a grid with a rock',
+                },
+                'level-4': {
+                    '0': 'The portal is not open yet!',
+                    '1': 'You have to collect gems to open the portal',
+                    '2': 'The number of gems you need to collect is saved in a variable',
+                    '3': 'Collect gems until this variable is 0',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",

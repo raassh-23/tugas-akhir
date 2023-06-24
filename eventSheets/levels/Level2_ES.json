@@ -66,6 +66,24 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 564791100916100,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 679774054572638,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": false
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 733099230425246,
@@ -94,32 +112,6 @@
 					],
 					"sid": 384961662636985,
 					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UIPanel2",
-									"sid": 411117329556872,
-									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"tutorial5-panel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "UIPanel2",
-									"sid": 301725658560212,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 799762220838627
-						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -200,7 +192,17 @@
 					"sid": 647088844339276
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 479209887435022,
+					"parameters": {
+						"layer": "\"AvailableCommandList\"",
+						"interactive": true
+					}
+				}
+			],
 			"sid": 135676352548638,
 			"children": [
 				{
@@ -411,6 +413,15 @@
 						"x": "level",
 						"y": "SHOW_TUTORIAL_INDEX",
 						"value": "0"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 517271704404548,
+					"parameters": {
+						"layer": "\"ActiveCommandList\"",
+						"interactive": true
 					}
 				}
 			],
