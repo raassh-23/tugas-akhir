@@ -7742,6 +7742,16 @@
 									}
 								},
 								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "Portal",
+									"sid": 875041925964034,
+									"parameters": {
+										"which": "nearest",
+										"x": "Player.X",
+										"y": "Player.Y"
+									}
+								},
+								{
 									"id": "compare-two-values",
 									"objectClass": "System",
 									"sid": 936663677959977,
@@ -7762,10 +7772,10 @@
 								{
 									"id": "compare-opacity",
 									"objectClass": "Portal",
-									"sid": 124005491296106,
+									"sid": 471082570845719,
 									"parameters": {
-										"comparison": 0,
-										"opacity": "100"
+										"comparison": 4,
+										"opacity": "90"
 									}
 								}
 							],
