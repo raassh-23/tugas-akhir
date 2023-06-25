@@ -150,8 +150,7 @@ export default class ConditionalCommand extends CommandsContainer {
             .replace(/ ! /g, ' not ')
             .replace(/ = /g, ' == ')
             .replace(/%/g, 'mod')
-            .replace(/x/g, '*')
-            .replace(/\s+/g, '');;
+            .replace(/x/g, '*');
     }
 
     /**
