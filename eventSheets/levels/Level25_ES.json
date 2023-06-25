@@ -27,9 +27,263 @@
 				{
 					"type": "script",
 					"script": "setupLevel(runtime);"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 663589651744669,
+					"parameters": {
+						"variable": "maxTutorial",
+						"value": "2"
+					}
+				},
+				{
+					"callFunction": "checkTutorial",
+					"sid": 750501895096313
 				}
 			],
 			"sid": 893103169298844
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 631864280470578,
+					"parameters": {
+						"layer": "\"Tutorial\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 734080825560102,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 542951617552195,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 962734871493327
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "HelpObject",
+							"sid": 627213875915939,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 803477459887289,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 239638841694743,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 449073805651526,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 614659167975139,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 650339550960489,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 397600251788149
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 283467166576549,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 471227395765304
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "showTutorial",
+							"sid": 924473942720232,
+							"parameters": [
+								"0",
+								"1"
+							]
+						}
+					],
+					"sid": 494806297627181
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 346810070902283,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 319852791929525
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "showTutorial",
+							"sid": 682413154997898,
+							"parameters": [
+								"1",
+								"2"
+							]
+						}
+					],
+					"sid": 140217297012513
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 904688253067217,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 629921198437934
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tutorialFinished",
+							"sid": 247775792831035
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "HelpObject",
+							"sid": 371896420191693,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 987170220653833,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 697769494877091,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 640226655509486,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 749355878843577,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 805798151814217,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 705502566793541
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 989533816179792

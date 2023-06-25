@@ -148,7 +148,35 @@ const id = {
                     '1': 'Pelajari semuanya dengan menggunakan tanda tanya!',
                 },
                 'level-17': {
-                    '0': 'Gunakan Blok Else If jika kamu ingin memeriksa lebih dari 1 kondisi',
+                    '0': 'Kamu bisa menyeret layar untuk menggeser kameramu',
+                    '1': 'Gunakan Blok Else If jika kamu ingin memeriksa lebih dari 1 kondisi',
+                },
+                'level-19': {
+                    '0': 'Blok For dapat digunakan untuk menjalankan kode yang sama berulang kali',
+                    '1': 'Kamu dapat mengatur berapa kali kode dijalankan dengan cara yang sama dengan mengatur kondisi Blok If',
+                },
+                'level-21': {
+                    '0': 'Ada batu lagi didepanmu, tapi warnanya sedikit berbeda',
+                    '1': 'Kamu bisa menghancurkan batu itu dengan Blok Tembak!',
+                    '2': 'Tapi hati-hati, jumlah peluru GigaBot terbatas',
+                    '3': 'Jumlah peluru disimpan di variabel dan bisa kamu gunakan di kondisi', 
+                },
+                'level-22': {
+                    '0': 'Kamu bisa melakukan penjumlahan dan pengurangan di dalam kondisi',
+                    '1': 'Perhatikan angka di petak sekeliling GigaBot dan cari tahu bagaimana kamu bisa menggunakannya',
+                },
+                'level-23': {
+                    '0': 'Selain penjumlahan dan pengurangan, kamu juga bisa melakukan perkalian, pembagian, dan modulus',
+                    '1': 'Gunakan tanda tanya untuk melihat penjelasan Blok Operator yang ada!',
+                },
+                'level-24': {
+                    '0': 'Kamu bisa mengulangi kode selama kondisi terpenuhi dengan Blok While',
+                    '1': 'Kamu bisa mengatur kondisi Blok While dengan cara yang sama dengan mengatur kondisi Blok If',
+                },
+                'level-25': {
+                    '0': 'Ada slime di depanmu!',
+                    '1': 'Slime bisa mengurangi zirah GigaBot sama seperti duri',
+                    '2': 'Kamu bisa mengalahkan slime dengan menembaknya',
                 },
             },
             'blocks': {

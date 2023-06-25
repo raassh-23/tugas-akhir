@@ -9433,28 +9433,6 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 637568563362712,
-							"parameters": {
-								"variable": "showPlayerId",
-								"value": "id"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "PlayerMarker",
-							"sid": 140502494072034,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "move-to-top",
-							"objectClass": "PlayerMarker",
-							"sid": 590380318100878
-						},
-						{
 							"type": "comment",
 							"text": "this wait is needed because when resetting the level, it recreate the player and newly created child can't be picked on the same tick "
 						},
@@ -9465,6 +9443,28 @@
 							"parameters": {
 								"seconds": "0"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 317432308450794,
+							"parameters": {
+								"variable": "showPlayerId",
+								"value": "id"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PlayerMarker",
+							"sid": 339931824221975,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "PlayerMarker",
+							"sid": 389733705001460
 						}
 					],
 					"sid": 307762600978691,
@@ -9806,7 +9806,6 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
-									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",
@@ -10195,7 +10194,8 @@
 							}
 						}
 					],
-					"sid": 266239803642659
+					"sid": 266239803642659,
+					"disabled": true
 				}
 			],
 			"sid": 371561682910378

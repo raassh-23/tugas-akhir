@@ -148,7 +148,35 @@ const en = {
                     '1': 'Learn all of them by using the question mark!',
                 },
                 'level-17': {
-                    '0': 'Use Else If Block if you want to check more than 1 condition',
+                    '0': 'You can drag the screen to move your camera',
+                    '1': 'Use Else If Block if you want to check more than 1 condition',
+                },
+                'level-19': {
+                    '0': 'For Block can be used to run the same code repeatedly',
+                    '1': 'You can set how many times the code is run in the same way as setting the condition of If Block',
+                },
+                'level-21': {
+                    '0': 'There\'s another rock in front of you, but it has a different color',
+                    '1': 'You can destroy that rock with Shoot Block!',
+                    '2': 'But be careful, GigaBot\'s ammo is limited',
+                    '3': 'The ammo is saved in a variable and you can use it in a condition',
+                },
+                'level-22': {
+                    '0': 'You can do addition and subtraction in a condition',
+                    '1': 'Pay attention to the number in the grids around GigaBot and find out how you can use them',
+                },
+                'level-23': {
+                    '0': 'Besides addition and subtraction, you can also do multiplication, division, and modulus',
+                    '1': 'Use the question mark to see the explanation of the available Operator Blocks!',
+                },
+                'level-24': {
+                    '0': 'You can repeat codes as long as a condition is met with While Block',
+                    '1': 'You can set the condition of While Block in the same way as setting the condition of If Block',
+                },
+                'level-25': {
+                    '0': 'There\'s a slime in front of you!',
+                    '1': 'Slime can reduce GigaBot\'s armor just like spikes',
+                    '2': 'You can defeat slime by shooting it',
                 },
             },
             'blocks': {

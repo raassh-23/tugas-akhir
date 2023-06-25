@@ -31,10 +31,10 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 622014834181616,
+					"sid": 509967967561821,
 					"parameters": {
 						"variable": "maxTutorial",
-						"value": "0"
+						"value": "1"
 					}
 				},
 				{
@@ -144,11 +144,42 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 554408589589790,
+							"sid": 398241938450985,
 							"parameters": {
 								"variable": "tutorialStep",
 								"comparison": 0,
 								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 224750516469295
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "showTutorial",
+							"sid": 512035671540379,
+							"parameters": [
+								"0",
+								"1"
+							]
+						}
+					],
+					"sid": 300353872045187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 632064121368678,
+							"parameters": {
+								"variable": "tutorialStep",
+								"comparison": 0,
+								"value": "2"
 							}
 						},
 						{
