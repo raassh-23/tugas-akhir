@@ -122,6 +122,24 @@ const en = {
                     '7': 'Now you can arrange the code inside If Block that will only be executed if GigaBot needs to collect gems!',
                     '8': 'You can learn If Block and Gem Expression again using the question mark',
                 },
+                'level-9': {
+                    '0': 'Be careful! There are spikes that can damage GigaBot\'s armor',
+                    '1': 'If GigaBot\'s armor is 0, GigaBot will be broken',
+                    '2': 'GigaBot\'s armor value is saved in a variable and you can use it for blocks that need a condition',
+                },
+                'level-10': {
+                    '0': 'A grid can contain a number',
+                    '1': 'You can use the number in a grid in a condition by using Read Block',
+                    '2': 'Remember! You can get code block\'s explanation by using the question mark',
+                },
+                'level-11': {
+                    '0': 'Besides using the number from the same grid, you can also use the number around GigaBot',
+                    '1': 'Use the question mark to see the explanation of the new Read Blocks!',
+                },
+                'level-12': {
+                    '0': 'Sometimes GigaBot needs to do different things if If Block is not executed',
+                    '1': 'Try to use Else Block to do that!',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",
@@ -265,48 +283,48 @@ const en = {
                 'read': {
                     '0': {
                         'title': 'Read Left Expression',
-                        'content': 'This block will give you the value of the tile on the left of your robot.',
+                        'content': 'This block will give you the value of the tile on the left of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readLeft',
                     },
                     '1': {
                         'title': 'Read Up Expression',
-                        'content': 'This block will give you the value of the tile above your robot.',
+                        'content': 'This block will give you the value of the tile above your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readUp',
                     },
                     '2': {
                         'title': 'Read Right Expression',
-                        'content': 'This block will give you the value of the tile on the right of your robot.',
+                        'content': 'This block will give you the value of the tile on the right of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readRight',
                     },
                     '3': {
                         'title': 'Read Down Expression',
-                        'content': 'This block will give you the value of the tile below your robot.',
+                        'content': 'This block will give you the value of the tile below your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readDown',
                     },
                     '4': {
                         'title': 'Read Upper Left Expression',
-                        'content': 'This block will give you the value of the tile on the upper left of your robot.',
+                        'content': 'This block will give you the value of the tile on the upper left of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readUpperLeft',
                     },
                     '5': {
                         'title': 'Read Upper Right Expression',
-                        'content': 'This block will give you the value of the tile on the upper right of your robot.',
+                        'content': 'This block will give you the value of the tile on the upper right of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readUpperRight',
                     },
                     '6': {
                         'title': 'Read Lower Right Expression',
-                        'content': 'This block will give you the value of the tile on the lower right of your robot.',
+                        'content': 'This block will give you the value of the tile on the lower right of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readLowerRight',
                     },
                     '7': {
                         'title': 'Read Lower Left Expression',
-                        'content': 'This block will give you the value of the tile on the lower left of your robot.',
+                        'content': 'This block will give you the value of the tile on the lower left of your robot. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'readLowerLeft',
 
                     },
                     '8': {
                         'title': 'Read Expression',
-                        'content': 'This block will give you the value of the tile that your robot is standing on.',
+                        'content': 'This block will give you the value of the tile that your robot is standing on. If there is no number on that tile, this block will give you the value 0.',
                         'example': 'read',
                     },
                 },

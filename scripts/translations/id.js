@@ -122,6 +122,24 @@ const id = {
                     '7': 'Sekarang kamu bisa menyusun kode di dalam Blok If yang hanya akan dijalankan jika GigaBot perlu mengumpulkan permata!',
                     '8': 'Kamu bisa mempelajari lagi Blok If dan Ekspresi permata menggunakan tanda tanya',
                 },
+                'level-9': {
+                    '0': 'Hati-hati! Ada duri yang bisa merusak zirah GigaBot',
+                    '1': 'Kalau nilai zirah Gigabot sampai 0, GigaBot akan rusak',
+                    '2': 'Nilai zirah GigaBot disimpan ke variabel dan nilainya bisa kamu gunakan untuk blok yang memerlukan kondisi',
+                },
+                'level-10': {
+                    '0': 'Sebuah petak bisa berisikan angka',
+                    '1': 'Angka di petak bisa kamu gunakan di kondisi dengan menggunakan Blok Baca',
+                    '2': 'Ingat! Kamu bisa mendapat penjelasan blok kode dengan menggunakan tanda tanya',
+                },
+                'level-11': {
+                    '0': 'Selain menggunakan angka dari petak yang sama, kamu juga bisa menggunakan angka di sekeliling GigaBot',
+                    '1': 'Gunakan tanda tanya untuk melihat penjelasan Blok Baca yang baru!',
+                },
+                'level-12': {
+                    '0': 'Terkadang GigaBot perlu melakukan aksi lain jika Blok If tidak berjalan',
+                    '1': 'Coba gunakan Blok Else untuk melakukan aksi lain itu!',
+                },
             },
             'blocks': {
                 'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",
@@ -265,47 +283,47 @@ const id = {
                 'read': {
                     '0': {
                         'title': 'Ekspresi Baca Kiri',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKiri',
                     },
                     '1': {
                         'title': 'Ekspresi Baca Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah atas robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaAtas',
                     },
                     '2': {
                         'title': 'Ekspresi Baca Kanan',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKanan',
                     },
                     '3': {
                         'title': 'Ekspresi Baca Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah bawah robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaBawah',
                     },
                     '4': {
                         'title': 'Ekspresi Baca Kiri Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri atas robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKiriAtas',
                     },
                     '5': {
                         'title': 'Ekspresi Baca Kanan Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan atas robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKananAtas',
                     },
                     '6': {
                         'title': 'Ekspresi Baca Kanan Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan bawah robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKananBawah',
                     },
                     '7': {
                         'title': 'Ekspresi Baca Kiri Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri bawah robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'bacaKiriBawah',
                     },
                     '8': {
                         'title': 'Ekspresi Baca',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak yang ditempati robotmu.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak yang ditempati robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0',
                         'example': 'baca',
                     },
                 },
