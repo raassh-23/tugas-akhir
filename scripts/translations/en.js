@@ -157,33 +157,33 @@ const en = {
                     '0': {
                         'title': 'Move Command',
                         'content': 'This block makes your robot move forward.',
-                        'example': 'moveForward()',
+                        'example': '',
                     }
                 },
                 'rotate': {
                     '0': {
                         'title': 'Rotate Command',
                         'content': 'This block makes your robot rotate 90 degrees clockwise.',
-                        'example': 'rotateClockwise()',
+                        'example': '',
                     },
                     '1': {
                         'title': 'Rotate Command',
                         'content': 'This block makes your robot rotate 90 degrees anti-clockwise.',
-                        'example': 'rotateAntiClockwise()',
+                        'example': '',
                     }
                 },
                 'takegem': {
                     '0': {
                         'title': 'Collect Gem Command',
                         'content': 'This block makes your robot collect a gem that is in the same grid.',
-                        'example': 'collectGem()',
+                        'example': '',
                     },
                 },
                 'shoot': {
                     '0': {
                         'title': 'Shoot Command',
                         'content': 'This block makes your robot shoot in the same direction as your robot. The bullet has a range of 5 grids.',
-                        'example': 'shoot()',
+                        'example': '',
                     },
                 },
                 'if': {
@@ -225,133 +225,133 @@ const en = {
                     '0': {
                         'title': 'Number 0 Expression',
                         'content': 'This block gives you the number 0. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '0',
+                        'example': '',
                     },
                     '1': {
                         'title': 'Number 1 Expression',
                         'content': 'This block gives you the number 1. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '1',
+                        'example': '',
                     },
                     '2': {
                         'title': 'Number 2 Expression',
                         'content': 'This block gives you the number 2. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '2',
+                        'example': '',
                     },
                     '3': {
                         'title': 'Number 3 Expression',
                         'content': 'This block gives you the number 3. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '3',
+                        'example': '',
                     },
                     '4': {
                         'title': 'Number 4 Expression',
                         'content': 'This block gives you the number 4. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '4',
+                        'example': '',
                     },
                     '5': {
                         'title': 'Number 5 Expression',
                         'content': 'This block gives you the number 5. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '5',
+                        'example': '',
                     },
                     '6': {
                         'title': 'Number 6 Expression',
                         'content': 'This block gives you the number 6. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '6',
+                        'example': '',
                     },
                     '7': {
                         'title': 'Number 7 Expression',
                         'content': 'This block gives you the number 7. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '7',
+                        'example': '',
                     },
                     '8': {
                         'title': 'Number 8 Expression',
                         'content': 'This block gives you the number 8. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '8',
+                        'example': '',
                     },
                     '9': {
                         'title': 'Number 9 Expression',
                         'content': 'This block gives you the number 9. This block can be combined with other number expressions to make a bigger number.',
-                        'example': '9',
+                        'example': '',
                     },
                 },
                 'variable': {
                     '0': {
                         'title': 'Armor Variable Expression',
                         'content': 'This block gives you the value of your robot\'s armor.',
-                        'example': 'armor',
+                        'example': '',
                     },
                     '1': {
                         'title': 'Bullet Variable Expression',
                         'content': 'This block gives you the value of your robot\'s bullet count.',
-                        'example': 'bullet',
+                        'example': '',
                     },
                     '2': {
                         'title': 'Gem Variable Expression',
                         'content': 'This block gives you the value of the number of gems that your robot need to collect.',
-                        'example': 'gem',
+                        'example': '',
                     },
                 },
                 'read': {
                     '0': {
                         'title': 'Read Left Expression',
                         'content': 'This block will give you the value of the tile on the left of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readLeft',
+                        'example': '',
                     },
                     '1': {
                         'title': 'Read Up Expression',
                         'content': 'This block will give you the value of the tile above your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readUp',
+                        'example': '',
                     },
                     '2': {
                         'title': 'Read Right Expression',
                         'content': 'This block will give you the value of the tile on the right of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readRight',
+                        'example': '',
                     },
                     '3': {
                         'title': 'Read Down Expression',
                         'content': 'This block will give you the value of the tile below your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readDown',
+                        'example': '',
                     },
                     '4': {
                         'title': 'Read Upper Left Expression',
                         'content': 'This block will give you the value of the tile on the upper left of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readUpperLeft',
+                        'example': '',
                     },
                     '5': {
                         'title': 'Read Upper Right Expression',
                         'content': 'This block will give you the value of the tile on the upper right of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readUpperRight',
+                        'example': '',
                     },
                     '6': {
                         'title': 'Read Lower Right Expression',
                         'content': 'This block will give you the value of the tile on the lower right of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readLowerRight',
+                        'example': '',
                     },
                     '7': {
                         'title': 'Read Lower Left Expression',
                         'content': 'This block will give you the value of the tile on the lower left of your robot. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'readLowerLeft',
+                        'example': '',
 
                     },
                     '8': {
                         'title': 'Read Expression',
                         'content': 'This block will give you the value of the tile that your robot is standing on. If there is no number on that tile, this block will give you the value 0.',
-                        'example': 'read',
+                        'example': '',
                     },
                 },
                 'operator': {
                     '0': {
                         'title': 'Add Expression',
-                        'content': 'This block will give you the result of the expression on the left added by the expression on the right of the block',
+                        'content': 'This block will give you the result of the expression on the left added by the expression on the right of the block.',
                         'example': 'expression1 + expression2',
                     },
                     '1': {
                         'title': 'Subtract Expression',
-                        'content': 'This block will give you the result of the expression on the left subtracted by the expression on the right of the block',
+                        'content': 'This block will give you the result of the expression on the left subtracted by the expression on the right of the block.',
                         'example': 'expression1 - expression2',
                     },
                     '2': {
                         'title': 'Multiply Expression',
-                        'content': 'This block will give you the result of the expression on the left multiplied by the expression on the right of the block',
+                        'content': 'This block will give you the result of the expression on the left multiplied by the expression on the right of the block.',
                         'example': 'expression1 * expression2',
                     },
                     '3': {

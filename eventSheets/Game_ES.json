@@ -8791,7 +8791,7 @@
 								},
 								{
 									"type": "script",
-									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content, exampleTitle, example] = getBlockHelp(block);\n\nlocalVars.htmlContent = localVars.htmlContent\n\t.replace(\"{{title}}\", title)\n\t.replace(\"{{content}}\", content)\n\t.replace(\"{{exampleTitle}}\", exampleTitle)\n\t.replace(\"{{example}}\", example);"
+									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content, exampleTitle, example] = getBlockHelp(block);\n\nlocalVars.htmlContent = localVars.htmlContent\n\t.replace(\"{{title}}\", title)\n\t.replace(\"{{content}}\", content);\n\nif (example !== \"\") {\n\tlocalVars.htmlContent = localVars.htmlContent\n\t\t.replace(\"{{exampleTitle}}\", exampleTitle)\n\t\t.replace(\"{{example}}\", example)\n} else {\n\tlocalVars.htmlContent = localVars.htmlContent\n\t\t.replace(\"<p>{{exampleTitle}}</p>\", \"\")\n\t\t.replace(\"<pre class=\\\"code-example\\\">{{example}}</pre>\", \"\")\n}"
 								},
 								{
 									"id": "wait-for-previous-actions",
