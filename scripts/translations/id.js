@@ -111,6 +111,17 @@ const id = {
                     '2': 'GigaBot akan menjalankan kode secara bergantian',
                     '3': 'Kamu bisa mengklik GigaBot untuk melihat urutan eksekusi, portal tujuannya, dan variabelnya',
                 },
+                'level-8': {
+                    '0': 'Kadang GigaBot perlu melakukan hal yang berbeda tergantung kondisinya',
+                    '1': 'Kamu bisa mengecek suatu kondisi dengan Blok If!',
+                    '2': 'Cari Blok If dan letakkan di area kode',
+                    '3': 'Seret Blok Ekspresi Permata ini...',
+                    '4': '...ke area kode ini',
+                    '5': 'Klik tombol ini untuk menutup pop up kondisi',
+                    '6': 'Kamu bisa membuka kembali pop up kondisi Blok If dengan mengklik ini',
+                    '7': 'Sekarang kamu bisa menyusun kode di dalam Blok If yang hanya akan dijalankan jika GigaBot perlu mengumpulkan permata!',
+                    '8': 'Kamu bisa mempelajari lagi Blok If dan Ekspresi permata menggunakan tanda tanya',
+                },
             },
             'blocks': {
                 'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",

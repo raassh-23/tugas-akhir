@@ -111,6 +111,17 @@ const en = {
                     '2': 'GigaBot will run your code one by one',
                     '3': 'You can click a GigaBot to see its order, target portal, and variables',
                 },
+                'level-8': {
+                    '0': 'Sometimes GigaBot needs to do different things depending on the condition',
+                    '1': 'You can check a condition with If Block!',
+                    '2': 'Find If Block and put it in the code area',
+                    '3': 'Drag this Gem Expression Block...',
+                    '4': '...to this code area',
+                    '5': 'Click this button to close the condition pop up',
+                    '6': 'You can open the condition pop up again by clicking this',
+                    '7': 'Now you can arrange the code inside If Block that will only be executed if GigaBot needs to collect gems!',
+                    '8': 'You can learn If Block and Gem Expression again using the question mark',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",

@@ -186,6 +186,26 @@
 			"sid": 370710762233881
 		},
 		{
+			"eventType": "variable",
+			"name": "IF_DROPPED_SIGNAL",
+			"type": "string",
+			"initialValue": "if dropped",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 889129393673385
+		},
+		{
+			"eventType": "variable",
+			"name": "COMMAND_PANEL_CLOSED_SIGNAL",
+			"type": "string",
+			"initialValue": "command panel closed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 303000831366037
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Command",
@@ -817,6 +837,14 @@
 														true,
 														"\"if\""
 													]
+												},
+												{
+													"id": "signal",
+													"objectClass": "System",
+													"sid": 898655571447358,
+													"parameters": {
+														"tag": "IF_DROPPED_SIGNAL"
+													}
 												}
 											],
 											"sid": 796969940262454
@@ -2662,6 +2690,14 @@
 										{
 											"type": "script",
 											"script": "pickedCommand = null;"
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 637463056323924,
+											"parameters": {
+												"tag": "COMMAND_PANEL_CLOSED_SIGNAL"
+											}
 										}
 									],
 									"sid": 105988972539011
@@ -9770,6 +9806,7 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
+									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",
@@ -9814,6 +9851,16 @@
 										"layer": "\"Tutorial0\"",
 										"interactive": true
 									}
+								},
+								{
+									"id": "set-layer-parallax",
+									"objectClass": "System",
+									"sid": 154220650383151,
+									"parameters": {
+										"layer": "\"Tutorial0\"",
+										"parallax-x": "0",
+										"parallax-y": "0"
+									}
 								}
 							],
 							"sid": 483876347028402,
@@ -9847,6 +9894,16 @@
 											"parameters": {
 												"layer": "\"Tutorial\"&loopindex+1",
 												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-parallax",
+											"objectClass": "System",
+											"sid": 570390282298541,
+											"parameters": {
+												"layer": "\"Tutorial\"&loopindex+1",
+												"parallax-x": "0",
+												"parallax-y": "0"
 											}
 										}
 									],
