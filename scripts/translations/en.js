@@ -140,21 +140,245 @@ const en = {
                         'example': 'collectGem()',
                     },
                 },
+                'shoot': {
+                    '0': {
+                        'title': 'Shoot Command',
+                        'content': 'This block makes your robot shoot in the same direction as your robot. The bullet has a range of 5 grids.',
+                        'example': 'shoot()',
+                    },
+                },
+                'if': {
+                    '0': {
+                        'title': 'If Command',
+                        'content': 'This block will run the code inside it if the given condition is true. In this game, true value is any value other than zero (0).',
+                        'example': 'if (condition) {\n    Code that will be run if the condition is true\n}',
+                    },
+                },
+                'elseif': {
+                    '0': {
+                        'title': 'Else If Command',
+                        'content': 'This block will run the code inside it if the given condition is true and the If or Else If block right before this block is not run. In this game, true value is any value other than zero (0). This block will be skipped if the If or Else If block before this block is run.',
+                        'example': 'if (condition1) {\n    Code that will be run if the condition1 is true\n} else if (condition2) {\n    Code that will be run if the condition2 is true\n} else if (condition3) {\n    Code that will be run if the condition3 is true\n}',
+                    },
+                },
+                'else': {
+                    '0': {
+                        'title': 'Else Command',
+                        'content': 'This block will run the code inside it if the If or Else If block right before this block is not run. This block will be skipped if the If or Else If block before this block is run.',
+                        'example': 'if (condition1) {\n    Code that will be run if the condition1 is true\n} else if (condition2) {\n    Code that will be run if the condition2 is true\n} else {\n    Code that will be run if the condition1 and condition2 are false\n}',
+                    },
+                },
+                'repeat': {
+                    '0': {
+                        'title': 'For Command',
+                        'content': 'This block will run the code inside it as many times as the given value. The given value must be greater than 0.',
+                        'example': 'for (let i = 0; i < value; i++) {\n    code that will be run\n}',
+                    },
+                },
+                'while': {
+                    '0': {
+                        'title': 'While Command',
+                        'content': 'This block will run the code inside it as long as the given condition is true. In this game, true value is any value other than zero (0).',
+                        'example': 'while (condition) {\n    code that will be run\n}',
+                    },
+                },
                 'number': {
                     '0': {
-                        'title': 'Number Expression',
+                        'title': 'Number 0 Expression',
                         'content': 'This block gives you the number 0. This block can be combined with other number expressions to make a bigger number.',
                         'example': '0',
                     },
                     '1': {
-                        'title': 'Number Expression',
+                        'title': 'Number 1 Expression',
                         'content': 'This block gives you the number 1. This block can be combined with other number expressions to make a bigger number.',
                         'example': '1',
                     },
                     '2': {
-                        'title': 'Number Expression',
+                        'title': 'Number 2 Expression',
                         'content': 'This block gives you the number 2. This block can be combined with other number expressions to make a bigger number.',
                         'example': '2',
+                    },
+                    '3': {
+                        'title': 'Number 3 Expression',
+                        'content': 'This block gives you the number 3. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '3',
+                    },
+                    '4': {
+                        'title': 'Number 4 Expression',
+                        'content': 'This block gives you the number 4. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '4',
+                    },
+                    '5': {
+                        'title': 'Number 5 Expression',
+                        'content': 'This block gives you the number 5. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '5',
+                    },
+                    '6': {
+                        'title': 'Number 6 Expression',
+                        'content': 'This block gives you the number 6. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '6',
+                    },
+                    '7': {
+                        'title': 'Number 7 Expression',
+                        'content': 'This block gives you the number 7. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '7',
+                    },
+                    '8': {
+                        'title': 'Number 8 Expression',
+                        'content': 'This block gives you the number 8. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '8',
+                    },
+                    '9': {
+                        'title': 'Number 9 Expression',
+                        'content': 'This block gives you the number 9. This block can be combined with other number expressions to make a bigger number.',
+                        'example': '9',
+                    },
+                },
+                'variable': {
+                    '0': {
+                        'title': 'Armor Variable Expression',
+                        'content': 'This block gives you the value of your robot\'s armor.',
+                        'example': 'armor',
+                    },
+                    '1': {
+                        'title': 'Bullet Variable Expression',
+                        'content': 'This block gives you the value of your robot\'s bullet count.',
+                        'example': 'bullet',
+                    },
+                    '2': {
+                        'title': 'Gem Variable Expression',
+                        'content': 'This block gives you the value of the number of gems that your robot need to collect.',
+                        'example': 'gem',
+                    },
+                },
+                'read': {
+                    '0': {
+                        'title': 'Read Left Expression',
+                        'content': 'This block will give you the value of the tile on the left of your robot.',
+                        'example': 'readLeft',
+                    },
+                    '1': {
+                        'title': 'Read Up Expression',
+                        'content': 'This block will give you the value of the tile above your robot.',
+                        'example': 'readUp',
+                    },
+                    '2': {
+                        'title': 'Read Right Expression',
+                        'content': 'This block will give you the value of the tile on the right of your robot.',
+                        'example': 'readRight',
+                    },
+                    '3': {
+                        'title': 'Read Down Expression',
+                        'content': 'This block will give you the value of the tile below your robot.',
+                        'example': 'readDown',
+                    },
+                    '4': {
+                        'title': 'Read Upper Left Expression',
+                        'content': 'This block will give you the value of the tile on the upper left of your robot.',
+                        'example': 'readUpperLeft',
+                    },
+                    '5': {
+                        'title': 'Read Upper Right Expression',
+                        'content': 'This block will give you the value of the tile on the upper right of your robot.',
+                        'example': 'readUpperRight',
+                    },
+                    '6': {
+                        'title': 'Read Lower Right Expression',
+                        'content': 'This block will give you the value of the tile on the lower right of your robot.',
+                        'example': 'readLowerRight',
+                    },
+                    '7': {
+                        'title': 'Read Lower Left Expression',
+                        'content': 'This block will give you the value of the tile on the lower left of your robot.',
+                        'example': 'readLowerLeft',
+
+                    },
+                    '8': {
+                        'title': 'Read Expression',
+                        'content': 'This block will give you the value of the tile that your robot is standing on.',
+                        'example': 'read',
+                    },
+                },
+                'operator': {
+                    '0': {
+                        'title': 'Add Expression',
+                        'content': 'This block will give you the result of the expression on the left added by the expression on the right of the block',
+                        'example': 'expression1 + expression2',
+                    },
+                    '1': {
+                        'title': 'Subtract Expression',
+                        'content': 'This block will give you the result of the expression on the left subtracted by the expression on the right of the block',
+                        'example': 'expression1 - expression2',
+                    },
+                    '2': {
+                        'title': 'Multiply Expression',
+                        'content': 'This block will give you the result of the expression on the left multiplied by the expression on the right of the block',
+                        'example': 'expression1 * expression2',
+                    },
+                    '3': {
+                        'title': 'Division Expression',
+                        'content': 'This block will give the result of the expression on the left divided by the expression on the right of the block.',
+                        'example': 'expression1 / expression2',
+                    },
+                    '4': {
+                        'title': 'Modulus Expression',
+                        'content': 'This block will give the remainder of the expression on the left divided by the expression on the right of the block.',
+                        'example': 'expression1 % expression2',
+                    },
+                    '5': {
+                        'title': 'Opening Parenthesis Expression',
+                        'content': 'This block will group the expression between this expression and the Closing Parenthesis Expression and evaluate it first.',
+                        'example': '(expression)',
+                    },
+                    '6': {
+                        'title': 'Closing Parenthesis Expression',
+                        'content': 'This block will group the expression between the Opening Parenthesis Expression and this expression and evaluate it first.',
+                        'example': '(expression)',
+                    },
+                    '7': {
+                        'title': 'Equal To Expression',
+                        'content': 'This block will give a true value if the expression on the left is equal to the expression on the right of the block.',
+                        'example': 'expression1 == expression2',
+                    },
+                    '8': {
+                        'title': 'Not Equal To Expression',
+                        'content': 'This block will give a true value if the expression on the left is not equal to the expression on the right of the block.',
+                        'example': 'expression1 != expression2',
+                    },
+                    '9': {
+                        'title': 'Greater Than Expression',
+                        'content': 'This block will give a true value if the expression on the left is greater than the expression on the right of the block.',
+                        'example': 'expression1 > expression2',
+                    },
+                    '10': {
+                        'title': 'Greater Than or Equal To Expression',
+                        'content': 'This block will give a true value if the expression on the left is greater than or equal to the expression on the right of the block.',
+                        'example': 'expression1 >= expression2',
+                    },
+                    '11': {
+                        'title': 'Less Than Expression',
+                        'content': 'This block will give a true value if the expression on the left is less than the expression on the right of the block.',
+                        'example': 'expression1 < expression2',
+                    },
+                    '12': {
+                        'title': 'Less Than or Equal To Expression',
+                        'content': 'This block will give a true value if the expression on the left is less than or equal to the expression on the right of the block.',
+                        'example': 'expression1 <= expression2',
+                    },
+                    '13': {
+                        'title': 'And Expression',
+                        'content': 'This block will give a true value if both the expression on the left and the expression on the right of the block are true (both are true).',
+                        'example': 'expression1 && expression2',
+                    },
+                    '14': {
+                        'title': 'Or Expression',
+                        'content': 'This block will give a true value if either the expression on the left or the expression on the right of the block is true (at least one is true).',
+                        'example': 'expression1 || expression2',
+                    },
+                    '15': {
+                        'title': 'Not Expression',
+                        'content': 'This block will give a true value if the expression on the right of the block is false (not true) and give a false value if the expression on the right of the block is true (not false).',
+                        'example': '!expression',
                     },
                 },
             },

@@ -4147,6 +4147,15 @@
 							"parameters": {
 								"layer": "\"Game\""
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 918087893346807,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -4204,6 +4213,15 @@
 							"parameters": {
 								"layer": "\"Game\""
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 120217841059545,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -4469,6 +4487,15 @@
 							"parameters": {
 								"layer": "\"Game\""
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 843285164838111,
+							"parameters": {
+								"variable": "isDragging"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
