@@ -140,6 +140,16 @@ const en = {
                     '0': 'Sometimes GigaBot needs to do different things if If Block is not executed',
                     '1': 'Try to use Else Block to do that!',
                 },
+                'level-14': {
+                    '0': 'Use Equal Block to compare values in a condition!',
+                },
+                'level-15': {
+                    '0': 'Besides Equal Block, there are many other comparison blocks',
+                    '1': 'Learn all of them by using the question mark!',
+                },
+                'level-17': {
+                    '0': 'Use Else If Block if you want to check more than 1 condition',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",
@@ -186,14 +196,14 @@ const en = {
                 'elseif': {
                     '0': {
                         'title': 'Else If Command',
-                        'content': 'This block will run the code inside it if the given condition is true and the If or Else If block right before this block is not run. In this game, true value is any value other than zero (0). This block will be skipped if the If or Else If block before this block is run.',
+                        'content': 'This Block need to be placed right after an If or another Else If Block. This block will run the code inside it if the given condition is true and the If or Else If Block before this block is not run. In this game, true value is any value other than zero (0). This block will be skipped if the If or Else If Block before this is run.',
                         'example': 'if (condition1) {\n    Code that will be run if the condition1 is true\n} else if (condition2) {\n    Code that will be run if the condition2 is true\n} else if (condition3) {\n    Code that will be run if the condition3 is true\n}',
                     },
                 },
                 'else': {
                     '0': {
                         'title': 'Else Command',
-                        'content': 'This block will run the code inside it if the If or Else If block right before this block is not run. This block will be skipped if the If or Else If block before this block is run.',
+                        'content': 'This Block need to be placed right after an If or Else If Block. This block will run the code inside it if the If or Else If Block before this block is not run. This block will be skipped if the If or Else If Block before this is run.',
                         'example': 'if (condition1) {\n    Code that will be run if the condition1 is true\n} else if (condition2) {\n    Code that will be run if the condition2 is true\n} else {\n    Code that will be run if the condition1 and condition2 are false\n}',
                     },
                 },
@@ -365,12 +375,12 @@ const en = {
                         'example': '(expression)',
                     },
                     '7': {
-                        'title': 'Equal To Expression',
+                        'title': 'Equal Expression',
                         'content': 'This block will give a true value if the expression on the left is equal to the expression on the right of the block.',
                         'example': 'expression1 == expression2',
                     },
                     '8': {
-                        'title': 'Not Equal To Expression',
+                        'title': 'Not Equal Expression',
                         'content': 'This block will give a true value if the expression on the left is not equal to the expression on the right of the block.',
                         'example': 'expression1 != expression2',
                     },
@@ -380,7 +390,7 @@ const en = {
                         'example': 'expression1 > expression2',
                     },
                     '10': {
-                        'title': 'Greater Than or Equal To Expression',
+                        'title': 'Greater Than or Equal Expression',
                         'content': 'This block will give a true value if the expression on the left is greater than or equal to the expression on the right of the block.',
                         'example': 'expression1 >= expression2',
                     },
@@ -390,7 +400,7 @@ const en = {
                         'example': 'expression1 < expression2',
                     },
                     '12': {
-                        'title': 'Less Than or Equal To Expression',
+                        'title': 'Less Than or Equal Expression',
                         'content': 'This block will give a true value if the expression on the left is less than or equal to the expression on the right of the block.',
                         'example': 'expression1 <= expression2',
                     },

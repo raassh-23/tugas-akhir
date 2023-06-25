@@ -138,7 +138,17 @@ const id = {
                 },
                 'level-12': {
                     '0': 'Terkadang GigaBot perlu melakukan aksi lain jika Blok If tidak berjalan',
-                    '1': 'Coba gunakan Blok Else untuk melakukan aksi lain itu!',
+                    '1': 'Coba gunakan Blok Else untuk melakukan hal itu!',
+                },
+                'level-14': {
+                    '0': 'Gunakan Blok Sama Dengan untuk membandingkan nilai dalam kondisi!',
+                },
+                'level-15': {
+                    '0': 'Selain Blok Sama Dengan, ada banyak blok perbandingan lainnya',
+                    '1': 'Pelajari semuanya dengan menggunakan tanda tanya!',
+                },
+                'level-17': {
+                    '0': 'Gunakan Blok Else If jika kamu ingin memeriksa lebih dari 1 kondisi',
                 },
             },
             'blocks': {
@@ -186,14 +196,14 @@ const id = {
                 'elseif': {
                     '0': {
                         'title': 'Perintah Else If',
-                        'content': 'Blok ini akan menjalankan kode di dalamnya jika kondisi yang diberikan bernilai benar (true) dan Blok If atau Else If yang ada tepat sebelum blok ini tidak dijalankan. Dalam gim ini, nilai benar adalah nilai selain nol (0). Blok ini akan dilewati jika Blok If atau Else If yang ada tepat sebelum blok ini dijalankan.',
+                        'content': 'Blok ini harus diletakkan tepat setelah Blok If atau Else If lain. Blok ini akan menjalankan kode di dalamnya jika kondisi yang diberikan bernilai benar (true) dan Blok If atau Else If yang ada sebelum blok ini tidak dijalankan. Dalam gim ini, nilai benar adalah nilai selain nol (0). Blok ini akan dilewati jika Blok If atau Else If yang ada sebelum blok ini dijalankan.',
                         'example': 'if (kondisi1) {\n    kode yang dijalankan jika kondisi1 benar\n} else if (kondisi2) {\n    kode yang dijalankan jika kondisi2 benar\n} else if (kondisi3) {\n    kode yang dijalankan jika kondisi3 benar\n}',
                     },
                 },
                 'else': {
                     '0': {
                         'title': 'Perintah Else',
-                        'content': 'Blok ini akan menjalankan kode di dalamnya jika Blok If atau Else If yang ada tepat sebelum blok ini tidak dijalankan. Blok ini akan dilewati jika Blok If atau Else If yang ada tepat sebelum blok ini dijalankan.',
+                        'content': 'Blok ini harus diletakkan tepat setelah Blok If atau Else If. Blok ini akan menjalankan kode di dalamnya jika Blok If atau Else If yang ada sebelum blok ini tidak dijalankan. Blok ini akan dilewati jika Blok If atau Else If yang ada sebelum blok ini dijalankan.',
                         'example': 'if (kondisi1) {\n    kode yang dijalankan jika kondisi1 benar\n} else if (kondisi2) {\n    kode yang dijalankan jika kondisi2 benar\n} else {\n    kode yang dijalankan jika kondisi1 dan kondisi2 salah\n}',
                     },
                 },

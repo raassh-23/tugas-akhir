@@ -3173,7 +3173,7 @@
 						{
 							"type": "UIText",
 							"properties": {
-								"text": "Coba gunakan Blok Else untuk melakukan aksi lain itu!",
+								"text": "Coba gunakan Blok Else untuk melakukan hal itu!",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
