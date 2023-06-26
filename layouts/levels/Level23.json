@@ -507,7 +507,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -970,7 +970,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -1166,7 +1166,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -1853,7 +1853,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "destroyable",
@@ -2758,7 +2758,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -2794,7 +2794,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -2830,7 +2830,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -2866,7 +2866,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "destroyable",
@@ -2902,7 +2902,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -3661,7 +3661,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "destroyable",
@@ -3697,7 +3697,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -3733,7 +3733,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -3769,7 +3769,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -3805,7 +3805,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -3841,7 +3841,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "non-destroyable",
@@ -5884,7 +5884,7 @@
 							}
 						},
 						{
-							"type": "SolidObstacle",
+							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "destroyable",

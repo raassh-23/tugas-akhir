@@ -183,6 +183,10 @@ const en = {
                     '1': 'One of the logical operators is And Block',
                     '2': 'Use And Block to check if 2 or more conditions are true',
                 },
+                'level-28': {
+                    '0': 'Besides And Block, there are also Or Block and Not Block',
+                    '1': 'Try to learn those blocks by using the question mark!',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",

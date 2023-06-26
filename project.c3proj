@@ -225,7 +225,7 @@
 			"NestedCodeBlockBackgroundOld",
 			"Blank",
 			"CodeBlockText",
-			"SolidObstacle",
+			"Rock",
 			"Background",
 			"Portal",
 			"TextInputName",
@@ -357,7 +357,8 @@
 					"Level24",
 					"Level25",
 					"Level26",
-					"Level27"
+					"Level27",
+					"Level28"
 				],
 				"subfolders": [],
 				"name": "levels"

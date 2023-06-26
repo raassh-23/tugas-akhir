@@ -5556,7 +5556,7 @@
 							"objectClass": "Bullet",
 							"sid": 449256297570389,
 							"parameters": {
-								"object": "SolidObstacle"
+								"object": "Rock"
 							}
 						}
 					],
@@ -5574,7 +5574,7 @@
 							"conditions": [
 								{
 									"id": "is-animation-playing",
-									"objectClass": "SolidObstacle",
+									"objectClass": "Rock",
 									"sid": 153650860805758,
 									"parameters": {
 										"animation": "\"destroyable\""
@@ -5584,7 +5584,7 @@
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "SolidObstacle",
+									"objectClass": "Rock",
 									"sid": 304906979588619
 								}
 							],

@@ -7,7 +7,7 @@
 	"effectTypes": [],
 	"members": [
 		"Player",
-		"SolidObstacle",
+		"Rock",
 		"MovingEnemyCollision",
 		"Gem",
 		"Spike",

@@ -183,6 +183,10 @@ const id = {
                     '1': 'Salah satu operator logika adalah Blok Dan',
                     '2': 'Gunakan Blok Dan untuk memeriksa apakah 2 atau lebih kondisi bernilai benar',
                 },
+                'level-28': {
+                    '0': 'Selain Blok Dan, ada juga Blok Atau dan Blok Tidak',
+                    '1': 'Coba pelajari kedua blok itu dengan menggunakan tanda tanya!',
+                },
             },
             'blocks': {
                 'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",

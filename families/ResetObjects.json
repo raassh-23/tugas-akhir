@@ -10,7 +10,7 @@
 		"MovingEnemyCollision",
 		"Gem",
 		"Portal",
-		"SolidObstacle",
+		"Rock",
 		"StaticEnemyCollision"
 	]
 }
