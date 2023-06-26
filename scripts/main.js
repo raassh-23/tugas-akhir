@@ -19,6 +19,7 @@ import { initTranslations } from "./translations/translations.js";
 
 runOnStartup(async (runtime) => {
 	await loadScripts([
+		"./lib/test.js",
 		"./lib/mathjs@11.8.1.js",
 		"./lib/i18next@23.1.0.js",
 	]);

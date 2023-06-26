@@ -826,7 +826,7 @@
 					}
 				},
 				{
-					"name": "hurt.webm",
+					"name": "old-hurt.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 819928337663569,
 					"file-info": {
@@ -850,17 +850,33 @@
 					}
 				},
 				{
-					"name": "start-command-1.webm",
+					"name": "start-command.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 817318067247110,
+					"sid": 859718667388333,
 					"file-info": {
 						"purpose": "none"
 					}
 				},
 				{
-					"name": "start-command-2.webm",
+					"name": "enter-portal.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 859718667388333,
+					"sid": 888513020651766,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hurt.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 425300995195953,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "rock-break.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 161563605401625,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -984,6 +1000,14 @@
 							"name": "mathjs@11.8.1.js",
 							"type": "text/javascript",
 							"sid": 789526826775530,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "test.js",
+							"type": "application/javascript",
+							"sid": 157528545845040,
 							"file-info": {
 								"purpose": "none"
 							}

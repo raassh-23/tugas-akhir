@@ -2051,7 +2051,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "destroyable",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false

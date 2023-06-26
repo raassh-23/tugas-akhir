@@ -1011,11 +1011,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 978502493985926,
+					"sid": 658936071957225,
 					"parameters": {
 						"audio-file": "shoot",
 						"loop": "not-looping",
-						"volume": "-10",
+						"volume": "-15",
 						"stereo-pan": "0",
 						"tag-optional": "SFX_TAG"
 					}
@@ -1037,11 +1037,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 677091822175077,
+					"sid": 631614984384905,
 					"parameters": {
 						"audio-file": "pick-up-gem",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-15",
 						"stereo-pan": "0",
 						"tag-optional": "SFX_TAG"
 					}
@@ -1063,9 +1063,35 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 219638074380688,
+					"sid": 838932389128515,
 					"parameters": {
 						"audio-file": "enemy-hurt",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 426813764896957
+		},
+		{
+			"functionName": "PlayRockBreak",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 148339348339862,
+					"parameters": {
+						"audio-file": "rock-break",
 						"loop": "not-looping",
 						"volume": "0",
 						"stereo-pan": "0",
@@ -1073,7 +1099,7 @@
 					}
 				}
 			],
-			"sid": 426813764896957
+			"sid": 328554618076400
 		},
 		{
 			"functionName": "PlayHurt",
@@ -1089,7 +1115,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 982239225586265,
+					"sid": 183682988346635,
 					"parameters": {
 						"audio-file": "hurt",
 						"loop": "not-looping",
@@ -1141,11 +1167,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 741208607365636,
+					"sid": 567328647909384,
 					"parameters": {
-						"audio-file": "start-command-2",
+						"audio-file": "start-command",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-5",
 						"stereo-pan": "0",
 						"tag-optional": "SFX_TAG"
 					}
@@ -1167,9 +1193,9 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 363957676171105,
+					"sid": 993039241179389,
 					"parameters": {
-						"audio-file": "start-command-1",
+						"audio-file": "enter-portal",
 						"loop": "not-looping",
 						"volume": "0",
 						"stereo-pan": "0",

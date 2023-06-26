@@ -5606,6 +5606,10 @@
 									"id": "destroy",
 									"objectClass": "Rock",
 									"sid": 304906979588619
+								},
+								{
+									"callFunction": "PlayRockBreak",
+									"sid": 423492096569825
 								}
 							],
 							"sid": 526765666987190
@@ -9747,6 +9751,14 @@
 							"id": "on-suspend",
 							"objectClass": "System",
 							"sid": 401488284500848
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 287264080569432,
+							"parameters": {
+								"variable": "isPlaying"
+							}
 						}
 					],
 					"actions": [
@@ -9800,7 +9812,6 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
-									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",
