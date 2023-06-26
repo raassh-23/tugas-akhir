@@ -178,6 +178,11 @@ const en = {
                     '1': 'Slime can reduce GigaBot\'s armor just like spikes',
                     '2': 'You can defeat slime by shooting it',
                 },
+                'level-27': {
+                    '0': 'You can use logical operators to combine multiple conditions into one',
+                    '1': 'One of the logical operators is And Block',
+                    '2': 'Use And Block to check if 2 or more conditions are true',
+                },
             },
             'blocks': {
                 'example-title': "In JavaScript, this can be written as:",

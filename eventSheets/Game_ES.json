@@ -9434,7 +9434,7 @@
 					"actions": [
 						{
 							"type": "comment",
-							"text": "this wait is needed because when resetting the level, it recreate the player and newly created child can't be picked on the same tick "
+							"text": "this wait is needed because when resetting the level, it recreate the player, which will create the marker, and that marker can't be picked on the same tick here"
 						},
 						{
 							"id": "wait",
@@ -9806,6 +9806,7 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
+									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",

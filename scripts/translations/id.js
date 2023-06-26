@@ -178,6 +178,11 @@ const id = {
                     '1': 'Slime bisa mengurangi zirah GigaBot sama seperti duri',
                     '2': 'Kamu bisa mengalahkan slime dengan menembaknya',
                 },
+                'level-27': {
+                    '0': 'Kamu bisa menggunakan operator logika untuk menggabungkan beberapa kondisi menjadi satu',
+                    '1': 'Salah satu operator logika adalah Blok Dan',
+                    '2': 'Gunakan Blok Dan untuk memeriksa apakah 2 atau lebih kondisi bernilai benar',
+                },
             },
             'blocks': {
                 'example-title': "Di JavaScript, blok ini bisa ditulis seperti:",
