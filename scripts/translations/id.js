@@ -88,7 +88,7 @@ const id = {
                     '2': '...ke area kode ini',
                     '3': 'Klik ini untuk menjalakan kodemu',
                     '4': 'Klik ini lagi untuk mereset',
-                    '5': 'Bagus, sekarang ayo coba susun blok kodenya!',
+                    '5': 'Bagus, sekarang ayo coba selesaikan level ini!',
                 },
                 'level-2': {
                     '0': 'Lihat, ada blok baru!',

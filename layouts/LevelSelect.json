@@ -2,8 +2,8 @@
 	"name": "LevelSelect",
 	"layers": [
 		{
-			"name": "BG",
-			"overriden": 0,
+			"name": "MenuBG",
+			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
 			"sid": 231124466740955,

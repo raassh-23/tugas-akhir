@@ -9744,76 +9744,21 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-on-layer",
-							"objectClass": "Button",
-							"sid": 819888363425237,
-							"parameters": {
-								"layer": "\"UI\""
-							}
-						},
-						{
-							"id": "for-each",
+							"id": "on-suspend",
 							"objectClass": "System",
-							"sid": 838772516590065,
-							"parameters": {
-								"object": "Button"
-							}
+							"sid": 401488284500848
 						}
 					],
-					"actions": [],
-					"sid": 448350597897647,
-					"disabled": true,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 342861199471645,
-									"parameters": {
-										"variable": "isDragging"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 999125515913659,
-									"parameters": {
-										"instance-variable": "isDisabled",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 848646976779847,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 178195219966059
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 684707321757705,
-									"parameters": {
-										"instance-variable": "isDisabled",
-										"value": "false"
-									}
-								}
-							],
-							"sid": 813879212304153,
-							"disabled": true
+							"callFunction": "ShowPause",
+							"sid": 675048650060169,
+							"parameters": [
+								true
+							]
 						}
-					]
+					],
+					"sid": 863238012013867
 				}
 			],
 			"sid": 991077192111983

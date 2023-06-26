@@ -19,26 +19,26 @@
 			{
 				"frames": [
 					{
-						"width": 125,
-						"height": 62,
+						"width": 75,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7029019,
+						"imageSpriteId": 1361229,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
 					{
-						"width": 125,
-						"height": 62,
+						"width": 78,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8479152,
+						"imageSpriteId": 2399785,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

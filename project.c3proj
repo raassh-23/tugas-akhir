@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 34402,
-	"name": "TugasAkhir",
+	"name": "GigaBot's Quest",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -272,7 +272,10 @@
 			"Arrow",
 			"HelpHTML",
 			"AJAX",
-			"Audio"
+			"Audio",
+			"SplashLogo",
+			"MenuBg",
+			"Title"
 		],
 		"subfolders": [
 			{
@@ -333,7 +336,8 @@
 		"items": [
 			"Menu",
 			"ObjectRepository",
-			"LevelSelect"
+			"LevelSelect",
+			"Splash"
 		],
 		"subfolders": [
 			{
@@ -378,7 +382,8 @@
 			"Game_ES",
 			"Menu_ES",
 			"Common_ES",
-			"LevelSelect_ES"
+			"LevelSelect_ES",
+			"Splash_ES"
 		],
 		"subfolders": [
 			{
@@ -1002,12 +1007,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "Help Gigabots to reach their portal",
 		"version": "0.2.4",
-		"author": "RushHourDream",
-		"authorEmail": "",
-		"authorWebsite": "",
-		"appId": "",
+		"author": "Muhammad Nur Abdurrauf",
+		"authorEmail": "muh.nur.abdurrauf@gmail.com",
+		"authorWebsite": "https://raassh-23.github.io/",
+		"appId": "com.raassh.tugasakhir",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
@@ -1047,7 +1052,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -1056,5 +1061,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": "Menu"
+	"firstLayout": "Splash"
 }

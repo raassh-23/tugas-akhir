@@ -88,7 +88,7 @@ const en = {
                     '2': '...to this code area',
                     '3': 'Click this to run your code',
                     '4': 'Click this again to reset',
-                    '5': 'Well done, now try to arrange the code blocks!',
+                    '5': 'Great, now let\'s try to finish this level!',
                 },
                 'level-2': {
                     '0': 'Look, a new block!',

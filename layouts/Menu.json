@@ -2,10 +2,40 @@
 	"name": "Menu",
 	"layers": [
 		{
-			"name": "BG",
+			"name": "MenuBG",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "MenuBg",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 3156,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 640,
+						"y": 360,
+						"width": 1281,
+						"height": 720,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 644766561416956,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -32,7 +62,7 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"zElevation": 0,
-			"global": false
+			"global": true
 		},
 		{
 			"name": "MenuUI",
@@ -158,52 +188,6 @@
 					}
 				},
 				{
-					"type": "UIText",
-					"properties": {
-						"text": "Judul Game",
-						"enable-bbcode": true,
-						"character-width": 50,
-						"character-height": 56,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 3,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 115,
-					"instanceVariables": {
-						"minScale": 0,
-						"maxScale": 0,
-						"autoFit": false,
-						"maxLine": 1,
-						"id": "title",
-						"translation": ""
-					},
-					"behaviors": {},
-					"world": {
-						"x": 282,
-						"y": 92,
-						"width": 717,
-						"height": 142,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Button",
 					"properties": {
 						"initially-visible": true,
@@ -263,6 +247,35 @@
 						"y": 524,
 						"width": 125,
 						"height": 130,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Title",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 3157,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 640,
+						"y": 143,
+						"width": 400,
+						"height": 192,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -5395,7 +5408,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "Kenney.nl, Awanama",
+						"text": "Kenney.nl, Awanama, SVG Repo",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
@@ -5543,7 +5556,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "Kenney.nl",
+						"text": "Kenney.nl, Rubberduck",
 						"enable-bbcode": true,
 						"character-width": 50,
 						"character-height": 56,
@@ -6629,7 +6642,7 @@
 						"x": 797.208026,
 						"y": 992.1363661839958,
 						"width": 75,
-						"height": 37.199999999999996,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -6713,7 +6726,7 @@
 						"x": 654.458026,
 						"y": 942.662334000637,
 						"width": 180,
-						"height": 10.211607220740897,
+						"height": 16,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
@@ -6796,9 +6809,9 @@
 					},
 					"world": {
 						"x": 744.458026,
-						"y": 946.9628950312522,
-						"width": 23.9988,
-						"height": 36,
+						"y": 942.662334,
+						"width": 36,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -6820,7 +6833,7 @@
 						"character-height": 56,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-						"scale": 0.3,
+						"scale": 0.4,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -6870,8 +6883,8 @@
 					},
 					"world": {
 						"x": 744.458026,
-						"y": 923.4534261229153,
-						"width": 29.9772377996955,
+						"y": 915.8642282713473,
+						"width": 35.2021261527147,
 						"height": 20.379416619847007,
 						"originX": 0.5,
 						"originY": 0.5,
