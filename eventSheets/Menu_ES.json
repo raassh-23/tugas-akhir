@@ -1926,6 +1926,13 @@
 					"parameters": {
 						"x": "LocalStorage.ItemValue/100 * (Self.max - Self.min) + Self.min"
 					}
+				},
+				{
+					"callFunction": "setVolume",
+					"sid": 257222128639058,
+					"parameters": [
+						"LocalStorage.ItemValue"
+					]
 				}
 			],
 			"sid": 360692566091886
@@ -1951,6 +1958,13 @@
 						"key": "SETTING_VOLUME_TAG",
 						"value": "50"
 					}
+				},
+				{
+					"callFunction": "setVolume",
+					"sid": 552849881955551,
+					"parameters": [
+						"50"
+					]
 				}
 			],
 			"sid": 812967343670218
@@ -2734,7 +2748,12 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"callFunction": "PlayTap",
+					"sid": 511736953073344
+				}
+			],
 			"sid": 290291043430297,
 			"children": [
 				{
@@ -2877,26 +2896,61 @@
 							"parameters": {
 								"x": "clamp(Self.X, Self.min, Self.max)"
 							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "UIText",
-							"sid": 179586509682178,
-							"parameters": {
-								"text": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "LocalStorage",
-							"sid": 374918788390475,
-							"parameters": {
-								"key": "SETTING_VOLUME_TAG",
-								"value": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
-							}
 						}
 					],
 					"sid": 198209777926503,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "newVolumePercent",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 222191622987162
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 165197690327478,
+									"parameters": {
+										"variable": "newVolumePercent",
+										"value": "round((Slider.x - Slider.min)/(Slider.max - Slider.min) * 100)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 579860286124769,
+									"parameters": {
+										"text": "newVolumePercent"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 655550220807404,
+									"parameters": {
+										"key": "SETTING_VOLUME_TAG",
+										"value": "newVolumePercent"
+									}
+								},
+								{
+									"callFunction": "setVolume",
+									"sid": 258333973887157,
+									"parameters": [
+										"newVolumePercent"
+									]
+								}
+							],
+							"sid": 568457747319048
+						}
+					],
 					"isOrBlock": true
 				},
 				{

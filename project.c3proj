@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -264,7 +271,8 @@
 			"StaticEnemy",
 			"Arrow",
 			"HelpHTML",
-			"AJAX"
+			"AJAX",
+			"Audio"
 		],
 		"subfolders": [
 			{
@@ -787,11 +795,85 @@
 			]
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "click.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 358269478240768,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "enemy-hurt.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 889765899110857,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "error.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 425641948466485,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hurt.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 819928337663569,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "pick-up-gem.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 340578941812395,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "shoot.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 259341168061299,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "start-command-1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 817318067247110,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "start-command-2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 859718667388333,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 866102239614528,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

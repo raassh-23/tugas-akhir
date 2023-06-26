@@ -13,6 +13,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "BGM_TAG",
+			"type": "string",
+			"initialValue": "bgm",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 461480499195422
+		},
+		{
+			"eventType": "variable",
 			"name": "CLICKABLE_CLICKED",
 			"type": "string",
 			"initialValue": "ClickableClicked",
@@ -40,6 +50,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 915385586880257
+		},
+		{
+			"eventType": "variable",
+			"name": "volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 907158253090853
 		},
 		{
 			"eventType": "block",
@@ -273,10 +293,6 @@
 					}
 				},
 				{
-					"callFunction": "PlayTap",
-					"sid": 434100238047829
-				},
-				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 543908231250467,
@@ -498,6 +514,10 @@
 			],
 			"actions": [
 				{
+					"callFunction": "PlayTap",
+					"sid": 528969831378862
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 421163499973738,
@@ -548,17 +568,32 @@
 			"sid": 348389287752255
 		},
 		{
-			"functionName": "PlayTap",
-			"functionDescription": "",
-			"functionCategory": "Audio",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 886736655115396
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 395308358889199,
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 982082969286783
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 322455192108077,
+					"parameters": {
+						"variable": "touchedUid",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 175956572301709
 		},
 		{
 			"eventType": "block",
@@ -937,32 +972,332 @@
 			"sid": 280770723004987
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"functionName": "PlayTap",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
 				{
-					"id": "is-in-touch",
-					"objectClass": "Touch",
-					"sid": 994480219763198,
-					"isInverted": true
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 703628334141005
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 779973425444161,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
 				}
 			],
+			"sid": 530833194155045
+		},
+		{
+			"functionName": "PlayShoot",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 978502493985926,
+					"parameters": {
+						"audio-file": "shoot",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 571415479654349
+		},
+		{
+			"functionName": "PlayPickUpGem",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 677091822175077,
+					"parameters": {
+						"audio-file": "pick-up-gem",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 493290515192060
+		},
+		{
+			"functionName": "PlayEnemyHurt",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 219638074380688,
+					"parameters": {
+						"audio-file": "enemy-hurt",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 426813764896957
+		},
+		{
+			"functionName": "PlayHurt",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 982239225586265,
+					"parameters": {
+						"audio-file": "hurt",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 286875220582031
+		},
+		{
+			"functionName": "PlayError",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 824602394541439,
+					"parameters": {
+						"audio-file": "error",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 157610443661091
+		},
+		{
+			"functionName": "PlayStartCommand",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 741208607365636,
+					"parameters": {
+						"audio-file": "start-command-2",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 960207474774982
+		},
+		{
+			"functionName": "PlayEnterPortal",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 363957676171105,
+					"parameters": {
+						"audio-file": "start-command-1",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 600197446107496
+		},
+		{
+			"functionName": "PlayPickUpCommand",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 815385221423959,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 657662652872445
+		},
+		{
+			"functionName": "PlayDropCommand",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 657251684068214,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "SFX_TAG"
+					}
+				}
+			],
+			"sid": 537281350317717
+		},
+		{
+			"functionName": "setVolume",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "percentage",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 671764038931558
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
 			"actions": [
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 216820134707568,
+					"sid": 959649993526282,
 					"parameters": {
-						"variable": "touchedUid",
-						"value": "0"
+						"variable": "volume",
+						"value": "33*log10(percentage/100)"
+					}
+				},
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 602758781252491,
+					"parameters": {
+						"db": "volume"
 					}
 				}
 			],
-			"sid": 499648425224841
+			"sid": 857063810516729
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 377408203976437,
+					"parameters": {
+						"tag": "BGM_TAG"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 741186646093764,
+					"parameters": {
+						"audio-file": "music",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "BGM_TAG"
+					}
+				}
+			],
+			"sid": 677574785002103
 		}
 	],
 	"sid": 126636898885233

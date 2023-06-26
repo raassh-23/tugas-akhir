@@ -284,6 +284,24 @@
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 962518008198957,
+							"parameters": {
+								"layer": "\"ActiveCommandList\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 223063627586796,
+							"parameters": {
+								"layer": "\"AvailableCommandList\"",
+								"interactive": false
+							}
+						},
+						{
 							"callFunction": "showTutorial",
 							"sid": 494439668208844,
 							"parameters": [
@@ -396,24 +414,6 @@
 							"parameters": {
 								"variable": "tutorialStep",
 								"value": "1"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 962518008198957,
-							"parameters": {
-								"layer": "\"ActiveCommandList\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 223063627586796,
-							"parameters": {
-								"layer": "\"AvailableCommandList\"",
-								"interactive": false
 							}
 						},
 						{

@@ -401,6 +401,10 @@
 											],
 											"actions": [
 												{
+													"callFunction": "PlayPickUpCommand",
+													"sid": 958303799099520
+												},
+												{
 													"id": "set-boolean-eventvar",
 													"objectClass": "System",
 													"sid": 922136276958906,
@@ -448,6 +452,10 @@
 										}
 									],
 									"actions": [
+										{
+											"callFunction": "PlayPickUpCommand",
+											"sid": 692244722284856
+										},
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
@@ -665,6 +673,10 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "PlayDropCommand",
+							"sid": 198572866416415
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -2890,6 +2902,10 @@
 							],
 							"actions": [
 								{
+									"callFunction": "PlayPickUpCommand",
+									"sid": 607637593139582
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 335105056775426,
@@ -2922,6 +2938,10 @@
 								"variable": "isDragging",
 								"value": "false"
 							}
+						},
+						{
+							"callFunction": "PlayDropCommand",
+							"sid": 831362606440049
 						}
 					],
 					"sid": 817283290314354,
@@ -5618,6 +5638,10 @@
 								"instance-variable": "health",
 								"value": "1"
 							}
+						},
+						{
+							"callFunction": "PlayEnemyHurt",
+							"sid": 266022909694308
 						}
 					],
 					"sid": 257390564904569
@@ -7867,6 +7891,10 @@
 									"objectClass": "Portal",
 									"sid": 242865318754257,
 									"behaviorType": "Fade"
+								},
+								{
+									"callFunction": "PlayEnterPortal",
+									"sid": 816217434905133
 								}
 							],
 							"sid": 107424056995809
@@ -7902,6 +7930,10 @@
 								}
 							],
 							"actions": [
+								{
+									"callFunction": "PlayHurt",
+									"sid": 445470636043935
+								},
 								{
 									"type": "script",
 									"script": "if (!runtime.globalVars.variableNames.includes(\"health\")) {\n\treturn;\n}\n\nconst player = runtime.objects.Player.getFirstPickedInstance();\n\nplayer.instVars.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (player.instVars.health <= 0) {\n\tstate.isError = true;\n\truntime.callFunction(\n\t\t\"ShowError\",\n\t\ttranslate(\"game.error.player-died\"),\n\t\t2,\n\t);\n}\n"
@@ -8002,6 +8034,10 @@
 									"id": "destroy",
 									"objectClass": "Gem",
 									"sid": 396812451228996
+								},
+								{
+									"callFunction": "PlayPickUpGem",
+									"sid": 707645863847988
 								}
 							],
 							"sid": 287508753202009
@@ -8018,7 +8054,12 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"callFunction": "PlayStartCommand",
+							"sid": 153942219404416
+						}
+					],
 					"sid": 817809198269426,
 					"children": [
 						{
@@ -8074,6 +8115,10 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "PlayShoot",
+							"sid": 423711481909641
+						},
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player",
@@ -8274,6 +8319,10 @@
 						{
 							"callFunction": "DestroyToast",
 							"sid": 100576952914483
+						},
+						{
+							"callFunction": "PlayError",
+							"sid": 826567822419170
 						},
 						{
 							"id": "create-object",
