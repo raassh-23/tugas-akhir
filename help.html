@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+			
+			.container {
+				width: 100%;
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+
+            h1 {
+				margin: 0;
+				margin-bottom: 0.5vw;
+                font-size: 2vw;
+                text-align: center;
+            }
+
+            p {
+				width: 100%;
+				margin: 0;
+                font-size: 1.5vw;
+            }
+
+            .code-example {
+				margin: 0.5vw auto;
+                font-size: 1.5vw;
+                display: block;
+                width: 100%;
+                padding: 0.5vw;
+                border: 1px solid #ccc;
+                font-family: monospace;
+                background-color: #f1f1f1;
+				white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{title}}</h1>
+            <p>{{content}}</p>
+            <p>{{exampleTitle}}</p>
+            <pre class="code-example">{{example}}</pre>
+        </div>
+    </body>
+</html>

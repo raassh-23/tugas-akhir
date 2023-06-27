@@ -1,7 +1,7 @@
 {
-	"name": "TugasAkhir",
-	"short_name": "TugasAkhir",
-	"description": "",
+	"name": "GigaBot's Quest",
+	"short_name": "GigaBot's Quest",
+	"description": "Help Gigabots to reach their portal",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
