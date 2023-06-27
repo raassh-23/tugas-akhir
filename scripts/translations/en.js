@@ -175,7 +175,7 @@ const en = {
                 },
                 'level-25': {
                     '0': 'There\'s a slime in front of you!',
-                    '1': 'Slime can reduce GigaBot\'s armor just like spikes',
+                    '1': 'Slime can damage GigaBot\'s armor just like spikes',
                     '2': 'You can defeat slime by shooting it',
                 },
                 'level-27': {
@@ -186,6 +186,11 @@ const en = {
                 'level-28': {
                     '0': 'Besides And Block, there are also Or Block and Not Block',
                     '1': 'Try to learn those blocks by using the question mark!',
+                },
+                'level-29': {
+                    '0': 'This time there\'s a giant bat flying in your way!',
+                    '1': 'Just like slime, giant bat can also damage GigaBot\'s armor',
+                    '2': 'You can also defeat them by shooting',
                 },
             },
             'blocks': {

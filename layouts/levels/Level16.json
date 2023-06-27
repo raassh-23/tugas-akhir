@@ -938,7 +938,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "2",
+								"text": "1",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -962,59 +962,13 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
 								"x": 672,
 								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "3",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1624,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 672,
-								"y": 416,
 								"width": 64,
 								"height": 64,
 								"originX": 0.5,
@@ -1124,53 +1078,6 @@
 							}
 						},
 						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1765,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 160,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
@@ -1209,7 +1116,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "4",
+								"text": "3",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -1233,7 +1140,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1588,53 +1496,6 @@
 								"origin": "center",
 								"read-aloud": false
 							},
-							"uid": 1781,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 800,
-								"y": 416,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "4",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
 							"uid": 1782,
 							"instanceVariables": {
 								"minScale": 0,
@@ -1643,106 +1504,13 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
 								"x": 672,
 								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1783,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 800,
-								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "1",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1784,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 864,
-								"y": 416,
 								"width": 64,
 								"height": 64,
 								"originX": 0.5,
@@ -1776,7 +1544,7 @@
 								"origin": "center",
 								"read-aloud": false
 							},
-							"uid": 1785,
+							"uid": 1783,
 							"instanceVariables": {
 								"minScale": 0,
 								"maxScale": 0,
@@ -1784,11 +1552,60 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
-								"x": 992,
+								"x": 800,
+								"y": 288,
+								"width": 64,
+								"height": 64,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "LevelText",
+							"properties": {
+								"text": "2",
+								"enable-bbcode": true,
+								"character-width": 50,
+								"character-height": 56,
+								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
+								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
+								"scale": 0.75,
+								"character-spacing": 0,
+								"line-height": 0,
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
+							"uid": 1784,
+							"instanceVariables": {
+								"minScale": 0,
+								"maxScale": 0,
+								"autoFit": false,
+								"maxLine": 1,
+								"id": "",
+								"gridX": 0,
+								"gridY": 0,
+								"forMovingEnemy": 0
+							},
+							"behaviors": {},
+							"world": {
+								"x": 864,
 								"y": 416,
 								"width": 64,
 								"height": 64,
@@ -1823,6 +1640,54 @@
 								"origin": "center",
 								"read-aloud": false
 							},
+							"uid": 1785,
+							"instanceVariables": {
+								"minScale": 0,
+								"maxScale": 0,
+								"autoFit": false,
+								"maxLine": 1,
+								"id": "",
+								"gridX": 0,
+								"gridY": 0,
+								"forMovingEnemy": 0
+							},
+							"behaviors": {},
+							"world": {
+								"x": 992,
+								"y": 416,
+								"width": 64,
+								"height": 64,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "LevelText",
+							"properties": {
+								"text": "4",
+								"enable-bbcode": true,
+								"character-width": 50,
+								"character-height": 56,
+								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
+								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
+								"scale": 0.75,
+								"character-spacing": 0,
+								"line-height": 0,
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
 							"uid": 1786,
 							"instanceVariables": {
 								"minScale": 0,
@@ -1831,7 +1696,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1878,59 +1744,13 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
 								"x": 864,
 								"y": 288,
-								"width": 64,
-								"height": 64,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									0,
-									0,
-									0,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "LevelText",
-							"properties": {
-								"text": "2",
-								"enable-bbcode": true,
-								"character-width": 50,
-								"character-height": 56,
-								"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-								"spacing-data": "[[9,\" \"],[7,\"|\"],[8,\",;'\"],[9,\".:`\"],[10,\"il!\"],[11,\"[]°\"],[12,\"*\"],[13,\"I\"],[14,\"t\"],[15,\"f~()\"],[16,\"r1\\\"^\"],[17,\"js\"],[19,\"c?\"],[20,\"hy\"],[21,\"beknpuz\"],[22,\"g\"],[23,\"Fadoqv\"],[24,\"EJx5<>\"],[25,\"ST27=$\"],[26,\"L3_#+\"],[27,\"BKP69£€\"],[28,\"NRUZ48-\"],[29,\"DH&\\\\/\"],[30,\"AC0%\"],[31,\"GVm\"],[32,\"OQXY\"],[33,\"w\"],[34,\"M\"],[40,\"W\"],[48,\"@\"]]",
-								"scale": 0.75,
-								"character-spacing": 0,
-								"line-height": 0,
-								"horizontal-alignment": "center",
-								"vertical-alignment": "center",
-								"wrapping": "word",
-								"initially-visible": true,
-								"origin": "center",
-								"read-aloud": false
-							},
-							"uid": 1788,
-							"instanceVariables": {
-								"minScale": 0,
-								"maxScale": 0,
-								"autoFit": false,
-								"maxLine": 1,
-								"id": "",
-								"gridX": 0,
-								"gridY": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 992,
-								"y": 160,
 								"width": 64,
 								"height": 64,
 								"originX": 0.5,

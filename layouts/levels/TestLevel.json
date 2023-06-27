@@ -1230,7 +1230,8 @@
 								"active": true,
 								"health": 1,
 								"direction": "right",
-								"validIds": "2|3"
+								"validIds": "2|3",
+								"id": 0
 							},
 							"behaviors": {
 								"TileMovement": {
@@ -1388,7 +1389,8 @@
 								"active": true,
 								"health": 1,
 								"direction": "up",
-								"validIds": "0|1"
+								"validIds": "0|1",
+								"id": 0
 							},
 							"behaviors": {
 								"TileMovement": {
@@ -1558,7 +1560,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1605,7 +1608,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1652,7 +1656,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1699,7 +1704,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1746,7 +1752,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1793,7 +1800,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -1840,7 +1848,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {

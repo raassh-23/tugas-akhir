@@ -5221,22 +5221,9 @@
 					],
 					"actions": [
 						{
-							"id": "set-instvar-value",
+							"customAction": "SetGrid",
 							"objectClass": "LevelText",
-							"sid": 901912962546778,
-							"parameters": {
-								"instance-variable": "gridX",
-								"value": "(Self.X - GRID_SIZE/2) / GRID_SIZE"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "LevelText",
-							"sid": 830178026067721,
-							"parameters": {
-								"instance-variable": "gridY",
-								"value": "(Self.Y - GRID_SIZE/2) / GRID_SIZE"
-							}
+							"sid": 793496182787897
 						}
 					],
 					"sid": 547316695695729
@@ -5311,6 +5298,40 @@
 						}
 					],
 					"sid": 158044661581720
+				},
+				{
+					"aceType": "action",
+					"aceName": "SetGrid",
+					"objectClass": "LevelText",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LevelText",
+							"sid": 526611823489587,
+							"parameters": {
+								"instance-variable": "gridX",
+								"value": "round((Self.X - GRID_SIZE/2) / GRID_SIZE)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "LevelText",
+							"sid": 800480347843074,
+							"parameters": {
+								"instance-variable": "gridY",
+								"value": "round((Self.Y - GRID_SIZE/2) / GRID_SIZE)"
+							}
+						}
+					],
+					"sid": 975870728384089
 				}
 			],
 			"sid": 361619522203103
@@ -5322,6 +5343,89 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 479949434182739,
+							"parameters": {
+								"tag": "START_SIGNAL"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 655023639787520,
+							"parameters": {
+								"object": "MovingEnemyCollision"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "AddLevelTextChild",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 940229103315788
+						}
+					],
+					"sid": 584722391927247
+				},
+				{
+					"aceType": "action",
+					"aceName": "AddLevelTextChild",
+					"objectClass": "MovingEnemyCollision",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "custom-ace-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LevelText",
+							"sid": 445205479556947,
+							"parameters": {
+								"instance-variable": "forMovingEnemy",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "LevelText",
+							"sid": 802718662483973,
+							"parameters": {
+								"instance-variable": "forMovingEnemy",
+								"comparison": 0,
+								"value": "MovingEnemyCollision.id"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 744278368060099,
+							"parameters": {
+								"child": "LevelText",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 308330677874455
+				},
 				{
 					"aceType": "action",
 					"aceName": "StartMove",
@@ -5466,6 +5570,34 @@
 						}
 					],
 					"sid": 207838625717516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 320032447715641,
+							"behaviorType": "TileMovement"
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "MovingEnemyCollision",
+							"sid": 727687040439444,
+							"parameters": {
+								"child": "LevelText",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "SetGrid",
+							"objectClass": "LevelText",
+							"sid": 105830192011736
+						}
+					],
+					"sid": 535930844695154
 				},
 				{
 					"eventType": "block",
@@ -9779,6 +9911,24 @@
 							"parameters": {
 								"variable": "isPlaying"
 							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 502526267859551,
+							"parameters": {
+								"layer": "\"LevelPopUp\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 643942479921259,
+							"parameters": {
+								"layer": "\"Help\""
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -9832,6 +9982,7 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
+									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",
@@ -10020,14 +10171,14 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "old",
+							"name": "hide",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
 							"sid": 343989684417570
 						},
 						{
-							"name": "new",
+							"name": "show",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
@@ -10042,7 +10193,7 @@
 							"objectClass": "System",
 							"sid": 922782367041279,
 							"parameters": {
-								"layer": "\"Tutorial\"&old",
+								"layer": "\"Tutorial\"&hide",
 								"visibility": "invisible"
 							}
 						},
@@ -10051,7 +10202,7 @@
 							"objectClass": "System",
 							"sid": 765613580131346,
 							"parameters": {
-								"layer": "\"Tutorial\"&old",
+								"layer": "\"Tutorial\"&hide",
 								"interactive": false
 							}
 						},
@@ -10060,7 +10211,7 @@
 							"objectClass": "System",
 							"sid": 397011416366561,
 							"parameters": {
-								"layer": "\"Tutorial\"&new",
+								"layer": "\"Tutorial\"&show",
 								"visibility": "visible"
 							}
 						},
@@ -10069,7 +10220,7 @@
 							"objectClass": "System",
 							"sid": 216652481741689,
 							"parameters": {
-								"layer": "\"Tutorial\"&new",
+								"layer": "\"Tutorial\"&show",
 								"interactive": true
 							}
 						}

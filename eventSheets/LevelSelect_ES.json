@@ -39,7 +39,7 @@
 			"eventType": "variable",
 			"name": "SWIPE_SPEED",
 			"type": "number",
-			"initialValue": "3000",
+			"initialValue": "2000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -729,9 +729,9 @@
 					"actions": [
 						{
 							"callFunction": "changeLevelPage",
-							"sid": 454443054902844,
+							"sid": 854980091574528,
 							"parameters": [
-								false
+								true
 							]
 						}
 					],
@@ -765,9 +765,9 @@
 					"actions": [
 						{
 							"callFunction": "changeLevelPage",
-							"sid": 681218723811329,
+							"sid": 770742908870968,
 							"parameters": [
-								true
+								false
 							]
 						}
 					],

@@ -24,6 +24,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 590919624926188
+		},
+		{
+			"name": "forMovingEnemy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 904249018641902
 		}
 	],
 	"behaviorTypes": [],

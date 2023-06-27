@@ -573,9 +573,14 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 963578015613732
+									"sid": 470621686430632,
+									"parameters": {
+										"first-value": "Functions.CheckInstallation",
+										"comparison": 0,
+										"second-value": "\"unsupported\""
+									}
 								}
 							],
 							"actions": [

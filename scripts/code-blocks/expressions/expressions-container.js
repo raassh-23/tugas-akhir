@@ -7,7 +7,7 @@ import BaseExpression from "./base-expression.js";
  */
 export default class ExpressionsContainer extends BaseExpression {
     constructor() {
-        super("RepeatConditionCommand");
+        super("ExpressionContainer");
 
         /**
          * @type {IWorldInstance?}

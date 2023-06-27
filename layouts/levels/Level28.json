@@ -424,7 +424,7 @@
 							"world": {
 								"x": 0,
 								"y": 0,
-								"width": 1824,
+								"width": 2023,
 								"height": 1600,
 								"originX": 0,
 								"originY": 0,
@@ -2884,7 +2884,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -2931,7 +2932,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -2954,7 +2956,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "4",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -2978,7 +2980,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -3030,7 +3033,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "2",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -3054,7 +3057,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -3434,7 +3438,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "3",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -3458,7 +3462,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -3481,7 +3486,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "2",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -3505,7 +3510,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -3692,7 +3698,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "3",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -3716,7 +3722,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -4096,7 +4103,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "2",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -4120,7 +4127,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -4143,7 +4151,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "3",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -4167,7 +4175,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -4547,7 +4556,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "4",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -4571,7 +4580,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -4618,7 +4628,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {
@@ -4641,7 +4652,7 @@
 						{
 							"type": "LevelText",
 							"properties": {
-								"text": "1",
+								"text": "4",
 								"enable-bbcode": true,
 								"character-width": 50,
 								"character-height": 56,
@@ -4665,7 +4676,8 @@
 								"maxLine": 1,
 								"id": "",
 								"gridX": 0,
-								"gridY": 0
+								"gridY": 0,
+								"forMovingEnemy": 0
 							},
 							"behaviors": {},
 							"world": {

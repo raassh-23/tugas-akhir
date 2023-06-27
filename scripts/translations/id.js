@@ -175,7 +175,7 @@ const id = {
                 },
                 'level-25': {
                     '0': 'Ada slime di depanmu!',
-                    '1': 'Slime bisa mengurangi armor GigaBot sama seperti duri',
+                    '1': 'Slime bisa merusak armor GigaBot sama seperti duri',
                     '2': 'Kamu bisa mengalahkan slime dengan menembaknya',
                 },
                 'level-27': {
@@ -186,6 +186,11 @@ const id = {
                 'level-28': {
                     '0': 'Selain Blok Dan, ada juga Blok Atau dan Blok Tidak',
                     '1': 'Coba pelajari kedua blok itu dengan menggunakan tanda tanya!',
+                },
+                'level-29': {
+                    '0': 'Kali ini ada kelelawar raksasa terbang menghalangi jalanmu!',
+                    '1': 'Sama seperti slime, kelelawar raksasa juga bisa merusak armor GigaBot',
+                    '2': 'Mereka juga bisa dikalahkan dengan ditembak',
                 },
             },
             'blocks': {
