@@ -120,12 +120,12 @@ const id = {
                     '5': 'Klik tombol ini untuk menutup pop up kondisi',
                     '6': 'Kamu bisa membuka kembali pop up kondisi Blok If dengan mengklik ini',
                     '7': 'Sekarang kamu bisa menyusun kode di dalam Blok If yang hanya akan dijalankan jika GigaBot perlu mengumpulkan permata!',
-                    '8': 'Kamu bisa mempelajari lagi Blok If dan Ekspresi permata menggunakan tanda tanya',
+                    '8': 'Kamu bisa mempelajari lagi Blok If dan Ekspresi Permata menggunakan tanda tanya',
                 },
                 'level-9': {
-                    '0': 'Hati-hati! Ada duri yang bisa merusak zirah GigaBot',
-                    '1': 'Kalau nilai zirah Gigabot sampai 0, GigaBot akan rusak',
-                    '2': 'Nilai zirah GigaBot disimpan ke variabel dan nilainya bisa kamu gunakan untuk blok yang memerlukan kondisi',
+                    '0': 'Hati-hati! Ada duri yang bisa merusak armor GigaBot',
+                    '1': 'Kalau nilai armor Gigabot sampai 0, GigaBot akan rusak',
+                    '2': 'Nilai armor GigaBot disimpan ke variabel dan nilainya bisa kamu gunakan untuk blok yang memerlukan kondisi',
                 },
                 'level-10': {
                     '0': 'Sebuah petak bisa berisikan angka',
@@ -175,7 +175,7 @@ const id = {
                 },
                 'level-25': {
                     '0': 'Ada slime di depanmu!',
-                    '1': 'Slime bisa mengurangi zirah GigaBot sama seperti duri',
+                    '1': 'Slime bisa mengurangi armor GigaBot sama seperti duri',
                     '2': 'Kamu bisa mengalahkan slime dengan menembaknya',
                 },
                 'level-27': {
@@ -312,8 +312,8 @@ const id = {
                 },
                 'variable': {
                     '0': {
-                        'title': 'Ekspresi Variabel Zirah',
-                        'content': 'Blok ini akan memberikan nilai zirah robotmu.',
+                        'title': 'Ekspresi Variabel Armor',
+                        'content': 'Blok ini akan memberikan nilai armor robotmu.',
                         'example': '',
                     },
                     '1': {

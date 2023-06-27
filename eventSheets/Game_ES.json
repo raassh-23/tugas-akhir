@@ -425,10 +425,6 @@
 													]
 												},
 												{
-													"type": "comment",
-													"text": "second call saveCommandPosition, after shifting active position without the dragged command"
-												},
-												{
 													"callFunction": "ShiftActiveCodeBlocksSavedPosition",
 													"sid": 856502921323088,
 													"parameters": [
@@ -1882,9 +1878,21 @@
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
 									"sid": 276703496311317,
+									"disabled": true,
 									"parameters": {
 										"comparison": 5,
 										"x-co-ordinate": "x + X_TOLERANCE"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 525939434643662,
+									"parameters": {
+										"object": "CodeBlock",
+										"expression": "ceil(CodeBlock.X)",
+										"comparison": 5,
+										"value": "ceil(x)"
 									}
 								}
 							],
@@ -1907,9 +1915,21 @@
 									"id": "compare-x",
 									"objectClass": "CodeBlock",
 									"sid": 643527559710128,
+									"disabled": true,
 									"parameters": {
 										"comparison": 2,
 										"x-co-ordinate": "x + X_TOLERANCE"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 317120869702963,
+									"parameters": {
+										"object": "CodeBlock",
+										"expression": "ceil(CodeBlock.X)",
+										"comparison": 2,
+										"value": "ceil(x)"
 									}
 								}
 							],

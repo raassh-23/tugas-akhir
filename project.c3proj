@@ -1032,7 +1032,7 @@
 	},
 	"properties": {
 		"description": "Help Gigabots to reach their portal",
-		"version": "0.2.4",
+		"version": "0.3.1",
 		"author": "Muhammad Nur Abdurrauf",
 		"authorEmail": "muh.nur.abdurrauf@gmail.com",
 		"authorWebsite": "https://raassh-23.github.io/",
