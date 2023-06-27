@@ -260,6 +260,14 @@
 			],
 			"actions": [
 				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 325251436668336,
+					"parameters": {
+						"orientation": "landscape"
+					}
+				},
+				{
 					"id": "map-function",
 					"objectClass": "Functions",
 					"sid": 261691035456120,
