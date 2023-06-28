@@ -77,9 +77,9 @@ const id = {
             },
             'error': {
                 'else-placement': 'Kamu tidak bisa menaruh Else atau Else If disana',
-                'no-ammo': 'Robot kamu kehabisan peluru',
+                'no-ammo': 'GigaBot kehabisan peluru',
                 'invalid-condition': 'Kondisi kamu tidak valid',
-                'player-died': 'Robot kamu rusak',
+                'player-died': 'GigaBot rusak',
             },
             'tutorial': {
                 'level-1': {
@@ -198,33 +198,33 @@ const id = {
                 'move': {
                     '0': {
                         'title': 'Perintah Maju',
-                        'content': 'Blok ini membuat robotmu maju.',
+                        'content': 'Blok ini membuat GigaBot berjalan maju.',
                         'example': '',
                     }
                 },
                 'rotate': {
                     '0': {
-                        'title': 'Perintah Berputar',
-                        'content': 'Blok ini memutar robotmu 90 derajat searah jarum jam.',
+                        'title': 'Perintah Berputar Kanan',
+                        'content': 'Blok ini memutar GigaBot 90 derajat ke kanan/searah jarum jam.',
                         'example': '',
                     },
                     '1': {
-                        'title': 'Perintah Berputar',
-                        'content': 'Blok ini memutar robotmu 90 derajat melawan arah jarum jam.',
+                        'title': 'Perintah Berputar Kiri',
+                        'content': 'Blok ini memutar GigaBot 90 derajat ke kiri/melawan arah jarum jam.',
                         'example': '',
                     }
                 },
                 'takegem': {
                     '0': {
                         'title': 'Perintah Ambil Permata',
-                        'content': 'Blok ini membuat robotmu mengambil permata yang ada di petak yang sama.',
+                        'content': 'Blok ini membuat GigaBot mengambil permata yang ada di petak yang sama.',
                         'example': '',
                     },
                 },
                 'shoot': {
                     '0': {
                         'title': 'Perintah Tembak',
-                        'content': 'Blok ini membuat robotmu menembak ke arah yang sama dengan arah robotmu. Peluru memiliki jangkauan 5 petak.',
+                        'content': 'Blok ini membuat GigaBot menembak ke depan, Peluru memiliki jangkauan 5 petak.',
                         'example': '',
                     },
                 },
@@ -318,64 +318,64 @@ const id = {
                 'variable': {
                     '0': {
                         'title': 'Ekspresi Variabel Armor',
-                        'content': 'Blok ini akan memberikan nilai armor robotmu.',
+                        'content': 'Blok ini akan memberikan nilai armor GigaBot.',
                         'example': '',
                     },
                     '1': {
                         'title': 'Ekspresi Variabel Peluru',
-                        'content': 'Blok ini akan memberikan nilai jumlah peluru robotmu.',
+                        'content': 'Blok ini akan memberikan nilai jumlah peluru GigaBot.',
                         'example': '',
                     },
                     '2': {
                         'title': 'Ekspresi Variabel Permata',
-                        'content': 'Blok ini akan memberikan nilai jumlah permata yang perlu dikumpulkan robotmu.',
+                        'content': 'Blok ini akan memberikan nilai jumlah permata yang perlu dikumpulkan GigaBot.',
                         'example': '',
                     },
                 },
                 'read': {
                     '0': {
                         'title': 'Ekspresi Baca Kiri',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '1': {
                         'title': 'Ekspresi Baca Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah atas GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '2': {
                         'title': 'Ekspresi Baca Kanan',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '3': {
                         'title': 'Ekspresi Baca Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah bawah GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '4': {
                         'title': 'Ekspresi Baca Kiri Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri atas GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '5': {
                         'title': 'Ekspresi Baca Kanan Atas',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan atas robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan atas GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '6': {
                         'title': 'Ekspresi Baca Kanan Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kanan bawah GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '7': {
                         'title': 'Ekspresi Baca Kiri Bawah',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri bawah robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak di sebelah kiri bawah GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                     '8': {
                         'title': 'Ekspresi Baca',
-                        'content': 'Blok ini akan memberikan nilai yang ada di petak yang ditempati robotmu. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
+                        'content': 'Blok ini akan memberikan nilai yang ada di petak yang ditempati GigaBot. Jika petak itu tidak memiliki angka, blok ini akan memberikan nilai 0.',
                         'example': '',
                     },
                 },

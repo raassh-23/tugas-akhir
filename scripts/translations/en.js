@@ -77,9 +77,9 @@ const en = {
             },
             'error': {
                 'else-placement': 'You can\'t put Else If or Else there',
-                'no-ammo': 'Your robot ran out of ammo',
+                'no-ammo': 'GigaBot ran out of ammo',
                 'invalid-condition': 'The condition is not valid',
-                'player-died': 'Your robot is broken',
+                'player-died': 'GigaBot is broken',
             },
             'tutorial': {
                 'level-1': {
@@ -198,33 +198,33 @@ const en = {
                 'move': {
                     '0': {
                         'title': 'Move Command',
-                        'content': 'This block makes your robot move forward.',
+                        'content': 'This block makes your GigaBot move forward.',
                         'example': '',
                     }
                 },
                 'rotate': {
                     '0': {
-                        'title': 'Rotate Command',
-                        'content': 'This block makes your robot rotate 90 degrees clockwise.',
+                        'title': 'Rotate Right Command',
+                        'content': 'This block makes your GigaBot rotate 90 degrees to the right/clockwise.',
                         'example': '',
                     },
                     '1': {
-                        'title': 'Rotate Command',
-                        'content': 'This block makes your robot rotate 90 degrees anti-clockwise.',
+                        'title': 'Rotate Left Command',
+                        'content': 'This block makes your GigaBot rotate 90 degrees to the left/anti-clockwise.',
                         'example': '',
                     }
                 },
                 'takegem': {
                     '0': {
                         'title': 'Collect Gem Command',
-                        'content': 'This block makes your robot collect a gem that is in the same grid.',
+                        'content': 'This block makes your GigaBot collect a gem that is in the same grid.',
                         'example': '',
                     },
                 },
                 'shoot': {
                     '0': {
                         'title': 'Shoot Command',
-                        'content': 'This block makes your robot shoot in the same direction as your robot. The bullet has a range of 5 grids.',
+                        'content': 'This block makes your GigaBot shoot forward, the bullet has a range of 5 grids.',
                         'example': '',
                     },
                 },
@@ -318,65 +318,65 @@ const en = {
                 'variable': {
                     '0': {
                         'title': 'Armor Variable Expression',
-                        'content': 'This block gives you the value of your robot\'s armor.',
+                        'content': 'This block gives you the value of GigaBot\'s armor.',
                         'example': '',
                     },
                     '1': {
                         'title': 'Bullet Variable Expression',
-                        'content': 'This block gives you the value of your robot\'s bullet count.',
+                        'content': 'This block gives you the value of GigaBot\'s bullet count.',
                         'example': '',
                     },
                     '2': {
                         'title': 'Gem Variable Expression',
-                        'content': 'This block gives you the value of the number of gems that your robot need to collect.',
+                        'content': 'This block gives you the value of the number of gems that GigaBot need to collect.',
                         'example': '',
                     },
                 },
                 'read': {
                     '0': {
                         'title': 'Read Left Expression',
-                        'content': 'This block will give you the value of the tile on the left of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the left of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '1': {
                         'title': 'Read Up Expression',
-                        'content': 'This block will give you the value of the tile above your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile above GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '2': {
                         'title': 'Read Right Expression',
-                        'content': 'This block will give you the value of the tile on the right of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the right of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '3': {
                         'title': 'Read Down Expression',
-                        'content': 'This block will give you the value of the tile below your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile below GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '4': {
                         'title': 'Read Upper Left Expression',
-                        'content': 'This block will give you the value of the tile on the upper left of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the upper left of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '5': {
                         'title': 'Read Upper Right Expression',
-                        'content': 'This block will give you the value of the tile on the upper right of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the upper right of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '6': {
                         'title': 'Read Lower Right Expression',
-                        'content': 'This block will give you the value of the tile on the lower right of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the lower right of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                     '7': {
                         'title': 'Read Lower Left Expression',
-                        'content': 'This block will give you the value of the tile on the lower left of your robot. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile on the lower left of GigaBot. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
 
                     },
                     '8': {
                         'title': 'Read Expression',
-                        'content': 'This block will give you the value of the tile that your robot is standing on. If there is no number on that tile, this block will give you the value 0.',
+                        'content': 'This block will give you the value of the tile that GigaBot is standing on. If there is no number on that tile, this block will give you the value 0.',
                         'example': '',
                     },
                 },
