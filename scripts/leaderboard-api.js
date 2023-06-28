@@ -22,7 +22,7 @@
  *   id: number,
  *   level: number,
  *   username: string,
- *   actions: number,
+ *   steps: number,
  *   codeBlocks: number,
  *   timeMs: number,
  *   createdAt: string,
@@ -74,12 +74,12 @@ export default class LeaderboardAPI {
      * 
      * @param {number} level 
      * @param {string} username 
-     * @param {number} actions 
+     * @param {number} steps 
      * @param {number} codeBlocks 
      * @param {number} timeMs 
      * @returns {Promise<AddToLeaderboardData>}
      */
-    async addToLeaderboard(level, username, actions, codeBlocks, timeMs) {
+    async addToLeaderboard(level, username, steps, codeBlocks, timeMs) {
         const url = this._getUrl("leaderboard");
         const response = await fetch(url, {
             method: "POST",
@@ -89,7 +89,7 @@ export default class LeaderboardAPI {
             body: JSON.stringify({
                 level,
                 username,
-                actions,
+                steps,
                 codeBlocks,
                 timeMs,
             })
@@ -115,7 +115,7 @@ export default class LeaderboardAPI {
      * level: number,
      * page: number,
      * pageSize: number,
-     * sortBy: "actions" | "codeBlocks" | "timeMs",
+     * sortBy: "steps" | "codeBlocks" | "timeMs",
      * order: "asc" | "desc"
      * }} options 
      * @returns {Promise<GetLeaderboardData>}

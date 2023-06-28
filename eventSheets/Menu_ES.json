@@ -111,7 +111,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TARGET_ACTIONS_INDEX",
+			"name": "TARGET_STEPS_INDEX",
 			"type": "number",
 			"initialValue": "1",
 			"comment": "",
@@ -141,7 +141,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ACTIONS_INDEX",
+			"name": "STEPS_INDEX",
 			"type": "number",
 			"initialValue": "4",
 			"comment": "",
@@ -183,7 +183,7 @@
 			"eventType": "variable",
 			"name": "SORT_BY_REAL_VALUES",
 			"type": "string",
-			"initialValue": "timeMs,actions,codeBlocks",
+			"initialValue": "timeMs,steps,codeBlocks",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

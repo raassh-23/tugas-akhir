@@ -1789,7 +1789,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions",
+								"id": "steps",
 								"translation": "menu.leaderboard.steps"
 							},
 							"behaviors": {},
@@ -2233,7 +2233,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions1",
+								"id": "steps1",
 								"translation": ""
 							},
 							"behaviors": {},
@@ -2677,7 +2677,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions2",
+								"id": "steps2",
 								"translation": ""
 							},
 							"behaviors": {},
@@ -3121,7 +3121,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions3",
+								"id": "steps3",
 								"translation": ""
 							},
 							"behaviors": {},
@@ -3565,7 +3565,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions4",
+								"id": "steps4",
 								"translation": ""
 							},
 							"behaviors": {},
@@ -4009,7 +4009,7 @@
 								"maxScale": 0.5,
 								"autoFit": true,
 								"maxLine": 1,
-								"id": "actions5",
+								"id": "steps5",
 								"translation": ""
 							},
 							"behaviors": {},

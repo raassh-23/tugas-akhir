@@ -3849,7 +3849,7 @@
 					},
 					"uid": 490,
 					"instanceVariables": {
-						"id": "actions"
+						"id": "steps"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -3922,7 +3922,7 @@
 						"maxScale": 0.8,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "actions",
+						"id": "steps",
 						"translation": ""
 					},
 					"behaviors": {},
@@ -5170,7 +5170,7 @@
 						"maxScale": 0.8,
 						"autoFit": false,
 						"maxLine": 1,
-						"id": "game-over-actions",
+						"id": "game-over-steps",
 						"translation": ""
 					},
 					"behaviors": {},
@@ -5823,7 +5823,7 @@
 					},
 					"uid": 370,
 					"instanceVariables": {
-						"id": "action-game-over-icon"
+						"id": "steps-game-over-icon"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -6044,7 +6044,7 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-actions-best",
+						"id": "game-over-steps-best",
 						"translation": ""
 					},
 					"behaviors": {},
@@ -6192,7 +6192,7 @@
 						"maxScale": 0.6,
 						"autoFit": true,
 						"maxLine": 1,
-						"id": "game-over-actions-target",
+						"id": "game-over-steps-target",
 						"translation": ""
 					},
 					"behaviors": {},
@@ -6368,7 +6368,7 @@
 					},
 					"uid": 377,
 					"instanceVariables": {
-						"id": "actions"
+						"id": "steps"
 					},
 					"behaviors": {},
 					"sceneGraphData": {

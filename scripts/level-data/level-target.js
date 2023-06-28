@@ -1,132 +1,132 @@
 /**
  * @type {{[level: number]: {
- *  actions: number,
+ *  steps: number,
  *  codeBlocks: number,
  * }}}
  */
 const levelTarget = {
     0: { // test level
-        actions: 9,
+        steps: 9,
         codeBlocks: 7,
     },
     1: {
-        actions: 3,
+        steps: 4,
         codeBlocks: 3,
     },
     2: {
-        actions: 6,
+        steps: 6,
         codeBlocks: 6,
     },
     3: {
-        actions: 6,
+        steps: 6,
         codeBlocks: 6,
     },
     4: {
-        actions: 5,
+        steps: 5,
         codeBlocks: 5,
     },
     5: {
-        actions: 11,
+        steps: 11,
         codeBlocks: 11,
     },
     6: {
-        actions: 12,
+        steps: 12,
         codeBlocks: 6,
     },
     7: {
-        actions: 14,
+        steps: 14,
         codeBlocks: 7,
     },
     8: {
-        actions: 14,
+        steps: 14,
         codeBlocks: 9,
     },
     9: {
-        actions: 18,
+        steps: 18,
         codeBlocks: 9,
     },
     10: {
-        actions: 15,
+        steps: 15,
         codeBlocks: 8,
     },
     11: {
-        actions: 19,
+        steps: 19,
         codeBlocks: 11,
     },
     12: {
-        actions: 14,
+        steps: 14,
         codeBlocks: 9,
     },
     13: {
-        actions: 17,
+        steps: 17,
         codeBlocks: 10,
     },
     14: {
-        actions: 18,
+        steps: 18,
         codeBlocks: 11,
     },
     15: {
-        actions: 28,
+        steps: 28,
         codeBlocks: 17,
     },
     16: {
-        actions: 23,
+        steps: 23,
         codeBlocks: 15,
     },
     17: {
-        actions: 31,
+        steps: 31,
         codeBlocks: 12,
     },
     18: {
-        actions: 32,
+        steps: 32,
         codeBlocks: 15,
     },
     19: {
-        actions: 15,
+        steps: 15,
         codeBlocks: 13,
     },
     20: {
-        actions: 27,
+        steps: 27,
         codeBlocks: 6,
     },
     21: {
-        actions: 29,
+        steps: 29,
         codeBlocks: 6,
     },
     22: {
-        actions: 37,
+        steps: 37,
         codeBlocks: 7,
     },
     23: {
-        actions: 63,
+        steps: 63,
         codeBlocks: 7,
     },
     24: {
-        actions: 52,
+        steps: 52,
         codeBlocks: 9,
     },
     25: {
-        actions: 60,
+        steps: 60,
         codeBlocks: 10,
     },
     26: {
-        actions: 66,
+        steps: 66,
         codeBlocks: 10,
     },
     27: {
-        actions: 68,
+        steps: 68,
         codeBlocks: 9,
     },
     28: {
-        actions: 113,
+        steps: 113,
         codeBlocks: 10,
     },
     29: {
-        actions: 93,
+        steps: 93,
         codeBlocks: 13,
     },
     30: {
-        actions: 81,
+        steps: 81,
         codeBlocks: 18,
     },
 }

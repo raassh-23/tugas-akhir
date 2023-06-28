@@ -97,7 +97,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "actionCount",
+			"name": "stepCount",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -137,7 +137,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "targetActions",
+			"name": "targetSteps",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -5088,11 +5088,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "UIText",
-							"sid": 741295605760343,
+							"sid": 446740292089429,
 							"parameters": {
 								"instance-variable": "id",
 								"comparison": 0,
-								"value": "\"actions\""
+								"value": "\"steps\""
 							}
 						}
 					],
@@ -5102,7 +5102,7 @@
 							"objectClass": "UIText",
 							"sid": 772184076146310,
 							"parameters": {
-								"text": "zeropad(Functions.GetActionCount , 2)"
+								"text": "zeropad(Functions.GetStepCount , 2)"
 							}
 						}
 					],
@@ -6565,11 +6565,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 447167874638699,
+									"sid": 239510363795849,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-actions\""
+										"value": "\"game-over-steps\""
 									}
 								}
 							],
@@ -6579,7 +6579,7 @@
 									"objectClass": "UIText",
 									"sid": 330609722202940,
 									"parameters": {
-										"text": "Functions.GetActionCount"
+										"text": "Functions.GetStepCount"
 									}
 								},
 								{
@@ -6739,11 +6739,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 845777981593146,
+									"sid": 216652984144791,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-actions-target\""
+										"value": "\"game-over-steps-target\""
 									}
 								}
 							],
@@ -6753,7 +6753,7 @@
 									"objectClass": "UIText",
 									"sid": 331287284709901,
 									"parameters": {
-										"text": "Functions.Translate(\"game.game-over.target\", Functions.Interpolate(\"value\", str(targetActions)))"
+										"text": "Functions.Translate(\"game.game-over.target\", Functions.Interpolate(\"value\", str(targetSteps)))"
 									}
 								}
 							],
@@ -6837,8 +6837,8 @@
 									"sid": 203001324421357,
 									"parameters": {
 										"x": "level",
-										"y": "ACTIONS_INDEX",
-										"value": "actionCount"
+										"y": "STEPS_INDEX",
+										"value": "stepCount"
 									}
 								},
 								{
@@ -6890,8 +6890,8 @@
 									"sid": 896280309114609,
 									"parameters": {
 										"x": "level",
-										"y": "ACTIONS_INDEX",
-										"value": "actionCount < LevelScoreData.At(level, ACTIONS_INDEX) ? actionCount : LevelScoreData.At(level, ACTIONS_INDEX)"
+										"y": "STEPS_INDEX",
+										"value": "stepCount < LevelScoreData.At(level, STEPS_INDEX) ? stepCount : LevelScoreData.At(level, STEPS_INDEX)"
 									}
 								},
 								{
@@ -6965,11 +6965,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 976098160974092,
+									"sid": 494416419237708,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"game-over-actions-best\""
+										"value": "\"game-over-steps-best\""
 									}
 								}
 							],
@@ -6979,7 +6979,7 @@
 									"objectClass": "UIText",
 									"sid": 248497896540357,
 									"parameters": {
-										"text": "Functions.Translate(\"game.game-over.best\", Functions.Interpolate(\"value\", LevelScoreData.At(level, ACTIONS_INDEX)))"
+										"text": "Functions.Translate(\"game.game-over.best\", Functions.Interpolate(\"value\", LevelScoreData.At(level, STEPS_INDEX)))"
 									}
 								}
 							],
@@ -6991,11 +6991,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Star",
-									"sid": 224677869664483,
+									"sid": 410818464002318,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"actions\""
+										"value": "\"steps\""
 									}
 								}
 							],
@@ -7005,7 +7005,7 @@
 									"objectClass": "Star",
 									"sid": 118297688056055,
 									"parameters": {
-										"opacity": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 100 : 0"
+										"opacity": "LevelScoreData.At(level, STEPS_INDEX) <= targetSteps ? 100 : 0"
 									}
 								}
 							],
@@ -7047,8 +7047,8 @@
 									"sid": 503881728495644,
 									"parameters": {
 										"x": "level",
-										"y": "TARGET_ACTIONS_INDEX",
-										"value": "LevelScoreData.At(level, ACTIONS_INDEX) <= targetActions ? 1 : 0"
+										"y": "TARGET_STEPS_INDEX",
+										"value": "LevelScoreData.At(level, STEPS_INDEX) <= targetSteps ? 1 : 0"
 									}
 								},
 								{
@@ -7596,7 +7596,7 @@
 										},
 										{
 											"type": "script",
-											"script": "const {\n\tlevel,\n\tusername,\n\tactionCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tawait leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tactionCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t);\n\t\n\truntime.callFunction(\"AddToLeaderboardSuccess\")\n} catch(error) {\n\tconsole.error(error);\n\t\n\tlocalVars.isError = true;\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
+											"script": "const {\n\tlevel,\n\tusername,\n\tstepCount,\n\tcodeBlockCount,\n\tlevelTimer,\n} = runtime.globalVars;\n\ntry {\n\tawait leaderboard.addToLeaderboard(\n\t\tlevel,\n\t\tusername,\n\t\tstepCount,\n\t\tcodeBlockCount,\n\t\tMath.round(levelTimer * 1000, 3),\n\t);\n\t\n\truntime.callFunction(\"AddToLeaderboardSuccess\")\n} catch(error) {\n\tconsole.error(error);\n\t\n\tlocalVars.isError = true;\n\truntime.callFunction(\"AddToLeaderboardError\")\n}"
 										}
 									],
 									"sid": 617339742470544
@@ -7869,7 +7869,7 @@
 					"sid": 526036823975888
 				},
 				{
-					"functionName": "GetActionCount",
+					"functionName": "GetStepCount",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
@@ -7881,7 +7881,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "runtime.globalVars.actionCount = state.actionCount;\nruntime.setReturnValue(runtime.globalVars.actionCount);"
+							"script": "runtime.globalVars.stepCount = state.stepCount;\nruntime.setReturnValue(runtime.globalVars.stepCount);"
 						}
 					],
 					"sid": 900680725918566
@@ -9982,7 +9982,6 @@
 									"id": "compare-at-xy",
 									"objectClass": "LevelScoreData",
 									"sid": 746339739516060,
-									"disabled": true,
 									"parameters": {
 										"x": "level",
 										"y": "SHOW_TUTORIAL_INDEX",

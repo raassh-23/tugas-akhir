@@ -236,11 +236,11 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Star",
-													"sid": 803211235215235,
+													"sid": 188947671492933,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
-														"value": "\"actions\""
+														"value": "\"steps\""
 													}
 												}
 											],
@@ -250,7 +250,7 @@
 													"objectClass": "Star",
 													"sid": 854440964852583,
 													"parameters": {
-														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_ACTIONS_INDEX) * 100"
+														"opacity": "LevelScoreData.At(LevelScoreData.CurX, TARGET_STEPS_INDEX) * 100"
 													}
 												}
 											],

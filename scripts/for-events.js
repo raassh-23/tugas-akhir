@@ -38,7 +38,7 @@ let pickedCommand = null;
  * isError: boolean,
  * isPaused: boolean,
  * playerCount: number,
- * actionCount: number,
+ * stepCount: number,
  * surrounding: {
  * 	up: number,
  * 	down: number,
@@ -60,7 +60,7 @@ const state = {
 	isError: false,
 	isPaused: false,
 	playerCount: 0,
-	actionCount: 0,
+	stepCount: 0,
 	surrounding: {
 		up: 0,
 		down: 0,
@@ -77,7 +77,8 @@ const state = {
 /**
  * @type {LeaderboardAPI}
  */
-const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
+const leaderboard = new LeaderboardAPI("http://localhost:3000");
+// const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
 
 /**
  * 
@@ -97,9 +98,9 @@ function setupLevel(runtime) {
 	setupAvailableConditionalExpressions(runtime);
 	setupVariablesList(runtime);
 
-	const { actions, codeBlocks } = levelTarget[runtime.globalVars.level];
+	const { steps, codeBlocks } = levelTarget[runtime.globalVars.level];
 
-	runtime.globalVars.targetActions = actions ?? 0;
+	runtime.globalVars.targetSteps = steps ?? 0;
 	runtime.globalVars.targetCodeBlocks = codeBlocks ?? 0;
 }
 
@@ -157,7 +158,7 @@ function resetState(runtime) {
 	state.isError = false;
 	state.isPaused = false;
 	state.playerCount = playerCount;
-	state.actionCount = 0;
+	state.stepCount = 0;
 	state.surrounding = {
 		up: 0,
 		down: 0,
@@ -423,7 +424,7 @@ function getVariableValue(player, name) {
  * level: number,
  * page: number,
  * pageSize: number,
- * sortBy: "actions" | "codeBlocks" | "timeMs",
+ * sortBy: "steps" | "codeBlocks" | "timeMs",
  * order: "asc" | "desc"
  * }} options 
  * 
@@ -439,11 +440,11 @@ async function showLeaderboard(runtime, options) {
 
 	const PAGE_SIZE = 5;
 
-	const elements = {
+	const texts = {
 		rank: [],
 		name: [],
 		time: [],
-		actions: [],
+		steps: [],
 		codeCount: [],
 		datetime: []
 	};
@@ -452,46 +453,46 @@ async function showLeaderboard(runtime, options) {
 		const id = text.instVars.id;
 
 		if (id != "rank" && id.startsWith("rank")) {
-			elements.rank.push(text);
+			texts.rank.push(text);
 		} else if (id != "name" && id.startsWith("name")) {
-			elements.name.push(text);
+			texts.name.push(text);
 		} else if (id != "time" && id.startsWith("time")) {
-			elements.time.push(text);
-		} else if (id != "actions" && id.startsWith("actions")) {
-			elements.actions.push(text);
+			texts.time.push(text);
+		} else if (id != "steps" && id.startsWith("steps")) {
+			texts.steps.push(text);
 		} else if (id != "code-count" && id.startsWith("code-count")) {
-			elements.codeCount.push(text);
+			texts.codeCount.push(text);
 		} else if (id != "datetime" && id.startsWith("datetime")) {
-			elements.datetime.push(text);
+			texts.datetime.push(text);
 		}
 	}
 
-	Object.values(elements).forEach(texts => texts.sort());
+	Object.values(texts).forEach(texts => texts.sort());
 
 	for (let i = 0; i < count; i++) {
 		const {
 			username,
-			actions,
+			steps,
 			codeBlocks,
 			timeMs,
 			createdAt,
 		} = items[i];
 
-		elements.rank[i].text = `${(page - 1) * PAGE_SIZE + i + 1}`;
-		elements.name[i].text = username;
-		elements.time[i].text = runtime.callFunction("FormatTime", timeMs / 1000);
-		elements.actions[i].text = `${actions}`;
-		elements.codeCount[i].text = `${codeBlocks}`;
-		elements.datetime[i].text = new Date(createdAt).toLocaleString();
+		texts.rank[i].text = `${(page - 1) * PAGE_SIZE + i + 1}`;
+		texts.name[i].text = username;
+		texts.time[i].text = runtime.callFunction("FormatTime", timeMs / 1000);
+		texts.steps[i].text = `${steps}`;
+		texts.codeCount[i].text = `${codeBlocks}`;
+		texts.datetime[i].text = new Date(createdAt).toLocaleString();
 	}
 
 	for (let i = count; i < PAGE_SIZE; i++) {
-		elements.rank[i].text = "";
-		elements.name[i].text = "";
-		elements.time[i].text = "";
-		elements.actions[i].text = "";
-		elements.codeCount[i].text = "";
-		elements.datetime[i].text = "";
+		texts.rank[i].text = "";
+		texts.name[i].text = "";
+		texts.time[i].text = "";
+		texts.steps[i].text = "";
+		texts.codeCount[i].text = "";
+		texts.datetime[i].text = "";
 	}
 
 	for (const button of runtime.objects.Button.getAllInstances()) {
