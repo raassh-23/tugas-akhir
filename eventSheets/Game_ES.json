@@ -514,6 +514,14 @@
 									"parameters": {
 										"unique-id": "Functions.PickCodeBlockShadowToShow"
 									}
+								},
+								{
+									"id": "layer-is-interactive",
+									"objectClass": "System",
+									"sid": 286968012215997,
+									"parameters": {
+										"layer": "CodeBlockShadow.LayerName"
+									}
 								}
 							],
 							"actions": [
@@ -702,6 +710,14 @@
 									"sid": 662099567116718,
 									"parameters": {
 										"unique-id": "Functions.PickCodeBlockShadowToShow"
+									}
+								},
+								{
+									"id": "layer-is-interactive",
+									"objectClass": "System",
+									"sid": 396749872067650,
+									"parameters": {
+										"layer": "CodeBlockShadow.LayerName"
 									}
 								}
 							],

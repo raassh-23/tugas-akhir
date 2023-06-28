@@ -77,8 +77,8 @@ const state = {
 /**
  * @type {LeaderboardAPI}
  */
-const leaderboard = new LeaderboardAPI("http://localhost:3000");
-// const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
+// const leaderboard = new LeaderboardAPI("http://localhost:3000");
+const leaderboard = new LeaderboardAPI("https://tugas-akhir-api.herokuapp.com");
 
 /**
  * 

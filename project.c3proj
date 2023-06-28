@@ -36,14 +36,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "EdwardBonnett_VsCodePlugin",
-			"name": "VS Code Plugin",
-			"author": "Edward Bonnett",
-			"bundled": false,
-			"version": "1.0.0.1"
-		},
-		{
-			"type": "plugin",
 			"id": "HTMLElement",
 			"name": "HTML Element",
 			"author": "Scirra",
@@ -305,7 +297,6 @@
 					"Keyboard",
 					"Mouse",
 					"Touch",
-					"VSCodePlugin",
 					"LocalStorage"
 				],
 				"subfolders": [],
@@ -985,6 +976,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "BubblegumSans-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 666389093137148,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -1034,7 +1033,7 @@
 	},
 	"properties": {
 		"description": "Help Gigabots to reach their portal",
-		"version": "0.3.1",
+		"version": "0.3.2",
 		"author": "Muhammad Nur Abdurrauf",
 		"authorEmail": "muh.nur.abdurrauf@gmail.com",
 		"authorWebsite": "https://raassh-23.github.io/",
