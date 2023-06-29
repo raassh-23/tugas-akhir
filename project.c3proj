@@ -1033,7 +1033,7 @@
 	},
 	"properties": {
 		"description": "Help Gigabots to reach their portal",
-		"version": "0.3.3",
+		"version": "0.3.4",
 		"author": "Muhammad Nur Abdurrauf",
 		"authorEmail": "muh.nur.abdurrauf@gmail.com",
 		"authorWebsite": "https://raassh-23.github.io/",
@@ -1052,9 +1052,9 @@
 			0
 		],
 		"splashColor": [
-			1,
-			1,
-			1,
+			0.8627450980392157,
+			0.8627450980392157,
+			0.8627450980392157,
 			0
 		],
 		"useThemeColor": false,

@@ -2,6 +2,7 @@ const id = {
     translation: {
         'menu': {
             'version': 'Versi {{version}}',
+            'landscape': 'Ubah tampilan ke mode landscape untuk pengalaman yang lebih baik!',
             'leaderboard': {
                 'title': 'Papan Peringkat',
                 'level': 'Level',

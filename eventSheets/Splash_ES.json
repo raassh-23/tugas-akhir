@@ -455,6 +455,14 @@
 						"mode": "stretch-letterbox-scale",
 						"navigation-ui": "hide"
 					}
+				},
+				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 325251436668336,
+					"parameters": {
+						"orientation": "landscape"
+					}
 				}
 			],
 			"sid": 111995576900277

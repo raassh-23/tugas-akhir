@@ -2,6 +2,7 @@ const en = {
     translation: {
         'menu': {
             'version': 'Version {{version}}',
+            'landscape': 'Change to landscape mode for better experience!',
             'leaderboard': {
                 'title': 'Leaderboard',
                 'level': 'Level',

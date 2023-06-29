@@ -29,7 +29,32 @@
 					"script": "setupLevel(runtime);"
 				}
 			],
-			"sid": 364137895727168
+			"sid": 364137895727168,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 973406008524405,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"game-over-next\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Button",
+							"sid": 422327422573683
+						}
+					],
+					"sid": 667019477629432
+				}
+			]
 		}
 	],
 	"sid": 326283304354145
