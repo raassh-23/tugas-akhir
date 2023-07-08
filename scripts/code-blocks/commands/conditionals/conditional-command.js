@@ -104,9 +104,8 @@ export default class ConditionalCommand extends CommandsContainer {
         // to be able to shift blocks correctly 
         waitForMilisecond(1).then(() => {
             this._codeBlockShadows[1].x = this.x + this.width;
+            this._codeBlockProtrusions[1].x = this.x + this.width;
         }).catch((error) => { console.log(error); });
-
-        this._codeBlockProtrusions[1].x = this.x + this.width;
 
         const parent = getContainerParent(this);
 

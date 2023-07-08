@@ -8,12 +8,12 @@
 	"members": [
 		"Player",
 		"Rock",
-		"MovingEnemyCollision",
+		"BatCollision",
 		"Gem",
 		"Spike",
 		"Portal",
 		"Bullet",
-		"MovingEnemy",
-		"StaticEnemy"
+		"Bat",
+		"Slime"
 	]
 }

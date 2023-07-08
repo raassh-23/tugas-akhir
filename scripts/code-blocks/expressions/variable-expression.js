@@ -5,9 +5,9 @@ const variableName = ["♥", "⁍", "◆"];
 /**
  * @extends BaseExpression
  */
-export default class VariableBlock extends BaseExpression {
+export default class VariableExpression extends BaseExpression {
     constructor() {
-        super("VariableBlock");
+        super("VariableExpression");
     }
 
     /**

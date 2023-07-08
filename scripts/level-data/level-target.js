@@ -10,7 +10,7 @@ const levelTarget = {
         codeBlocks: 7,
     },
     1: {
-        steps: 4,
+        steps: 3,
         codeBlocks: 3,
     },
     2: {

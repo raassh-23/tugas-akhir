@@ -10,9 +10,9 @@ const operators = [
 /**
  * @extends BaseExpression
  */
-export default class OperatorBlock extends BaseExpression {
+export default class OperatorExpression extends BaseExpression {
     constructor() {
-        super("OperatorBlock");
+        super("OperatorExpression");
     }
 
     /**

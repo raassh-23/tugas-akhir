@@ -13,16 +13,16 @@
 	"members": [
 		"CodeBlockDecoration",
 		"MoveCommand",
-		"NumberBlock",
-		"RepeatCommand",
-		"OperatorBlock",
-		"VariableBlock",
+		"NumberExpression",
+		"ForCommand",
+		"OperatorExpression",
+		"VariableExpression",
 		"ShootCommand",
 		"WhileCommand",
 		"IfCommand",
 		"ElseCommand",
 		"ElseIfCommand",
-		"ReadBlock",
+		"ReadExpression",
 		"RotateCommand",
 		"TakeGemCommand"
 	]

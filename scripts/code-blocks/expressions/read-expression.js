@@ -9,9 +9,9 @@ const directions = [
 /**
  * @extends BaseExpression
  */
-export default class ReadBlock extends BaseExpression {
+export default class ReadExpression extends BaseExpression {
     constructor() {
-        super("ReadBlock");
+        super("ReadExpression");
     }
 
     /**

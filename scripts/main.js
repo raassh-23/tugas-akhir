@@ -1,25 +1,25 @@
 import {
 	MoveCommand,
-	RepeatCommand,
+	ForCommand,
 	RunnerCommand,
-	ExpressionsContainer,
-	NumberBlock,
-	OperatorBlock,
-	VariableBlock,
 	ShootCommand,
 	WhileCommand,
 	IfCommand,
 	ElseCommand,
 	ElseIfCommand,
-	ReadBlock,
 	RotateCommand,
 	TakeGemCommand,
+	ExpressionsContainer,
+	NumberExpression,
+    OperatorExpression,
+    VariableExpression,
+    ReadExpression,
 } from "./code-blocks/index.js";
 import { initTranslations } from "./translations/translations.js";
 
 runOnStartup(async (runtime) => {
 	await loadScripts([
-// 		"./lib/test.js",
+		"./lib/test.js",
 		"./lib/mathjs@11.8.1.js",
 		"./lib/i18next@23.1.0.js",
 	]);
@@ -28,19 +28,19 @@ runOnStartup(async (runtime) => {
 
 	runtime.objects.StartCommand.setInstanceClass(RunnerCommand);
 	runtime.objects.MoveCommand.setInstanceClass(MoveCommand);
-	runtime.objects.RepeatCommand.setInstanceClass(RepeatCommand);
-	runtime.objects.ExpressionsContainer.setInstanceClass(ExpressionsContainer);
-	runtime.objects.NumberBlock.setInstanceClass(NumberBlock);
-	runtime.objects.OperatorBlock.setInstanceClass(OperatorBlock);
-	runtime.objects.VariableBlock.setInstanceClass(VariableBlock);
+	runtime.objects.ForCommand.setInstanceClass(ForCommand);
 	runtime.objects.ShootCommand.setInstanceClass(ShootCommand);
 	runtime.objects.WhileCommand.setInstanceClass(WhileCommand);
 	runtime.objects.IfCommand.setInstanceClass(IfCommand);
 	runtime.objects.ElseCommand.setInstanceClass(ElseCommand);
 	runtime.objects.ElseIfCommand.setInstanceClass(ElseIfCommand);
-	runtime.objects.ReadBlock.setInstanceClass(ReadBlock);
 	runtime.objects.RotateCommand.setInstanceClass(RotateCommand);
 	runtime.objects.TakeGemCommand.setInstanceClass(TakeGemCommand);
+	runtime.objects.ExpressionsContainer.setInstanceClass(ExpressionsContainer);
+	runtime.objects.NumberExpression.setInstanceClass(NumberExpression);
+	runtime.objects.OperatorExpression.setInstanceClass(OperatorExpression);
+	runtime.objects.VariableExpression.setInstanceClass(VariableExpression);
+	runtime.objects.ReadExpression.setInstanceClass(ReadExpression);
 });
 
 function loadScripts(scriptUrls) {

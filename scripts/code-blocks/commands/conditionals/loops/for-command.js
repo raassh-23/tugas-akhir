@@ -7,9 +7,9 @@ import ConditionalCommand from "../conditional-command.js";
 /**
  * @extends ConditionalCommand
  */
-export default class RepeatCommand extends ConditionalCommand {
+export default class ForCommand extends ConditionalCommand {
     constructor() {
-        super("Repeat", "0");
+        super("For", "0");
     }
 
     /**
@@ -20,16 +20,16 @@ export default class RepeatCommand extends ConditionalCommand {
      * @returns {Promise<number>}
      */
     async run(player, state) {
-        let repeatCount = 0;
-        const cleanedRepeatCondition = this.getCleanedCondition();
+        let forCount = 0;
+        const cleanedForCondition = this.getCleanedCondition();
 
         try {
             setPlayerSurrounding(player, state);
             const symbols = this.getSymbols(player, state);
-            repeatCount = evaluateExpression(cleanedRepeatCondition, symbols);
+            forCount = evaluateExpression(cleanedForCondition, symbols);
 
-            if (repeatCount < 0) {
-                throw new Error("Repeat count must be positive");
+            if (forCount < 0) {
+                throw new Error("For condition must be positive");
             }
         } catch (error) {
             state.isError = true;
@@ -39,13 +39,13 @@ export default class RepeatCommand extends ConditionalCommand {
             return ERROR
         }
 
-        this._text.text = repeatCount.toString();
+        this._text.text = forCount.toString();
 
         let i = 0;
         while (true) {
             this.showHighlight(true);
             startCommmand(this.runtime, player, state);
-            this._text.text = (repeatCount - i).toString();
+            this._text.text = (forCount - i).toString();
 
             const waitResult = await waitUnlessStopped(state, {
                 afterWait: () => {
@@ -59,7 +59,7 @@ export default class RepeatCommand extends ConditionalCommand {
                 return waitResult;
             }
 
-            if (repeatCount <= i++) {
+            if (forCount <= i++) {
                 this._text.text = this.getCondition();
                 return FINISHED;
             }

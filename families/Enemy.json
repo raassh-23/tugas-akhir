@@ -1,20 +1,28 @@
 {
 	"name": "Enemy",
 	"plugin-id": "Sprite",
-	"sid": 242789158886167,
+	"sid": 717906454024605,
 	"instanceVariables": [
 		{
-			"name": "health",
+			"name": "damage",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 269738323824902
+			"sid": 421962509645323
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 822535339030372
 		}
 	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"MovingEnemyCollision",
-		"StaticEnemyCollision"
+		"SpikeCollision",
+		"BatCollision",
+		"SlimeCollision"
 	]
 }

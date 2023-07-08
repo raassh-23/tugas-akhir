@@ -401,7 +401,7 @@
 											],
 											"actions": [
 												{
-													"callFunction": "PlayPickUpCommand",
+													"callFunction": "PlayPickUpCommandSFX",
 													"sid": 958303799099520
 												},
 												{
@@ -449,7 +449,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "PlayPickUpCommand",
+											"callFunction": "PlayPickUpCommandSFX",
 											"sid": 692244722284856
 										},
 										{
@@ -678,7 +678,7 @@
 					],
 					"actions": [
 						{
-							"callFunction": "PlayDropCommand",
+							"callFunction": "PlayDropCommandSFX",
 							"sid": 198572866416415
 						},
 						{
@@ -773,7 +773,7 @@
 													"parameters": {
 														"first-value": "CodeBlock.ObjectTypeName",
 														"comparison": 0,
-														"second-value": "RepeatCommand.ObjectTypeName"
+														"second-value": "ForCommand.ObjectTypeName"
 													}
 												}
 											],
@@ -1272,11 +1272,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "CodeBlockDecoration",
-									"sid": 729968225198742,
+									"sid": 249162127007132,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"repeat-pop-up\""
+										"value": "\"for-pop-up\""
 									}
 								}
 							],
@@ -1878,28 +1878,8 @@
 					"sid": 836732642885252,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "X_TOLERANCE",
-							"type": "number",
-							"initialValue": "-0.001",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 141732414568754
-						},
-						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "CodeBlock",
-									"sid": 276703496311317,
-									"disabled": true,
-									"parameters": {
-										"comparison": 5,
-										"x-co-ordinate": "x + X_TOLERANCE"
-									}
-								},
 								{
 									"id": "pick-by-comparison",
 									"objectClass": "System",
@@ -1927,16 +1907,6 @@
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "CodeBlock",
-									"sid": 643527559710128,
-									"disabled": true,
-									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "x + X_TOLERANCE"
-									}
-								},
 								{
 									"id": "pick-by-comparison",
 									"objectClass": "System",
@@ -2938,7 +2908,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "PlayPickUpCommand",
+									"callFunction": "PlayPickUpCommandSFX",
 									"sid": 607637593139582
 								},
 								{
@@ -2976,7 +2946,7 @@
 							}
 						},
 						{
-							"callFunction": "PlayDropCommand",
+							"callFunction": "PlayDropCommandSFX",
 							"sid": 831362606440049
 						}
 					],
@@ -5116,9 +5086,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 772184076146310,
+							"sid": 546523724218569,
 							"parameters": {
-								"text": "zeropad(Functions.GetStepCount , 2)"
+								"text": "zeropad(Functions.GetStepCount , 3)"
 							}
 						}
 					],
@@ -5142,9 +5112,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 993383626093012,
+							"sid": 665879249089318,
 							"parameters": {
-								"text": "zeropad(Functions.GetBlockCount, 2)"
+								"text": "zeropad(Functions.GetBlockCount, 3)"
 							}
 						}
 					],
@@ -5375,14 +5345,14 @@
 							"objectClass": "System",
 							"sid": 655023639787520,
 							"parameters": {
-								"object": "MovingEnemyCollision"
+								"object": "BatCollision"
 							}
 						}
 					],
 					"actions": [
 						{
 							"customAction": "AddLevelTextChild",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 940229103315788
 						}
 					],
@@ -5391,7 +5361,7 @@
 				{
 					"aceType": "action",
 					"aceName": "AddLevelTextChild",
-					"objectClass": "MovingEnemyCollision",
+					"objectClass": "BatCollision",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -5417,14 +5387,14 @@
 							"parameters": {
 								"instance-variable": "forMovingEnemy",
 								"comparison": 0,
-								"value": "MovingEnemyCollision.id"
+								"value": "BatCollision.id"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "add-child",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 744278368060099,
 							"parameters": {
 								"child": "LevelText",
@@ -5445,7 +5415,7 @@
 				{
 					"aceType": "action",
 					"aceName": "StartMove",
-					"objectClass": "MovingEnemyCollision",
+					"objectClass": "BatCollision",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -5462,7 +5432,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 948377667143171,
 									"parameters": {
 										"instance-variable": "direction",
@@ -5474,7 +5444,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 102345696463671,
 									"behaviorType": "TileMovement",
 									"parameters": {
@@ -5489,7 +5459,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 105214144141955,
 									"parameters": {
 										"instance-variable": "direction",
@@ -5501,7 +5471,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 323226756805496,
 									"behaviorType": "TileMovement",
 									"parameters": {
@@ -5516,7 +5486,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 623292092112198,
 									"parameters": {
 										"instance-variable": "direction",
@@ -5528,7 +5498,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 626131604216703,
 									"behaviorType": "TileMovement",
 									"parameters": {
@@ -5543,7 +5513,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 897917288230408,
 									"parameters": {
 										"instance-variable": "direction",
@@ -5555,7 +5525,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 582098646192683,
 									"behaviorType": "TileMovement",
 									"parameters": {
@@ -5572,17 +5542,17 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 255645246603298,
 							"parameters": {
-								"object": "MovingEnemyCheckpoint"
+								"object": "BatCheckpoint"
 							}
 						}
 					],
 					"actions": [
 						{
 							"type": "script",
-							"script": "const collision = runtime.objects.MovingEnemyCollision\n\t.getFirstPickedInstance();\nconst checkpoint = runtime.objects.MovingEnemyCheckpoint\n\t.getFirstPickedInstance();\n\nconst id = checkpoint.instVars.id;\nconst valid = collision.instVars.validIds\n\t.split(\"|\").indexOf(id.toString());\n\nif (valid > -1) {\n\tcollision.instVars.direction = \n\t\tcheckpoint.instVars.direction;\n}"
+							"script": "const bat = runtime.objects.BatCollision\n\t.getFirstPickedInstance();\nconst checkpoint = runtime.objects.BatCheckpoint\n\t.getFirstPickedInstance();\n\nconst id = checkpoint.instVars.id;\nconst valid = bat.instVars.validIds\n\t.split(\"|\").indexOf(id.toString());\n\nif (valid > -1) {\n\tbat.instVars.direction = \n\t\tcheckpoint.instVars.direction;\n}"
 						}
 					],
 					"sid": 207838625717516
@@ -5592,13 +5562,13 @@
 					"conditions": [
 						{
 							"id": "is-moving",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 320032447715641,
 							"behaviorType": "TileMovement"
 						},
 						{
 							"id": "pick-children",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 727687040439444,
 							"parameters": {
 								"child": "LevelText",
@@ -5620,7 +5590,7 @@
 					"conditions": [
 						{
 							"id": "is-moving-direction",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 140637180012045,
 							"behaviorType": "TileMovement",
 							"parameters": {
@@ -5629,10 +5599,10 @@
 						},
 						{
 							"id": "pick-children",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 288584060374083,
 							"parameters": {
-								"child": "MovingEnemy",
+								"child": "Bat",
 								"which": "own"
 							}
 						},
@@ -5645,7 +5615,7 @@
 					"actions": [
 						{
 							"id": "set-mirrored",
-							"objectClass": "MovingEnemy",
+							"objectClass": "Bat",
 							"sid": 516741021559167,
 							"parameters": {
 								"state": "mirrored"
@@ -5659,7 +5629,7 @@
 					"conditions": [
 						{
 							"id": "is-moving-direction",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 661276422860436,
 							"behaviorType": "TileMovement",
 							"parameters": {
@@ -5668,10 +5638,10 @@
 						},
 						{
 							"id": "pick-children",
-							"objectClass": "MovingEnemyCollision",
+							"objectClass": "BatCollision",
 							"sid": 125730647298403,
 							"parameters": {
-								"child": "MovingEnemy",
+								"child": "Bat",
 								"which": "own"
 							}
 						},
@@ -5684,7 +5654,7 @@
 					"actions": [
 						{
 							"id": "set-mirrored",
-							"objectClass": "MovingEnemy",
+							"objectClass": "Bat",
 							"sid": 541460624502847,
 							"parameters": {
 								"state": "not-mirrored"
@@ -5698,7 +5668,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
+							"objectClass": "KillableEnemy",
 							"sid": 393618918823076,
 							"parameters": {
 								"instance-variable": "health",
@@ -5710,7 +5680,7 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Enemy",
+							"objectClass": "KillableEnemy",
 							"sid": 430602166260716
 						}
 					],
@@ -5763,9 +5733,9 @@
 								{
 									"id": "is-animation-playing",
 									"objectClass": "Rock",
-									"sid": 153650860805758,
+									"sid": 656171237337795,
 									"parameters": {
-										"animation": "\"destroyable\""
+										"animation": "\"destructible\""
 									}
 								}
 							],
@@ -5776,7 +5746,7 @@
 									"sid": 304906979588619
 								},
 								{
-									"callFunction": "PlayRockBreak",
+									"callFunction": "PlayRockBreakSFX",
 									"sid": 423492096569825
 								}
 							],
@@ -5792,7 +5762,7 @@
 							"objectClass": "Bullet",
 							"sid": 847399536488494,
 							"parameters": {
-								"object": "Enemy"
+								"object": "KillableEnemy"
 							}
 						}
 					],
@@ -5804,7 +5774,7 @@
 						},
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "Enemy",
+							"objectClass": "KillableEnemy",
 							"sid": 885729477212197,
 							"parameters": {
 								"instance-variable": "health",
@@ -5812,7 +5782,7 @@
 							}
 						},
 						{
-							"callFunction": "PlayEnemyHurt",
+							"callFunction": "PlayEnemyHurtSFX",
 							"sid": 266022909694308
 						}
 					],
@@ -7060,7 +7030,7 @@
 								{
 									"id": "set-at-xy",
 									"objectClass": "LevelScoreData",
-									"sid": 503881728495644,
+									"sid": 232405298061193,
 									"parameters": {
 										"x": "level",
 										"y": "TARGET_STEPS_INDEX",
@@ -7070,7 +7040,7 @@
 								{
 									"id": "set-at-xy",
 									"objectClass": "LevelScoreData",
-									"sid": 524630562021207,
+									"sid": 269112666959603,
 									"parameters": {
 										"x": "level",
 										"y": "TARGET_CODE_BLOCKS_INDEX",
@@ -7080,14 +7050,14 @@
 								{
 									"id": "set-item",
 									"objectClass": "LocalStorage",
-									"sid": 513138590061756,
+									"sid": 768776378201577,
 									"parameters": {
 										"key": "LEVEL_SCORE_TAG",
 										"value": "LevelScoreData.AsJSON"
 									}
 								}
 							],
-							"sid": 384088881618227
+							"sid": 202470659738600
 						}
 					]
 				},
@@ -7184,7 +7154,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"running commands\")\n\nrunCommands(runtime, runtime.objects.Player.getAllInstances())"
+											"script": "runCommands(runtime, runtime.objects.Player.getAllInstances())"
 										},
 										{
 											"id": "signal",
@@ -7209,7 +7179,7 @@
 									"actions": [
 										{
 											"type": "script",
-											"script": "console.log(\"stopping commands\")\n\nstate.isStopped = true;"
+											"script": "state.isStopped = true;"
 										},
 										{
 											"id": "signal",
@@ -8065,7 +8035,7 @@
 									"behaviorType": "Fade"
 								},
 								{
-									"callFunction": "PlayEnterPortal",
+									"callFunction": "PlayEnterPortalSFX",
 									"sid": 816217434905133
 								}
 							],
@@ -8079,15 +8049,7 @@
 									"objectClass": "Player",
 									"sid": 888075233183047,
 									"parameters": {
-										"object": "Damaging"
-									}
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Damaging",
-									"sid": 680474816655955,
-									"parameters": {
-										"instance-variable": "active"
+										"object": "Enemy"
 									}
 								},
 								{
@@ -8095,7 +8057,7 @@
 									"objectClass": "System",
 									"sid": 492129971631727,
 									"parameters": {
-										"first-value": "distance(Player.X, Player.Y, Damaging.X, Damaging.Y)",
+										"first-value": "distance(Player.X, Player.Y, Enemy.X, Enemy.Y)",
 										"comparison": 2,
 										"second-value": "GRID_SIZE"
 									}
@@ -8103,15 +8065,72 @@
 							],
 							"actions": [
 								{
-									"callFunction": "PlayHurt",
+									"callFunction": "PlayHurtSFX",
 									"sid": 445470636043935
-								},
-								{
-									"type": "script",
-									"script": "if (!runtime.globalVars.variableNames.includes(\"health\")) {\n\treturn;\n}\n\nconst player = runtime.objects.Player.getFirstPickedInstance();\n\nplayer.instVars.health -= runtime.objects.Damaging\n\t.getFirstPickedInstance().instVars.damage;\n\t\nif (player.instVars.health <= 0) {\n\tstate.isError = true;\n\truntime.callFunction(\n\t\t\"ShowError\",\n\t\ttranslate(\"game.error.player-died\"),\n\t\t2,\n\t);\n}\n"
 								}
 							],
-							"sid": 188760965931083
+							"sid": 188760965931083,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 878418643544515,
+											"parameters": {
+												"first-value": "find(variableNames, \"health\")",
+												"comparison": 1,
+												"second-value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Player",
+											"sid": 516799964786621,
+											"parameters": {
+												"instance-variable": "health",
+												"value": "Enemy.damage"
+											}
+										}
+									],
+									"sid": 860521198830886,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 569673207283787,
+													"parameters": {
+														"instance-variable": "health",
+														"comparison": 3,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "script",
+													"script": "state.isError = true;"
+												},
+												{
+													"callFunction": "ShowError",
+													"sid": 454433377710248,
+													"parameters": [
+														"Functions.Translate(\"game.error.player-died\", \"\")",
+														"2"
+													]
+												}
+											],
+											"sid": 437994627194413
+										}
+									]
+								}
+							]
 						}
 					]
 				},
@@ -8208,7 +8227,7 @@
 									"sid": 396812451228996
 								},
 								{
-									"callFunction": "PlayPickUpGem",
+									"callFunction": "PlayPickUpGemSFX",
 									"sid": 707645863847988
 								}
 							],
@@ -8228,7 +8247,7 @@
 					"conditions": [],
 					"actions": [
 						{
-							"callFunction": "PlayStartCommand",
+							"callFunction": "PlayStartCommandSFX",
 							"sid": 153942219404416
 						}
 					],
@@ -8242,14 +8261,14 @@
 									"objectClass": "System",
 									"sid": 492311375565906,
 									"parameters": {
-										"object": "MovingEnemyCollision"
+										"object": "BatCollision"
 									}
 								}
 							],
 							"actions": [
 								{
 									"customAction": "StartMove",
-									"objectClass": "MovingEnemyCollision",
+									"objectClass": "BatCollision",
 									"sid": 655064777094550
 								}
 							],
@@ -8288,7 +8307,7 @@
 					],
 					"actions": [
 						{
-							"callFunction": "PlayShoot",
+							"callFunction": "PlayShootSFX",
 							"sid": 423711481909641
 						},
 						{
@@ -8493,7 +8512,7 @@
 							"sid": 100576952914483
 						},
 						{
-							"callFunction": "PlayError",
+							"callFunction": "PlayErrorSFX",
 							"sid": 826567822419170
 						},
 						{
@@ -8957,16 +8976,6 @@
 					"sid": 357787829975458,
 					"children": [
 						{
-							"eventType": "variable",
-							"name": "htmlContent",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 888555284164805
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -9002,33 +9011,13 @@
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 294252194469935,
-									"parameters": {
-										"variable": "htmlContent",
-										"value": "helpHTML"
-									}
-								},
-								{
 									"type": "script",
-									"script": "const block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content, exampleTitle, example] = getBlockHelp(block);\n\nlocalVars.htmlContent = localVars.htmlContent\n\t.replace(\"{{title}}\", title)\n\t.replace(\"{{content}}\", content);\n\nif (example !== \"\") {\n\tlocalVars.htmlContent = localVars.htmlContent\n\t\t.replace(\"{{exampleTitle}}\", exampleTitle)\n\t\t.replace(\"{{example}}\", example)\n} else {\n\tlocalVars.htmlContent = localVars.htmlContent\n\t\t.replace(\"<p>{{exampleTitle}}</p>\", \"\")\n\t\t.replace(\"<pre class=\\\"code-example\\\">{{example}}</pre>\", \"\")\n}"
+									"script": "const htmlElement = runtime.objects.HelpHTML.getFirstPickedInstance();\nconst block = localVars.byButton ?\n\truntime.objects.CodeBlockButton.getFirstPickedInstance()\n\t: runtime.objects.CodeBlock.getFirstPickedInstance();\n\nconst [title, content, exampleTitle, example] = getBlockHelp(block);\n\nlet htmlContent = runtime.globalVars.helpHTML\n\t.replace(\"{{title}}\", title)\n\t.replace(\"{{content}}\", content);\n\nif (example !== \"\") {\n\thtmlContent = htmlContent\n\t\t.replace(\"{{exampleTitle}}\", exampleTitle)\n\t\t.replace(\"{{example}}\", example)\n} else {\n\thtmlContent = htmlContent\n\t\t.replace(\"<p>{{exampleTitle}}</p>\", \"\")\n\t\t.replace(\"<pre class=\\\"code-example\\\">{{example}}</pre>\", \"\")\n}\n\nawait htmlElement.setContent(htmlContent);"
 								},
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
 									"sid": 818138615656708
-								},
-								{
-									"id": "set-content",
-									"objectClass": "HelpHTML",
-									"sid": 313116659816684,
-									"parameters": {
-										"content-type": "html",
-										"string": "htmlContent",
-										"selector": "\"\"",
-										"type": "one"
-									}
 								},
 								{
 									"id": "signal",
@@ -10136,6 +10125,71 @@
 					]
 				},
 				{
+					"functionName": "showTutorial",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "hide",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 343989684417570
+						},
+						{
+							"name": "show",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 591510298399251
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 775840221106856,
+							"parameters": {
+								"layer": "\"Tutorial\"&hide",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 582210795084655,
+							"parameters": {
+								"layer": "\"Tutorial\"&hide",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 899418832677330,
+							"parameters": {
+								"layer": "\"Tutorial\"&show",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 660318951122288,
+							"parameters": {
+								"layer": "\"Tutorial\"&show",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 970034806173431
+				},
+				{
 					"functionName": "tutorialFinished",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -10176,71 +10230,6 @@
 						}
 					],
 					"sid": 484552256305071
-				},
-				{
-					"functionName": "showTutorial",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "hide",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 343989684417570
-						},
-						{
-							"name": "show",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 591510298399251
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 922782367041279,
-							"parameters": {
-								"layer": "\"Tutorial\"&hide",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 765613580131346,
-							"parameters": {
-								"layer": "\"Tutorial\"&hide",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 397011416366561,
-							"parameters": {
-								"layer": "\"Tutorial\"&show",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 216652481741689,
-							"parameters": {
-								"layer": "\"Tutorial\"&show",
-								"interactive": true
-							}
-						}
-					],
-					"sid": 311990543451768
 				}
 			],
 			"sid": 901734812989130

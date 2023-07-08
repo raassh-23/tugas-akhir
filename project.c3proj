@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TextBox",
 			"name": "Text input",
 			"author": "Scirra",
@@ -215,12 +222,9 @@
 		"items": [
 			"GridBackground",
 			"Player",
-			"CodeBlockPanel",
 			"Button",
 			"UIText",
 			"ScrollablePanel",
-			"CodeBlockButton",
-			"CodeBlockDecoration",
 			"NestedCodeBlockBackgroundOld",
 			"Blank",
 			"CodeBlockText",
@@ -229,16 +233,14 @@
 			"Portal",
 			"TextInputName",
 			"UIPanel",
-			"CodeBlockPanelBorder",
 			"NestedCodeBlockBackground",
-			"CodeBlockShadow",
 			"SpikeCollision",
 			"Spike",
 			"TimerManager",
 			"Bullet",
-			"MovingEnemyCollision",
-			"MovingEnemy",
-			"MovingEnemyCheckpoint",
+			"BatCollision",
+			"Bat",
+			"BatCheckpoint",
 			"LevelText",
 			"BackgroundWater",
 			"SolidBorder",
@@ -251,44 +253,63 @@
 			"Loading",
 			"Dropdown",
 			"HelpObject",
-			"CodeBlockProtrusion",
-			"CodeBlockShadowProtrusion",
 			"Switch",
 			"PlatformInfo",
 			"SliderBG",
 			"Slider",
 			"PlayerMarker",
 			"UITextBorder",
-			"StaticEnemyCollision",
-			"StaticEnemy",
+			"SlimeCollision",
+			"Slime",
 			"Arrow",
 			"HelpHTML",
 			"AJAX",
 			"Audio",
 			"SplashLogo",
 			"MenuBg",
-			"Title"
+			"Title",
+			"Text2"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"MoveCommand",
-					"NumberBlock",
-					"RepeatCommand",
-					"ExpressionsContainer",
-					"StartCommand",
-					"OperatorBlock",
-					"VariableBlock",
-					"ShootCommand",
-					"WhileCommand",
-					"IfCommand",
-					"ElseCommand",
-					"ElseIfCommand",
-					"ReadBlock",
-					"RotateCommand",
-					"TakeGemCommand"
+					"CodeBlockButton",
+					"CodeBlockDecoration",
+					"CodeBlockPanel",
+					"CodeBlockPanelBorder",
+					"CodeBlockProtrusion",
+					"CodeBlockShadow",
+					"CodeBlockShadowProtrusion"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"ElseCommand",
+							"ElseIfCommand",
+							"IfCommand",
+							"MoveCommand",
+							"ForCommand",
+							"RotateCommand",
+							"ShootCommand",
+							"StartCommand",
+							"TakeGemCommand",
+							"WhileCommand"
+						],
+						"subfolders": [],
+						"name": "Command"
+					},
+					{
+						"items": [
+							"ExpressionsContainer",
+							"NumberExpression",
+							"OperatorExpression",
+							"ReadExpression",
+							"VariableExpression"
+						],
+						"subfolders": [],
+						"name": "Expression"
+					}
+				],
 				"name": "CodeBlock"
 			},
 			{
@@ -317,9 +338,9 @@
 			"Panel",
 			"Clickable",
 			"PanelBorder",
-			"Damaging",
+			"Enemy",
 			"GameObjects",
-			"Enemy"
+			"KillableEnemy"
 		],
 		"subfolders": []
 	},
@@ -550,7 +571,7 @@
 										{
 											"items": [
 												{
-													"name": "repeat-command.js",
+													"name": "for-command.js",
 													"type": "application/javascript",
 													"sid": 288352540292147,
 													"script-info": {
@@ -646,7 +667,7 @@
 						{
 							"items": [
 								{
-									"name": "number-block.js",
+									"name": "number-expression.js",
 									"type": "application/javascript",
 									"sid": 875032843354489,
 									"script-info": {
@@ -670,7 +691,7 @@
 									}
 								},
 								{
-									"name": "operator-block.js",
+									"name": "operator-expression.js",
 									"type": "application/javascript",
 									"sid": 886280947314270,
 									"script-info": {
@@ -678,7 +699,7 @@
 									}
 								},
 								{
-									"name": "variable-block.js",
+									"name": "variable-expression.js",
 									"type": "application/javascript",
 									"sid": 575962800501217,
 									"script-info": {
@@ -686,7 +707,7 @@
 									}
 								},
 								{
-									"name": "read-block.js",
+									"name": "read-expression.js",
 									"type": "application/javascript",
 									"sid": 405069725203457,
 									"script-info": {

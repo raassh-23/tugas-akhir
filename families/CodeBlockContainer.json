@@ -7,7 +7,7 @@
 	"effectTypes": [],
 	"members": [
 		"StartCommand",
-		"RepeatCommand",
+		"ForCommand",
 		"ExpressionsContainer",
 		"WhileCommand",
 		"IfCommand",

@@ -54,7 +54,7 @@
 					}
 				],
 				"sid": 864550598904097,
-				"name": "non-destroyable",
+				"name": "indestructible",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -101,7 +101,7 @@
 					}
 				],
 				"sid": 676763320156189,
-				"name": "destroyable",
+				"name": "destructible",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -268,10 +268,6 @@
 					}
 				},
 				{
-					"type": "comment",
-					"text": "0 is test level"
-				},
-				{
 					"id": "set-at-xy",
 					"objectClass": "LevelScoreData",
 					"sid": 795221806011971,

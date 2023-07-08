@@ -135,7 +135,7 @@ async function runCommands(runtime, players) {
 				return;
 			}
 		}
-		
+
 		while (!state.isStopped) {
 			await waitForMilisecond(CHECK_INTERVAL);
 		}
@@ -362,7 +362,7 @@ const VARIABLE_X = 1216;
 const VARIABLE_START_Y = 224;
 const VARIABLE_SPACING_Y = 64;
 
-const variableIconMap = {
+const variableIconFrameMap = {
 	"health": 0,
 	"ammo": 2,
 	"gem": 6,
@@ -395,7 +395,7 @@ function setupVariablesList(runtime) {
 		);
 
 		variable.instVars.id = name;
-		variable.animationFrame = variableIconMap[name] ?? 0;
+		variable.animationFrame = variableIconFrameMap[name] ?? 0;
 
 		const variableText = variable.getChildAt(0);
 		variableText.instVars.id = name;
@@ -521,13 +521,13 @@ function getBlockHelp(block) {
 	} else {
 		name = /** @type {ICodeBlock} */ block.objectType.name;
 	}
-	
+
 	const frame = block.animationFrame;
 
-	const match = RegExp(/(.+)(Command|Block)/).exec(name);
+	const match = RegExp(/(.+)(Command|Expression)/).exec(name);
 
 	if (!match) {
-		throw Error("Not a valid CodeBlock name");
+		throw Error(`"${name}" is not a valid CodeBlock name`);
 	}
 
 	const key = `game.blocks.${match[1].toLowerCase()}.${frame}`;

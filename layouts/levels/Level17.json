@@ -424,8 +424,8 @@
 							"world": {
 								"x": 0,
 								"y": 0,
-								"width": 1312,
-								"height": 736,
+								"width": 1616,
+								"height": 1121,
 								"originX": 0,
 								"originY": 0,
 								"color": [
@@ -1009,7 +1009,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1093,7 +1093,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1177,7 +1177,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1622,7 +1622,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1658,7 +1658,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1694,7 +1694,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1730,7 +1730,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1766,7 +1766,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1802,7 +1802,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1838,7 +1838,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1874,7 +1874,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1910,7 +1910,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4186,7 +4186,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4222,7 +4222,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4258,7 +4258,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4294,7 +4294,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4330,7 +4330,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -4366,7 +4366,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false

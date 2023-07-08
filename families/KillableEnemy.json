@@ -1,0 +1,20 @@
+{
+	"name": "KillableEnemy",
+	"plugin-id": "Sprite",
+	"sid": 242789158886167,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 269738323824902
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"BatCollision",
+		"SlimeCollision"
+	]
+}

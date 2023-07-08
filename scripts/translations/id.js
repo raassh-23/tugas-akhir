@@ -63,7 +63,7 @@ const id = {
                 'restart': 'Mulai Ulang',
                 'select-level': 'Pilih Level',
             },
-            'repeat-pop-up': {
+            'for-pop-up': {
                 'title': 'Ulangi sebanyak',
                 'subtitle': 'kali',
             },
@@ -250,7 +250,7 @@ const id = {
                         'example': 'if (kondisi1) {\n    kode yang dijalankan jika kondisi1 benar\n} else if (kondisi2) {\n    kode yang dijalankan jika kondisi2 benar\n} else {\n    kode yang dijalankan jika kondisi1 dan kondisi2 salah\n}',
                     },
                 },
-                'repeat': {
+                'for': {
                     '0': {
                         'title': 'Perintah For',
                         'content': 'Blok ini akan menjalankan kode di dalamnya sebanyak nilai yang diberikan. nilai yang diberikan harus lebih besar dari 0.',

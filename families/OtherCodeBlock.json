@@ -7,16 +7,16 @@
 	"effectTypes": [],
 	"members": [
 		"MoveCommand",
-		"RepeatCommand",
-		"NumberBlock",
-		"OperatorBlock",
-		"VariableBlock",
+		"ForCommand",
+		"NumberExpression",
+		"OperatorExpression",
+		"VariableExpression",
 		"ShootCommand",
 		"WhileCommand",
 		"IfCommand",
 		"ElseCommand",
 		"ElseIfCommand",
-		"ReadBlock",
+		"ReadExpression",
 		"RotateCommand",
 		"TakeGemCommand"
 	]

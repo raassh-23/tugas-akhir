@@ -63,7 +63,7 @@ const en = {
                 'restart': 'Restart',
                 'select-level': 'Select Level',
             },
-            'repeat-pop-up': {
+            'for-pop-up': {
                 'title': 'Repeat for',
                 'subtitle': 'times',
             },
@@ -250,7 +250,7 @@ const en = {
                         'example': 'if (condition1) {\n    Code that will be run if the condition1 is true\n} else if (condition2) {\n    Code that will be run if the condition2 is true\n} else {\n    Code that will be run if the condition1 and condition2 are false\n}',
                     },
                 },
-                'repeat': {
+                'for': {
                     '0': {
                         'title': 'For Command',
                         'content': 'This block will run the code inside it as many times as the given value. The given value must be greater than 0.',

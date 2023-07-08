@@ -514,7 +514,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "PlayTap",
+					"callFunction": "PlayTapSFX",
 					"sid": 528969831378862
 				},
 				{
@@ -972,7 +972,7 @@
 			"sid": 280770723004987
 		},
 		{
-			"functionName": "PlayTap",
+			"functionName": "PlayTapSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -998,7 +998,7 @@
 			"sid": 530833194155045
 		},
 		{
-			"functionName": "PlayShoot",
+			"functionName": "PlayShootSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1024,7 +1024,7 @@
 			"sid": 571415479654349
 		},
 		{
-			"functionName": "PlayPickUpGem",
+			"functionName": "PlayPickUpGemSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1050,7 +1050,7 @@
 			"sid": 493290515192060
 		},
 		{
-			"functionName": "PlayEnemyHurt",
+			"functionName": "PlayEnemyHurtSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1076,7 +1076,7 @@
 			"sid": 426813764896957
 		},
 		{
-			"functionName": "PlayRockBreak",
+			"functionName": "PlayRockBreakSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1102,7 +1102,7 @@
 			"sid": 328554618076400
 		},
 		{
-			"functionName": "PlayHurt",
+			"functionName": "PlayHurtSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1128,7 +1128,7 @@
 			"sid": 286875220582031
 		},
 		{
-			"functionName": "PlayError",
+			"functionName": "PlayErrorSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1154,7 +1154,7 @@
 			"sid": 157610443661091
 		},
 		{
-			"functionName": "PlayStartCommand",
+			"functionName": "PlayStartCommandSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1180,7 +1180,7 @@
 			"sid": 960207474774982
 		},
 		{
-			"functionName": "PlayEnterPortal",
+			"functionName": "PlayEnterPortalSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1206,7 +1206,7 @@
 			"sid": 600197446107496
 		},
 		{
-			"functionName": "PlayPickUpCommand",
+			"functionName": "PlayPickUpCommandSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -1232,7 +1232,7 @@
 			"sid": 657662652872445
 		},
 		{
-			"functionName": "PlayDropCommand",
+			"functionName": "PlayDropCommandSFX",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",

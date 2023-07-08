@@ -1,7 +1,7 @@
 {
-	"name": "MovingEnemyCollision",
+	"name": "BatCheckpoint",
 	"plugin-id": "Sprite",
-	"sid": 975709206438433,
+	"sid": 113239681315195,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,30 +9,17 @@
 			"type": "string",
 			"desc": "",
 			"show": true,
-			"sid": 303812906537692
-		},
-		{
-			"name": "validIds",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 515418037662941
+			"sid": 545209532827633
 		},
 		{
 			"name": "id",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 552793901738897
+			"sid": 166658808085590
 		}
 	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "TileMovement",
-			"name": "TileMovement",
-			"sid": 444665980731647
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -46,12 +33,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4119595,
+						"imageSpriteId": 3127580,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 258157259114373,
+				"sid": 280949468991629,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

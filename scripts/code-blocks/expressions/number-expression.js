@@ -3,9 +3,9 @@ import BaseExpression from "./base-expression.js";
 /**
  * @extends BaseExpression
  */
-export default class NumberBlock extends BaseExpression {
+export default class NumberExpression extends BaseExpression {
     constructor() {
-        super("NumberBlock");
+        super("NumberExpression");
     }
 
     /**

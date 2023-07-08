@@ -7,10 +7,10 @@
 	"effectTypes": [],
 	"members": [
 		"Player",
-		"MovingEnemyCollision",
+		"BatCollision",
 		"Gem",
 		"Portal",
 		"Rock",
-		"StaticEnemyCollision"
+		"SlimeCollision"
 	]
 }

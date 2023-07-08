@@ -507,7 +507,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -626,7 +626,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -662,7 +662,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -695,7 +695,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -727,7 +727,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -788,7 +788,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -848,7 +848,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -884,7 +884,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -917,7 +917,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -949,7 +949,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -981,7 +981,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1041,7 +1041,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1077,7 +1077,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1110,7 +1110,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -1142,7 +1142,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -1203,7 +1203,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1263,7 +1263,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1296,7 +1296,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -1328,7 +1328,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -1363,7 +1363,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1438,7 +1438,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemy",
+							"type": "Slime",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1495,7 +1495,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemyCollision",
+							"type": "SlimeCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -1615,7 +1615,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1672,7 +1672,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1729,7 +1729,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -1848,7 +1848,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1884,7 +1884,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1920,7 +1920,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1956,7 +1956,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1992,7 +1992,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2028,7 +2028,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2061,7 +2061,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2093,7 +2093,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2125,7 +2125,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2157,7 +2157,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2189,7 +2189,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2221,7 +2221,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2253,7 +2253,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2313,7 +2313,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2349,7 +2349,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2382,7 +2382,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2414,7 +2414,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2446,7 +2446,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2506,7 +2506,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2542,7 +2542,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -2575,7 +2575,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2607,7 +2607,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2697,7 +2697,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemy",
+							"type": "Slime",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2754,7 +2754,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemyCollision",
+							"type": "SlimeCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -2832,7 +2832,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemy",
+							"type": "Slime",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2889,7 +2889,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemyCollision",
+							"type": "SlimeCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3009,7 +3009,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -3066,7 +3066,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -3185,7 +3185,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3221,7 +3221,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3257,7 +3257,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3293,7 +3293,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3326,7 +3326,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3358,7 +3358,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3390,7 +3390,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3422,7 +3422,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3454,7 +3454,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemy",
+							"type": "Bat",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -3514,7 +3514,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3550,7 +3550,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "non-destroyable",
+								"initial-animation": "indestructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -3583,7 +3583,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3615,7 +3615,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCheckpoint",
+							"type": "BatCheckpoint",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3676,7 +3676,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemy",
+							"type": "Slime",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -3733,7 +3733,7 @@
 							}
 						},
 						{
-							"type": "StaticEnemyCollision",
+							"type": "SlimeCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3811,7 +3811,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -3906,7 +3906,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4001,7 +4001,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4096,7 +4096,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4191,7 +4191,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4286,7 +4286,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4381,7 +4381,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4476,7 +4476,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4571,7 +4571,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4666,7 +4666,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4761,7 +4761,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -4856,7 +4856,7 @@
 							}
 						},
 						{
-							"type": "MovingEnemyCollision",
+							"type": "BatCollision",
 							"properties": {
 								"initially-visible": false,
 								"initial-animation": "Animation 1",
@@ -7978,7 +7978,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8014,7 +8014,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8050,7 +8050,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8086,7 +8086,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8122,7 +8122,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8158,7 +8158,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8194,7 +8194,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8230,7 +8230,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8266,7 +8266,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8302,7 +8302,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8338,7 +8338,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8374,7 +8374,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8410,7 +8410,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8446,7 +8446,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8482,7 +8482,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8518,7 +8518,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8554,7 +8554,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -8590,7 +8590,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -16466,7 +16466,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false
@@ -16502,7 +16502,7 @@
 							"type": "Rock",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "destroyable",
+								"initial-animation": "destructible",
 								"initial-frame": 2,
 								"enable-collisions": true,
 								"live-preview": false

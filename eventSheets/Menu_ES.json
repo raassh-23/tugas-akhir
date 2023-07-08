@@ -1963,22 +1963,22 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-instance-variable",
+					"objectClass": "Switch",
+					"sid": 148765091489904,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"setting-fullscreen\""
+					}
+				},
+				{
 					"id": "compare-opacity",
 					"objectClass": "Switch",
 					"sid": 812245822362672,
 					"parameters": {
 						"comparison": 4,
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Switch",
-					"sid": 796347545395297,
-					"parameters": {
-						"instance-variable": "id",
-						"comparison": 0,
-						"value": "\"setting-fullscreen\""
 					}
 				}
 			],
@@ -2062,7 +2062,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "PlayTap",
+					"callFunction": "PlayTapSFX",
 					"sid": 511736953073344
 				}
 			],
@@ -2679,6 +2679,70 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UIText",
+					"sid": 212025325009648,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"landscape\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 602976102208234,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-portraitlandscape",
+							"objectClass": "Browser",
+							"sid": 860462129488706,
+							"parameters": {
+								"orientation": "portrait"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 893367298164534,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 573486711827965
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 749222701210237
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 252221228904380,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 138026381996985
+				}
+			]
+		},
+		{
 			"eventType": "comment",
 			"text": "for debugging purposes"
 		},
@@ -2696,7 +2760,6 @@
 			],
 			"actions": [],
 			"sid": 787538805103523,
-			"disabled": true,
 			"children": [
 				{
 					"eventType": "variable",
@@ -2718,7 +2781,6 @@
 						}
 					],
 					"sid": 735520220711802,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2744,8 +2806,7 @@
 									}
 								}
 							],
-							"sid": 888325845579273,
-							"disabled": true
+							"sid": 888325845579273
 						},
 						{
 							"eventType": "block",
@@ -2778,8 +2839,7 @@
 									"sid": 737241726710213
 								}
 							],
-							"sid": 844765391203098,
-							"disabled": true
+							"sid": 844765391203098
 						},
 						{
 							"eventType": "block",
@@ -2797,7 +2857,6 @@
 							],
 							"actions": [],
 							"sid": 144020499256750,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -2832,8 +2891,7 @@
 											}
 										}
 									],
-									"sid": 497946076669448,
-									"disabled": true
+									"sid": 497946076669448
 								}
 							]
 						},
@@ -2862,74 +2920,9 @@
 									}
 								}
 							],
-							"sid": 820123553529469,
-							"disabled": true
+							"sid": 820123553529469
 						}
 					]
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "UIText",
-					"sid": 657633347175662,
-					"parameters": {
-						"instance-variable": "id",
-						"comparison": 0,
-						"value": "\"landscape\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 868820113610947,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-portraitlandscape",
-							"objectClass": "Browser",
-							"sid": 545576962307058,
-							"parameters": {
-								"orientation": "portrait"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "UIText",
-							"sid": 658747616686470,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 935974024701204
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 730152605475513
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "UIText",
-							"sid": 620350759474024,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 885026373701287
 				}
 			]
 		}

@@ -41,7 +41,7 @@ export const takeGemCommand = {
 
 /** @type {CodeBlockDefinition} */
 export const forCommand = {
-    name: "RepeatCommand",
+    name: "ForCommand",
     frame: 0,
 }
 
@@ -75,228 +75,228 @@ export const elseCommand = {
 
 /** @type {CodeBlockDefinition} */
 export const zeroExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 0,
 };
 
 /** @type {CodeBlockDefinition} */
 export const oneExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 1,
 };
 
 /** @type {CodeBlockDefinition} */
 export const twoExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 2,
 };
 
 /** @type {CodeBlockDefinition} */
 export const threeExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 3,
 };
 
 /** @type {CodeBlockDefinition} */
 export const fourExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 4,
 };
 
 /** @type {CodeBlockDefinition} */
 export const fiveExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 5,
 };
 
 /** @type {CodeBlockDefinition} */
 export const sixExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 6,
 };
 
 /** @type {CodeBlockDefinition} */
 export const sevenExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 7,
 };
 
 /** @type {CodeBlockDefinition} */
 export const eightExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 8,
 };
 
 /** @type {CodeBlockDefinition} */
 export const nineExpression = {
-    name: "NumberBlock",
+    name: "NumberExpression",
     frame: 9,
 };
 
 /** @type {CodeBlockDefinition} */
 export const addExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 0,
 };
 
 /** @type {CodeBlockDefinition} */
 export const subtractExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 1,
 };
 
 /** @type {CodeBlockDefinition} */
 export const multiplyExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 2,
 };
 
 /** @type {CodeBlockDefinition} */
 export const divideExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 3,
 };
 
 /** @type {CodeBlockDefinition} */
 export const moduloExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 4,
 };
 
 /** @type {CodeBlockDefinition} */
 export const openParenthesisExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 5,
 };
 
 /** @type {CodeBlockDefinition} */
 export const closeParenthesisExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 6,
 };
 
 /** @type {CodeBlockDefinition} */
 export const equalExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 7,
 };
 
 /** @type {CodeBlockDefinition} */
 export const notEqualExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 8,
 };
 
 /** @type {CodeBlockDefinition} */
 export const greaterExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 9,
 };
 
 /** @type {CodeBlockDefinition} */
 export const greaterEqualExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 10,
 };
 
 /** @type {CodeBlockDefinition} */
 export const lessExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 11,
 };
 
 /** @type {CodeBlockDefinition} */
 export const lessEqualExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 12,
 };
 
 /** @type {CodeBlockDefinition} */
 export const andExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 13,
 };
 
 /** @type {CodeBlockDefinition} */
 export const orExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 14,
 };
 
 /** @type {CodeBlockDefinition} */
 export const notExpression = {
-    name: "OperatorBlock",
+    name: "OperatorExpression",
     frame: 15,
 };
 
 /** @type {CodeBlockDefinition} */
 export const healthExpression = {
-    name: "VariableBlock",
+    name: "VariableExpression",
     frame: 0,
 };
 
 /** @type {CodeBlockDefinition} */
 export const ammoExpression = {
-    name: "VariableBlock",
+    name: "VariableExpression",
     frame: 1,
 };
 
 /** @type {CodeBlockDefinition} */
 export const gemExpression = {
-    name: "VariableBlock",
+    name: "VariableExpression",
     frame: 2,
 };
 
 /** @type {CodeBlockDefinition} */
 export const leftExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 0,
 };
 
 /** @type {CodeBlockDefinition} */
 export const upExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 1,
 };
 
 /** @type {CodeBlockDefinition} */
 export const rightExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 2,
 };
 
 /** @type {CodeBlockDefinition} */
 export const downExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 3,
 };
 
 /** @type {CodeBlockDefinition} */
 export const upLeftExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 4,
 };
 
 /** @type {CodeBlockDefinition} */
 export const upRightExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 5,
 };
 
 /** @type {CodeBlockDefinition} */
 export const downRightExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 6,
 };
 
 /** @type {CodeBlockDefinition} */
 export const downLeftExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 7,
 };
 
 /** @type {CodeBlockDefinition} */
 export const centerExpression = {
-    name: "ReadBlock",
+    name: "ReadExpression",
     frame: 8,
 };
