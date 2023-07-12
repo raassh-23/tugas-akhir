@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 34402,
+	"savedWithRelease": 35000,
 	"name": "GigaBot's Quest",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -1086,7 +1086,7 @@
 			0
 		],
 		"orientations": "landscape",
-		"webgpu": "auto",
+		"webgpu": "yes",
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
@@ -1103,7 +1103,8 @@
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": true,
-		"exportFileStructure": "folders"
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
