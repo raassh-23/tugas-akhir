@@ -5,11 +5,13 @@ import id from "./id.js";
  * @returns {Promise<void>}
  */
 export async function initTranslations() {
-    await i18next.init({
-        lng: 'id',
-        debug: true,
-        resources: { id, en },
-    });
+    await i18next
+        .use(window.i18nextBrowserLanguageDetector)
+        .init({
+            fallbackLng: 'en',
+            debug: true,
+            resources: { id, en },
+        });
 }
 
 /**

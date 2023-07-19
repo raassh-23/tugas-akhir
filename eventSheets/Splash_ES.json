@@ -12,16 +12,6 @@
 			"sid": 970035286461793
 		},
 		{
-			"eventType": "variable",
-			"name": "savedChosenLanguageIndex",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 821361444011413
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -92,14 +82,6 @@
 					"sid": 707604245226947,
 					"parameters": {
 						"key": "SETTING_FULLSCREEN_TAG"
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "LocalStorage",
-					"sid": 485880989571610,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG"
 					}
 				}
 			],
@@ -487,96 +469,6 @@
 				}
 			],
 			"sid": 596463380282739
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-exists",
-					"objectClass": "LocalStorage",
-					"sid": 225649360453989,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "get-item",
-					"objectClass": "LocalStorage",
-					"sid": 915360802822330,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG"
-					}
-				}
-			],
-			"sid": 451012365318945
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "LocalStorage",
-					"sid": 222741365929729,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 730911931408545,
-					"parameters": {
-						"variable": "savedChosenLanguageIndex",
-						"value": "LocalStorage.ItemValue"
-					}
-				},
-				{
-					"callFunction": "ChangeLanguage",
-					"sid": 830157205967378,
-					"parameters": [
-						"tokenat(LANGUAGE_VALUES, savedChosenLanguageIndex, \",\")"
-					]
-				}
-			],
-			"sid": 114216664792651
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-missing",
-					"objectClass": "LocalStorage",
-					"sid": 164534183245447,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 194648680002201,
-					"parameters": {
-						"variable": "savedChosenLanguageIndex",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 425748659081723,
-					"parameters": {
-						"key": "SETTING_LANGUAGE_TAG",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 994348723966016
 		},
 		{
 			"eventType": "block",

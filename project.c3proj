@@ -1025,6 +1025,14 @@
 							"file-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "i18nextBrowserLanguageDetector@7.1.0.js",
+							"type": "text/javascript",
+							"sid": 772451787740225,
+							"file-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
