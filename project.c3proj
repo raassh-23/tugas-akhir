@@ -1025,14 +1025,6 @@
 							"file-info": {
 								"purpose": "none"
 							}
-						},
-						{
-							"name": "test.js",
-							"type": "application/javascript",
-							"sid": 157528545845040,
-							"file-info": {
-								"purpose": "none"
-							}
 						}
 					],
 					"subfolders": [],

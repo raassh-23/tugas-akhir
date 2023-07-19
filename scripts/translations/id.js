@@ -48,6 +48,7 @@ const id = {
             'title': 'Pilih Level',
         },
         'game': {
+            'level': 'Level {{level}}',
             'game-over': {
                 'title': 'Hebat!',
                 'add-leaderboard': 'Tambahkan ke papan peringkat?',

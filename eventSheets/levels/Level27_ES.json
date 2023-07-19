@@ -16,17 +16,11 @@
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 511445415365671,
-					"parameters": {
-						"variable": "level",
-						"value": "27"
-					}
-				},
-				{
-					"type": "script",
-					"script": "setupLevel(runtime);"
+					"callFunction": "SetupLevel",
+					"sid": 153619867696899,
+					"parameters": [
+						"27"
+					]
 				},
 				{
 					"id": "set-eventvar-value",

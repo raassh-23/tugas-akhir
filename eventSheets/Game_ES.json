@@ -6179,30 +6179,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-highestlowest",
-									"objectClass": "Player",
-									"sid": 926271047119826,
-									"parameters": {
-										"which": "lowest",
-										"instance-variable": "id"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "SetShownPlayer",
-									"sid": 218901201287570,
-									"parameters": [
-										"Player.id"
-									]
-								}
-							],
-							"sid": 606786119326455
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "is-on-mobile",
 									"objectClass": "PlatformInfo",
 									"sid": 766087747449010
@@ -6244,6 +6220,67 @@
 								}
 							],
 							"sid": 834172375786300
+						}
+					]
+				},
+				{
+					"functionName": "SetupLevel",
+					"functionDescription": "",
+					"functionCategory": "Game",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "newLevel",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 327801909889860
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 790921557620697,
+							"parameters": {
+								"variable": "level",
+								"value": "newLevel"
+							}
+						},
+						{
+							"type": "script",
+							"script": "setupLevel(runtime);"
+						}
+					],
+					"sid": 892845284824692,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-highestlowest",
+									"objectClass": "Player",
+									"sid": 742207494435820,
+									"parameters": {
+										"which": "lowest",
+										"instance-variable": "id"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetShownPlayer",
+									"sid": 811621750141070,
+									"parameters": [
+										"Player.id"
+									]
+								}
+							],
+							"sid": 622152525536054
 						},
 						{
 							"eventType": "block",
@@ -6251,7 +6288,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 733877136181052,
+									"sid": 271493942461612,
 									"parameters": {
 										"first-value": "Player.Count",
 										"comparison": 0,
@@ -6262,10 +6299,36 @@
 							"actions": [
 								{
 									"callFunction": "HideRobotCount",
-									"sid": 593073500372755
+									"sid": 964810042201690
 								}
 							],
-							"sid": 201801839288486
+							"sid": 367643369001782
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 324814360439738,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"level\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 724404775178477,
+									"parameters": {
+										"text": "Functions.Translate(\"game.level\", Functions.Interpolate(\"level\", str(level)))"
+									}
+								}
+							],
+							"sid": 507143292815408
 						}
 					]
 				},

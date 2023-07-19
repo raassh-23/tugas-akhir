@@ -867,7 +867,7 @@
 					"name": "interpolations",
 					"type": "string",
 					"initialValue": "",
-					"comment": "in the format of `key:value`",
+					"comment": "use Function.Interpolate for every data",
 					"sid": 460321877912781
 				}
 			],

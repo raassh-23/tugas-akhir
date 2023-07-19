@@ -36,17 +36,11 @@
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 458531330428292,
-					"parameters": {
-						"variable": "level",
-						"value": "1"
-					}
-				},
-				{
-					"type": "script",
-					"script": "setupLevel(runtime);"
+					"callFunction": "SetupLevel",
+					"sid": 918966475291380,
+					"parameters": [
+						"1"
+					]
 				},
 				{
 					"id": "destroy",

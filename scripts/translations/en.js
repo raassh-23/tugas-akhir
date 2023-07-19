@@ -48,6 +48,7 @@ const en = {
             'title': 'Select Level',
         },
         'game': {
+            'level': 'Level {{level}}',
             'game-over': {
                 'title': 'Good Job!',
                 'add-leaderboard': 'Add to leaderboard?',
