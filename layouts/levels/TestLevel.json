@@ -4315,7 +4315,7 @@
 						"scale": 0.8,
 						"character-spacing": 0,
 						"line-height": 0,
-						"horizontal-alignment": "right",
+						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -4361,9 +4361,9 @@
 						}
 					},
 					"world": {
-						"x": 475,
+						"x": 207.88193550593567,
 						"y": 36,
-						"width": 171.76938747125007,
+						"width": 160,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,

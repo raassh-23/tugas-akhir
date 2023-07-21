@@ -9,7 +9,7 @@ export async function initTranslations() {
         .use(window.i18nextBrowserLanguageDetector)
         .init({
             fallbackLng: 'en',
-            debug: true,
+            // debug: true,
             resources: { id, en },
         });
 }
@@ -18,7 +18,7 @@ export async function initTranslations() {
  * 
  * @param {string} key 
  * @param {string} interpolations in format "key1::value1,key2::value2,..."
- * @returns 
+ * @returns {string}
  */
 export function translate(key, interpolations = "") {
     const options = {};
@@ -31,6 +31,10 @@ export function translate(key, interpolations = "") {
     return i18next.t(key, options);
 }
 
+/**
+ * 
+ * @param {string} language 
+ */
 export async function changeLanguage(language) {
     await i18next.changeLanguage(language);
 }

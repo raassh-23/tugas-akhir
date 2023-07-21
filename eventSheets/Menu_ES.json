@@ -369,16 +369,6 @@
 					]
 				},
 				{
-					"eventType": "variable",
-					"name": "chosenLanguageIndex",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 179264386353953
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -405,15 +395,7 @@
 					"actions": [
 						{
 							"type": "script",
-							"script": "localVars.chosenLanguageIndex = runtime.globalVars.LANGUAGE_VALUES.split(',').indexOf(i18next.language);\n\nif (localVars.chosenLanguageIndex === -1) {\n\tlocalVars.chosenLanguageIndex = 1; // default en\n}"
-						},
-						{
-							"id": "set-selection",
-							"objectClass": "Dropdown",
-							"sid": 282569606155513,
-							"parameters": {
-								"index": "chosenLanguageIndex"
-							}
+							"script": "const dropdown = runtime.objects.Dropdown.getFirstPickedInstance();\n\nconst chosenLanguageIndex = runtime.globalVars.LANGUAGE_VALUES.split(',').indexOf(i18next.language);\n\ndropdown.selectedIndex = chosenLanguageIndex != -1 ? \n\tchosenLanguageIndex : 1 // default en"
 						},
 						{
 							"id": "pin-to-object-properties",
